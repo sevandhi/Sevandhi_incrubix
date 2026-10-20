@@ -78,6 +78,7 @@ class Settings(BaseSettings):
 
     # --- API security ---
     API_TOKEN: SecretStr = SecretStr("ibx-dev-token")
+    API_TOKEN_REQUIRED: bool = True  # False = open demo: no bearer token needed (the per-IP rate limit still applies)
     SECRETS_KEY: SecretStr | None = None  # Fernet key; derived from API_TOKEN in dev when empty
     CALLBACK_SECRET: SecretStr | None = None  # HMAC key for job callbacks; defaults to API_TOKEN
     RATE_LIMIT_PER_MIN: int = 600  # per client IP; 0 disables

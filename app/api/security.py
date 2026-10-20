@@ -86,6 +86,9 @@ class GateMiddleware:
         if scope.get("method") in ("GET", "HEAD") and scope.get("path", "").startswith(PUBLIC_GET_PREFIXES):
             await self.app(scope, receive, send)
             return
+        if not settings.API_TOKEN_REQUIRED:  # open demo: the rate limit above is the only gate
+            await self.app(scope, receive, send)
+            return
         expected = settings.API_TOKEN.get_secret_value()
         token = _bearer(scope)
         if not token or not hmac.compare_digest(token.encode(), expected.encode()):

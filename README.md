@@ -81,7 +81,7 @@ docker compose down -v                         # stop and remove everything
   `-f compose.yaml -f deploy/compose/peertube.yaml --profile video` (real PeerTube).
 - API docs: `openapi.yaml` (OpenAPI 3.1, checked against the running service) and `http://127.0.0.1:8088/docs`.
 
-Live demo (Render free + Supabase free, simulation mode): `<DEMO_URL>` with bearer token `<DEMO_TOKEN>`
+Live demo (Render free + Supabase free, simulation mode): https://ibx-destination-network-demo.onrender.com (open, no token; API docs at /docs)
 <!-- TODO(final-numbers): demo URL, token delivery and measured cold-start time -->. The free web service sleeps
 when idle, so the first request after a pause can take a while (cold start); deploy steps are in
 `deploy/render/DEPLOY.md`.
@@ -209,6 +209,7 @@ the local Lemmy/Ghost/Discourse containers (see `deploy/compose/*.yaml`).
 | `S3_REGION` | `us-east-1` | object storage |  |
 | `S3_PRESIGN_EXPIRY_S` | `3600` | object storage |  |
 | `API_TOKEN` | *(secret; dev placeholder)* | API security | Dev placeholders below: APP_ENV=demo\|prod refuses them. scripts/gen_secrets.sh writes fresh values into .env. |
+| `API_TOKEN_REQUIRED` | `true` | API security | False = open demo: no bearer token needed (the per-IP rate limit still applies) |
 | `SECRETS_KEY` | *(secret; empty)* | API security | Fernet key; derived from API_TOKEN in dev when empty |
 | `CALLBACK_SECRET` | *(secret; empty)* | API security | HMAC key for job callbacks; defaults to API_TOKEN |
 | `RATE_LIMIT_PER_MIN` | `600` | API security | per client IP; 0 disables |

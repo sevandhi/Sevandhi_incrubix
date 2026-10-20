@@ -240,15 +240,14 @@ mode with the hard-case destinations seeded and certified at start. How it is bu
 
 | | |
 |---|---|
-| URL | `<DEMO_URL>` <!-- TODO(final-numbers) --> |
-| Token | `<DEMO_TOKEN>` (sent with the form) <!-- TODO(final-numbers) --> |
-| Cold start | the free Render plan stops the service after a period without traffic; the first request then waits while it starts (measured cold-start time: <!-- TODO(final-numbers) -->). Call `GET <DEMO_URL>/health` first. |
+| URL | https://ibx-destination-network-demo.onrender.com (interactive API docs: https://ibx-destination-network-demo.onrender.com/docs ; network dashboard: https://ibx-destination-network-demo.onrender.com/ui/network) |
+| Token | none: the demo is open (`API_TOKEN_REQUIRED=false`, simulation only, nothing reaches a real site); the per-IP rate limit still applies |
+| Cold start | the free Render plan stops the service after a period without traffic; the first request then waits while it starts (up to about a minute; the first deploy reached `/ready` in 107 s). Call `GET https://ibx-destination-network-demo.onrender.com/health` first. |
 | Rate limit | `RATE_LIMIT_PER_MIN` per client IP (429 `API_RATE_LIMITED`) |
 
 Every command on this page works against the demo after
-`export API=<DEMO_URL> TOKEN=<DEMO_TOKEN> MOCK=<DEMO_URL>/sim`. The demo has no separate mock port: its mock
-platforms run inside the same process and `/sim/<path>` forwards to them (GET/HEAD are open; other methods, such as
-the fault queue or a partner revoke, need the bearer token: add `-H "$H"`). The `X-Sim-Fault` header works too.
+`export API=https://ibx-destination-network-demo.onrender.com TOKEN=any MOCK=https://ibx-destination-network-demo.onrender.com/sim`. The demo has no separate mock port: its mock
+platforms run inside the same process and `/sim/<path>` forwards to them (all methods are open on the demo). The `X-Sim-Fault` header works too.
 `POST /api/v1/sim/reset` puts the demo destinations back to their seeded state.
 
 ## 6. Known limitations (also in REPORT.md)

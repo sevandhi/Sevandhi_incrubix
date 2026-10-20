@@ -41,6 +41,8 @@ services:
         value: demo
       - key: SIMULATION_MODE
         value: "true"
+      - key: API_TOKEN_REQUIRED          # open demo: no bearer token; the per-IP rate limit still applies
+        value: "false"
       - key: S3_BUCKET
         value: ibx
       - key: LLM_PROVIDER

@@ -178,7 +178,7 @@ class SimProxyMiddleware:
                 await error_response(err)(scope, receive, send)
                 return
         method = scope.get("method", "GET")
-        if method not in ("GET", "HEAD"):
+        if method not in ("GET", "HEAD") and settings.API_TOKEN_REQUIRED:
             # The demo token may come in X-IncuBrix-Demo-Token, so that Authorization can carry the simulated
             # platform's own credentials (e.g. a mock Lemmy admin changing its rate limit).
             token = _header(scope, DEMO_TOKEN_HEADER) or _bearer(scope)

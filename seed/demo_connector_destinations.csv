@@ -1,0 +1,10 @@
+name,url,connector_key,category,audience_tags,language,frequency_cap,self_promo_allowed,link_policy,disclosure_required,automation_allowed,instance_channel_id,instance_feed_key,rules_status,rules_source
+demo-lemmy,http://mock-platforms:8080/lemmy/demo-lemmy/c/ibx_test,lemmy,tech,ai;open-source,en,20/P1D,true,allow,false,true,,,confirmed,manual
+demo-ghost,http://mock-platforms:8080/ghost/demo-ghost,ghost,creators,creators;newsletter,en,20/P1D,true,allow,false,true,,,confirmed,manual
+demo-discourse,http://mock-platforms:8080/discourse/demo-discourse,discourse,saas,saas;founders,en,20/P1D,true,allow,false,true,,,confirmed,manual
+demo-devto,http://mock-platforms:8080/forem/demo-devto,devto,developers,developers;ai,en,20/P1D,true,allow,false,true,,,confirmed,manual
+demo-webhook,http://mock-platforms:8080/partner/demo-webhook,webhook,partners,partners;saas,en,20/P1D,true,allow,false,true,,,confirmed,manual
+demo-assisted,http://mock-platforms:8080/assist/demo-assisted/submit,assisted,directories,directories;launch,en,20/P1D,true,allow,false,true,,,confirmed,manual
+demo-slack,https://ibx-demo.slack.com/archives/C0DEMO00001,slack,communities,slack;founders,en,20/P1D,true,allow,false,true,C0DEMO00001,,confirmed,manual
+demo-peertube,http://mock-platforms:8080/peertube/demo-peertube,peertube,video,video;creators,en,20/P1D,true,allow,false,true,,,confirmed,manual
+demo-mrss,https://feeds.example.org/api/v1/feeds/demo-mrss/mrss.xml,mrss,video,video;syndication,en,20/P1D,true,allow,false,true,,demo-mrss,confirmed,manual

@@ -1,0 +1,6 @@
+name,url,platform_key,surface,connector_key,category,audience_tags,language,frequency_cap,self_promo_allowed,link_policy,disclosure_required,automation_allowed,rules_url,spec_overrides,connection_ref,rules_status,rules_source
+dest-weekly-cap-1,http://mock-platforms:8080/discourse/dest-weekly-cap-1,discourse,topic,discourse,saas,ai;founders,en,1/P7D,true,allow,false,true,,,conn-discourse-sim,confirmed,manual
+dest-no-promo,http://mock-platforms:8080/discourse/dest-no-promo,discourse,topic,discourse,creators,creators;video,en,3/P7D,false,allow,false,true,,,conn-discourse-sim,confirmed,manual
+dest-ai-disclosure-es,http://mock-platforms:8080/discourse/dest-ai-disclosure-es,discourse,topic,discourse,ai,ai;marketing,es,2/P7D,false,allow,true,true,,,conn-discourse-sim,confirmed,manual
+dest-partner-revocable,http://mock-platforms:8080/partner/dest-partner-revocable,webhook,post,webhook,partners,saas;founders,en,5/P1D,true,allow,true,true,,,conn-webhook-sim,confirmed,manual
+dest-strict-limits,http://mock-platforms:8080/discourse/dest-strict-limits,discourse,topic,discourse,saas,ai;saas,en,2/P7D,true,no_shorteners,false,true,,"{""title_max_chars"": 40, ""body_max_chars"": 280}",conn-discourse-sim,confirmed,manual

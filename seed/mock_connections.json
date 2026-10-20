@@ -1,0 +1,9 @@
+{
+  "_comment": "Placeholder credentials for the local MOCK platforms only (mock-platforms accepts them; in SIMULATION_MODE the values are replaced by sim-* anyway). Not secrets. Created by python -m app.catalogue.seed when a seed row's connection_ref does not exist yet.",
+  "connections": [
+    {"ref": "conn-discourse-sim", "connector_key": "discourse", "auth_type": "api_key",
+     "credentials": {"api_key": "sim-api_key", "api_username": "system"}},
+    {"ref": "conn-webhook-sim", "connector_key": "webhook", "auth_type": "api_key",
+     "credentials": {"secret": "sim-secret"}}
+  ]
+}

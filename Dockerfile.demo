@@ -1,0 +1,49 @@
+# All-in-one LIVE DEMO image: API + job worker/scheduler + mock platforms in ONE process, for a single free
+# container (Render free: 512 MB RAM, 0.1 CPU). Same code as the compose stack (Dockerfile); only the entry point
+# (app.demo.allinone) and the demo defaults below differ. Simulation only: every platform call goes to the in-process
+# mock platforms, never to a real site. Secrets (API_TOKEN, DATABASE_URL, S3 keys, GEMINI_API_KEY) come from the
+# host's environment at run time (render.yaml), never from this file. See deploy/render/DEPLOY.md.
+FROM python:3.12-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    UV_LINK_MODE=copy \
+    UV_COMPILE_BYTECODE=1 \
+    UV_PROJECT_ENVIRONMENT=/opt/venv \
+    PATH="/opt/venv/bin:${PATH}"
+
+RUN pip install --no-cache-dir uv==0.12.21 \
+    && groupadd --system --gid 10001 ibx \
+    && useradd --system --uid 10001 --gid ibx --home-dir /srv --shell /usr/sbin/nologin ibx
+
+WORKDIR /srv
+COPY pyproject.toml uv.lock README.md ./
+RUN uv sync --frozen --no-dev --no-install-project
+
+COPY app ./app
+COPY mocks ./mocks
+COPY scripts ./scripts
+COPY catalogue ./catalogue
+COPY seed ./seed
+RUN chown -R ibx:ibx /srv && chmod 0755 scripts/demo_start.sh
+
+# Demo defaults (no secrets). Every one can be overridden by the host's environment.
+ENV APP_ENV=demo \
+    SIMULATION_MODE=true \
+    MOCK_PLATFORM_URL=http://mock-platforms:8080 \
+    DEMO_SEED_ON_START=true \
+    DB_AUTO_MIGRATE=true \
+    DB_POOL_SIZE=3 \
+    WORKER_CONCURRENCY=3 \
+    RATE_LIMIT_PER_MIN=300 \
+    LLM_PROVIDER=mock \
+    LOG_LEVEL=INFO \
+    LOG_JSON=true \
+    S3_BUCKET=ibx \
+    AWS_REQUEST_CHECKSUM_CALCULATION=when_required \
+    AWS_RESPONSE_CHECKSUM_VALIDATION=when_required \
+    PORT=10000
+
+USER ibx
+EXPOSE 10000
+CMD ["/srv/scripts/demo_start.sh"]

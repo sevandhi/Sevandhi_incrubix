@@ -1,0 +1,45 @@
+# Lemmy 0.19 connector manifest (Appendix A keys only). Limits measured on the local Lemmy 0.19.20 (2026-10-15):
+#   title: 3..200 characters after trimming, no newline (201 -> 400 invalid_post_title; 200 emoji accepted)
+#   body:  50000 UTF-16 code units (49998 'a' + 1 emoji accepted, 49999 'a' + 1 emoji -> 400 invalid_body_field)
+# The connector appends a 29-character idempotency marker line to the body, so body_max_chars = 50000 - 29.
+# count_unit utf16 is exact for the body and never under-counts a title (an emoji title may be refused early).
+key: lemmy
+version: 1.0.0
+tier: native
+auth: api_key            # a login JWT (credentials.jwt), or credentials.username + password to log in
+surfaces:
+  - key: post
+    content_types: [text, link]
+    spec:
+      title_required: true
+      title_min_chars: 3
+      title_max_chars: 200
+      body_max_chars: 49971
+      count_unit: utf16
+      links_allowed: true
+rate_limits:
+  per_connection: {requests: 60, per_seconds: 60}   # our own pacing; Lemmy's real post limit comes back as 400 rate_limit_error
+capabilities: [publish, status, delete, metrics]
+error_map:
+  # Lemmy answers almost every error with HTTP 400 {"error": "<token>"}, so the token decides (checked before the status).
+  "400:rate_limit_error": PLATFORM_RATE_LIMIT          # reset time comes from GET /api/v3/site (local_site_rate_limit)
+  "400:not_logged_in": CONNECTION_AUTH_EXPIRED
+  "400:incorrect_login": CONNECTION_AUTH_EXPIRED
+  "400:site_ban": CONNECTION_AUTH_EXPIRED
+  "400:email_not_verified": CONNECTION_AUTH_EXPIRED
+  "400:registration_application_is_pending": CONNECTION_AUTH_EXPIRED
+  "400:invalid_post_title": PLATFORM_CONTENT_REJECTED
+  "400:invalid_body_field": PLATFORM_CONTENT_REJECTED
+  "400:invalid_url": PLATFORM_CONTENT_REJECTED
+  "400:blocked_url": PLATFORM_CONTENT_REJECTED
+  "400:slurs": PLATFORM_CONTENT_REJECTED
+  "400:couldnt_find_community": PLATFORM_CONTENT_REJECTED
+  "400:banned_from_community": PLATFORM_CONTENT_REJECTED
+  "400:only_mods_can_post_in_community": PLATFORM_CONTENT_REJECTED
+  "400:language_not_allowed": PLATFORM_CONTENT_REJECTED
+  "400:couldnt_create_post": PLATFORM_UNAVAILABLE      # a database error on Lemmy's side: nothing was created, retry later
+  "400": PLATFORM_CONTENT_REJECTED                     # any other 400 is a validation refusal
+  "401": CONNECTION_AUTH_EXPIRED                       # measured: a bad or logged-out token is 401 incorrect_login
+  "403": CONNECTION_AUTH_EXPIRED
+  "429": PLATFORM_RATE_LIMIT                           # a reverse proxy in front of Lemmy may answer 429 + Retry-After
+instance_param: community_url   # e.g. http://lemmy:8536/c/ibx_test (or !ibx_test@lemmy.example)

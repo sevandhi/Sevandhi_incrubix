@@ -1,0 +1,33 @@
+"""Generated tests for the __KEY__ connector (from app/connectors/_template). Extend with real fixtures."""
+
+from __future__ import annotations
+
+import pytest
+
+
+CONNECTION = {"connector_key": "__KEY__", "auth_type": "api_key", "credentials": {"token": "test-token-__KEY__"}}
+
+
+def _destination(mock_url: str, tenant: str = "t1") -> dict:
+    return {"connector_key": "__KEY__", "surface": "post", "instance": {"base_url": f"{mock_url}/__KEY__/{tenant}"}}
+
+
+async def test_publish_status_delete_roundtrip(contract_client, mock_platforms_url):
+    client = contract_client
+    body = {
+        "rendition": {"title": "Hello", "body": "First post", "content_type": "text"},
+        "destination": _destination(mock_platforms_url),
+        "connection": CONNECTION,
+        "idempotency_key": "gen-__KEY__-1",
+    }
+    published = await client.post("/connector/v1/__KEY__/publish", json=body)
+    assert published.status_code == 200, published.text
+    assert set(published.json()) == {"platform_post_id", "live_url", "status"}
+    post_id = published.json()["platform_post_id"]
+
+    ref = {"platform_post_id": post_id, "connection": CONNECTION, "destination": _destination(mock_platforms_url)}
+    status = await client.post("/connector/v1/__KEY__/get_status", json=ref)
+    assert status.json() == {"status": "published", "live_url": published.json()["live_url"]}
+
+    deleted = await client.post("/connector/v1/__KEY__/delete", json=ref)
+    assert deleted.json() == {"deleted": True}

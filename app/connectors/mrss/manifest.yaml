@@ -1,0 +1,23 @@
+# Media RSS feed connector (Appendix A keys only). The "platform" is our own service: publish adds an item to the
+# self-served feed GET /api/v1/feeds/{feed_key}/mrss.xml (RSS 2.0 + Media RSS, built with lxml, checked with
+# feedparser); delete removes it; clicks are counted by the GET /api/v1/r/{id} redirect. Feed readers and partners
+# (video platforms, aggregators, podcast apps) pull the feed; nothing is pushed anywhere.
+# Error classes: there is no token (auth none) and no platform rate limit (readers poll us), so those two rows are
+# "not applicable"; content that cannot be put in a feed is refused before the item is written.
+key: mrss
+version: 1.0.0
+tier: feed
+auth: none
+surfaces:
+  - key: item
+    content_types: [text, link, image, video, video_link]
+    spec:
+      title_required: true
+      title_max_chars: 300
+      body_max_chars: 20000
+      count_unit: codepoints
+      links_allowed: true
+      media_max_count: 10
+capabilities: [publish, status, delete, metrics]
+error_map: {}
+instance_param: feed_key   # e.g. ai-weekly (or the feed URL .../api/v1/feeds/ai-weekly/mrss.xml)

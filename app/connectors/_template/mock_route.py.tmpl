@@ -1,0 +1,80 @@
+"""Mock __KEY__ platform (generated from app/connectors/_template). Mounted at /__KEY__ on mock-platforms.
+
+Tenants are path prefixes: /__KEY__/{tenant}/posts. Any bearer token works except one starting
+with "revoked". Replace this with a faithful copy of the real API once its responses are recorded.
+"""
+
+from __future__ import annotations
+
+from typing import Any
+
+from fastapi import APIRouter, Header, Request, Response
+from fastapi.responses import JSONResponse
+
+from mocks.platforms.tenants import store
+
+PLATFORM = "__KEY__"
+router = APIRouter()
+
+
+def _auth_error(authorization: str | None) -> JSONResponse | None:
+    token = (authorization or "").removeprefix("Bearer ").strip()
+    if not token or token.startswith("revoked"):
+        return JSONResponse({"error": "invalid_token", "message": "token expired or revoked"}, status_code=401)
+    return None
+
+
+def _public(post: dict[str, Any]) -> dict[str, Any]:
+    return {k: post[k] for k in ("id", "url", "status", "title", "marker")}
+
+
+@router.post("/{tenant}/posts", status_code=201)
+async def create_post(tenant: str, payload: dict[str, Any], request: Request, authorization: str | None = Header(None)) -> Any:
+    if (error := _auth_error(authorization)) is not None:
+        return error
+    title = str(payload.get("title") or "")
+    if len(title) > 200:
+        return JSONResponse({"error": "title_too_long", "message": "title is longer than 200 characters"}, status_code=422)
+    post_id = store.next_id(PLATFORM, tenant)
+    url = f"{str(request.base_url).rstrip('/')}/{PLATFORM}/{tenant}/posts/{post_id}"
+    post = {"id": post_id, "url": url, "status": "published", "title": title, "body": payload.get("body", ""),
+            "marker": payload.get("marker"), "views": 0, "likes": 0, "comments": 0}
+    store.state(PLATFORM, tenant)["posts"][post_id] = post
+    return _public(post)
+
+
+@router.get("/{tenant}/posts")
+async def list_posts(tenant: str, marker: str | None = None, authorization: str | None = Header(None)) -> Any:
+    if (error := _auth_error(authorization)) is not None:
+        return error
+    posts = store.state(PLATFORM, tenant)["posts"].values()
+    return {"posts": [_public(p) for p in posts if marker is None or p.get("marker") == marker]}
+
+
+@router.get("/{tenant}/posts/{post_id}")
+async def get_post(tenant: str, post_id: int, authorization: str | None = Header(None)) -> Any:
+    if (error := _auth_error(authorization)) is not None:
+        return error
+    post = store.state(PLATFORM, tenant)["posts"].get(post_id)
+    if post is None:
+        return JSONResponse({"error": "not_found", "message": "no such post"}, status_code=404)
+    return _public(post)
+
+
+@router.delete("/{tenant}/posts/{post_id}", status_code=204, response_model=None)
+async def delete_post(tenant: str, post_id: int, authorization: str | None = Header(None)) -> Any:
+    if (error := _auth_error(authorization)) is not None:
+        return error
+    if store.state(PLATFORM, tenant)["posts"].pop(post_id, None) is None:
+        return JSONResponse({"error": "not_found", "message": "no such post"}, status_code=404)
+    return Response(status_code=204)
+
+
+@router.get("/{tenant}/posts/{post_id}/metrics")
+async def post_metrics(tenant: str, post_id: int, authorization: str | None = Header(None)) -> Any:
+    if (error := _auth_error(authorization)) is not None:
+        return error
+    post = store.state(PLATFORM, tenant)["posts"].get(post_id)
+    if post is None:
+        return JSONResponse({"error": "not_found", "message": "no such post"}, status_code=404)
+    return {"views": post["views"], "likes": post["likes"], "comments": post["comments"]}

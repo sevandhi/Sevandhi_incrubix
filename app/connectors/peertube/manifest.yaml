@@ -1,0 +1,45 @@
+# PeerTube connector (Appendix A keys only). Measured on a local PeerTube v8.3.0 (chocobozzz/peertube:v8.3.0-trixie,
+# compose profile `video`) on 2026-10-18:
+#   auth:   GET /api/v1/oauth-clients/local (403 unless the Host header is the instance's own host), then
+#           POST /api/v1/users/token (password grant) -> {access_token, refresh_token, expires_in 86399,
+#           refresh_token_expires_in 2419199}; a refresh grant invalidates the old access token.
+#           Wrong password -> 400 problem+json code "invalid_grant"; expired/invalid token -> 401 code "invalid_token"
+#           (measured with a 6-second token lifetime).
+#   limits: name 3..120 characters (200 -> 400 "Should have a video name between 3 and 120 characters long");
+#           description 10000 characters (10001 -> 400 "Incorrect request parameters: description");
+#           a non-video file -> 415.
+#   rate:   429 text/html "Too many requests, please try again later." + Retry-After (s) + X-RateLimit-Reset
+#           (measured with the API limit lowered to 12 per 10 s; the default is 50 per 10 s).
+#   upload: 200 {"video": {id, shortUUID, uuid}}; with waitTranscoding=false the video is public at once while its
+#           state is 2 "To transcode". DELETE -> 204, then GET -> 404 "Video not found".
+#   page:   /videos/watch/<uuid> is the web client (a single-page app): it answers 200 even after the video is
+#           deleted, so the API (GET /api/v1/videos/<id> -> 404) is what proves a deletion.
+key: peertube
+version: 1.0.0
+tier: native
+auth: oauth2             # credentials {username, password} (password grant) or a ready {access_token}
+surfaces:
+  - key: video
+    content_types: [video, text]   # text = published over the bundled 2-second test card (our own ffmpeg testsrc clip)
+    spec:
+      title_required: true
+      title_min_chars: 3
+      title_max_chars: 120
+      body_max_chars: 9970          # 10000 minus the marker line the connector appends
+      tag_max: 5
+      tag_max_chars: 30
+      count_unit: codepoints
+      links_allowed: true
+      media_max_count: 1
+rate_limits:
+  per_connection: {requests: 40, per_seconds: 10}   # PeerTube's default API limit is 50 per 10 s per IP
+capabilities: [publish, status, delete, metrics, refresh_auth]
+error_map:
+  "400:invalid_grant": CONNECTION_AUTH_EXPIRED   # wrong / changed password, revoked refresh token
+  "401": CONNECTION_AUTH_EXPIRED                 # invalid_token: expired or revoked access token
+  "400": PLATFORM_CONTENT_REJECTED               # invalid-params (name, description, tags, language ...)
+  "403": PLATFORM_CONTENT_REJECTED               # e.g. the channel is not the user's, video quota reached
+  "413": PLATFORM_CONTENT_REJECTED               # file too large
+  "415": PLATFORM_CONTENT_REJECTED               # not a video format PeerTube accepts
+  "429": PLATFORM_RATE_LIMIT                     # Retry-After + X-RateLimit-Reset
+instance_param: base_url   # e.g. http://peertube.ibx.test:9000

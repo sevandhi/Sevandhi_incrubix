@@ -1,0 +1,15 @@
+# Assisted tier: for destinations without an API or that forbid automated posting. IncuBrix prepares an
+# "assist pack" (files, caption, deep link, rules checklist) and a person posts it, then reports the live URL.
+# destination.instance.submit_url = the page where a person submits a post.
+key: assisted
+version: 1.0.0
+tier: assisted
+auth: none
+surfaces:
+  - key: post
+    content_types: [text, link, image, video, video_link]
+    spec: {}            # destination.spec_overrides carries the community's own limits
+rate_limits: {}
+capabilities: [assist]
+error_map: {}
+instance_param: submit_url

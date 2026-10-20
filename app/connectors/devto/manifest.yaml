@@ -1,0 +1,23 @@
+# Dev.to and any other Forem instance (Forem API v1). destination.instance.base_url = https://dev.to (or a Forem).
+# Forem API v1 has NO article delete: `delete` is deliberately not a capability (the contract answers
+# 404 METHOD_NOT_SUPPORTED). Certification removes test articles with Connector.unpublish_to_draft and
+# records the removal mode honestly (never as deleted).
+key: devto
+version: 1.0.0
+tier: native
+auth: api_key             # credentials: api_key (header "api-key")
+surfaces:
+  - key: article
+    content_types: [text, link, image, video_link]
+    spec: {title_required: true, title_max_chars: 128, body_required: true, body_max_chars: 100000,
+           tag_max: 4, tag_pattern: "[a-z0-9]+", tag_max_chars: 30, count_unit: codepoints, links_allowed: true}
+rate_limits:
+  per_connection: {requests: 10, per_seconds: 30}
+capabilities: [publish, status, metrics]
+error_map:
+  "401": CONNECTION_AUTH_EXPIRED          # {"error": "unauthorized", "status": 401}
+  "403": CONNECTION_AUTH_EXPIRED
+  "400": PLATFORM_CONTENT_REJECTED
+  "422": PLATFORM_CONTENT_REJECTED        # {"error": "Title can't be blank", "status": 422}
+  "429": PLATFORM_RATE_LIMIT              # Retry-After in seconds or as an HTTP-date
+instance_param: base_url

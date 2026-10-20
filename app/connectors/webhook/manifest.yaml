@@ -1,0 +1,23 @@
+# Generic partner webhook (protocol tier): any partner that implements docs/PARTNER_WEBHOOK.md.
+# destination.instance.endpoint_url = the partner's base URL; connection.credentials.secret = the shared HMAC secret.
+key: webhook
+version: 1.0.0
+tier: protocol
+auth: api_key             # the shared signing secret (credentials.secret)
+surfaces:
+  - key: post
+    content_types: [text, link, image, video, video_link]
+    spec: {title_max_chars: 300, body_max_chars: 100000, links_allowed: true}
+rate_limits:
+  per_connection: {requests: 120, per_seconds: 60}
+capabilities: [publish, status, delete]
+error_map:
+  "400:timestamp_outside_tolerance": PLATFORM_UNAVAILABLE   # clock skew / delayed delivery: a fresh signature on retry
+  "400": PLATFORM_CONTENT_REJECTED
+  "401": CONNECTION_AUTH_EXPIRED     # invalid_signature / revoked: the partner withdrew permission
+  "403": CONNECTION_AUTH_EXPIRED
+  "409": PLATFORM_CONTENT_REJECTED   # idempotency_conflict: same key, different body
+  "413": PLATFORM_CONTENT_REJECTED
+  "422": PLATFORM_CONTENT_REJECTED
+  "429": PLATFORM_RATE_LIMIT         # Retry-After or X-RateLimit-Reset
+instance_param: endpoint_url

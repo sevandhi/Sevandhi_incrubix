@@ -1,0 +1,20 @@
+# Connector manifest: Appendix A keys only (validated by app/contract/manifest.schema.json).
+key: __KEY__
+version: 0.1.0
+tier: native              # native | protocol | bridge | feed | assisted
+auth: api_key             # oauth2 | api_key | bot_token | none
+surfaces:
+  - key: post
+    content_types: [text, link]
+    spec: {title_max_chars: 200, body_max_chars: 10000, links_allowed: true}
+rate_limits:
+  per_connection: {requests: 60, per_seconds: 60}
+capabilities: [publish, status, delete, metrics]
+error_map:
+  "400:rate_limit_error": PLATFORM_RATE_LIMIT   # body-sensitive keys are checked first
+  "401": CONNECTION_AUTH_EXPIRED
+  "403": CONNECTION_AUTH_EXPIRED
+  "404": PLATFORM_CONTENT_REJECTED
+  "422": PLATFORM_CONTENT_REJECTED
+  "429": PLATFORM_RATE_LIMIT
+instance_param: base_url  # one connector, many destinations: destination.instance.base_url

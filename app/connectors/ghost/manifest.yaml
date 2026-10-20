@@ -1,0 +1,28 @@
+# Ghost 6 connector manifest (Appendix A keys only). Measured on the local Ghost 6.70 (2026-10-14/15):
+#   title: 255 characters (256 -> 422 ValidationError "exceeds maximum length of 255 characters")
+#   slug:  at most 191 characters (208 -> 422); a taken slug gets "-2" appended
+#   auth:  Admin API JWT (HS256, kid = key id, aud /admin/); expired -> 401 INVALID_JWT, unknown key -> 401
+#          UNKNOWN_ADMIN_API_KEY. The Admin API answered no 429 locally; 429 + Retry-After is mapped anyway.
+key: ghost
+version: 1.0.0
+tier: native
+auth: api_key            # credentials.admin_api_key = "<key id>:<hex secret>" from a Ghost custom integration
+surfaces:
+  - key: article
+    content_types: [text, link]
+    spec:
+      title_required: true
+      title_max_chars: 255
+      count_unit: codepoints
+      links_allowed: true
+rate_limits:
+  per_connection: {requests: 120, per_seconds: 60}
+capabilities: [publish, status, delete, refresh_auth]
+error_map:
+  "400": PLATFORM_CONTENT_REJECTED      # BadRequestError (e.g. invalid post data)
+  "401": CONNECTION_AUTH_EXPIRED        # INVALID_JWT (expired / bad signature / clock skew), UNKNOWN_ADMIN_API_KEY
+  "403": CONNECTION_AUTH_EXPIRED        # NoPermissionError: the integration may not do this
+  "413": PLATFORM_CONTENT_REJECTED      # RequestEntityTooLargeError
+  "422": PLATFORM_CONTENT_REJECTED      # ValidationError (title > 255, slug > 191, ...)
+  "429": PLATFORM_RATE_LIMIT            # TooManyRequestsError; the reset comes from Retry-After when sent
+instance_param: base_url   # the site URL, e.g. http://ghost:2368 (the Admin API is {base_url}/ghost/api/admin/)

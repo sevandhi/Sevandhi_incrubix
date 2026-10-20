@@ -1,0 +1,61 @@
+# Slack app connector (Appendix A keys only). Slack Web API, read from docs.slack.dev on 2026-10-18:
+#   * EVERY Web API answer is HTTP 200 with {"ok": false, "error": "<code>"} on failure (red_team #5), except the
+#     rate limit, which is HTTP 429 + Retry-After (+ {"ok": false, "error": "ratelimited"}). So the error map
+#     keys are "200:<error code>"; the connector sends any ok:false answer through map_error.
+#   * chat.postMessage: text "about 4,000 characters for best results"; Slack truncates above 40,000.
+#     msg_too_long (older docs, chat.update) and msg_blocks_too_long are both mapped to REJECTED.
+#   * internal_error / fatal_error: "part of the operation may have succeeded" -> outcome unknown on a create,
+#     so the retry looks for the marker (message metadata) before posting again.
+#   * Rate limits: chat.postMessage ~1 message/second/channel (bursts tolerated); conversations.history is
+#     Tier 3 (50+/min) for internal apps. NOTE: since 2025-05-29, NEW commercially distributed non-Marketplace
+#     apps get 1 request/minute (limit 15) on conversations.history; this connector is meant as an internal app.
+key: slack
+version: 1.0.0
+tier: native
+auth: bot_token          # credentials.bot_token = "xoxb-..." (scopes: chat:write, channels:history, groups:history, reactions:read)
+surfaces:
+  - key: message
+    content_types: [text, link]
+    spec:
+      body_max_chars: 40000      # the title (if any) is sent as a bold first line and counts towards this
+      title_max_chars: 150
+      count_unit: codepoints
+      links_allowed: true
+rate_limits:
+  per_connection: {requests: 50, per_seconds: 60}   # Tier 3 for the history/reactions calls; posting is ~1/s/channel
+capabilities: [publish, status, delete, metrics]
+error_map:
+  # expired / revoked / missing credentials -> the owner must reconnect (a stored connection is paused)
+  "200:token_revoked": CONNECTION_AUTH_EXPIRED
+  "200:token_expired": CONNECTION_AUTH_EXPIRED
+  "200:invalid_auth": CONNECTION_AUTH_EXPIRED
+  "200:not_authed": CONNECTION_AUTH_EXPIRED
+  "200:account_inactive": CONNECTION_AUTH_EXPIRED
+  "200:missing_scope": CONNECTION_AUTH_EXPIRED
+  "200:not_allowed_token_type": CONNECTION_AUTH_EXPIRED
+  "200:team_access_not_granted": CONNECTION_AUTH_EXPIRED
+  # rate limits: HTTP 429 + Retry-After, or (chat.postMessage) 200 rate_limited / message_limit_exceeded
+  "429": PLATFORM_RATE_LIMIT
+  "200:ratelimited": PLATFORM_RATE_LIMIT
+  "200:rate_limited": PLATFORM_RATE_LIMIT
+  "200:message_limit_exceeded": PLATFORM_RATE_LIMIT
+  # Slack refused this message (a retry of the same content will not help)
+  "200:msg_too_long": PLATFORM_CONTENT_REJECTED
+  "200:msg_blocks_too_long": PLATFORM_CONTENT_REJECTED
+  "200:no_text": PLATFORM_CONTENT_REJECTED
+  "200:invalid_blocks": PLATFORM_CONTENT_REJECTED
+  "200:invalid_metadata_format": PLATFORM_CONTENT_REJECTED
+  "200:metadata_too_large": PLATFORM_CONTENT_REJECTED
+  "200:channel_not_found": PLATFORM_CONTENT_REJECTED
+  "200:not_in_channel": PLATFORM_CONTENT_REJECTED
+  "200:is_archived": PLATFORM_CONTENT_REJECTED
+  "200:restricted_action": PLATFORM_CONTENT_REJECTED
+  "200:restricted_action_read_only_channel": PLATFORM_CONTENT_REJECTED
+  "200:ekm_access_denied": PLATFORM_CONTENT_REJECTED
+  "200:no_permission": PLATFORM_CONTENT_REJECTED
+  # Slack-side trouble (on a create the outcome is unknown: the connector sets outcome=unknown)
+  "200:internal_error": PLATFORM_UNAVAILABLE
+  "200:fatal_error": PLATFORM_UNAVAILABLE
+  "200:service_unavailable": PLATFORM_UNAVAILABLE
+  "200:request_timeout": PLATFORM_UNAVAILABLE
+instance_param: channel_id   # e.g. C0123456789; instance.api_base overrides https://slack.com/api (mock, Enterprise proxies)

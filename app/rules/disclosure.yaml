@@ -1,0 +1,12 @@
+# AI-content disclosure lines, one per language (ISO 639-1 code -> text).
+# A destination may override any of these with rules.disclosure.text_by_lang.
+# A language that is missing here gets the English line plus a DISCLOSURE_LANG_FALLBACK warning.
+# Translations were written for this project and should be checked by a native speaker before production use.
+en: "Disclosure: this post was created with the help of AI."
+es: "Aviso: esta publicación se creó con ayuda de inteligencia artificial (IA)."
+de: "Hinweis: Dieser Beitrag wurde mit Hilfe von KI erstellt."
+fr: "Avertissement : ce message a été créé avec l'aide de l'IA."
+pt: "Aviso: esta publicação foi criada com a ajuda de IA."
+hi: "सूचना: यह पोस्ट एआई (AI) की मदद से बनाई गई है।"
+ja: "注記：この投稿はAIの支援を受けて作成されました。"
+ta: "அறிவிப்பு: இந்தப் பதிவு செயற்கை நுண்ணறிவின் (AI) உதவியுடன் உருவாக்கப்பட்டது."

@@ -133,6 +133,10 @@ class Rehearsal:
             self.setup(doc["hard_case"], doc.get("setup") or {})
             cases = render(doc["cases"], self.names)
             for case in cases:
+                # a live demo guards /sim with its own token; send it separately so Authorization can carry
+                # the simulated platform's credentials (e.g. a mock Lemmy admin)
+                if self.token and str(case.get("path", "")).startswith(self.mock):
+                    case.setdefault("headers", {})["X-IncuBrix-Demo-Token"] = self.token
                 specs.append({"hc": doc["hard_case"], "title": doc.get("title", ""), **case})
             (inputs / path.name).write_text(yaml.safe_dump({"cases": cases}, sort_keys=False, allow_unicode=True), encoding="utf-8")
         (self.out / "setup.json").write_text(json.dumps(self.setup_log, indent=1) + "\n", encoding="utf-8")

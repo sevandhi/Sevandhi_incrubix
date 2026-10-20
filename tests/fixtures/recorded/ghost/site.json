@@ -1,0 +1,38 @@
+{
+  "fixture": "ghost/site",
+  "platform": "ghost",
+  "platform_version": "6.70",
+  "description": "Public admin site info (used as the health/ready probe).",
+  "recorded_at": "2026-10-14T18:46:34Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "GET",
+    "path": "/ghost/api/admin/site/",
+    "headers": {}
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cache-control": "no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0",
+      "content-type": "application/json; charset=utf-8",
+      "content-version": "v6.70"
+    },
+    "elapsed_ms": 4,
+    "json": {
+      "site": {
+        "title": "IBX local Ghost",
+        "description": "Thoughts, stories and ideas.",
+        "logo": null,
+        "icon": null,
+        "cover_image": "https://static.ghost.org/v5.0.0/images/publication-cover.jpg",
+        "accent_color": "#FF1A75",
+        "locale": "en",
+        "timezone": "Etc/UTC",
+        "url": "http://ghost:2368/",
+        "version": "6.70",
+        "allow_external_signup": true,
+        "site_uuid": "8f6a2c63-fd54-49f0-bd47-516f8fcfe20a"
+      }
+    }
+  }
+}

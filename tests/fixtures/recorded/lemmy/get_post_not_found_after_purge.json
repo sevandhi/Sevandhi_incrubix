@@ -1,0 +1,26 @@
+{
+  "fixture": "lemmy/get_post_not_found_after_purge",
+  "platform": "lemmy",
+  "platform_version": "0.19.20",
+  "description": "Get the purged post.",
+  "recorded_at": "2026-10-14T18:46:33Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "GET",
+    "path": "/api/v3/post?id=1",
+    "headers": {
+      "Authorization": "***REDACTED***"
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "cache-control": "private",
+      "content-type": "application/json"
+    },
+    "elapsed_ms": 11,
+    "json": {
+      "error": "couldnt_find_post"
+    }
+  }
+}

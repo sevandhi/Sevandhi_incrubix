@@ -1,0 +1,48 @@
+{
+  "fixture": "ghost/create_post_title_too_long",
+  "platform": "ghost",
+  "platform_version": "6.70",
+  "description": "Create a post whose title is 256 characters (limit 255).",
+  "recorded_at": "2026-10-14T18:46:40Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "POST",
+    "path": "/ghost/api/admin/posts/?source=html",
+    "headers": {
+      "Authorization": "***REDACTED***"
+    },
+    "json": {
+      "posts": [
+        {
+          "title": "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+          "status": "draft",
+          "html": "<p>x</p>"
+        }
+      ]
+    }
+  },
+  "response": {
+    "status": 422,
+    "headers": {
+      "cache-control": "no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0",
+      "content-type": "application/json; charset=utf-8",
+      "content-version": "v6.70"
+    },
+    "elapsed_ms": 124,
+    "json": {
+      "errors": [
+        {
+          "message": "Validation error, cannot save post.",
+          "context": "Value in [posts.title] exceeds maximum length of 255 characters. posts.title",
+          "type": "ValidationError",
+          "details": null,
+          "property": null,
+          "help": null,
+          "code": null,
+          "id": "a71fe8e2-4258-49e5-b68a-c68eadcc6b41",
+          "ghostErrorCode": null
+        }
+      ]
+    }
+  }
+}

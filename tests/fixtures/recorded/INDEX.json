@@ -1,0 +1,274 @@
+{
+  "generator": "deploy/bootstrap/record_fixtures.py",
+  "platforms": {
+    "lemmy": {
+      "recorded_at": "2026-10-14T18:46:32Z",
+      "index": [
+        {
+          "fixture": "lemmy/login_ok",
+          "status": 200,
+          "description": "Login as the local admin; the JWT is redacted."
+        },
+        {
+          "fixture": "lemmy/login_incorrect",
+          "status": 401,
+          "description": "Login with a wrong password."
+        },
+        {
+          "fixture": "lemmy/create_post_ok",
+          "status": 200,
+          "description": "Create a text post in community ibx_test (body carries an invisible markdown-comment marker used for idempotent lookup)."
+        },
+        {
+          "fixture": "lemmy/get_post_ok",
+          "status": 200,
+          "description": "Get the post by id."
+        },
+        {
+          "fixture": "lemmy/creator_posts_lookup",
+          "status": 200,
+          "description": "Creator's newest posts (how a connector reconciles a publish by its body marker after a timeout)."
+        },
+        {
+          "fixture": "lemmy/live_url_get",
+          "status": 200,
+          "description": "GET the post's ap_id URL (federation disabled) as a live-URL check."
+        },
+        {
+          "fixture": "lemmy/live_url_get_activity_json",
+          "status": 200,
+          "description": "GET the post's ap_id URL with an ActivityPub Accept header."
+        },
+        {
+          "fixture": "lemmy/create_post_title_too_long",
+          "status": 400,
+          "description": "Create a post whose title is 201 characters (limit 200)."
+        },
+        {
+          "fixture": "lemmy/create_post_invalid_token",
+          "status": 401,
+          "description": "Create a post with a malformed/forged bearer token."
+        },
+        {
+          "fixture": "lemmy/create_post_community_not_found",
+          "status": 400,
+          "description": "Create a post in a community id that does not exist."
+        },
+        {
+          "fixture": "lemmy/get_post_not_found",
+          "status": 400,
+          "description": "Get a post id that never existed."
+        },
+        {
+          "fixture": "lemmy/logout_ok",
+          "status": 200,
+          "description": "Log out (revokes that login token)."
+        },
+        {
+          "fixture": "lemmy/create_post_revoked_token",
+          "status": 401,
+          "description": "Create a post with a token that was revoked by logout (Lemmy's equivalent of an expired token)."
+        },
+        {
+          "fixture": "lemmy/delete_post_soft",
+          "status": 200,
+          "description": "Soft-delete the post (reversible; admins still see it)."
+        },
+        {
+          "fixture": "lemmy/get_post_soft_deleted",
+          "status": 200,
+          "description": "Get the soft-deleted post as the admin."
+        },
+        {
+          "fixture": "lemmy/purge_post",
+          "status": 200,
+          "description": "Admin purge: permanent removal (what certification uses on the local instance)."
+        },
+        {
+          "fixture": "lemmy/get_post_not_found_after_purge",
+          "status": 400,
+          "description": "Get the purged post."
+        },
+        {
+          "fixture": "lemmy/site_rate_limit_config",
+          "status": 200,
+          "description": "GET /api/v3/site (trimmed to version + local_site_rate_limit) while the post limit was lowered to 2 per 600 s. Lemmy sends no Retry-After; the reset is derived from this block."
+        },
+        {
+          "fixture": "lemmy/create_post_rate_limited",
+          "status": 400,
+          "description": "Create a post after exceeding the (temporarily lowered) post limit of 2 per 600 s (attempt 3)."
+        }
+      ],
+      "posts_created": 3,
+      "posts_removed": 3,
+      "max_post_lifetime_s": 1.1
+    },
+    "ghost": {
+      "recorded_at": "2026-10-14T18:46:34Z",
+      "index": [
+        {
+          "fixture": "ghost/site",
+          "status": 200,
+          "description": "Public admin site info (used as the health/ready probe)."
+        },
+        {
+          "fixture": "ghost/create_post_ok",
+          "status": 201,
+          "description": "Create and publish a post (HTML source, deterministic slug, no newsletter parameter so no email is sent)."
+        },
+        {
+          "fixture": "ghost/get_post_ok",
+          "status": 200,
+          "description": "Get the post by id."
+        },
+        {
+          "fixture": "ghost/get_post_by_slug_ok",
+          "status": 200,
+          "description": "Get the post by slug (idempotent reconcile after a timeout)."
+        },
+        {
+          "fixture": "ghost/live_url_get",
+          "status": 200,
+          "description": "GET the public post URL."
+        },
+        {
+          "fixture": "ghost/create_post_title_too_long",
+          "status": 422,
+          "description": "Create a post whose title is 256 characters (limit 255)."
+        },
+        {
+          "fixture": "ghost/invalid_token_bad_signature",
+          "status": 401,
+          "description": "Admin API call with a token signed by the wrong secret."
+        },
+        {
+          "fixture": "ghost/expired_token",
+          "status": 401,
+          "description": "Admin API call with a token whose exp is 5 minutes in the past."
+        },
+        {
+          "fixture": "ghost/token_lifetime_too_long",
+          "status": 200,
+          "description": "Admin API call with a token valid for 1 hour (Ghost allows <= 5 min)."
+        },
+        {
+          "fixture": "ghost/unknown_key_id",
+          "status": 401,
+          "description": "Admin API call with a token whose kid is not a known key."
+        },
+        {
+          "fixture": "ghost/get_post_not_found",
+          "status": 404,
+          "description": "Get a post id that never existed."
+        },
+        {
+          "fixture": "ghost/delete_post",
+          "status": 204,
+          "description": "Delete the post (permanent)."
+        },
+        {
+          "fixture": "ghost/get_post_not_found_after_delete",
+          "status": 404,
+          "description": "Get the deleted post."
+        },
+        {
+          "fixture": "ghost/live_url_after_delete",
+          "status": 404,
+          "description": "GET the public URL of the deleted post."
+        },
+        {
+          "fixture": "ghost/delete_post_not_found",
+          "status": 404,
+          "description": "Delete a post that is already gone."
+        },
+        {
+          "fixture": "ghost/session_login_incorrect",
+          "status": 404,
+          "description": "Staff login with an unknown email."
+        },
+        {
+          "fixture": "ghost/session_login_rate_limited",
+          "status": 429,
+          "description": "Repeated failed staff logins for a non-existent user hit Ghost's brute-force limiter (attempt 6)."
+        }
+      ],
+      "posts_created": 1,
+      "posts_removed": 1,
+      "max_post_lifetime_s": 5.7
+    },
+    "discourse": {
+      "recorded_at": "2026-10-14T18:46:41Z",
+      "index": [
+        {
+          "fixture": "discourse/site_basic_info",
+          "status": 200,
+          "description": "Public site basic info (health/enrichment probe)."
+        },
+        {
+          "fixture": "discourse/create_topic_ok",
+          "status": 200,
+          "description": "Create a topic (first post) with an external_id marker."
+        },
+        {
+          "fixture": "discourse/get_topic_ok",
+          "status": 200,
+          "description": "Get the topic."
+        },
+        {
+          "fixture": "discourse/get_topic_by_external_id",
+          "status": 301,
+          "description": "Look up the topic by external_id (idempotent reconcile)."
+        },
+        {
+          "fixture": "discourse/live_url_get",
+          "status": 301,
+          "description": "GET the public topic URL without credentials."
+        },
+        {
+          "fixture": "discourse/create_topic_duplicate_title",
+          "status": 422,
+          "description": "Create a second topic with the same title."
+        },
+        {
+          "fixture": "discourse/create_topic_title_too_long",
+          "status": 422,
+          "description": "Create a topic whose title is 256 characters."
+        },
+        {
+          "fixture": "discourse/create_topic_title_too_short",
+          "status": 422,
+          "description": "Create a topic whose title is below min_topic_title_length."
+        },
+        {
+          "fixture": "discourse/invalid_api_key",
+          "status": 403,
+          "description": "Create a topic with an unknown API key."
+        },
+        {
+          "fixture": "discourse/get_topic_not_found",
+          "status": 404,
+          "description": "Get a topic id that never existed."
+        },
+        {
+          "fixture": "discourse/delete_topic",
+          "status": 200,
+          "description": "Delete the topic (Discourse soft delete: deleted_at is set)."
+        },
+        {
+          "fixture": "discourse/get_topic_after_delete_admin",
+          "status": 200,
+          "description": "Get the deleted topic with the admin key."
+        },
+        {
+          "fixture": "discourse/get_topic_after_delete_public",
+          "status": 404,
+          "description": "Get the deleted topic anonymously."
+        }
+      ],
+      "posts_created": 1,
+      "posts_removed": 1,
+      "max_post_lifetime_s": 1.3
+    }
+  }
+}

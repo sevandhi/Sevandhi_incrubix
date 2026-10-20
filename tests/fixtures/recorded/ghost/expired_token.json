@@ -1,0 +1,39 @@
+{
+  "fixture": "ghost/expired_token",
+  "platform": "ghost",
+  "platform_version": "6.70",
+  "description": "Admin API call with a token whose exp is 5 minutes in the past.",
+  "recorded_at": "2026-10-14T18:46:40Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/?limit=1",
+    "headers": {
+      "Authorization": "***REDACTED***"
+    }
+  },
+  "response": {
+    "status": 401,
+    "headers": {
+      "cache-control": "no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0",
+      "content-type": "application/json; charset=utf-8",
+      "content-version": "v6.70"
+    },
+    "elapsed_ms": 8,
+    "json": {
+      "errors": [
+        {
+          "message": "Invalid token: jwt expired",
+          "context": null,
+          "type": "UnauthorizedError",
+          "details": null,
+          "property": null,
+          "help": null,
+          "code": "INVALID_JWT",
+          "id": "245315e1-c19f-443e-aa36-5af06a0674c5",
+          "ghostErrorCode": null
+        }
+      ]
+    }
+  }
+}

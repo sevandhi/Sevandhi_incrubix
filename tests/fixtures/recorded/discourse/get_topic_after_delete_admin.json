@@ -1,0 +1,313 @@
+{
+  "fixture": "discourse/get_topic_after_delete_admin",
+  "platform": "discourse",
+  "platform_version": "2026.10.0-latest",
+  "description": "Get the deleted topic with the admin key.",
+  "recorded_at": "2026-10-14T18:46:43Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "GET",
+    "path": "/t/8.json",
+    "headers": {
+      "Api-Key": "***REDACTED***",
+      "Api-Username": "ibx_admin"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cache-control": "no-store, must-revalidate, private, max-age=0",
+      "content-type": "application/json; charset=utf-8"
+    },
+    "elapsed_ms": 264,
+    "json": {
+      "post_stream": {
+        "posts": [
+          {
+            "id": 9,
+            "name": null,
+            "username": "ibx_admin",
+            "avatar_template": "/letter_avatar_proxy/v4/letter/i/b4bc9f/{size}.png",
+            "created_at": "2026-10-14T18:46:41.558Z",
+            "cooked": "<p>Fixture topic recorded by the IncuBrix bootstrap on a local test instance.</p>",
+            "post_number": 1,
+            "post_type": 1,
+            "posts_count": 0,
+            "updated_at": "2026-10-14T18:46:41.558Z",
+            "reply_count": 0,
+            "reply_to_post_number": null,
+            "quote_count": 0,
+            "incoming_link_count": 0,
+            "reads": 1,
+            "readers_count": 0,
+            "score": 0,
+            "yours": true,
+            "topic_id": 8,
+            "topic_slug": "ibx-fixture-topic-90fff62e-recorded-locally",
+            "display_username": null,
+            "primary_group_name": null,
+            "flair_name": null,
+            "flair_url": null,
+            "flair_bg_color": null,
+            "flair_color": null,
+            "flair_group_id": null,
+            "badges_granted": [],
+            "version": 1,
+            "can_edit": true,
+            "can_delete": false,
+            "can_recover": true,
+            "can_see_hidden_post": true,
+            "can_wiki": true,
+            "read": true,
+            "user_title": null,
+            "bookmarked": false,
+            "actions_summary": [
+              {
+                "id": 3,
+                "can_act": true
+              },
+              {
+                "id": 4,
+                "can_act": true
+              },
+              {
+                "id": 8,
+                "can_act": true
+              },
+              {
+                "id": 10,
+                "can_act": true
+              },
+              {
+                "id": 7,
+                "can_act": true
+              }
+            ],
+            "moderator": false,
+            "admin": true,
+            "staff": true,
+            "user_id": 1,
+            "hidden": false,
+            "trust_level": 4,
+            "deleted_at": "2026-10-14T18:46:42.844Z",
+            "deleted_by": {
+              "id": 1,
+              "username": "ibx_admin",
+              "name": null,
+              "avatar_template": "/letter_avatar_proxy/v4/letter/i/b4bc9f/{size}.png"
+            },
+            "user_deleted": false,
+            "edit_reason": null,
+            "can_view_edit_history": true,
+            "wiki": false,
+            "reviewable_id": 0,
+            "reviewable_score_count": 0,
+            "reviewable_score_pending_count": 0,
+            "post_url": "/t/ibx-fixture-topic-90fff62e-recorded-locally/8/1",
+            "reactions": [],
+            "current_user_reaction": null,
+            "reaction_users_count": 0,
+            "current_user_used_main_reaction": false,
+            "can_accept_answer": false,
+            "can_unaccept_answer": false,
+            "accepted_answer": false,
+            "topic_accepted_answer": null,
+            "can_vote": false
+          }
+        ],
+        "stream": [
+          9
+        ]
+      },
+      "timeline_lookup": [
+        [
+          1,
+          0
+        ]
+      ],
+      "suggested_topics": [
+        {
+          "fancy_title": "Welcome to IBX local Discourse! :wave:",
+          "id": 5,
+          "title": "Welcome to IBX local Discourse! :wave:",
+          "slug": "welcome-to-ibx-local-discourse",
+          "posts_count": 1,
+          "reply_count": 0,
+          "highest_post_number": 1,
+          "image_url": null,
+          "created_at": "2026-10-14T18:45:22.134Z",
+          "last_posted_at": "2026-10-14T18:45:22.178Z",
+          "bumped": true,
+          "bumped_at": "2026-10-14T18:45:22.178Z",
+          "archetype": "regular",
+          "unseen": false,
+          "pinned": true,
+          "unpinned": null,
+          "excerpt": "We are so glad you joined us. \nHere are some things you can do to get started: \n:speaking_head: Introduce yourself by adding your picture and information about yourself and your interests to your profile. What is one thi&hellip;",
+          "visible": true,
+          "closed": false,
+          "archived": false,
+          "bookmarked": null,
+          "liked": null,
+          "unicode_title": "Welcome to IBX local Discourse! 👋",
+          "tags": [],
+          "tags_descriptions": {},
+          "like_count": 0,
+          "views": 0,
+          "category_id": 4,
+          "featured_link": null,
+          "op_like_count": 0,
+          "has_accepted_answer": false,
+          "posters": [
+            {
+              "extras": "latest single",
+              "description": "Original Poster, Most Recent Poster",
+              "user": {
+                "id": -1,
+                "username": "system",
+                "name": "system",
+                "avatar_template": "/images/discourse-logo-sketch-small.png",
+                "admin": true,
+                "moderator": true,
+                "trust_level": 4
+              }
+            }
+          ]
+        }
+      ],
+      "tags": [],
+      "tags_descriptions": {},
+      "fancy_title": "IBX fixture topic 90fff62e recorded locally",
+      "id": 8,
+      "title": "IBX fixture topic 90fff62e recorded locally",
+      "posts_count": 0,
+      "created_at": "2026-10-14T18:46:41.482Z",
+      "views": 0,
+      "reply_count": 0,
+      "like_count": 0,
+      "last_posted_at": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "has_summary": false,
+      "archetype": "regular",
+      "slug": "ibx-fixture-topic-90fff62e-recorded-locally",
+      "category_id": 5,
+      "word_count": null,
+      "deleted_at": "2026-10-14T18:46:42.889Z",
+      "user_id": 1,
+      "featured_link": null,
+      "pinned_globally": false,
+      "pinned_at": null,
+      "pinned_until": null,
+      "image_url": null,
+      "slow_mode_seconds": 0,
+      "external_id": "ibx-fix90fff62e",
+      "draft": null,
+      "draft_key": "topic_8",
+      "draft_sequence": 0,
+      "posted": false,
+      "unpinned": null,
+      "pinned": false,
+      "current_post_number": 1,
+      "highest_post_number": 1,
+      "last_read_post_number": 0,
+      "last_read_post_id": null,
+      "deleted_by": {
+        "id": 1,
+        "username": "ibx_admin",
+        "name": null,
+        "avatar_template": "/letter_avatar_proxy/v4/letter/i/b4bc9f/{size}.png"
+      },
+      "has_deleted": false,
+      "actions_summary": [
+        {
+          "id": 4,
+          "count": 0,
+          "hidden": false,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "count": 0,
+          "hidden": false,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "count": 0,
+          "hidden": false,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "count": 0,
+          "hidden": false,
+          "can_act": true
+        }
+      ],
+      "chunk_size": 20,
+      "bookmarked": false,
+      "topic_timer": null,
+      "message_bus_last_id": 2,
+      "participant_count": 0,
+      "queued_posts_count": 0,
+      "show_read_indicator": false,
+      "thumbnails": null,
+      "slow_mode_enabled_until": null,
+      "valid_reactions": [
+        "heart",
+        "+1",
+        "laughing",
+        "open_mouth",
+        "clap",
+        "confetti_ball",
+        "hugs"
+      ],
+      "has_accepted_answer": false,
+      "can_create_shared_issue": false,
+      "shared_issue_visible": false,
+      "can_vote": false,
+      "vote_count": 0,
+      "user_voted": false,
+      "discourse_zendesk_plugin_zendesk_id": null,
+      "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+      "details": {
+        "can_edit": true,
+        "notification_level": 3,
+        "notifications_reason_id": 1,
+        "can_move_posts": true,
+        "can_recover": true,
+        "can_remove_allowed_users": true,
+        "can_invite_to": true,
+        "can_invite_via_email": true,
+        "can_reply_as_new_topic": true,
+        "can_flag_topic": true,
+        "can_review_topic": true,
+        "can_close_topic": true,
+        "can_archive_topic": true,
+        "can_split_merge_topic": true,
+        "can_edit_staff_notes": true,
+        "can_toggle_topic_visibility": true,
+        "can_pin_unpin_topic": true,
+        "can_banner_topic": true,
+        "can_moderate_category": true,
+        "can_remove_self_id": 1,
+        "created_by": {
+          "id": 1,
+          "username": "ibx_admin",
+          "name": null,
+          "avatar_template": "/letter_avatar_proxy/v4/letter/i/b4bc9f/{size}.png"
+        },
+        "last_poster": {
+          "id": 1,
+          "username": "ibx_admin",
+          "name": null,
+          "avatar_template": "/letter_avatar_proxy/v4/letter/i/b4bc9f/{size}.png"
+        }
+      },
+      "pending_posts": [],
+      "bookmarks": []
+    }
+  }
+}

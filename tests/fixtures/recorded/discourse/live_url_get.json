@@ -1,0 +1,27 @@
+{
+  "fixture": "discourse/live_url_get",
+  "platform": "discourse",
+  "platform_version": "2026.10.0-latest",
+  "description": "GET the public topic URL without credentials.",
+  "recorded_at": "2026-10-14T18:46:42Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "GET",
+    "path": "/t/8",
+    "headers": {
+      "Accept": "text/html"
+    }
+  },
+  "response": {
+    "status": 301,
+    "headers": {
+      "cache-control": "no-cache, no-store",
+      "content-type": "text/html; charset=utf-8",
+      "location": "http://discourse/t/ibx-fixture-topic-90fff62e-recorded-locally/8"
+    },
+    "elapsed_ms": 66,
+    "text": "",
+    "text_truncated": false,
+    "body_length": 0
+  }
+}

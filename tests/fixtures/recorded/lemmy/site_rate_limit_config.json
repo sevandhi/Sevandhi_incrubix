@@ -1,0 +1,47 @@
+{
+  "fixture": "lemmy/site_rate_limit_config",
+  "platform": "lemmy",
+  "platform_version": "0.19.20",
+  "description": "GET /api/v3/site (trimmed to version + local_site_rate_limit) while the post limit was lowered to 2 per 600 s. Lemmy sends no Retry-After; the reset is derived from this block.",
+  "recorded_at": "2026-10-14T18:46:33Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "GET",
+    "path": "/api/v3/site",
+    "headers": {
+      "Authorization": "***REDACTED***"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cache-control": "private",
+      "content-type": "application/json"
+    },
+    "elapsed_ms": 13,
+    "json": {
+      "version": "0.19.20",
+      "site_view": {
+        "local_site_rate_limit": {
+          "local_site_id": 1,
+          "message": 1000,
+          "message_per_second": 60,
+          "post": 2,
+          "post_per_second": 600,
+          "register": 100,
+          "register_per_second": 3600,
+          "image": 1000,
+          "image_per_second": 60,
+          "comment": 1000,
+          "comment_per_second": 60,
+          "search": 1000,
+          "search_per_second": 60,
+          "published": "2026-10-14T18:44:52.563732Z",
+          "import_user_settings": 1,
+          "import_user_settings_per_second": 86400
+        }
+      }
+    }
+  },
+  "notes": "Body trimmed by the recorder to the rate-limit block; status and headers are as returned."
+}

@@ -1,0 +1,39 @@
+{
+  "fixture": "ghost/invalid_token_bad_signature",
+  "platform": "ghost",
+  "platform_version": "6.70",
+  "description": "Admin API call with a token signed by the wrong secret.",
+  "recorded_at": "2026-10-14T18:46:40Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/?limit=1",
+    "headers": {
+      "Authorization": "***REDACTED***"
+    }
+  },
+  "response": {
+    "status": 401,
+    "headers": {
+      "cache-control": "no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0",
+      "content-type": "application/json; charset=utf-8",
+      "content-version": "v6.70"
+    },
+    "elapsed_ms": 10,
+    "json": {
+      "errors": [
+        {
+          "message": "Invalid token: invalid signature",
+          "context": null,
+          "type": "UnauthorizedError",
+          "details": null,
+          "property": null,
+          "help": null,
+          "code": "INVALID_JWT",
+          "id": "06f54217-a421-4eb6-b805-5b8a4bfc9215",
+          "ghostErrorCode": null
+        }
+      ]
+    }
+  }
+}

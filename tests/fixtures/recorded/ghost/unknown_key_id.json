@@ -1,0 +1,39 @@
+{
+  "fixture": "ghost/unknown_key_id",
+  "platform": "ghost",
+  "platform_version": "6.70",
+  "description": "Admin API call with a token whose kid is not a known key.",
+  "recorded_at": "2026-10-14T18:46:40Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/?limit=1",
+    "headers": {
+      "Authorization": "***REDACTED***"
+    }
+  },
+  "response": {
+    "status": 401,
+    "headers": {
+      "cache-control": "no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0",
+      "content-type": "application/json; charset=utf-8",
+      "content-version": "v6.70"
+    },
+    "elapsed_ms": 6,
+    "json": {
+      "errors": [
+        {
+          "message": "Unknown Admin API Key",
+          "context": null,
+          "type": "UnauthorizedError",
+          "details": null,
+          "property": null,
+          "help": null,
+          "code": "UNKNOWN_ADMIN_API_KEY",
+          "id": "6b0583f8-2a57-4838-a2f5-59fa4b0579f2",
+          "ghostErrorCode": null
+        }
+      ]
+    }
+  }
+}

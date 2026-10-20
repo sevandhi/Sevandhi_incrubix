@@ -1,0 +1,27 @@
+{
+  "fixture": "discourse/delete_topic",
+  "platform": "discourse",
+  "platform_version": "2026.10.0-latest",
+  "description": "Delete the topic (Discourse soft delete: deleted_at is set).",
+  "recorded_at": "2026-10-14T18:46:43Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "DELETE",
+    "path": "/t/8.json",
+    "headers": {
+      "Api-Key": "***REDACTED***",
+      "Api-Username": "ibx_admin"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cache-control": "no-store, must-revalidate, private, max-age=0",
+      "content-type": "text/plain; charset=utf-8"
+    },
+    "elapsed_ms": 347,
+    "text": "",
+    "text_truncated": false,
+    "body_length": 0
+  }
+}

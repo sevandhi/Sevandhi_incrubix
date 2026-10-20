@@ -1,0 +1,26 @@
+{
+  "fixture": "lemmy/logout_ok",
+  "platform": "lemmy",
+  "platform_version": "0.19.20",
+  "description": "Log out (revokes that login token).",
+  "recorded_at": "2026-10-14T18:46:33Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "POST",
+    "path": "/api/v3/user/logout",
+    "headers": {
+      "Authorization": "***REDACTED***"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cache-control": "private",
+      "content-type": "application/json"
+    },
+    "elapsed_ms": 10,
+    "json": {
+      "success": true
+    }
+  }
+}

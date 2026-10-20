@@ -1,0 +1,39 @@
+{
+  "fixture": "ghost/delete_post_not_found",
+  "platform": "ghost",
+  "platform_version": "6.70",
+  "description": "Delete a post that is already gone.",
+  "recorded_at": "2026-10-14T18:46:40Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "DELETE",
+    "path": "/ghost/api/admin/posts/6acfce0b8944510001d130c4/",
+    "headers": {
+      "Authorization": "***REDACTED***"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+      "cache-control": "no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0",
+      "content-type": "application/json; charset=utf-8",
+      "content-version": "v6.70"
+    },
+    "elapsed_ms": 43,
+    "json": {
+      "errors": [
+        {
+          "message": "Resource not found error, cannot delete post.",
+          "context": "Post not found.",
+          "type": "NotFoundError",
+          "details": null,
+          "property": null,
+          "help": null,
+          "code": null,
+          "id": "872bc5c7-d760-43a7-8c4a-f7ba1fc9530c",
+          "ghostErrorCode": null
+        }
+      ]
+    }
+  }
+}

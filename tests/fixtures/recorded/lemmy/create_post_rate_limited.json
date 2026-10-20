@@ -1,0 +1,31 @@
+{
+  "fixture": "lemmy/create_post_rate_limited",
+  "platform": "lemmy",
+  "platform_version": "0.19.20",
+  "description": "Create a post after exceeding the (temporarily lowered) post limit of 2 per 600 s (attempt 3).",
+  "recorded_at": "2026-10-14T18:46:33Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "POST",
+    "path": "/api/v3/post",
+    "headers": {
+      "Authorization": "***REDACTED***"
+    },
+    "json": {
+      "name": "IBX rate limit probe fb3f5429 2",
+      "community_id": 2
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "cache-control": "private",
+      "content-type": "application/json"
+    },
+    "elapsed_ms": 6,
+    "json": {
+      "error": "rate_limit_error"
+    }
+  },
+  "notes": "Lemmy returns HTTP 400 with error=rate_limit_error and no Retry-After/X-RateLimit-* headers."
+}

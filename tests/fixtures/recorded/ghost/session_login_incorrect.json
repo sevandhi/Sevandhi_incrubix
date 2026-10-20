@@ -1,0 +1,43 @@
+{
+  "fixture": "ghost/session_login_incorrect",
+  "platform": "ghost",
+  "platform_version": "6.70",
+  "description": "Staff login with an unknown email.",
+  "recorded_at": "2026-10-14T18:46:41Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "POST",
+    "path": "/ghost/api/admin/session/",
+    "headers": {
+      "Origin": "http://ghost:2368"
+    },
+    "json": {
+      "username": "nobody-607b7337@ghost.ibx.invalid",
+      "password": "***REDACTED***"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+      "cache-control": "no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0",
+      "content-type": "application/json; charset=utf-8",
+      "content-version": "v6.70"
+    },
+    "elapsed_ms": 34,
+    "json": {
+      "errors": [
+        {
+          "message": "There is no user with that email address.",
+          "context": null,
+          "type": "NotFoundError",
+          "details": null,
+          "property": null,
+          "help": null,
+          "code": null,
+          "id": "8f31df10-8230-4b46-9ee4-cc2140570532",
+          "ghostErrorCode": null
+        }
+      ]
+    }
+  }
+}

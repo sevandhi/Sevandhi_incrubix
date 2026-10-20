@@ -1,0 +1,116 @@
+{
+  "fixture": "discourse/create_topic_ok",
+  "platform": "discourse",
+  "platform_version": "2026.10.0-latest",
+  "description": "Create a topic (first post) with an external_id marker.",
+  "recorded_at": "2026-10-14T18:46:41Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "POST",
+    "path": "/posts.json",
+    "headers": {
+      "Api-Key": "***REDACTED***",
+      "Api-Username": "ibx_admin"
+    },
+    "json": {
+      "title": "IBX fixture topic 90fff62e recorded locally",
+      "raw": "Fixture topic recorded by the IncuBrix bootstrap on a local test instance.",
+      "category": 5,
+      "external_id": "ibx-fix90fff62e"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cache-control": "no-cache, no-store",
+      "content-type": "application/json; charset=utf-8"
+    },
+    "elapsed_ms": 586,
+    "json": {
+      "id": 9,
+      "name": null,
+      "username": "ibx_admin",
+      "avatar_template": "/letter_avatar_proxy/v4/letter/i/b4bc9f/{size}.png",
+      "created_at": "2026-10-14T18:46:41.558Z",
+      "cooked": "<p>Fixture topic recorded by the IncuBrix bootstrap on a local test instance.</p>",
+      "post_number": 1,
+      "post_type": 1,
+      "posts_count": 1,
+      "updated_at": "2026-10-14T18:46:41.558Z",
+      "reply_count": 0,
+      "reply_to_post_number": null,
+      "quote_count": 0,
+      "incoming_link_count": 0,
+      "reads": 0,
+      "readers_count": 0,
+      "score": 0,
+      "yours": true,
+      "topic_id": 8,
+      "topic_slug": "ibx-fixture-topic-90fff62e-recorded-locally",
+      "display_username": null,
+      "primary_group_name": null,
+      "flair_name": null,
+      "flair_url": null,
+      "flair_bg_color": null,
+      "flair_color": null,
+      "flair_group_id": null,
+      "badges_granted": [],
+      "version": 1,
+      "can_edit": true,
+      "can_delete": false,
+      "can_recover": false,
+      "can_see_hidden_post": true,
+      "can_wiki": true,
+      "user_title": null,
+      "bookmarked": false,
+      "raw": "Fixture topic recorded by the IncuBrix bootstrap on a local test instance.",
+      "actions_summary": [
+        {
+          "id": 3,
+          "can_act": true
+        },
+        {
+          "id": 4,
+          "can_act": true
+        },
+        {
+          "id": 8,
+          "can_act": true
+        },
+        {
+          "id": 10,
+          "can_act": true
+        },
+        {
+          "id": 7,
+          "can_act": true
+        }
+      ],
+      "moderator": false,
+      "admin": true,
+      "staff": true,
+      "user_id": 1,
+      "draft_sequence": 0,
+      "hidden": false,
+      "trust_level": 4,
+      "deleted_at": null,
+      "user_deleted": false,
+      "edit_reason": null,
+      "can_view_edit_history": true,
+      "wiki": false,
+      "reviewable_id": null,
+      "reviewable_score_count": 0,
+      "reviewable_score_pending_count": 0,
+      "post_url": "/t/ibx-fixture-topic-90fff62e-recorded-locally/8/1",
+      "reactions": [],
+      "current_user_reaction": null,
+      "reaction_users_count": 0,
+      "current_user_used_main_reaction": false,
+      "can_accept_answer": false,
+      "can_unaccept_answer": false,
+      "accepted_answer": false,
+      "topic_accepted_answer": null,
+      "can_vote": false
+    }
+  }
+}

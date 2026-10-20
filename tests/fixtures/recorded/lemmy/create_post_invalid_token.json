@@ -1,0 +1,30 @@
+{
+  "fixture": "lemmy/create_post_invalid_token",
+  "platform": "lemmy",
+  "platform_version": "0.19.20",
+  "description": "Create a post with a malformed/forged bearer token.",
+  "recorded_at": "2026-10-14T18:46:33Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "POST",
+    "path": "/api/v3/post",
+    "headers": {
+      "Authorization": "***REDACTED***"
+    },
+    "json": {
+      "name": "IBX invalid token fb3f5429",
+      "community_id": 2
+    }
+  },
+  "response": {
+    "status": 401,
+    "headers": {
+      "cache-control": "private",
+      "content-type": "application/json"
+    },
+    "elapsed_ms": 2,
+    "json": {
+      "error": "incorrect_login"
+    }
+  }
+}

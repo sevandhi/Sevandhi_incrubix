@@ -1,0 +1,10 @@
+key: fakeassist
+version: 0.0.1
+tier: assisted
+auth: none
+surfaces:
+  - key: submission
+    content_types: [text, link]
+    spec: {title_max_chars: 80}
+capabilities: [assist]
+instance_param: submit_url

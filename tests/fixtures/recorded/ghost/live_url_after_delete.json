@@ -1,0 +1,26 @@
+{
+  "fixture": "ghost/live_url_after_delete",
+  "platform": "ghost",
+  "platform_version": "6.70",
+  "description": "GET the public URL of the deleted post.",
+  "recorded_at": "2026-10-14T18:46:40Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "GET",
+    "path": "/ibx-fixture-607b7337/",
+    "headers": {
+      "Accept": "text/html"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+      "cache-control": "no-cache, max-age=0, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0",
+      "content-type": "text/html; charset=utf-8"
+    },
+    "elapsed_ms": 18,
+    "text": "<!DOCTYPE html>\n<html class=\"no-js\" lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n\n    <title>404 — Page not found</title>\n\n    <meta name=\"viewport\" content=\"user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1\">\n    <meta name=\"mobile-web-app-capable\" content=\"yes\" />\n    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\" />\n\n    <link rel=\"stylesheet\" href=\"/public/ghost.css?v=aHP3I2VXEymsLMTa\"/>\n\n  </head>\n  <body>\n    <main role=\"main\" id=\"main\">\n      <div class=\"gh-app\">\n          <div class=\"gh-viewport\">\n              <div class=\"gh-view\">\n                <se",
+    "text_truncated": true,
+    "body_length": 1155
+  }
+}

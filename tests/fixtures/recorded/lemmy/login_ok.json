@@ -1,0 +1,30 @@
+{
+  "fixture": "lemmy/login_ok",
+  "platform": "lemmy",
+  "platform_version": "0.19.20",
+  "description": "Login as the local admin; the JWT is redacted.",
+  "recorded_at": "2026-10-14T18:46:32Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "POST",
+    "path": "/api/v3/user/login",
+    "headers": {},
+    "json": {
+      "username_or_email": "ibx_admin",
+      "password": "***REDACTED***"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cache-control": "public, max-age=60",
+      "content-type": "application/json"
+    },
+    "elapsed_ms": 446,
+    "json": {
+      "jwt": "***REDACTED***",
+      "registration_created": false,
+      "verify_email_sent": false
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "fixture": "lemmy/purge_post",
+  "platform": "lemmy",
+  "platform_version": "0.19.20",
+  "description": "Admin purge: permanent removal (what certification uses on the local instance).",
+  "recorded_at": "2026-10-14T18:46:33Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "POST",
+    "path": "/api/v3/admin/purge/post",
+    "headers": {
+      "Authorization": "***REDACTED***"
+    },
+    "json": {
+      "post_id": 1,
+      "reason": "ibx fixture cleanup"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cache-control": "private",
+      "content-type": "application/json"
+    },
+    "elapsed_ms": 44,
+    "json": {
+      "success": true
+    }
+  }
+}

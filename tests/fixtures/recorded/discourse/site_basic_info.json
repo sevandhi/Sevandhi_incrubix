@@ -1,0 +1,35 @@
+{
+  "fixture": "discourse/site_basic_info",
+  "platform": "discourse",
+  "platform_version": "2026.10.0-latest",
+  "description": "Public site basic info (health/enrichment probe).",
+  "recorded_at": "2026-10-14T18:46:41Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "GET",
+    "path": "/site/basic-info.json",
+    "headers": {}
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cache-control": "no-cache, no-store",
+      "content-type": "application/json; charset=utf-8"
+    },
+    "elapsed_ms": 21,
+    "json": {
+      "logo_url": "http://discourse/images/discourse-logo-sketch.png",
+      "logo_small_url": "http://discourse/images/discourse-logo-sketch-small.png",
+      "apple_touch_icon_url": "http://discourse/uploads/default/optimized/1X/_b68166f4bb46bfd2d40d915426ff6a39607e4ea_2_180x180.png",
+      "favicon_url": "http://discourse/uploads/default/optimized/1X/_b68166f4bb46bfd2d40d915426ff6a39607e4ea_2_32x32.png",
+      "title": "IBX local Discourse",
+      "description": "",
+      "header_primary_color": "333",
+      "header_background_color": "fff",
+      "login_required": false,
+      "locale": "en",
+      "include_in_discourse_discover": false,
+      "mobile_logo_url": "http://discourse/images/discourse-logo-sketch.png"
+    }
+  }
+}

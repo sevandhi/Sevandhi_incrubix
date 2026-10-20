@@ -1,0 +1,26 @@
+{
+  "fixture": "ghost/live_url_get",
+  "platform": "ghost",
+  "platform_version": "6.70",
+  "description": "GET the public post URL.",
+  "recorded_at": "2026-10-14T18:46:40Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "GET",
+    "path": "/ibx-fixture-607b7337/",
+    "headers": {
+      "Accept": "text/html"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cache-control": "public, max-age=0",
+      "content-type": "text/html; charset=utf-8"
+    },
+    "elapsed_ms": 5148,
+    "text": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n\n    <title>IBX fixture post 607b7337</title>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    \n    <link rel=\"preload\" as=\"style\" href=\"/assets/built/screen.css?v=xPGozQS2SFMZDlmQ\">\n    <link rel=\"preload\" as=\"script\" href=\"/assets/built/source.js?v=33sa4-qy5thAFPQH\">\n    \n    <link rel=\"preload\" as=\"font\" type=\"font/woff2\" href=\"/assets/fonts/inter-roman.woff2?v=OecsB5TBLy27FKD2\" crossorigin=\"anonymous\">\n<style>\n    @font-face {\n        font-family: \"Inter\";\n        font-style: normal;\n        fo",
+    "text_truncated": true,
+    "body_length": 17193
+  }
+}

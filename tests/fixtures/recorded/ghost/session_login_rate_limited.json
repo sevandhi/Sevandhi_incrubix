@@ -1,0 +1,44 @@
+{
+  "fixture": "ghost/session_login_rate_limited",
+  "platform": "ghost",
+  "platform_version": "6.70",
+  "description": "Repeated failed staff logins for a non-existent user hit Ghost's brute-force limiter (attempt 6).",
+  "recorded_at": "2026-10-14T18:46:41Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "POST",
+    "path": "/ghost/api/admin/session/",
+    "headers": {
+      "Origin": "http://ghost:2368"
+    },
+    "json": {
+      "username": "nobody-607b7337@ghost.ibx.invalid",
+      "password": "***REDACTED***"
+    }
+  },
+  "response": {
+    "status": 429,
+    "headers": {
+      "cache-control": "no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0",
+      "content-type": "application/json; charset=utf-8",
+      "content-version": "v6.70"
+    },
+    "elapsed_ms": 19,
+    "json": {
+      "errors": [
+        {
+          "message": "Too many login attempts. Please wait 10 minutes before trying again, or reset your password.",
+          "context": "Too many login attempts.",
+          "type": "TooManyRequestsError",
+          "details": null,
+          "property": null,
+          "help": "Too many login attempts.",
+          "code": null,
+          "id": "7e6336b5-2b7b-4456-aa62-b9f26440bfaf",
+          "ghostErrorCode": null
+        }
+      ]
+    }
+  },
+  "notes": "Ghost's Admin API with an integration key had no rate limit locally; this is the only 429 the local instance produces. The owner account is not affected."
+}

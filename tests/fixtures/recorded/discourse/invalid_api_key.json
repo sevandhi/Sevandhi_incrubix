@@ -1,0 +1,35 @@
+{
+  "fixture": "discourse/invalid_api_key",
+  "platform": "discourse",
+  "platform_version": "2026.10.0-latest",
+  "description": "Create a topic with an unknown API key.",
+  "recorded_at": "2026-10-14T18:46:42Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "POST",
+    "path": "/posts.json",
+    "headers": {
+      "Api-Key": "***REDACTED***",
+      "Api-Username": "ibx_admin"
+    },
+    "json": {
+      "title": "IBX fixture topic 90fff62e recorded locally",
+      "raw": "Fixture topic recorded by the IncuBrix bootstrap on a local test instance.",
+      "category": 5,
+      "external_id": "ibx-fix90fff62ec"
+    }
+  },
+  "response": {
+    "status": 403,
+    "headers": {
+      "content-type": "application/json; charset=utf-8"
+    },
+    "elapsed_ms": 16,
+    "json": {
+      "errors": [
+        "You are not permitted to view the requested resource. The API username or key is invalid."
+      ],
+      "error_type": "invalid_access"
+    }
+  }
+}

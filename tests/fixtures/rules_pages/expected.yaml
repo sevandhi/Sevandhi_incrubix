@@ -1,0 +1,200 @@
+# Hand-written expected posting rules for each fixture page (null = the page does not state that rule).
+# The pages are our own text, written for tests; they are not copies of any real community.
+01_indie_makers_forum:
+  expected:
+    automation_allowed: false
+    disclosure_required: null
+    frequency_cap: 1/P1D
+    language: null
+    link_policy: any
+    self_promo: disallowed
+  language_of_page: en
+02_python_learners:
+  expected:
+    automation_allowed: null
+    disclosure_required: null
+    frequency_cap: 3/P7D
+    language: null
+    link_policy: null
+    self_promo: disallowed
+  language_of_page: en
+03_creator_economy_lemmy:
+  expected:
+    automation_allowed: true
+    disclosure_required: true
+    frequency_cap: null
+    language: null
+    link_policy: no_shorteners
+    self_promo: ratio(10)
+  language_of_page: en
+04_emprendedores_digitales_es:
+  expected:
+    automation_allowed: false
+    disclosure_required: true
+    frequency_cap: 1/P7D
+    language: es
+    link_policy: null
+    self_promo: disallowed
+  language_of_page: es
+05_selbststaendige_kreative_de:
+  expected:
+    automation_allowed: null
+    disclosure_required: true
+    frequency_cap: 2/P7D
+    language: de
+    link_policy: no_shorteners
+    self_promo: disallowed
+  language_of_page: de
+06_videastes_independants_fr:
+  expected:
+    automation_allowed: false
+    disclosure_required: null
+    frequency_cap: 1/P7D
+    language: fr
+    link_policy: null
+    self_promo: disallowed
+  language_of_page: fr
+07_saas_founders:
+  expected:
+    automation_allowed: true
+    disclosure_required: null
+    frequency_cap: 2/P1D
+    language: null
+    link_policy: any
+    self_promo: allowed
+  language_of_page: en
+08_ai_art_community:
+  expected:
+    automation_allowed: false
+    disclosure_required: true
+    frequency_cap: 5/P1D
+    language: null
+    link_policy: none
+    self_promo: null
+  language_of_page: en
+09_devops_minimal:
+  expected:
+    automation_allowed: null
+    disclosure_required: null
+    frequency_cap: null
+    language: null
+    link_policy: null
+    self_promo: null
+  language_of_page: en
+10_photography_club:
+  expected:
+    automation_allowed: null
+    disclosure_required: null
+    frequency_cap: 1/P1D
+    language: en
+    link_policy: null
+    self_promo: disallowed
+  language_of_page: en
+11_nonprofit_tech:
+  expected:
+    automation_allowed: null
+    disclosure_required: true
+    frequency_cap: null
+    language: null
+    link_policy: any
+    self_promo: disallowed
+  language_of_page: en
+12_criadores_br_pt:
+  expected:
+    automation_allowed: null
+    disclosure_required: null
+    frequency_cap: 1/P7D
+    language: pt
+    link_policy: no_shorteners
+    self_promo: disallowed
+  language_of_page: pt
+13_javascript_weekly:
+  expected:
+    automation_allowed: null
+    disclosure_required: null
+    frequency_cap: 1/P3D
+    language: null
+    link_policy: no_shorteners
+    self_promo: disallowed
+  language_of_page: en
+14_sviluppatori_indie_it:
+  expected:
+    automation_allowed: null
+    disclosure_required: null
+    frequency_cap: 1/P7D
+    language: it
+    link_policy: null
+    self_promo: disallowed
+  language_of_page: it
+15_podcast_hosts:
+  expected:
+    automation_allowed: false
+    disclosure_required: null
+    frequency_cap: null
+    language: null
+    link_policy: null
+    self_promo: disallowed
+  language_of_page: en
+16_data_science_study:
+  expected:
+    automation_allowed: null
+    disclosure_required: true
+    frequency_cap: 2/P1D
+    language: en
+    link_policy: null
+    self_promo: null
+  language_of_page: en
+17_newsletter_writers:
+  expected:
+    automation_allowed: true
+    disclosure_required: null
+    frequency_cap: 1/P7D
+    language: null
+    link_policy: no_shorteners
+    self_promo: allowed
+  language_of_page: en
+18_game_dev_lemmy:
+  expected:
+    automation_allowed: false
+    disclosure_required: true
+    frequency_cap: null
+    language: en
+    link_policy: null
+    self_promo: ratio(10)
+  language_of_page: en
+19_home_cooking:
+  expected:
+    automation_allowed: null
+    disclosure_required: null
+    frequency_cap: null
+    language: null
+    link_policy: none
+    self_promo: allowed
+  language_of_page: en
+20_strict_finance:
+  expected:
+    automation_allowed: false
+    disclosure_required: null
+    frequency_cap: 1/P7D
+    language: en
+    link_policy: none
+    self_promo: disallowed
+  language_of_page: en
+21_redacteurs_ia_fr:
+  expected:
+    automation_allowed: null
+    disclosure_required: true
+    frequency_cap: 3/P7D
+    language: fr
+    link_policy: no_shorteners
+    self_promo: null
+  language_of_page: fr
+22_open_source_maintainers:
+  expected:
+    automation_allowed: false
+    disclosure_required: null
+    frequency_cap: null
+    language: null
+    link_policy: null
+    self_promo: allowed
+  language_of_page: en

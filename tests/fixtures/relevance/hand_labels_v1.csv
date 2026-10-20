@@ -1,0 +1,60 @@
+seed_row_no,name,url,label,labeler,rationale
+1,Technology (!technology@lemmy.world),https://lemmy.world/c/technology,3,"AI-drafted, pending human review",general tech news; AI is one topic
+4,Machine Learning (!machinelearning@lemmy.world),https://lemmy.world/c/machinelearning,4,"AI-drafted, pending human review",AI/ML but research-leaning and tiny
+7,Blender (!blender@lemmy.world),https://lemmy.world/c/blender,3,"AI-drafted, pending human review",3D/animation creators; video-adjacent
+10,Self Promotion (!selfpromo@lemmy.world),https://lemmy.world/c/selfpromo,4,"AI-drafted, pending human review",creators' self-promotion community
+13,Online Marketing & Digital Marketing (!onlinemarketing@lemmy.world),https://lemmy.world/c/onlinemarketing,5,"AI-drafted, pending human review",digital marketing
+16,Technology (!technology@lemmy.ml),https://lemmy.ml/c/technology,3,"AI-drafted, pending human review",general tech news
+19,Youtube (!youtube@lemmy.ml),https://lemmy.ml/c/youtube,5,"AI-drafted, pending human review",YouTube video creators
+22,Self Promotion (!selfpromotion@lemmy.ml),https://lemmy.ml/c/selfpromotion,4,"AI-drafted, pending human review",creators' self-promotion community
+25,startups (!startups@lemmy.ml),https://lemmy.ml/c/startups,5,"AI-drafted, pending human review",startups and founders
+28,Blender (!blender@lemmy.ml),https://lemmy.ml/c/blender,3,"AI-drafted, pending human review",3D/animation creators; video-adjacent
+31,AI - Artificial intelligence (!Aii@programming.dev),https://programming.dev/c/Aii,5,"AI-drafted, pending human review",AI community
+34,LocalLLaMA (!localllama@sh.itjust.works),https://sh.itjust.works/c/localllama,4,"AI-drafted, pending human review","AI, technical local-LLM focus"
+37,Writing (!writing@sh.itjust.works),https://sh.itjust.works/c/writing,3,"AI-drafted, pending human review",writers; creators-adjacent
+40,Technology (!technology@lemmy.zip),https://lemmy.zip/c/technology,3,"AI-drafted, pending human review",general tech news
+43,Künstliche Intelligenz (!kintelligenz@feddit.org),https://feddit.org/c/kintelligenz,4,"AI-drafted, pending human review","AI, German-language"
+46,Hugging Face Forums,https://discuss.huggingface.co/,4,"AI-drafted, pending human review",AI developer forum
+49,Google AI Developers Forum,https://discuss.ai.google.dev/,4,"AI-drafted, pending human review",AI developer forum
+52,n8n Community,https://community.n8n.io/,4,"AI-drafted, pending human review",automation/no-code/AI agents (SaaS)
+55,LangChain Forum,https://forum.langchain.com/,4,"AI-drafted, pending human review",LLM developer forum
+58,Bubble Forum,https://forum.bubble.io/,4,"AI-drafted, pending human review",no-code SaaS builders and founders
+61,freeCodeCamp Forum,https://forum.freecodecamp.org/,2,"AI-drafted, pending human review",coding learners; little overlap
+64,Discourse Meta,https://meta.discourse.org/,2,"AI-drafted, pending human review",Discourse product support; community builders
+67,Shotcut Forum,https://forum.shotcut.org/,4,"AI-drafted, pending human review",video editing software forum
+70,Framacolibri (Framasoft/PeerTube forum),https://framacolibri.org/,2,"AI-drafted, pending human review",Framasoft/PeerTube support forum (French)
+73,Activepieces Community,https://community.activepieces.com/,3,"AI-drafted, pending human review",automation tool support forum
+76,ComfyUI Forum,https://forum.comfy.org/,4,"AI-drafted, pending human review",AI image/video generation
+79,Adalo Forum,https://forum.adalo.com/,3,"AI-drafted, pending human review",no-code app builder support
+82,Perplexity API Platform Forum,https://community.perplexity.ai/,3,"AI-drafted, pending human review",AI API developer support
+85,DEV Community #ai,https://dev.to/t/ai,5,"AI-drafted, pending human review",AI tag on DEV
+88,DEV Community #genai,https://dev.to/t/genai,5,"AI-drafted, pending human review",generative AI tag on DEV
+91,DEV Community #saas,https://dev.to/t/saas,5,"AI-drafted, pending human review",SaaS tag on DEV
+94,DEV Community #marketing,https://dev.to/t/marketing,4,"AI-drafted, pending human review",marketing tag on DEV
+97,DEV Community #contentcreation,https://dev.to/t/contentcreation,4,"AI-drafted, pending human review",content creation tag on DEV
+100,MakerTube (PeerTube),https://makertube.net/,3,"AI-drafted, pending human review",makers' video platform
+103,videos.trom.tf (PeerTube),https://videos.trom.tf/,2,"AI-drafted, pending human review",science/tech video instance
+106,Exode (PeerTube),https://exode.me/,2,"AI-drafted, pending human review",art video instance; bans AI content
+109,Watch MakeArmy (PeerTube),https://watch.makearmy.io/,2,"AI-drafted, pending human review",makers how-to video instance
+112,PeerTube TeDomum (PeerTube),https://video.tedomum.net/,2,"AI-drafted, pending human review",general video instance
+115,Rands Leadership Slack,https://randsinrepose.com/welcome-to-rands-leadership-slack/,3,"AI-drafted, pending human review",leaders and managers; some founders
+118,DataTalks.Club Slack,https://datatalks.club/slack.html,4,"AI-drafted, pending human review",AI/ML/data community
+121,Superpath Slack (content marketing),https://www.superpath.co/,5,"AI-drafted, pending human review",content marketing community
+124,Hacker News (link submissions),https://news.ycombinator.com/,4,"AI-drafted, pending human review","tech founders, broad"
+127,BetaList,https://betalist.com/,5,"AI-drafted, pending human review",startup launch directory
+130,Microlaunch,https://microlaunch.net/,5,"AI-drafted, pending human review",maker/SaaS launch site
+133,SaaSHub,https://www.saashub.com/,4,"AI-drafted, pending human review",SaaS directory
+136,Future Tools,https://www.futuretools.io/,5,"AI-drafted, pending human review",AI tools directory
+139,StartupBase,https://startupbase.io/,4,"AI-drafted, pending human review",startup directory
+142,Echo JS,https://www.echojs.com/,1,"AI-drafted, pending human review",JavaScript news; off-audience
+145,Hashnode,https://hashnode.com/,3,"AI-drafted, pending human review",developer blogging
+148,awesome-generative-ai (GitHub list),https://github.com/steven2358/awesome-generative-ai,4,"AI-drafted, pending human review",generative AI list
+151,AI Agents Directory,https://aiagentsdirectory.com/,4,"AI-drafted, pending human review",AI agents directory
+154,Insidr.ai,https://www.insidr.ai/,4,"AI-drafted, pending human review",AI tools directory
+157,OpenAlternative,https://openalternative.co/,3,"AI-drafted, pending human review",open-source alternatives to SaaS
+160,Write.as,https://write.as/,3,"AI-drafted, pending human review",writers/bloggers platform
+163,Startup Fame,https://startupfa.me/,4,"AI-drafted, pending human review",startup directory
+166,AI Valley,https://aivalley.ai/submit-tool/,4,"AI-drafted, pending human review",AI tools directory
+169,Podcast Index,https://podcastindex.org/,3,"AI-drafted, pending human review",podcast directory
+172,IndexNow,https://www.indexnow.org/,2,"AI-drafted, pending human review","SEO ping API, not a community"
+175,Ping-o-Matic,https://pingomatic.com/,1,"AI-drafted, pending human review",blog ping service

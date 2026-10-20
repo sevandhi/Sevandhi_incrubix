@@ -1,0 +1,56 @@
+{
+  "fixture": "lemmy/live_url_get",
+  "platform": "lemmy",
+  "platform_version": "0.19.20",
+  "description": "GET the post's ap_id URL (federation disabled) as a live-URL check.",
+  "recorded_at": "2026-10-14T18:46:33Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "GET",
+    "path": "/post/1",
+    "headers": {
+      "Accept": "text/html,application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cache-control": "public, max-age=60",
+      "content-type": "application/activity+json"
+    },
+    "elapsed_ms": 19,
+    "json": {
+      "@context": [
+        "https://join-lemmy.org/context.json",
+        "https://www.w3.org/ns/activitystreams"
+      ],
+      "type": "Page",
+      "id": "http://lemmy:8536/post/1",
+      "attributedTo": "http://lemmy:8536/u/ibx_admin",
+      "to": [
+        "http://lemmy:8536/c/ibx_test",
+        "https://www.w3.org/ns/activitystreams#Public"
+      ],
+      "name": "IBX fixture post fb3f5429",
+      "cc": [],
+      "content": "<p>Fixture post recorded by the IncuBrix bootstrap.</p>\n",
+      "mediaType": "text/html",
+      "source": {
+        "content": "Fixture post recorded by the IncuBrix bootstrap.\n\n[//]: # (ibx-fixfb3f5429)\n",
+        "mediaType": "text/markdown"
+      },
+      "attachment": [],
+      "sensitive": false,
+      "published": "2026-10-14T18:46:33.188905Z",
+      "audience": "http://lemmy:8536/c/ibx_test",
+      "tag": [
+        {
+          "href": "http://lemmy:8536/post/1",
+          "name": "#ibx_test",
+          "type": "Hashtag"
+        }
+      ]
+    }
+  },
+  "notes": "ap_id is built from the configured hostname (lemmy:8536). This records what the backend returns; the human-facing page is served by lemmy-ui (profile `ui`)."
+}

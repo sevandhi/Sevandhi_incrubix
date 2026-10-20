@@ -1,0 +1,16 @@
+key: fakeforum
+version: 0.0.1
+tier: native
+auth: api_key
+surfaces:
+  - key: topic
+    content_types: [text, link]
+    spec: {title_max_chars: 120, body_max_chars: 5000, links_allowed: true}
+rate_limits:
+  per_connection: {requests: 1000, per_seconds: 60}
+capabilities: [publish, status, delete, metrics]
+error_map:
+  "401": CONNECTION_AUTH_EXPIRED
+  "422": PLATFORM_CONTENT_REJECTED
+  "429": PLATFORM_RATE_LIMIT
+instance_param: base_url

@@ -1,0 +1,28 @@
+{
+  "fixture": "lemmy/login_incorrect",
+  "platform": "lemmy",
+  "platform_version": "0.19.20",
+  "description": "Login with a wrong password.",
+  "recorded_at": "2026-10-14T18:46:33Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "POST",
+    "path": "/api/v3/user/login",
+    "headers": {},
+    "json": {
+      "username_or_email": "ibx_admin",
+      "password": "***REDACTED***"
+    }
+  },
+  "response": {
+    "status": 401,
+    "headers": {
+      "cache-control": "public, max-age=60",
+      "content-type": "application/json"
+    },
+    "elapsed_ms": 437,
+    "json": {
+      "error": "incorrect_login"
+    }
+  }
+}

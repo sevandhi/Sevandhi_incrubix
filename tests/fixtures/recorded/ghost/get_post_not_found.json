@@ -1,0 +1,39 @@
+{
+  "fixture": "ghost/get_post_not_found",
+  "platform": "ghost",
+  "platform_version": "6.70",
+  "description": "Get a post id that never existed.",
+  "recorded_at": "2026-10-14T18:46:40Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/000000000000000000000000/",
+    "headers": {
+      "Authorization": "***REDACTED***"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+      "cache-control": "no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0",
+      "content-type": "application/json; charset=utf-8",
+      "content-version": "v6.70"
+    },
+    "elapsed_ms": 50,
+    "json": {
+      "errors": [
+        {
+          "message": "Resource not found error, cannot read post.",
+          "context": "Post not found.",
+          "type": "NotFoundError",
+          "details": null,
+          "property": null,
+          "help": null,
+          "code": null,
+          "id": "34752283-702c-49eb-8502-2497113fa38a",
+          "ghostErrorCode": null
+        }
+      ]
+    }
+  }
+}

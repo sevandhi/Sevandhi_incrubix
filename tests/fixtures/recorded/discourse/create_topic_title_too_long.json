@@ -1,0 +1,36 @@
+{
+  "fixture": "discourse/create_topic_title_too_long",
+  "platform": "discourse",
+  "platform_version": "2026.10.0-latest",
+  "description": "Create a topic whose title is 256 characters.",
+  "recorded_at": "2026-10-14T18:46:42Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "POST",
+    "path": "/posts.json",
+    "headers": {
+      "Api-Key": "***REDACTED***",
+      "Api-Username": "ibx_admin"
+    },
+    "json": {
+      "title": "Long title xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "raw": "Fixture topic recorded by the IncuBrix bootstrap on a local test instance.",
+      "category": 5
+    }
+  },
+  "response": {
+    "status": 422,
+    "headers": {
+      "cache-control": "no-cache, no-store",
+      "content-type": "application/json; charset=utf-8"
+    },
+    "elapsed_ms": 101,
+    "json": {
+      "action": "create_post",
+      "errors": [
+        "Title is too long (maximum is 255 characters)",
+        "Title seems unclear, one or more words is very long?"
+      ]
+    }
+  }
+}

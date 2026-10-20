@@ -1,0 +1,96 @@
+{
+  "fixture": "lemmy/create_post_ok",
+  "platform": "lemmy",
+  "platform_version": "0.19.20",
+  "description": "Create a text post in community ibx_test (body carries an invisible markdown-comment marker used for idempotent lookup).",
+  "recorded_at": "2026-10-14T18:46:33Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "POST",
+    "path": "/api/v3/post",
+    "headers": {
+      "Authorization": "***REDACTED***"
+    },
+    "json": {
+      "name": "IBX fixture post fb3f5429",
+      "community_id": 2,
+      "body": "Fixture post recorded by the IncuBrix bootstrap.\n\n[//]: # (ibx-fixfb3f5429)\n"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cache-control": "private",
+      "content-type": "application/json"
+    },
+    "elapsed_ms": 98,
+    "json": {
+      "post_view": {
+        "post": {
+          "id": 1,
+          "name": "IBX fixture post fb3f5429",
+          "body": "Fixture post recorded by the IncuBrix bootstrap.\n\n[//]: # (ibx-fixfb3f5429)\n",
+          "creator_id": 2,
+          "community_id": 2,
+          "removed": false,
+          "locked": false,
+          "published": "2026-10-14T18:46:33.188905Z",
+          "deleted": false,
+          "nsfw": false,
+          "ap_id": "http://lemmy:8536/post/1",
+          "local": true,
+          "language_id": 0,
+          "featured_community": false,
+          "featured_local": false
+        },
+        "creator": {
+          "id": 2,
+          "name": "ibx_admin",
+          "banned": false,
+          "published": "2026-10-14T18:44:51.982079Z",
+          "actor_id": "http://lemmy:8536/u/ibx_admin",
+          "local": true,
+          "deleted": false,
+          "bot_account": false,
+          "instance_id": 1
+        },
+        "community": {
+          "id": 2,
+          "name": "ibx_test",
+          "title": "IBX test ibx_test",
+          "description": "Local test community (IncuBrix).",
+          "removed": false,
+          "published": "2026-10-14T18:44:58.541337Z",
+          "deleted": false,
+          "nsfw": false,
+          "actor_id": "http://lemmy:8536/c/ibx_test",
+          "local": true,
+          "hidden": false,
+          "posting_restricted_to_mods": false,
+          "instance_id": 1,
+          "visibility": "Public"
+        },
+        "creator_banned_from_community": false,
+        "banned_from_community": false,
+        "creator_is_moderator": true,
+        "creator_is_admin": true,
+        "counts": {
+          "post_id": 1,
+          "comments": 0,
+          "score": 1,
+          "upvotes": 1,
+          "downvotes": 0,
+          "published": "2026-10-14T18:46:33.188905Z",
+          "newest_comment_time": "2026-10-14T18:46:33.188905Z"
+        },
+        "subscribed": "Subscribed",
+        "saved": false,
+        "read": true,
+        "hidden": false,
+        "creator_blocked": false,
+        "my_vote": 1,
+        "unread_comments": 0
+      }
+    }
+  }
+}

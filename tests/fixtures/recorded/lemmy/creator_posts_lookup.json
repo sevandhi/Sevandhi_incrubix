@@ -1,0 +1,184 @@
+{
+  "fixture": "lemmy/creator_posts_lookup",
+  "platform": "lemmy",
+  "platform_version": "0.19.20",
+  "description": "Creator's newest posts (how a connector reconciles a publish by its body marker after a timeout).",
+  "recorded_at": "2026-10-14T18:46:33Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "GET",
+    "path": "/api/v3/user?username=ibx_admin&sort=New&limit=5",
+    "headers": {
+      "Authorization": "***REDACTED***"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "cache-control": "private",
+      "content-type": "application/json"
+    },
+    "elapsed_ms": 89,
+    "json": {
+      "person_view": {
+        "person": {
+          "id": 2,
+          "name": "ibx_admin",
+          "banned": false,
+          "published": "2026-10-14T18:44:51.982079Z",
+          "actor_id": "http://lemmy:8536/u/ibx_admin",
+          "local": true,
+          "deleted": false,
+          "bot_account": false,
+          "instance_id": 1
+        },
+        "counts": {
+          "person_id": 2,
+          "post_count": 1,
+          "comment_count": 0
+        },
+        "is_admin": true
+      },
+      "site": {
+        "id": 1,
+        "name": "IBX local Lemmy",
+        "published": "2026-10-14T18:44:52.511326Z",
+        "updated": "2026-10-14T18:44:56.913331Z",
+        "actor_id": "http://lemmy:8536/",
+        "last_refreshed_at": "2026-10-14T18:44:52.503467Z",
+        "inbox_url": "http://lemmy:8536/inbox",
+        "public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0NTvnc7t6gwiJUVZ96oI\ne55nLg8pNXW9uc+0YJqYphY4+Vw/ZBFhNeCitXQvc+MiMe+PcJbUielJqAQy2jYx\nKehTW79w/4SlD+lh63uzNpWmmiwrzkiqZz2y6Tfq10bcaro2xsY9aKj3EATubF/E\n2bDKFFyLT1vwbSlMGrqlTt/XomX5a0rWOoi6YkgpbY82twZ0N/7hP0mqe9FpGp/E\npJ4atE5vRcFjP45HlUo7klz8ujx3woJl+wcc4JgKi5pgWvwE8nphTvGPIBeG6rtO\nH7AEbNfxCBOrRdjIeYt90Sp9gVC8ibLIPNUtMlpSp0rQTd46cCKoqN1LLMZ2C8TH\nuQIDAQAB\n-----END PUBLIC KEY-----\n",
+        "instance_id": 1
+      },
+      "comments": [],
+      "posts": [
+        {
+          "post": {
+            "id": 1,
+            "name": "IBX fixture post fb3f5429",
+            "body": "Fixture post recorded by the IncuBrix bootstrap.\n\n[//]: # (ibx-fixfb3f5429)\n",
+            "creator_id": 2,
+            "community_id": 2,
+            "removed": false,
+            "locked": false,
+            "published": "2026-10-14T18:46:33.188905Z",
+            "deleted": false,
+            "nsfw": false,
+            "ap_id": "http://lemmy:8536/post/1",
+            "local": true,
+            "language_id": 0,
+            "featured_community": false,
+            "featured_local": false
+          },
+          "creator": {
+            "id": 2,
+            "name": "ibx_admin",
+            "banned": false,
+            "published": "2026-10-14T18:44:51.982079Z",
+            "actor_id": "http://lemmy:8536/u/ibx_admin",
+            "local": true,
+            "deleted": false,
+            "bot_account": false,
+            "instance_id": 1
+          },
+          "community": {
+            "id": 2,
+            "name": "ibx_test",
+            "title": "IBX test ibx_test",
+            "description": "Local test community (IncuBrix).",
+            "removed": false,
+            "published": "2026-10-14T18:44:58.541337Z",
+            "deleted": false,
+            "nsfw": false,
+            "actor_id": "http://lemmy:8536/c/ibx_test",
+            "local": true,
+            "hidden": false,
+            "posting_restricted_to_mods": false,
+            "instance_id": 1,
+            "visibility": "Public"
+          },
+          "creator_banned_from_community": false,
+          "banned_from_community": false,
+          "creator_is_moderator": true,
+          "creator_is_admin": true,
+          "counts": {
+            "post_id": 1,
+            "comments": 0,
+            "score": 1,
+            "upvotes": 1,
+            "downvotes": 0,
+            "published": "2026-10-14T18:46:33.188905Z",
+            "newest_comment_time": "2026-10-14T18:46:33.188905Z"
+          },
+          "subscribed": "Subscribed",
+          "saved": false,
+          "read": true,
+          "hidden": false,
+          "creator_blocked": false,
+          "my_vote": 1,
+          "unread_comments": 0
+        }
+      ],
+      "moderates": [
+        {
+          "community": {
+            "id": 2,
+            "name": "ibx_test",
+            "title": "IBX test ibx_test",
+            "description": "Local test community (IncuBrix).",
+            "removed": false,
+            "published": "2026-10-14T18:44:58.541337Z",
+            "deleted": false,
+            "nsfw": false,
+            "actor_id": "http://lemmy:8536/c/ibx_test",
+            "local": true,
+            "hidden": false,
+            "posting_restricted_to_mods": false,
+            "instance_id": 1,
+            "visibility": "Public"
+          },
+          "moderator": {
+            "id": 2,
+            "name": "ibx_admin",
+            "banned": false,
+            "published": "2026-10-14T18:44:51.982079Z",
+            "actor_id": "http://lemmy:8536/u/ibx_admin",
+            "local": true,
+            "deleted": false,
+            "bot_account": false,
+            "instance_id": 1
+          }
+        },
+        {
+          "community": {
+            "id": 3,
+            "name": "ibx_test_2",
+            "title": "IBX test ibx_test_2",
+            "description": "Local test community (IncuBrix).",
+            "removed": false,
+            "published": "2026-10-14T18:44:58.843965Z",
+            "deleted": false,
+            "nsfw": false,
+            "actor_id": "http://lemmy:8536/c/ibx_test_2",
+            "local": true,
+            "hidden": false,
+            "posting_restricted_to_mods": false,
+            "instance_id": 1,
+            "visibility": "Public"
+          },
+          "moderator": {
+            "id": 2,
+            "name": "ibx_admin",
+            "banned": false,
+            "published": "2026-10-14T18:44:51.982079Z",
+            "actor_id": "http://lemmy:8536/u/ibx_admin",
+            "local": true,
+            "deleted": false,
+            "bot_account": false,
+            "instance_id": 1
+          }
+        }
+      ]
+    }
+  }
+}

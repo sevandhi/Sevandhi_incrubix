@@ -1,0 +1,36 @@
+{
+  "fixture": "discourse/create_topic_duplicate_title",
+  "platform": "discourse",
+  "platform_version": "2026.10.0-latest",
+  "description": "Create a second topic with the same title.",
+  "recorded_at": "2026-10-14T18:46:42Z",
+  "recorded_by": "deploy/bootstrap/record_fixtures.py (real local instance, not hand-written)",
+  "request": {
+    "method": "POST",
+    "path": "/posts.json",
+    "headers": {
+      "Api-Key": "***REDACTED***",
+      "Api-Username": "ibx_admin"
+    },
+    "json": {
+      "title": "IBX fixture topic 90fff62e recorded locally",
+      "raw": "Fixture topic recorded by the IncuBrix bootstrap on a local test instance.",
+      "category": 5,
+      "external_id": "ibx-fix90fff62eb"
+    }
+  },
+  "response": {
+    "status": 422,
+    "headers": {
+      "cache-control": "no-cache, no-store",
+      "content-type": "application/json; charset=utf-8"
+    },
+    "elapsed_ms": 116,
+    "json": {
+      "action": "create_post",
+      "errors": [
+        "This title has already been used by <a href='http://discourse/t/ibx-fixture-topic-90fff62e-recorded-locally/8'>another topic</a>."
+      ]
+    }
+  }
+}

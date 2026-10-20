@@ -1,0 +1,553 @@
+# Rule-safety table: every case is run by tests/rules/test_rule_cases.py and scripts/rule_safety.py.
+# The expected outcome is written from the destination's rules BEFORE running the engine.
+# hard_case names the brief's hard case a row covers. Times are relative to defaults.now.
+defaults:
+  now: "2026-10-20T09:00:00Z"
+  rendition:
+    title: "Notes from a month of editing short videos"
+    body: "I tried three editing workflows for a month. Here is what changed in my process and what did not."
+    language: en
+    ai_generated: false
+    is_promotional: null
+
+cases:
+  # ------------------------------------------------------------ frequency cap
+  - id: cap_first_post_allowed
+    rules: {frequency_cap: 1/P7D}
+    expect: {action: allow}
+  - id: cap_second_post_inside_week
+    hard_case: second post inside a weekly cap
+    rules: {frequency_cap: 1/P7D}
+    history: [{ago: P2D}]
+    expect: {action: reschedule, code: DEST_RULE_FREQUENCY_CAP, retry_at: "2026-10-25T09:00:00Z", reason_contains: "cap of 1"}
+  - id: cap_second_post_one_minute_after_first
+    hard_case: second post inside a weekly cap
+    rules: {frequency_cap: {max_posts: 1, window: P7D}}
+    history: [{ago: PT1M}]
+    expect: {action: reschedule, code: DEST_RULE_FREQUENCY_CAP, retry_at: "2026-10-27T08:59:00Z"}
+  - id: cap_previous_post_outside_window
+    rules: {frequency_cap: 1/P7D}
+    history: [{ago: P8D}]
+    expect: {action: allow}
+  - id: cap_previous_post_exactly_one_window_ago
+    description: the window is (now - 7 days, now], so a post exactly 7 days old has left it
+    rules: {frequency_cap: 1/P7D}
+    history: [{ago: P7D}]
+    expect: {action: allow}
+  - id: cap_two_per_week_with_two_posts
+    hard_case: second post inside a weekly cap
+    rules: {frequency_cap: 2/P7D}
+    history: [{ago: P1D}, {ago: P3D}]
+    expect: {action: reschedule, code: DEST_RULE_FREQUENCY_CAP, retry_at: "2026-10-24T09:00:00Z"}
+  - id: cap_two_per_week_with_one_post
+    rules: {frequency_cap: 2/P7D}
+    history: [{ago: P1D}]
+    expect: {action: allow}
+  - id: cap_already_over_cap
+    description: 3 posts in the window, cap 2 -> slot opens when the 2nd-oldest leaves
+    rules: {frequency_cap: 2/P7D}
+    history: [{ago: P1D}, {ago: P2D}, {ago: P3D}]
+    expect: {action: reschedule, code: DEST_RULE_FREQUENCY_CAP, retry_at: "2026-10-25T09:00:00Z"}
+  - id: cap_failed_post_not_counted
+    rules: {frequency_cap: 1/P7D}
+    history: [{ago: P1D, status: failed}]
+    expect: {action: allow}
+  - id: cap_deleted_post_still_counts
+    rules: {frequency_cap: 1/P7D}
+    history: [{ago: P1D, status: deleted}]
+    expect: {action: reschedule, code: DEST_RULE_FREQUENCY_CAP, retry_at: "2026-10-26T09:00:00Z"}
+  - id: cap_reserved_slot_counts
+    description: a concurrent publish that reserved the slot (status publishing) counts
+    rules: {frequency_cap: 1/P7D}
+    history: [{ago: PT1S, status: publishing}]
+    expect: {action: reschedule, code: DEST_RULE_FREQUENCY_CAP}
+  - id: cap_daily
+    rules: {frequency_cap: 1/P1D}
+    history: [{ago: PT3H}]
+    expect: {action: reschedule, code: DEST_RULE_FREQUENCY_CAP, retry_at: "2026-10-21T06:00:00Z"}
+  - id: cap_hourly_three
+    rules: {frequency_cap: 3/PT1H}
+    history: [{ago: PT10M}, {ago: PT20M}, {ago: PT30M}]
+    expect: {action: reschedule, code: DEST_RULE_FREQUENCY_CAP, retry_at: "2026-10-20T09:30:00Z"}
+  - id: cap_future_scheduled_post_counts
+    rules: {frequency_cap: 1/P7D}
+    history: [{in: P1D, status: scheduled}]
+    expect: {action: reschedule, code: DEST_RULE_FREQUENCY_CAP, retry_at: "2026-10-28T09:00:00Z"}
+  - id: cap_catalogue_word_window
+    rules: {frequency_cap: 1/week}
+    history: [{ago: P6D}]
+    expect: {action: reschedule, code: DEST_RULE_FREQUENCY_CAP, retry_at: "2026-10-21T09:00:00Z"}
+  - id: cap_naive_timestamp_read_as_utc
+    rules: {frequency_cap: 1/P7D}
+    history: [{at: "2026-10-19T09:00:00"}]
+    expect: {action: reschedule, code: DEST_RULE_FREQUENCY_CAP, retry_at: "2026-10-26T09:00:00Z"}
+  - id: cap_blocked_post_is_not_rescheduled
+    hard_case: promotional post to a no-promotion community
+    description: cap reached AND promotional -> block (never reschedule a post that will be blocked)
+    rules: {frequency_cap: 1/P7D, self_promo: disallowed}
+    history: [{ago: P1D}]
+    rendition: {is_promotional: true}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, retry_at: null}
+
+  # ------------------------------------------------------------ self-promotion
+  - id: promo_flag_true
+    hard_case: promotional post to a no-promotion community
+    rules: {self_promo: disallowed}
+    rendition: {is_promotional: true}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [flag]}
+  - id: promo_own_channel_and_subscribe_unflagged
+    hard_case: promotional post to a no-promotion community
+    rules: {self_promo_allowed: false}
+    owner_domains: [youtube.com/@creator]
+    rendition:
+      body: "New breakdown of my editing setup: https://youtube.com/@creator - subscribe for more!"
+      is_promotional: null
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [own_link, cta], reason_contains: "subscribe for more"}
+  - id: promo_detector_overrides_false_flag
+    hard_case: promotional post to a no-promotion community
+    rules: {self_promo: disallowed}
+    rendition:
+      body: "Write-up here: https://creator.dev/post?utm_source=forum&utm_medium=post"
+      is_promotional: false
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [utm]}
+  - id: promo_utm_in_link_url
+    rules: {self_promo: disallowed}
+    rendition: {link_url: "https://example.org/guide?utm_campaign=launch"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [utm]}
+  - id: promo_affiliate_ref_param
+    rules: {self_promo: disallowed}
+    rendition: {body: "The mic I use: https://shop.example.com/mic?ref=creator42"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [affiliate]}
+  - id: promo_amazon_tag
+    rules: {self_promo: disallowed}
+    rendition: {body: "Camera: https://www.amazon.com/dp/B000123?tag=creator-21"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [affiliate]}
+  - id: promo_amazon_short_link
+    rules: {self_promo: disallowed}
+    rendition: {body: "Camera I use: https://amzn.to/3abcDEF"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [affiliate]}
+  - id: promo_discount_code
+    rules: {self_promo: disallowed}
+    rendition: {body: "Use code SAVE20 for 20% off the template pack."}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [cta]}
+  - id: promo_link_in_bio
+    rules: {self_promo: disallowed}
+    rendition: {body: "Full tutorial is up, link in bio."}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [cta]}
+  - id: promo_cta_in_title_only
+    rules: {self_promo: disallowed}
+    rendition: {title: "Sign up for the beta of our editor"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [cta]}
+  - id: promo_spanish_cta
+    hard_case: promotional post to a no-promotion community (non-English text)
+    rules: {self_promo: disallowed}
+    rendition: {language: es, body: "Mi flujo de edición en 2026. ¡Suscríbete para más vídeos!"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [cta]}
+  - id: promo_french_cta
+    hard_case: promotional post to a no-promotion community (non-English text)
+    rules: {self_promo: disallowed}
+    rendition: {language: fr, body: "Mon nouveau montage. Abonnez-vous pour la suite !"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [cta]}
+  - id: promo_german_cta
+    hard_case: promotional post to a no-promotion community (non-English text)
+    rules: {self_promo: disallowed}
+    rendition: {language: de, body: "Mein Schnitt-Workflow. Jetzt kaufen mit dem Rabattcode im Profil."}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [cta]}
+  - id: promo_portuguese_cta
+    hard_case: promotional post to a no-promotion community (non-English text)
+    rules: {self_promo: disallowed}
+    rendition: {language: pt, body: "Meu fluxo de edição. Inscreva-se no canal para mais!"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [cta]}
+  - id: promo_hindi_cta
+    hard_case: promotional post to a no-promotion community (non-English text)
+    rules: {self_promo: disallowed}
+    rendition: {language: hi, body: "वीडियो एडिटिंग के मेरे टिप्स। चैनल को सब्सक्राइब करें!"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [cta]}
+  - id: promo_japanese_cta
+    hard_case: promotional post to a no-promotion community (non-English text)
+    rules: {self_promo: disallowed}
+    rendition: {language: ja, body: "動画編集のコツを紹介します。チャンネル登録お願いします！"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [cta]}
+  - id: promo_patreon_link
+    rules: {self_promo: disallowed}
+    rendition: {body: "If this helped: https://patreon.com/creator"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [monetization_link]}
+  - id: promo_channel_link_without_owner_list
+    rules: {self_promo: disallowed}
+    rendition: {body: "More breakdowns at https://www.youtube.com/@creator"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [channel_link]}
+  - id: promo_self_reference
+    rules: {self_promo: disallowed}
+    rendition: {body: "I cover this properly in my new course."}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [self_reference]}
+  - id: promo_owner_subdomain
+    rules: {self_promo: disallowed}
+    owner_domains: [creator.dev]
+    rendition: {body: "Longer notes: https://blog.creator.dev/editing"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [own_link]}
+  - id: promo_owner_bare_domain
+    rules: {self_promo: disallowed}
+    owner_domains: [creator.dev]
+    rendition: {body: "Longer notes on creator.dev/editing"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [own_link]}
+  - id: promo_clean_discussion_post
+    rules: {self_promo: disallowed}
+    expect: {action: allow}
+  - id: promo_neutral_reference_link
+    rules: {self_promo: disallowed}
+    rendition: {body: "The codec background is explained at https://en.wikipedia.org/wiki/Advanced_Video_Coding"}
+    expect: {action: allow}
+  - id: promo_allowed_community
+    rules: {self_promo: allowed}
+    rendition: {is_promotional: true, body: "Subscribe for more!"}
+    expect: {action: allow}
+  - id: promo_ratio_within_limit
+    rules: {self_promo: ratio(10)}
+    rendition: {is_promotional: true}
+    history: [{ago: P30D, is_promotional: false, repeat: 9}]
+    expect: {action: allow, warnings_contain: "SELF_PROMO_RATIO"}
+  - id: promo_ratio_exceeded
+    rules: {self_promo: "1:10"}
+    rendition: {is_promotional: true}
+    history: [{ago: P30D, is_promotional: true}, {ago: P20D, is_promotional: false, repeat: 3}]
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, reason_contains: "1 post in 10"}
+  - id: promo_ratio_unknown_history_counts_as_promo
+    rules: {self_promo: ratio(3)}
+    rendition: {is_promotional: true}
+    history: [{ago: P10D, is_promotional: null, repeat: 2}]
+    expect: {action: block, code: DEST_RULE_SELF_PROMO}
+  - id: promo_catalogue_string_false
+    hard_case: promotional post to a no-promotion community
+    rules: {self_promo_allowed: "false"}
+    rendition: {body: "Grab your free template, link in bio"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO}
+
+  # ------------------------------------------------------------ links
+  - id: link_none_url_in_body
+    rules: {link_policy: none}
+    rendition: {body: "Details: https://example.org/notes"}
+    expect: {action: block, code: DEST_RULE_LINK_POLICY, evidence_types: [link]}
+  - id: link_none_link_url
+    rules: {link_policy: none}
+    rendition: {content_type: link, link_url: "https://example.org/notes"}
+    expect: {action: block, code: DEST_RULE_LINK_POLICY}
+  - id: link_none_bare_domain
+    rules: {link_policy: none}
+    rendition: {body: "Notes are on example.org/notes for anyone curious."}
+    expect: {action: block, code: DEST_RULE_LINK_POLICY}
+  - id: link_none_markdown_link
+    rules: {link_policy: none}
+    rendition: {body: "See [my notes](https://example.org/notes)."}
+    expect: {action: block, code: DEST_RULE_LINK_POLICY}
+  - id: link_none_www_without_scheme
+    rules: {link_policy: none}
+    rendition: {body: "Notes at www.example.org today"}
+    expect: {action: block, code: DEST_RULE_LINK_POLICY}
+  - id: link_none_no_links_present
+    rules: {link_policy: none}
+    expect: {action: allow}
+  - id: link_none_canonical_is_metadata
+    description: canonical_url is metadata, not a link shown in the post
+    rules: {link_policy: none}
+    rendition: {canonical_url: "https://example.org/original"}
+    expect: {action: allow}
+  - id: link_shortener_blocked
+    rules: {link_policy: no_shorteners}
+    rendition: {body: "Short link: https://bit.ly/3xYz"}
+    expect: {action: block, code: DEST_RULE_LINK_POLICY, reason_contains: "bit.ly"}
+  - id: link_shortener_policy_normal_link_ok
+    rules: {link_policy: no_shorteners}
+    rendition: {body: "Docs: https://ffmpeg.org/documentation.html"}
+    expect: {action: allow}
+  - id: link_allowlist_allowed
+    rules: {link_policy: {allowlist: [github.com, ffmpeg.org]}}
+    rendition: {body: "Code: https://github.com/example/repo"}
+    expect: {action: allow}
+  - id: link_allowlist_subdomain_allowed
+    rules: {link_policy: "allowlist:github.com"}
+    rendition: {body: "Docs: https://docs.github.com/en/actions"}
+    expect: {action: allow}
+  - id: link_allowlist_violation
+    rules: {link_policy: allowlist, link_allowlist: [github.com]}
+    rendition: {body: "Code https://github.com/x/y and a write-up https://medium.com/@x/post"}
+    expect: {action: block, code: DEST_RULE_LINK_POLICY, reason_contains: "medium.com"}
+  - id: link_allowlist_lookalike_domain
+    rules: {link_policy: allowlist, link_allowlist: [github.com]}
+    rendition: {body: "Code: https://github.com.evil.example/x"}
+    expect: {action: block, code: DEST_RULE_LINK_POLICY}
+
+  # ------------------------------------------------------------ AI disclosure
+  - id: disclosure_ai_true_english
+    hard_case: destination that requires AI-content disclosure
+    rules: {disclosure_required: true}
+    rendition: {ai_generated: true}
+    expect: {action: allow_with_changes, fix_lang: en, fix_text_contains: "with the help of AI"}
+  - id: disclosure_ai_unknown_counts_as_ai
+    hard_case: destination that requires AI-content disclosure
+    rules: {disclosure: {required: true}}
+    rendition: {ai_generated: null}
+    expect: {action: allow_with_changes, warnings_contain: "AI_STATUS_UNKNOWN", fix_lang: en}
+  - id: disclosure_ai_false_no_change
+    rules: {disclosure_required: true}
+    rendition: {ai_generated: false}
+    expect: {action: allow, no_fix: true}
+  - id: disclosure_already_present
+    rules: {disclosure_required: true}
+    rendition:
+      ai_generated: true
+      body: "My notes on editing.\n\nDisclosure: this post was created with the help of AI."
+    expect: {action: allow, no_fix: true}
+  - id: disclosure_not_required
+    rules: {disclosure_required: false}
+    rendition: {ai_generated: true}
+    expect: {action: allow, no_fix: true}
+  - id: disclosure_german_community_english_post
+    hard_case: non-English community that requires AI-content disclosure
+    description: policy any, so the English post is allowed with a bilingual disclosure (and a LANGUAGE_MISMATCH warning)
+    rules: {disclosure_required: true, language: de, language_policy: any}
+    rendition: {ai_generated: true, language: en}
+    expect: {action: allow_with_changes, fix_lang: de, fix_text_contains: ["Hinweis", "Disclosure"], warnings_contain: "AI_DISCLOSURE_REQUIRED"}
+  - id: disclosure_german_post_german_community
+    hard_case: non-English community that requires AI-content disclosure
+    rules: {disclosure_required: true, languages: [de], language_policy: must_match}
+    rendition: {ai_generated: true, language: de, title: "Mein Schnitt-Workflow", body: "Ich habe einen Monat lang drei Workflows getestet."}
+    expect: {action: allow_with_changes, fix_lang: de, fix_text_contains: "Hinweis: Dieser Beitrag"}
+  - id: disclosure_tamil_community
+    hard_case: non-English community that requires AI-content disclosure
+    rules: {disclosure_required: true, languages: [ta]}
+    rendition: {ai_generated: true, language: ta, body: "வீடியோ எடிட்டிங் பற்றிய என் குறிப்புகள்."}
+    expect: {action: allow_with_changes, fix_lang: ta, fix_text_contains: "அறிவிப்பு"}
+  - id: disclosure_japanese_community
+    hard_case: non-English community that requires AI-content disclosure
+    rules: {disclosure_required: true, languages: [ja-JP]}
+    rendition: {ai_generated: true, language: ja, body: "動画編集についてのメモです。"}
+    expect: {action: allow_with_changes, fix_lang: ja}
+  - id: disclosure_spanish_community
+    hard_case: non-English community that requires AI-content disclosure
+    rules: {disclosure_required: true, languages: es}
+    rendition: {ai_generated: true, language: es, body: "Mis notas sobre edición de vídeo."}
+    expect: {action: allow_with_changes, fix_lang: es, fix_text_contains: "Aviso"}
+  - id: disclosure_hindi_content_no_community_language
+    rules: {disclosure_required: true}
+    rendition: {ai_generated: true, language: hi, body: "वीडियो एडिटिंग पर मेरे नोट्स।"}
+    expect: {action: allow_with_changes, fix_lang: hi}
+  - id: disclosure_unsupported_language_falls_back_to_english
+    rules: {disclosure_required: true, languages: [it]}
+    rendition: {ai_generated: true, language: it}
+    expect: {action: allow_with_changes, fix_lang: en, warnings_contain: "DISCLOSURE_LANG_FALLBACK"}
+  - id: disclosure_auto_insert_off_blocks
+    hard_case: destination that requires AI-content disclosure
+    rules: {disclosure: {required: true, auto_insert: false}}
+    rendition: {ai_generated: true}
+    expect: {action: block, code: DEST_RULE_DISCLOSURE}
+  - id: disclosure_custom_text
+    rules: {disclosure: {required: true, placement: top, text_by_lang: {en: "[AI-assisted post]"}}}
+    rendition: {ai_generated: true}
+    expect: {action: allow_with_changes, fix_text_contains: "[AI-assisted post]"}
+  - id: disclosure_present_in_another_language
+    rules: {disclosure_required: true}
+    rendition:
+      ai_generated: true
+      body: "Notizen.\n\nHinweis: Dieser Beitrag wurde mit Hilfe von KI erstellt."
+    expect: {action: allow, no_fix: true}
+  - id: disclosure_needed_and_cap_reached
+    hard_case: second post inside a weekly cap
+    rules: {disclosure_required: true, frequency_cap: 2/P7D}
+    rendition: {ai_generated: true}
+    history: [{ago: P1D}, {ago: P2D}]
+    expect: {action: reschedule, code: DEST_RULE_FREQUENCY_CAP, retry_at: "2026-10-25T09:00:00Z"}
+
+  # ------------------------------------------------------------ language
+  - id: lang_must_match_mismatch
+    hard_case: non-English community
+    rules: {language_policy: must_match, languages: [de]}
+    rendition: {language: en}
+    expect: {action: block, code: DEST_RULE_LANGUAGE, reason_contains: "translate"}
+  - id: lang_must_match_match
+    rules: {language_policy: must_match, languages: [de]}
+    rendition: {language: de, title: "Notizen", body: "Ich habe einen Monat lang drei Workflows getestet und das ist nicht schlecht."}
+    expect: {action: allow}
+  - id: lang_region_subtag_matches
+    rules: {language_policy: must_match, languages: [pt]}
+    rendition: {language: pt-BR}
+    expect: {action: allow}
+  - id: lang_detected_mismatch
+    hard_case: non-English community
+    rules: {language_policy: must_match, language: de}
+    rendition: {language: null}
+    expect: {action: block, code: DEST_RULE_LANGUAGE, reason_contains: "detected"}
+  - id: lang_detected_match_tamil
+    hard_case: non-English community
+    rules: {language_policy: must_match, languages: [ta]}
+    rendition: {language: null, title: "எடிட்டிங் குறிப்புகள்", body: "வீடியோ எடிட்டிங் பற்றிய என் குறிப்புகள்."}
+    expect: {action: allow}
+  - id: lang_undetectable_blocks
+    rules: {language_policy: must_match, languages: [de]}
+    rendition: {language: null, title: "👍", body: "🎬🎬🎬"}
+    expect: {action: block, code: DEST_RULE_LANGUAGE, reason_contains: "could not be determined"}
+  - id: lang_any_policy_mismatch_warns
+    hard_case: non-English community
+    rules: {language_policy: any, languages: [fr]}
+    rendition: {language: en}
+    expect: {action: allow, warnings_contain: "LANGUAGE_MISMATCH"}
+  - id: lang_must_match_destination_language_unknown
+    rules: {language_policy: must_match}
+    expect: {action: block, code: DEST_RULE_LANGUAGE}
+  - id: lang_german_disclosure_community_english_post_strict
+    hard_case: non-English community that requires AI-content disclosure
+    description: brief HT8 option (b) - no translation, so a strict German community blocks the English post
+    rules: {language_policy: strict, language: de, disclosure_required: true}
+    rendition: {language: en, ai_generated: true}
+    expect: {action: block, code: DEST_RULE_LANGUAGE}
+
+  # ------------------------------------------------------------ automation, blocked terms, rule sets
+  - id: automation_not_allowed
+    rules: {automation_allowed: false}
+    expect: {action: block, code: DEST_RULE_AUTOMATION_NOT_ALLOWED, reason_contains: "assist"}
+  - id: automation_not_allowed_catalogue_string
+    rules: {automation_allowed: "no"}
+    expect: {action: block, code: DEST_RULE_AUTOMATION_NOT_ALLOWED}
+  - id: automation_checked_first
+    rules: {automation_allowed: false, self_promo: disallowed, frequency_cap: 1/P7D}
+    rendition: {is_promotional: true}
+    history: [{ago: P1D}]
+    expect: {action: block, code: DEST_RULE_AUTOMATION_NOT_ALLOWED}
+  - id: blocked_term_in_body
+    rules: {blocked_terms: [crypto]}
+    rendition: {body: "Editing workflow, plus a crypto giveaway."}
+    expect: {action: block, code: DEST_RULE_BLOCKED_TERM, evidence_types: [blocked_term]}
+  - id: blocked_term_case_insensitive
+    rules: {blocked_terms: [NFT]}
+    rendition: {title: "My nft editing setup"}
+    expect: {action: block, code: DEST_RULE_BLOCKED_TERM}
+  - id: blocked_term_whole_word_only
+    rules: {blocked_terms: [ass]}
+    rendition: {body: "A masterclass in class-based editing."}
+    expect: {action: allow}
+  - id: blocked_term_japanese_substring
+    rules: {blocked_terms: ["広告"]}
+    rendition: {language: ja, body: "この動画は広告ではありません"}
+    expect: {action: block, code: DEST_RULE_BLOCKED_TERM}
+  - id: blocked_term_in_tags
+    rules: {blocked_terms: [giveaway]}
+    rendition: {tags: [editing, giveaway]}
+    expect: {action: block, code: DEST_RULE_BLOCKED_TERM}
+  - id: rules_unconfirmed
+    rules: null
+    expect: {action: block, code: DEST_RULES_UNCONFIRMED}
+  - id: rules_conservative_default
+    rules: conservative_default
+    expect: {action: block, code: DEST_RULE_AUTOMATION_NOT_ALLOWED, warnings_contain: "RULES_DEFAULTED"}
+  - id: rules_misspelt_key_is_refused
+    hard_case: destination that requires AI-content disclosure
+    description: "A typo must not switch the disclosure rule off; the rules are refused (422)"
+    rules: {disclosure_requried: true}
+    rendition: {ai_generated: true}
+    expect: {action: block, code: REQUEST_VALIDATION_FAILED, reason_contains: "did you mean 'disclosure_required'"}
+  - id: order_language_before_promo
+    rules: {language_policy: must_match, languages: [fr], self_promo: disallowed}
+    rendition: {is_promotional: true}
+    expect: {action: block, code: DEST_RULE_LANGUAGE, reason_contains: ["DEST_RULE_LANGUAGE", "DEST_RULE_SELF_PROMO"]}
+  - id: order_promo_before_links
+    rules: {self_promo: disallowed, link_policy: none}
+    rendition: {body: "Subscribe here https://creator.dev"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO}
+  - id: everything_set_and_compliant
+    rules:
+      frequency_cap: 2/P7D
+      self_promo: disallowed
+      link_policy: no_shorteners
+      disclosure: {required: true}
+      language_policy: must_match
+      languages: [en]
+      automation_allowed: true
+      blocked_terms: [crypto]
+    history: [{ago: P10D}]
+    rendition: {body: "Three editing workflows compared; reference: https://ffmpeg.org/documentation.html"}
+    expect: {action: allow}
+
+  # ------------------------------------------------------------ regressions (added before the fixes)
+  - id: r1_cap_and_disclosure_message_names_the_cap
+    hard_case: second post inside a weekly cap
+    description: "A reschedule plus a disclosure fix must report the cap in the error message, not the disclosure"
+    rules: {frequency_cap: 1/P7D, disclosure_required: true}
+    rendition: {ai_generated: true}
+    history: [{ago: P1D}]
+    expect: {action: reschedule, code: DEST_RULE_FREQUENCY_CAP, message_contains: "DEST_RULE_FREQUENCY_CAP"}
+  - id: r3_shortener_on_no_promo_destination
+    hard_case: promotional post to a no-promotion community
+    description: "A shortener hides where it goes (maybe the creator's own site), so it counts as promotional"
+    rules: {self_promo_allowed: false}
+    owner_domains: [creator.dev]
+    rendition: {body: "Full notes: https://bit.ly/3xYz"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [shortener]}
+  - id: r7_german_community_english_post_blocked
+    hard_case: non-English community
+    description: "A stated non-English community language implies must_match"
+    rules: {language: de}
+    rendition: {language: en}
+    expect: {action: block, code: DEST_RULE_LANGUAGE, reason_contains: "de"}
+  - id: r7_german_community_disclosure_english_post_blocked
+    hard_case: non-English community that requires AI-content disclosure
+    rules: {language: de, disclosure_required: true}
+    rendition: {language: en, ai_generated: true}
+    expect: {action: block, code: DEST_RULE_LANGUAGE}
+  - id: r7_german_community_german_post_with_disclosure
+    hard_case: non-English community that requires AI-content disclosure
+    rules: {language: de, disclosure_required: true}
+    rendition: {language: de, ai_generated: true, title: "Mein Schnitt-Workflow", body: "Ich habe einen Monat lang drei Workflows getestet."}
+    expect: {action: allow_with_changes, fix_lang: de, fix_text_contains: "Hinweis"}
+  - id: r7_japanese_community_undeclared_english_text_blocked
+    hard_case: non-English community
+    rules: {language: ja}
+    rendition: {language: null}
+    expect: {action: block, code: DEST_RULE_LANGUAGE, reason_contains: "detected"}
+  - id: r7_tamil_community_tamil_text_detected
+    hard_case: non-English community
+    rules: {language: ta}
+    rendition: {language: null, title: "எடிட்டிங் குறிப்புகள்", body: "வீடியோ எடிட்டிங் பற்றிய என் குறிப்புகள்."}
+    expect: {action: allow}
+  - id: r7_implied_policy_unknown_language_only_warns
+    hard_case: non-English community
+    description: with an implied (not explicit) must_match, only a definite mismatch blocks
+    rules: {language: de}
+    rendition: {language: null, title: "👍", body: "🎬🎬🎬"}
+    expect: {action: allow, warnings_contain: "LANGUAGE_UNKNOWN"}
+  - id: r7_english_community_policy_stays_any
+    rules: {language: en}
+    rendition: {language: es, body: "Mis notas sobre edición de vídeo para el equipo."}
+    expect: {action: allow, warnings_contain: "LANGUAGE_MISMATCH"}
+  - id: r7_explicit_any_overrides_implied
+    hard_case: non-English community
+    rules: {language: fr, language_policy: any}
+    rendition: {language: en}
+    expect: {action: allow, warnings_contain: "LANGUAGE_MISMATCH"}
+  - id: cap_far_future_scheduled_post_not_counted
+    description: a post scheduled more than one window ahead cannot share a window with a post now
+    rules: {frequency_cap: 1/P7D}
+    history: [{in: P30D, status: scheduled}]
+    expect: {action: allow}
+  - id: cap_error_status_not_counted
+    rules: {frequency_cap: 1/P7D}
+    history: [{ago: P1D, status: error}]
+    expect: {action: allow}
+  - id: cap_timeout_status_still_counts
+    description: a timed-out publish may have gone out, so it counts (conservative)
+    rules: {frequency_cap: 1/P7D}
+    history: [{ago: P1D, status: timeout}]
+    expect: {action: reschedule, code: DEST_RULE_FREQUENCY_CAP}
+  - id: promo_italian_cta
+    hard_case: promotional post to a no-promotion community (non-English text)
+    rules: {self_promo: disallowed}
+    rendition: {language: it, body: "Il mio flusso di montaggio. Iscriviti al canale!"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [cta]}
+  - id: promo_russian_cta
+    hard_case: promotional post to a no-promotion community (non-English text)
+    rules: {self_promo: disallowed}
+    rendition: {language: ru, body: "Мой процесс монтажа. Подписывайтесь на канал!"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [cta]}
+  - id: promo_chinese_cta
+    hard_case: promotional post to a no-promotion community (non-English text)
+    rules: {self_promo: disallowed}
+    rendition: {language: zh, body: "我的剪辑流程。欢迎订阅频道！"}
+    expect: {action: block, code: DEST_RULE_SELF_PROMO, evidence_types: [cta]}

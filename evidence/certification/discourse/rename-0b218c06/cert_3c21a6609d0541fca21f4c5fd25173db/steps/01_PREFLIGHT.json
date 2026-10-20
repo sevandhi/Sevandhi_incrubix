@@ -1,0 +1,23 @@
+{
+  "n": 1,
+  "step": "PREFLIGHT",
+  "outcome": "ok",
+  "started_at": "2026-10-17T16:49:55.536610Z",
+  "duration_ms": 6.0,
+  "detail": {
+    "connector_key": "discourse",
+    "connector_version": "1.0.0",
+    "tier": "native",
+    "capabilities": [
+      "publish",
+      "status",
+      "delete",
+      "metrics"
+    ],
+    "target": "simulation: every call goes to mock-platforms",
+    "kill_switch": "off",
+    "connection_id": null,
+    "rules_confirmed": true,
+    "auth_probe": "no refresh_auth capability: the PUBLISH step proves the credentials"
+  }
+}

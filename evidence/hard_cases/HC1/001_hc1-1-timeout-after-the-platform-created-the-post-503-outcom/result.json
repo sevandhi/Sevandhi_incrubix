@@ -1,0 +1,15 @@
+{
+  "index": 1,
+  "name": "HC1.1 timeout after the platform created the post -> 503 outcome unknown, safe to retry",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 503,
+  "code": "PLATFORM_UNAVAILABLE",
+  "expected_status": 503,
+  "expected_code": "PLATFORM_UNAVAILABLE",
+  "passed": true,
+  "duration_ms": 14811.4,
+  "correlation_id": "e8820e5096664f87be13b479252f1e9e",
+  "folder": "001_hc1-1-timeout-after-the-platform-created-the-post-503-outcom",
+  "job_status": null
+}

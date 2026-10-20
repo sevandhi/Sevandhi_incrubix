@@ -1,0 +1,239 @@
+{
+  "run_id": "cert_18da184cccd443ef8dcf3abad1f5b90c",
+  "harness_version": "1.0.0",
+  "destination_id": "dest_3f506d2eb13d4dadadf21508b4739ffc",
+  "simulation": false,
+  "started_at": "2026-10-20T14:57:16.740743Z",
+  "finished_at": "2026-10-20T14:57:17.450552Z",
+  "duration_ms": 709,
+  "timeline": [
+    {
+      "state": "QUEUED",
+      "at": "2026-10-20T14:57:16.740743Z"
+    },
+    {
+      "state": "PREFLIGHT",
+      "at": "2026-10-20T14:57:16.768976Z"
+    },
+    {
+      "state": "VALIDATE",
+      "at": "2026-10-20T14:57:16.799119Z"
+    },
+    {
+      "state": "PUBLISH",
+      "at": "2026-10-20T14:57:16.829035Z"
+    },
+    {
+      "state": "CONFIRM_LIVE",
+      "at": "2026-10-20T14:57:17.060399Z"
+    },
+    {
+      "state": "STATUS",
+      "at": "2026-10-20T14:57:17.126228Z"
+    },
+    {
+      "state": "METRICS",
+      "at": "2026-10-20T14:57:17.199005Z"
+    },
+    {
+      "state": "DELETE",
+      "at": "2026-10-20T14:57:17.264321Z"
+    },
+    {
+      "state": "CONFIRM_DELETED",
+      "at": "2026-10-20T14:57:17.376382Z"
+    },
+    {
+      "state": "PASSED",
+      "at": "2026-10-20T14:57:17.437104Z",
+      "note": "native: publish, live URL, status, metrics and delete certified"
+    }
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "step": "PREFLIGHT",
+      "outcome": "ok",
+      "started_at": "2026-10-20T14:57:16.783102Z",
+      "duration_ms": 6.6,
+      "detail": {
+        "connector_key": "lemmy",
+        "connector_version": "1.0.0",
+        "tier": "native",
+        "capabilities": [
+          "publish",
+          "status",
+          "delete",
+          "metrics"
+        ],
+        "target": "own instance lemmy",
+        "kill_switch": "off",
+        "connection_id": null,
+        "rules_confirmed": true,
+        "auth_probe": "no refresh_auth capability: the PUBLISH step proves the credentials"
+      }
+    },
+    {
+      "n": 2,
+      "step": "VALIDATE",
+      "outcome": "ok",
+      "started_at": "2026-10-20T14:57:16.813852Z",
+      "duration_ms": 6.8,
+      "detail": {
+        "good_rendition": {
+          "title": "IncuBrix certification test ibxcertbad1f5b90c",
+          "ok": true
+        },
+        "over_long_rendition": {
+          "ok": false,
+          "violations": [
+            {
+              "field": "title",
+              "rule": "title_max_chars",
+              "message": "title is 225 utf16; the limit is 200",
+              "limit": 200,
+              "actual": 225
+            }
+          ]
+        }
+      }
+    },
+    {
+      "n": 3,
+      "step": "PUBLISH",
+      "outcome": "ok",
+      "started_at": "2026-10-20T14:57:16.839963Z",
+      "duration_ms": 209.7,
+      "detail": {
+        "request": {
+          "rendition": {
+            "rendition_id": "cert-cert_18da184cccd443ef8dcf3abad1f5b90c",
+            "content_id": null,
+            "surface": "post",
+            "content_type": "text",
+            "title": "IncuBrix certification test ibxcertbad1f5b90c",
+            "body": "Automated certification test post ibxcertbad1f5b90c from the IncuBrix destination network. It checks publish, live URL, status and delete on our own test instance, and is deleted within 10 minutes.",
+            "body_format": "markdown",
+            "canonical_url": null,
+            "link_url": null,
+            "media": [],
+            "tags": [],
+            "mentions": [],
+            "language": "en",
+            "is_promotional": false,
+            "ai_generated": false
+          },
+          "idempotency_key": "cert-cert_18da184cccd443ef8dcf3abad1f5b90c",
+          "marker": "ibx-gbax3ixuralm"
+        },
+        "response": {
+          "platform_post_id": "2",
+          "live_url": "http://lemmy:8536/post/2",
+          "status": "published"
+        },
+        "test_post_id": 6,
+        "expires_after_s": 300
+      }
+    },
+    {
+      "n": 4,
+      "step": "CONFIRM_LIVE",
+      "outcome": "ok",
+      "started_at": "2026-10-20T14:57:17.079748Z",
+      "duration_ms": 35.7,
+      "detail": {
+        "method": "http_get_live_url",
+        "live_url": "http://lemmy:8536/post/2",
+        "http_status": 200,
+        "marker_found": true,
+        "attempts": [
+          {
+            "at": "2026-10-20T14:57:17.115275Z",
+            "status": 200
+          }
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "step": "STATUS",
+      "outcome": "ok",
+      "started_at": "2026-10-20T14:57:17.141044Z",
+      "duration_ms": 48.5,
+      "detail": {
+        "response": {
+          "status": "published",
+          "live_url": "http://lemmy:8536/post/2"
+        }
+      }
+    },
+    {
+      "n": 6,
+      "step": "METRICS",
+      "outcome": "ok",
+      "started_at": "2026-10-20T14:57:17.216698Z",
+      "duration_ms": 38.5,
+      "detail": {
+        "response": {
+          "views": null,
+          "likes": 1,
+          "comments": 0,
+          "shares": null,
+          "saves": null,
+          "watch_time_s": null,
+          "clicks": null
+        },
+        "exposed": [
+          "comments",
+          "likes"
+        ],
+        "null_means": "the platform does not expose this metric (never a fake 0)"
+      }
+    },
+    {
+      "n": 7,
+      "step": "DELETE",
+      "outcome": "ok",
+      "started_at": "2026-10-20T14:57:17.276004Z",
+      "duration_ms": 92.8,
+      "detail": {
+        "response": {
+          "deleted": true
+        },
+        "platform_delete_mode": "purged"
+      }
+    },
+    {
+      "n": 8,
+      "step": "CONFIRM_DELETED",
+      "outcome": "ok",
+      "started_at": "2026-10-20T14:57:17.389102Z",
+      "duration_ms": 38.5,
+      "detail": {
+        "status_after": {
+          "status": "deleted",
+          "live_url": null
+        },
+        "delete_mode": "purged",
+        "platform_delete_mode": "purged",
+        "method": "platform_api_get_status",
+        "live_url_after": "not used: local Lemmy with federation off serves no page at ap_id (404); the platform API confirms the post"
+      }
+    }
+  ],
+  "result": {
+    "run_id": "cert_18da184cccd443ef8dcf3abad1f5b90c",
+    "destination_id": "dest_3f506d2eb13d4dadadf21508b4739ffc",
+    "connector_key": "lemmy",
+    "passed": true,
+    "state": "PASSED",
+    "level_before": "L0",
+    "level_after": "L4",
+    "level_reason": "native: publish, live URL, status, metrics and delete certified",
+    "delete_mode": "purged",
+    "platform_delete_mode": "purged",
+    "platform_post_id": "2",
+    "live_url": "http://lemmy:8536/post/2",
+    "notes": []
+  }
+}

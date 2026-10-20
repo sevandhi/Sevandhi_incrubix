@@ -1,0 +1,46 @@
+{
+  "status": 422,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:37:13 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "945e1e06-9fbb-4dbd",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "c050693687fa4e3287e8f87e44c7377f",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d91a3bcfaaaa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "DEST_SPEC_VIOLATION",
+      "message": "Content breaks 2 destination limit(s): title is 250 utf16; the limit is 200; image/webp media is not accepted here (accepted: text, link)",
+      "retryable": false,
+      "details": {
+        "retry_policy": "never",
+        "violations": [
+          {
+            "field": "title",
+            "rule": "title_max_chars",
+            "message": "title is 250 utf16; the limit is 200",
+            "limit": 200,
+            "actual": 250
+          },
+          {
+            "field": "media[0]",
+            "rule": "content_types",
+            "message": "image/webp media is not accepted here (accepted: text, link)",
+            "limit": [
+              "text",
+              "link"
+            ],
+            "actual": "image/webp"
+          }
+        ]
+      }
+    }
+  }
+}

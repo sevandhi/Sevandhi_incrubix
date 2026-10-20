@@ -1,0 +1,724 @@
+cases:
+- name: HC3.1 validate lists EVERY violation (title too long for Lemmy AND image/webp
+    on a text/link surface)
+  method: POST
+  path: /connector/v1/lemmy/validate
+  body:
+    rendition:
+      title: TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+      body: A body that is fine.
+      media:
+      - url: http://mock-platforms:8080/assist/hc3/media/x.webp
+        mime: image/webp
+    destination:
+      connector_key: lemmy
+      url: http://mock-platforms:8080/lemmy/hc3-val-e3379b10/c/ibx_test
+  expect:
+    status: 200
+    code: null
+  grade:
+    equals:
+      ok: false
+      violations.0.rule: title_max_chars
+      violations.0.limit: 200
+      violations.0.actual: 250
+      violations.1.rule: content_types
+    min_len:
+      violations: 2
+- name: HC3.2 publish without tailoring -> 422 DEST_SPEC_VIOLATION, the platform is
+    not called
+  method: POST
+  path: /connector/v1/lemmy/publish
+  body:
+    rendition:
+      title: TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+      body: A body that is fine.
+      media:
+      - url: http://mock-platforms:8080/assist/hc3/media/x.webp
+        mime: image/webp
+    destination:
+      connector_key: lemmy
+      url: http://mock-platforms:8080/lemmy/hc3-pub-e3379b10/c/ibx_test
+    connection:
+      connector_key: lemmy
+    idempotency_key: hc3-pub-e3379b10
+  expect:
+    status: 422
+    code: DEST_SPEC_VIOLATION
+  grade:
+    equals:
+      error.retryable: false
+    min_len:
+      error.details.violations: 2
+    mock_counts:
+    - platform: lemmy
+      tenant: hc3-pub-e3379b10
+      route: POST /api/v3/post
+      equals: 0
+- name: HC3.3 body over the Discourse limit -> 422 DEST_SPEC_VIOLATION naming body_max_chars
+  method: POST
+  path: /connector/v1/discourse/publish
+  body:
+    rendition:
+      title: A very long write-up for the forum
+      body: 'word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word word word word word word word word word word
+        word word word word word word '
+    destination:
+      connector_key: discourse
+      surface: topic
+      url: http://mock-platforms:8080/discourse/hc3-body-e3379b10
+    connection:
+      connector_key: discourse
+    idempotency_key: hc3-body-e3379b10
+  expect:
+    status: 422
+    code: DEST_SPEC_VIOLATION
+  grade:
+    contains:
+      ? ''
+      : body_max_chars
+    mock_counts:
+    - platform: discourse
+      tenant: hc3-body-e3379b10
+      route: POST /posts.json
+      equals: 0
+- name: HC3.4 a CJK title is counted in characters, not bytes (102 chars = 306 bytes
+    fits 128)
+  method: POST
+  path: /connector/v1/devto/validate
+  body:
+    rendition:
+      title: 日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語
+      body: 本文はテストです。This body is long enough.
+    destination:
+      connector_key: devto
+      url: http://mock-platforms:8080/forem/hc3-cjk-e3379b10
+  expect:
+    status: 200
+    code: null
+  grade:
+    equals:
+      ok: true
+- name: HC3.5 a CJK title one past the limit (132 chars) -> 422 DEST_SPEC_VIOLATION
+  method: POST
+  path: /connector/v1/devto/publish
+  body:
+    rendition:
+      title: 日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語
+      body: 本文はテストです。This body is long enough.
+    destination:
+      connector_key: devto
+      url: http://mock-platforms:8080/forem/hc3-cjk-e3379b10
+    connection:
+      connector_key: devto
+    idempotency_key: hc3-cjk-e3379b10
+  expect:
+    status: 422
+    code: DEST_SPEC_VIOLATION
+  grade:
+    equals:
+      error.details.violations.0.rule: title_max_chars
+      error.details.violations.0.actual: 132
+- name: HC3.6 five Dev.to tags (limit 4) -> violation tag_max
+  method: POST
+  path: /connector/v1/devto/validate
+  body:
+    rendition:
+      title: Five tags on one article
+      body: Dev.to accepts at most four tags.
+      tags:
+      - ai
+      - video
+      - saas
+      - creators
+      - founders
+    destination:
+      connector_key: devto
+      url: http://mock-platforms:8080/forem/hc3-tags-e3379b10
+  expect:
+    status: 200
+    code: null
+  grade:
+    equals:
+      ok: false
+      violations.0.rule: tag_max
+      violations.0.limit: 4
+      violations.0.actual: 5
+- name: HC3.7 a video file to a text-only Lemmy community -> violation content_types
+  method: POST
+  path: /connector/v1/lemmy/validate
+  body:
+    rendition:
+      title: A clip for the community
+      body: Here is the clip.
+      media:
+      - url: http://mock-platforms:8080/assist/hc3/media/clip.mp4
+        mime: video/mp4
+    destination:
+      connector_key: lemmy
+      url: http://mock-platforms:8080/lemmy/hc3-vid-e3379b10/c/ibx_test
+  expect:
+    status: 200
+    code: null
+  grade:
+    equals:
+      ok: false
+      violations.0.rule: content_types
+      violations.0.actual: video/mp4
+- name: HC3.8 catalogue path auto-fits an over-long title at a word boundary and says
+    so
+  method: POST
+  path: /api/v1/publications
+  body:
+    destination_id: dest_1d8bdcd295e5466092e072b128eb02d8
+    content:
+      title: How do you test posts to many long-tail communities without spamming
+        any of them?
+      body: We compared three ways to test forum posts end to end. Which one has worked
+        for you?
+      language: en
+      ai_generated: false
+  expect:
+    status: 202
+    code: null
+    job_status: succeeded
+  grade:
+    followup:
+    - path: /api/v1/publications/{{resp:publication_id}}
+      status: 200
+      equals:
+        state: published
+      contains:
+      - TITLE_TRUNCATED

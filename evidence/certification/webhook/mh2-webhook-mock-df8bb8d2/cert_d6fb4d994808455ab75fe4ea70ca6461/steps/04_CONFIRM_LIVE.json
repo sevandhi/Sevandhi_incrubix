@@ -1,0 +1,20 @@
+{
+  "n": 4,
+  "step": "CONFIRM_LIVE",
+  "outcome": "ok",
+  "started_at": "2026-10-20T14:57:13.995915Z",
+  "duration_ms": 21.4,
+  "detail": {
+    "method": "http_get_live_url",
+    "live_url": "http://mock-platforms:8080/partner/mh2-webhook-2178819d/p/1",
+    "http_status": 200,
+    "marker_found": true,
+    "attempts": [
+      {
+        "at": "2026-10-20T14:57:14.017229Z",
+        "status": 200,
+        "bytes": 284
+      }
+    ]
+  }
+}

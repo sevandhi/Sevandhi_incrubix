@@ -1,0 +1,20 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/ghost/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "A post with a deleted Ghost integration",
+      "body": "Ghost does not know this Admin API key."
+    },
+    "destination": {
+      "connector_key": "ghost",
+      "url": "http://mock-platforms:8080/ghost/hc2-gk-4201344a"
+    },
+    "connection": {
+      "connector_key": "ghost",
+      "credentials": "***"
+    },
+    "idempotency_key": "hc2-gk-4201344a"
+  }
+}

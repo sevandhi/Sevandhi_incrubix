@@ -1,0 +1,20 @@
+{
+  "n": 4,
+  "step": "CONFIRM_LIVE",
+  "outcome": "ok",
+  "started_at": "2026-10-18T03:40:09.599199Z",
+  "duration_ms": 20.0,
+  "detail": {
+    "method": "http_get_live_url",
+    "live_url": "http://mock-platforms:8080/forem/mh2-devto-ba9bb1f8/ibx_admin/incubrix-certification-test-ibxcertd8df62655c-0001",
+    "http_status": 200,
+    "marker_found": true,
+    "attempts": [
+      {
+        "at": "2026-10-18T03:40:09.619065Z",
+        "status": 200,
+        "bytes": 386
+      }
+    ]
+  }
+}

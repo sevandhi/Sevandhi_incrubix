@@ -1,0 +1,32 @@
+{
+  "run_id": "cert_d6fb4d994808455ab75fe4ea70ca6461",
+  "delete_mode": "deleted",
+  "deleted": true,
+  "step": {
+    "n": 7,
+    "step": "CONFIRM_DELETED",
+    "outcome": "ok",
+    "started_at": "2026-10-20T14:57:14.113081Z",
+    "duration_ms": 51.9,
+    "detail": {
+      "status_after": {
+        "status": "deleted",
+        "live_url": null
+      },
+      "delete_mode": "deleted",
+      "platform_delete_mode": null,
+      "method": "platform_api_get_status + http_get_live_url",
+      "live_url_after": {
+        "url": "http://mock-platforms:8080/partner/mh2-webhook-2178819d/p/1",
+        "http_status": 404,
+        "attempts": [
+          {
+            "at": "2026-10-20T14:57:14.156289Z",
+            "status": 404,
+            "bytes": 18
+          }
+        ]
+      }
+    }
+  }
+}

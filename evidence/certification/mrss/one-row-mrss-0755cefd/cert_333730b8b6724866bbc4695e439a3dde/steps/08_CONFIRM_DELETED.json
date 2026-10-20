@@ -1,0 +1,17 @@
+{
+  "n": 8,
+  "step": "CONFIRM_DELETED",
+  "outcome": "ok",
+  "started_at": "2026-10-18T09:12:37.782136Z",
+  "duration_ms": 26.1,
+  "detail": {
+    "status_after": {
+      "status": "deleted",
+      "live_url": null
+    },
+    "delete_mode": "deleted",
+    "platform_delete_mode": "deleted",
+    "method": "platform_api_get_status",
+    "live_url_after": "not used: self-served feed: get_status renders the public feed and parses it with feedparser; the worker can not reach PUBLIC_BASE_URL from inside compose"
+  }
+}

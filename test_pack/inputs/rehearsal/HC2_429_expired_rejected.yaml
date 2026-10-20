@@ -1,0 +1,178 @@
+# HC2 (brief: "A 429 response with a reset time; an expired token; content rejected by the platform").
+hard_case: HC2
+title: A 429 response with a reset time; an expired token; content rejected by the platform
+setup:
+  connections:
+    partner: {connector_key: webhook, auth_type: api_key, credentials: {secret: sim-secret}, account_handle: "hc2-partner-{{run_id}}"}
+cases:
+  - name: HC2.0 step - the Forem allows 1 article per 120 s (Retry-After as an HTTP-date)
+    role: step
+    method: POST
+    path: "{{mock}}/forem/hc2-rl-{{run_id}}/_mock/rate_limit"
+    body: {limit: 1, window_s: 120, retry_after: http-date}
+    expect: {status: 200}
+
+  - name: HC2.1 step - first Dev.to article goes out
+    role: step
+    method: POST
+    path: /connector/v1/devto/publish
+    body:
+      rendition: {title: "First article inside the platform window", body: "The first article fits inside the platform's limit."}
+      destination: {connector_key: devto, url: "http://mock-platforms:8080/forem/hc2-rl-{{run_id}}"}
+      connection: {connector_key: devto}
+      idempotency_key: "hc2-rl1-{{run_id}}"
+    expect: {status: 200}
+
+  - name: HC2.2 Dev.to 429 with an HTTP-date Retry-After -> PLATFORM_RATE_LIMIT with the reset time
+    method: POST
+    path: /connector/v1/devto/publish
+    body:
+      rendition: {title: "Second article meets the platform limit", body: "This one is refused by the platform with a 429."}
+      destination: {connector_key: devto, url: "http://mock-platforms:8080/forem/hc2-rl-{{run_id}}"}
+      connection: {connector_key: devto}
+      idempotency_key: "hc2-rl2-{{run_id}}"
+    expect: {status: 429, code: PLATFORM_RATE_LIMIT}
+    grade:
+      equals: {error.retryable: true, error.details.reset_source: Retry-After}
+      present: [error.details.retry_at, error.details.retry_after_s]
+      headers: [retry-after]
+
+  - name: HC2.3 the next call backs off without calling the platform
+    method: POST
+    path: /connector/v1/devto/publish
+    body:
+      rendition: {title: "Third article during the back-off window", body: "This one must not reach the platform at all."}
+      destination: {connector_key: devto, url: "http://mock-platforms:8080/forem/hc2-rl-{{run_id}}"}
+      connection: {connector_key: devto}
+      idempotency_key: "hc2-rl3-{{run_id}}"
+    expect: {status: 429, code: PLATFORM_RATE_LIMIT}
+    grade:
+      equals: {error.details.short_circuit: true}
+      mock_counts: [{platform: forem, tenant: "hc2-rl-{{run_id}}", route: "POST /api/articles", equals: 2}]
+
+  - name: HC2.4 Discourse 429 with Retry-After 120 s -> retry_after_s 120
+    method: POST
+    path: /connector/v1/discourse/publish
+    headers: {X-Sim-Fault: "429:120"}
+    body:
+      rendition: {title: "A topic that meets the forum rate limit", body: "The forum answers 429 with Retry-After: 120."}
+      destination: {connector_key: discourse, surface: topic, url: "http://mock-platforms:8080/discourse/hc2-d429-{{run_id}}"}
+      connection: {connector_key: discourse}
+      idempotency_key: "hc2-d429-{{run_id}}"
+    expect: {status: 429, code: PLATFORM_RATE_LIMIT}
+    grade:
+      equals: {error.details.retry_after_s: 120, error.retryable: true}
+      headers: [retry-after]
+
+  - name: HC2.5 step - the Lemmy admin lowers the post limit to 1 per 60 s
+    role: step
+    method: PUT
+    path: "{{mock}}/lemmy/hc2-lrl-{{run_id}}/api/v3/site"
+    headers: {Authorization: "Bearer mock-admin"}
+    body: {rate_limit_post: 1, rate_limit_post_per_second: 60}
+    expect: {status: 200}
+
+  - name: HC2.6 step - first Lemmy post uses the one slot
+    role: step
+    method: POST
+    path: /connector/v1/lemmy/publish
+    body:
+      rendition: {title: "First post inside the Lemmy limit", body: "The one slot of the bucket."}
+      destination: {connector_key: lemmy, url: "http://mock-platforms:8080/lemmy/hc2-lrl-{{run_id}}/c/ibx_test"}
+      connection: {connector_key: lemmy}
+      idempotency_key: "hc2-lrl1-{{run_id}}"
+    expect: {status: 200}
+
+  - name: HC2.7 Lemmy 400 rate_limit_error -> PLATFORM_RATE_LIMIT, reset from the site config
+    method: POST
+    path: /connector/v1/lemmy/publish
+    body:
+      rendition: {title: "Second post meets the Lemmy limit", body: "Lemmy answers 400 rate_limit_error with no header."}
+      destination: {connector_key: lemmy, url: "http://mock-platforms:8080/lemmy/hc2-lrl-{{run_id}}/c/ibx_test"}
+      connection: {connector_key: lemmy}
+      idempotency_key: "hc2-lrl2-{{run_id}}"
+    expect: {status: 429, code: PLATFORM_RATE_LIMIT}
+    grade:
+      equals: {error.details.reset_source: lemmy_site_config, error.details.error_map_key: "400:rate_limit_error"}
+      present: [error.details.retry_at]
+
+  - name: HC2.8 step - the partner revokes IncuBrix's access
+    role: step
+    method: POST
+    path: "{{mock}}/partner/hc2-rev-{{run_id}}/_partner/revoke"
+    expect: {status: 200}
+
+  - name: HC2.9 revoked partner -> CONNECTION_AUTH_EXPIRED, connection paused, reconnect required
+    method: POST
+    path: /connector/v1/webhook/publish
+    body:
+      rendition: {title: "A post to a partner who revoked access", body: "The partner now refuses every request."}
+      destination: {connector_key: webhook, url: "http://mock-platforms:8080/partner/hc2-rev-{{run_id}}"}
+      connection: {connector_key: webhook, connection_id: "{{conn.partner}}"}
+      idempotency_key: "hc2-rev1-{{run_id}}"
+    expect: {status: 424, code: CONNECTION_AUTH_EXPIRED}
+    grade:
+      equals: {error.retryable: false, error.details.connection_state: paused, error.details.action: reconnect_required}
+      followup:
+        - {path: "/api/v1/connections/{{conn.partner}}", status: 200, contains: ["paused"]}
+
+  - name: HC2.10 the paused connection fails fast (no platform call)
+    method: POST
+    path: /connector/v1/webhook/publish
+    body:
+      rendition: {title: "Another post on the paused connection", body: "This one must not reach the partner."}
+      destination: {connector_key: webhook, url: "http://mock-platforms:8080/partner/hc2-rev-{{run_id}}"}
+      connection: {connector_key: webhook, connection_id: "{{conn.partner}}"}
+      idempotency_key: "hc2-rev2-{{run_id}}"
+    expect: {status: 424, code: CONNECTION_AUTH_EXPIRED}
+    grade:
+      mock_counts: [{platform: partner, tenant: "hc2-rev-{{run_id}}", route: "POST /posts", equals: 1}]
+
+  - name: HC2.11 Ghost refuses the Admin key -> CONNECTION_AUTH_EXPIRED with a readable message
+    method: POST
+    path: /connector/v1/ghost/publish
+    body:
+      rendition: {title: "A post with a deleted Ghost integration", body: "Ghost does not know this Admin API key."}
+      destination: {connector_key: ghost, url: "http://mock-platforms:8080/ghost/hc2-gk-{{run_id}}"}
+      connection: {connector_key: ghost, credentials: {admin_api_key: "unknown0123456789abcdef0:abababababababababababababababababababababababababababababababab"}}
+      idempotency_key: "hc2-gk-{{run_id}}"
+    expect: {status: 424, code: CONNECTION_AUTH_EXPIRED}
+    grade:
+      absent_text: ["ghost ***", "Ghost ***"]
+      contains: {error.message: "Admin API key"}
+
+  - name: HC2.12 step - a first topic with this title
+    role: step
+    method: POST
+    path: /connector/v1/discourse/publish
+    body:
+      rendition: {title: "Which forum testing method worked for you?", body: "We compared three ways to test forum posts end to end."}
+      destination: {connector_key: discourse, surface: topic, url: "http://mock-platforms:8080/discourse/hc2-dup-{{run_id}}"}
+      connection: {connector_key: discourse}
+      idempotency_key: "hc2-dup1-{{run_id}}"
+    expect: {status: 200}
+
+  - name: HC2.13 Discourse refuses a duplicate title -> PLATFORM_CONTENT_REJECTED with its message
+    method: POST
+    path: /connector/v1/discourse/publish
+    body:
+      rendition: {title: "Which forum testing method worked for you?", body: "Same title again, a different body this time around."}
+      destination: {connector_key: discourse, surface: topic, url: "http://mock-platforms:8080/discourse/hc2-dup-{{run_id}}"}
+      connection: {connector_key: discourse}
+      idempotency_key: "hc2-dup2-{{run_id}}"
+    expect: {status: 422, code: PLATFORM_CONTENT_REJECTED}
+    grade:
+      equals: {error.retryable: false}
+      contains: {error.details.platform_message: "already been used"}
+
+  - name: HC2.14 Ghost refuses an over-long title -> PLATFORM_CONTENT_REJECTED naming the field
+    method: POST
+    path: /connector/v1/ghost/publish
+    body:
+      rendition: {title: "Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long", body: "Ghost limits titles to 255 characters."}
+      destination: {connector_key: ghost, url: "http://mock-platforms:8080/ghost/hc2-glong-{{run_id}}", spec_overrides: {title_max_chars: 400}}
+      connection: {connector_key: ghost}
+      idempotency_key: "hc2-glong-{{run_id}}"
+    expect: {status: 422, code: PLATFORM_CONTENT_REJECTED}
+    grade:
+      contains: {"": "maximum length"}

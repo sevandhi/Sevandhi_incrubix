@@ -1,0 +1,6 @@
+{
+  "method": "POST",
+  "path": "https://ibx-destination-network-demo.onrender.com/sim/partner/hc2-rev-4201344a/_partner/revoke",
+  "headers": {},
+  "body": null
+}

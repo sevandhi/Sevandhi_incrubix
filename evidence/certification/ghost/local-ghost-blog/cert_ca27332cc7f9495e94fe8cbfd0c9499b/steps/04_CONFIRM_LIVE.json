@@ -1,0 +1,20 @@
+{
+  "n": 4,
+  "step": "CONFIRM_LIVE",
+  "outcome": "ok",
+  "started_at": "2026-10-17T16:50:28.516494Z",
+  "duration_ms": 5140.0,
+  "detail": {
+    "method": "http_get_live_url",
+    "live_url": "http://ghost:2368/incubrix-certification-test-ibxcertbfd0c9499b-ibx-wbygiltfx24p/",
+    "http_status": 200,
+    "marker_found": true,
+    "attempts": [
+      {
+        "at": "2026-10-17T16:50:33.656201Z",
+        "status": 200,
+        "bytes": 17467
+      }
+    ]
+  }
+}

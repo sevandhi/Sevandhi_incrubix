@@ -1,0 +1,13 @@
+{
+  "n": 6,
+  "step": "DELETE",
+  "outcome": "ok",
+  "started_at": "2026-10-18T19:22:57.259575Z",
+  "duration_ms": 4.2,
+  "detail": {
+    "response": {
+      "deleted": true
+    },
+    "platform_delete_mode": "permanent"
+  }
+}

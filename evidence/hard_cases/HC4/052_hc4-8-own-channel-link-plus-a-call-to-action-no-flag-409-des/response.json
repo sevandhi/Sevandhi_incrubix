@@ -1,0 +1,54 @@
+{
+  "status": 409,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:46:12 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "148fc210-c76c-441f",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "1d4a1983f88a421ea2a274faa9cfffae",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d9275a3e28aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "DEST_RULE_SELF_PROMO",
+      "message": "DEST_RULE_SELF_PROMO: this destination bans self-promotion and the post is promotional (channel_link 'https://www.youtube.com/@creator' in body; cta 'subscribe for more' in body; self_reference 'my channel' in body)",
+      "retryable": false,
+      "details": {
+        "retry_policy": "never",
+        "rule": "self_promo=disallowed",
+        "suggestion": "remove own links, tracking/affiliate parameters and calls to action, or post a discussion-first version",
+        "failed_checks": [
+          "self_promo"
+        ],
+        "reasons": [
+          "DEST_RULE_SELF_PROMO: this destination bans self-promotion and the post is promotional (channel_link 'https://www.youtube.com/@creator' in body; cta 'subscribe for more' in body; self_reference 'my channel' in body)"
+        ],
+        "evidence": [
+          {
+            "type": "channel_link",
+            "value": "https://www.youtube.com/@creator",
+            "field": "body"
+          },
+          {
+            "type": "cta",
+            "value": "subscribe for more",
+            "field": "body"
+          },
+          {
+            "type": "self_reference",
+            "value": "my channel",
+            "field": "body"
+          }
+        ],
+        "warnings": [],
+        "decision": "block"
+      }
+    }
+  }
+}

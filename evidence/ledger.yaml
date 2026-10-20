@@ -1,0 +1,131 @@
+# Evidence ledger: one entry per Submission Form row. scripts/prove_ledger.py turns it into evidence/LEDGER.md.
+# The STATUS is never written here: it comes from evidence/proof_runs/<proof>.json written by the proof script in
+# the current run (scripts/prove_all.sh). "Yes" only when that proof passed in this run; otherwise Partial/No with
+# the proof's own reasons. "proof: X#Y" reads sub-result Y of proof X. "cap" lowers a Yes when the proof covers only
+# part of the row (the reason is printed). Rows without a proof are "No" with the note as the reason.
+rows:
+  # ---------------------------------------------------------------- 2_Must_haves
+  - {id: MH1, tab: 2_Must_haves, row: 1, proof: MH1, reproduce: scripts/prove_mh1.sh,
+     claim: "Every connector implements the Appendix A methods, manifest and error codes (checked on the running service)",
+     evidence: [evidence/must_haves/MH1_contract.log, evidence/must_haves/MH1_contract_matrix.csv, tests/contract/test_platform_conformance.py, app/contract/manifest.schema.json]}
+  - {id: MH2, tab: 2_Must_haves, row: 2, proof: MH2, reproduce: scripts/prove_mh2.sh,
+     claim: "Six Core connectors certified: Discourse, Lemmy, Dev.to, Ghost, signed webhook, assisted (plus real local Lemmy and Ghost)",
+     evidence: [evidence/must_haves/MH2_certification_summary.csv, evidence/must_haves/MH2_certify.log, evidence/certification/]}
+  - {id: MH3, tab: 2_Must_haves, row: 3, proof: MH3, reproduce: scripts/prove_mh3.sh,
+     claim: "A new forum, community or site of a supported type is one catalogue row (JSON or CSV), no code, no connection",
+     evidence: [evidence/must_haves/MH3_add_instance.csv, evidence/must_haves/MH3_add_instance.log, evidence/must_haves/MH7_sim_run.log]}
+  - {id: MH4, tab: 2_Must_haves, row: 4, proof: MH4, reproduce: scripts/prove_mh4.sh,
+     claim: "Frequency cap, self-promotion, link policy and AI disclosure checked before every post; a breaking post is blocked or rescheduled with a reason",
+     evidence: [evidence/must_haves/MH4_rules.csv, evidence/must_haves/MH4_rules.log, evidence/metrics/rule_safety.csv]}
+  - {id: MH5, tab: 2_Must_haves, row: 5, proof: MH5, reproduce: scripts/prove_mh5.sh,
+     claim: "Test posts only on own instances, removed within 10 minutes (deleted / soft_deleted / unpublished_to_draft reported separately); 429 back-off with the reset time",
+     evidence: [evidence/must_haves/MH5_test_post_audit.txt, evidence/must_haves/MH5_test_post_lifetimes.csv, evidence/must_haves/MH5_backoff_429.csv, evidence/must_haves/MH5_never_spam.log]}
+  - {id: MH6, tab: 2_Must_haves, row: 6, proof: MH6, reproduce: scripts/prove_mh6.sh,
+     claim: "The same idempotency key never creates a second post, even after a timeout (mocks and real Lemmy/Ghost via toxiproxy)",
+     evidence: [evidence/must_haves/MH6_timeout_retry.log, evidence/metrics/duplicates_under_retry.csv]}
+  - {id: MH7, tab: 2_Must_haves, row: 7, proof: MH7, reproduce: scripts/prove_mh7.sh,
+     claim: "Tokens never in logs or the repository (canary + bootstrap secrets + gitleaks); simulation mode runs everything with no real accounts",
+     evidence: [evidence/must_haves/MH7_canary_grep.log, evidence/must_haves/MH7_gitleaks.txt, evidence/must_haves/MH7_sim_run.log]}
+  - {id: MH8, tab: 2_Must_haves, row: 8, proof: MH8, reproduce: scripts/prove_mh8.sh,
+     claim: "docker compose up on a clean copy starts the service, local Lemmy and Ghost and the mocks; real posts end to end; one test command",
+     evidence: [evidence/must_haves/MH8_clean_copy.log, evidence/must_haves/MH8_local_instances.txt]}
+  - {id: MH9, tab: 2_Must_haves, row: 9, proof: MH9, reproduce: "scripts/prove_mh9.sh (IBX_LIVE_URL=<demo> for the live demo)",
+     claim: "Integration Standard followed and the live demo works for the whole review period",
+     evidence: [evidence/must_haves/MH9_integration.log, evidence/integration/IS_selfcheck.txt]}
+
+  # ---------------------------------------------------------------- 3_Levels
+  - {id: CORE1, tab: 3_Levels, row: "Core 1", proof: CORE1, reproduce: scripts/prove_all.sh,
+     claim: "All must-haves pass", evidence: [evidence/levels/core/CORE1_must_haves.csv]}
+  - {id: CORE2, tab: 3_Levels, row: "Core 2", proof: CORE2, reproduce: scripts/prove_core2.sh,
+     claim: "Each Core connector passes the full certification run (publish, confirm live URL, status, delete) with stored evidence",
+     evidence: [evidence/levels/core/CORE2_certification_runs.csv, evidence/certification/]}
+  - {id: CORE3, tab: 3_Levels, row: "Core 3", proof: CORE3, reproduce: scripts/prove_core3.sh,
+     claim: "Errors from each platform map to the shared codes: expired token, rate limit, rejected content (6 x 3 matrix, real calls)",
+     evidence: [evidence/levels/core/CORE3_error_matrix.csv, evidence/levels/core/CORE3_error_matrix.log]}
+  - {id: ADV1, tab: 3_Levels, row: "Advanced 1", proof: ADV1, reproduce: "uv run python scripts/prove_adv1.py --api $API --token $API_TOKEN",
+     claim: "Catalogue import: validate, de-duplicate, reachability, enrichment; 1,000 rows < 5 min with a row-by-row report",
+     evidence: [evidence/metrics/catalogue_import.csv, evidence/levels/adv/]}
+  - {id: ADV2, tab: 3_Levels, row: "Advanced 2", proof: ADV2, reproduce: "uv run python scripts/eval_rules_capture.py",
+     claim: "Rules capture: an AI step proposes posting rules from a rules page; a person confirms them before use",
+     evidence: [evidence/metrics/rules_capture_eval_summary.csv, evidence/advanced/ADV2_proposal_confirm.log]}
+  - {id: ADV3, tab: 3_Levels, row: "Advanced 3", proof: ADV3, reproduce: "uv run python scripts/prove_adv3.py",
+     claim: "Relevance score 1-5 against IncuBrix's audience with a short explanation", evidence: [evidence/levels/adv/]}
+  - {id: ADV4, tab: 3_Levels, row: "Advanced 4", proof: ADV4, reproduce: "uv run pytest -q tests/unit/test_tailoring_profiles.py tests/unit/test_tailoring_truncate.py",
+     claim: "Tailoring: discussion-first forums, canonical URL for articles, word-boundary truncation, hashtag and mention style",
+     evidence: [tests/unit/test_tailoring_profiles.py, evidence/hard_cases/HC3/]}
+  - {id: ADV5, tab: 3_Levels, row: "Advanced 5", proof: ADV5, reproduce: "see evidence/connectors/P4C/ (MRSS, Slack, PeerTube)",
+     claim: "Three more connectors (MRSS video feed, Slack app, PeerTube)", evidence: [evidence/connectors/P4C/, evidence/certification/]}
+  - {id: OUT1, tab: 3_Levels, row: "Outstanding 1", proof: OUT1, reproduce: "(not built yet)",
+     claim: "Recommender with reasons; precision of the top 10 on a labelled set", evidence: [], note: "recommender not built in this repo yet"}
+  - {id: OUT2, tab: 3_Levels, row: "Outstanding 2", proof: OUT2, reproduce: "(not proven yet)",
+     claim: "fetch_metrics on at least three connectors, normalised", evidence: [evidence/levels/core/CORE3_error_matrix.csv],
+     note: "metrics exist on Discourse, Lemmy, Dev.to (see MH1 matrix) but the normalisation proof is not built"}
+  - {id: OUT3, tab: 3_Levels, row: "Outstanding 3", proof: OUT3, reproduce: "(not built yet)",
+     claim: "Recertification scheduler < 30 days; failing destination demoted and excluded with an alert", evidence: [evidence/hard_cases/HC5/],
+     note: "demotion on failed certification works (HC5); the recertification scheduler is not built"}
+  - {id: OUT4, tab: 3_Levels, row: "Outstanding 4", proof: OUT4, reproduce: "(not finished)",
+     claim: "150+ real, relevant destinations with rules, relevance and connector type", evidence: [catalogue/seeds/seed_v1.csv],
+     note: "seed catalogue exists; the final 150-row catalogue with confirmed rules is not proven"}
+
+  # ---------------------------------------------------------------- 4_Integration
+  - {id: IS1, tab: 4_Integration, row: 1, proof: "MH9#IS1", reproduce: "scripts/prove_mh8.sh; scripts/test.sh",
+     claim: "docker compose up starts everything; one command runs all tests with no API keys; .env.example lists every setting",
+     evidence: [evidence/must_haves/MH8_clean_copy.log, evidence/integration/IS_selfcheck.txt]}
+  - {id: IS2, tab: 4_Integration, row: 2, proof: "MH9#IS2", reproduce: scripts/integration_selfcheck.sh,
+     claim: "openapi.yaml (3.1) matches the running service; routes under /api/v1", evidence: [openapi.yaml, evidence/integration/IS_selfcheck.txt]}
+  - {id: IS3, tab: 4_Integration, row: 3, proof: "MH9#IS3", reproduce: scripts/integration_selfcheck.sh,
+     claim: "Jobs: 202 + job_id; status, progress, result links; HMAC-signed callback", evidence: [evidence/integration/IS_selfcheck.txt]}
+  - {id: IS4, tab: 4_Integration, row: 4, proof: "MH9#IS4", reproduce: scripts/prove_mh9.sh,
+     claim: "Idempotency-Key on every POST (incl. contract publish); same request twice = same job, never done twice",
+     evidence: [evidence/integration/IS_selfcheck.txt, evidence/must_haves/MH9_integration.log, evidence/hard_cases/HC1/]}
+  - {id: IS5, tab: 4_Integration, row: 5, proof: "MH9#IS5", reproduce: scripts/integration_selfcheck.sh,
+     claim: "JSON error envelope, UPPER_SNAKE_CASE codes listed", evidence: [evidence/integration/IS_selfcheck.txt]}
+  - {id: IS6, tab: 4_Integration, row: 6, proof: "MH9#IS6", reproduce: scripts/integration_selfcheck.sh,
+     claim: "All settings from env/config; nothing hard-coded", evidence: [evidence/integration/IS_selfcheck.txt, .env.example]}
+  - {id: IS7, tab: 4_Integration, row: 7, proof: "MH9#IS7", reproduce: scripts/prove_mh9.sh,
+     claim: "Upload or URL input; outputs in S3-compatible storage; download links", evidence: [evidence/integration/IS7_files_in_out.log]}
+  - {id: IS8, tab: 4_Integration, row: 8, proof: "MH9#IS8", reproduce: scripts/integration_selfcheck.sh,
+     claim: "Structured JSON logs with timestamp, level, job_id, X-Correlation-Id; /health and /ready",
+     evidence: [evidence/integration/IS8_log_sample.jsonl, evidence/integration/IS_selfcheck.txt]}
+  - {id: IS9, tab: 4_Integration, row: 9, proof: "MH9#IS9", reproduce: scripts/prove_mh9.sh,
+     claim: "Every result has a JSON manifest (providers/versions, settings, seed, timings, cost, warnings, licence/rights)",
+     evidence: [evidence/integration/IS9_manifest.json]}
+  - {id: IS10, tab: 4_Integration, row: 10, proof: "MH9#IS10", reproduce: "uv run python -m app.batch run test_pack/inputs/sample --out results/sample --api $API --strict",
+     claim: "Batch runner over a folder of inputs, all results in one folder", evidence: [evidence/integration/IS10_batch_summary.csv]}
+
+  # ---------------------------------------------------------------- 5_Metrics
+  - {id: MET-CERT, tab: 5_Metrics, row: Certification, proof: MH2, reproduce: scripts/prove_mh2.sh,
+     claim: "Destinations certified per connector, time per certification run", evidence: [evidence/metrics/certification_runs.csv]}
+  - {id: MET-REL, tab: 5_Metrics, row: Reliability, proof: MH6, reproduce: scripts/prove_mh6.sh,
+     claim: "Publish success in simulation and on local instances; duplicates under retry tests (must be 0)",
+     evidence: [evidence/metrics/duplicates_under_retry.csv, evidence/integration/M6_parallel_publish.txt, evidence/must_haves/MH7_sim_run.log]}
+  - {id: MET-RULE, tab: 5_Metrics, row: Rule safety, proof: MH4, reproduce: "uv run python scripts/rule_safety.py",
+     claim: "Rule violations caught vs missed on the rule test set", evidence: [evidence/metrics/rule_safety.csv]}
+  - {id: MET-CAT, tab: 5_Metrics, row: Catalogue, proof: ADV1, reproduce: "uv run python scripts/prove_adv1.py",
+     claim: "Rows imported, duplicates and errors, time for 1,000 rows", evidence: [evidence/metrics/catalogue_import.csv]}
+  - {id: MET-REC, tab: 5_Metrics, row: Recommendation, proof: OUT1, reproduce: "(not built yet)",
+     claim: "Precision of the top 10 on the labelled set", evidence: [], note: "recommender not built yet"}
+  - {id: MET-COST, tab: 5_Metrics, row: Cost, proof: "MH9#IS9", cap: Partial, reproduce: scripts/prove_mh9.sh,
+     claim: "API/model cost per 1,000 publications", evidence: [evidence/integration/IS9_manifest.json],
+     note: "job manifests carry cost.total_usd (0 with the mock provider); the per-1,000-publications figure for REPORT.md is not computed by a script yet"}
+
+  # ---------------------------------------------------------------- 6_Hard_cases
+  - {id: HC1, tab: 6_Hard_cases, row: 1, proof: "REHEARSAL#HC1", reproduce: scripts/prove_rehearsal.sh,
+     claim: "Publish times out and is retried with the same idempotency key", evidence: [evidence/hard_cases/HC1/, evidence/hard_cases/rehearsal_summary.csv, test_pack/inputs/rehearsal/HC1_timeout_retry.yaml]}
+  - {id: HC2, tab: 6_Hard_cases, row: 2, proof: "REHEARSAL#HC2", reproduce: scripts/prove_rehearsal.sh,
+     claim: "429 with a reset time; expired token; content rejected by the platform", evidence: [evidence/hard_cases/HC2/, evidence/hard_cases/rehearsal_summary.csv, test_pack/inputs/rehearsal/HC2_429_expired_rejected.yaml]}
+  - {id: HC3, tab: 6_Hard_cases, row: 3, proof: "REHEARSAL#HC3", reproduce: scripts/prove_rehearsal.sh,
+     claim: "Title/body over the limit; media the destination does not accept", evidence: [evidence/hard_cases/HC3/, evidence/hard_cases/rehearsal_summary.csv, test_pack/inputs/rehearsal/HC3_limits_media.yaml]}
+  - {id: HC4, tab: 6_Hard_cases, row: 4, proof: "REHEARSAL#HC4", reproduce: scripts/prove_rehearsal.sh,
+     claim: "Second post inside the frequency cap; promotional post to a no-promotion community", evidence: [evidence/hard_cases/HC4/, evidence/hard_cases/rehearsal_summary.csv, test_pack/inputs/rehearsal/HC4_cap_promo.yaml]}
+  - {id: HC5, tab: 6_Hard_cases, row: 5, proof: "REHEARSAL#HC5", reproduce: scripts/prove_rehearsal.sh,
+     claim: "A platform renames a field: certification fails and the destination is demoted", evidence: [evidence/hard_cases/HC5/, evidence/hard_cases/rehearsal_summary.csv, test_pack/inputs/rehearsal/HC5_field_rename.yaml]}
+  - {id: HC6, tab: 6_Hard_cases, row: 6, proof: "REHEARSAL#HC6", reproduce: scripts/prove_rehearsal.sh,
+     claim: "CSV with duplicates, bad URLs, mixed languages; a partner revokes permission", evidence: [evidence/hard_cases/HC6/, evidence/hard_cases/rehearsal_summary.csv, test_pack/inputs/rehearsal/HC6_csv_revoke.yaml]}
+  - {id: HC7, tab: 6_Hard_cases, row: 7, proof: "REHEARSAL#HC7", reproduce: scripts/prove_rehearsal.sh,
+     claim: "Non-English community; destination that requires AI-content disclosure", evidence: [evidence/hard_cases/HC7/, evidence/hard_cases/rehearsal_summary.csv, test_pack/inputs/rehearsal/HC7_language_disclosure.yaml]}
+
+  # ---------------------------------------------------------------- 7_Declaration (signed by the human; checks listed)
+  - {id: DECL, tab: 7_Declaration, row: all, proof: null, human: true, reproduce: "read AI_USE.md, SOURCES.md; MH7 gitleaks; licence gate",
+     claim: "Declaration statements are answered and signed by the candidate", evidence: [AI_USE.md, SOURCES.md, evidence/must_haves/MH7_gitleaks.txt],
+     note: "for the human: check AI_USE.md, SOURCES.md (dependencies + licences), the MH7 gitleaks report and that every Yes above came from this run"}

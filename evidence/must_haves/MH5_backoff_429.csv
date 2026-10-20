@@ -1,0 +1,7 @@
+connector,target,trigger,http_status,error_code,retry_after_s,retry_at,reset_source,retry_after_header,next_call,platform_creates,after_reset,status
+discourse,mock,Discourse's own topic rate limit (site setting rate_limit_create_topic=600 s) -> 429 + Retry-After + extras.wait_seconds,429,PLATFORM_RATE_LIMIT,600,2026-10-20T15:18:01.619741Z,Retry-After,600,429 short_circuit=True,1->2->2,,PASS
+lemmy,mock,"Lemmy's own post limiter (mock, measured on 0.19.20): post limit 1 per 60 s -> 400 rate_limit_error",429,PLATFORM_RATE_LIMIT,60,2026-10-20T15:09:01.778029Z,lemmy_site_config,60,429 short_circuit=True,1->2->2,,PASS
+devto,mock,Forem's limiter (mock control): 1 article per 120 s -> 429 + Retry-After as an HTTP-date,429,PLATFORM_RATE_LIMIT,120,2026-10-20T15:10:01.895898Z,Retry-After,120,429 short_circuit=True,1->2->2,,PASS
+ghost,mock,generic 429 + Retry-After: 90 queued on the Ghost mock (the real Ghost Admin API gave no 429 locally; only its login limiter did),429,PLATFORM_RATE_LIMIT,90,2026-10-20T15:09:32.050652Z,Retry-After,90,429 short_circuit=True,1->2->2,,PASS
+webhook,mock,partner limiter (mock): 1 post per 120 s -> 429 + X-RateLimit-Reset (epoch) + Retry-After,429,PLATFORM_RATE_LIMIT,121,2026-10-20T15:10:03.219291Z,Retry-After,121,429 short_circuit=True,1->2->2,,PASS
+lemmy,real-local,"real Lemmy: site post limit lowered to 1 per 10 s (admin PUT /api/v3/site), then restored",429,PLATFORM_RATE_LIMIT,10,2026-10-20T15:08:13.279751Z,lemmy_site_config,10,429 short_circuit=True,n/a (real),200,PASS

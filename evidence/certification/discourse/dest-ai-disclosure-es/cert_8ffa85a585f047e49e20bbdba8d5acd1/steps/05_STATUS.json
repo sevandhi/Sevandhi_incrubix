@@ -1,0 +1,13 @@
+{
+  "n": 5,
+  "step": "STATUS",
+  "outcome": "ok",
+  "started_at": "2026-10-17T16:50:46.766221Z",
+  "duration_ms": 24.0,
+  "detail": {
+    "response": {
+      "status": "published",
+      "live_url": "http://mock-platforms:8080/discourse/dest-ai-disclosure-es/t/incubrix-certification-test-ibxcertdba8d5acd1/1"
+    }
+  }
+}

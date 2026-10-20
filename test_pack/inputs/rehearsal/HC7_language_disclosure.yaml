@@ -1,0 +1,67 @@
+# HC7 (brief: "A non-English community; a destination that requires AI-content disclosure").
+hard_case: HC7
+title: A non-English community; a destination that requires AI-content disclosure
+setup:
+  destinations:
+    es:
+      certify: true
+      row: {name: "HC7 comunidad {{run_id}}", url: "http://mock-platforms:8080/discourse/hc7-es-{{run_id}}", connector_key: discourse,
+            language: es, disclosure_required: "true", self_promo_allowed: "true", automation_allowed: "true", frequency_cap: "5/P7D"}
+cases:
+  - name: HC7.1 English post to a Spanish community -> 409 DEST_RULE_LANGUAGE with the reason
+    method: POST
+    path: /api/v1/publications
+    body:
+      destination_id: "{{dest.es}}"
+      content: {title: "How do you test posts to many communities?", body: "We compared three ways to test forum posts end to end. Which one has worked for you?", language: en, ai_generated: false}
+    expect: {status: 409, code: DEST_RULE_LANGUAGE}
+    grade:
+      contains: {error.message: "es"}
+
+  - name: HC7.2 AI-assisted Spanish post -> published with the Spanish disclosure line on the page
+    method: POST
+    path: /api/v1/publications
+    body:
+      destination_id: "{{dest.es}}"
+      content: {title: "¿Cómo probáis las publicaciones en comunidades?", body: "Comparamos tres formas de probar publicaciones en foros de principio a fin. ¿Cuál os ha funcionado mejor a vosotros?", language: es, ai_generated: true}
+    expect: {status: 202, code: null, job_status: succeeded}
+    grade:
+      followup:
+        - {path: "/api/v1/publications/{{resp:publication_id}}", live: true, status: 200, contains: ["Aviso: esta publicación se creó con ayuda de inteligencia artificial (IA)."]}
+
+  - name: HC7.3 ai_generated not stated is treated as AI -> disclosure added
+    method: POST
+    path: /connector/v1/discourse/publish
+    body:
+      rendition: {title: "A summary of this week's release notes", body: "Here is a short summary of what changed in the release this week."}
+      destination: {connector_key: discourse, surface: topic, url: "http://mock-platforms:8080/discourse/hc7-unk-{{run_id}}", disclosure_required: true}
+      connection: {connector_key: discourse}
+      idempotency_key: "hc7-unk-{{run_id}}"
+    expect: {status: 200, code: null}
+    grade:
+      followup:
+        - {path: "", live: true, contains: ["Disclosure: this post was created with the help of AI."]}
+
+  - name: HC7.4 disclosure required but auto-insert off -> 409 DEST_RULE_DISCLOSURE
+    method: POST
+    path: /connector/v1/discourse/publish
+    body:
+      rendition: {title: "A summary of this week's release notes", body: "Here is a short summary of what changed in the release this week.", ai_generated: true}
+      destination: {connector_key: discourse, surface: topic, url: "http://mock-platforms:8080/discourse/hc7-noauto-{{run_id}}",
+                    rules: {disclosure: {required: true, auto_insert: false}, automation_allowed: true}}
+      connection: {connector_key: discourse}
+      idempotency_key: "hc7-noauto-{{run_id}}"
+    expect: {status: 409, code: DEST_RULE_DISCLOSURE}
+    grade:
+      mock_counts: [{platform: discourse, tenant: "hc7-noauto-{{run_id}}", route: "POST /posts.json", equals: 0}]
+
+  - name: HC7.5 German community (language must match) and English content -> 409 DEST_RULE_LANGUAGE
+    method: POST
+    path: /connector/v1/discourse/publish
+    body:
+      rendition: {title: "How do you test posts to many communities?", body: "We compared three ways to test forum posts end to end. Which one has worked for you?"}
+      destination: {connector_key: discourse, surface: topic, url: "http://mock-platforms:8080/discourse/hc7-de-{{run_id}}", language: de,
+                    rules: {language_policy: must_match, automation_allowed: true}}
+      connection: {connector_key: discourse}
+      idempotency_key: "hc7-de-{{run_id}}"
+    expect: {status: 409, code: DEST_RULE_LANGUAGE}

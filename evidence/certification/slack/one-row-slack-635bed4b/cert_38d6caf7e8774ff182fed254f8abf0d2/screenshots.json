@@ -1,0 +1,12 @@
+{
+  "run_id": "cert_38d6caf7e8774ff182fed254f8abf0d2",
+  "simulation": true,
+  "live": {
+    "taken": false,
+    "why": "no shooter: SCREENSHOT_URL is not set (start compose profile `evidence` and set SCREENSHOT_URL=http://shooter:3000)"
+  },
+  "after_delete": {
+    "taken": false,
+    "why": "no shooter: SCREENSHOT_URL is not set (start compose profile `evidence` and set SCREENSHOT_URL=http://shooter:3000)"
+  }
+}

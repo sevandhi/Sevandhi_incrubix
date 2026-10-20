@@ -1,0 +1,19 @@
+{
+  "status": 200,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:46:55 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "7fe424b3-9663-4d65",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d928769ae4aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "revoked": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "index": 49,
+  "name": "HC4.5 contract - second post inside the cap -> 409 DEST_RULE_FREQUENCY_CAP with retry_at, platform not called",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 409,
+  "code": "DEST_RULE_FREQUENCY_CAP",
+  "expected_status": 409,
+  "expected_code": "DEST_RULE_FREQUENCY_CAP",
+  "passed": true,
+  "duration_ms": 2979.6,
+  "correlation_id": "5ef92819da9a46f782b1646df1ec0bd4",
+  "folder": "049_hc4-5-contract-second-post-inside-the-cap-409-dest-rule-freq",
+  "job_status": null
+}

@@ -1,0 +1,90 @@
+{
+ "id": "CORE1",
+ "title": "All must-haves pass (MH1-MH9 proofs all Yes in this run)",
+ "status": "No",
+ "reasons": [
+  "FAIL MH2 proof status Yes: Partial: certification packs have no screenshot (brief: 'run record, live URL or API response, screenshot, deletion confirmation'); missing for: discourse@mock, lemmy@mock, devto@mock, ghost@mock, web",
+  "FAIL MH5 proof status Yes: Partial: 'no scraping where it is not allowed': only the catalogue seed research fetched public pages (robots-aware, see catalogue/seeds/README.md); the catalogue import/enrich fetcher is not built, s",
+  "FAIL MH7 proof status Yes: No: FAIL gitleaks: 0 unexplained findings (idempotency keys and test-fixture fakes listed in the report): [\"generic-api-key /repo/.env:75\", \"generic-api-key /repo/.env:147\", \"generic-api-key /repo/.en",
+  "FAIL MH9 proof status Yes: Partial: no live demo URL yet (IBX_LIVE_URL not set): 'the live demo works for the whole review period' is unproven | no uptime record (evidence/metrics/uptime.csv) for the live demo"
+ ],
+ "run_id": "20261020T145607Z",
+ "started_at": "2026-10-20T15:19:57Z",
+ "finished_at": "2026-10-20T15:19:57Z",
+ "duration_s": 0.0,
+ "api": "http://127.0.0.1:38875",
+ "mode": null,
+ "command": "scripts/prove_core1.sh",
+ "evidence": [
+  "evidence/levels/core/CORE1_must_haves.csv",
+  "evidence/levels/core/CORE1_must_haves.log"
+ ],
+ "checks_total": 9,
+ "checks_passed": 5,
+ "checks": [
+  {
+   "label": "MH1 proof status Yes",
+   "ok": true,
+   "critical": true,
+   "detail": "Yes: ",
+   "group": null
+  },
+  {
+   "label": "MH2 proof status Yes",
+   "ok": false,
+   "critical": true,
+   "detail": "Partial: certification packs have no screenshot (brief: 'run record, live URL or API response, screenshot, deletion confirmation'); missing for: discourse@mock, lemmy@mock, devto@mock, ghost@mock, webhook@mock",
+   "group": null
+  },
+  {
+   "label": "MH3 proof status Yes",
+   "ok": true,
+   "critical": true,
+   "detail": "Yes: ",
+   "group": null
+  },
+  {
+   "label": "MH4 proof status Yes",
+   "ok": true,
+   "critical": true,
+   "detail": "Yes: ",
+   "group": null
+  },
+  {
+   "label": "MH5 proof status Yes",
+   "ok": false,
+   "critical": true,
+   "detail": "Partial: 'no scraping where it is not allowed': only the catalogue seed research fetched public pages (robots-aware, see catalogue/seeds/README.md); the catalogue import/enrich fetcher is not built, so it is n",
+   "group": null
+  },
+  {
+   "label": "MH6 proof status Yes",
+   "ok": true,
+   "critical": true,
+   "detail": "Yes: ",
+   "group": null
+  },
+  {
+   "label": "MH7 proof status Yes",
+   "ok": false,
+   "critical": true,
+   "detail": "No: FAIL gitleaks: 0 unexplained findings (idempotency keys and test-fixture fakes listed in the report): [\"generic-api-key /repo/.env:75\", \"generic-api-key /repo/.env:147\", \"generic-api-key /repo/.env:15",
+   "group": null
+  },
+  {
+   "label": "MH8 proof status Yes",
+   "ok": true,
+   "critical": true,
+   "detail": "Yes: ",
+   "group": null
+  },
+  {
+   "label": "MH9 proof status Yes",
+   "ok": false,
+   "critical": true,
+   "detail": "Partial: no live demo URL yet (IBX_LIVE_URL not set): 'the live demo works for the whole review period' is unproven | no uptime record (evidence/metrics/uptime.csv) for the live demo",
+   "group": null
+  }
+ ],
+ "sub": {}
+}

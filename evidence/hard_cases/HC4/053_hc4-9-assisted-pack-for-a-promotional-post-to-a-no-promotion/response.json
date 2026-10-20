@@ -1,0 +1,64 @@
+{
+  "status": 409,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:46:14 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "2fe8bfa4-33a1-42c6",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "2449a33d25774a168ef97b2e0dd003ef",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d9276ebbe3aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "DEST_RULE_SELF_PROMO",
+      "message": "DEST_RULE_SELF_PROMO: this destination bans self-promotion and the post is promotional (flag 'is_promotional=true' in is_promotional; utm 'utm_source in https://mycourse.example.com/?utm_source=forum' in body; self_reference 'Our new course' in title; cta 'code SAVE50' in body; self_reference 'my course' in body)",
+      "retryable": false,
+      "details": {
+        "retry_policy": "never",
+        "rule": "self_promo=disallowed",
+        "suggestion": "remove own links, tracking/affiliate parameters and calls to action, or post a discussion-first version",
+        "failed_checks": [
+          "self_promo"
+        ],
+        "reasons": [
+          "DEST_RULE_SELF_PROMO: this destination bans self-promotion and the post is promotional (flag 'is_promotional=true' in is_promotional; utm 'utm_source in https://mycourse.example.com/?utm_source=forum' in body; self_reference 'Our new course' in title; cta 'code SAVE50' in body; self_reference 'my course' in body)"
+        ],
+        "evidence": [
+          {
+            "type": "flag",
+            "value": "is_promotional=true",
+            "field": "is_promotional"
+          },
+          {
+            "type": "utm",
+            "value": "utm_source in https://mycourse.example.com/?utm_source=forum",
+            "field": "body"
+          },
+          {
+            "type": "self_reference",
+            "value": "Our new course",
+            "field": "title"
+          },
+          {
+            "type": "cta",
+            "value": "code SAVE50",
+            "field": "body"
+          },
+          {
+            "type": "self_reference",
+            "value": "my course",
+            "field": "body"
+          }
+        ],
+        "warnings": [],
+        "decision": "block"
+      }
+    }
+  }
+}

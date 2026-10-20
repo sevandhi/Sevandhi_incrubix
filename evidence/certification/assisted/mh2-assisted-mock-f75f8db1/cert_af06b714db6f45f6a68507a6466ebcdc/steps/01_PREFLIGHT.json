@@ -1,0 +1,20 @@
+{
+  "n": 1,
+  "step": "PREFLIGHT",
+  "outcome": "ok",
+  "started_at": "2026-10-18T03:40:12.702559Z",
+  "duration_ms": 11.0,
+  "detail": {
+    "connector_key": "assisted",
+    "connector_version": "1.0.0",
+    "tier": "assisted",
+    "capabilities": [
+      "assist"
+    ],
+    "target": "own instance mock-platforms",
+    "kill_switch": "off",
+    "connection_id": null,
+    "rules_confirmed": true,
+    "auth_probe": "no refresh_auth capability: the PUBLISH step proves the credentials"
+  }
+}

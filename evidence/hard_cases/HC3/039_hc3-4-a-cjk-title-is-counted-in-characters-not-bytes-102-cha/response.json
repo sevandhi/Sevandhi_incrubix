@@ -1,0 +1,21 @@
+{
+  "status": 200,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:37:14 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "31c22097-dcd5-4d92",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "52d43e3135324dcd9fdae8bd1509ac69",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d91a487ccaaa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "ok": true,
+    "violations": []
+  }
+}

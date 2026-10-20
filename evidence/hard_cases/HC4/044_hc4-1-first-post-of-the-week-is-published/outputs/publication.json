@@ -1,0 +1,39 @@
+{
+  "publication_id": "pub_05ab059b704a4d269364dd8cfc19bc9c",
+  "destination_id": "dest_21be725d0f0744e08cf6899113ba5987",
+  "content_id": "content_797cbefc9cc14caea8595a632b74071e",
+  "state": "published",
+  "reason": null,
+  "reasons": [],
+  "code": null,
+  "outcome": null,
+  "retry_at": null,
+  "scheduled_for": "2026-10-20T15:37:35.734351Z",
+  "platform_post_id": "2~i4de066d314",
+  "live_url": "http://mock-platforms:8080/discourse/hc4-cap-4201344a/t/how-do-you-test-posts-to-long-tail-communities/2",
+  "attempts": 1,
+  "rule_decision": {
+    "code": null,
+    "fixes": [],
+    "action": "allow",
+    "reasons": [],
+    "evidence": [],
+    "retry_at": null,
+    "warnings": [],
+    "failed_checks": []
+  },
+  "tailoring": {
+    "diff": [],
+    "profile": "forum",
+    "warnings": []
+  },
+  "assist_pack": null,
+  "removal": null,
+  "job_ids": [
+    "job_ae7d55df0e48433f9bfd85f85c1fb1cf"
+  ],
+  "error": null,
+  "published_at": "2026-10-20T15:37:41.886661Z",
+  "created_at": "2026-10-20T15:37:31.863064Z",
+  "updated_at": "2026-10-20T15:37:42.194907Z"
+}

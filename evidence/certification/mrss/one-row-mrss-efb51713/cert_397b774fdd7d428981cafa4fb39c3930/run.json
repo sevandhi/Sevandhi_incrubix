@@ -1,0 +1,308 @@
+{
+  "run_id": "cert_397b774fdd7d428981cafa4fb39c3930",
+  "harness_version": "1.0.0",
+  "destination_id": "dest_8de8cfbcf5124646bc4604842e1a1bda",
+  "simulation": true,
+  "started_at": "2026-10-18T09:11:06.794042Z",
+  "finished_at": "2026-10-18T09:11:37.726690Z",
+  "duration_ms": 30932,
+  "timeline": [
+    {
+      "state": "QUEUED",
+      "at": "2026-10-18T09:11:06.794042Z"
+    },
+    {
+      "state": "PREFLIGHT",
+      "at": "2026-10-18T09:11:06.825570Z"
+    },
+    {
+      "state": "VALIDATE",
+      "at": "2026-10-18T09:11:06.864509Z"
+    },
+    {
+      "state": "PUBLISH",
+      "at": "2026-10-18T09:11:06.898044Z"
+    },
+    {
+      "state": "CONFIRM_LIVE",
+      "at": "2026-10-18T09:11:07.032044Z"
+    },
+    {
+      "state": "FAILED",
+      "at": "2026-10-18T09:11:37.622514Z",
+      "note": "CONFIRM_LIVE: PLATFORM_UNAVAILABLE"
+    },
+    {
+      "state": "CLEANUP",
+      "at": "2026-10-18T09:11:37.622538Z"
+    },
+    {
+      "state": "DEMOTED",
+      "at": "2026-10-18T09:11:37.711020Z",
+      "note": "level L0, status excluded, alert opened"
+    }
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "step": "PREFLIGHT",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:11:06.847613Z",
+      "duration_ms": 8.7,
+      "detail": {
+        "connector_key": "mrss",
+        "connector_version": "1.0.0",
+        "tier": "feed",
+        "capabilities": [
+          "publish",
+          "status",
+          "delete",
+          "metrics"
+        ],
+        "target": "simulation: every call goes to mock-platforms",
+        "kill_switch": "off",
+        "connection_id": null,
+        "rules_confirmed": false,
+        "auth_probe": "no refresh_auth capability: the PUBLISH step proves the credentials"
+      }
+    },
+    {
+      "n": 2,
+      "step": "VALIDATE",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:11:06.879463Z",
+      "duration_ms": 9.3,
+      "detail": {
+        "good_rendition": {
+          "title": "IncuBrix certification test ibxcert4fb39c3930",
+          "ok": true
+        },
+        "over_long_rendition": {
+          "ok": false,
+          "violations": [
+            {
+              "field": "title",
+              "rule": "title_max_chars",
+              "message": "title is 325 characters; the limit is 300",
+              "limit": 300,
+              "actual": 325
+            }
+          ]
+        }
+      }
+    },
+    {
+      "n": 3,
+      "step": "PUBLISH",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:11:06.913230Z",
+      "duration_ms": 109.0,
+      "detail": {
+        "request": {
+          "rendition": {
+            "rendition_id": "cert-cert_397b774fdd7d428981cafa4fb39c3930",
+            "content_id": null,
+            "surface": "item",
+            "content_type": "text",
+            "title": "IncuBrix certification test ibxcert4fb39c3930",
+            "body": "Automated certification test post ibxcert4fb39c3930 from the IncuBrix destination network. It checks publish, live URL, status and delete on our own test instance, and is deleted within 10 minutes.",
+            "body_format": "markdown",
+            "canonical_url": null,
+            "link_url": null,
+            "media": [],
+            "tags": [],
+            "mentions": [],
+            "language": "en",
+            "is_promotional": false,
+            "ai_generated": false
+          },
+          "idempotency_key": "cert-cert_397b774fdd7d428981cafa4fb39c3930",
+          "marker": "ibx-6mz5w4pf747s"
+        },
+        "response": {
+          "platform_post_id": "ibx-6mz5w4pf747s",
+          "live_url": "http://127.0.0.1:19188/api/v1/feeds/e2e-mrss-efb51713/items/ibx-6mz5w4pf747s",
+          "status": "published"
+        },
+        "test_post_id": 3,
+        "expires_after_s": 300
+      }
+    },
+    {
+      "n": 4,
+      "step": "CONFIRM_LIVE",
+      "outcome": "failed",
+      "started_at": "2026-10-18T09:11:07.049673Z",
+      "duration_ms": 30563.0,
+      "detail": {
+        "code": "PLATFORM_UNAVAILABLE",
+        "message": "the live URL did not show the test post (200 + marker) in time",
+        "live_url": "http://127.0.0.1:19188/api/v1/feeds/e2e-mrss-efb51713/items/ibx-6mz5w4pf747s",
+        "attempts": [
+          {
+            "at": "2026-10-18T09:11:07.073029Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:08.085697Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:09.107749Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:10.125956Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:11.143768Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:12.162847Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:13.183534Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:14.200504Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:15.211505Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:16.223203Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:17.235491Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:18.248747Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:19.261847Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:20.276298Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:21.301469Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:22.326078Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:23.350131Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:24.375046Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:25.394305Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:26.410390Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:27.430793Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:28.450272Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:29.467650Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:30.479842Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:31.504449Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:32.527394Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:33.546730Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:34.565377Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:35.589972Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:36.601211Z",
+            "error": "ConnectError"
+          },
+          {
+            "at": "2026-10-18T09:11:37.612650Z",
+            "error": "ConnectError"
+          }
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "step": "CLEANUP",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:11:37.629068Z",
+      "duration_ms": 73.1,
+      "detail": {
+        "ok": true,
+        "action": "deleted",
+        "found_by": "id",
+        "platform_post_id": "ibx-6mz5w4pf747s",
+        "marker": "ibx-6mz5w4pf747s"
+      }
+    }
+  ],
+  "result": {
+    "run_id": "cert_397b774fdd7d428981cafa4fb39c3930",
+    "destination_id": "dest_8de8cfbcf5124646bc4604842e1a1bda",
+    "connector_key": "mrss",
+    "passed": false,
+    "state": "DEMOTED",
+    "failed_step": "CONFIRM_LIVE",
+    "failure_code": "PLATFORM_UNAVAILABLE",
+    "failure_message": "the live URL did not show the test post (200 + marker) in time",
+    "level_before": "L0",
+    "level_after": "L0",
+    "excluded": true,
+    "cleanup": {
+      "ok": true,
+      "action": "deleted",
+      "found_by": "id",
+      "platform_post_id": "ibx-6mz5w4pf747s",
+      "marker": "ibx-6mz5w4pf747s"
+    },
+    "platform_post_id": "ibx-6mz5w4pf747s",
+    "notes": [
+      "rules not confirmed: only this certification post is allowed (own instance)"
+    ]
+  }
+}

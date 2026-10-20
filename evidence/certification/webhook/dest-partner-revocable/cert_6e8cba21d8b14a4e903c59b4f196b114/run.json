@@ -1,0 +1,222 @@
+{
+  "run_id": "cert_6e8cba21d8b14a4e903c59b4f196b114",
+  "harness_version": "1.0.0",
+  "destination_id": "dest_7f6c747bbd7e4472a83fa317a6447327",
+  "simulation": false,
+  "started_at": "2026-10-17T16:50:47.137270Z",
+  "finished_at": "2026-10-17T16:50:47.572288Z",
+  "duration_ms": 435,
+  "timeline": [
+    {
+      "state": "QUEUED",
+      "at": "2026-10-17T16:50:47.137270Z"
+    },
+    {
+      "state": "PREFLIGHT",
+      "at": "2026-10-17T16:50:47.173640Z"
+    },
+    {
+      "state": "VALIDATE",
+      "at": "2026-10-17T16:50:47.208766Z"
+    },
+    {
+      "state": "PUBLISH",
+      "at": "2026-10-17T16:50:47.234500Z"
+    },
+    {
+      "state": "CONFIRM_LIVE",
+      "at": "2026-10-17T16:50:47.310428Z"
+    },
+    {
+      "state": "STATUS",
+      "at": "2026-10-17T16:50:47.345239Z"
+    },
+    {
+      "state": "DELETE",
+      "at": "2026-10-17T16:50:47.386808Z"
+    },
+    {
+      "state": "CONFIRM_DELETED",
+      "at": "2026-10-17T16:50:47.436111Z"
+    },
+    {
+      "state": "PASSED",
+      "at": "2026-10-17T16:50:47.547980Z",
+      "note": "native: publish, live URL, status and delete certified"
+    }
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "step": "PREFLIGHT",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:50:47.187623Z",
+      "duration_ms": 14.4,
+      "detail": {
+        "connector_key": "webhook",
+        "connector_version": "1.0.0",
+        "tier": "protocol",
+        "capabilities": [
+          "publish",
+          "status",
+          "delete"
+        ],
+        "target": "own instance mock-platforms",
+        "kill_switch": "off",
+        "connection_id": "conn_cb565da8c0694b04b005a9a27e521995",
+        "rules_confirmed": true,
+        "auth_probe": "no refresh_auth capability: the PUBLISH step proves the credentials"
+      }
+    },
+    {
+      "n": 2,
+      "step": "VALIDATE",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:50:47.217389Z",
+      "duration_ms": 7.0,
+      "detail": {
+        "good_rendition": {
+          "title": "IncuBrix certification test ibxcertb4f196b114",
+          "ok": true
+        },
+        "over_long_rendition": {
+          "ok": false,
+          "violations": [
+            {
+              "field": "title",
+              "rule": "title_max_chars",
+              "message": "title is 325 characters; the limit is 300",
+              "limit": 300,
+              "actual": 325
+            }
+          ]
+        }
+      }
+    },
+    {
+      "n": 3,
+      "step": "PUBLISH",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:50:47.249392Z",
+      "duration_ms": 52.7,
+      "detail": {
+        "request": {
+          "rendition": {
+            "rendition_id": "cert-cert_6e8cba21d8b14a4e903c59b4f196b114",
+            "content_id": null,
+            "surface": "post",
+            "content_type": "text",
+            "title": "IncuBrix certification test ibxcertb4f196b114",
+            "body": "Automated certification test post ibxcertb4f196b114 from the IncuBrix destination network. It checks publish, live URL, status and delete on our own test instance, and is deleted within 10 minutes.",
+            "body_format": "markdown",
+            "canonical_url": null,
+            "link_url": null,
+            "media": [],
+            "tags": [],
+            "mentions": [],
+            "language": "en",
+            "is_promotional": false,
+            "ai_generated": false
+          },
+          "idempotency_key": "cert-cert_6e8cba21d8b14a4e903c59b4f196b114",
+          "marker": "ibx-zk722ynqkjst"
+        },
+        "response": {
+          "platform_post_id": "1",
+          "live_url": "http://mock-platforms:8080/partner/dest-partner-revocable/p/1",
+          "status": "published"
+        },
+        "test_post_id": 15,
+        "expires_after_s": 300
+      }
+    },
+    {
+      "n": 4,
+      "step": "CONFIRM_LIVE",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:50:47.322912Z",
+      "duration_ms": 15.5,
+      "detail": {
+        "method": "http_get_live_url",
+        "live_url": "http://mock-platforms:8080/partner/dest-partner-revocable/p/1",
+        "http_status": 200,
+        "marker_found": true,
+        "attempts": [
+          {
+            "at": "2026-10-17T16:50:47.338289Z",
+            "status": 200,
+            "bytes": 284
+          }
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "step": "STATUS",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:50:47.355509Z",
+      "duration_ms": 24.9,
+      "detail": {
+        "response": {
+          "status": "published",
+          "live_url": "http://mock-platforms:8080/partner/dest-partner-revocable/p/1"
+        }
+      }
+    },
+    {
+      "n": 6,
+      "step": "DELETE",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:50:47.401603Z",
+      "duration_ms": 28.3,
+      "detail": {
+        "response": {
+          "deleted": true
+        },
+        "platform_delete_mode": null
+      }
+    },
+    {
+      "n": 7,
+      "step": "CONFIRM_DELETED",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:50:47.451177Z",
+      "duration_ms": 85.5,
+      "detail": {
+        "status_after": {
+          "status": "deleted",
+          "live_url": null
+        },
+        "delete_mode": "deleted",
+        "platform_delete_mode": null,
+        "method": "platform_api_get_status + http_get_live_url",
+        "live_url_after": {
+          "url": "http://mock-platforms:8080/partner/dest-partner-revocable/p/1",
+          "http_status": 404,
+          "attempts": [
+            {
+              "at": "2026-10-17T16:50:47.506464Z",
+              "status": 404,
+              "bytes": 18
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "result": {
+    "run_id": "cert_6e8cba21d8b14a4e903c59b4f196b114",
+    "destination_id": "dest_7f6c747bbd7e4472a83fa317a6447327",
+    "connector_key": "webhook",
+    "passed": true,
+    "state": "PASSED",
+    "level_before": "L0",
+    "level_after": "L3",
+    "level_reason": "native: publish, live URL, status and delete certified",
+    "delete_mode": "deleted",
+    "platform_delete_mode": "deleted",
+    "platform_post_id": "1",
+    "live_url": "http://mock-platforms:8080/partner/dest-partner-revocable/p/1",
+    "notes": []
+  }
+}

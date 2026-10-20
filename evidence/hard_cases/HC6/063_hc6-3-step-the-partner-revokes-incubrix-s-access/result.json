@@ -1,0 +1,15 @@
+{
+  "index": 63,
+  "name": "HC6.3 step - the partner revokes IncuBrix's access",
+  "method": "POST",
+  "path": "https://ibx-destination-network-demo.onrender.com/sim/partner/hc6-rev-4201344a/_partner/revoke",
+  "status": 200,
+  "code": null,
+  "expected_status": 200,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 100.8,
+  "correlation_id": null,
+  "folder": "063_hc6-3-step-the-partner-revokes-incubrix-s-access",
+  "job_status": null
+}

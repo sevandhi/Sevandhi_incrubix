@@ -1,0 +1,37 @@
+{
+  "n": 3,
+  "step": "PUBLISH",
+  "outcome": "ok",
+  "started_at": "2026-10-17T16:52:01.645969Z",
+  "duration_ms": 202.0,
+  "detail": {
+    "request": {
+      "rendition": {
+        "rendition_id": "cert-cert_6aedd2f2f4ab49dda830ed730ca6be08",
+        "content_id": null,
+        "surface": "post",
+        "content_type": "text",
+        "title": "IncuBrix certification test ibxcert730ca6be08",
+        "body": "Automated certification test post ibxcert730ca6be08 from the IncuBrix destination network. It checks publish, live URL, status and delete on our own test instance, and is deleted within 10 minutes.",
+        "body_format": "markdown",
+        "canonical_url": null,
+        "link_url": null,
+        "media": [],
+        "tags": [],
+        "mentions": [],
+        "language": "en",
+        "is_promotional": false,
+        "ai_generated": false
+      },
+      "idempotency_key": "cert-cert_6aedd2f2f4ab49dda830ed730ca6be08",
+      "marker": "ibx-6qbzsgcn337w"
+    },
+    "response": {
+      "platform_post_id": "1",
+      "live_url": "http://mock-platforms:8080/lemmy/core-lemmy-2d325dee-example-org-c-ibx-test/post/1",
+      "status": "published"
+    },
+    "test_post_id": 20,
+    "expires_after_s": 300
+  }
+}

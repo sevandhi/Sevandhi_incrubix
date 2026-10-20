@@ -1,0 +1,25 @@
+{
+  "status": 200,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:36:09 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "cf-cache-status": "DYNAMIC",
+    "idempotency-key": "hc1-hdr-4201344a",
+    "idempotent-replayed": "true",
+    "rndr-id": "d7f3dc45-05ee-416e",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "120b85d143ed43b98d01f1615b7eeaa5",
+    "x-render-origin-server": "uvicorn",
+    "content-encoding": "gzip",
+    "cf-ray": "a4d918af5afbaa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "platform_post_id": "1~i632bd7169b",
+    "live_url": "http://mock-platforms:8080/discourse/hc1-hdr-4201344a/t/the-key-travels-in-the-http-header-only/1",
+    "status": "published"
+  }
+}

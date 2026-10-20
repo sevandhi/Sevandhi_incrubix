@@ -1,0 +1,37 @@
+{
+  "n": 3,
+  "step": "PUBLISH",
+  "outcome": "ok",
+  "started_at": "2026-10-17T16:50:47.249392Z",
+  "duration_ms": 52.7,
+  "detail": {
+    "request": {
+      "rendition": {
+        "rendition_id": "cert-cert_6e8cba21d8b14a4e903c59b4f196b114",
+        "content_id": null,
+        "surface": "post",
+        "content_type": "text",
+        "title": "IncuBrix certification test ibxcertb4f196b114",
+        "body": "Automated certification test post ibxcertb4f196b114 from the IncuBrix destination network. It checks publish, live URL, status and delete on our own test instance, and is deleted within 10 minutes.",
+        "body_format": "markdown",
+        "canonical_url": null,
+        "link_url": null,
+        "media": [],
+        "tags": [],
+        "mentions": [],
+        "language": "en",
+        "is_promotional": false,
+        "ai_generated": false
+      },
+      "idempotency_key": "cert-cert_6e8cba21d8b14a4e903c59b4f196b114",
+      "marker": "ibx-zk722ynqkjst"
+    },
+    "response": {
+      "platform_post_id": "1",
+      "live_url": "http://mock-platforms:8080/partner/dest-partner-revocable/p/1",
+      "status": "published"
+    },
+    "test_post_id": 15,
+    "expires_after_s": 300
+  }
+}

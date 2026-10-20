@@ -1,0 +1,15 @@
+{
+  "index": 59,
+  "name": "HC5.5 contract - Discourse renames id to post_id in the create answer -> 503 schema change, outcome unknown",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 503,
+  "code": "PLATFORM_UNAVAILABLE",
+  "expected_status": 503,
+  "expected_code": "PLATFORM_UNAVAILABLE",
+  "passed": true,
+  "duration_ms": 4423.6,
+  "correlation_id": "721e22a1aa124681b5d4a6dde408ed94",
+  "folder": "059_hc5-5-contract-discourse-renames-id-to-post-id-in-the-create",
+  "job_status": null
+}

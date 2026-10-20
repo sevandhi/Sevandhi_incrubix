@@ -1,0 +1,16 @@
+{
+  "n": 6,
+  "step": "CONFIRM_DELETED",
+  "outcome": "ok",
+  "started_at": "2026-10-20T14:57:15.779522Z",
+  "duration_ms": 15.3,
+  "detail": {
+    "delete_mode": "pack_revoked",
+    "links_now": "404 from /api/v1/files (object gone)",
+    "keys": [
+      "assist/ibx-j3inrscussj3/title.txt",
+      "assist/ibx-j3inrscussj3/caption.txt",
+      "assist/ibx-j3inrscussj3/checklist.md"
+    ]
+  }
+}

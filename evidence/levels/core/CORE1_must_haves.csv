@@ -1,0 +1,10 @@
+must_have,status,finished_at,run_id,reasons
+MH1,Yes,2026-10-20T14:57:07Z,20261020T145607Z,
+MH2,Partial,2026-10-20T14:57:25Z,20261020T145607Z,"certification packs have no screenshot (brief: 'run record, live URL or API response, screenshot, deletion confirmation'); missing for: discourse@mock, lemmy@mock, devto@mock, ghost@mock, webhook@mock, assisted@mock, lemmy@real-local, ghost@real-local"
+MH3,Yes,2026-10-20T14:57:34Z,20261020T145607Z,
+MH4,Yes,2026-10-20T14:57:43Z,20261020T145607Z,
+MH5,Partial,2026-10-20T15:08:24Z,20261020T145607Z,"'no scraping where it is not allowed': only the catalogue seed research fetched public pages (robots-aware, see catalogue/seeds/README.md); the catalogue import/enrich fetcher is not built, so it is not proven here"
+MH6,Yes,2026-10-20T14:59:09Z,20261020T145607Z,
+MH7,No,2026-10-20T15:12:39Z,20261020T145607Z,"FAIL gitleaks: 0 unexplained findings (idempotency keys and test-fixture fakes listed in the report): [""generic-api-key /repo/.env:75"", ""generic-api-key /repo/.env:147"", ""generic-api-key /repo/.env:151"", ""curl-auth-header /repo/docs/CONTRACT.md:28""] | WARN bootstrap secret values are not committed defaults: a local-instance value equals a dev-only default committed in ['deploy/bootstrap/bootstrap.py', 'deploy/compose/bootstrap.yaml', 'deploy/compose/lemmy.yaml'] (placeholder passwords for containers"
+MH8,Yes,2026-10-20T15:19:40Z,20261020T145607Z,
+MH9,Partial,2026-10-20T15:19:57Z,20261020T145607Z,no live demo URL yet (IBX_LIVE_URL not set): 'the live demo works for the whole review period' is unproven | no uptime record (evidence/metrics/uptime.csv) for the live demo

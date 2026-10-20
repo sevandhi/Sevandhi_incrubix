@@ -1,0 +1,15 @@
+{
+  "index": 16,
+  "name": "HC1.8 Lemmy commits, then a proxy answers 502 -> 503 outcome unknown",
+  "method": "POST",
+  "path": "/connector/v1/lemmy/publish",
+  "status": 503,
+  "code": "PLATFORM_UNAVAILABLE",
+  "expected_status": 503,
+  "expected_code": "PLATFORM_UNAVAILABLE",
+  "passed": true,
+  "duration_ms": 4118.3,
+  "correlation_id": "3c206faffabc4090817e65cbced89d15",
+  "folder": "016_hc1-8-lemmy-commits-then-a-proxy-answers-502-503-outcome-unk",
+  "job_status": null
+}

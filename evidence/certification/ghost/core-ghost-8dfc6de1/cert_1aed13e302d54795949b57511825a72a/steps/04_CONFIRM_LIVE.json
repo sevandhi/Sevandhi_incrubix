@@ -1,0 +1,20 @@
+{
+  "n": 4,
+  "step": "CONFIRM_LIVE",
+  "outcome": "ok",
+  "started_at": "2026-10-17T16:49:52.622464Z",
+  "duration_ms": 17.8,
+  "detail": {
+    "method": "http_get_live_url",
+    "live_url": "http://mock-platforms:8080/ghost/core-ghost-8dfc6de1-example-org/incubrix-certification-test-ibxcert511825a72a-ibx-blyslerpfxog/",
+    "http_status": 200,
+    "marker_found": true,
+    "attempts": [
+      {
+        "at": "2026-10-17T16:49:52.640123Z",
+        "status": 200,
+        "bytes": 143
+      }
+    ]
+  }
+}

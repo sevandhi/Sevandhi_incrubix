@@ -1,0 +1,163 @@
+{
+ "id": "MH4",
+ "title": "Rules checked before every post (cap, self-promotion, links, AI disclosure)",
+ "status": "Yes",
+ "reasons": [],
+ "run_id": "20261020T145607Z",
+ "started_at": "2026-10-20T14:57:34Z",
+ "finished_at": "2026-10-20T14:57:43Z",
+ "duration_s": 9.2,
+ "api": "http://127.0.0.1:38875",
+ "mode": "local",
+ "command": "scripts/prove_mh4.sh",
+ "evidence": [
+  "evidence/metrics/rule_safety.csv",
+  "evidence/must_haves/MH4_rules.csv",
+  "evidence/must_haves/MH4_rules.log"
+ ],
+ "checks_total": 20,
+ "checks_passed": 20,
+ "checks": [
+  {
+   "label": "rule_safety.py: 0 missed violations, 0 false positives, exit 0",
+   "ok": true,
+   "critical": true,
+   "detail": "rule safety: 113 cases, 83 expected violations, caught 83, missed 0, correct allows 30, false positives 0, other mismatches 0 -> /home/user/chumma/Sevandhi_incrubix/evidence/metrics/rule_safety.csv",
+   "group": null
+  },
+  {
+   "label": "weekly-cap: destination certified before any publication",
+   "ok": true,
+   "critical": true,
+   "detail": "PASSED",
+   "group": null
+  },
+  {
+   "label": "first post inside the week is published",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"job\": \"succeeded\", \"state\": \"published\"}",
+   "group": null
+  },
+  {
+   "label": "second post -> rescheduled, DEST_RULE_FREQUENCY_CAP, retry_at and a reason; nothing sent",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"status\": 202, \"publication\": {\"state\": \"rescheduled\", \"code\": \"DEST_RULE_FREQUENCY_CAP\", \"retry_at\": \"2026-10-27T14:57:36.641925Z\", \"reason\": \"DEST_RULE_FREQUENCY_CAP: cap of 1 post(s) per P7D reached (1 in the window, oldest 2026-10-20T14:57:36.641925Z); next slot 2026-10-27T14:57:36.641925Z\"}, \"creates_delta\": 0}",
+   "group": null
+  },
+  {
+   "label": "concurrent-cap: destination certified before any publication",
+   "ok": true,
+   "critical": true,
+   "detail": "PASSED",
+   "group": null
+  },
+  {
+   "label": "two concurrent first posts -> one pending (goes out), one rescheduled",
+   "ok": true,
+   "critical": true,
+   "detail": "[\"pending\", \"rescheduled\"]",
+   "group": null
+  },
+  {
+   "label": "no-promo: destination certified before any publication",
+   "ok": true,
+   "critical": true,
+   "detail": "PASSED",
+   "group": null
+  },
+  {
+   "label": "promo (is_promotional=true) -> 409 DEST_RULE_SELF_PROMO with the reason",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"status\": 409, \"code\": \"DEST_RULE_SELF_PROMO\", \"message\": \"DEST_RULE_SELF_PROMO: this destination bans self-promotion and the post is promotional (flag 'is_promotional=true' in is_promotional; own_link 'https://mycourse.example.com/?utm_source=forum' in body; utm 'utm_source in https://mycourse.example.com/?utm_source=forum' in body; self_reference 'Our new course' in title; cta 'subscribe for more' in body; cta 'code SAVE50' in body; self_reference 'my course' in body)\"}",
+   "group": null
+  },
+  {
+   "label": "promo (is_promotional not set) -> 409 DEST_RULE_SELF_PROMO with the reason",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"status\": 409, \"code\": \"DEST_RULE_SELF_PROMO\", \"message\": \"DEST_RULE_SELF_PROMO: this destination bans self-promotion and the post is promotional (own_link 'https://mycourse.example.com/?utm_source=forum' in body; utm 'utm_source in https://mycourse.example.com/?utm_source=forum' in body; self_reference 'Our new course' in title; cta 'subscribe for more' in body; cta 'code SAVE50' in body; self_reference 'my course' in body)\"}",
+   "group": null
+  },
+  {
+   "label": "no promotional post reached the platform",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"creates_delta\": 0}",
+   "group": null
+  },
+  {
+   "label": "no-links-none: destination certified before any publication",
+   "ok": true,
+   "critical": true,
+   "detail": "PASSED",
+   "group": null
+  },
+  {
+   "label": "row link_policy='none' (stored as 'none'): a link -> 409 DEST_RULE_LINK_POLICY",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"status\": 409, \"code\": \"DEST_RULE_LINK_POLICY\", \"message\": \"DEST_RULE_LINK_POLICY: this destination allows no links; found https://notes.example.org/forum-testing in body\", \"stored\": \"none\"}",
+   "group": null
+  },
+  {
+   "label": "no-links-nolinks: destination certified before any publication",
+   "ok": true,
+   "critical": true,
+   "detail": "PASSED",
+   "group": null
+  },
+  {
+   "label": "row link_policy='no_links' (stored as 'none'): a link -> 409 DEST_RULE_LINK_POLICY",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"status\": 409, \"code\": \"DEST_RULE_LINK_POLICY\", \"message\": \"DEST_RULE_LINK_POLICY: this destination allows no links; found https://notes.example.org/forum-testing in body\", \"stored\": \"none\"}",
+   "group": null
+  },
+  {
+   "label": "disclosure: destination certified before any publication",
+   "ok": true,
+   "critical": true,
+   "detail": "PASSED",
+   "group": null
+  },
+  {
+   "label": "AI content -> published WITH the disclosure line (read back from the platform page)",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"state\": \"published\", \"disclosure_on_page\": true, \"job\": \"succeeded\"}",
+   "group": null
+  },
+  {
+   "label": "contract: 2nd post inside 1/P7D -> 409 DEST_RULE_FREQUENCY_CAP, retry_at, Retry-After",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": 200, \"second\": 409, \"code\": \"DEST_RULE_FREQUENCY_CAP\", \"retry_at\": \"2026-10-27T14:57:43.377124Z\"}",
+   "group": null
+  },
+  {
+   "label": "contract: self_promo_allowed=false -> 409 DEST_RULE_SELF_PROMO, platform not called",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"status\": 409, \"code\": \"DEST_RULE_SELF_PROMO\", \"creates\": 0, \"message\": \"DEST_RULE_SELF_PROMO: this destination bans self-promotion and the post is promotional (utm 'utm_source in https://mycourse.example.com/?utm_source=forum' in body; self_reference 'Our new course' in title; cta 'subscribe for more' in body; cta 'code SAVE50' in body; self_reference 'my course' in body)\"}",
+   "group": null
+  },
+  {
+   "label": "contract: link_policy=none -> 409 DEST_RULE_LINK_POLICY, platform not called",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"status\": 409, \"code\": \"DEST_RULE_LINK_POLICY\", \"creates\": 0, \"message\": \"DEST_RULE_LINK_POLICY: this destination allows no links; found https://notes.example.org/x in body\"}",
+   "group": null
+  },
+  {
+   "label": "contract: disclosure_required + ai_generated -> 200, disclosure line on the platform page",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"status\": 200, \"disclosure_on_page\": true}",
+   "group": null
+  }
+ ],
+ "sub": {}
+}

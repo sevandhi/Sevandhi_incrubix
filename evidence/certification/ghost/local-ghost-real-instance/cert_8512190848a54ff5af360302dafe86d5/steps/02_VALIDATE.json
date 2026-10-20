@@ -1,0 +1,25 @@
+{
+  "n": 2,
+  "step": "VALIDATE",
+  "outcome": "ok",
+  "started_at": "2026-10-20T14:57:18.175581Z",
+  "duration_ms": 7.8,
+  "detail": {
+    "good_rendition": {
+      "title": "IncuBrix certification test ibxcert02dafe86d5",
+      "ok": true
+    },
+    "over_long_rendition": {
+      "ok": false,
+      "violations": [
+        {
+          "field": "title",
+          "rule": "title_max_chars",
+          "message": "title is 280 characters; the limit is 255",
+          "limit": 255,
+          "actual": 280
+        }
+      ]
+    }
+  }
+}

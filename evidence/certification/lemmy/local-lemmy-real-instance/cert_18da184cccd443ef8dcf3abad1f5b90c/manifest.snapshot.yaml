@@ -1,0 +1,47 @@
+key: lemmy
+version: 1.0.0
+tier: native
+auth: api_key
+surfaces:
+- key: post
+  content_types:
+  - text
+  - link
+  spec:
+    title_required: true
+    title_min_chars: 3
+    title_max_chars: 200
+    body_max_chars: 49971
+    count_unit: utf16
+    links_allowed: true
+rate_limits:
+  per_connection:
+    requests: 60
+    per_seconds: 60.0
+capabilities:
+- publish
+- status
+- delete
+- metrics
+error_map:
+  400:rate_limit_error: PLATFORM_RATE_LIMIT
+  400:not_logged_in: CONNECTION_AUTH_EXPIRED
+  400:incorrect_login: CONNECTION_AUTH_EXPIRED
+  400:site_ban: CONNECTION_AUTH_EXPIRED
+  400:email_not_verified: CONNECTION_AUTH_EXPIRED
+  400:registration_application_is_pending: CONNECTION_AUTH_EXPIRED
+  400:invalid_post_title: PLATFORM_CONTENT_REJECTED
+  400:invalid_body_field: PLATFORM_CONTENT_REJECTED
+  400:invalid_url: PLATFORM_CONTENT_REJECTED
+  400:blocked_url: PLATFORM_CONTENT_REJECTED
+  400:slurs: PLATFORM_CONTENT_REJECTED
+  400:couldnt_find_community: PLATFORM_CONTENT_REJECTED
+  400:banned_from_community: PLATFORM_CONTENT_REJECTED
+  400:only_mods_can_post_in_community: PLATFORM_CONTENT_REJECTED
+  400:language_not_allowed: PLATFORM_CONTENT_REJECTED
+  400:couldnt_create_post: PLATFORM_UNAVAILABLE
+  '400': PLATFORM_CONTENT_REJECTED
+  '401': CONNECTION_AUTH_EXPIRED
+  '403': CONNECTION_AUTH_EXPIRED
+  '429': PLATFORM_RATE_LIMIT
+instance_param: community_url

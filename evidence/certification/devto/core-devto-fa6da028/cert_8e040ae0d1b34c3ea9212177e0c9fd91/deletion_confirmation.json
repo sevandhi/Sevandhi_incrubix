@@ -1,0 +1,31 @@
+{
+  "run_id": "cert_8e040ae0d1b34c3ea9212177e0c9fd91",
+  "delete_mode": "admin_unpublish",
+  "step": {
+    "n": 8,
+    "step": "CONFIRM_DELETED",
+    "outcome": "ok",
+    "started_at": "2026-10-17T16:52:04.295817Z",
+    "duration_ms": 60.0,
+    "detail": {
+      "status_after": {
+        "status": "draft",
+        "live_url": null
+      },
+      "delete_mode": "admin_unpublish",
+      "platform_delete_mode": null,
+      "method": "platform_api_get_status + http_get_live_url",
+      "live_url_after": {
+        "url": "http://mock-platforms:8080/forem/core-devto-fa6da028-example-org/ibx_admin/incubrix-certification-test-ibxcert77e0c9fd91-0001",
+        "http_status": 404,
+        "attempts": [
+          {
+            "at": "2026-10-17T16:52:04.347644Z",
+            "status": 404,
+            "bytes": 33
+          }
+        ]
+      }
+    }
+  }
+}

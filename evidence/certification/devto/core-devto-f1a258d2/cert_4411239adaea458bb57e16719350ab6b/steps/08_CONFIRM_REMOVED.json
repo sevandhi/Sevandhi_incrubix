@@ -1,0 +1,27 @@
+{
+  "n": 8,
+  "step": "CONFIRM_REMOVED",
+  "outcome": "ok",
+  "started_at": "2026-10-18T09:19:58.964737Z",
+  "duration_ms": 50.9,
+  "detail": {
+    "status_after": {
+      "status": "draft",
+      "live_url": null
+    },
+    "delete_mode": "unpublish_to_draft",
+    "platform_delete_mode": null,
+    "method": "platform_api_get_status + http_get_live_url",
+    "live_url_after": {
+      "url": "http://mock-platforms:8080/forem/core-devto-f1a258d2-example-org/ibx_admin/incubrix-certification-test-ibxcert719350ab6b-0001",
+      "http_status": 404,
+      "attempts": [
+        {
+          "at": "2026-10-18T09:19:59.007056Z",
+          "status": 404,
+          "bytes": 33
+        }
+      ]
+    }
+  }
+}

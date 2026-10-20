@@ -1,0 +1,3 @@
+generated_at,labels_file,labeler,method,n,exact,within_1,mae,spearman,provider
+2026-10-20T15:11:50Z,tests/fixtures/relevance/hand_labels_v1.csv,"AI-drafted, pending human review",lexicon,59,0.39,0.864,0.763,0.577,deterministic lexicon
+2026-10-20T15:11:50Z,tests/fixtures/relevance/hand_labels_v1.csv,"AI-drafted, pending human review",lexicon+llm,0,,,,,not run

@@ -1,0 +1,15 @@
+{
+  "index": 39,
+  "name": "HC3.4 a CJK title is counted in characters, not bytes (102 chars = 306 bytes fits 128)",
+  "method": "POST",
+  "path": "/connector/v1/devto/validate",
+  "status": 200,
+  "code": null,
+  "expected_status": 200,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 524.9,
+  "correlation_id": "52d43e3135324dcd9fdae8bd1509ac69",
+  "folder": "039_hc3-4-a-cjk-title-is-counted-in-characters-not-bytes-102-cha",
+  "job_status": null
+}

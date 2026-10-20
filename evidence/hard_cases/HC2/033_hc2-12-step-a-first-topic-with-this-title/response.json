@@ -1,0 +1,24 @@
+{
+  "status": 200,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:37:03 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "cf-cache-status": "DYNAMIC",
+    "idempotency-key": "hc2-dup1-4201344a",
+    "rndr-id": "1b31a96c-cfed-4ee8",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "fc81f2cd9e2b4c98908b6da879f0f1f2",
+    "x-render-origin-server": "uvicorn",
+    "content-encoding": "gzip",
+    "cf-ray": "a4d919eacbf5aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "platform_post_id": "1~i55e5dd5f23",
+    "live_url": "http://mock-platforms:8080/discourse/hc2-dup-4201344a/t/which-forum-testing-method-worked-for-you/1",
+    "status": "published"
+  }
+}

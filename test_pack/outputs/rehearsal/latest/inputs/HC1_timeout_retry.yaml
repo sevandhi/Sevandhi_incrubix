@@ -1,0 +1,250 @@
+cases:
+- name: HC1.1 timeout after the platform created the post -> 503 outcome unknown,
+    safe to retry
+  method: POST
+  path: /connector/v1/discourse/publish
+  headers:
+    X-Sim-Fault: timeout_after_create:15
+  body:
+    rendition:
+      title: A post whose answer never arrives in time
+      body: The platform saves it, then the answer times out.
+    destination:
+      connector_key: discourse
+      surface: topic
+      url: http://mock-platforms:8080/discourse/hc1-to-e3379b10
+    connection:
+      connector_key: discourse
+    idempotency_key: hc1-to-e3379b10
+  expect:
+    status: 503
+    code: PLATFORM_UNAVAILABLE
+  grade:
+    equals:
+      error.retryable: true
+      error.details.outcome: unknown
+      error.details.idempotency_key: hc1-to-e3379b10
+    contains:
+      error.message: safe to retry
+- name: HC1.2 retry with the same key finds the post (no second create)
+  method: POST
+  path: /connector/v1/discourse/publish
+  body:
+    rendition:
+      title: A post whose answer never arrives in time
+      body: The platform saves it, then the answer times out.
+    destination:
+      connector_key: discourse
+      surface: topic
+      url: http://mock-platforms:8080/discourse/hc1-to-e3379b10
+    connection:
+      connector_key: discourse
+    idempotency_key: hc1-to-e3379b10
+  expect:
+    status: 200
+    code: null
+  grade:
+    present:
+    - platform_post_id
+    - live_url
+    equals:
+      status: published
+    mock_counts:
+    - platform: discourse
+      tenant: hc1-to-e3379b10
+      route: POST /posts.json
+      equals: 1
+- name: HC1.3 a further replay returns the same post id
+  method: POST
+  path: /connector/v1/discourse/publish
+  body:
+    rendition:
+      title: A post whose answer never arrives in time
+      body: The platform saves it, then the answer times out.
+    destination:
+      connector_key: discourse
+      surface: topic
+      url: http://mock-platforms:8080/discourse/hc1-to-e3379b10
+    connection:
+      connector_key: discourse
+    idempotency_key: hc1-to-e3379b10
+  expect:
+    status: 200
+    code: null
+  grade:
+    same_as:
+      platform_post_id: HC1.2 retry with the same key finds the post (no second create)
+    headers:
+    - idempotent-replayed
+- name: HC1.4 same key with a different body -> 409 IDEMPOTENCY_KEY_REUSED
+  method: POST
+  path: /connector/v1/discourse/publish
+  body:
+    rendition:
+      title: A different title sent with the same key
+      body: The platform saves it, then the answer times out.
+    destination:
+      connector_key: discourse
+      surface: topic
+      url: http://mock-platforms:8080/discourse/hc1-to-e3379b10
+    connection:
+      connector_key: discourse
+    idempotency_key: hc1-to-e3379b10
+  expect:
+    status: 409
+    code: IDEMPOTENCY_KEY_REUSED
+  grade:
+    equals:
+      error.retryable: false
+    mock_counts:
+    - platform: discourse
+      tenant: hc1-to-e3379b10
+      route: POST /posts.json
+      equals: 1
+- name: HC1.5 eight identical requests at the same time -> one post
+  method: POST
+  path: /connector/v1/discourse/publish
+  parallel: 8
+  body:
+    rendition:
+      title: Eight parallel requests and one forum topic
+      body: Eight copies of this request arrive at the same time.
+    destination:
+      connector_key: discourse
+      surface: topic
+      url: http://mock-platforms:8080/discourse/hc1-par-e3379b10
+    connection:
+      connector_key: discourse
+    idempotency_key: hc1-par-e3379b10
+  expect:
+    status: 200
+    code: null
+  grade:
+    copies_same:
+    - platform_post_id
+    mock_counts:
+    - platform: discourse
+      tenant: hc1-par-e3379b10
+      route: POST /posts.json
+      equals: 1
+- name: HC1.6 IS4 Idempotency-Key header on a contract publish (no key in the body),
+    sent twice -> one post
+  method: POST
+  path: /connector/v1/discourse/publish
+  repeat: 2
+  headers:
+    Idempotency-Key: hc1-hdr-e3379b10
+  body:
+    rendition:
+      title: The key travels in the HTTP header only
+      body: Sending this twice with the same header key makes one topic.
+    destination:
+      connector_key: discourse
+      surface: topic
+      url: http://mock-platforms:8080/discourse/hc1-hdr-e3379b10
+    connection:
+      connector_key: discourse
+  expect:
+    status: 200
+    code: null
+  grade:
+    copies_same:
+    - platform_post_id
+    mock_counts:
+    - platform: discourse
+      tenant: hc1-hdr-e3379b10
+      route: POST /posts.json
+      equals: 1
+- name: HC1.7 header key and body key differ -> 409
+  method: POST
+  path: /connector/v1/discourse/publish
+  headers:
+    Idempotency-Key: hc1-hdr-e3379b10
+  body:
+    rendition:
+      title: The key travels in the HTTP header only
+      body: Sending this twice with the same header key makes one topic.
+    destination:
+      connector_key: discourse
+      surface: topic
+      url: http://mock-platforms:8080/discourse/hc1-hdr-e3379b10
+    connection:
+      connector_key: discourse
+    idempotency_key: hc1-other-e3379b10
+  expect:
+    status: 409
+    code: IDEMPOTENCY_KEY_REUSED
+  grade:
+    equals:
+      error.retryable: false
+- name: HC1.8 Lemmy commits, then a proxy answers 502 -> 503 outcome unknown
+  method: POST
+  path: /connector/v1/lemmy/publish
+  headers:
+    X-Sim-Fault: create_then_502
+  body:
+    rendition:
+      title: A post whose answer is a proxy error
+      body: Lemmy saved it, then the proxy said 502.
+    destination:
+      connector_key: lemmy
+      url: http://mock-platforms:8080/lemmy/hc1-502-e3379b10/c/ibx_test
+    connection:
+      connector_key: lemmy
+    idempotency_key: hc1-502-e3379b10
+  expect:
+    status: 503
+    code: PLATFORM_UNAVAILABLE
+  grade:
+    equals:
+      error.details.outcome: unknown
+      error.retryable: true
+- name: HC1.9 retry after the 502 reconciles (one Lemmy post)
+  method: POST
+  path: /connector/v1/lemmy/publish
+  body:
+    rendition:
+      title: A post whose answer is a proxy error
+      body: Lemmy saved it, then the proxy said 502.
+    destination:
+      connector_key: lemmy
+      url: http://mock-platforms:8080/lemmy/hc1-502-e3379b10/c/ibx_test
+    connection:
+      connector_key: lemmy
+    idempotency_key: hc1-502-e3379b10
+  expect:
+    status: 200
+    code: null
+  grade:
+    mock_counts:
+    - platform: lemmy
+      tenant: hc1-502-e3379b10
+      route: POST /api/v3/post
+      equals: 1
+- name: HC1.10 /api/v1 job with the same key and body twice -> the same job_id
+  method: POST
+  path: /api/v1/jobs
+  repeat: 2
+  headers:
+    Idempotency-Key: hc1-job-e3379b10
+  body:
+    kind: selfcheck
+  expect:
+    status: 202
+    code: null
+    job_status: succeeded
+  grade:
+    copies_same:
+    - job_id
+- name: HC1.11 /api/v1 job, same key, different body -> 409 IDEMPOTENCY_KEY_REUSED
+  method: POST
+  path: /api/v1/jobs
+  headers:
+    Idempotency-Key: hc1-job-e3379b10
+  body:
+    kind: selfcheck
+    payload:
+      echo: different
+  expect:
+    status: 409
+    code: IDEMPOTENCY_KEY_REUSED

@@ -1,0 +1,22 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/devto/validate",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "Five tags on one article",
+      "body": "Dev.to accepts at most four tags.",
+      "tags": [
+        "ai",
+        "video",
+        "saas",
+        "creators",
+        "founders"
+      ]
+    },
+    "destination": {
+      "connector_key": "devto",
+      "url": "http://mock-platforms:8080/forem/hc3-tags-4201344a"
+    }
+  }
+}

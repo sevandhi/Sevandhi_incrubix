@@ -1,0 +1,15 @@
+{
+  "index": 40,
+  "name": "HC3.5 a CJK title one past the limit (132 chars) -> 422 DEST_SPEC_VIOLATION",
+  "method": "POST",
+  "path": "/connector/v1/devto/publish",
+  "status": 422,
+  "code": "DEST_SPEC_VIOLATION",
+  "expected_status": 422,
+  "expected_code": "DEST_SPEC_VIOLATION",
+  "passed": true,
+  "duration_ms": 939.7,
+  "correlation_id": "09945d273cd941e1b0f6e221e0652492",
+  "folder": "040_hc3-5-a-cjk-title-one-past-the-limit-132-chars-422-dest-spec",
+  "job_status": null
+}

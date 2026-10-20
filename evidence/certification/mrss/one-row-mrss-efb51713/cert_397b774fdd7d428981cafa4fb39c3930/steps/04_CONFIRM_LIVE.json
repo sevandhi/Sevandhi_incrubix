@@ -1,0 +1,138 @@
+{
+  "n": 4,
+  "step": "CONFIRM_LIVE",
+  "outcome": "failed",
+  "started_at": "2026-10-18T09:11:07.049673Z",
+  "duration_ms": 30563.0,
+  "detail": {
+    "code": "PLATFORM_UNAVAILABLE",
+    "message": "the live URL did not show the test post (200 + marker) in time",
+    "live_url": "http://127.0.0.1:19188/api/v1/feeds/e2e-mrss-efb51713/items/ibx-6mz5w4pf747s",
+    "attempts": [
+      {
+        "at": "2026-10-18T09:11:07.073029Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:08.085697Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:09.107749Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:10.125956Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:11.143768Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:12.162847Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:13.183534Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:14.200504Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:15.211505Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:16.223203Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:17.235491Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:18.248747Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:19.261847Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:20.276298Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:21.301469Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:22.326078Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:23.350131Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:24.375046Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:25.394305Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:26.410390Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:27.430793Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:28.450272Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:29.467650Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:30.479842Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:31.504449Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:32.527394Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:33.546730Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:34.565377Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:35.589972Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:36.601211Z",
+        "error": "ConnectError"
+      },
+      {
+        "at": "2026-10-18T09:11:37.612650Z",
+        "error": "ConnectError"
+      }
+    ]
+  }
+}

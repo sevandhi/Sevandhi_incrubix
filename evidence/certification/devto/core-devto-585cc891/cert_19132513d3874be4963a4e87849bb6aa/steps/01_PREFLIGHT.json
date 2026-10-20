@@ -1,0 +1,22 @@
+{
+  "n": 1,
+  "step": "PREFLIGHT",
+  "outcome": "ok",
+  "started_at": "2026-10-17T16:49:53.775486Z",
+  "duration_ms": 6.6,
+  "detail": {
+    "connector_key": "devto",
+    "connector_version": "1.0.0",
+    "tier": "native",
+    "capabilities": [
+      "publish",
+      "status",
+      "metrics"
+    ],
+    "target": "simulation: every call goes to mock-platforms",
+    "kill_switch": "off",
+    "connection_id": null,
+    "rules_confirmed": true,
+    "auth_probe": "no refresh_auth capability: the PUBLISH step proves the credentials"
+  }
+}

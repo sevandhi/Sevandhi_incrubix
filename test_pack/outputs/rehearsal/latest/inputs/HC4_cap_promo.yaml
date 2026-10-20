@@ -1,0 +1,203 @@
+cases:
+- name: HC4.1 first post of the week is published
+  method: POST
+  path: /api/v1/publications
+  body:
+    destination_id: dest_86af91345c2540a1960f22b6e554df83
+    content:
+      title: How do you test posts to long-tail communities?
+      body: We compared three ways to test forum posts end to end. Which one has worked
+        for you?
+      language: en
+      ai_generated: false
+  expect:
+    status: 202
+    code: null
+    job_status: succeeded
+  grade:
+    equals:
+      publication.state: pending
+- name: HC4.2 second post inside the weekly cap -> rescheduled with retry_at and a
+    reason
+  method: POST
+  path: /api/v1/publications
+  body:
+    destination_id: dest_86af91345c2540a1960f22b6e554df83
+    content:
+      title: A second question in the same week?
+      body: We compared three ways to test forum posts end to end. Which one has worked
+        for you?
+      language: en
+      ai_generated: false
+  expect:
+    status: 202
+    code: null
+  grade:
+    equals:
+      publication.state: rescheduled
+      publication.code: DEST_RULE_FREQUENCY_CAP
+    present:
+    - publication.retry_at
+    - publication.reason
+- name: HC4.3 two first posts at the same time -> one goes out, one is rescheduled
+  method: POST
+  path: /api/v1/publications
+  parallel: 2
+  body:
+    destination_id: dest_85d00c044412475faec7228fce17b596
+    content:
+      title: A concurrent question for the forum?
+      body: We compared three ways to test forum posts end to end. Which one has worked
+        for you?
+      language: en
+      ai_generated: false
+  expect:
+    status: 202
+    code: null
+  grade:
+    copies_sorted:
+      publication.state:
+      - pending
+      - rescheduled
+- name: HC4.4 contract - first post with frequency_cap 1/P7D
+  method: POST
+  path: /connector/v1/discourse/publish
+  body:
+    rendition:
+      title: How do you test posts to long-tail communities?
+      body: We compared three ways to test forum posts end to end. Which one has worked
+        for you?
+    destination:
+      connector_key: discourse
+      surface: topic
+      url: http://mock-platforms:8080/discourse/hc4-ccap-e3379b10
+      frequency_cap: 1/P7D
+    connection:
+      connector_key: discourse
+    idempotency_key: hc4-ccap1-e3379b10
+  expect:
+    status: 200
+    code: null
+- name: HC4.5 contract - second post inside the cap -> 409 DEST_RULE_FREQUENCY_CAP
+    with retry_at, platform not called
+  method: POST
+  path: /connector/v1/discourse/publish
+  body:
+    rendition:
+      title: A second question in the same week?
+      body: We compared three ways to test forum posts end to end. Which one has worked
+        for you?
+    destination:
+      connector_key: discourse
+      surface: topic
+      url: http://mock-platforms:8080/discourse/hc4-ccap-e3379b10
+      frequency_cap: 1/P7D
+    connection:
+      connector_key: discourse
+    idempotency_key: hc4-ccap2-e3379b10
+  expect:
+    status: 409
+    code: DEST_RULE_FREQUENCY_CAP
+  grade:
+    equals:
+      error.retryable: true
+    present:
+    - error.details.retry_at
+    headers:
+    - retry-after
+    mock_counts:
+    - platform: discourse
+      tenant: hc4-ccap-e3379b10
+      route: POST /posts.json
+      equals: 1
+- name: HC4.6 promotional post (is_promotional true) to a no-promotion destination
+    -> 409 with the reason
+  method: POST
+  path: /api/v1/publications
+  body:
+    destination_id: dest_0ab72f092be346d3a749a436ff8fb487
+    content:
+      title: Our tool launched today
+      body: 'Sign up now with code LAUNCH20: https://mytool.example.com/?utm_source=forum'
+      language: en
+      ai_generated: false
+      is_promotional: true
+      owner_domains:
+      - mytool.example.com
+  expect:
+    status: 409
+    code: DEST_RULE_SELF_PROMO
+  grade:
+    equals:
+      error.retryable: false
+    contains:
+      error.message: self-promotion
+    present:
+    - error.details.publication_id
+- name: HC4.7 promo hidden in a UTM link with is_promotional false -> still 409 DEST_RULE_SELF_PROMO
+  method: POST
+  path: /connector/v1/discourse/publish
+  body:
+    rendition:
+      title: Some notes from this week
+      body: 'Notes are here: https://mycourse.example.com/notes?utm_source=forum&utm_campaign=launch'
+      is_promotional: false
+    destination:
+      connector_key: discourse
+      surface: topic
+      url: http://mock-platforms:8080/discourse/hc4-utm-e3379b10
+      self_promo_allowed: false
+    connection:
+      connector_key: discourse
+    idempotency_key: hc4-utm-e3379b10
+  expect:
+    status: 409
+    code: DEST_RULE_SELF_PROMO
+  grade:
+    contains:
+      error.message: utm
+    mock_counts:
+    - platform: discourse
+      tenant: hc4-utm-e3379b10
+      route: POST /posts.json
+      equals: 0
+- name: HC4.8 own channel link plus a call to action, no flag -> 409 DEST_RULE_SELF_PROMO
+  method: POST
+  path: /connector/v1/discourse/publish
+  body:
+    rendition:
+      title: New video on testing community posts
+      body: Watch the full walkthrough on my channel https://www.youtube.com/@creator
+        and subscribe for more!
+    destination:
+      connector_key: discourse
+      surface: topic
+      url: http://mock-platforms:8080/discourse/hc4-cta-e3379b10
+      self_promo_allowed: false
+    connection:
+      connector_key: discourse
+    idempotency_key: hc4-cta-e3379b10
+  expect:
+    status: 409
+    code: DEST_RULE_SELF_PROMO
+  grade:
+    contains:
+      error.message: subscribe
+- name: HC4.9 assisted pack for a promotional post to a no-promotion community ->
+    409 (no ready-to-post spam)
+  method: POST
+  path: /connector/v1/assisted/build_assist_pack
+  body:
+    rendition:
+      title: Our new course is live this week
+      body: Buy my course today with code SAVE50 at https://mycourse.example.com/?utm_source=forum
+      is_promotional: true
+    destination:
+      connector_key: assisted
+      url: http://mock-platforms:8080/assist/hc4-ap-e3379b10/submit
+      rules:
+        self_promo_allowed: false
+        automation_allowed: false
+  expect:
+    status: 409
+    code: DEST_RULE_SELF_PROMO

@@ -1,0 +1,2 @@
+provider,model,pages,cells,field_accuracy,accuracy_after_quotes,stated_rules,stated_recall,false_rules,proposed_values,quote_verification_rate,failures,latency_p50_ms,latency_max_ms,total_tokens,cost_usd
+mock,mock-heuristic-v1,22,132,0.833,0.833,74,0.716,1,55,1.0,0,0.5,2.2,0,0.0

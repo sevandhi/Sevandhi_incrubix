@@ -1,0 +1,39 @@
+{
+  "publication_id": "pub_fcce548abe354f3bb9e8355dc30caa26",
+  "destination_id": "dest_42f4fbb9c6fb4d87a0041d7c17046c9e",
+  "content_id": "content_b2ef382618e04003a163d5652391928e",
+  "state": "published",
+  "reason": null,
+  "reasons": [],
+  "code": null,
+  "outcome": null,
+  "retry_at": null,
+  "scheduled_for": "2026-10-20T15:41:54.046996Z",
+  "platform_post_id": "2~i6d827d8cef",
+  "live_url": "http://mock-platforms:8080/discourse/hc4-cap2-4201344a/t/a-concurrent-question-for-the-forum/2",
+  "attempts": 1,
+  "rule_decision": {
+    "code": null,
+    "fixes": [],
+    "action": "allow",
+    "reasons": [],
+    "evidence": [],
+    "retry_at": null,
+    "warnings": [],
+    "failed_checks": []
+  },
+  "tailoring": {
+    "diff": [],
+    "profile": "forum",
+    "warnings": []
+  },
+  "assist_pack": null,
+  "removal": null,
+  "job_ids": [
+    "job_30158b7285444620b63b6ce9c2378d34"
+  ],
+  "error": null,
+  "published_at": "2026-10-20T15:42:00.138143Z",
+  "created_at": "2026-10-20T15:41:50.178967Z",
+  "updated_at": "2026-10-20T15:42:00.378482Z"
+}

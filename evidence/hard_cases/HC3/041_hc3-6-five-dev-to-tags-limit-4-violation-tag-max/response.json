@@ -1,0 +1,30 @@
+{
+  "status": 200,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:37:16 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "1367985b-920b-4f19",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "3744c626646a43238580f41ee0cbede3",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "content-encoding": "gzip",
+    "cf-ray": "a4d91a517ef6aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "ok": false,
+    "violations": [
+      {
+        "field": "tags",
+        "rule": "tag_max",
+        "message": "5 tags; the limit is 4",
+        "limit": 4,
+        "actual": 5
+      }
+    ]
+  }
+}

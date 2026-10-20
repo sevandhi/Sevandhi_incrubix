@@ -1,0 +1,13 @@
+{
+  "n": 5,
+  "step": "STATUS",
+  "outcome": "ok",
+  "started_at": "2026-10-18T09:29:52.148932Z",
+  "duration_ms": 154.0,
+  "detail": {
+    "response": {
+      "status": "published",
+      "live_url": "http://ghost:2368/incubrix-certification-test-ibxcert3bae9bc481-ibx-rtbiuwugl74n/"
+    }
+  }
+}

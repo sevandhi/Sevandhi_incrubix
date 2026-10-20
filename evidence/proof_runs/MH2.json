@@ -1,0 +1,200 @@
+{
+ "id": "MH2",
+ "title": "Six Core connectors certified (publish, confirm live URL, status, delete) with stored evidence",
+ "status": "Partial",
+ "reasons": [
+  "certification packs have no screenshot (brief: 'run record, live URL or API response, screenshot, deletion confirmation'); missing for: discourse@mock, lemmy@mock, devto@mock, ghost@mock, webhook@mock, assisted@mock, lemmy@real-local, ghost@real-local"
+ ],
+ "run_id": "20261020T145607Z",
+ "started_at": "2026-10-20T14:57:07Z",
+ "finished_at": "2026-10-20T14:57:25Z",
+ "duration_s": 17.5,
+ "api": "http://127.0.0.1:38875",
+ "mode": "local",
+ "command": "scripts/prove_mh2.sh",
+ "evidence": [
+  "evidence/must_haves/MH2_certification_summary.csv",
+  "evidence/metrics/certification_runs.csv",
+  "evidence/must_haves/MH2_certify.log"
+ ],
+ "checks_total": 25,
+ "checks_passed": 25,
+ "checks": [
+  {
+   "label": "discourse@mock: certification PASSED at L4",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"state\": \"PASSED\", \"level\": \"L4\", \"failure\": null, \"failed_steps\": []}",
+   "group": null
+  },
+  {
+   "label": "discourse@mock: evidence pack exported",
+   "ok": true,
+   "critical": true,
+   "detail": "evidence/certification/discourse/mh2-discourse-mock-01c8551c/cert_7d2f06d31ae64fde8ff2b6653924c547",
+   "group": null
+  },
+  {
+   "label": "discourse@mock: pack exported with run.json, every step and the deletion/removal confirmation",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"steps\": [\"PREFLIGHT\", \"VALIDATE\", \"PUBLISH\", \"CONFIRM_LIVE\", \"STATUS\", \"METRICS\", \"DELETE\", \"CONFIRM_DELETED\"], \"files\": 13}",
+   "group": null
+  },
+  {
+   "label": "lemmy@mock: certification PASSED at L4",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"state\": \"PASSED\", \"level\": \"L4\", \"failure\": null, \"failed_steps\": []}",
+   "group": null
+  },
+  {
+   "label": "lemmy@mock: evidence pack exported",
+   "ok": true,
+   "critical": true,
+   "detail": "evidence/certification/lemmy/mh2-lemmy-mock-87792488/cert_0f2f72d5bf6d441ab65f18663d02c51c",
+   "group": null
+  },
+  {
+   "label": "lemmy@mock: pack exported with run.json, every step and the deletion/removal confirmation",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"steps\": [\"PREFLIGHT\", \"VALIDATE\", \"PUBLISH\", \"CONFIRM_LIVE\", \"STATUS\", \"METRICS\", \"DELETE\", \"CONFIRM_DELETED\"], \"files\": 13}",
+   "group": null
+  },
+  {
+   "label": "devto@mock: certification PASSED at L2",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"state\": \"PASSED\", \"level\": \"L2\", \"failure\": null, \"failed_steps\": []}",
+   "group": null
+  },
+  {
+   "label": "devto@mock: evidence pack exported",
+   "ok": true,
+   "critical": true,
+   "detail": "evidence/certification/devto/mh2-devto-mock-b9aa3906/cert_5e03bed8651a4166a0ad889d79b3d2f0",
+   "group": null
+  },
+  {
+   "label": "devto@mock: pack exported with run.json, every step and the deletion/removal confirmation",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"steps\": [\"PREFLIGHT\", \"VALIDATE\", \"PUBLISH\", \"CONFIRM_LIVE\", \"STATUS\", \"METRICS\", \"DELETE\", \"CONFIRM_REMOVED\"], \"files\": 13}",
+   "group": null
+  },
+  {
+   "label": "devto@mock: Dev.to removal is unpublish, never deleted:true",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"removal_mode\": \"unpublish_to_draft\"}",
+   "group": null
+  },
+  {
+   "label": "ghost@mock: certification PASSED at L3",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"state\": \"PASSED\", \"level\": \"L3\", \"failure\": null, \"failed_steps\": []}",
+   "group": null
+  },
+  {
+   "label": "ghost@mock: evidence pack exported",
+   "ok": true,
+   "critical": true,
+   "detail": "evidence/certification/ghost/mh2-ghost-mock-3dfd52cf/cert_75bf9e7fc2ab40de8b95d6ca264ba63c",
+   "group": null
+  },
+  {
+   "label": "ghost@mock: pack exported with run.json, every step and the deletion/removal confirmation",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"steps\": [\"PREFLIGHT\", \"VALIDATE\", \"PUBLISH\", \"CONFIRM_LIVE\", \"STATUS\", \"DELETE\", \"CONFIRM_DELETED\"], \"files\": 12}",
+   "group": null
+  },
+  {
+   "label": "webhook@mock: certification PASSED at L3",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"state\": \"PASSED\", \"level\": \"L3\", \"failure\": null, \"failed_steps\": []}",
+   "group": null
+  },
+  {
+   "label": "webhook@mock: evidence pack exported",
+   "ok": true,
+   "critical": true,
+   "detail": "evidence/certification/webhook/mh2-webhook-mock-df8bb8d2/cert_d6fb4d994808455ab75fe4ea70ca6461",
+   "group": null
+  },
+  {
+   "label": "webhook@mock: pack exported with run.json, every step and the deletion/removal confirmation",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"steps\": [\"PREFLIGHT\", \"VALIDATE\", \"PUBLISH\", \"CONFIRM_LIVE\", \"STATUS\", \"DELETE\", \"CONFIRM_DELETED\"], \"files\": 12}",
+   "group": null
+  },
+  {
+   "label": "assisted@mock: certification PASSED at L1",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"state\": \"PASSED\", \"level\": \"L1\", \"failure\": null, \"failed_steps\": []}",
+   "group": null
+  },
+  {
+   "label": "assisted@mock: evidence pack exported",
+   "ok": true,
+   "critical": true,
+   "detail": "evidence/certification/assisted/mh2-assisted-mock-367a33c6/cert_296de37b12844efbbe15628bae9d6e1f",
+   "group": null
+  },
+  {
+   "label": "assisted@mock: pack exported with run.json, every step and the deletion/removal confirmation",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"steps\": [\"PREFLIGHT\", \"VALIDATE\", \"BUILD_PACK\", \"CONFIRM_PACK\", \"DELETE\", \"CONFIRM_DELETED\"], \"files\": 11}",
+   "group": null
+  },
+  {
+   "label": "lemmy@real-local: certification PASSED at L4",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"state\": \"PASSED\", \"level\": \"L4\", \"failure\": null, \"failed_steps\": []}",
+   "group": null
+  },
+  {
+   "label": "lemmy@real-local: evidence pack exported",
+   "ok": true,
+   "critical": true,
+   "detail": "evidence/certification/lemmy/local-lemmy-real-instance/cert_18da184cccd443ef8dcf3abad1f5b90c",
+   "group": null
+  },
+  {
+   "label": "lemmy@real-local: pack exported with run.json, every step and the deletion/removal confirmation",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"steps\": [\"PREFLIGHT\", \"VALIDATE\", \"PUBLISH\", \"CONFIRM_LIVE\", \"STATUS\", \"METRICS\", \"DELETE\", \"CONFIRM_DELETED\"], \"files\": 13}",
+   "group": null
+  },
+  {
+   "label": "ghost@real-local: certification PASSED at L3",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"state\": \"PASSED\", \"level\": \"L3\", \"failure\": null, \"failed_steps\": []}",
+   "group": null
+  },
+  {
+   "label": "ghost@real-local: evidence pack exported",
+   "ok": true,
+   "critical": true,
+   "detail": "evidence/certification/ghost/local-ghost-real-instance/cert_8512190848a54ff5af360302dafe86d5",
+   "group": null
+  },
+  {
+   "label": "ghost@real-local: pack exported with run.json, every step and the deletion/removal confirmation",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"steps\": [\"PREFLIGHT\", \"VALIDATE\", \"PUBLISH\", \"CONFIRM_LIVE\", \"STATUS\", \"DELETE\", \"CONFIRM_DELETED\"], \"files\": 12}",
+   "group": null
+  }
+ ],
+ "sub": {}
+}

@@ -1,0 +1,15 @@
+{
+  "index": 32,
+  "name": "HC2.11 Ghost refuses the Admin key -> CONNECTION_AUTH_EXPIRED with a readable message",
+  "method": "POST",
+  "path": "/connector/v1/ghost/publish",
+  "status": 424,
+  "code": "CONNECTION_AUTH_EXPIRED",
+  "expected_status": 424,
+  "expected_code": "CONNECTION_AUTH_EXPIRED",
+  "passed": true,
+  "duration_ms": 4083.9,
+  "correlation_id": "b0004ef5910e4b00a3edb1be310f793f",
+  "folder": "032_hc2-11-ghost-refuses-the-admin-key-connection-auth-expired-w",
+  "job_status": null
+}

@@ -1,0 +1,28 @@
+{
+ "id": "ADV1",
+ "title": "uv run python scripts/prove_adv1.py --api http://127.0.0.1:38875 --token ibx-dev-token",
+ "status": "Yes",
+ "reasons": [],
+ "run_id": "20261020T145607Z",
+ "started_at": "2026-10-20T15:08:24Z",
+ "finished_at": "2026-10-20T15:11:49Z",
+ "duration_s": 204.7,
+ "api": "http://127.0.0.1:38875",
+ "mode": "n/a",
+ "command": "uv run python scripts/prove_adv1.py --api http://127.0.0.1:38875 --token ibx-dev-token",
+ "evidence": [
+  "evidence/proof_runs/ADV1.log"
+ ],
+ "checks_total": 1,
+ "checks_passed": 1,
+ "checks": [
+  {
+   "label": "exit 0: uv run python scripts/prove_adv1.py --api http://127.0.0.1:38875 --token ibx-dev-token",
+   "ok": true,
+   "critical": true,
+   "detail": "wrote /home/user/chumma/Sevandhi_incrubix/evidence/metrics/catalogue_import.csv",
+   "group": null
+  }
+ ],
+ "sub": {}
+}

@@ -1,0 +1,10 @@
+{
+  "method": "POST",
+  "path": "/api/v1/jobs",
+  "headers": {
+    "Idempotency-Key": "hc1-job-4201344a"
+  },
+  "body": {
+    "kind": "selfcheck"
+  }
+}

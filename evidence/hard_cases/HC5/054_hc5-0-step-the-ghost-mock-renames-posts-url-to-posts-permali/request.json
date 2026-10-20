@@ -1,0 +1,12 @@
+{
+  "method": "POST",
+  "path": "https://ibx-destination-network-demo.onrender.com/sim/_faults",
+  "headers": {},
+  "body": {
+    "platform": "ghost",
+    "tenant": "hc5-drift-4201344a",
+    "method": "POST",
+    "fault": "rename_field:url->permalink",
+    "count": 1
+  }
+}

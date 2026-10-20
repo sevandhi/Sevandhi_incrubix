@@ -1,0 +1,33 @@
+{
+  "status": 424,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:36:59 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "2c0c9de9-5f3f-4f3d",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "b0004ef5910e4b00a3edb1be310f793f",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d919d13890aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "CONNECTION_AUTH_EXPIRED",
+      "message": "ghost answered HTTP 401: Unknown Admin API Key. Check the Admin API key, and that this server's clock is right (Ghost tokens are valid for 5 minutes from their 'iat').",
+      "retryable": false,
+      "details": {
+        "retry_policy": "after_reconnect",
+        "platform_status": 401,
+        "platform_message": "Unknown Admin API Key",
+        "error_map_key": "401",
+        "platform_code": "UNKNOWN_ADMIN_API_KEY",
+        "intent_state": "RETRYABLE",
+        "idempotency_key": "hc2-gk-4201344a"
+      }
+    }
+  }
+}

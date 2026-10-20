@@ -1,0 +1,20 @@
+{
+  "n": 4,
+  "step": "CONFIRM_LIVE",
+  "outcome": "ok",
+  "started_at": "2026-10-18T15:59:50.744932Z",
+  "duration_ms": 19.3,
+  "detail": {
+    "method": "http_get_live_url",
+    "live_url": "http://mock-platforms:8080/discourse/mh2-discourse-2bd49645/t/incubrix-certification-test-ibxcertb84337fac5/1",
+    "http_status": 200,
+    "marker_found": true,
+    "attempts": [
+      {
+        "at": "2026-10-18T15:59:50.764077Z",
+        "status": 200,
+        "bytes": 357
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "n": 5,
+  "step": "STATUS",
+  "outcome": "ok",
+  "started_at": "2026-10-18T09:12:37.573118Z",
+  "duration_ms": 68.6,
+  "detail": {
+    "response": {
+      "status": "published",
+      "live_url": "http://127.0.0.1:19188/api/v1/feeds/e2e-mrss-0755cefd/items/ibx-5vk3e6qlr2ag"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "index": 41,
+  "name": "HC3.6 five Dev.to tags (limit 4) -> violation tag_max",
+  "method": "POST",
+  "path": "/connector/v1/devto/validate",
+  "status": 200,
+  "code": null,
+  "expected_status": 200,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 502.7,
+  "correlation_id": "3744c626646a43238580f41ee0cbede3",
+  "folder": "041_hc3-6-five-dev-to-tags-limit-4-violation-tag-max",
+  "job_status": null
+}

@@ -1,0 +1,27 @@
+{
+  "n": 7,
+  "step": "CONFIRM_DELETED",
+  "outcome": "ok",
+  "started_at": "2026-10-18T09:29:52.452044Z",
+  "duration_ms": 133.0,
+  "detail": {
+    "status_after": {
+      "status": "deleted",
+      "live_url": null
+    },
+    "delete_mode": "deleted",
+    "platform_delete_mode": "permanent",
+    "method": "platform_api_get_status + http_get_live_url",
+    "live_url_after": {
+      "url": "http://ghost:2368/incubrix-certification-test-ibxcert3bae9bc481-ibx-rtbiuwugl74n/",
+      "http_status": 404,
+      "attempts": [
+        {
+          "at": "2026-10-18T09:29:52.574545Z",
+          "status": 404,
+          "bytes": 1155
+        }
+      ]
+    }
+  }
+}

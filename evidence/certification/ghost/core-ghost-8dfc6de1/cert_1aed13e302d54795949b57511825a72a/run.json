@@ -1,0 +1,223 @@
+{
+  "run_id": "cert_1aed13e302d54795949b57511825a72a",
+  "harness_version": "1.0.0",
+  "destination_id": "dest_e4a1cdb3086b44a3b17a7c1820eb5dce",
+  "simulation": true,
+  "started_at": "2026-10-17T16:49:52.506282Z",
+  "finished_at": "2026-10-17T16:49:52.781797Z",
+  "duration_ms": 275,
+  "timeline": [
+    {
+      "state": "QUEUED",
+      "at": "2026-10-17T16:49:52.506282Z"
+    },
+    {
+      "state": "PREFLIGHT",
+      "at": "2026-10-17T16:49:52.529758Z"
+    },
+    {
+      "state": "VALIDATE",
+      "at": "2026-10-17T16:49:52.553733Z"
+    },
+    {
+      "state": "PUBLISH",
+      "at": "2026-10-17T16:49:52.571685Z"
+    },
+    {
+      "state": "CONFIRM_LIVE",
+      "at": "2026-10-17T16:49:52.613740Z"
+    },
+    {
+      "state": "STATUS",
+      "at": "2026-10-17T16:49:52.648212Z"
+    },
+    {
+      "state": "DELETE",
+      "at": "2026-10-17T16:49:52.692421Z"
+    },
+    {
+      "state": "CONFIRM_DELETED",
+      "at": "2026-10-17T16:49:52.727708Z"
+    },
+    {
+      "state": "PASSED",
+      "at": "2026-10-17T16:49:52.772407Z",
+      "note": "native: publish, live URL, status and delete certified"
+    }
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "step": "PREFLIGHT",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:49:52.540362Z",
+      "duration_ms": 6.5,
+      "detail": {
+        "connector_key": "ghost",
+        "connector_version": "1.0.0",
+        "tier": "native",
+        "capabilities": [
+          "publish",
+          "status",
+          "delete",
+          "refresh_auth"
+        ],
+        "target": "simulation: every call goes to mock-platforms",
+        "kill_switch": "off",
+        "connection_id": null,
+        "rules_confirmed": true,
+        "auth_probe": "no refresh_auth capability: the PUBLISH step proves the credentials"
+      }
+    },
+    {
+      "n": 2,
+      "step": "VALIDATE",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:49:52.560255Z",
+      "duration_ms": 5.1,
+      "detail": {
+        "good_rendition": {
+          "title": "IncuBrix certification test ibxcert511825a72a",
+          "ok": true
+        },
+        "over_long_rendition": {
+          "ok": false,
+          "violations": [
+            {
+              "field": "title",
+              "rule": "title_max_chars",
+              "message": "title is 280 characters; the limit is 255",
+              "limit": 255,
+              "actual": 280
+            }
+          ]
+        }
+      }
+    },
+    {
+      "n": 3,
+      "step": "PUBLISH",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:49:52.578025Z",
+      "duration_ms": 28.9,
+      "detail": {
+        "request": {
+          "rendition": {
+            "rendition_id": "cert-cert_1aed13e302d54795949b57511825a72a",
+            "content_id": null,
+            "surface": "article",
+            "content_type": "text",
+            "title": "IncuBrix certification test ibxcert511825a72a",
+            "body": "Automated certification test post ibxcert511825a72a from the IncuBrix destination network. It checks publish, live URL, status and delete on our own test instance, and is deleted within 10 minutes.",
+            "body_format": "markdown",
+            "canonical_url": null,
+            "link_url": null,
+            "media": [],
+            "tags": [],
+            "mentions": [],
+            "language": "en",
+            "is_promotional": false,
+            "ai_generated": false
+          },
+          "idempotency_key": "cert-cert_1aed13e302d54795949b57511825a72a",
+          "marker": "ibx-blyslerpfxog"
+        },
+        "response": {
+          "platform_post_id": "6acf00000000000000000001",
+          "live_url": "http://mock-platforms:8080/ghost/core-ghost-8dfc6de1-example-org/incubrix-certification-test-ibxcert511825a72a-ibx-blyslerpfxog/",
+          "status": "published"
+        },
+        "test_post_id": 5,
+        "expires_after_s": 300
+      }
+    },
+    {
+      "n": 4,
+      "step": "CONFIRM_LIVE",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:49:52.622464Z",
+      "duration_ms": 17.8,
+      "detail": {
+        "method": "http_get_live_url",
+        "live_url": "http://mock-platforms:8080/ghost/core-ghost-8dfc6de1-example-org/incubrix-certification-test-ibxcert511825a72a-ibx-blyslerpfxog/",
+        "http_status": 200,
+        "marker_found": true,
+        "attempts": [
+          {
+            "at": "2026-10-17T16:49:52.640123Z",
+            "status": 200,
+            "bytes": 143
+          }
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "step": "STATUS",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:49:52.662568Z",
+      "duration_ms": 19.9,
+      "detail": {
+        "response": {
+          "status": "published",
+          "live_url": "http://mock-platforms:8080/ghost/core-ghost-8dfc6de1-example-org/incubrix-certification-test-ibxcert511825a72a-ibx-blyslerpfxog/"
+        }
+      }
+    },
+    {
+      "n": 6,
+      "step": "DELETE",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:49:52.701637Z",
+      "duration_ms": 14.9,
+      "detail": {
+        "response": {
+          "deleted": true
+        },
+        "platform_delete_mode": "permanent"
+      }
+    },
+    {
+      "n": 7,
+      "step": "CONFIRM_DELETED",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:49:52.735841Z",
+      "duration_ms": 27.7,
+      "detail": {
+        "status_after": {
+          "status": "deleted",
+          "live_url": null
+        },
+        "delete_mode": "deleted",
+        "platform_delete_mode": "permanent",
+        "method": "platform_api_get_status + http_get_live_url",
+        "live_url_after": {
+          "url": "http://mock-platforms:8080/ghost/core-ghost-8dfc6de1-example-org/incubrix-certification-test-ibxcert511825a72a-ibx-blyslerpfxog/",
+          "http_status": 404,
+          "attempts": [
+            {
+              "at": "2026-10-17T16:49:52.758950Z",
+              "status": 404,
+              "bytes": 78
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "result": {
+    "run_id": "cert_1aed13e302d54795949b57511825a72a",
+    "destination_id": "dest_e4a1cdb3086b44a3b17a7c1820eb5dce",
+    "connector_key": "ghost",
+    "passed": true,
+    "state": "PASSED",
+    "level_before": "L0",
+    "level_after": "L3",
+    "level_reason": "native: publish, live URL, status and delete certified",
+    "delete_mode": "deleted",
+    "platform_delete_mode": "permanent",
+    "platform_post_id": "6acf00000000000000000001",
+    "live_url": "http://mock-platforms:8080/ghost/core-ghost-8dfc6de1-example-org/incubrix-certification-test-ibxcert511825a72a-ibx-blyslerpfxog/",
+    "notes": []
+  }
+}

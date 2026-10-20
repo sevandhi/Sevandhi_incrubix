@@ -1,0 +1,15 @@
+{
+  "index": 62,
+  "name": "HC6.2 the same rows through /api/v1/destinations - a malformed URL is refused, duplicates are named",
+  "method": "POST",
+  "path": "/api/v1/destinations",
+  "status": 201,
+  "code": null,
+  "expected_status": 201,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 2718.6,
+  "correlation_id": "b1985e3c14af4633abe9c3e3c269915c",
+  "folder": "062_hc6-2-the-same-rows-through-api-v1-destinations-a-malformed-",
+  "job_status": null
+}

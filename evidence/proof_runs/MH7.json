@@ -1,0 +1,180 @@
+{
+ "id": "MH7",
+ "title": "Secrets protected (logs, repository) and simulation mode",
+ "status": "No",
+ "reasons": [
+  "FAIL gitleaks: 0 unexplained findings (idempotency keys and test-fixture fakes listed in the report): [\"generic-api-key /repo/.env:75\", \"generic-api-key /repo/.env:147\", \"generic-api-key /repo/.env:151\", \"curl-auth-header /repo/docs/CONTRACT.md:28\"]",
+  "WARN bootstrap secret values are not committed defaults: a local-instance value equals a dev-only default committed in ['deploy/bootstrap/bootstrap.py', 'deploy/compose/bootstrap.yaml', 'deploy/compose/lemmy.yaml'] (placeholder passwords for containers"
+ ],
+ "run_id": "20261020T145607Z",
+ "started_at": "2026-10-20T15:11:53Z",
+ "finished_at": "2026-10-20T15:12:39Z",
+ "duration_s": 46.4,
+ "api": "http://127.0.0.1:38875",
+ "mode": "local",
+ "command": "scripts/prove_mh7.sh",
+ "evidence": [
+  "evidence/must_haves/MH7_gitleaks.txt",
+  "evidence/must_haves/MH7_sim_run.log",
+  "evidence/must_haves/MH7_canary_grep.log"
+ ],
+ "checks_total": 22,
+ "checks_passed": 20,
+ "checks": [
+  {
+   "label": "discourse: refused credential -> CONNECTION_AUTH_EXPIRED, canary not echoed",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"status\": 424}",
+   "group": null
+  },
+  {
+   "label": "devto: refused credential -> CONNECTION_AUTH_EXPIRED, canary not echoed",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"status\": 424}",
+   "group": null
+  },
+  {
+   "label": "lemmy: refused credential -> CONNECTION_AUTH_EXPIRED, canary not echoed",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"status\": 424}",
+   "group": null
+  },
+  {
+   "label": "the canary is in none of the API responses",
+   "ok": true,
+   "critical": true,
+   "detail": "6",
+   "group": null
+  },
+  {
+   "label": "the canary is in none of the api/worker/mock-platforms log lines",
+   "ok": true,
+   "critical": true,
+   "detail": "2384 lines searched",
+   "group": null
+  },
+  {
+   "label": "5 bootstrap secret values: 0 hits in the api/worker logs",
+   "ok": true,
+   "critical": true,
+   "detail": "2380 lines",
+   "group": null
+  },
+  {
+   "label": "the API token is in no api/worker log line",
+   "ok": true,
+   "critical": true,
+   "detail": "",
+   "group": null
+  },
+  {
+   "label": "evidence/**: 0 hits for the canary and the bootstrap secrets",
+   "ok": true,
+   "critical": true,
+   "detail": "{}",
+   "group": null
+  },
+  {
+   "label": "working tree (no .venv/.git/caches): 0 hits for the canary",
+   "ok": true,
+   "critical": true,
+   "detail": "{}",
+   "group": null
+  },
+  {
+   "label": "working tree: 0 hits for the bootstrap's secret values",
+   "ok": true,
+   "critical": true,
+   "detail": "[\"deploy/bootstrap/bootstrap.py\", \"deploy/compose/bootstrap.yaml\", \"deploy/compose/lemmy.yaml\"]",
+   "group": null
+  },
+  {
+   "label": "bootstrap secret values are not committed defaults",
+   "ok": false,
+   "critical": false,
+   "detail": "a local-instance value equals a dev-only default committed in ['deploy/bootstrap/bootstrap.py', 'deploy/compose/bootstrap.yaml', 'deploy/compose/lemmy.yaml'] (placeholder passwords for containers on an internal network; .env / IBX_LEMMY_ADMIN_PASSWORD override it). Human decision.",
+   "group": null
+  },
+  {
+   "label": "gitleaks: 0 unexplained findings (idempotency keys and test-fixture fakes listed in the report)",
+   "ok": false,
+   "critical": true,
+   "detail": "[\"generic-api-key /repo/.env:75\", \"generic-api-key /repo/.env:147\", \"generic-api-key /repo/.env:151\", \"curl-auth-header /repo/docs/CONTRACT.md:28\"]",
+   "group": null
+  },
+  {
+   "label": "api and worker recreated with SIMULATION_MODE=true",
+   "ok": true,
+   "critical": true,
+   "detail": "r ibx_p6b_final-s3-1  Healthy\n Container ibx_p6b_final-postgres-1  Healthy\n Container ibx_p6b_final-bootstrap-1  Healthy\n Container ibx_p6b_final-lemmy-db-1  Healthy\n Container ibx_p6b_final-api-1  Healthy\n Container ibx_p6b_final-mock-platforms-1  Healthy\n Container ibx_p6b_final-worker-1  Healthy\n",
+   "group": null
+  },
+  {
+   "label": "the job manifest says simulation: true",
+   "ok": true,
+   "critical": true,
+   "detail": "simulation",
+   "group": null
+  },
+  {
+   "label": "simulation: discourse row with a real-looking URL certifies (rewritten to the mock)",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"state\": \"PASSED\", \"level\": \"L4\", \"failure\": null}",
+   "group": null
+  },
+  {
+   "label": "simulation: lemmy row with a real-looking URL certifies (rewritten to the mock)",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"state\": \"PASSED\", \"level\": \"L4\", \"failure\": null}",
+   "group": null
+  },
+  {
+   "label": "simulation: devto row with a real-looking URL certifies (rewritten to the mock)",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"state\": \"PASSED\", \"level\": \"L2\", \"failure\": null}",
+   "group": null
+  },
+  {
+   "label": "simulation: ghost row with a real-looking URL certifies (rewritten to the mock)",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"state\": \"PASSED\", \"level\": \"L3\", \"failure\": null}",
+   "group": null
+  },
+  {
+   "label": "simulation: webhook row with a real-looking URL certifies (rewritten to the mock)",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"state\": \"PASSED\", \"level\": \"L3\", \"failure\": null}",
+   "group": null
+  },
+  {
+   "label": "simulation: assisted row with a real-looking URL certifies (rewritten to the mock)",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"state\": \"PASSED\", \"level\": \"L1\", \"failure\": null}",
+   "group": null
+  },
+  {
+   "label": "the simulated runs' traffic arrived at mock-platforms",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"discourse\": 7, \"lemmy\": 8, \"forem\": 8, \"ghost\": 6, \"partner\": 6, \"assist\": 1}",
+   "group": null
+  },
+  {
+   "label": "stack restored to local mode",
+   "ok": true,
+   "critical": true,
+   "detail": "final-mock-platforms-1  Healthy\n Container ibx_p6b_final-bootstrap-1  Healthy\n Container ibx_p6b_final-s3-1  Healthy\n Container ibx_p6b_final-api-1  Healthy\n Container ibx_p6b_final-worker-1  Healthy\n",
+   "group": null
+  }
+ ],
+ "sub": {}
+}

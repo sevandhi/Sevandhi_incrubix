@@ -1,0 +1,18 @@
+connector,target,scenario,trigger,first,retry,replay_same_id,same_key_other_body,posts_on_platform,duplicates,status
+discourse,mock,timeout_then_retry,"mock creates the post, then holds the answer 15 s (X-Sim-Fault: timeout_after_create:15)",503 PLATFORM_UNAVAILABLE outcome=unknown,200 after waits [] replayed=true reconciled=True,True,409 IDEMPOTENCY_KEY_REUSED,1,0,PASS
+discourse,mock,create_then_502,X-Sim-Fault: create_then_502,503 PLATFORM_UNAVAILABLE,200,,,1,0,PASS
+discourse,mock,8_parallel_same_key,concurrent requests,"[200, 200, 200, 200, 200, 200, 200, 200]",distinct ids 1,True,,1,0,PASS
+lemmy,mock,timeout_then_retry,"mock creates the post, then holds the answer 15 s (X-Sim-Fault: timeout_after_create:15)",503 PLATFORM_UNAVAILABLE outcome=unknown,200 after waits [] replayed=true reconciled=True,True,409 IDEMPOTENCY_KEY_REUSED,1,0,PASS
+lemmy,mock,create_then_502,X-Sim-Fault: create_then_502,503 PLATFORM_UNAVAILABLE,200,,,1,0,PASS
+lemmy,mock,8_parallel_same_key,concurrent requests,"[200, 200, 200, 200, 200, 200, 200, 200]",distinct ids 1,True,,1,0,PASS
+devto,mock,timeout_then_retry,"mock creates the post, then holds the answer 15 s (X-Sim-Fault: timeout_after_create:15)",503 PLATFORM_UNAVAILABLE outcome=unknown,200 after waits [] replayed=true reconciled=True,True,409 IDEMPOTENCY_KEY_REUSED,1,0,PASS
+devto,mock,create_then_502,X-Sim-Fault: create_then_502,503 PLATFORM_UNAVAILABLE,200,,,1,0,PASS
+devto,mock,8_parallel_same_key,concurrent requests,"[200, 200, 200, 200, 200, 200, 200, 200]",distinct ids 1,True,,1,0,PASS
+ghost,mock,timeout_then_retry,"mock creates the post, then holds the answer 15 s (X-Sim-Fault: timeout_after_create:15)",503 PLATFORM_UNAVAILABLE outcome=unknown,200 after waits [] replayed=true reconciled=True,True,409 IDEMPOTENCY_KEY_REUSED,1,0,PASS
+ghost,mock,create_then_502,X-Sim-Fault: create_then_502,503 PLATFORM_UNAVAILABLE,200,,,1,0,PASS
+ghost,mock,8_parallel_same_key,concurrent requests,"[200, 200, 200, 200, 200, 200, 200, 200]",distinct ids 1,True,,1,0,PASS
+webhook,mock,timeout_then_retry,"mock creates the post, then holds the answer 15 s (X-Sim-Fault: timeout_after_create:15)",503 PLATFORM_UNAVAILABLE outcome=unknown,200 after waits [] replayed=true reconciled=True,True,409 IDEMPOTENCY_KEY_REUSED,1,0,PASS
+webhook,mock,create_then_502,X-Sim-Fault: create_then_502,503 PLATFORM_UNAVAILABLE,200,,,1,0,PASS
+webhook,mock,8_parallel_same_key,concurrent requests,"[200, 200, 200, 200, 200, 200, 200, 200]",distinct ids 1,True,,1,0,PASS
+lemmy,real-local,timeout_then_retry,toxiproxy holds the real Lemmy's answer for 13 s (> PLATFORM_TIMEOUT_S 10 s),503 PLATFORM_UNAVAILABLE outcome=unknown,200 after waits [5.0] replayed=None reconciled=None,True,409 IDEMPOTENCY_KEY_REUSED,1,0,PASS
+ghost,real-local,timeout_then_retry,toxiproxy holds the real Ghost's answer for 13 s (> PLATFORM_TIMEOUT_S 10 s),503 PLATFORM_UNAVAILABLE outcome=unknown,200 after waits [] replayed=true reconciled=True,True,409 IDEMPOTENCY_KEY_REUSED,1,0,PASS

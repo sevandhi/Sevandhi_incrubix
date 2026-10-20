@@ -1,0 +1,30 @@
+{
+ "id": "ADV4",
+ "title": "uv run pytest -q -p no:cacheprovider tests/unit/test_tailoring_profiles.py tests/unit/test_tailoring_truncate.py",
+ "status": "Partial",
+ "reasons": [
+  "unit/property tests plus rehearsal HC3.8 (auto-fit with TITLE_TRUNCATED); no per-destination tailoring diff evidence pack yet"
+ ],
+ "run_id": "20261020T145607Z",
+ "started_at": "2026-10-20T15:11:51Z",
+ "finished_at": "2026-10-20T15:11:52Z",
+ "duration_s": 2.0,
+ "api": "http://127.0.0.1:38875",
+ "mode": "n/a",
+ "command": "uv run pytest -q -p no:cacheprovider tests/unit/test_tailoring_profiles.py tests/unit/test_tailoring_truncate.py",
+ "evidence": [
+  "evidence/proof_runs/ADV4.log"
+ ],
+ "checks_total": 1,
+ "checks_passed": 1,
+ "checks": [
+  {
+   "label": "exit 0: uv run pytest -q -p no:cacheprovider tests/unit/test_tailoring_profiles.py tests/unit/test_tailoring_truncate.py",
+   "ok": true,
+   "critical": true,
+   "detail": "44 passed in 1.41s",
+   "group": null
+  }
+ ],
+ "sub": {}
+}

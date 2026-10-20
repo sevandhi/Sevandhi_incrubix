@@ -1,0 +1,15 @@
+{
+  "index": 57,
+  "name": "HC5.3 the orphan test post was cleaned up (found by its marker, then deleted)",
+  "method": "GET",
+  "path": "https://ibx-destination-network-demo.onrender.com/sim/_counts?platform=ghost&tenant=hc5-drift-4201344a",
+  "status": 200,
+  "code": null,
+  "expected_status": 200,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 92.7,
+  "correlation_id": null,
+  "folder": "057_hc5-3-the-orphan-test-post-was-cleaned-up-found-by-its-marke",
+  "job_status": null
+}

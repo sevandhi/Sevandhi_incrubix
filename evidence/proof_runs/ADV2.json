@@ -1,0 +1,30 @@
+{
+ "id": "ADV2",
+ "title": "uv run python scripts/eval_rules_capture.py --only mock --out evidence/metrics/rules_capture_mock_rerun",
+ "status": "Partial",
+ "reasons": [
+  "eval_rules_capture.py measures the AI proposal against hand-written rules; the human confirm step is shown by ADV2_proposal_confirm.log, not re-run by this proof; this run re-measures the deterministic mock only (hosted free-tier rows in evidence/metrics/rules_capture_eval_summary.csv come from a separate keyed run and are not overwritten)"
+ ],
+ "run_id": "20261020T145607Z",
+ "started_at": "2026-10-20T15:11:49Z",
+ "finished_at": "2026-10-20T15:11:50Z",
+ "duration_s": 0.7,
+ "api": "http://127.0.0.1:38875",
+ "mode": "n/a",
+ "command": "uv run python scripts/eval_rules_capture.py --only mock --out evidence/metrics/rules_capture_mock_rerun",
+ "evidence": [
+  "evidence/proof_runs/ADV2.log"
+ ],
+ "checks_total": 1,
+ "checks_passed": 1,
+ "checks": [
+  {
+   "label": "exit 0: uv run python scripts/eval_rules_capture.py --only mock --out evidence/metrics/rules_capture_mock_rerun",
+   "ok": true,
+   "critical": true,
+   "detail": "wrote evidence/metrics/rules_capture_mock_rerun/rules_capture_eval.csv and rules_capture_eval_summary.csv (generated 2026-10-20T15:11:50Z, 16 CPUs)",
+   "group": null
+  }
+ ],
+ "sub": {}
+}

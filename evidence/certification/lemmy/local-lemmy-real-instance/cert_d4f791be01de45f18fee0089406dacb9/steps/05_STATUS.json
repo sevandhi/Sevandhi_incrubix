@@ -1,0 +1,13 @@
+{
+  "n": 5,
+  "step": "STATUS",
+  "outcome": "ok",
+  "started_at": "2026-10-18T03:40:13.937282Z",
+  "duration_ms": 62.4,
+  "detail": {
+    "response": {
+      "status": "published",
+      "live_url": "http://lemmy:8536/post/3"
+    }
+  }
+}

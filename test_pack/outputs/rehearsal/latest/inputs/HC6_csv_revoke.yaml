@@ -1,0 +1,81 @@
+cases:
+- name: HC6.1 the messy CSV import finished with a row-by-row report whose counts
+    add up
+  method: GET
+  path: /api/v1/jobs/job_3f482030789245aa96fe396c25a420f0
+  expect:
+    status: 200
+    code: null
+  grade:
+    equals:
+      status: succeeded
+      result.summary.rows: 8
+      result.summary.duplicate: 2
+      result.summary.invalid: 2
+    job_sum:
+      total: result.summary.rows
+      parts:
+      - result.summary.imported
+      - result.summary.duplicate
+      - result.summary.invalid
+      - result.summary.unreachable
+    present:
+    - result.links.report
+    - result.language_detector
+- name: HC6.2 the same rows through /api/v1/destinations - a malformed URL is refused,
+    duplicates are named
+  method: POST
+  path: /api/v1/destinations
+  body:
+    rows:
+    - name: Row A
+      url: http://mock-platforms:8080/discourse/hc6-rows-e3379b10
+      connector_key: discourse
+    - name: Row A www
+      url: http://mock-platforms:8080/discourse/hc6-rows-e3379b10/
+      connector_key: discourse
+    - name: Row bad
+      url: ht!tp:/not a url
+      connector_key: discourse
+  expect:
+    status: 201
+    code: null
+  grade:
+    equals:
+      summary.created: 1
+      summary.duplicate: 1
+      results.2.status: invalid
+- name: HC6.3 step - the partner revokes IncuBrix's access
+  role: step
+  method: POST
+  path: http://127.0.0.1:36803/partner/hc6-rev-e3379b10/_partner/revoke
+  expect:
+    status: 200
+- name: HC6.4 a publication to the revoked partner fails with CONNECTION_AUTH_EXPIRED
+    and pauses the connection
+  method: POST
+  path: /api/v1/publications
+  body:
+    destination_id: dest_fe707d144d8144dd99e078a9ec5d34c7
+    content:
+      title: News for our partner site
+      body: A short update for the partner's readers this week.
+      language: en
+      ai_generated: false
+  expect:
+    status: 202
+    code: null
+    job_status: failed
+  grade:
+    job_equals:
+      error.error.code: CONNECTION_AUTH_EXPIRED
+      error.error.details.connection_state: paused
+    followup:
+    - path: /api/v1/connections/conn_57da2e554e94453ebd2f4edf4c43efad
+      status: 200
+      contains:
+      - paused
+    - path: /api/v1/publications/{{resp:publication_id}}
+      status: 200
+      contains:
+      - CONNECTION_AUTH_EXPIRED

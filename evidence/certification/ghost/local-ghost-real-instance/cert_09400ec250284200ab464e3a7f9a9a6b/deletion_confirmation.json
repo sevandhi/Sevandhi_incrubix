@@ -1,0 +1,32 @@
+{
+  "run_id": "cert_09400ec250284200ab464e3a7f9a9a6b",
+  "delete_mode": "deleted",
+  "deleted": true,
+  "step": {
+    "n": 7,
+    "step": "CONFIRM_DELETED",
+    "outcome": "ok",
+    "started_at": "2026-10-18T16:00:04.433961Z",
+    "duration_ms": 135.8,
+    "detail": {
+      "status_after": {
+        "status": "deleted",
+        "live_url": null
+      },
+      "delete_mode": "deleted",
+      "platform_delete_mode": "permanent",
+      "method": "platform_api_get_status + http_get_live_url",
+      "live_url_after": {
+        "url": "http://ghost:2368/incubrix-certification-test-ibxcert3a7f9a9a6b-ibx-uvgfz2tardu2/",
+        "http_status": 404,
+        "attempts": [
+          {
+            "at": "2026-10-18T16:00:04.559778Z",
+            "status": 404,
+            "bytes": 1155
+          }
+        ]
+      }
+    }
+  }
+}

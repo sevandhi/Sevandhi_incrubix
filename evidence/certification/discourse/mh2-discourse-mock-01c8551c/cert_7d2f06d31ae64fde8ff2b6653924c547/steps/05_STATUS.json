@@ -1,0 +1,13 @@
+{
+  "n": 5,
+  "step": "STATUS",
+  "outcome": "ok",
+  "started_at": "2026-10-20T14:57:08.672214Z",
+  "duration_ms": 23.9,
+  "detail": {
+    "response": {
+      "status": "published",
+      "live_url": "http://mock-platforms:8080/discourse/mh2-discourse-83de7ece/t/incubrix-certification-test-ibxcert653924c547/1"
+    }
+  }
+}

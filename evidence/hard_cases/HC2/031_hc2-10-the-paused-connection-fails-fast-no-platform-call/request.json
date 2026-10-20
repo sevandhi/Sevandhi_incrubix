@@ -1,0 +1,20 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/webhook/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "Another post on the paused connection",
+      "body": "This one must not reach the partner."
+    },
+    "destination": {
+      "connector_key": "webhook",
+      "url": "http://mock-platforms:8080/partner/hc2-rev-4201344a"
+    },
+    "connection": {
+      "connector_key": "webhook",
+      "connection_id": "conn_626264c25d604a6cbf2febc6888ae37e"
+    },
+    "idempotency_key": "hc2-rev2-4201344a"
+  }
+}

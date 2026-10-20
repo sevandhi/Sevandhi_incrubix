@@ -1,0 +1,19 @@
+{
+  "run_id": "cert_397b774fdd7d428981cafa4fb39c3930",
+  "delete_mode": null,
+  "deleted": false,
+  "step": {
+    "n": 9,
+    "step": "CLEANUP",
+    "outcome": "ok",
+    "started_at": "2026-10-18T09:11:37.629068Z",
+    "duration_ms": 73.1,
+    "detail": {
+      "ok": true,
+      "action": "deleted",
+      "found_by": "id",
+      "platform_post_id": "ibx-6mz5w4pf747s",
+      "marker": "ibx-6mz5w4pf747s"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "run_id": "cert_817bb836c9a84a11b071513bae9bc481",
+  "simulation": false,
+  "live": {
+    "taken": true,
+    "file": "live.png",
+    "kind": "page",
+    "url": "http://ghost:2368/incubrix-certification-test-ibxcert3bae9bc481-ibx-rtbiuwugl74n/",
+    "label": "browser screenshot of http://ghost:2368/incubrix-certification-test-ibxcert3bae9bc481-ibx-rtbiuwugl74n/ (HTTP 200)",
+    "http_status": 200,
+    "content_type": "text/html",
+    "note": null,
+    "at": "2026-10-18T09:29:52.130658Z"
+  },
+  "after_delete": {
+    "taken": true,
+    "file": "after_delete.png",
+    "kind": "page",
+    "url": "http://ghost:2368/incubrix-certification-test-ibxcert3bae9bc481-ibx-rtbiuwugl74n/",
+    "label": "browser screenshot of http://ghost:2368/incubrix-certification-test-ibxcert3bae9bc481-ibx-rtbiuwugl74n/ (HTTP 404)",
+    "http_status": 404,
+    "content_type": "text/html",
+    "note": null,
+    "at": "2026-10-18T09:29:53.322155Z"
+  }
+}

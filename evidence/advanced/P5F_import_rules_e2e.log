@@ -1,0 +1,17 @@
+# import-rules e2e 2026-10-20T07:15:30+00:00 api=http://127.0.0.1:38727 tag=09b9e5
+PASS  import: researched row -> rules_status=proposed with a proposal id  [rprop_02839a6a56764067bd4f2e30b51eefd7]
+PASS  import: nothing confirmed by the import  [proposed]
+PASS  GET rule-proposal: warnings returned  [['FIELD_DEFAULTED', 'UNVERIFIED_ROW_RULES']]
+PASS  confirm page shows the warnings
+PASS  certification of the researched destination
+PASS  publication before confirmation refused  [409]
+PASS  proposal confirmed  [200]
+PASS  confirmed rules enforced: self-promotion blocked  [409]
+PASS  first post published  [published]
+PASS  second post rescheduled by the 1/P7D cap  [rescheduled]
+PASS  import: operator row manual/confirmed -> confirmed rules  [confirmed]
+PASS  MH3: operator row certifies  [PASSED L4]
+PASS  capture job result has warnings  [['FIELD_DEFAULTED', 'ROBOTS_DISALLOWED']]
+PASS  GET capture proposal has the same warnings
+PASS  confirm page shows the capture warnings
+# result: PASS

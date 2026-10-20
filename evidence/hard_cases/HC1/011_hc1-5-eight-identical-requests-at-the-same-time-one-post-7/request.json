@@ -1,0 +1,20 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "Eight parallel requests and one forum topic",
+      "body": "Eight copies of this request arrive at the same time."
+    },
+    "destination": {
+      "connector_key": "discourse",
+      "surface": "topic",
+      "url": "http://mock-platforms:8080/discourse/hc1-par-4201344a"
+    },
+    "connection": {
+      "connector_key": "discourse"
+    },
+    "idempotency_key": "hc1-par-4201344a"
+  }
+}

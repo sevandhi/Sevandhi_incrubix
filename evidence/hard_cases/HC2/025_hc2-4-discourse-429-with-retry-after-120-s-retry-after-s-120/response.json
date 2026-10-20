@@ -1,0 +1,36 @@
+{
+  "status": 429,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:36:40 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "retry-after": "120",
+    "rndr-id": "8c9c6318-f366-4932",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "2d9fbce8b8a4472bad6dccef511df61e",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d9195f3e17aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "PLATFORM_RATE_LIMIT",
+      "message": "discourse answered HTTP 429: Too many requests",
+      "retryable": true,
+      "details": {
+        "retry_policy": "backoff",
+        "platform_status": 429,
+        "platform_message": "Too many requests",
+        "error_map_key": "429",
+        "retry_at": "2026-10-20T15:38:39.655873Z",
+        "retry_after_s": 120,
+        "reset_source": "Retry-After",
+        "intent_state": "RETRYABLE",
+        "idempotency_key": "hc2-d429-4201344a"
+      }
+    }
+  }
+}

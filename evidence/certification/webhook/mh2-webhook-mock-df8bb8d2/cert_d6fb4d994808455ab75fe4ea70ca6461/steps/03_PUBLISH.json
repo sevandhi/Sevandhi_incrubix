@@ -1,0 +1,37 @@
+{
+  "n": 3,
+  "step": "PUBLISH",
+  "outcome": "ok",
+  "started_at": "2026-10-20T14:57:13.887358Z",
+  "duration_ms": 84.0,
+  "detail": {
+    "request": {
+      "rendition": {
+        "rendition_id": "cert-cert_d6fb4d994808455ab75fe4ea70ca6461",
+        "content_id": null,
+        "surface": "post",
+        "content_type": "text",
+        "title": "IncuBrix certification test ibxcertea70ca6461",
+        "body": "Automated certification test post ibxcertea70ca6461 from the IncuBrix destination network. It checks publish, live URL, status and delete on our own test instance, and is deleted within 10 minutes.",
+        "body_format": "markdown",
+        "canonical_url": null,
+        "link_url": null,
+        "media": [],
+        "tags": [],
+        "mentions": [],
+        "language": "en",
+        "is_promotional": false,
+        "ai_generated": false
+      },
+      "idempotency_key": "cert-cert_d6fb4d994808455ab75fe4ea70ca6461",
+      "marker": "ibx-lynmhf2d7cqj"
+    },
+    "response": {
+      "platform_post_id": "1~i96dc8f88d6",
+      "live_url": "http://mock-platforms:8080/partner/mh2-webhook-2178819d/p/1",
+      "status": "published"
+    },
+    "test_post_id": 5,
+    "expires_after_s": 300
+  }
+}

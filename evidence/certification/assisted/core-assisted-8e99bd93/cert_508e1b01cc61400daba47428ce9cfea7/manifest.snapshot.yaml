@@ -1,0 +1,19 @@
+key: assisted
+version: 1.0.0
+tier: assisted
+auth: none
+surfaces:
+- key: post
+  content_types:
+  - text
+  - link
+  - image
+  - video
+  - video_link
+  spec: {}
+rate_limits:
+  per_connection: null
+capabilities:
+- assist
+error_map: {}
+instance_param: submit_url

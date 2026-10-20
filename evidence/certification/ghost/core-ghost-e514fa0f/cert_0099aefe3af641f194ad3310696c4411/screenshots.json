@@ -1,0 +1,24 @@
+{
+  "run_id": "cert_0099aefe3af641f194ad3310696c4411",
+  "simulation": true,
+  "live": {
+    "taken": true,
+    "file": "live.png",
+    "kind": "page",
+    "url": "http://mock-platforms:8080/ghost/core-ghost-e514fa0f-example-org/incubrix-certification-test-ibxcert10696c4411-ibx-kbftdgik6hqv/",
+    "label": "browser screenshot of http://mock-platforms:8080/ghost/core-ghost-e514fa0f-example-org/incubrix-certification-test-ibxcert10696c4411-ibx-kbftdgik6hqv/ (HTTP 200) - a mock-platforms page (simulation mode)",
+    "http_status": 200,
+    "content_type": "text/html",
+    "at": "2026-10-18T09:19:55.372693Z"
+  },
+  "after_delete": {
+    "taken": true,
+    "file": "after_delete.png",
+    "kind": "page",
+    "url": "http://mock-platforms:8080/ghost/core-ghost-e514fa0f-example-org/incubrix-certification-test-ibxcert10696c4411-ibx-kbftdgik6hqv/",
+    "label": "browser screenshot of http://mock-platforms:8080/ghost/core-ghost-e514fa0f-example-org/incubrix-certification-test-ibxcert10696c4411-ibx-kbftdgik6hqv/ (HTTP 404) - a mock-platforms page (simulation mode)",
+    "http_status": 404,
+    "content_type": "text/html",
+    "at": "2026-10-18T09:19:55.995625Z"
+  }
+}

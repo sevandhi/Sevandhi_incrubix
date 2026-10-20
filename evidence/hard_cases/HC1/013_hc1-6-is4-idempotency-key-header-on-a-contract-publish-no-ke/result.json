@@ -1,0 +1,15 @@
+{
+  "index": 13,
+  "name": "HC1.6 IS4 Idempotency-Key header on a contract publish (no key in the body), sent twice -> one post #1",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 200,
+  "code": null,
+  "expected_status": 200,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 3878.2,
+  "correlation_id": "b96b91e581a84e49ad9f107c206ea753",
+  "folder": "013_hc1-6-is4-idempotency-key-header-on-a-contract-publish-no-ke",
+  "job_status": null
+}

@@ -1,0 +1,30 @@
+{
+  "status": 200,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:46:41 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "cf-cache-status": "DYNAMIC",
+    "rndr-id": "ffcc718f-cf88-4bde",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-render-origin-server": "uvicorn",
+    "content-encoding": "gzip",
+    "cf-ray": "a4d9281ffbf7aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "counts": {
+      "ghost": {
+        "hc5-drift-4201344a": {
+          "POST /ghost/api/admin/posts": 2,
+          "GET /incubrix-certification-test-ibxcert5748884821-ibx-pa47ss22aa6u": 2,
+          "GET /ghost/api/admin/posts/{id}": 2,
+          "DELETE /ghost/api/admin/posts/{id}": 2,
+          "GET /ghost/api/admin/posts": 1
+        }
+      }
+    }
+  }
+}

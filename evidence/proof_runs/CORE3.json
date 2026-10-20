@@ -1,0 +1,176 @@
+{
+ "id": "CORE3",
+ "title": "Platform errors mapped to the shared codes (expired token, rate limit, rejected content)",
+ "status": "Yes",
+ "reasons": [],
+ "run_id": "20261020T145607Z",
+ "started_at": "2026-10-20T14:59:09Z",
+ "finished_at": "2026-10-20T14:59:28Z",
+ "duration_s": 18.5,
+ "api": "http://127.0.0.1:38875",
+ "mode": "local",
+ "command": "scripts/prove_core3.sh",
+ "evidence": [
+  "evidence/levels/core/CORE3_error_matrix.csv",
+  "evidence/levels/core/CORE3_error_matrix.log"
+ ],
+ "checks_total": 22,
+ "checks_passed": 22,
+ "checks": [
+  {
+   "label": "discourse expired_token (mock) -> 424 CONNECTION_AUTH_EXPIRED",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 424, \"error_code\": \"CONNECTION_AUTH_EXPIRED\", \"trigger\": \"Discourse key revoked by the forum admin -> 403 invalid_access\", \"next_call\": \"424 CONNECTION_AUTH_EXPIRED\", \"message\": \"discourse answered HTTP 403: You are not permitted to view the requested resource. The API username or key is invalid.\"}",
+   "group": null
+  },
+  {
+   "label": "discourse rate_limit (mock) -> 429 PLATFORM_RATE_LIMIT",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 429, \"error_code\": \"PLATFORM_RATE_LIMIT\", \"trigger\": \"Discourse's own topic rate limit (site setting rate_limit_create_topic=600 s) -> 429 + Retry-After + extras.wait_seconds\", \"next_call\": \"429 short_circuit=True\", \"message\": \"discourse answered HTTP 429: You\\u2019ve performed this action too many times. Please wait 600 seconds before trying again.\"}",
+   "group": null
+  },
+  {
+   "label": "discourse rejected_content (mock) -> 422 PLATFORM_CONTENT_REJECTED",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 422, \"error_code\": \"PLATFORM_CONTENT_REJECTED\", \"trigger\": \"Discourse refuses a duplicate topic title -> 422 errors[]\", \"next_call\": null, \"message\": \"discourse answered HTTP 422: This title has already been used by <a href='http://mock-platforms:8080/discourse/rej-discourse-36e37de7/t/duplicate-topic-title-check-f943007f/1'>another topic</a>.\"}",
+   "group": null
+  },
+  {
+   "label": "lemmy expired_token (real-local) -> 424 CONNECTION_AUTH_EXPIRED",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 424, \"error_code\": \"CONNECTION_AUTH_EXPIRED\", \"trigger\": \"real Lemmy: a JWT that was logged out (revoked) -> 401 incorrect_login\", \"next_call\": \"424 CONNECTION_AUTH_EXPIRED\", \"message\": \"lemmy answered HTTP 401: incorrect_login\"}",
+   "group": null
+  },
+  {
+   "label": "lemmy rate_limit (real-local) -> 429 PLATFORM_RATE_LIMIT",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 429, \"error_code\": \"PLATFORM_RATE_LIMIT\", \"trigger\": \"real Lemmy: site post limit lowered to 1 per 10 s (admin PUT /api/v3/site), then restored\", \"next_call\": \"429 short_circuit=True\", \"message\": \"lemmy answered HTTP 400: rate_limit_error (rate limited; next attempt after 2026-10-20T14:59:23.084949Z)\"}",
+   "group": null
+  },
+  {
+   "label": "lemmy rejected_content (real-local) -> 422 PLATFORM_CONTENT_REJECTED",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 422, \"error_code\": \"PLATFORM_CONTENT_REJECTED\", \"trigger\": \"real Lemmy refuses a 250-character title -> 400 invalid_post_title\", \"next_call\": null, \"message\": \"lemmy answered HTTP 400: invalid_post_title\"}",
+   "group": null
+  },
+  {
+   "label": "lemmy expired_token (mock) -> 424 CONNECTION_AUTH_EXPIRED",
+   "ok": true,
+   "critical": false,
+   "detail": "{\"http_status\": 424, \"error_code\": \"CONNECTION_AUTH_EXPIRED\", \"trigger\": \"Lemmy logged-out token (mock, recorded body) -> 401 incorrect_login\", \"next_call\": \"424 CONNECTION_AUTH_EXPIRED\", \"message\": \"lemmy answered HTTP 401: incorrect_login\"}",
+   "group": null
+  },
+  {
+   "label": "lemmy rate_limit (mock) -> 429 PLATFORM_RATE_LIMIT",
+   "ok": true,
+   "critical": false,
+   "detail": "{\"http_status\": 429, \"error_code\": \"PLATFORM_RATE_LIMIT\", \"trigger\": \"Lemmy's own post limiter (mock, measured on 0.19.20): post limit 1 per 60 s -> 400 rate_limit_error\", \"next_call\": \"429 short_circuit=True\", \"message\": \"lemmy answered HTTP 400: rate_limit_error (rate limited; next attempt after 2026-10-20T15:00:25.590265Z)\"}",
+   "group": null
+  },
+  {
+   "label": "lemmy rejected_content (mock) -> 422 PLATFORM_CONTENT_REJECTED",
+   "ok": true,
+   "critical": false,
+   "detail": "{\"http_status\": 422, \"error_code\": \"PLATFORM_CONTENT_REJECTED\", \"trigger\": \"Lemmy refuses a 250-character title -> 400 invalid_post_title\", \"next_call\": null, \"message\": \"lemmy answered HTTP 400: invalid_post_title\"}",
+   "group": null
+  },
+  {
+   "label": "devto expired_token (mock) -> 424 CONNECTION_AUTH_EXPIRED",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 424, \"error_code\": \"CONNECTION_AUTH_EXPIRED\", \"trigger\": \"Forem API key revoked -> 401\", \"next_call\": \"424 CONNECTION_AUTH_EXPIRED\", \"message\": \"devto answered HTTP 401: unauthorized\"}",
+   "group": null
+  },
+  {
+   "label": "devto rate_limit (mock) -> 429 PLATFORM_RATE_LIMIT",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 429, \"error_code\": \"PLATFORM_RATE_LIMIT\", \"trigger\": \"Forem's limiter (mock control): 1 article per 120 s -> 429 + Retry-After as an HTTP-date\", \"next_call\": \"429 short_circuit=True\", \"message\": \"devto answered HTTP 429: Rate limit reached, try again in 120 seconds\"}",
+   "group": null
+  },
+  {
+   "label": "devto rejected_content (mock) -> 422 PLATFORM_CONTENT_REJECTED",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 422, \"error_code\": \"PLATFORM_CONTENT_REJECTED\", \"trigger\": \"Forem refuses a 140-character title -> 422 'Title is too long'\", \"next_call\": null, \"message\": \"devto answered HTTP 422: Title is too long (maximum is 128 characters)\"}",
+   "group": null
+  },
+  {
+   "label": "ghost expired_token (real-local) -> 424 CONNECTION_AUTH_EXPIRED",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 424, \"error_code\": \"CONNECTION_AUTH_EXPIRED\", \"trigger\": \"real Ghost: an Admin API key Ghost does not know -> 401\", \"next_call\": \"424 CONNECTION_AUTH_EXPIRED\", \"message\": \"ghost answered HTTP 401: Unknown Admin API Key. Check the Admin API key, and that this server's clock is right (Ghost tokens are valid for 5 minutes from their 'iat').\"}",
+   "group": null
+  },
+  {
+   "label": "ghost rate_limit (mock) -> 429 PLATFORM_RATE_LIMIT",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 429, \"error_code\": \"PLATFORM_RATE_LIMIT\", \"trigger\": \"generic 429 + Retry-After: 90 queued on the Ghost mock (the real Ghost Admin API gave no 429 locally; only its login limiter did)\", \"next_call\": \"429 short_circuit=True\", \"message\": \"ghost answered HTTP 429: Too many requests\"}",
+   "group": null
+  },
+  {
+   "label": "ghost rejected_content (real-local) -> 422 PLATFORM_CONTENT_REJECTED",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 422, \"error_code\": \"PLATFORM_CONTENT_REJECTED\", \"trigger\": \"real Ghost refuses a 300-character title -> 422 ValidationError\", \"next_call\": null, \"message\": \"ghost answered HTTP 422: Validation error, cannot save post. (Value in [posts.title] exceeds maximum length of 255 characters. posts.title)\"}",
+   "group": null
+  },
+  {
+   "label": "ghost expired_token (mock) -> 424 CONNECTION_AUTH_EXPIRED",
+   "ok": true,
+   "critical": false,
+   "detail": "{\"http_status\": 424, \"error_code\": \"CONNECTION_AUTH_EXPIRED\", \"trigger\": \"Ghost integration deleted (kid revoked on the mock) -> 401\", \"next_call\": \"424 CONNECTION_AUTH_EXPIRED\", \"message\": \"ghost answered HTTP 401: Unknown Admin API Key. Check the Admin API key, and that this server's clock is right (Ghost tokens are valid for 5 minutes from their 'iat').\"}",
+   "group": null
+  },
+  {
+   "label": "ghost rejected_content (mock) -> 422 PLATFORM_CONTENT_REJECTED",
+   "ok": true,
+   "critical": false,
+   "detail": "{\"http_status\": 422, \"error_code\": \"PLATFORM_CONTENT_REJECTED\", \"trigger\": \"Ghost refuses a 300-character title -> 422 ValidationError\", \"next_call\": null, \"message\": \"ghost answered HTTP 422: Validation error, cannot save post. (Value in [posts.title] exceeds maximum length of 255 characters. posts.title)\"}",
+   "group": null
+  },
+  {
+   "label": "webhook expired_token (mock) -> 424 CONNECTION_AUTH_EXPIRED",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 424, \"error_code\": \"CONNECTION_AUTH_EXPIRED\", \"trigger\": \"partner revokes IncuBrix's access (POST /_partner/revoke) -> 401 revoked\", \"next_call\": \"424 CONNECTION_AUTH_EXPIRED\", \"message\": \"webhook answered HTTP 401: This partner revoked IncuBrix's access.\"}",
+   "group": null
+  },
+  {
+   "label": "webhook rate_limit (mock) -> 429 PLATFORM_RATE_LIMIT",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 429, \"error_code\": \"PLATFORM_RATE_LIMIT\", \"trigger\": \"partner limiter (mock): 1 post per 120 s -> 429 + X-RateLimit-Reset (epoch) + Retry-After\", \"next_call\": \"429 short_circuit=True\", \"message\": \"webhook answered HTTP 429: Too many requests.\"}",
+   "group": null
+  },
+  {
+   "label": "webhook rejected_content (mock) -> 422 PLATFORM_CONTENT_REJECTED",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 422, \"error_code\": \"PLATFORM_CONTENT_REJECTED\", \"trigger\": \"partner refuses a 350-character title -> 422 validation_failed\", \"next_call\": null, \"message\": \"webhook answered HTTP 422: title is longer than 300 characters\"}",
+   "group": null
+  },
+  {
+   "label": "assisted rejected_content (mock) -> publication failed with PLATFORM_CONTENT_REJECTED + reason",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 200, \"error_code\": \"PLATFORM_CONTENT_REJECTED\", \"trigger\": \"person reports 'rejected_by_community' via POST /api/v1/assist-tasks/{id}/complete\", \"next_call\": null, \"message\": \"{\\\"publication_id\\\":\\\"pub_f09c5e92d8444e8aaf39a3817d489fec\\\",\\\"destination_id\\\":\\\"dest_31bab3c71c464744ba63850738c498b9\\\",\\\"content_id\\\":\\\"content_ade2df773a76439e86e38b2ad6726f26\\\",\\\"state\\\":\\\"failed\\\",\\\"reason\\\":\\\"Moderator removed it: s\"}",
+   "group": null
+  },
+  {
+   "label": "18 primary cells (6 connectors x 3 situations)",
+   "ok": true,
+   "critical": true,
+   "detail": "18",
+   "group": null
+  }
+ ],
+ "sub": {}
+}

@@ -1,0 +1,25 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "How do you test posts to many communities?",
+      "body": "We compared three ways to test forum posts end to end. Which one has worked for you?"
+    },
+    "destination": {
+      "connector_key": "discourse",
+      "surface": "topic",
+      "url": "http://mock-platforms:8080/discourse/hc7-de-4201344a",
+      "language": "de",
+      "rules": {
+        "language_policy": "must_match",
+        "automation_allowed": true
+      }
+    },
+    "connection": {
+      "connector_key": "discourse"
+    },
+    "idempotency_key": "hc7-de-4201344a"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "run_id": "cert_508e1b01cc61400daba47428ce9cfea7",
+  "delete_mode": "pack_revoked",
+  "step": {
+    "n": 6,
+    "step": "CONFIRM_DELETED",
+    "outcome": "ok",
+    "started_at": "2026-10-17T16:52:05.303004Z",
+    "duration_ms": 14.9,
+    "detail": {
+      "delete_mode": "pack_revoked",
+      "links_now": "404 from /api/v1/files (object gone)",
+      "keys": [
+        "assist/ibx-6jxgxhrvz4ag/title.txt",
+        "assist/ibx-6jxgxhrvz4ag/caption.txt",
+        "assist/ibx-6jxgxhrvz4ag/checklist.md"
+      ]
+    }
+  }
+}

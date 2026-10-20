@@ -1,0 +1,28 @@
+{
+  "status": 409,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:36:10 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "1affde64-f5ab-4900",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "ec7c99ab049b49d2a187e7fae9f9b149",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d918b6fa96aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "IDEMPOTENCY_KEY_REUSED",
+      "message": "The Idempotency-Key header and the body idempotency_key differ; send one key.",
+      "retryable": false,
+      "details": {
+        "retry_policy": "never",
+        "reason": "header_body_mismatch"
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/lemmy/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "A post whose answer is a proxy error",
+      "body": "Lemmy saved it, then the proxy said 502."
+    },
+    "destination": {
+      "connector_key": "lemmy",
+      "url": "http://mock-platforms:8080/lemmy/hc1-502-4201344a/c/ibx_test"
+    },
+    "connection": {
+      "connector_key": "lemmy"
+    },
+    "idempotency_key": "hc1-502-4201344a"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "n": 1,
+  "step": "PREFLIGHT",
+  "outcome": "ok",
+  "started_at": "2026-10-18T09:10:34.092658Z",
+  "duration_ms": 12.1,
+  "detail": {
+    "connector_key": "slack",
+    "connector_version": "1.0.0",
+    "tier": "native",
+    "capabilities": [
+      "publish",
+      "status",
+      "delete",
+      "metrics"
+    ],
+    "target": "simulation: every call goes to mock-platforms",
+    "kill_switch": "off",
+    "connection_id": null,
+    "rules_confirmed": false,
+    "auth_probe": "no refresh_auth capability: the PUBLISH step proves the credentials"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "status": 202,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:46:15 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "idempotency-key": "gen-217aeedb519f41dda8dac09da6acd8f3",
+    "location": "/api/v1/jobs/job_47b940cf82de46398dd306fbf2564f3a",
+    "rndr-id": "0cf0885d-9b9c-407d",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "0dfccd04b76f4bd5903e79d8686696d3",
+    "x-incubrix-warning": "IDEMPOTENCY_KEY_GENERATED",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d927785845aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "job_id": "job_47b940cf82de46398dd306fbf2564f3a",
+    "run_id": "cert_9621584af12a4ca9a6398ec35e284821",
+    "status": "queued",
+    "status_url": "/api/v1/jobs/job_47b940cf82de46398dd306fbf2564f3a",
+    "run_url": "/api/v1/certifications/cert_9621584af12a4ca9a6398ec35e284821"
+  }
+}

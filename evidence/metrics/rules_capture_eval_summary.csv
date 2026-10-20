@@ -1,0 +1,4 @@
+provider,model,pages,cells,field_accuracy,accuracy_after_quotes,stated_rules,stated_recall,false_rules,proposed_values,quote_verification_rate,failures,latency_p50_ms,latency_max_ms,total_tokens,cost_usd
+mock,mock-heuristic-v1,22,132,0.833,0.833,74,0.716,1,55,1.0,0,0.7,2.4,0,0.0
+gemini:gemini-3.8-flash,gemini-3.8-flash,22,132,0.591,0.591,74,0.27,0,20,1.0,17,34918.8,63414.6,3618,0.0
+gemini:gemini-3.5-flash,gemini-3.5-flash,22,132,0.871,0.871,74,0.77,0,57,1.0,6,2195.6,5429.7,11724,0.0

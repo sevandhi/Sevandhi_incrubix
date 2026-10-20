@@ -1,0 +1,56 @@
+{
+  "job_id": "job_30158b7285444620b63b6ce9c2378d34",
+  "kind": "publication.run",
+  "status": "succeeded",
+  "progress": 100,
+  "result": {
+    "links": {
+      "manifest": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_30158b7285444620b63b6ce9c2378d34/manifest.json?exp=1792514523&sig=***",
+      "publication": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_30158b7285444620b63b6ce9c2378d34/publication.json?exp=1792514523&sig=***"
+    },
+    "publication": {
+      "code": null,
+      "error": null,
+      "state": "published",
+      "reason": null,
+      "job_ids": [
+        "job_30158b7285444620b63b6ce9c2378d34"
+      ],
+      "outcome": null,
+      "reasons": [],
+      "removal": null,
+      "attempts": 1,
+      "live_url": "http://mock-platforms:8080/discourse/hc4-cap2-4201344a/t/a-concurrent-question-for-the-forum/2",
+      "retry_at": null,
+      "tailoring": {
+        "diff": [],
+        "profile": "forum",
+        "warnings": []
+      },
+      "content_id": "content_b2ef382618e04003a163d5652391928e",
+      "created_at": "2026-10-20T15:41:50.178967Z",
+      "updated_at": "2026-10-20T15:42:00.378482Z",
+      "assist_pack": null,
+      "published_at": "2026-10-20T15:42:00.138143Z",
+      "rule_decision": {
+        "code": null,
+        "fixes": [],
+        "action": "allow",
+        "reasons": [],
+        "evidence": [],
+        "retry_at": null,
+        "warnings": [],
+        "failed_checks": []
+      },
+      "scheduled_for": "2026-10-20T15:41:54.046996Z",
+      "destination_id": "dest_42f4fbb9c6fb4d87a0041d7c17046c9e",
+      "publication_id": "pub_fcce548abe354f3bb9e8355dc30caa26",
+      "platform_post_id": "2~i6d827d8cef"
+    }
+  },
+  "error": null,
+  "attempts": 1,
+  "created_at": "2026-10-20T15:41:50.178967+00:00",
+  "updated_at": "2026-10-20T15:42:02.139109+00:00",
+  "finished_at": "2026-10-20T15:42:01.501177+00:00"
+}

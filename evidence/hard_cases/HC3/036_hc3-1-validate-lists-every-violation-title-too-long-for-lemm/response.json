@@ -1,0 +1,40 @@
+{
+  "status": 200,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:37:12 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "831ee698-71b0-4bbb",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "deb6bd2811a544d9824a2c311c7192a3",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "content-encoding": "gzip",
+    "cf-ray": "a4d91a37baf9aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "ok": false,
+    "violations": [
+      {
+        "field": "title",
+        "rule": "title_max_chars",
+        "message": "title is 250 utf16; the limit is 200",
+        "limit": 200,
+        "actual": 250
+      },
+      {
+        "field": "media[0]",
+        "rule": "content_types",
+        "message": "image/webp media is not accepted here (accepted: text, link)",
+        "limit": [
+          "text",
+          "link"
+        ],
+        "actual": "image/webp"
+      }
+    ]
+  }
+}

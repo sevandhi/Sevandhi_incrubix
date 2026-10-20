@@ -1,0 +1,121 @@
+{
+  "generated_at": "2026-10-20T15:08:26Z",
+  "file": "catalogue/seeds/seed_v1.csv",
+  "mode": "dry_run (no network, no database)",
+  "dry_run": true,
+  "summary": {
+    "rows": 175,
+    "imported": 0,
+    "would_import": 161,
+    "ok": 122,
+    "warning": 39,
+    "duplicate": 0,
+    "invalid": 14,
+    "unreachable": 0,
+    "codes": {
+      "INSTANCE_MISSING": 14,
+      "RULES_UNPARSED": 39
+    }
+  },
+  "timings": {
+    "validate_s": 0.018,
+    "network_s": 0.0,
+    "dedupe_relevance_s": 0.024,
+    "insert_s": 0.0,
+    "total_s": 0.043
+  },
+  "network_requests": 0,
+  "language_detector": null,
+  "llm_used": 0,
+  "llm_providers": [],
+  "llm_tokens": 0,
+  "by_connector_surface": {
+    "lemmy|post": 44,
+    "discourse|topic": 40,
+    "devto|article": 15,
+    "peertube|video": 13,
+    "slack|": 10,
+    "assisted|post": 44,
+    "ghost|article": 1,
+    "mrss|": 4,
+    "webhook|post": 4
+  },
+  "relevance_histogram": {
+    "2": 7,
+    "3": 16,
+    "4": 77,
+    "5": 61
+  },
+  "invalid_rows": [
+    {
+      "row_no": 113,
+      "name": "TWIML AI Community Slack",
+      "code": "INSTANCE_MISSING"
+    },
+    {
+      "row_no": 114,
+      "name": "LeadDev Slack",
+      "code": "INSTANCE_MISSING"
+    },
+    {
+      "row_no": 115,
+      "name": "Rands Leadership Slack",
+      "code": "INSTANCE_MISSING"
+    },
+    {
+      "row_no": 116,
+      "name": "Locally Optimistic Slack",
+      "code": "INSTANCE_MISSING"
+    },
+    {
+      "row_no": 117,
+      "name": "RevGenius Slack",
+      "code": "INSTANCE_MISSING"
+    },
+    {
+      "row_no": 118,
+      "name": "DataTalks.Club Slack",
+      "code": "INSTANCE_MISSING"
+    },
+    {
+      "row_no": 119,
+      "name": "LangChain Community Slack",
+      "code": "INSTANCE_MISSING"
+    },
+    {
+      "row_no": 120,
+      "name": "Peak Freelance Slack",
+      "code": "INSTANCE_MISSING"
+    },
+    {
+      "row_no": 121,
+      "name": "Superpath Slack (content marketing)",
+      "code": "INSTANCE_MISSING"
+    },
+    {
+      "row_no": 122,
+      "name": "Mind the Product Slack",
+      "code": "INSTANCE_MISSING"
+    },
+    {
+      "row_no": 168,
+      "name": "daily.dev (source suggestion)",
+      "code": "INSTANCE_MISSING"
+    },
+    {
+      "row_no": 169,
+      "name": "Podcast Index",
+      "code": "INSTANCE_MISSING"
+    },
+    {
+      "row_no": 170,
+      "name": "Kagi Small Web",
+      "code": "INSTANCE_MISSING"
+    },
+    {
+      "row_no": 171,
+      "name": "SmartNews Publishers",
+      "code": "INSTANCE_MISSING"
+    }
+  ]
+}

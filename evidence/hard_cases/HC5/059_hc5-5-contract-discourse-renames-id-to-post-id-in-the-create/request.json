@@ -1,0 +1,22 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "headers": {
+    "X-Sim-Fault": "rename_field:id->post_id"
+  },
+  "body": {
+    "rendition": {
+      "title": "A post whose answer has a renamed field",
+      "body": "The platform saved it, but the answer changed shape."
+    },
+    "destination": {
+      "connector_key": "discourse",
+      "surface": "topic",
+      "url": "http://mock-platforms:8080/discourse/hc5-ren-4201344a"
+    },
+    "connection": {
+      "connector_key": "discourse"
+    },
+    "idempotency_key": "hc5-ren-4201344a"
+  }
+}

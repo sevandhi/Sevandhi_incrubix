@@ -1,0 +1,27 @@
+{
+  "n": 7,
+  "step": "CONFIRM_DELETED",
+  "outcome": "ok",
+  "started_at": "2026-10-18T09:19:55.479415Z",
+  "duration_ms": 41.8,
+  "detail": {
+    "status_after": {
+      "status": "deleted",
+      "live_url": null
+    },
+    "delete_mode": "deleted",
+    "platform_delete_mode": "permanent",
+    "method": "platform_api_get_status + http_get_live_url",
+    "live_url_after": {
+      "url": "http://mock-platforms:8080/ghost/core-ghost-e514fa0f-example-org/incubrix-certification-test-ibxcert10696c4411-ibx-kbftdgik6hqv/",
+      "http_status": 404,
+      "attempts": [
+        {
+          "at": "2026-10-18T09:19:55.513364Z",
+          "status": 404,
+          "bytes": 124
+        }
+      ]
+    }
+  }
+}

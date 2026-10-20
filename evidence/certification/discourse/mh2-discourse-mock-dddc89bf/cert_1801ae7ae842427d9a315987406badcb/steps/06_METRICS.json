@@ -1,0 +1,24 @@
+{
+  "n": 6,
+  "step": "METRICS",
+  "outcome": "ok",
+  "started_at": "2026-10-18T19:22:55.197585Z",
+  "duration_ms": 7.0,
+  "detail": {
+    "response": {
+      "views": 1,
+      "likes": 0,
+      "comments": 0,
+      "shares": null,
+      "saves": null,
+      "watch_time_s": null,
+      "clicks": null
+    },
+    "exposed": [
+      "comments",
+      "likes",
+      "views"
+    ],
+    "null_means": "the platform does not expose this metric (never a fake 0)"
+  }
+}

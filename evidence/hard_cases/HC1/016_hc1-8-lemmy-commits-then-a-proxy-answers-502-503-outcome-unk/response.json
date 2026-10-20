@@ -1,0 +1,32 @@
+{
+  "status": 503,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:36:14 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "17ef8935-6d70-496e",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "3c206faffabc4090817e65cbced89d15",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d918b78c0aaa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "PLATFORM_UNAVAILABLE",
+      "message": "lemmy: the platform did not confirm the publish (timeout or server error after the request was sent); outcome unknown, safe to retry with the same idempotency_key.",
+      "retryable": true,
+      "details": {
+        "retry_policy": "backoff",
+        "platform_status": 502,
+        "platform_message": "simulated error",
+        "outcome": "unknown",
+        "intent_state": "UNKNOWN",
+        "idempotency_key": "hc1-502-4201344a"
+      }
+    }
+  }
+}

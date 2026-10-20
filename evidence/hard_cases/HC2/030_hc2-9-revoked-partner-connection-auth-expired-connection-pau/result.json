@@ -1,0 +1,15 @@
+{
+  "index": 30,
+  "name": "HC2.9 revoked partner -> CONNECTION_AUTH_EXPIRED, connection paused, reconnect required",
+  "method": "POST",
+  "path": "/connector/v1/webhook/publish",
+  "status": 424,
+  "code": "CONNECTION_AUTH_EXPIRED",
+  "expected_status": 424,
+  "expected_code": "CONNECTION_AUTH_EXPIRED",
+  "passed": true,
+  "duration_ms": 4616.0,
+  "correlation_id": "27add40cf89247b9b506b32e8db7475a",
+  "folder": "030_hc2-9-revoked-partner-connection-auth-expired-connection-pau",
+  "job_status": null
+}

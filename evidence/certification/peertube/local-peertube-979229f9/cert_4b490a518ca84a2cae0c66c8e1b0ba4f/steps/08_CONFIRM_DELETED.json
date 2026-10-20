@@ -1,0 +1,17 @@
+{
+  "n": 8,
+  "step": "CONFIRM_DELETED",
+  "outcome": "ok",
+  "started_at": "2026-10-18T09:15:10.552896Z",
+  "duration_ms": 48.0,
+  "detail": {
+    "status_after": {
+      "status": "deleted",
+      "live_url": null
+    },
+    "delete_mode": "deleted",
+    "platform_delete_mode": "deleted",
+    "method": "platform_api_get_status",
+    "live_url_after": "not used: PeerTube's web page is a single-page app that answers 200 even for a deleted video (measured on v8.3.0); the API (GET /api/v1/videos/<uuid>: 200, then 404) confirms the post and its deletion"
+  }
+}

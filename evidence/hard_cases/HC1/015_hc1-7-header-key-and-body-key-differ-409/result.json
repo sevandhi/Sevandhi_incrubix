@@ -1,0 +1,15 @@
+{
+  "index": 15,
+  "name": "HC1.7 header key and body key differ -> 409",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 409,
+  "code": "IDEMPOTENCY_KEY_REUSED",
+  "expected_status": 409,
+  "expected_code": "IDEMPOTENCY_KEY_REUSED",
+  "passed": true,
+  "duration_ms": 89.3,
+  "correlation_id": "ec7c99ab049b49d2a187e7fae9f9b149",
+  "folder": "015_hc1-7-header-key-and-body-key-differ-409",
+  "job_status": null
+}

@@ -1,0 +1,31 @@
+key: ghost
+version: 1.0.0
+tier: native
+auth: api_key
+surfaces:
+- key: article
+  content_types:
+  - text
+  - link
+  spec:
+    title_required: true
+    title_max_chars: 255
+    count_unit: codepoints
+    links_allowed: true
+rate_limits:
+  per_connection:
+    requests: 120
+    per_seconds: 60.0
+capabilities:
+- publish
+- status
+- delete
+- refresh_auth
+error_map:
+  '400': PLATFORM_CONTENT_REJECTED
+  '401': CONNECTION_AUTH_EXPIRED
+  '403': CONNECTION_AUTH_EXPIRED
+  '413': PLATFORM_CONTENT_REJECTED
+  '422': PLATFORM_CONTENT_REJECTED
+  '429': PLATFORM_RATE_LIMIT
+instance_param: base_url

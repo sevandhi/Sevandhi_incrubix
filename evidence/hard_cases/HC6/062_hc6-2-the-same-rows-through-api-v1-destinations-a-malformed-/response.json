@@ -1,0 +1,127 @@
+{
+  "status": 201,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:46:54 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "idempotency-key": "gen-614c2b12d39942da8cf87138da9830f1",
+    "rndr-id": "39ae7d76-ce23-40e7",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "b1985e3c14af4633abe9c3e3c269915c",
+    "x-incubrix-warning": "IDEMPOTENCY_KEY_GENERATED",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d928659f33aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "summary": {
+      "created": 1,
+      "duplicate": 1,
+      "invalid": 0,
+      "error": 1
+    },
+    "results": [
+      {
+        "row": 1,
+        "status": "created",
+        "destination_id": "dest_f86f6e3e892d4d9e9eaddcd886fcca64",
+        "warnings": [
+          "RULES_UNCONFIRMED: the row states no posting rules; publications are blocked until PUT /api/v1/destinations/{id}/rules confirms them (certification still works on own instances)"
+        ],
+        "destination": {
+          "destination_id": "dest_f86f6e3e892d4d9e9eaddcd886fcca64",
+          "destination_key": "discourse|mock-platforms:8080/discourse/hc6-rows-4201344a|topic",
+          "name": "Row A",
+          "url": "http://mock-platforms:8080/discourse/hc6-rows-4201344a",
+          "normalized_url": "https://mock-platforms:8080/discourse/hc6-rows-4201344a",
+          "platform_key": "discourse",
+          "surface": "topic",
+          "connector_key": "discourse",
+          "category": null,
+          "audience_tags": [],
+          "language": null,
+          "geo": null,
+          "est_audience": null,
+          "rules_url": null,
+          "frequency_cap": null,
+          "self_promo_allowed": null,
+          "link_policy": null,
+          "disclosure_required": null,
+          "automation_allowed": null,
+          "relevance_score": null,
+          "relevance_reason": null,
+          "level": "L0",
+          "last_certified_at": null,
+          "instance": {
+            "base_url": "http://mock-platforms:8080/discourse/hc6-rows-4201344a"
+          },
+          "connection_id": null,
+          "connection_ref": null,
+          "spec_overrides": null,
+          "status": "active",
+          "excluded_reason": null,
+          "created_at": "2026-10-20T15:46:52.700888+00:00",
+          "rules": null,
+          "rules_status": "none",
+          "rules_proposal_id": null,
+          "last_certification": null
+        }
+      },
+      {
+        "row": 2,
+        "status": "duplicate",
+        "destination_id": "dest_f86f6e3e892d4d9e9eaddcd886fcca64",
+        "warnings": [
+          "DUPLICATE: a destination with this connector, instance and surface already exists"
+        ],
+        "destination": {
+          "destination_id": "dest_f86f6e3e892d4d9e9eaddcd886fcca64",
+          "destination_key": "discourse|mock-platforms:8080/discourse/hc6-rows-4201344a|topic",
+          "name": "Row A",
+          "url": "http://mock-platforms:8080/discourse/hc6-rows-4201344a",
+          "normalized_url": "https://mock-platforms:8080/discourse/hc6-rows-4201344a",
+          "platform_key": "discourse",
+          "surface": "topic",
+          "connector_key": "discourse",
+          "category": null,
+          "audience_tags": [],
+          "language": null,
+          "geo": null,
+          "est_audience": null,
+          "rules_url": null,
+          "frequency_cap": null,
+          "self_promo_allowed": null,
+          "link_policy": null,
+          "disclosure_required": null,
+          "automation_allowed": null,
+          "relevance_score": null,
+          "relevance_reason": null,
+          "level": "L0",
+          "last_certified_at": null,
+          "instance": {
+            "base_url": "http://mock-platforms:8080/discourse/hc6-rows-4201344a"
+          },
+          "connection_id": null,
+          "connection_ref": null,
+          "spec_overrides": null,
+          "status": "active",
+          "excluded_reason": null,
+          "created_at": "2026-10-20T15:46:52.700888+00:00",
+          "rules": null,
+          "rules_status": "none",
+          "rules_proposal_id": null,
+          "last_certification": null
+        }
+      },
+      {
+        "row": 3,
+        "status": "error",
+        "code": "REQUEST_VALIDATION_FAILED",
+        "message": "The url is not valid: the URL contains spaces."
+      }
+    ]
+  }
+}

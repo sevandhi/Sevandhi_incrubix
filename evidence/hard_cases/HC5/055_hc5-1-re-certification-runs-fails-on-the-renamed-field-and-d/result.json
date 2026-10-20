@@ -1,0 +1,15 @@
+{
+  "index": 55,
+  "name": "HC5.1 re-certification runs, fails on the renamed field and demotes the destination",
+  "method": "POST",
+  "path": "/api/v1/certifications",
+  "status": 202,
+  "code": null,
+  "expected_status": 202,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 25698.9,
+  "correlation_id": "0dfccd04b76f4bd5903e79d8686696d3",
+  "folder": "055_hc5-1-re-certification-runs-fails-on-the-renamed-field-and-d",
+  "job_status": "succeeded"
+}

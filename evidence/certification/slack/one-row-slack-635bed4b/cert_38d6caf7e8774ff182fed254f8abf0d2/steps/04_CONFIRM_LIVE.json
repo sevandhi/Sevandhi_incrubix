@@ -1,0 +1,20 @@
+{
+  "n": 4,
+  "step": "CONFIRM_LIVE",
+  "outcome": "ok",
+  "started_at": "2026-10-18T09:12:35.260021Z",
+  "duration_ms": 24.4,
+  "detail": {
+    "method": "http_get_live_url",
+    "live_url": "http://mock-platforms:8080/slack/c0e2e635bed4b/archives/C0E2E635BED4B/p1792314755000001",
+    "http_status": 200,
+    "marker_found": true,
+    "attempts": [
+      {
+        "at": "2026-10-18T09:12:35.284247Z",
+        "status": 200,
+        "bytes": 318
+      }
+    ]
+  }
+}

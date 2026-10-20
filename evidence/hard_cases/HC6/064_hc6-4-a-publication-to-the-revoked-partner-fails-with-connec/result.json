@@ -1,0 +1,15 @@
+{
+  "index": 64,
+  "name": "HC6.4 a publication to the revoked partner fails with CONNECTION_AUTH_EXPIRED and pauses the connection",
+  "method": "POST",
+  "path": "/api/v1/publications",
+  "status": 202,
+  "code": null,
+  "expected_status": 202,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 12132.7,
+  "correlation_id": "8dbd41224c5d470784d1a7ba11d10c3b",
+  "folder": "064_hc6-4-a-publication-to-the-revoked-partner-fails-with-connec",
+  "job_status": "failed"
+}

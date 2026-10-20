@@ -1,0 +1,19 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/devto/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "First article inside the platform window",
+      "body": "The first article fits inside the platform's limit."
+    },
+    "destination": {
+      "connector_key": "devto",
+      "url": "http://mock-platforms:8080/forem/hc2-rl-4201344a"
+    },
+    "connection": {
+      "connector_key": "devto"
+    },
+    "idempotency_key": "hc2-rl1-4201344a"
+  }
+}

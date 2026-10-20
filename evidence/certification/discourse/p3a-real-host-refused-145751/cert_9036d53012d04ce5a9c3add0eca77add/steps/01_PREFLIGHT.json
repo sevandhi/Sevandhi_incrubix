@@ -1,0 +1,12 @@
+{
+  "n": 1,
+  "step": "PREFLIGHT",
+  "outcome": "failed",
+  "started_at": "2026-10-18T09:29:53.853874Z",
+  "duration_ms": 4.0,
+  "detail": {
+    "code": "DEST_NOT_OWN_INSTANCE",
+    "message": "refusing to post a test to 'forum.example.org': certification only posts to own test instances (CERT_OWN_HOSTS) or in simulation mode",
+    "host": "forum.example.org"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "status": 200,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:46:41 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "cf-cache-status": "DYNAMIC",
+    "rndr-id": "bb664d61-6c37-4a01",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "0a5fd16f3f154cf0928cc5f7b62ee6df",
+    "x-render-origin-server": "uvicorn",
+    "content-encoding": "gzip",
+    "cf-ray": "a4d92818fe6eaa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "destination_id": "dest_66c5a26b33ed4d118be55fa21b1f6e40",
+    "destination_key": "ghost|mock-platforms:8080/ghost/hc5-drift-4201344a|article",
+    "name": "HC5 Ghost drift 4201344a",
+    "url": "http://mock-platforms:8080/ghost/hc5-drift-4201344a",
+    "normalized_url": "https://mock-platforms:8080/ghost/hc5-drift-4201344a",
+    "platform_key": "ghost",
+    "surface": "article",
+    "connector_key": "ghost",
+    "category": null,
+    "audience_tags": [],
+    "language": "en",
+    "geo": null,
+    "est_audience": null,
+    "rules_url": null,
+    "frequency_cap": null,
+    "self_promo_allowed": true,
+    "link_policy": "any",
+    "disclosure_required": false,
+    "automation_allowed": true,
+    "relevance_score": null,
+    "relevance_reason": null,
+    "level": "L0",
+    "last_certified_at": "2026-10-20T15:33:56.627703+00:00",
+    "instance": {
+      "base_url": "http://mock-platforms:8080/ghost/hc5-drift-4201344a"
+    },
+    "connection_id": null,
+    "connection_ref": null,
+    "spec_overrides": null,
+    "status": "excluded",
+    "excluded_reason": "certification cert_9621584af12a4ca9a6398ec35e284821 failed at PUBLISH: PLATFORM_UNAVAILABLE: response_schema_mismatch: the platform's answer no longer has the expected field(s) posts.0.url; the platform may have renamed a field in its API",
+    "created_at": "2026-10-20T15:33:26.714226+00:00",
+    "rules": {
+      "rules_id": "rules_eef4210e3789408d920e5c8c4709a72a",
+      "version": 1,
+      "status": "confirmed",
+      "source": "manual",
+      "rules": {
+        "language": "en",
+        "automation_allowed": "true",
+        "self_promo_allowed": "true"
+      },
+      "confirmed_by": "catalogue_row",
+      "confirmed_at": "2026-10-20T15:33:27.175173+00:00"
+    },
+    "rules_status": "confirmed",
+    "rules_proposal_id": null,
+    "last_certification": {
+      "run_id": "cert_9621584af12a4ca9a6398ec35e284821",
+      "state": "DEMOTED",
+      "failure_code": "PLATFORM_UNAVAILABLE"
+    }
+  }
+}

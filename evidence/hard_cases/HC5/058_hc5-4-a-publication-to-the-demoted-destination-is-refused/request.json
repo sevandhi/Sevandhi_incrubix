@@ -1,0 +1,14 @@
+{
+  "method": "POST",
+  "path": "/api/v1/publications",
+  "headers": {},
+  "body": {
+    "destination_id": "dest_66c5a26b33ed4d118be55fa21b1f6e40",
+    "content": {
+      "title": "A post to a demoted blog",
+      "body": "This must not be published until the blog is certified again.",
+      "language": "en",
+      "ai_generated": false
+    }
+  }
+}

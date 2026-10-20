@@ -1,0 +1,15 @@
+{
+  "index": 52,
+  "name": "HC4.8 own channel link plus a call to action, no flag -> 409 DEST_RULE_SELF_PROMO",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 409,
+  "code": "DEST_RULE_SELF_PROMO",
+  "expected_status": 409,
+  "expected_code": "DEST_RULE_SELF_PROMO",
+  "passed": true,
+  "duration_ms": 3262.1,
+  "correlation_id": "1d4a1983f88a421ea2a274faa9cfffae",
+  "folder": "052_hc4-8-own-channel-link-plus-a-call-to-action-no-flag-409-des",
+  "job_status": null
+}

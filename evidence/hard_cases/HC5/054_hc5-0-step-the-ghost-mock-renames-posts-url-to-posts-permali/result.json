@@ -1,0 +1,15 @@
+{
+  "index": 54,
+  "name": "HC5.0 step - the Ghost mock renames posts[].url to posts[].permalink in its next create answer",
+  "method": "POST",
+  "path": "https://ibx-destination-network-demo.onrender.com/sim/_faults",
+  "status": 201,
+  "code": null,
+  "expected_status": 201,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 89.3,
+  "correlation_id": null,
+  "folder": "054_hc5-0-step-the-ghost-mock-renames-posts-url-to-posts-permali",
+  "job_status": null
+}

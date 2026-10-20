@@ -1,0 +1,62 @@
+{
+  "status": 202,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:41:52 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "cf-cache-status": "DYNAMIC",
+    "idempotency-key": "gen-69a11c38d2cb43b48121921f8591f0ec",
+    "location": "/api/v1/jobs/job_30158b7285444620b63b6ce9c2378d34",
+    "rndr-id": "01185be0-a6e5-4061",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "007268a98f2441e580d93af088adee2f",
+    "x-incubrix-warning": "IDEMPOTENCY_KEY_GENERATED",
+    "x-render-origin-server": "uvicorn",
+    "cf-ray": "a4d92102d9e3aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "job_id": "job_30158b7285444620b63b6ce9c2378d34",
+    "status": "queued",
+    "status_url": "/api/v1/jobs/job_30158b7285444620b63b6ce9c2378d34",
+    "publication_id": "pub_fcce548abe354f3bb9e8355dc30caa26",
+    "publication_url": "/api/v1/publications/pub_fcce548abe354f3bb9e8355dc30caa26",
+    "publication": {
+      "publication_id": "pub_fcce548abe354f3bb9e8355dc30caa26",
+      "destination_id": "dest_42f4fbb9c6fb4d87a0041d7c17046c9e",
+      "content_id": "content_b2ef382618e04003a163d5652391928e",
+      "state": "pending",
+      "reason": null,
+      "reasons": [],
+      "code": null,
+      "outcome": null,
+      "retry_at": null,
+      "scheduled_for": "2026-10-20T15:41:50.626766Z",
+      "platform_post_id": null,
+      "live_url": null,
+      "attempts": 0,
+      "rule_decision": {
+        "code": null,
+        "fixes": [],
+        "action": "allow",
+        "reasons": [],
+        "evidence": [],
+        "retry_at": null,
+        "warnings": [],
+        "failed_checks": []
+      },
+      "tailoring": null,
+      "assist_pack": null,
+      "removal": null,
+      "job_ids": [
+        "job_30158b7285444620b63b6ce9c2378d34"
+      ],
+      "error": null,
+      "published_at": null,
+      "created_at": "2026-10-20T15:41:50.178967Z",
+      "updated_at": "2026-10-20T15:41:50.178967Z"
+    }
+  }
+}

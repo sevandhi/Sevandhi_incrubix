@@ -1,0 +1,27 @@
+{
+  "n": 3,
+  "step": "PUBLISH",
+  "outcome": "failed",
+  "started_at": "2026-10-17T16:52:06.322878Z",
+  "duration_ms": 59.4,
+  "detail": {
+    "code": "PLATFORM_UNAVAILABLE",
+    "message": "discourse: the platform did not confirm the publish (timeout after the request was sent); outcome unknown, safe to retry with the same idempotency_key.",
+    "error": {
+      "code": "PLATFORM_UNAVAILABLE",
+      "message": "discourse: the platform did not confirm the publish (timeout after the request was sent); outcome unknown, safe to retry with the same idempotency_key.",
+      "retryable": true,
+      "details": {
+        "retry_policy": "backoff",
+        "reason": "response_schema_mismatch",
+        "fields": [
+          "topic_id"
+        ],
+        "outcome": "unknown",
+        "intent_state": "UNKNOWN",
+        "idempotency_key": "cert-cert_c824dd2188b742a3852a7cb1ac444c9f"
+      }
+    },
+    "idempotency_key": "cert-cert_c824dd2188b742a3852a7cb1ac444c9f"
+  }
+}

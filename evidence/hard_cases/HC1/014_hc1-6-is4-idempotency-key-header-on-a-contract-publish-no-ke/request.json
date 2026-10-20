@@ -1,0 +1,21 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "headers": {
+    "Idempotency-Key": "hc1-hdr-4201344a"
+  },
+  "body": {
+    "rendition": {
+      "title": "The key travels in the HTTP header only",
+      "body": "Sending this twice with the same header key makes one topic."
+    },
+    "destination": {
+      "connector_key": "discourse",
+      "surface": "topic",
+      "url": "http://mock-platforms:8080/discourse/hc1-hdr-4201344a"
+    },
+    "connection": {
+      "connector_key": "discourse"
+    }
+  }
+}

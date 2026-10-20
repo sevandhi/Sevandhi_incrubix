@@ -1,0 +1,18 @@
+{
+  "run_id": "cert_c824dd2188b742a3852a7cb1ac444c9f",
+  "delete_mode": null,
+  "step": {
+    "n": 9,
+    "step": "CLEANUP",
+    "outcome": "ok",
+    "started_at": "2026-10-17T16:52:06.404632Z",
+    "duration_ms": 44.2,
+    "detail": {
+      "ok": true,
+      "action": "deleted",
+      "found_by": "marker",
+      "platform_post_id": "2",
+      "marker": "ibx-sf3qrrtoecoa"
+    }
+  }
+}

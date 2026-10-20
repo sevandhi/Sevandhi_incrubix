@@ -1,0 +1,13 @@
+{
+  "n": 5,
+  "step": "STATUS",
+  "outcome": "ok",
+  "started_at": "2026-10-18T09:10:35.564198Z",
+  "duration_ms": 17.1,
+  "detail": {
+    "response": {
+      "status": "published",
+      "live_url": "http://mock-platforms:8080/peertube/videos-peertube-384305da-example-org/videos/watch/bc525a9a-3e5f-441c-a44b-4c70285806c4"
+    }
+  }
+}

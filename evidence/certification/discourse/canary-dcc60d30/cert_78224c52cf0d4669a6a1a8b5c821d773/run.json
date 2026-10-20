@@ -1,0 +1,251 @@
+{
+  "run_id": "cert_78224c52cf0d4669a6a1a8b5c821d773",
+  "harness_version": "1.0.0",
+  "destination_id": "dest_d164a35f536a47f29275f5aab1db37c1",
+  "simulation": true,
+  "started_at": "2026-10-17T16:49:49.852855Z",
+  "finished_at": "2026-10-17T16:49:50.243535Z",
+  "duration_ms": 390,
+  "timeline": [
+    {
+      "state": "QUEUED",
+      "at": "2026-10-17T16:49:49.852855Z"
+    },
+    {
+      "state": "PREFLIGHT",
+      "at": "2026-10-17T16:49:49.882128Z"
+    },
+    {
+      "state": "VALIDATE",
+      "at": "2026-10-17T16:49:49.910468Z"
+    },
+    {
+      "state": "PUBLISH",
+      "at": "2026-10-17T16:49:49.941176Z"
+    },
+    {
+      "state": "CONFIRM_LIVE",
+      "at": "2026-10-17T16:49:50.014090Z"
+    },
+    {
+      "state": "STATUS",
+      "at": "2026-10-17T16:49:50.045267Z"
+    },
+    {
+      "state": "METRICS",
+      "at": "2026-10-17T16:49:50.084562Z"
+    },
+    {
+      "state": "DELETE",
+      "at": "2026-10-17T16:49:50.123050Z"
+    },
+    {
+      "state": "CONFIRM_DELETED",
+      "at": "2026-10-17T16:49:50.159134Z"
+    },
+    {
+      "state": "PASSED",
+      "at": "2026-10-17T16:49:50.224662Z",
+      "note": "native: publish, live URL, status, metrics and delete certified"
+    }
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "step": "PREFLIGHT",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:49:49.893544Z",
+      "duration_ms": 8.6,
+      "detail": {
+        "connector_key": "discourse",
+        "connector_version": "1.0.0",
+        "tier": "native",
+        "capabilities": [
+          "publish",
+          "status",
+          "delete",
+          "metrics"
+        ],
+        "target": "simulation: every call goes to mock-platforms",
+        "kill_switch": "off",
+        "connection_id": "conn_fbc86b4c6182400ea6f11eae54ba111d",
+        "rules_confirmed": true,
+        "auth_probe": "no refresh_auth capability: the PUBLISH step proves the credentials"
+      }
+    },
+    {
+      "n": 2,
+      "step": "VALIDATE",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:49:49.920774Z",
+      "duration_ms": 10.1,
+      "detail": {
+        "good_rendition": {
+          "title": "IncuBrix certification test ibxcertb5c821d773",
+          "ok": true
+        },
+        "over_long_rendition": {
+          "ok": false,
+          "violations": [
+            {
+              "field": "title",
+              "rule": "title_max_chars",
+              "message": "title is 280 characters; the limit is 255",
+              "limit": 255,
+              "actual": 280
+            }
+          ]
+        }
+      }
+    },
+    {
+      "n": 3,
+      "step": "PUBLISH",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:49:49.952518Z",
+      "duration_ms": 53.4,
+      "detail": {
+        "request": {
+          "rendition": {
+            "rendition_id": "cert-cert_78224c52cf0d4669a6a1a8b5c821d773",
+            "content_id": null,
+            "surface": "topic",
+            "content_type": "text",
+            "title": "IncuBrix certification test ibxcertb5c821d773",
+            "body": "Automated certification test post ibxcertb5c821d773 from the IncuBrix destination network. It checks publish, live URL, status and delete on our own test instance, and is deleted within 10 minutes.",
+            "body_format": "markdown",
+            "canonical_url": null,
+            "link_url": null,
+            "media": [],
+            "tags": [],
+            "mentions": [],
+            "language": "en",
+            "is_promotional": false,
+            "ai_generated": false
+          },
+          "idempotency_key": "cert-cert_78224c52cf0d4669a6a1a8b5c821d773",
+          "marker": "ibx-hmgnfsaga6or"
+        },
+        "response": {
+          "platform_post_id": "1",
+          "live_url": "http://mock-platforms:8080/discourse/canary-dcc60d30/t/incubrix-certification-test-ibxcertb5c821d773/1",
+          "status": "published"
+        },
+        "test_post_id": 2,
+        "expires_after_s": 300
+      }
+    },
+    {
+      "n": 4,
+      "step": "CONFIRM_LIVE",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:49:50.024832Z",
+      "duration_ms": 14.3,
+      "detail": {
+        "method": "http_get_live_url",
+        "live_url": "http://mock-platforms:8080/discourse/canary-dcc60d30/t/incubrix-certification-test-ibxcertb5c821d773/1",
+        "http_status": 200,
+        "marker_found": true,
+        "attempts": [
+          {
+            "at": "2026-10-17T16:49:50.039031Z",
+            "status": 200,
+            "bytes": 357
+          }
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "step": "STATUS",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:49:50.055207Z",
+      "duration_ms": 22.4,
+      "detail": {
+        "response": {
+          "status": "published",
+          "live_url": "http://mock-platforms:8080/discourse/canary-dcc60d30/t/incubrix-certification-test-ibxcertb5c821d773/1"
+        }
+      }
+    },
+    {
+      "n": 6,
+      "step": "METRICS",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:49:50.094435Z",
+      "duration_ms": 21.4,
+      "detail": {
+        "response": {
+          "views": 1,
+          "likes": 0,
+          "comments": 0,
+          "shares": null,
+          "saves": null,
+          "watch_time_s": null,
+          "clicks": null
+        },
+        "exposed": [
+          "comments",
+          "likes",
+          "views"
+        ],
+        "null_means": "the platform does not expose this metric (never a fake 0)"
+      }
+    },
+    {
+      "n": 7,
+      "step": "DELETE",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:49:50.132684Z",
+      "duration_ms": 20.0,
+      "detail": {
+        "response": {
+          "deleted": true
+        },
+        "platform_delete_mode": "soft"
+      }
+    },
+    {
+      "n": 8,
+      "step": "CONFIRM_DELETED",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:49:50.169606Z",
+      "duration_ms": 48.2,
+      "detail": {
+        "status_after": {
+          "status": "deleted",
+          "live_url": null
+        },
+        "delete_mode": "soft_deleted",
+        "platform_delete_mode": "soft",
+        "method": "platform_api_get_status + http_get_live_url",
+        "live_url_after": {
+          "url": "http://mock-platforms:8080/discourse/canary-dcc60d30/t/incubrix-certification-test-ibxcertb5c821d773/1",
+          "http_status": 404,
+          "attempts": [
+            {
+              "at": "2026-10-17T16:49:50.202569Z",
+              "status": 404,
+              "bytes": 23
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "result": {
+    "run_id": "cert_78224c52cf0d4669a6a1a8b5c821d773",
+    "destination_id": "dest_d164a35f536a47f29275f5aab1db37c1",
+    "connector_key": "discourse",
+    "passed": true,
+    "state": "PASSED",
+    "level_before": "L0",
+    "level_after": "L4",
+    "level_reason": "native: publish, live URL, status, metrics and delete certified",
+    "delete_mode": "soft_deleted",
+    "platform_delete_mode": "soft",
+    "platform_post_id": "1",
+    "live_url": "http://mock-platforms:8080/discourse/canary-dcc60d30/t/incubrix-certification-test-ibxcertb5c821d773/1",
+    "notes": []
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "n": 5,
+  "step": "STATUS",
+  "outcome": "ok",
+  "started_at": "2026-10-18T09:15:10.230902Z",
+  "duration_ms": 63.9,
+  "detail": {
+    "response": {
+      "status": "published",
+      "live_url": "http://peertube.ibx.test:9000/videos/watch/9f7ff020-8546-4956-9dfa-c0040818561a"
+    }
+  }
+}

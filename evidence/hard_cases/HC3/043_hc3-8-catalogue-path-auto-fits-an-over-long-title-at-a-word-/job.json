@@ -1,0 +1,64 @@
+{
+  "job_id": "job_3648513037504a158db602650557f374",
+  "kind": "publication.run",
+  "status": "succeeded",
+  "progress": 100,
+  "result": {
+    "links": {
+      "manifest": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_3648513037504a158db602650557f374/manifest.json?exp=1792514249&sig=***",
+      "publication": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_3648513037504a158db602650557f374/publication.json?exp=1792514249&sig=***"
+    },
+    "publication": {
+      "code": null,
+      "error": null,
+      "state": "published",
+      "reason": null,
+      "job_ids": [
+        "job_3648513037504a158db602650557f374"
+      ],
+      "outcome": null,
+      "reasons": [],
+      "removal": null,
+      "attempts": 1,
+      "live_url": "http://mock-platforms:8080/discourse/hc3-strict-4201344a/t/how-do-you-test-posts-to-many-long-tail/2",
+      "retry_at": null,
+      "tailoring": {
+        "diff": [
+          {
+            "after": "How do you test posts to many long-tail…",
+            "field": "title",
+            "before": "How do you test posts to many long-tail communities without spamming any of them?"
+          }
+        ],
+        "profile": "forum",
+        "warnings": [
+          "TITLE_TRUNCATED: 81→40 chars at word boundary"
+        ]
+      },
+      "content_id": "content_6f1e588282064d629dce918ce77c67f0",
+      "created_at": "2026-10-20T15:37:17.083186Z",
+      "updated_at": "2026-10-20T15:37:27.216251Z",
+      "assist_pack": null,
+      "published_at": "2026-10-20T15:37:26.900957Z",
+      "rule_decision": {
+        "code": null,
+        "fixes": [],
+        "action": "allow",
+        "reasons": [],
+        "evidence": [],
+        "retry_at": null,
+        "warnings": [],
+        "failed_checks": []
+      },
+      "scheduled_for": "2026-10-20T15:37:21.209310Z",
+      "destination_id": "dest_f48c4d2f246940ab80b0ccaa3f924e12",
+      "publication_id": "pub_68212daf22bb4cd4978a3ceacf959786",
+      "platform_post_id": "2"
+    }
+  },
+  "error": null,
+  "attempts": 1,
+  "created_at": "2026-10-20T15:37:17.083186+00:00",
+  "updated_at": "2026-10-20T15:37:28.832012+00:00",
+  "finished_at": "2026-10-20T15:37:28.327232+00:00"
+}

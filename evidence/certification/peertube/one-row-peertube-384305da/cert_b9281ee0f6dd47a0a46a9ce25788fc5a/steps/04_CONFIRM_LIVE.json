@@ -1,0 +1,20 @@
+{
+  "n": 4,
+  "step": "CONFIRM_LIVE",
+  "outcome": "ok",
+  "started_at": "2026-10-18T09:10:35.523467Z",
+  "duration_ms": 19.2,
+  "detail": {
+    "method": "http_get_live_url",
+    "live_url": "http://mock-platforms:8080/peertube/videos-peertube-384305da-example-org/videos/watch/bc525a9a-3e5f-441c-a44b-4c70285806c4",
+    "http_status": 200,
+    "marker_found": true,
+    "attempts": [
+      {
+        "at": "2026-10-18T09:10:35.542452Z",
+        "status": 200,
+        "bytes": 178
+      }
+    ]
+  }
+}

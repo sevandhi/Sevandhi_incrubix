@@ -1,0 +1,8 @@
+{
+  "method": "POST",
+  "path": "/api/v1/certifications",
+  "headers": {},
+  "body": {
+    "destination_id": "dest_66c5a26b33ed4d118be55fa21b1f6e40"
+  }
+}

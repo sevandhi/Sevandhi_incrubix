@@ -1,0 +1,32 @@
+{
+  "status": 429,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:36:36 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "cf-cache-status": "DYNAMIC",
+    "retry-after": "114",
+    "rndr-id": "3f40a817-8b17-43dd",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "81e142ba5c1847d9bc507176d5f1ce44",
+    "x-render-origin-server": "uvicorn",
+    "cf-ray": "a4d91955db5faa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "PLATFORM_RATE_LIMIT",
+      "message": "devto is rate limited until 2026-10-20T15:38:30.170056+00:00; not calling the platform.",
+      "retryable": true,
+      "details": {
+        "retry_policy": "backoff",
+        "retry_at": "2026-10-20T15:38:30.170056Z",
+        "retry_after_s": 114,
+        "reset_source": "Retry-After",
+        "short_circuit": true
+      }
+    }
+  }
+}

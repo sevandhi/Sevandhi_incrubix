@@ -1,0 +1,33 @@
+{
+  "job_id": "job_2c760e9df8f2448e96980024f6873920",
+  "kind": "publication.run",
+  "status": "failed",
+  "progress": 0,
+  "result": {
+    "links": {
+      "manifest": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_2c760e9df8f2448e96980024f6873920/manifest.json?exp=1792514826&sig=***"
+    }
+  },
+  "error": {
+    "error": {
+      "code": "CONNECTION_AUTH_EXPIRED",
+      "details": {
+        "action": "reconnect_required",
+        "intent_state": "RETRYABLE",
+        "retry_policy": "after_reconnect",
+        "connection_id": "conn_d2313cf56f694c168a5317f85975c079",
+        "error_map_key": "401",
+        "idempotency_key": "pub-pub_62542187793f442097f18e29ba204da9",
+        "platform_status": 401,
+        "connection_state": "paused",
+        "platform_message": "This partner revoked IncuBrix's access."
+      },
+      "message": "webhook answered HTTP 401: This partner revoked IncuBrix's access.",
+      "retryable": false
+    }
+  },
+  "attempts": 1,
+  "created_at": "2026-10-20T15:46:55.522678+00:00",
+  "updated_at": "2026-10-20T15:47:06.467619+00:00",
+  "finished_at": "2026-10-20T15:47:05.997196+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "n": 4,
+  "step": "CONFIRM_LIVE",
+  "outcome": "ok",
+  "started_at": "2026-10-18T09:12:37.440631Z",
+  "duration_ms": 105.1,
+  "detail": {
+    "method": "platform_api_get_status",
+    "why": "self-served feed: get_status renders the public feed and parses it with feedparser; the worker can not reach PUBLIC_BASE_URL from inside compose",
+    "live_url": "http://127.0.0.1:19188/api/v1/feeds/e2e-mrss-0755cefd/items/ibx-5vk3e6qlr2ag",
+    "status": {
+      "status": "published",
+      "live_url": "http://127.0.0.1:19188/api/v1/feeds/e2e-mrss-0755cefd/items/ibx-5vk3e6qlr2ag"
+    },
+    "live_url_attempts": [
+      {
+        "at": "2026-10-18T09:12:37.456345Z",
+        "error": "ConnectError"
+      }
+    ]
+  }
+}

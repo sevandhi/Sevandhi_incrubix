@@ -1,0 +1,15 @@
+{
+  "index": 4,
+  "name": "HC1.4 same key with a different body -> 409 IDEMPOTENCY_KEY_REUSED",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 409,
+  "code": "IDEMPOTENCY_KEY_REUSED",
+  "expected_status": 409,
+  "expected_code": "IDEMPOTENCY_KEY_REUSED",
+  "passed": true,
+  "duration_ms": 1015.5,
+  "correlation_id": "ca2eb65cc5904b268fa47f39aec0af35",
+  "folder": "004_hc1-4-same-key-with-a-different-body-409-idempotency-key-reu",
+  "job_status": null
+}

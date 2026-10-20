@@ -1,0 +1,23 @@
+{
+  "n": 1,
+  "step": "PREFLIGHT",
+  "outcome": "ok",
+  "started_at": "2026-10-18T15:59:57.163110Z",
+  "duration_ms": 7.8,
+  "detail": {
+    "connector_key": "lemmy",
+    "connector_version": "1.0.0",
+    "tier": "native",
+    "capabilities": [
+      "publish",
+      "status",
+      "delete",
+      "metrics"
+    ],
+    "target": "own instance lemmy",
+    "kill_switch": "off",
+    "connection_id": null,
+    "rules_confirmed": true,
+    "auth_probe": "no refresh_auth capability: the PUBLISH step proves the credentials"
+  }
+}

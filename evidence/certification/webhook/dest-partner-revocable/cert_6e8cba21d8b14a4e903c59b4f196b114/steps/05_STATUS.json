@@ -1,0 +1,13 @@
+{
+  "n": 5,
+  "step": "STATUS",
+  "outcome": "ok",
+  "started_at": "2026-10-17T16:50:47.355509Z",
+  "duration_ms": 24.9,
+  "detail": {
+    "response": {
+      "status": "published",
+      "live_url": "http://mock-platforms:8080/partner/dest-partner-revocable/p/1"
+    }
+  }
+}

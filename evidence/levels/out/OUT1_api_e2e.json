@@ -1,0 +1,192 @@
+{
+  "api": "http://127.0.0.1:48631",
+  "simulation": true,
+  "publication_for_cap": {
+    "publication_id": "pub_bd7a9bde3057412fb79a7e9a16d0504b",
+    "state": "rescheduled",
+    "reason": "DEST_RULE_FREQUENCY_CAP: cap of 1 post(s) per P7D reached (1 in the window, oldest 2026-10-18T19:28:43.455740Z); next slot 2026-10-25T19:28:43.455740Z"
+  },
+  "normal_item": {
+    "content_id": null,
+    "content": {
+      "language": "en",
+      "is_promotional": false,
+      "promo_signals": [],
+      "ai_generated": false,
+      "is_video": false,
+      "audiences": [
+        "ai",
+        "founders",
+        "saas"
+      ]
+    },
+    "k": 10,
+    "weights": {
+      "audience_fit": 1.0,
+      "relevance": 0.3,
+      "trust": 0.1,
+      "past_results": 0.1,
+      "rules_headroom": 0.2
+    },
+    "candidates_considered": 5,
+    "results": [
+      {
+        "rank": 1,
+        "destination_id": "dest_8ba7cdb2a14d411f9af4d09b3c4e71a3",
+        "destination_ref": "https://mock-platforms:8080/discourse/dest-strict-limits",
+        "name": "dest-strict-limits",
+        "url": "http://mock-platforms:8080/discourse/dest-strict-limits",
+        "connector_key": "discourse",
+        "surface": "topic",
+        "level": "L4",
+        "score": 0.6652,
+        "factors": {
+          "audience_fit": 0.5408,
+          "relevance": 0.8,
+          "trust": 1.0,
+          "past_results": 0.5,
+          "rules_headroom": 1.0
+        },
+        "contributions": {
+          "audience_fit": 0.3181,
+          "relevance": 0.1412,
+          "trust": 0.0588,
+          "past_results": 0.0294,
+          "rules_headroom": 0.1176
+        },
+        "delivery": "automated",
+        "reason": "Audience fit 0.54 (audiences ai/saas; terms ai, saas); relevance 4/5 for IncuBrix's audience. Before posting: cap 0/2 per P7D used.",
+        "notes": [
+          "cap 0/2 per P7D used"
+        ],
+        "past_results": null
+      },
+      {
+        "rank": 2,
+        "destination_id": "dest_68bd1646dd164567a478a53f14532f04",
+        "destination_ref": "https://mock-platforms:8080/partner/dest-partner-revocable",
+        "name": "dest-partner-revocable",
+        "url": "http://mock-platforms:8080/partner/dest-partner-revocable",
+        "connector_key": "webhook",
+        "surface": "post",
+        "level": "L3",
+        "score": 0.59,
+        "factors": {
+          "audience_fit": 0.4981,
+          "relevance": 0.6,
+          "trust": 0.75,
+          "past_results": 0.5,
+          "rules_headroom": 1.0
+        },
+        "contributions": {
+          "audience_fit": 0.293,
+          "relevance": 0.1059,
+          "trust": 0.0441,
+          "past_results": 0.0294,
+          "rules_headroom": 0.1176
+        },
+        "delivery": "automated",
+        "reason": "Audience fit 0.50 (audiences founders/saas; terms founder, saas); rules headroom 1.00. Before posting: cap 0/5 per P1D used.",
+        "notes": [
+          "cap 0/5 per P1D used"
+        ],
+        "past_results": null
+      },
+      {
+        "rank": 3,
+        "destination_id": "dest_0bd8fb8c20c2462a8edd8978aefa64ee",
+        "destination_ref": "https://mock-platforms:8080/discourse/dest-no-promo",
+        "name": "dest-no-promo",
+        "url": "http://mock-platforms:8080/discourse/dest-no-promo",
+        "connector_key": "discourse",
+        "surface": "topic",
+        "level": "L4",
+        "score": 0.3471,
+        "factors": {
+          "audience_fit": 0.0,
+          "relevance": 0.8,
+          "trust": 1.0,
+          "past_results": 0.5,
+          "rules_headroom": 1.0
+        },
+        "contributions": {
+          "audience_fit": 0.0,
+          "relevance": 0.1412,
+          "trust": 0.0588,
+          "past_results": 0.0294,
+          "rules_headroom": 0.1176
+        },
+        "delivery": "automated",
+        "reason": "Relevance 4/5 for IncuBrix's audience; rules headroom 1.00. Before posting: cap 0/3 per P7D used.",
+        "notes": [
+          "cap 0/3 per P7D used"
+        ],
+        "past_results": null
+      }
+    ],
+    "excluded": [
+      {
+        "destination_id": "dest_95dcae6a3d214a0d95fe84a046d47b9e",
+        "destination_ref": "https://mock-platforms:8080/discourse/dest-weekly-cap-1",
+        "name": "dest-weekly-cap-1",
+        "code": "DEST_RULE_FREQUENCY_CAP",
+        "reason": "cap of 1 post(s) per P7D used up (1 in the window); next slot 2026-10-25T19:28:43.455740Z",
+        "retry_at": "2026-10-25T19:28:43.455740Z"
+      },
+      {
+        "destination_id": "dest_b5b3d6fe26914d3387c0659c32ad315b",
+        "destination_ref": "https://mock-platforms:8080/discourse/dest-ai-disclosure-es",
+        "name": "dest-ai-disclosure-es",
+        "code": "DEST_RULE_LANGUAGE",
+        "reason": "community language es does not match the item language en"
+      }
+    ],
+    "reason_phrasing": {
+      "used": false,
+      "why": "not requested"
+    },
+    "ranking": "deterministic (hard filters, then the weighted factor score); an LLM never changes the order",
+    "generated_at": "2026-10-18T19:30:08.981224Z"
+  },
+  "promotional_item_excluded": [
+    {
+      "destination_id": "dest_0bd8fb8c20c2462a8edd8978aefa64ee",
+      "destination_ref": "https://mock-platforms:8080/discourse/dest-no-promo",
+      "name": "dest-no-promo",
+      "code": "DEST_RULE_SELF_PROMO",
+      "reason": "item is promotional (signals: flag:is_promotional=true) and the destination does not allow self-promotion"
+    },
+    {
+      "destination_id": "dest_95dcae6a3d214a0d95fe84a046d47b9e",
+      "destination_ref": "https://mock-platforms:8080/discourse/dest-weekly-cap-1",
+      "name": "dest-weekly-cap-1",
+      "code": "DEST_RULE_FREQUENCY_CAP",
+      "reason": "cap of 1 post(s) per P7D used up (1 in the window); next slot 2026-10-25T19:28:43.455740Z",
+      "retry_at": "2026-10-25T19:28:43.455740Z"
+    },
+    {
+      "destination_id": "dest_b5b3d6fe26914d3387c0659c32ad315b",
+      "destination_ref": "https://mock-platforms:8080/discourse/dest-ai-disclosure-es",
+      "name": "dest-ai-disclosure-es",
+      "code": "DEST_RULE_SELF_PROMO",
+      "reason": "item is promotional (signals: flag:is_promotional=true) and the destination does not allow self-promotion"
+    }
+  ],
+  "content_id_results": [
+    "dest-strict-limits",
+    "dest-partner-revocable",
+    "dest-no-promo"
+  ],
+  "llm_phrasing": {
+    "used": false,
+    "rewritten": 0,
+    "rejected_unfaithful": 0,
+    "provider": "mock",
+    "model": "mock-heuristic-v1",
+    "fallback_used": false,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0,
+    "latency_ms": 0.0
+  }
+}

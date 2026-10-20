@@ -1,0 +1,27 @@
+{
+  "status": 401,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:36:40 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "86b13c6b-9bac-477c",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "www-authenticate": "Bearer",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d91976fa60aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "UNAUTHORIZED",
+      "message": "Missing or invalid bearer token (Authorization: Bearer ***",
+      "retryable": false,
+      "details": {
+        "retry_policy": "never"
+      }
+    }
+  }
+}

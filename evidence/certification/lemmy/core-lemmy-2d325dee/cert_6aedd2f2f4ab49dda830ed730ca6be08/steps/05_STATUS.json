@@ -1,0 +1,13 @@
+{
+  "n": 5,
+  "step": "STATUS",
+  "outcome": "ok",
+  "started_at": "2026-10-17T16:52:01.903346Z",
+  "duration_ms": 23.5,
+  "detail": {
+    "response": {
+      "status": "published",
+      "live_url": "http://mock-platforms:8080/lemmy/core-lemmy-2d325dee-example-org-c-ibx-test/post/1"
+    }
+  }
+}

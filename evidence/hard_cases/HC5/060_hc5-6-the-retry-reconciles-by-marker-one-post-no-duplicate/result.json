@@ -1,0 +1,15 @@
+{
+  "index": 60,
+  "name": "HC5.6 the retry reconciles by marker (one post, no duplicate)",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 200,
+  "code": null,
+  "expected_status": 200,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 4150.5,
+  "correlation_id": "62b1f494167f4b2f9e016b37aff862fc",
+  "folder": "060_hc5-6-the-retry-reconciles-by-marker-one-post-no-duplicate",
+  "job_status": null
+}

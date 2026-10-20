@@ -1,0 +1,13 @@
+{
+  "n": 5,
+  "step": "STATUS",
+  "outcome": "ok",
+  "started_at": "2026-10-18T03:40:11.989238Z",
+  "duration_ms": 18.3,
+  "detail": {
+    "response": {
+      "status": "published",
+      "live_url": "http://mock-platforms:8080/partner/mh2-webhook-b14f2381/p/1"
+    }
+  }
+}

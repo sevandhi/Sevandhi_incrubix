@@ -1,0 +1,24 @@
+{
+  "run_id": "cert_ea118abcb38046faa0a2494c920258e6",
+  "simulation": true,
+  "live": {
+    "taken": true,
+    "file": "live.png",
+    "kind": "page",
+    "url": "http://mock-platforms:8080/partner/core-webhook-2319280b-example-org/p/1",
+    "label": "browser screenshot of http://mock-platforms:8080/partner/core-webhook-2319280b-example-org/p/1 (HTTP 200) - a mock-platforms page (simulation mode)",
+    "http_status": 200,
+    "content_type": "text/html",
+    "at": "2026-10-18T09:19:57.189759Z"
+  },
+  "after_delete": {
+    "taken": true,
+    "file": "after_delete.png",
+    "kind": "page",
+    "url": "http://mock-platforms:8080/partner/core-webhook-2319280b-example-org/p/1",
+    "label": "browser screenshot of http://mock-platforms:8080/partner/core-webhook-2319280b-example-org/p/1 (HTTP 404) - a mock-platforms page (simulation mode)",
+    "http_status": 404,
+    "content_type": "text/html",
+    "at": "2026-10-18T09:19:57.861013Z"
+  }
+}

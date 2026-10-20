@@ -1,0 +1,83 @@
+[
+ {
+  "hc": "HC2",
+  "connection": "partner",
+  "status": 201,
+  "id": "conn_9838fd80effc4eb2a790977ba5e33b0c"
+ },
+ {
+  "hc": "HC3",
+  "destination": "strict",
+  "status": 201,
+  "id": "dest_1d8bdcd295e5466092e072b128eb02d8",
+  "url": "http://mock-platforms:8080/discourse/hc3-strict-e3379b10",
+  "certification": "PASSED",
+  "level": "L4"
+ },
+ {
+  "hc": "HC4",
+  "destination": "cap",
+  "status": 201,
+  "id": "dest_86af91345c2540a1960f22b6e554df83",
+  "url": "http://mock-platforms:8080/discourse/hc4-cap-e3379b10",
+  "certification": "PASSED",
+  "level": "L4"
+ },
+ {
+  "hc": "HC4",
+  "destination": "cap2",
+  "status": 201,
+  "id": "dest_85d00c044412475faec7228fce17b596",
+  "url": "http://mock-platforms:8080/discourse/hc4-cap2-e3379b10",
+  "certification": "PASSED",
+  "level": "L4"
+ },
+ {
+  "hc": "HC4",
+  "destination": "nopromo",
+  "status": 201,
+  "id": "dest_0ab72f092be346d3a749a436ff8fb487",
+  "url": "http://mock-platforms:8080/discourse/hc4-np-e3379b10",
+  "certification": "PASSED",
+  "level": "L4"
+ },
+ {
+  "hc": "HC5",
+  "destination": "drift",
+  "status": 201,
+  "id": "dest_6b0e6670c9a04a389878dc95e57d66f4",
+  "url": "http://mock-platforms:8080/ghost/hc5-drift-e3379b10",
+  "certification": "PASSED",
+  "level": "L3"
+ },
+ {
+  "hc": "HC6",
+  "connection": "partner",
+  "status": 201,
+  "id": "conn_57da2e554e94453ebd2f4edf4c43efad"
+ },
+ {
+  "hc": "HC6",
+  "destination": "partner",
+  "status": 201,
+  "id": "dest_fe707d144d8144dd99e078a9ec5d34c7",
+  "url": "http://mock-platforms:8080/partner/hc6-rev-e3379b10",
+  "certification": "PASSED",
+  "level": "L3"
+ },
+ {
+  "hc": "HC6",
+  "import": "messy",
+  "status": 202,
+  "job_id": "job_3f482030789245aa96fe396c25a420f0"
+ },
+ {
+  "hc": "HC7",
+  "destination": "es",
+  "status": 201,
+  "id": "dest_60426eb464174d5191c7994d47b4b9a8",
+  "url": "http://mock-platforms:8080/discourse/hc7-es-e3379b10",
+  "certification": "PASSED",
+  "level": "L4"
+ }
+]

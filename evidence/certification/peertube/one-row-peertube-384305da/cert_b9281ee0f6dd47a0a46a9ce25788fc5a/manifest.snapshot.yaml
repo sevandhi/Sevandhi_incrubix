@@ -1,0 +1,38 @@
+key: peertube
+version: 1.0.0
+tier: native
+auth: oauth2
+surfaces:
+- key: video
+  content_types:
+  - video
+  - text
+  spec:
+    title_required: true
+    title_min_chars: 3
+    title_max_chars: 120
+    body_max_chars: 9970
+    tag_max: 5
+    tag_max_chars: 30
+    count_unit: codepoints
+    links_allowed: true
+    media_max_count: 1
+rate_limits:
+  per_connection:
+    requests: 40
+    per_seconds: 10.0
+capabilities:
+- publish
+- status
+- delete
+- metrics
+- refresh_auth
+error_map:
+  400:invalid_grant: CONNECTION_AUTH_EXPIRED
+  '401': CONNECTION_AUTH_EXPIRED
+  '400': PLATFORM_CONTENT_REJECTED
+  '403': PLATFORM_CONTENT_REJECTED
+  '413': PLATFORM_CONTENT_REJECTED
+  '415': PLATFORM_CONTENT_REJECTED
+  '429': PLATFORM_RATE_LIMIT
+instance_param: base_url

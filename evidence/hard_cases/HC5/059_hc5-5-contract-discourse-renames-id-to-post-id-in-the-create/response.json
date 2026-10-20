@@ -1,0 +1,34 @@
+{
+  "status": 503,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:46:47 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "cf-cache-status": "DYNAMIC",
+    "rndr-id": "26ee1c89-58b3-48e3",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "721e22a1aa124681b5d4a6dde408ed94",
+    "x-render-origin-server": "uvicorn",
+    "cf-ray": "a4d9282cdbd7aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "PLATFORM_UNAVAILABLE",
+      "message": "discourse: response_schema_mismatch - the platform's answer to the publish no longer has the expected field(s) (id); the platform may have renamed a field. The post may have been created: outcome unknown, safe to retry with the same idempotency_key.",
+      "retryable": true,
+      "details": {
+        "retry_policy": "backoff",
+        "reason": "response_schema_mismatch",
+        "fields": [
+          "id"
+        ],
+        "outcome": "unknown",
+        "intent_state": "UNKNOWN",
+        "idempotency_key": "hc5-ren-4201344a"
+      }
+    }
+  }
+}

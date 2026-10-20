@@ -1,0 +1,15 @@
+{
+  "index": 42,
+  "name": "HC3.7 a video file to a text-only Lemmy community -> violation content_types",
+  "method": "POST",
+  "path": "/connector/v1/lemmy/validate",
+  "status": 200,
+  "code": null,
+  "expected_status": 200,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 519.3,
+  "correlation_id": "465d2e80833d4a9abfd9d954bddb80ba",
+  "folder": "042_hc3-7-a-video-file-to-a-text-only-lemmy-community-violation-",
+  "job_status": null
+}

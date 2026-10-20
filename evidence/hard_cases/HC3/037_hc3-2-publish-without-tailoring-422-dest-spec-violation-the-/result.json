@@ -1,0 +1,15 @@
+{
+  "index": 37,
+  "name": "HC3.2 publish without tailoring -> 422 DEST_SPEC_VIOLATION, the platform is not called",
+  "method": "POST",
+  "path": "/connector/v1/lemmy/publish",
+  "status": 422,
+  "code": "DEST_SPEC_VIOLATION",
+  "expected_status": 422,
+  "expected_code": "DEST_SPEC_VIOLATION",
+  "passed": true,
+  "duration_ms": 1008.2,
+  "correlation_id": "c050693687fa4e3287e8f87e44c7377f",
+  "folder": "037_hc3-2-publish-without-tailoring-422-dest-spec-violation-the-",
+  "job_status": null
+}

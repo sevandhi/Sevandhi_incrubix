@@ -1,0 +1,25 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/lemmy/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+      "body": "A body that is fine.",
+      "media": [
+        {
+          "url": "http://mock-platforms:8080/assist/hc3/media/x.webp",
+          "mime": "image/webp"
+        }
+      ]
+    },
+    "destination": {
+      "connector_key": "lemmy",
+      "url": "http://mock-platforms:8080/lemmy/hc3-pub-4201344a/c/ibx_test"
+    },
+    "connection": {
+      "connector_key": "lemmy"
+    },
+    "idempotency_key": "hc3-pub-4201344a"
+  }
+}

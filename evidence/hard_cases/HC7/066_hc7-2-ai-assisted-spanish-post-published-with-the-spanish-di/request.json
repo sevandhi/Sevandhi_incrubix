@@ -1,0 +1,14 @@
+{
+  "method": "POST",
+  "path": "/api/v1/publications",
+  "headers": {},
+  "body": {
+    "destination_id": "dest_c549bdf83930486db623b9a033c09d93",
+    "content": {
+      "title": "¿Cómo probáis las publicaciones en comunidades?",
+      "body": "Comparamos tres formas de probar publicaciones en foros de principio a fin. ¿Cuál os ha funcionado mejor a vosotros?",
+      "language": "es",
+      "ai_generated": true
+    }
+  }
+}

@@ -1,0 +1,736 @@
+{
+ "id": "MH1",
+ "title": "Exact connector contract (Appendix A methods, manifest, error codes)",
+ "status": "Yes",
+ "reasons": [],
+ "run_id": "20261020T145607Z",
+ "started_at": "2026-10-20T14:57:00Z",
+ "finished_at": "2026-10-20T14:57:07Z",
+ "duration_s": 7.1,
+ "api": "http://127.0.0.1:38875",
+ "mode": "local",
+ "command": "scripts/prove_mh1.sh",
+ "evidence": [
+  "evidence/must_haves/MH1_contract_matrix.csv",
+  "evidence/must_haves/MH1_contract.log"
+ ],
+ "checks_total": 102,
+ "checks_passed": 102,
+ "checks": [
+  {
+   "label": "uv run pytest -q tests/contract",
+   "ok": true,
+   "critical": true,
+   "detail": "15 passed in 2.89s",
+   "group": null
+  },
+  {
+   "label": "all 8 Appendix A shared codes are in /api/v1/errors",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "registry has no load errors",
+   "ok": true,
+   "critical": true,
+   "detail": "{}",
+   "group": null
+  },
+  {
+   "label": "the six Core connectors are registered",
+   "ok": true,
+   "critical": true,
+   "detail": "[\"assisted\", \"devto\", \"discourse\", \"ghost\", \"lemmy\", \"mrss\", \"peertube\", \"slack\", \"webhook\"]",
+   "group": null
+  },
+  {
+   "label": "assisted manifest has every Appendix A key and validates",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "assisted error_map values are shared/listed codes",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "assisted capabilities are contract methods",
+   "ok": true,
+   "critical": true,
+   "detail": "[\"assist\"]",
+   "group": null
+  },
+  {
+   "label": "assisted@mock validate -> 200 with exactly ['ok', 'violations']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['ok', 'violations']",
+   "group": null
+  },
+  {
+   "label": "assisted@mock publish not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "assisted@mock get_status not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "assisted@mock fetch_metrics not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "assisted@mock refresh_auth not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "assisted@mock delete not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "assisted@mock build_assist_pack -> 200 with exactly ['caption', 'checklist', 'deep_link', 'files']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['caption', 'checklist', 'deep_link', 'files']",
+   "group": null
+  },
+  {
+   "label": "assisted@mock unknown method -> IS5 error envelope",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "devto manifest has every Appendix A key and validates",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "devto error_map values are shared/listed codes",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "devto capabilities are contract methods",
+   "ok": true,
+   "critical": true,
+   "detail": "[\"publish\", \"status\", \"metrics\"]",
+   "group": null
+  },
+  {
+   "label": "devto@mock validate -> 200 with exactly ['ok', 'violations']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['ok', 'violations']",
+   "group": null
+  },
+  {
+   "label": "devto@mock publish -> 200 with exactly ['live_url', 'platform_post_id', 'status']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['live_url', 'platform_post_id', 'status']",
+   "group": null
+  },
+  {
+   "label": "devto@mock /api/v1/connector mirror replays the same post",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200",
+   "group": null
+  },
+  {
+   "label": "devto@mock get_status (Appendix A arguments only) -> 200 with exactly ['live_url', 'status']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['live_url', 'status']",
+   "group": null
+  },
+  {
+   "label": "devto@mock fetch_metrics (Appendix A arguments only) -> 200 with exactly ['clicks', 'comments', 'likes', 'saves', 'shares', 'views', 'watch_time_s']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['clicks', 'comments', 'likes', 'saves', 'shares', 'views', 'watch_time_s']",
+   "group": null
+  },
+  {
+   "label": "devto@mock refresh_auth not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "devto@mock delete not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "devto@mock build_assist_pack not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "devto@mock unknown method -> IS5 error envelope",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "discourse manifest has every Appendix A key and validates",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "discourse error_map values are shared/listed codes",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "discourse capabilities are contract methods",
+   "ok": true,
+   "critical": true,
+   "detail": "[\"publish\", \"status\", \"delete\", \"metrics\"]",
+   "group": null
+  },
+  {
+   "label": "discourse@mock validate -> 200 with exactly ['ok', 'violations']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['ok', 'violations']",
+   "group": null
+  },
+  {
+   "label": "discourse@mock publish -> 200 with exactly ['live_url', 'platform_post_id', 'status']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['live_url', 'platform_post_id', 'status']",
+   "group": null
+  },
+  {
+   "label": "discourse@mock /api/v1/connector mirror replays the same post",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200",
+   "group": null
+  },
+  {
+   "label": "discourse@mock get_status (Appendix A arguments only) -> 200 with exactly ['live_url', 'status']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['live_url', 'status']",
+   "group": null
+  },
+  {
+   "label": "discourse@mock fetch_metrics (Appendix A arguments only) -> 200 with exactly ['clicks', 'comments', 'likes', 'saves', 'shares', 'views', 'watch_time_s']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['clicks', 'comments', 'likes', 'saves', 'shares', 'views', 'watch_time_s']",
+   "group": null
+  },
+  {
+   "label": "discourse@mock refresh_auth not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "discourse@mock delete (Appendix A arguments only) -> 200 with exactly ['deleted']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['deleted']",
+   "group": null
+  },
+  {
+   "label": "discourse@mock build_assist_pack not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "discourse@mock unknown method -> IS5 error envelope",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "ghost manifest has every Appendix A key and validates",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "ghost error_map values are shared/listed codes",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "ghost capabilities are contract methods",
+   "ok": true,
+   "critical": true,
+   "detail": "[\"publish\", \"status\", \"delete\", \"refresh_auth\"]",
+   "group": null
+  },
+  {
+   "label": "ghost@mock validate -> 200 with exactly ['ok', 'violations']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['ok', 'violations']",
+   "group": null
+  },
+  {
+   "label": "ghost@mock publish -> 200 with exactly ['live_url', 'platform_post_id', 'status']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['live_url', 'platform_post_id', 'status']",
+   "group": null
+  },
+  {
+   "label": "ghost@mock /api/v1/connector mirror replays the same post",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200",
+   "group": null
+  },
+  {
+   "label": "ghost@mock get_status (Appendix A arguments only) -> 200 with exactly ['live_url', 'status']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['live_url', 'status']",
+   "group": null
+  },
+  {
+   "label": "ghost@mock fetch_metrics not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "ghost@mock refresh_auth -> 200 with exactly ['expires_at']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['expires_at']",
+   "group": null
+  },
+  {
+   "label": "ghost@mock delete (Appendix A arguments only) -> 200 with exactly ['deleted']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['deleted']",
+   "group": null
+  },
+  {
+   "label": "ghost@mock build_assist_pack not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "ghost@mock unknown method -> IS5 error envelope",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "ghost@real-local validate -> 200 with exactly ['ok', 'violations']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['ok', 'violations']",
+   "group": null
+  },
+  {
+   "label": "ghost@real-local publish -> 200 with exactly ['live_url', 'platform_post_id', 'status']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['live_url', 'platform_post_id', 'status']",
+   "group": null
+  },
+  {
+   "label": "ghost@real-local /api/v1/connector mirror replays the same post",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200",
+   "group": null
+  },
+  {
+   "label": "ghost@real-local get_status (Appendix A arguments only) -> 200 with exactly ['live_url', 'status']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['live_url', 'status']",
+   "group": null
+  },
+  {
+   "label": "ghost@real-local fetch_metrics not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "ghost@real-local refresh_auth -> 200 with exactly ['expires_at']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['expires_at']",
+   "group": null
+  },
+  {
+   "label": "ghost@real-local delete (Appendix A arguments only) -> 200 with exactly ['deleted']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['deleted']",
+   "group": null
+  },
+  {
+   "label": "ghost@real-local build_assist_pack not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "ghost@real-local unknown method -> IS5 error envelope",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "lemmy manifest has every Appendix A key and validates",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "lemmy error_map values are shared/listed codes",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "lemmy capabilities are contract methods",
+   "ok": true,
+   "critical": true,
+   "detail": "[\"publish\", \"status\", \"delete\", \"metrics\"]",
+   "group": null
+  },
+  {
+   "label": "lemmy@mock validate -> 200 with exactly ['ok', 'violations']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['ok', 'violations']",
+   "group": null
+  },
+  {
+   "label": "lemmy@mock publish -> 200 with exactly ['live_url', 'platform_post_id', 'status']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['live_url', 'platform_post_id', 'status']",
+   "group": null
+  },
+  {
+   "label": "lemmy@mock /api/v1/connector mirror replays the same post",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200",
+   "group": null
+  },
+  {
+   "label": "lemmy@mock get_status (Appendix A arguments only) -> 200 with exactly ['live_url', 'status']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['live_url', 'status']",
+   "group": null
+  },
+  {
+   "label": "lemmy@mock fetch_metrics (Appendix A arguments only) -> 200 with exactly ['clicks', 'comments', 'likes', 'saves', 'shares', 'views', 'watch_time_s']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['clicks', 'comments', 'likes', 'saves', 'shares', 'views', 'watch_time_s']",
+   "group": null
+  },
+  {
+   "label": "lemmy@mock refresh_auth not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "lemmy@mock delete (Appendix A arguments only) -> 200 with exactly ['deleted']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['deleted']",
+   "group": null
+  },
+  {
+   "label": "lemmy@mock build_assist_pack not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "lemmy@mock unknown method -> IS5 error envelope",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "lemmy@real-local validate -> 200 with exactly ['ok', 'violations']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['ok', 'violations']",
+   "group": null
+  },
+  {
+   "label": "lemmy@real-local publish -> 200 with exactly ['live_url', 'platform_post_id', 'status']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['live_url', 'platform_post_id', 'status']",
+   "group": null
+  },
+  {
+   "label": "lemmy@real-local /api/v1/connector mirror replays the same post",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200",
+   "group": null
+  },
+  {
+   "label": "lemmy@real-local get_status (Appendix A arguments only) -> 200 with exactly ['live_url', 'status']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['live_url', 'status']",
+   "group": null
+  },
+  {
+   "label": "lemmy@real-local fetch_metrics (Appendix A arguments only) -> 200 with exactly ['clicks', 'comments', 'likes', 'saves', 'shares', 'views', 'watch_time_s']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['clicks', 'comments', 'likes', 'saves', 'shares', 'views', 'watch_time_s']",
+   "group": null
+  },
+  {
+   "label": "lemmy@real-local refresh_auth not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "lemmy@real-local delete (Appendix A arguments only) -> 200 with exactly ['deleted']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['deleted']",
+   "group": null
+  },
+  {
+   "label": "lemmy@real-local build_assist_pack not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "lemmy@real-local unknown method -> IS5 error envelope",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "mrss manifest has every Appendix A key and validates",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "mrss error_map values are shared/listed codes",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "mrss capabilities are contract methods",
+   "ok": true,
+   "critical": true,
+   "detail": "[\"publish\", \"status\", \"delete\", \"metrics\"]",
+   "group": null
+  },
+  {
+   "label": "peertube manifest has every Appendix A key and validates",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "peertube error_map values are shared/listed codes",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "peertube capabilities are contract methods",
+   "ok": true,
+   "critical": true,
+   "detail": "[\"publish\", \"status\", \"delete\", \"metrics\", \"refresh_auth\"]",
+   "group": null
+  },
+  {
+   "label": "slack manifest has every Appendix A key and validates",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "slack error_map values are shared/listed codes",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "slack capabilities are contract methods",
+   "ok": true,
+   "critical": true,
+   "detail": "[\"publish\", \"status\", \"delete\", \"metrics\"]",
+   "group": null
+  },
+  {
+   "label": "webhook manifest has every Appendix A key and validates",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "webhook error_map values are shared/listed codes",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "webhook capabilities are contract methods",
+   "ok": true,
+   "critical": true,
+   "detail": "[\"publish\", \"status\", \"delete\"]",
+   "group": null
+  },
+  {
+   "label": "webhook@mock validate -> 200 with exactly ['ok', 'violations']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['ok', 'violations']",
+   "group": null
+  },
+  {
+   "label": "webhook@mock publish -> 200 with exactly ['live_url', 'platform_post_id', 'status']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['live_url', 'platform_post_id', 'status']",
+   "group": null
+  },
+  {
+   "label": "webhook@mock /api/v1/connector mirror replays the same post",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200",
+   "group": null
+  },
+  {
+   "label": "webhook@mock get_status (Appendix A arguments only) -> 200 with exactly ['live_url', 'status']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['live_url', 'status']",
+   "group": null
+  },
+  {
+   "label": "webhook@mock fetch_metrics not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "webhook@mock refresh_auth not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "webhook@mock delete (Appendix A arguments only) -> 200 with exactly ['deleted']",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 200, keys ['deleted']",
+   "group": null
+  },
+  {
+   "label": "webhook@mock build_assist_pack not in capabilities -> 404 METHOD_NOT_SUPPORTED",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  },
+  {
+   "label": "webhook@mock unknown method -> IS5 error envelope",
+   "ok": true,
+   "critical": true,
+   "detail": "HTTP 404",
+   "group": null
+  }
+ ],
+ "sub": {}
+}

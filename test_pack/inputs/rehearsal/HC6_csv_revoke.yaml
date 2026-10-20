@@ -1,0 +1,63 @@
+# HC6 (brief: "A CSV with duplicates, bad URLs and mixed languages; a partner who revokes permission").
+hard_case: HC6
+title: A CSV with duplicates, bad URLs and mixed languages; a partner who revokes permission
+setup:
+  connections:
+    partner: {connector_key: webhook, auth_type: api_key, credentials: {secret: sim-secret}, account_handle: "hc6-partner-{{run_id}}"}
+  destinations:
+    partner:
+      certify: true
+      row: {name: "HC6 partner {{run_id}}", url: "http://mock-platforms:8080/partner/hc6-rev-{{run_id}}", connector_key: webhook,
+            connection_id: "{{conn.partner}}", language: en, automation_allowed: "true", self_promo_allowed: "true"}
+  imports:
+    messy:
+      csv: |
+        name,url,connector_key,language
+        AI forum,http://mock-platforms:8080/internet/discourse-en-ai-hc6a{{run_id}},discourse,
+        AI forum again (case),HTTP://MOCK-PLATFORMS:8080/internet/discourse-en-ai-hc6a{{run_id}},discourse,
+        AI forum again (slash + utm),http://mock-platforms:8080/internet/discourse-en-ai-hc6a{{run_id}}/?utm_source=list,discourse,
+        Broken URL,ht!tp:/not a url,discourse,
+        No URL,,discourse,
+        Foro de video,http://mock-platforms:8080/internet/lemmy-es-video-hc6b{{run_id}},lemmy,
+        KI Forum,http://mock-platforms:8080/internet/discourse-de-ai-hc6c{{run_id}},discourse,
+        日本のコミュニティ,http://mock-platforms:8080/internet/discourse-ja-creators-hc6d{{run_id}},discourse,
+cases:
+  - name: HC6.1 the messy CSV import finished with a row-by-row report whose counts add up
+    method: GET
+    path: "/api/v1/jobs/{{import.messy}}"
+    expect: {status: 200, code: null}
+    grade:
+      equals: {status: succeeded, result.summary.rows: 8, result.summary.duplicate: 2, result.summary.invalid: 2}
+      job_sum: {total: result.summary.rows, parts: [result.summary.imported, result.summary.duplicate, result.summary.invalid, result.summary.unreachable]}
+      present: [result.links.report, result.language_detector]
+
+  - name: HC6.2 the same rows through /api/v1/destinations - a malformed URL is refused, duplicates are named
+    method: POST
+    path: /api/v1/destinations
+    body:
+      rows:
+        - {name: "Row A", url: "http://mock-platforms:8080/discourse/hc6-rows-{{run_id}}", connector_key: discourse}
+        - {name: "Row A www", url: "http://mock-platforms:8080/discourse/hc6-rows-{{run_id}}/", connector_key: discourse}
+        - {name: "Row bad", url: "ht!tp:/not a url", connector_key: discourse}
+    expect: {status: 201, code: null}
+    grade:
+      equals: {summary.created: 1, summary.duplicate: 1, results.2.status: invalid}
+
+  - name: HC6.3 step - the partner revokes IncuBrix's access
+    role: step
+    method: POST
+    path: "{{mock}}/partner/hc6-rev-{{run_id}}/_partner/revoke"
+    expect: {status: 200}
+
+  - name: HC6.4 a publication to the revoked partner fails with CONNECTION_AUTH_EXPIRED and pauses the connection
+    method: POST
+    path: /api/v1/publications
+    body:
+      destination_id: "{{dest.partner}}"
+      content: {title: "News for our partner site", body: "A short update for the partner's readers this week.", language: en, ai_generated: false}
+    expect: {status: 202, code: null, job_status: failed}
+    grade:
+      job_equals: {error.error.code: CONNECTION_AUTH_EXPIRED, error.error.details.connection_state: paused}
+      followup:
+        - {path: "/api/v1/connections/{{conn.partner}}", status: 200, contains: ["paused"]}
+        - {path: "/api/v1/publications/{{resp:publication_id}}", status: 200, contains: ["CONNECTION_AUTH_EXPIRED"]}

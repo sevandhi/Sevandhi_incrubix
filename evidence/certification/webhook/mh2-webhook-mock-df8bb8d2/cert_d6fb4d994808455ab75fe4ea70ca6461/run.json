@@ -1,0 +1,222 @@
+{
+  "run_id": "cert_d6fb4d994808455ab75fe4ea70ca6461",
+  "harness_version": "1.0.0",
+  "destination_id": "dest_6b863412a55949c09656d284fcea83c2",
+  "simulation": false,
+  "started_at": "2026-10-20T14:57:13.785843Z",
+  "finished_at": "2026-10-20T14:57:14.207398Z",
+  "duration_ms": 421,
+  "timeline": [
+    {
+      "state": "QUEUED",
+      "at": "2026-10-20T14:57:13.785843Z"
+    },
+    {
+      "state": "PREFLIGHT",
+      "at": "2026-10-20T14:57:13.809843Z"
+    },
+    {
+      "state": "VALIDATE",
+      "at": "2026-10-20T14:57:13.835613Z"
+    },
+    {
+      "state": "PUBLISH",
+      "at": "2026-10-20T14:57:13.869351Z"
+    },
+    {
+      "state": "CONFIRM_LIVE",
+      "at": "2026-10-20T14:57:13.981961Z"
+    },
+    {
+      "state": "STATUS",
+      "at": "2026-10-20T14:57:14.024945Z"
+    },
+    {
+      "state": "DELETE",
+      "at": "2026-10-20T14:57:14.064630Z"
+    },
+    {
+      "state": "CONFIRM_DELETED",
+      "at": "2026-10-20T14:57:14.096915Z"
+    },
+    {
+      "state": "PASSED",
+      "at": "2026-10-20T14:57:14.173811Z",
+      "note": "native: publish, live URL, status and delete certified"
+    }
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "step": "PREFLIGHT",
+      "outcome": "ok",
+      "started_at": "2026-10-20T14:57:13.820273Z",
+      "duration_ms": 6.6,
+      "detail": {
+        "connector_key": "webhook",
+        "connector_version": "1.0.0",
+        "tier": "protocol",
+        "capabilities": [
+          "publish",
+          "status",
+          "delete"
+        ],
+        "target": "own instance mock-platforms",
+        "kill_switch": "off",
+        "connection_id": null,
+        "rules_confirmed": true,
+        "auth_probe": "no refresh_auth capability: the PUBLISH step proves the credentials"
+      }
+    },
+    {
+      "n": 2,
+      "step": "VALIDATE",
+      "outcome": "ok",
+      "started_at": "2026-10-20T14:57:13.848983Z",
+      "duration_ms": 10.2,
+      "detail": {
+        "good_rendition": {
+          "title": "IncuBrix certification test ibxcertea70ca6461",
+          "ok": true
+        },
+        "over_long_rendition": {
+          "ok": false,
+          "violations": [
+            {
+              "field": "title",
+              "rule": "title_max_chars",
+              "message": "title is 325 characters; the limit is 300",
+              "limit": 300,
+              "actual": 325
+            }
+          ]
+        }
+      }
+    },
+    {
+      "n": 3,
+      "step": "PUBLISH",
+      "outcome": "ok",
+      "started_at": "2026-10-20T14:57:13.887358Z",
+      "duration_ms": 84.0,
+      "detail": {
+        "request": {
+          "rendition": {
+            "rendition_id": "cert-cert_d6fb4d994808455ab75fe4ea70ca6461",
+            "content_id": null,
+            "surface": "post",
+            "content_type": "text",
+            "title": "IncuBrix certification test ibxcertea70ca6461",
+            "body": "Automated certification test post ibxcertea70ca6461 from the IncuBrix destination network. It checks publish, live URL, status and delete on our own test instance, and is deleted within 10 minutes.",
+            "body_format": "markdown",
+            "canonical_url": null,
+            "link_url": null,
+            "media": [],
+            "tags": [],
+            "mentions": [],
+            "language": "en",
+            "is_promotional": false,
+            "ai_generated": false
+          },
+          "idempotency_key": "cert-cert_d6fb4d994808455ab75fe4ea70ca6461",
+          "marker": "ibx-lynmhf2d7cqj"
+        },
+        "response": {
+          "platform_post_id": "1~i96dc8f88d6",
+          "live_url": "http://mock-platforms:8080/partner/mh2-webhook-2178819d/p/1",
+          "status": "published"
+        },
+        "test_post_id": 5,
+        "expires_after_s": 300
+      }
+    },
+    {
+      "n": 4,
+      "step": "CONFIRM_LIVE",
+      "outcome": "ok",
+      "started_at": "2026-10-20T14:57:13.995915Z",
+      "duration_ms": 21.4,
+      "detail": {
+        "method": "http_get_live_url",
+        "live_url": "http://mock-platforms:8080/partner/mh2-webhook-2178819d/p/1",
+        "http_status": 200,
+        "marker_found": true,
+        "attempts": [
+          {
+            "at": "2026-10-20T14:57:14.017229Z",
+            "status": 200,
+            "bytes": 284
+          }
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "step": "STATUS",
+      "outcome": "ok",
+      "started_at": "2026-10-20T14:57:14.036103Z",
+      "duration_ms": 21.5,
+      "detail": {
+        "response": {
+          "status": "published",
+          "live_url": "http://mock-platforms:8080/partner/mh2-webhook-2178819d/p/1"
+        }
+      }
+    },
+    {
+      "n": 6,
+      "step": "DELETE",
+      "outcome": "ok",
+      "started_at": "2026-10-20T14:57:14.075671Z",
+      "duration_ms": 13.8,
+      "detail": {
+        "response": {
+          "deleted": true
+        },
+        "platform_delete_mode": null
+      }
+    },
+    {
+      "n": 7,
+      "step": "CONFIRM_DELETED",
+      "outcome": "ok",
+      "started_at": "2026-10-20T14:57:14.113081Z",
+      "duration_ms": 51.9,
+      "detail": {
+        "status_after": {
+          "status": "deleted",
+          "live_url": null
+        },
+        "delete_mode": "deleted",
+        "platform_delete_mode": null,
+        "method": "platform_api_get_status + http_get_live_url",
+        "live_url_after": {
+          "url": "http://mock-platforms:8080/partner/mh2-webhook-2178819d/p/1",
+          "http_status": 404,
+          "attempts": [
+            {
+              "at": "2026-10-20T14:57:14.156289Z",
+              "status": 404,
+              "bytes": 18
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "result": {
+    "run_id": "cert_d6fb4d994808455ab75fe4ea70ca6461",
+    "destination_id": "dest_6b863412a55949c09656d284fcea83c2",
+    "connector_key": "webhook",
+    "passed": true,
+    "state": "PASSED",
+    "level_before": "L0",
+    "level_after": "L3",
+    "level_reason": "native: publish, live URL, status and delete certified",
+    "delete_mode": "deleted",
+    "platform_delete_mode": "deleted",
+    "platform_post_id": "1~i96dc8f88d6",
+    "live_url": "http://mock-platforms:8080/partner/mh2-webhook-2178819d/p/1",
+    "notes": []
+  }
+}

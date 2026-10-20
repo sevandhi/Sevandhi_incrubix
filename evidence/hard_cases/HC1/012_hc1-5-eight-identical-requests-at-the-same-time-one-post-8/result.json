@@ -1,0 +1,15 @@
+{
+  "index": 12,
+  "name": "HC1.5 eight identical requests at the same time -> one post #8",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 200,
+  "code": null,
+  "expected_status": 200,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 9032.2,
+  "correlation_id": "200870397ed543d3b2abf35869ba6713",
+  "folder": "012_hc1-5-eight-identical-requests-at-the-same-time-one-post-8",
+  "job_status": null
+}

@@ -1,0 +1,19 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/devto/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "Third article during the back-off window",
+      "body": "This one must not reach the platform at all."
+    },
+    "destination": {
+      "connector_key": "devto",
+      "url": "http://mock-platforms:8080/forem/hc2-rl-4201344a"
+    },
+    "connection": {
+      "connector_key": "devto"
+    },
+    "idempotency_key": "hc2-rl3-4201344a"
+  }
+}

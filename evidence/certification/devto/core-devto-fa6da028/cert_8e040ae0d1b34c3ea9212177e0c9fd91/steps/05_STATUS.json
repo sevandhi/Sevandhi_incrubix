@@ -1,0 +1,13 @@
+{
+  "n": 5,
+  "step": "STATUS",
+  "outcome": "ok",
+  "started_at": "2026-10-17T16:52:04.169747Z",
+  "duration_ms": 20.4,
+  "detail": {
+    "response": {
+      "status": "published",
+      "live_url": "http://mock-platforms:8080/forem/core-devto-fa6da028-example-org/ibx_admin/incubrix-certification-test-ibxcert77e0c9fd91-0001"
+    }
+  }
+}

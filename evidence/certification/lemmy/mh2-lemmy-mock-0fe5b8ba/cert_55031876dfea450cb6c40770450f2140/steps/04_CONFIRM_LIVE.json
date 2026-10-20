@@ -1,0 +1,19 @@
+{
+  "n": 4,
+  "step": "CONFIRM_LIVE",
+  "outcome": "ok",
+  "started_at": "2026-10-18T03:40:08.316688Z",
+  "duration_ms": 20.7,
+  "detail": {
+    "method": "http_get_live_url",
+    "live_url": "http://mock-platforms:8080/lemmy/mh2-lemmy-2ce2e1c1/post/1",
+    "http_status": 200,
+    "marker_found": true,
+    "attempts": [
+      {
+        "at": "2026-10-18T03:40:08.337334Z",
+        "status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,144 @@
+# Sample batch cases (IS10). Run against a compose stack (simulation or local mode; APP_ENV dev/test/demo):
+#   uv run python -m app.batch run test_pack/inputs/sample --out results/sample --api http://127.0.0.1:8088 --token "$API_TOKEN"
+# Each case gets its own mock-platforms forum (tenant) per run, so the cases never affect each other.
+# Destinations carry only Appendix A fields; rules come from the record fields (frequency_cap, self_promo_allowed ...).
+cases:
+  - name: health
+    method: GET
+    path: /health
+    expect: {status: 200}
+
+  - name: background job runs to the end (selfcheck)
+    method: POST
+    path: /api/v1/jobs
+    headers: {Idempotency-Key: "job-{{run_id}}"}
+    body: {kind: selfcheck}
+    expect: {status: 202, job_status: succeeded}
+
+  - name: publish with a bare Appendix A destination
+    method: POST
+    path: /connector/v1/discourse/publish
+    body:
+      rendition: {title: "How do you test long-tail community posts?", body: "We compared three ways to test forum posts. What worked for you?", ai_generated: false}
+      destination: {connector_key: discourse, surface: topic, url: "http://mock-platforms:8080/discourse/bare-{{run_id}}"}
+      connection: {connector_key: discourse}
+      idempotency_key: "bare-{{run_id}}"
+    expect: {status: 200}
+
+  - name: duplicate publish with one key returns the same post (sequential)
+    method: POST
+    path: /connector/v1/discourse/publish
+    repeat: 2
+    body:
+      rendition: {title: "One key, one post: idempotent publishing", body: "Sending this twice must create exactly one topic on the forum."}
+      destination: {connector_key: discourse, surface: topic, url: "http://mock-platforms:8080/discourse/dup-{{run_id}}"}
+      connection: {connector_key: discourse}
+      idempotency_key: "dup-{{run_id}}"
+    expect: {status: 200}
+
+  - name: duplicate publish with one key sent concurrently
+    method: POST
+    path: /connector/v1/discourse/publish
+    parallel: 5
+    body:
+      rendition: {title: "Five parallel requests, one forum topic", body: "Five copies of this request arrive at the same time."}
+      destination: {connector_key: discourse, surface: topic, url: "http://mock-platforms:8080/discourse/par-{{run_id}}"}
+      connection: {connector_key: discourse}
+      idempotency_key: "par-{{run_id}}"
+    expect: {status: 200}
+
+  - name: frequency cap first post is allowed
+    method: POST
+    path: /connector/v1/discourse/publish
+    body:
+      rendition: {title: "First post of the week on this forum", body: "This forum allows one post per week from us."}
+      destination: {connector_key: discourse, surface: topic, url: "http://mock-platforms:8080/discourse/cap-{{run_id}}", frequency_cap: "1/P7D"}
+      connection: {connector_key: discourse}
+      idempotency_key: "cap1-{{run_id}}"
+    expect: {status: 200}
+
+  - name: frequency cap second post inside the week is refused with retry_at
+    method: POST
+    path: /connector/v1/discourse/publish
+    body:
+      rendition: {title: "Second post in the same week on this forum", body: "This one must wait until the week is over."}
+      destination: {connector_key: discourse, surface: topic, url: "http://mock-platforms:8080/discourse/cap-{{run_id}}", frequency_cap: "1/P7D"}
+      connection: {connector_key: discourse}
+      idempotency_key: "cap2-{{run_id}}"
+    expect: {status: 409, code: DEST_RULE_FREQUENCY_CAP}
+
+  - name: self-promo post to a no-promotion community is refused
+    method: POST
+    path: /connector/v1/discourse/publish
+    body:
+      rendition: {title: "Our new course is live this week", body: "Buy my course today with code SAVE50 at https://mycourse.example.com/?utm_source=forum", is_promotional: true}
+      destination: {connector_key: discourse, surface: topic, url: "http://mock-platforms:8080/discourse/promo-{{run_id}}", self_promo_allowed: false}
+      connection: {connector_key: discourse}
+      idempotency_key: "promo-{{run_id}}"
+    expect: {status: 409, code: DEST_RULE_SELF_PROMO}
+
+  - name: AI disclosure is added on a disclosure community
+    method: POST
+    path: /connector/v1/discourse/publish
+    body:
+      rendition: {title: "A summary of this week's release notes", body: "Here is a short summary of what changed in the release.", ai_generated: true}
+      destination: {connector_key: discourse, surface: topic, url: "http://mock-platforms:8080/discourse/disc-{{run_id}}", disclosure_required: true}
+      connection: {connector_key: discourse}
+      idempotency_key: "disc-{{run_id}}"
+    expect: {status: 200}
+
+  - name: spec violation title too long gives field-level reasons
+    method: POST
+    path: /connector/v1/discourse/validate
+    body:
+      rendition: {title: "{{run_id}} a title that is far too long for any forum title field ......................................................................................................................................................................................................................", body: "A body that is long enough for the forum."}
+      destination: {connector_key: discourse, surface: topic, url: "http://mock-platforms:8080/discourse/spec-{{run_id}}"}
+    expect: {status: 200}
+
+  - name: spec violation on publish never reaches the platform
+    method: POST
+    path: /connector/v1/discourse/publish
+    body:
+      rendition: {title: "short", body: "too short"}
+      destination: {connector_key: discourse, surface: topic, url: "http://mock-platforms:8080/discourse/spec-{{run_id}}"}
+      connection: {connector_key: discourse}
+      idempotency_key: "spec-{{run_id}}"
+    expect: {status: 422, code: DEST_SPEC_VIOLATION}
+
+  - name: timeout after the platform created the post (outcome unknown)
+    method: POST
+    path: /connector/v1/discourse/publish
+    headers: {X-Sim-Fault: "timeout_after_create:15"}
+    body:
+      rendition: {title: "A post whose answer never arrives in time", body: "The platform saves it, then the answer times out."}
+      destination: {connector_key: discourse, surface: topic, url: "http://mock-platforms:8080/discourse/to-{{run_id}}"}
+      connection: {connector_key: discourse}
+      idempotency_key: "to-{{run_id}}"
+    expect: {status: 503, code: PLATFORM_UNAVAILABLE}
+
+  - name: timeout retry with the same key finds the post (no duplicate)
+    method: POST
+    path: /connector/v1/discourse/publish
+    body:
+      rendition: {title: "A post whose answer never arrives in time", body: "The platform saves it, then the answer times out."}
+      destination: {connector_key: discourse, surface: topic, url: "http://mock-platforms:8080/discourse/to-{{run_id}}"}
+      connection: {connector_key: discourse}
+      idempotency_key: "to-{{run_id}}"
+    expect: {status: 200}
+
+  - name: platform rate limit honours Retry-After
+    method: POST
+    path: /connector/v1/discourse/publish
+    headers: {X-Sim-Fault: "429:30"}
+    body:
+      rendition: {title: "A post that meets a platform rate limit", body: "The platform answers 429 with Retry-After: 30."}
+      destination: {connector_key: discourse, surface: topic, url: "http://mock-platforms:8080/discourse/rl-{{run_id}}"}
+      connection: {connector_key: discourse}
+      idempotency_key: "rl-{{run_id}}"
+    expect: {status: 429, code: PLATFORM_RATE_LIMIT}
+
+  - name: unknown connector is a clear 404
+    method: POST
+    path: /connector/v1/no-such-connector/publish
+    body: {}
+    expect: {status: 404, code: CONNECTOR_NOT_FOUND}

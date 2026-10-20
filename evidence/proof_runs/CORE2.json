@@ -1,0 +1,122 @@
+{
+ "id": "CORE2",
+ "title": "Each Core connector passes the full certification run with stored evidence",
+ "status": "Partial",
+ "reasons": [
+  "no screenshot in the certification pack for: discourse@mock, lemmy@mock, lemmy@real-local, devto@mock, ghost@mock, ghost@real-local, webhook@mock, assisted@mock"
+ ],
+ "run_id": "20261020T145607Z",
+ "started_at": "2026-10-20T15:19:57Z",
+ "finished_at": "2026-10-20T15:19:57Z",
+ "duration_s": 0.0,
+ "api": "http://127.0.0.1:38875",
+ "mode": null,
+ "command": "scripts/prove_core2.sh",
+ "evidence": [
+  "evidence/levels/core/CORE2_certification_runs.csv",
+  "evidence/levels/core/CORE2_certification_runs.log"
+ ],
+ "checks_total": 14,
+ "checks_passed": 14,
+ "checks": [
+  {
+   "label": "discourse: certified in this run",
+   "ok": true,
+   "critical": true,
+   "detail": "[[\"mock\", \"PASSED\", \"L4\"]]",
+   "group": null
+  },
+  {
+   "label": "discourse@mock: pack on disk has run record, every step, deletion confirmation",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"pack\": \"evidence/certification/discourse/mh2-discourse-mock-01c8551c/cert_7d2f06d31ae64fde8ff2b6653924c547\", \"files\": 13}",
+   "group": null
+  },
+  {
+   "label": "lemmy: certified in this run",
+   "ok": true,
+   "critical": true,
+   "detail": "[[\"mock\", \"PASSED\", \"L4\"], [\"real-local\", \"PASSED\", \"L4\"]]",
+   "group": null
+  },
+  {
+   "label": "lemmy@mock: pack on disk has run record, every step, deletion confirmation",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"pack\": \"evidence/certification/lemmy/mh2-lemmy-mock-87792488/cert_0f2f72d5bf6d441ab65f18663d02c51c\", \"files\": 13}",
+   "group": null
+  },
+  {
+   "label": "lemmy@real-local: pack on disk has run record, every step, deletion confirmation",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"pack\": \"evidence/certification/lemmy/local-lemmy-real-instance/cert_18da184cccd443ef8dcf3abad1f5b90c\", \"files\": 13}",
+   "group": null
+  },
+  {
+   "label": "devto: certified in this run",
+   "ok": true,
+   "critical": true,
+   "detail": "[[\"mock\", \"PASSED\", \"L2\"]]",
+   "group": null
+  },
+  {
+   "label": "devto@mock: pack on disk has run record, every step, deletion confirmation",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"pack\": \"evidence/certification/devto/mh2-devto-mock-b9aa3906/cert_5e03bed8651a4166a0ad889d79b3d2f0\", \"files\": 13}",
+   "group": null
+  },
+  {
+   "label": "ghost: certified in this run",
+   "ok": true,
+   "critical": true,
+   "detail": "[[\"mock\", \"PASSED\", \"L3\"], [\"real-local\", \"PASSED\", \"L3\"]]",
+   "group": null
+  },
+  {
+   "label": "ghost@mock: pack on disk has run record, every step, deletion confirmation",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"pack\": \"evidence/certification/ghost/mh2-ghost-mock-3dfd52cf/cert_75bf9e7fc2ab40de8b95d6ca264ba63c\", \"files\": 12}",
+   "group": null
+  },
+  {
+   "label": "ghost@real-local: pack on disk has run record, every step, deletion confirmation",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"pack\": \"evidence/certification/ghost/local-ghost-real-instance/cert_8512190848a54ff5af360302dafe86d5\", \"files\": 12}",
+   "group": null
+  },
+  {
+   "label": "webhook: certified in this run",
+   "ok": true,
+   "critical": true,
+   "detail": "[[\"mock\", \"PASSED\", \"L3\"]]",
+   "group": null
+  },
+  {
+   "label": "webhook@mock: pack on disk has run record, every step, deletion confirmation",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"pack\": \"evidence/certification/webhook/mh2-webhook-mock-df8bb8d2/cert_d6fb4d994808455ab75fe4ea70ca6461\", \"files\": 12}",
+   "group": null
+  },
+  {
+   "label": "assisted: certified in this run",
+   "ok": true,
+   "critical": true,
+   "detail": "[[\"mock\", \"PASSED\", \"L1\"]]",
+   "group": null
+  },
+  {
+   "label": "assisted@mock: pack on disk has run record, every step, deletion confirmation",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"pack\": \"evidence/certification/assisted/mh2-assisted-mock-367a33c6/cert_296de37b12844efbbe15628bae9d6e1f\", \"files\": 11}",
+   "group": null
+  }
+ ],
+ "sub": {}
+}

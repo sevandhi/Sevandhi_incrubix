@@ -1,0 +1,39 @@
+{
+  "publication_id": "pub_fd6e03b8f50641d4832933157bef80da",
+  "destination_id": "dest_9dd206c0e6d84dde9a7cc8b8f0cec30f",
+  "content_id": "content_28f83ff9308c423fa92218f3b4d542db",
+  "state": "published",
+  "reason": null,
+  "reasons": [],
+  "code": null,
+  "outcome": null,
+  "retry_at": null,
+  "scheduled_for": "2026-10-18T16:06:30.589254Z",
+  "platform_post_id": "2",
+  "live_url": "http://mock-platforms:8080/discourse/hc4-cap2-de056cfa/t/a-concurrent-question-for-the-forum/2",
+  "attempts": 1,
+  "rule_decision": {
+    "code": null,
+    "fixes": [],
+    "action": "allow",
+    "reasons": [],
+    "evidence": [],
+    "retry_at": null,
+    "warnings": [],
+    "failed_checks": []
+  },
+  "tailoring": {
+    "diff": [],
+    "profile": "forum",
+    "warnings": []
+  },
+  "assist_pack": null,
+  "removal": null,
+  "job_ids": [
+    "job_8ccbbf6cdf9d4f89836cb4155ba75fd1"
+  ],
+  "error": null,
+  "published_at": "2026-10-18T16:06:30.694244Z",
+  "created_at": "2026-10-18T16:06:30.529045Z",
+  "updated_at": "2026-10-18T16:06:30.697537Z"
+}

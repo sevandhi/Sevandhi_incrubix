@@ -1,0 +1,252 @@
+{
+  "run_id": "cert_38d6caf7e8774ff182fed254f8abf0d2",
+  "harness_version": "1.0.0",
+  "destination_id": "dest_a5b70d8d3e584b1b8087ffe37e169bab",
+  "simulation": true,
+  "started_at": "2026-10-18T09:12:34.954924Z",
+  "finished_at": "2026-10-18T09:12:35.528694Z",
+  "duration_ms": 573,
+  "timeline": [
+    {
+      "state": "QUEUED",
+      "at": "2026-10-18T09:12:34.954924Z"
+    },
+    {
+      "state": "PREFLIGHT",
+      "at": "2026-10-18T09:12:35.007916Z"
+    },
+    {
+      "state": "VALIDATE",
+      "at": "2026-10-18T09:12:35.047585Z"
+    },
+    {
+      "state": "PUBLISH",
+      "at": "2026-10-18T09:12:35.076506Z"
+    },
+    {
+      "state": "CONFIRM_LIVE",
+      "at": "2026-10-18T09:12:35.243064Z"
+    },
+    {
+      "state": "STATUS",
+      "at": "2026-10-18T09:12:35.294318Z"
+    },
+    {
+      "state": "METRICS",
+      "at": "2026-10-18T09:12:35.347133Z"
+    },
+    {
+      "state": "DELETE",
+      "at": "2026-10-18T09:12:35.397011Z"
+    },
+    {
+      "state": "CONFIRM_DELETED",
+      "at": "2026-10-18T09:12:35.436485Z"
+    },
+    {
+      "state": "PASSED",
+      "at": "2026-10-18T09:12:35.506837Z",
+      "note": "native: publish, live URL, status, metrics and delete certified"
+    }
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "step": "PREFLIGHT",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:12:35.026560Z",
+      "duration_ms": 14.2,
+      "detail": {
+        "connector_key": "slack",
+        "connector_version": "1.0.0",
+        "tier": "native",
+        "capabilities": [
+          "publish",
+          "status",
+          "delete",
+          "metrics"
+        ],
+        "target": "simulation: every call goes to mock-platforms",
+        "kill_switch": "off",
+        "connection_id": null,
+        "rules_confirmed": false,
+        "auth_probe": "no refresh_auth capability: the PUBLISH step proves the credentials"
+      }
+    },
+    {
+      "n": 2,
+      "step": "VALIDATE",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:12:35.059795Z",
+      "duration_ms": 8.2,
+      "detail": {
+        "good_rendition": {
+          "title": "IncuBrix certification test ibxcert54f8abf0d2",
+          "ok": true
+        },
+        "over_long_rendition": {
+          "ok": false,
+          "violations": [
+            {
+              "field": "title",
+              "rule": "title_max_chars",
+              "message": "title is 175 characters; the limit is 150",
+              "limit": 150,
+              "actual": 175
+            }
+          ]
+        }
+      }
+    },
+    {
+      "n": 3,
+      "step": "PUBLISH",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:12:35.088147Z",
+      "duration_ms": 145.5,
+      "detail": {
+        "request": {
+          "rendition": {
+            "rendition_id": "cert-cert_38d6caf7e8774ff182fed254f8abf0d2",
+            "content_id": null,
+            "surface": "message",
+            "content_type": "text",
+            "title": "IncuBrix certification test ibxcert54f8abf0d2",
+            "body": "Automated certification test post ibxcert54f8abf0d2 from the IncuBrix destination network. It checks publish, live URL, status and delete on our own test instance, and is deleted within 10 minutes.",
+            "body_format": "markdown",
+            "canonical_url": null,
+            "link_url": null,
+            "media": [],
+            "tags": [],
+            "mentions": [],
+            "language": "en",
+            "is_promotional": false,
+            "ai_generated": false
+          },
+          "idempotency_key": "cert-cert_38d6caf7e8774ff182fed254f8abf0d2",
+          "marker": "ibx-w3rjon34d3gr"
+        },
+        "response": {
+          "platform_post_id": "C0E2E635BED4B:1792314755.000001",
+          "live_url": "http://mock-platforms:8080/slack/c0e2e635bed4b/archives/C0E2E635BED4B/p1792314755000001",
+          "status": "published"
+        },
+        "test_post_id": 4,
+        "expires_after_s": 300
+      }
+    },
+    {
+      "n": 4,
+      "step": "CONFIRM_LIVE",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:12:35.260021Z",
+      "duration_ms": 24.4,
+      "detail": {
+        "method": "http_get_live_url",
+        "live_url": "http://mock-platforms:8080/slack/c0e2e635bed4b/archives/C0E2E635BED4B/p1792314755000001",
+        "http_status": 200,
+        "marker_found": true,
+        "attempts": [
+          {
+            "at": "2026-10-18T09:12:35.284247Z",
+            "status": 200,
+            "bytes": 318
+          }
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "step": "STATUS",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:12:35.311653Z",
+      "duration_ms": 27.7,
+      "detail": {
+        "response": {
+          "status": "published",
+          "live_url": "http://mock-platforms:8080/slack/c0e2e635bed4b/archives/C0E2E635BED4B/p1792314755000001"
+        }
+      }
+    },
+    {
+      "n": 6,
+      "step": "METRICS",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:12:35.361720Z",
+      "duration_ms": 26.2,
+      "detail": {
+        "response": {
+          "views": null,
+          "likes": 0,
+          "comments": 0,
+          "shares": null,
+          "saves": null,
+          "watch_time_s": null,
+          "clicks": null
+        },
+        "exposed": [
+          "comments",
+          "likes"
+        ],
+        "null_means": "the platform does not expose this metric (never a fake 0)"
+      }
+    },
+    {
+      "n": 7,
+      "step": "DELETE",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:12:35.409861Z",
+      "duration_ms": 18.6,
+      "detail": {
+        "response": {
+          "deleted": true
+        },
+        "platform_delete_mode": "deleted"
+      }
+    },
+    {
+      "n": 8,
+      "step": "CONFIRM_DELETED",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:12:35.451476Z",
+      "duration_ms": 48.2,
+      "detail": {
+        "status_after": {
+          "status": "deleted",
+          "live_url": null
+        },
+        "delete_mode": "deleted",
+        "platform_delete_mode": "deleted",
+        "method": "platform_api_get_status + http_get_live_url",
+        "live_url_after": {
+          "url": "http://mock-platforms:8080/slack/c0e2e635bed4b/archives/C0E2E635BED4B/p1792314755000001",
+          "http_status": 404,
+          "attempts": [
+            {
+              "at": "2026-10-18T09:12:35.488293Z",
+              "status": 404,
+              "bytes": 51
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "result": {
+    "run_id": "cert_38d6caf7e8774ff182fed254f8abf0d2",
+    "destination_id": "dest_a5b70d8d3e584b1b8087ffe37e169bab",
+    "connector_key": "slack",
+    "passed": true,
+    "state": "PASSED",
+    "level_before": "L0",
+    "level_after": "L4",
+    "level_reason": "native: publish, live URL, status, metrics and delete certified",
+    "delete_mode": "deleted",
+    "platform_delete_mode": "deleted",
+    "platform_post_id": "C0E2E635BED4B:1792314755.000001",
+    "live_url": "http://mock-platforms:8080/slack/c0e2e635bed4b/archives/C0E2E635BED4B/p1792314755000001",
+    "notes": [
+      "rules not confirmed: only this certification post is allowed (own instance)"
+    ]
+  }
+}

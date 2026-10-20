@@ -1,0 +1,13 @@
+{
+  "n": 5,
+  "step": "STATUS",
+  "outcome": "ok",
+  "started_at": "2026-10-18T09:12:35.311653Z",
+  "duration_ms": 27.7,
+  "detail": {
+    "response": {
+      "status": "published",
+      "live_url": "http://mock-platforms:8080/slack/c0e2e635bed4b/archives/C0E2E635BED4B/p1792314755000001"
+    }
+  }
+}

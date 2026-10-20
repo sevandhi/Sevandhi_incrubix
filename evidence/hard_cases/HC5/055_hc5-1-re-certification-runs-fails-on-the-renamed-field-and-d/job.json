@@ -1,0 +1,49 @@
+{
+  "job_id": "job_47b940cf82de46398dd306fbf2564f3a",
+  "kind": "certification.run",
+  "status": "succeeded",
+  "progress": 100,
+  "result": {
+    "links": {
+      "run": "https://ibx-destination-network-demo.onrender.com/api/v1/files/certifications/dest_66c5a26b33ed4d118be55fa21b1f6e40/cert_9621584af12a4ca9a6398ec35e284821/run.json?exp=1792514797&sig=***",
+      "summary": "https://ibx-destination-network-demo.onrender.com/api/v1/files/certifications/dest_66c5a26b33ed4d118be55fa21b1f6e40/cert_9621584af12a4ca9a6398ec35e284821/summary.md?exp=1792514797&sig=***",
+      "manifest": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_47b940cf82de46398dd306fbf2564f3a/manifest.json?exp=1792514797&sig=***",
+      "steps_03_PUBLISH": "https://ibx-destination-network-demo.onrender.com/api/v1/files/certifications/dest_66c5a26b33ed4d118be55fa21b1f6e40/cert_9621584af12a4ca9a6398ec35e284821/steps/03_PUBLISH.json?exp=1792514797&sig=***",
+      "steps_08_CLEANUP": "https://ibx-destination-network-demo.onrender.com/api/v1/files/certifications/dest_66c5a26b33ed4d118be55fa21b1f6e40/cert_9621584af12a4ca9a6398ec35e284821/steps/08_CLEANUP.json?exp=1792514797&sig=***",
+      "manifest.snapshot": "https://ibx-destination-network-demo.onrender.com/api/v1/files/certifications/dest_66c5a26b33ed4d118be55fa21b1f6e40/cert_9621584af12a4ca9a6398ec35e284821/manifest.snapshot.yaml?exp=1792514797&sig=***",
+      "steps_02_VALIDATE": "https://ibx-destination-network-demo.onrender.com/api/v1/files/certifications/dest_66c5a26b33ed4d118be55fa21b1f6e40/cert_9621584af12a4ca9a6398ec35e284821/steps/02_VALIDATE.json?exp=1792514797&sig=***",
+      "steps_01_PREFLIGHT": "https://ibx-destination-network-demo.onrender.com/api/v1/files/certifications/dest_66c5a26b33ed4d118be55fa21b1f6e40/cert_9621584af12a4ca9a6398ec35e284821/steps/01_PREFLIGHT.json?exp=1792514797&sig=***",
+      "deletion_confirmation": "https://ibx-destination-network-demo.onrender.com/api/v1/files/certifications/dest_66c5a26b33ed4d118be55fa21b1f6e40/cert_9621584af12a4ca9a6398ec35e284821/deletion_confirmation.json?exp=1792514797&sig=***"
+    },
+    "notes": [],
+    "state": "DEMOTED",
+    "passed": false,
+    "run_id": "cert_9621584af12a4ca9a6398ec35e284821",
+    "cleanup": {
+      "ok": true,
+      "action": "deleted",
+      "marker": "ibx-kajmoapve2dv",
+      "found_by": "marker",
+      "platform_post_id": "6acf00000000000000000002"
+    },
+    "excluded": true,
+    "failed_step": "PUBLISH",
+    "level_after": "L0",
+    "failure_code": "PLATFORM_UNAVAILABLE",
+    "level_before": "L3",
+    "connector_key": "ghost",
+    "destination_id": "dest_66c5a26b33ed4d118be55fa21b1f6e40",
+    "failure_fields": [
+      "posts.0.url"
+    ],
+    "failure_reason": "response_schema_mismatch",
+    "evidence_prefix": "certifications/dest_66c5a26b33ed4d118be55fa21b1f6e40/cert_9621584af12a4ca9a6398ec35e284821/",
+    "failure_message": "response_schema_mismatch: the platform's answer no longer has the expected field(s) posts.0.url; the platform may have renamed a field in its API",
+    "platform_post_id": "6acf00000000000000000002"
+  },
+  "error": null,
+  "attempts": 1,
+  "created_at": "2026-10-20T15:46:14.743252+00:00",
+  "updated_at": "2026-10-20T15:46:36.734031+00:00",
+  "finished_at": "2026-10-20T15:46:36.253018+00:00"
+}

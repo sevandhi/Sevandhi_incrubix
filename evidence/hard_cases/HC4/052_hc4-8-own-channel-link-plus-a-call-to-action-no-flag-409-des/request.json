@@ -1,0 +1,21 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "New video on testing community posts",
+      "body": "Watch the full walkthrough on my channel https://www.youtube.com/@creator and subscribe for more!"
+    },
+    "destination": {
+      "connector_key": "discourse",
+      "surface": "topic",
+      "url": "http://mock-platforms:8080/discourse/hc4-cta-4201344a",
+      "self_promo_allowed": false
+    },
+    "connection": {
+      "connector_key": "discourse"
+    },
+    "idempotency_key": "hc4-cta-4201344a"
+  }
+}

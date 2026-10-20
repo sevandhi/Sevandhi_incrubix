@@ -1,0 +1,47 @@
+{
+  "n": 4,
+  "step": "CONFIRM_PACK",
+  "outcome": "ok",
+  "started_at": "2026-10-18T19:22:58.745717Z",
+  "duration_ms": 27.0,
+  "detail": {
+    "files": [
+      {
+        "name": "title.txt",
+        "key": "assist/ibx-h4koiaswcqrc/title.txt",
+        "bytes": 45,
+        "link": "signed link verified"
+      },
+      {
+        "name": "caption.txt",
+        "key": "assist/ibx-h4koiaswcqrc/caption.txt",
+        "bytes": 230,
+        "link": "signed link verified"
+      },
+      {
+        "name": "checklist.md",
+        "key": "assist/ibx-h4koiaswcqrc/checklist.md",
+        "bytes": 1180,
+        "link": "signed link verified"
+      }
+    ],
+    "caption_chars": 230,
+    "deep_link": {
+      "url": "http://mock-platforms:8080/assist/mh2-assisted-518eeb0c/submit?title=IncuBrix+certification+test+ibxcertaadd9cad4b&text=Automated+certification+test+post+ibxcertaadd9cad4b+from+the+IncuBrix+destination+network.+It+checks+publish%2C+live+URL%2C+status+and+removal+on+our+own+test+instance%2C+and+is+unpublished+%28taken+off+the+public+site%29+within+10+minutes.",
+      "http_status": 200
+    },
+    "checklist": [
+      "Open the submit page: http://mock-platforms:8080/assist/mh2-assisted-518eeb0c/submit?title=IncuBrix+certification+test+ibxcertaadd9cad4b&text=Automated+certification+test+post+ibxcertaadd9cad4b+from+the+IncuBrix+destination+network.+It+checks+publish%2C+live+URL%2C+status+and+removal+on+our+own+test+instance%2C+and+is+unpublished+%28taken+off+the+public+site%29+within+10+minutes. (the post is prefilled)",
+      "Use the title from title.txt (45 characters).",
+      "Paste the text from caption.txt.",
+      "Rule: post at most 3 times every 1 week in this community.",
+      "Rule: no self-promotion. Do not add links to your own products, channels or shops, and no calls to action.",
+      "Rule: links are allowed.",
+      "Rule: AI-assisted content must be disclosed; keep the disclosure at the bottom of the post.",
+      "Rule: the community's language is en; other languages are accepted.",
+      "Rule: automated posting is not allowed here; a person must post this by hand.",
+      "After posting, copy the post's public URL and report it to IncuBrix (POST /api/v1/assist-tasks/{task_id}/complete with the live_url).",
+      "The download links expire after 60 minutes."
+    ]
+  }
+}

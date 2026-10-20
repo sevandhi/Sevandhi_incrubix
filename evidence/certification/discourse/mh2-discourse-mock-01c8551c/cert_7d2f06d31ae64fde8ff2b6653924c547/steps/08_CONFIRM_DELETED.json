@@ -1,0 +1,27 @@
+{
+  "n": 8,
+  "step": "CONFIRM_DELETED",
+  "outcome": "ok",
+  "started_at": "2026-10-20T14:57:08.834547Z",
+  "duration_ms": 35.1,
+  "detail": {
+    "status_after": {
+      "status": "deleted",
+      "live_url": null
+    },
+    "delete_mode": "soft_deleted",
+    "platform_delete_mode": "soft",
+    "method": "platform_api_get_status + http_get_live_url",
+    "live_url_after": {
+      "url": "http://mock-platforms:8080/discourse/mh2-discourse-83de7ece/t/incubrix-certification-test-ibxcert653924c547/1",
+      "http_status": 404,
+      "attempts": [
+        {
+          "at": "2026-10-20T14:57:08.862481Z",
+          "status": 404,
+          "bytes": 23
+        }
+      ]
+    }
+  }
+}

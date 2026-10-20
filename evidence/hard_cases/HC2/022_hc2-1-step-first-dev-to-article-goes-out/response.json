@@ -1,0 +1,24 @@
+{
+  "status": 200,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:36:31 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "cf-cache-status": "DYNAMIC",
+    "idempotency-key": "hc2-rl1-4201344a",
+    "rndr-id": "d058efc1-5541-4535",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "d8c08cd67fc74f9483593f45accf1231",
+    "x-render-origin-server": "uvicorn",
+    "content-encoding": "gzip",
+    "cf-ray": "a4d919229de9aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "platform_post_id": "1~i2aaf777545",
+    "live_url": "http://mock-platforms:8080/forem/hc2-rl-4201344a/ibx_admin/first-article-inside-the-platform-window-0001",
+    "status": "published"
+  }
+}

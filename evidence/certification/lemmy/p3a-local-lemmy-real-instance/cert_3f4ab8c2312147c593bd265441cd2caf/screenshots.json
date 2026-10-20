@@ -1,0 +1,26 @@
+{
+  "run_id": "cert_3f4ab8c2312147c593bd265441cd2caf",
+  "simulation": false,
+  "live": {
+    "taken": true,
+    "file": "live.png",
+    "kind": "page",
+    "url": "http://lemmy-ui:1234/post/8",
+    "label": "browser screenshot of http://lemmy-ui:1234/post/8 (HTTP 200)",
+    "http_status": 200,
+    "content_type": "text/html",
+    "note": null,
+    "at": "2026-10-18T09:29:35.322837Z"
+  },
+  "after_delete": {
+    "taken": true,
+    "file": "after_delete.png",
+    "kind": "page",
+    "url": "http://lemmy-ui:1234/post/8",
+    "label": "browser screenshot of http://lemmy-ui:1234/post/8 (HTTP 500)",
+    "http_status": 500,
+    "content_type": "text/html",
+    "note": null,
+    "at": "2026-10-18T09:29:36.765088Z"
+  }
+}

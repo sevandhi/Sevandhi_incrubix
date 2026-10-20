@@ -1,0 +1,54 @@
+key: slack
+version: 1.0.0
+tier: native
+auth: bot_token
+surfaces:
+- key: message
+  content_types:
+  - text
+  - link
+  spec:
+    body_max_chars: 40000
+    title_max_chars: 150
+    count_unit: codepoints
+    links_allowed: true
+rate_limits:
+  per_connection:
+    requests: 50
+    per_seconds: 60.0
+capabilities:
+- publish
+- status
+- delete
+- metrics
+error_map:
+  200:token_revoked: CONNECTION_AUTH_EXPIRED
+  200:token_expired: CONNECTION_AUTH_EXPIRED
+  200:invalid_auth: CONNECTION_AUTH_EXPIRED
+  200:not_authed: CONNECTION_AUTH_EXPIRED
+  200:account_inactive: CONNECTION_AUTH_EXPIRED
+  200:missing_scope: CONNECTION_AUTH_EXPIRED
+  200:not_allowed_token_type: CONNECTION_AUTH_EXPIRED
+  200:team_access_not_granted: CONNECTION_AUTH_EXPIRED
+  '429': PLATFORM_RATE_LIMIT
+  200:ratelimited: PLATFORM_RATE_LIMIT
+  200:rate_limited: PLATFORM_RATE_LIMIT
+  200:message_limit_exceeded: PLATFORM_RATE_LIMIT
+  200:msg_too_long: PLATFORM_CONTENT_REJECTED
+  200:msg_blocks_too_long: PLATFORM_CONTENT_REJECTED
+  200:no_text: PLATFORM_CONTENT_REJECTED
+  200:invalid_blocks: PLATFORM_CONTENT_REJECTED
+  200:invalid_metadata_format: PLATFORM_CONTENT_REJECTED
+  200:metadata_too_large: PLATFORM_CONTENT_REJECTED
+  200:channel_not_found: PLATFORM_CONTENT_REJECTED
+  200:not_in_channel: PLATFORM_CONTENT_REJECTED
+  200:is_archived: PLATFORM_CONTENT_REJECTED
+  200:restricted_action: PLATFORM_CONTENT_REJECTED
+  200:restricted_action_read_only_channel: PLATFORM_CONTENT_REJECTED
+  200:ekm_access_denied: PLATFORM_CONTENT_REJECTED
+  200:no_permission: PLATFORM_CONTENT_REJECTED
+  200:internal_error: PLATFORM_UNAVAILABLE
+  200:fatal_error: PLATFORM_UNAVAILABLE
+  200:service_unavailable: PLATFORM_UNAVAILABLE
+  200:request_timeout: PLATFORM_UNAVAILABLE
+instance_param: channel_id

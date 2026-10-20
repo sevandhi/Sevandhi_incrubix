@@ -1,0 +1,36 @@
+{
+  "status": 422,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:37:15 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "51b0bb63-2317-4a1c",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "09945d273cd941e1b0f6e221e0652492",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d91a4b9d92aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "DEST_SPEC_VIOLATION",
+      "message": "Content breaks 1 destination limit(s): title is 132 characters; the limit is 128",
+      "retryable": false,
+      "details": {
+        "retry_policy": "never",
+        "violations": [
+          {
+            "field": "title",
+            "rule": "title_max_chars",
+            "message": "title is 132 characters; the limit is 128",
+            "limit": 128,
+            "actual": 132
+          }
+        ]
+      }
+    }
+  }
+}

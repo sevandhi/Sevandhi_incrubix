@@ -1,0 +1,22 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/ghost/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long",
+      "body": "Ghost limits titles to 255 characters."
+    },
+    "destination": {
+      "connector_key": "ghost",
+      "url": "http://mock-platforms:8080/ghost/hc2-glong-4201344a",
+      "spec_overrides": {
+        "title_max_chars": 400
+      }
+    },
+    "connection": {
+      "connector_key": "ghost"
+    },
+    "idempotency_key": "hc2-glong-4201344a"
+  }
+}

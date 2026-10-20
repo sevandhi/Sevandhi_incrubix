@@ -1,0 +1,14 @@
+{
+  "method": "POST",
+  "path": "/api/v1/publications",
+  "headers": {},
+  "body": {
+    "destination_id": "dest_21be725d0f0744e08cf6899113ba5987",
+    "content": {
+      "title": "A second question in the same week?",
+      "body": "We compared three ways to test forum posts end to end. Which one has worked for you?",
+      "language": "en",
+      "ai_generated": false
+    }
+  }
+}

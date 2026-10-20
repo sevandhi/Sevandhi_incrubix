@@ -1,0 +1,420 @@
+{
+  "run_id": "cert_b9281ee0f6dd47a0a46a9ce25788fc5a",
+  "harness_version": "1.0.0",
+  "destination_id": "dest_fb6e9762467e4f4e82b72fd47a9ea797",
+  "simulation": true,
+  "started_at": "2026-10-18T09:10:35.147336Z",
+  "finished_at": "2026-10-18T09:11:06.492398Z",
+  "duration_ms": 31345,
+  "timeline": [
+    {
+      "state": "QUEUED",
+      "at": "2026-10-18T09:10:35.147336Z"
+    },
+    {
+      "state": "PREFLIGHT",
+      "at": "2026-10-18T09:10:35.190230Z"
+    },
+    {
+      "state": "VALIDATE",
+      "at": "2026-10-18T09:10:35.217876Z"
+    },
+    {
+      "state": "PUBLISH",
+      "at": "2026-10-18T09:10:35.248864Z"
+    },
+    {
+      "state": "CONFIRM_LIVE",
+      "at": "2026-10-18T09:10:35.512452Z"
+    },
+    {
+      "state": "STATUS",
+      "at": "2026-10-18T09:10:35.550550Z"
+    },
+    {
+      "state": "METRICS",
+      "at": "2026-10-18T09:10:35.591492Z"
+    },
+    {
+      "state": "DELETE",
+      "at": "2026-10-18T09:10:35.639889Z"
+    },
+    {
+      "state": "CONFIRM_DELETED",
+      "at": "2026-10-18T09:10:35.689592Z"
+    },
+    {
+      "state": "FAILED",
+      "at": "2026-10-18T09:11:06.460115Z",
+      "note": "CONFIRM_DELETED: PLATFORM_UNAVAILABLE"
+    },
+    {
+      "state": "CLEANUP",
+      "at": "2026-10-18T09:11:06.460146Z"
+    },
+    {
+      "state": "DEMOTED",
+      "at": "2026-10-18T09:11:06.478227Z",
+      "note": "level L0, status excluded, alert opened"
+    }
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "step": "PREFLIGHT",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:10:35.200225Z",
+      "duration_ms": 10.3,
+      "detail": {
+        "connector_key": "peertube",
+        "connector_version": "1.0.0",
+        "tier": "native",
+        "capabilities": [
+          "publish",
+          "status",
+          "delete",
+          "metrics",
+          "refresh_auth"
+        ],
+        "target": "simulation: every call goes to mock-platforms",
+        "kill_switch": "off",
+        "connection_id": null,
+        "rules_confirmed": false,
+        "auth_probe": "no refresh_auth capability: the PUBLISH step proves the credentials"
+      }
+    },
+    {
+      "n": 2,
+      "step": "VALIDATE",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:10:35.230867Z",
+      "duration_ms": 8.7,
+      "detail": {
+        "good_rendition": {
+          "title": "IncuBrix certification test ibxcerte25788fc5a",
+          "ok": true
+        },
+        "over_long_rendition": {
+          "ok": false,
+          "violations": [
+            {
+              "field": "title",
+              "rule": "title_max_chars",
+              "message": "title is 145 characters; the limit is 120",
+              "limit": 120,
+              "actual": 145
+            }
+          ]
+        }
+      }
+    },
+    {
+      "n": 3,
+      "step": "PUBLISH",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:10:35.259237Z",
+      "duration_ms": 244.5,
+      "detail": {
+        "request": {
+          "rendition": {
+            "rendition_id": "cert-cert_b9281ee0f6dd47a0a46a9ce25788fc5a",
+            "content_id": null,
+            "surface": "video",
+            "content_type": "text",
+            "title": "IncuBrix certification test ibxcerte25788fc5a",
+            "body": "Automated certification test post ibxcerte25788fc5a from the IncuBrix destination network. It checks publish, live URL, status and delete on our own test instance, and is deleted within 10 minutes.",
+            "body_format": "markdown",
+            "canonical_url": null,
+            "link_url": null,
+            "media": [],
+            "tags": [],
+            "mentions": [],
+            "language": "en",
+            "is_promotional": false,
+            "ai_generated": false
+          },
+          "idempotency_key": "cert-cert_b9281ee0f6dd47a0a46a9ce25788fc5a",
+          "marker": "ibx-nqhrpirzxylh"
+        },
+        "response": {
+          "platform_post_id": "bc525a9a-3e5f-441c-a44b-4c70285806c4",
+          "live_url": "http://mock-platforms:8080/peertube/videos-peertube-384305da-example-org/videos/watch/bc525a9a-3e5f-441c-a44b-4c70285806c4",
+          "status": "published"
+        },
+        "test_post_id": 2,
+        "expires_after_s": 300
+      }
+    },
+    {
+      "n": 4,
+      "step": "CONFIRM_LIVE",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:10:35.523467Z",
+      "duration_ms": 19.2,
+      "detail": {
+        "method": "http_get_live_url",
+        "live_url": "http://mock-platforms:8080/peertube/videos-peertube-384305da-example-org/videos/watch/bc525a9a-3e5f-441c-a44b-4c70285806c4",
+        "http_status": 200,
+        "marker_found": true,
+        "attempts": [
+          {
+            "at": "2026-10-18T09:10:35.542452Z",
+            "status": 200,
+            "bytes": 178
+          }
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "step": "STATUS",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:10:35.564198Z",
+      "duration_ms": 17.1,
+      "detail": {
+        "response": {
+          "status": "published",
+          "live_url": "http://mock-platforms:8080/peertube/videos-peertube-384305da-example-org/videos/watch/bc525a9a-3e5f-441c-a44b-4c70285806c4"
+        }
+      }
+    },
+    {
+      "n": 6,
+      "step": "METRICS",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:10:35.602564Z",
+      "duration_ms": 25.8,
+      "detail": {
+        "response": {
+          "views": 0,
+          "likes": 0,
+          "comments": 0,
+          "shares": null,
+          "saves": null,
+          "watch_time_s": 0.0,
+          "clicks": null
+        },
+        "exposed": [
+          "comments",
+          "likes",
+          "views",
+          "watch_time_s"
+        ],
+        "null_means": "the platform does not expose this metric (never a fake 0)"
+      }
+    },
+    {
+      "n": 7,
+      "step": "DELETE",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:10:35.657595Z",
+      "duration_ms": 20.7,
+      "detail": {
+        "response": {
+          "deleted": true
+        },
+        "platform_delete_mode": "deleted"
+      }
+    },
+    {
+      "n": 8,
+      "step": "CONFIRM_DELETED",
+      "outcome": "failed",
+      "started_at": "2026-10-18T09:10:35.707733Z",
+      "duration_ms": 30738.0,
+      "detail": {
+        "code": "PLATFORM_UNAVAILABLE",
+        "message": "the live URL still answers after delete",
+        "attempts": [
+          {
+            "at": "2026-10-18T09:10:35.765371Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:36.784912Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:37.813500Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:38.832479Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:39.865994Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:40.884137Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:41.911064Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:42.937173Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:43.957824Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:44.975671Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:45.992851Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:47.013151Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:48.029163Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:49.048559Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:50.068143Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:51.086088Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:52.112782Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:53.132160Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:54.148393Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:55.167471Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:56.192217Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:57.220784Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:58.238374Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:10:59.252370Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:11:00.274506Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:11:01.301034Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:11:02.324060Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:11:03.360178Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:11:04.385403Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:11:05.417400Z",
+            "status": 200,
+            "bytes": 94
+          },
+          {
+            "at": "2026-10-18T09:11:06.445706Z",
+            "status": 200,
+            "bytes": 94
+          }
+        ]
+      }
+    },
+    {
+      "n": 9,
+      "step": "CLEANUP",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:11:06.469368Z",
+      "duration_ms": 0.0,
+      "detail": {
+        "ok": true,
+        "action": "test post already removed"
+      }
+    }
+  ],
+  "result": {
+    "run_id": "cert_b9281ee0f6dd47a0a46a9ce25788fc5a",
+    "destination_id": "dest_fb6e9762467e4f4e82b72fd47a9ea797",
+    "connector_key": "peertube",
+    "passed": false,
+    "state": "DEMOTED",
+    "failed_step": "CONFIRM_DELETED",
+    "failure_code": "PLATFORM_UNAVAILABLE",
+    "failure_message": "the live URL still answers after delete",
+    "level_before": "L0",
+    "level_after": "L0",
+    "excluded": true,
+    "cleanup": {
+      "ok": true,
+      "action": "test post already removed"
+    },
+    "platform_post_id": "bc525a9a-3e5f-441c-a44b-4c70285806c4",
+    "notes": [
+      "rules not confirmed: only this certification post is allowed (own instance)"
+    ]
+  }
+}

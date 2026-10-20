@@ -1,0 +1,19 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/devto/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語日本語",
+      "body": "本文はテストです。This body is long enough."
+    },
+    "destination": {
+      "connector_key": "devto",
+      "url": "http://mock-platforms:8080/forem/hc3-cjk-4201344a"
+    },
+    "connection": {
+      "connector_key": "devto"
+    },
+    "idempotency_key": "hc3-cjk-4201344a"
+  }
+}

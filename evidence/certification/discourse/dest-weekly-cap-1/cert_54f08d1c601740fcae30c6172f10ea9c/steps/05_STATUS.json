@@ -1,0 +1,13 @@
+{
+  "n": 5,
+  "step": "STATUS",
+  "outcome": "ok",
+  "started_at": "2026-10-17T16:50:45.734289Z",
+  "duration_ms": 22.3,
+  "detail": {
+    "response": {
+      "status": "published",
+      "live_url": "http://mock-platforms:8080/discourse/dest-weekly-cap-1/t/incubrix-certification-test-ibxcert172f10ea9c/1"
+    }
+  }
+}

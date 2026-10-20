@@ -1,0 +1,32 @@
+{
+  "run_id": "cert_1801ae7ae842427d9a315987406badcb",
+  "delete_mode": "soft_deleted",
+  "deleted": true,
+  "step": {
+    "n": 8,
+    "step": "CONFIRM_DELETED",
+    "outcome": "ok",
+    "started_at": "2026-10-18T19:22:55.228863Z",
+    "duration_ms": 21.3,
+    "detail": {
+      "status_after": {
+        "status": "deleted",
+        "live_url": null
+      },
+      "delete_mode": "soft_deleted",
+      "platform_delete_mode": "soft",
+      "method": "platform_api_get_status + http_get_live_url",
+      "live_url_after": {
+        "url": "http://mock-platforms:8080/discourse/mh2-discourse-6981977a/t/incubrix-certification-test-ibxcert87406badcb/1",
+        "http_status": 404,
+        "attempts": [
+          {
+            "at": "2026-10-18T19:22:55.246651Z",
+            "status": 404,
+            "bytes": 23
+          }
+        ]
+      }
+    }
+  }
+}

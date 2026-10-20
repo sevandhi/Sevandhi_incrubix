@@ -1,0 +1,24 @@
+{
+  "n": 1,
+  "step": "PREFLIGHT",
+  "outcome": "ok",
+  "started_at": "2026-10-18T09:10:35.200225Z",
+  "duration_ms": 10.3,
+  "detail": {
+    "connector_key": "peertube",
+    "connector_version": "1.0.0",
+    "tier": "native",
+    "capabilities": [
+      "publish",
+      "status",
+      "delete",
+      "metrics",
+      "refresh_auth"
+    ],
+    "target": "simulation: every call goes to mock-platforms",
+    "kill_switch": "off",
+    "connection_id": null,
+    "rules_confirmed": false,
+    "auth_probe": "no refresh_auth capability: the PUBLISH step proves the credentials"
+  }
+}

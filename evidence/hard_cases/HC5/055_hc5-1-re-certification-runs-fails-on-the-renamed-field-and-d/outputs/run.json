@@ -1,0 +1,158 @@
+{
+  "run_id": "cert_9621584af12a4ca9a6398ec35e284821",
+  "harness_version": "1.0.0",
+  "destination_id": "dest_66c5a26b33ed4d118be55fa21b1f6e40",
+  "simulation": true,
+  "started_at": "2026-10-20T15:46:17.727114Z",
+  "finished_at": "2026-10-20T15:46:34.720512Z",
+  "duration_ms": 16993,
+  "timeline": [
+    {
+      "state": "QUEUED",
+      "at": "2026-10-20T15:46:17.727114Z"
+    },
+    {
+      "state": "PREFLIGHT",
+      "at": "2026-10-20T15:46:19.139633Z"
+    },
+    {
+      "state": "VALIDATE",
+      "at": "2026-10-20T15:46:21.383069Z"
+    },
+    {
+      "state": "PUBLISH",
+      "at": "2026-10-20T15:46:23.565829Z"
+    },
+    {
+      "state": "FAILED",
+      "at": "2026-10-20T15:46:29.964262Z",
+      "note": "PUBLISH: PLATFORM_UNAVAILABLE"
+    },
+    {
+      "state": "CLEANUP",
+      "at": "2026-10-20T15:46:29.964281Z"
+    },
+    {
+      "state": "DEMOTED",
+      "at": "2026-10-20T15:46:33.812057Z",
+      "note": "level L0, status excluded, alert opened"
+    }
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "step": "PREFLIGHT",
+      "outcome": "ok",
+      "started_at": "2026-10-20T15:46:20.174162Z",
+      "duration_ms": 968.9,
+      "detail": {
+        "connector_key": "ghost",
+        "connector_version": "1.0.0",
+        "tier": "native",
+        "capabilities": [
+          "publish",
+          "status",
+          "delete",
+          "refresh_auth"
+        ],
+        "target": "simulation: every call goes to mock-platforms",
+        "kill_switch": "off",
+        "connection_id": null,
+        "rules_confirmed": true,
+        "auth_probe": "no refresh_auth capability: the PUBLISH step proves the credentials"
+      }
+    },
+    {
+      "n": 2,
+      "step": "VALIDATE",
+      "outcome": "ok",
+      "started_at": "2026-10-20T15:46:22.365800Z",
+      "duration_ms": 971.6,
+      "detail": {
+        "good_rendition": {
+          "title": "IncuBrix certification test ibxcertc35e284821",
+          "ok": true
+        },
+        "over_long_rendition": {
+          "ok": false,
+          "violations": [
+            {
+              "field": "title",
+              "rule": "title_max_chars",
+              "message": "title is 280 characters; the limit is 255",
+              "limit": 255,
+              "actual": 280
+            }
+          ]
+        }
+      }
+    },
+    {
+      "n": 3,
+      "step": "PUBLISH",
+      "outcome": "failed",
+      "started_at": "2026-10-20T15:46:24.469080Z",
+      "duration_ms": 5262.0,
+      "detail": {
+        "code": "PLATFORM_UNAVAILABLE",
+        "message": "ghost: response_schema_mismatch - the platform's answer to the publish no longer has the expected field(s) (posts.0.url); the platform may have renamed a field. The post may have been created: outcome unknown, safe to retry with the same idempotency_key.",
+        "error": {
+          "code": "PLATFORM_UNAVAILABLE",
+          "message": "ghost: response_schema_mismatch - the platform's answer to the publish no longer has the expected field(s) (posts.0.url); the platform may have renamed a field. The post may have been created: outcome unknown, safe to retry with the same idempotency_key.",
+          "retryable": true,
+          "details": {
+            "retry_policy": "backoff",
+            "reason": "response_schema_mismatch",
+            "fields": [
+              "posts.0.url"
+            ],
+            "outcome": "unknown",
+            "intent_state": "UNKNOWN",
+            "idempotency_key": "cert-cert_9621584af12a4ca9a6398ec35e284821"
+          }
+        },
+        "idempotency_key": "cert-cert_9621584af12a4ca9a6398ec35e284821"
+      }
+    },
+    {
+      "n": 8,
+      "step": "CLEANUP",
+      "outcome": "ok",
+      "started_at": "2026-10-20T15:46:30.381325Z",
+      "duration_ms": 3193.2,
+      "detail": {
+        "ok": true,
+        "action": "deleted",
+        "found_by": "marker",
+        "platform_post_id": "6acf00000000000000000002",
+        "marker": "ibx-kajmoapve2dv"
+      }
+    }
+  ],
+  "result": {
+    "run_id": "cert_9621584af12a4ca9a6398ec35e284821",
+    "destination_id": "dest_66c5a26b33ed4d118be55fa21b1f6e40",
+    "connector_key": "ghost",
+    "passed": false,
+    "state": "DEMOTED",
+    "failed_step": "PUBLISH",
+    "failure_code": "PLATFORM_UNAVAILABLE",
+    "failure_message": "response_schema_mismatch: the platform's answer no longer has the expected field(s) posts.0.url; the platform may have renamed a field in its API",
+    "failure_reason": "response_schema_mismatch",
+    "failure_fields": [
+      "posts.0.url"
+    ],
+    "level_before": "L3",
+    "level_after": "L0",
+    "excluded": true,
+    "cleanup": {
+      "ok": true,
+      "action": "deleted",
+      "found_by": "marker",
+      "platform_post_id": "6acf00000000000000000002",
+      "marker": "ibx-kajmoapve2dv"
+    },
+    "platform_post_id": "6acf00000000000000000002",
+    "notes": []
+  }
+}

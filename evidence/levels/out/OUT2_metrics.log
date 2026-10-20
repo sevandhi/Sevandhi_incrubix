@@ -1,0 +1,18 @@
+# OUT2 fetch_metrics evidence, 2026-10-20T07:02:24Z
+api http://127.0.0.1:58675 (SIMULATION_MODE=false: local mode)
+lemmy: destination dest_f82fbef15f2d48e895694240851828a8 certified PASSED level L4 (run cert_ad24224fc03a4fb1ad18a6f375158948)
+lemmy: publication pub_dad7e790a9e44672adc72ffb6aaeed66 published platform_post_id=13
+peertube: destination dest_067c02f9dee948068047958ba182c116 certified PASSED level L4 (run cert_7ccead2793b047fd9d9e02c705ef3e49)
+peertube: publication pub_a547b8e20b4a4fc8b5e754fc17a4931c published platform_post_id=1efef3ca-e275-4e51-92e6-9ba35b3f421d
+slack: destination dest_012da6444465447aa92d134333bd8a5f certified PASSED level L4 (run cert_204c5363cd0e46d98aa442ce54006d1a)
+slack: publication pub_5000963f05414dd99b680cb063041e97 published platform_post_id=C0OUT2MT2:1792479750.000002
+mrss: destination dest_847d26ba121b494295282e795a290e6f certified PASSED level L2 (run cert_6ab7fabba8ce4213b6a87b89e64fcafb)
+mrss: publication pub_874c073d1a104959818cf46031b52e7e published platform_post_id=ibx-o6rvqt6fxuso
+lemmy [real_local_instance] before={"views": null, "likes": 1, "comments": 0, "shares": null, "clicks": null, "saves": null, "watch_time_s": null} after={"views": null, "likes": 1, "comments": 1, "shares": null, "clicks": null, "saves": null, "watch_time_s": null} consistent=True actions: Lemmy counts the author's own automatic upvote (the admin posted it); admin commented once (HTTP 200)
+peertube [real_local_instance] before={"views": 0, "likes": 0, "comments": 0, "shares": null, "clicks": null, "saves": null, "watch_time_s": 0.0} after={"views": 0, "likes": 1, "comments": 1, "shares": null, "clicks": null, "saves": null, "watch_time_s": 0.0} consistent=True actions: root liked (HTTP 204), commented once (HTTP 200), reported one playback view (HTTP 400)
+slack [mock] before={"views": null, "likes": 0, "comments": 0, "shares": null, "clicks": null, "saves": null, "watch_time_s": null} after={"views": null, "likes": 2, "comments": 1, "shares": null, "clicks": null, "saves": null, "watch_time_s": null} consistent=True actions: MOCK workspace: mock control added 2 reactions and 1 thread reply (not real engagement)
+mrss [own_service] before={"views": null, "likes": null, "comments": null, "shares": null, "clicks": 0, "saves": null, "watch_time_s": null} after={"views": null, "likes": null, "comments": null, "shares": null, "clicks": 2, "saves": null, "watch_time_s": null} consistent=True actions: GET /api/v1/r/{guid} on our own service -> HTTP 302; GET /api/v1/r/{guid} on our own service -> HTTP 302
+lemmy: delete publication -> HTTP 202
+peertube: delete publication -> HTTP 202
+slack: delete publication -> HTTP 202
+mrss: delete publication -> HTTP 202

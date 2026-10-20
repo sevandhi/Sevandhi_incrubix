@@ -1,0 +1,15 @@
+{
+  "index": 56,
+  "name": "HC5.2 the destination is now L0 and excluded",
+  "method": "GET",
+  "path": "/api/v1/destinations/dest_66c5a26b33ed4d118be55fa21b1f6e40",
+  "status": 200,
+  "code": null,
+  "expected_status": 200,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 1124.8,
+  "correlation_id": "0a5fd16f3f154cf0928cc5f7b62ee6df",
+  "folder": "056_hc5-2-the-destination-is-now-l0-and-excluded",
+  "job_status": null
+}

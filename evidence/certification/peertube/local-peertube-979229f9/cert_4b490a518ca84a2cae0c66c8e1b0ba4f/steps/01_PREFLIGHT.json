@@ -1,0 +1,27 @@
+{
+  "n": 1,
+  "step": "PREFLIGHT",
+  "outcome": "ok",
+  "started_at": "2026-10-18T09:15:08.550525Z",
+  "duration_ms": 347.5,
+  "detail": {
+    "connector_key": "peertube",
+    "connector_version": "1.0.0",
+    "tier": "native",
+    "capabilities": [
+      "publish",
+      "status",
+      "delete",
+      "metrics",
+      "refresh_auth"
+    ],
+    "target": "own instance peertube.ibx.test",
+    "kill_switch": "off",
+    "connection_id": "conn_2b0fd5959a3c4f28b2a5efb0fc2e983d",
+    "rules_confirmed": false,
+    "auth_probe": {
+      "method": "refresh_auth",
+      "expires_at": "2026-10-19T09:15:07.893682Z"
+    }
+  }
+}

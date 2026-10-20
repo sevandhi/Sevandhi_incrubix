@@ -1,0 +1,15 @@
+{
+  "index": 2,
+  "name": "HC1.2 retry with the same key finds the post (no second create)",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 200,
+  "code": null,
+  "expected_status": 200,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 4134.7,
+  "correlation_id": "fd93cd10075749909dbe4ade023bf80a",
+  "folder": "002_hc1-2-retry-with-the-same-key-finds-the-post-no-second-creat",
+  "job_status": null
+}

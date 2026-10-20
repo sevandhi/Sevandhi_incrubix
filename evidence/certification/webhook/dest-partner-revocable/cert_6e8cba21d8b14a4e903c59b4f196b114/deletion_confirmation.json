@@ -1,0 +1,31 @@
+{
+  "run_id": "cert_6e8cba21d8b14a4e903c59b4f196b114",
+  "delete_mode": "deleted",
+  "step": {
+    "n": 7,
+    "step": "CONFIRM_DELETED",
+    "outcome": "ok",
+    "started_at": "2026-10-17T16:50:47.451177Z",
+    "duration_ms": 85.5,
+    "detail": {
+      "status_after": {
+        "status": "deleted",
+        "live_url": null
+      },
+      "delete_mode": "deleted",
+      "platform_delete_mode": null,
+      "method": "platform_api_get_status + http_get_live_url",
+      "live_url_after": {
+        "url": "http://mock-platforms:8080/partner/dest-partner-revocable/p/1",
+        "http_status": 404,
+        "attempts": [
+          {
+            "at": "2026-10-17T16:50:47.506464Z",
+            "status": 404,
+            "bytes": 18
+          }
+        ]
+      }
+    }
+  }
+}

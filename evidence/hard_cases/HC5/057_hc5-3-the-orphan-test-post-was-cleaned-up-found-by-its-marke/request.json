@@ -1,0 +1,6 @@
+{
+  "method": "GET",
+  "path": "https://ibx-destination-network-demo.onrender.com/sim/_counts?platform=ghost&tenant=hc5-drift-4201344a",
+  "headers": {},
+  "body": null
+}

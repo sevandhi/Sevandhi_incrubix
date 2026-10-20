@@ -1,0 +1,13 @@
+{
+  "n": 5,
+  "step": "STATUS",
+  "outcome": "ok",
+  "started_at": "2026-10-20T14:57:13.014394Z",
+  "duration_ms": 18.0,
+  "detail": {
+    "response": {
+      "status": "published",
+      "live_url": "http://mock-platforms:8080/ghost/mh2-ghost-8d9e900d/incubrix-certification-test-ibxcertca264ba63c-ibx-qpr3f3akbtqp/"
+    }
+  }
+}

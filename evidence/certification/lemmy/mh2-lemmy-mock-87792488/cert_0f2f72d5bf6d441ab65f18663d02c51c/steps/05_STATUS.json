@@ -1,0 +1,13 @@
+{
+  "n": 5,
+  "step": "STATUS",
+  "outcome": "ok",
+  "started_at": "2026-10-20T14:57:10.182098Z",
+  "duration_ms": 21.6,
+  "detail": {
+    "response": {
+      "status": "published",
+      "live_url": "http://mock-platforms:8080/lemmy/mh2-lemmy-4e78a785/post/1"
+    }
+  }
+}

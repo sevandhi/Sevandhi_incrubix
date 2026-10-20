@@ -1,0 +1,33 @@
+{
+  "status": 200,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:37:16 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "d1fb207f-0449-4c9f",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "465d2e80833d4a9abfd9d954bddb80ba",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "content-encoding": "gzip",
+    "cf-ray": "a4d91a54bf9caa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "ok": false,
+    "violations": [
+      {
+        "field": "media[0]",
+        "rule": "content_types",
+        "message": "video/mp4 media is not accepted here (accepted: text, link)",
+        "limit": [
+          "text",
+          "link"
+        ],
+        "actual": "video/mp4"
+      }
+    ]
+  }
+}

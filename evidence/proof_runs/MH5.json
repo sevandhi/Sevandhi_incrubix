@@ -1,0 +1,117 @@
+{
+ "id": "MH5",
+ "title": "Never spam, never cheat: own instances only, test posts removed within 10 minutes, 429 back-off",
+ "status": "Partial",
+ "reasons": [
+  "'no scraping where it is not allowed': only the catalogue seed research fetched public pages (robots-aware, see catalogue/seeds/README.md); the catalogue import/enrich fetcher is not built, so it is not proven here"
+ ],
+ "run_id": "20261020T145607Z",
+ "started_at": "2026-10-20T15:08:00Z",
+ "finished_at": "2026-10-20T15:08:24Z",
+ "duration_s": 24.4,
+ "api": "http://127.0.0.1:38875",
+ "mode": "local",
+ "command": "scripts/prove_mh5.sh",
+ "evidence": [
+  "evidence/must_haves/MH5_test_post_audit.txt",
+  "evidence/must_haves/MH5_test_post_lifetimes.csv",
+  "evidence/must_haves/MH5_backoff_429.csv",
+  "evidence/must_haves/MH5_never_spam.log"
+ ],
+ "checks_total": 13,
+ "checks_passed": 13,
+ "checks": [
+  {
+   "label": "audit has test posts to judge",
+   "ok": true,
+   "critical": true,
+   "detail": "28",
+   "group": null
+  },
+  {
+   "label": "no test post lived (or is still live) longer than 600 s",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"over\": []}",
+   "group": null
+  },
+  {
+   "label": "the service's per-outcome counts equal the per-row outcomes (nothing summed into 'deleted')",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"reported\": {\"deleted\": 12, \"soft_deleted\": 14, \"unpublished_to_draft\": 2, \"pack_revoked\": 0, \"not_created\": 0, \"already_gone\": 0, \"unconfirmed\": 0, \"still_live\": 0}, \"rows\": {\"soft_deleted\": 14, \"deleted\": 12, \"unpublished_to_draft\": 2}}",
+   "group": null
+  },
+  {
+   "label": "this script's reading of delete_mode agrees with the service's outcome",
+   "ok": true,
+   "critical": false,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "no test post has an unknown removal mode",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "a public host is refused at PREFLIGHT and nothing is published",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"steps\": [\"PREFLIGHT\"], \"failure\": \"DEST_NOT_OWN_INSTANCE\", \"detail\": \"{'code': 'DEST_NOT_OWN_INSTANCE', 'host': 'forum-7873c17f.example.com', 'message': \\\"refusing to post a test to 'forum-7873c17f.example.com': certification only posts to own test instances (CERT_OWN_HO\"}",
+   "group": null
+  },
+  {
+   "label": "discourse (mock): 429 -> PLATFORM_RATE_LIMIT with the reset time, next call short-circuits",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 429, \"error_code\": \"PLATFORM_RATE_LIMIT\", \"retry_after_s\": 600, \"reset_source\": \"Retry-After\", \"next_call\": \"429 short_circuit=True\", \"platform_creates\": \"1->2->2\"}",
+   "group": null
+  },
+  {
+   "label": "lemmy (mock): 429 -> PLATFORM_RATE_LIMIT with the reset time, next call short-circuits",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 429, \"error_code\": \"PLATFORM_RATE_LIMIT\", \"retry_after_s\": 60, \"reset_source\": \"lemmy_site_config\", \"next_call\": \"429 short_circuit=True\", \"platform_creates\": \"1->2->2\"}",
+   "group": null
+  },
+  {
+   "label": "devto (mock): 429 -> PLATFORM_RATE_LIMIT with the reset time, next call short-circuits",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 429, \"error_code\": \"PLATFORM_RATE_LIMIT\", \"retry_after_s\": 120, \"reset_source\": \"Retry-After\", \"next_call\": \"429 short_circuit=True\", \"platform_creates\": \"1->2->2\"}",
+   "group": null
+  },
+  {
+   "label": "ghost (mock): 429 -> PLATFORM_RATE_LIMIT with the reset time, next call short-circuits",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 429, \"error_code\": \"PLATFORM_RATE_LIMIT\", \"retry_after_s\": 90, \"reset_source\": \"Retry-After\", \"next_call\": \"429 short_circuit=True\", \"platform_creates\": \"1->2->2\"}",
+   "group": null
+  },
+  {
+   "label": "webhook (mock): 429 -> PLATFORM_RATE_LIMIT with the reset time, next call short-circuits",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 429, \"error_code\": \"PLATFORM_RATE_LIMIT\", \"retry_after_s\": 121, \"reset_source\": \"Retry-After\", \"next_call\": \"429 short_circuit=True\", \"platform_creates\": \"1->2->2\"}",
+   "group": null
+  },
+  {
+   "label": "lemmy (real-local): 429 -> PLATFORM_RATE_LIMIT with the reset time, next call short-circuits",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"http_status\": 429, \"error_code\": \"PLATFORM_RATE_LIMIT\", \"retry_after_s\": 10, \"reset_source\": \"lemmy_site_config\", \"next_call\": \"429 short_circuit=True\", \"platform_creates\": \"n/a (real)\"}",
+   "group": null
+  },
+  {
+   "label": "sweeper tests pass (leftover test posts removed within the TTL; periodic job)",
+   "ok": true,
+   "critical": true,
+   "detail": "2 passed, 60 deselected in 6.64s",
+   "group": null
+  }
+ ],
+ "sub": {}
+}

@@ -1,0 +1,24 @@
+{
+  "run_id": "cert_e9ac60b446874bc9bdc1cc07aed09722",
+  "simulation": true,
+  "live": {
+    "taken": true,
+    "file": "live.png",
+    "kind": "page",
+    "url": "http://mock-platforms:8080/assist/core-assisted-80fcf15e/submit?title=IncuBrix+certification+test+ibxcert07aed09722&text=Automated+certification+test+post+ibxcert07aed09722+from+the+IncuBrix+destination+network.+It+checks+publish%2C+live+URL%2C+status+and+removal+on+our+own+test+instance%2C+and+is+unpublished+%28taken+off+the+public+site%29+within+10+minutes.",
+    "label": "browser screenshot of http://mock-platforms:8080/assist/core-assisted-80fcf15e/submit?title=IncuBrix+certification+test+ibxcert07aed09722&text=Automated+certification+test+post+ibxcert07aed09722+from+the+IncuBrix+destination+network.+It+checks+publish%2C+live+URL%2C+status+and+removal+on+our+own+test+instance%2C+and+is+unpublished+%28taken+off+the+public+site%29+within+10+minutes. (HTTP 200) - a mock-platforms page (simulation mode)",
+    "http_status": 200,
+    "content_type": "text/html",
+    "at": "2026-10-18T09:20:00.497424Z"
+  },
+  "after_delete": {
+    "taken": true,
+    "file": "after_delete.png",
+    "kind": "api_render",
+    "url": null,
+    "label": "API response render (not a screenshot of a web page): this destination shows no web page here",
+    "http_status": null,
+    "content_type": null,
+    "at": "2026-10-18T09:20:00.765698Z"
+  }
+}

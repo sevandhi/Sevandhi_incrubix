@@ -1,0 +1,22 @@
+{
+  "n": 1,
+  "step": "PREFLIGHT",
+  "outcome": "ok",
+  "started_at": "2026-10-17T16:49:53.174258Z",
+  "duration_ms": 5.9,
+  "detail": {
+    "connector_key": "webhook",
+    "connector_version": "1.0.0",
+    "tier": "protocol",
+    "capabilities": [
+      "publish",
+      "status",
+      "delete"
+    ],
+    "target": "simulation: every call goes to mock-platforms",
+    "kill_switch": "off",
+    "connection_id": "conn_95a258f5b50c4485aeb2e4e2132e2ebf",
+    "rules_confirmed": true,
+    "auth_probe": "no refresh_auth capability: the PUBLISH step proves the credentials"
+  }
+}

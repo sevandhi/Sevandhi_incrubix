@@ -1,0 +1,28 @@
+{
+  "status": 201,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:46:14 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "5f642d59-9d33-4635",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d92777be88aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "queued": [
+      {
+        "platform": "ghost",
+        "tenant": "hc5-drift-4201344a",
+        "method": "POST",
+        "fault": "rename_field:url->permalink",
+        "remaining": 1,
+        "path": null
+      }
+    ]
+  }
+}

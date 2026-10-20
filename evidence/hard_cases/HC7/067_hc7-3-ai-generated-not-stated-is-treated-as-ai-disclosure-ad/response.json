@@ -1,0 +1,24 @@
+{
+  "status": 200,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:47:27 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "cf-cache-status": "DYNAMIC",
+    "idempotency-key": "hc7-unk-4201344a",
+    "rndr-id": "9c2cb9ee-5e6b-4102",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "fc22169d80f74f59b0949fd7404500bb",
+    "x-render-origin-server": "uvicorn",
+    "content-encoding": "gzip",
+    "cf-ray": "a4d929237f63aa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "platform_post_id": "1~i140e649327",
+    "live_url": "http://mock-platforms:8080/discourse/hc7-unk-4201344a/t/a-summary-of-this-week-s-release-notes/1",
+    "status": "published"
+  }
+}

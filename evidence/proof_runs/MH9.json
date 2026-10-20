@@ -1,0 +1,192 @@
+{
+ "id": "MH9",
+ "title": "Integration Standard followed and the live demo works",
+ "status": "Partial",
+ "reasons": [
+  "no live demo URL yet (IBX_LIVE_URL not set): 'the live demo works for the whole review period' is unproven",
+  "no uptime record (evidence/metrics/uptime.csv) for the live demo"
+ ],
+ "run_id": "20261020T145607Z",
+ "started_at": "2026-10-20T15:19:40Z",
+ "finished_at": "2026-10-20T15:19:57Z",
+ "duration_s": 17.0,
+ "api": "http://127.0.0.1:38875",
+ "mode": "local",
+ "command": "scripts/prove_mh9.sh",
+ "evidence": [
+  "evidence/integration/IS_selfcheck.txt",
+  "evidence/integration/IS8_log_sample.jsonl",
+  "evidence/integration/IS7_files_in_out.log",
+  "evidence/integration/IS9_manifest.json",
+  "evidence/integration/IS10_batch_summary.csv",
+  "evidence/must_haves/MH9_integration.log"
+ ],
+ "checks_total": 16,
+ "checks_passed": 16,
+ "checks": [
+  {
+   "label": "IS2 OpenAPI 3.1: openapi 3.1.0, 67 paths, matches openapi.yaml",
+   "ok": true,
+   "critical": true,
+   "detail": "",
+   "group": "IS2"
+  },
+  {
+   "label": "IS3 background jobs: 202 job_2043e8475d1c4c77bd0706eae985196b -> ['queued', 'succeed",
+   "ok": true,
+   "critical": true,
+   "detail": "ed'], progress 100, links ['manifest', 'report']",
+   "group": "IS3"
+  },
+  {
+   "label": "IS4 idempotency: same key -> same job_id (replayed); different body -> 409; missing ",
+   "ok": true,
+   "critical": true,
+   "detail": "key -> generated + echoed",
+   "group": "IS4"
+  },
+  {
+   "label": "IS5 error envelope: 404/401/422 use the envelope, input not echoed, 34 UPPER_SNAKE_C",
+   "ok": true,
+   "critical": true,
+   "detail": "ASE codes",
+   "group": "IS5"
+  },
+  {
+   "label": "IS6 configuration: no hard-coded keys/paths/hosts in app/, all 84 settings in .env.e",
+   "ok": true,
+   "critical": true,
+   "detail": "xample",
+   "group": "IS6"
+  },
+  {
+   "label": "IS8 logs/health: /health 200, /ready 200 (database, queue, storage, connectors, rout",
+   "ok": true,
+   "critical": true,
+   "detail": "ers), correlation id echoed",
+   "group": "IS8"
+  },
+  {
+   "label": "IS10 batch runner: 5 cases, one folder each + summary.csv, all expectations met",
+   "ok": true,
+   "critical": true,
+   "detail": "",
+   "group": "IS10"
+  },
+  {
+   "label": "IS8 log sample: 60 JSON lines, API token absent",
+   "ok": true,
+   "critical": true,
+   "detail": "",
+   "group": "IS8"
+  },
+  {
+   "label": "IS1 .env.example lists every setting (self-check IS6 line)",
+   "ok": true,
+   "critical": true,
+   "detail": "",
+   "group": null
+  },
+  {
+   "label": "IS1 clean copy: docker compose up --wait + scripts/test.sh passed (MH8 proof)",
+   "ok": true,
+   "critical": true,
+   "detail": "2026-10-20T15:19:40Z",
+   "group": null
+  },
+  {
+   "label": "contract publish: header key used when the body has none (same post twice); header/body mismatch -> 409",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": 200, \"second\": 200, \"mismatch\": 409, \"mismatch_code\": \"IDEMPOTENCY_KEY_REUSED\"}",
+   "group": null
+  },
+  {
+   "label": "IS7 upload input stored in S3 and returned as a working signed download link",
+   "ok": true,
+   "critical": true,
+   "detail": "upload: POST /api/v1/media -> 201 key=media/cdb30873bdf16770bfea1fe86e44db7476e504c2dca1542b0660b20f47f523a7 mime=image/png; signed link GET -> 200, bytes equal to the source: True",
+   "group": null
+  },
+  {
+   "label": "IS7 url input stored in S3 and returned as a working signed download link",
+   "ok": true,
+   "critical": true,
+   "detail": "url: POST /api/v1/media -> 201 key=media/497790947d4666760ce38f3c00e852c71fdb66cae849bae8e9ede352719e1581 mime=image/png; signed link GET -> 200, bytes equal to the source: True",
+   "group": null
+  },
+  {
+   "label": "IS7 a tampered signature is refused (403)",
+   "ok": true,
+   "critical": true,
+   "detail": "403",
+   "group": null
+  },
+  {
+   "label": "IS9 job manifest has providers, settings, seed, timings, cost, warnings, licence, rights, service version",
+   "ok": true,
+   "critical": true,
+   "detail": "[]",
+   "group": null
+  },
+  {
+   "label": "IS10 batch runner over the sample pack, every expectation met (--strict)",
+   "ok": true,
+   "critical": true,
+   "detail": "20/20 cases passed; summary: /tmp/ibx_batch_4d9ifk_8/summary.csv",
+   "group": null
+  }
+ ],
+ "sub": {
+  "IS1": {
+   "status": "Yes",
+   "reasons": [],
+   "evidence": []
+  },
+  "IS2": {
+   "status": "Yes",
+   "reasons": [],
+   "evidence": []
+  },
+  "IS3": {
+   "status": "Yes",
+   "reasons": [],
+   "evidence": []
+  },
+  "IS4": {
+   "status": "Yes",
+   "reasons": [],
+   "evidence": []
+  },
+  "IS5": {
+   "status": "Yes",
+   "reasons": [],
+   "evidence": []
+  },
+  "IS6": {
+   "status": "Yes",
+   "reasons": [],
+   "evidence": []
+  },
+  "IS7": {
+   "status": "Yes",
+   "reasons": [],
+   "evidence": []
+  },
+  "IS8": {
+   "status": "Yes",
+   "reasons": [],
+   "evidence": []
+  },
+  "IS9": {
+   "status": "Yes",
+   "reasons": [],
+   "evidence": []
+  },
+  "IS10": {
+   "status": "Yes",
+   "reasons": [],
+   "evidence": []
+  }
+ }
+}

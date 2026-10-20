@@ -1,0 +1,108 @@
+cases:
+- name: HC5.0 step - the Ghost mock renames posts[].url to posts[].permalink in its
+    next create answer
+  role: step
+  method: POST
+  path: http://127.0.0.1:36803/_faults
+  body:
+    platform: ghost
+    tenant: hc5-drift-e3379b10
+    method: POST
+    fault: rename_field:url->permalink
+    count: 1
+  expect:
+    status: 201
+- name: HC5.1 re-certification runs, fails on the renamed field and demotes the destination
+  method: POST
+  path: /api/v1/certifications
+  body:
+    destination_id: dest_6b0e6670c9a04a389878dc95e57d66f4
+  expect:
+    status: 202
+    code: null
+    job_status: succeeded
+  grade:
+    job_equals:
+      result.state: DEMOTED
+      result.level_after: L0
+      result.level_before: L3
+    job_contains:
+    - response_schema_mismatch
+- name: HC5.2 the destination is now L0 and excluded
+  method: GET
+  path: /api/v1/destinations/dest_6b0e6670c9a04a389878dc95e57d66f4
+  expect:
+    status: 200
+    code: null
+  grade:
+    equals:
+      level: L0
+      status: excluded
+- name: HC5.3 the orphan test post was cleaned up (found by its marker, then deleted)
+  method: GET
+  path: http://127.0.0.1:36803/_counts?platform=ghost&tenant=hc5-drift-e3379b10
+  expect:
+    status: 200
+  grade:
+    equals:
+      counts.ghost.hc5-drift-e3379b10.POST /ghost/api/admin/posts: 2
+      counts.ghost.hc5-drift-e3379b10.DELETE /ghost/api/admin/posts/{id}: 2
+- name: HC5.4 a publication to the demoted destination is refused
+  method: POST
+  path: /api/v1/publications
+  body:
+    destination_id: dest_6b0e6670c9a04a389878dc95e57d66f4
+    content:
+      title: A post to a demoted blog
+      body: This must not be published until the blog is certified again.
+      language: en
+      ai_generated: false
+  expect:
+    status: 409
+    code: DESTINATION_EXCLUDED
+- name: HC5.5 contract - Discourse renames id to post_id in the create answer -> 503
+    schema change, outcome unknown
+  method: POST
+  path: /connector/v1/discourse/publish
+  headers:
+    X-Sim-Fault: rename_field:id->post_id
+  body:
+    rendition:
+      title: A post whose answer has a renamed field
+      body: The platform saved it, but the answer changed shape.
+    destination:
+      connector_key: discourse
+      surface: topic
+      url: http://mock-platforms:8080/discourse/hc5-ren-e3379b10
+    connection:
+      connector_key: discourse
+    idempotency_key: hc5-ren-e3379b10
+  expect:
+    status: 503
+    code: PLATFORM_UNAVAILABLE
+  grade:
+    equals:
+      error.details.reason: response_schema_mismatch
+- name: HC5.6 the retry reconciles by marker (one post, no duplicate)
+  method: POST
+  path: /connector/v1/discourse/publish
+  body:
+    rendition:
+      title: A post whose answer has a renamed field
+      body: The platform saved it, but the answer changed shape.
+    destination:
+      connector_key: discourse
+      surface: topic
+      url: http://mock-platforms:8080/discourse/hc5-ren-e3379b10
+    connection:
+      connector_key: discourse
+    idempotency_key: hc5-ren-e3379b10
+  expect:
+    status: 200
+    code: null
+  grade:
+    mock_counts:
+    - platform: discourse
+      tenant: hc5-ren-e3379b10
+      route: POST /posts.json
+      equals: 1

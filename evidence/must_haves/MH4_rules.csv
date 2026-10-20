@@ -1,0 +1,12 @@
+path,rule,expected,got,platform_creates_delta,reason_given,result
+publications,frequency_cap 1/P7D,rescheduled + retry_at,202 rescheduled,0,"DEST_RULE_FREQUENCY_CAP: cap of 1 post(s) per P7D reached (1 in the window, oldest 2026-10-20T14:57:36.641925Z); next slot 2026-10-27T14:57:36.641925Z",PASS
+publications,frequency_cap concurrent,pending + rescheduled,"['pending', 'rescheduled']",,,PASS
+publications,self_promo_allowed=false (is_promotional=true),409 DEST_RULE_SELF_PROMO,409 DEST_RULE_SELF_PROMO,,DEST_RULE_SELF_PROMO: this destination bans self-promotion and the post is promotional (flag 'is_promotional=true' in is_promotional; own_link 'https://mycourse.example.com/?utm_source=forum' in body;,PASS
+publications,self_promo_allowed=false (is_promotional not set),409 DEST_RULE_SELF_PROMO,409 DEST_RULE_SELF_PROMO,,DEST_RULE_SELF_PROMO: this destination bans self-promotion and the post is promotional (own_link 'https://mycourse.example.com/?utm_source=forum' in body; utm 'utm_source in https://mycourse.example.c,PASS
+publications,link_policy=none,409 DEST_RULE_LINK_POLICY,409 DEST_RULE_LINK_POLICY,,DEST_RULE_LINK_POLICY: this destination allows no links; found https://notes.example.org/forum-testing in body,PASS
+publications,link_policy=no_links,409 DEST_RULE_LINK_POLICY,409 DEST_RULE_LINK_POLICY,,DEST_RULE_LINK_POLICY: this destination allows no links; found https://notes.example.org/forum-testing in body,PASS
+publications,disclosure_required=true,published with disclosure,published,,,PASS
+contract,frequency_cap 1/P7D,409 DEST_RULE_FREQUENCY_CAP,409 DEST_RULE_FREQUENCY_CAP,0,"DEST_RULE_FREQUENCY_CAP: cap of 1 post(s) per P7D reached (1 in the window, oldest 2026-10-20T14:57:43.377124Z); next slot 2026-10-27T14:57:43.377124Z",PASS
+contract,self_promo_allowed=false,409 DEST_RULE_SELF_PROMO,409 DEST_RULE_SELF_PROMO,0,DEST_RULE_SELF_PROMO: this destination bans self-promotion and the post is promotional (utm 'utm_source in https://mycourse.example.com/?utm_source=forum' in body; self_reference 'Our new course' in t,PASS
+contract,link_policy=none,409 DEST_RULE_LINK_POLICY,409 DEST_RULE_LINK_POLICY,0,DEST_RULE_LINK_POLICY: this destination allows no links; found https://notes.example.org/x in body,PASS
+contract,disclosure_required=true,200 with disclosure,200,1,,PASS

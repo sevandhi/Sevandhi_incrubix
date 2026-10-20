@@ -1,0 +1,15 @@
+{
+  "index": 38,
+  "name": "HC3.3 body over the Discourse limit -> 422 DEST_SPEC_VIOLATION naming body_max_chars",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 422,
+  "code": "DEST_SPEC_VIOLATION",
+  "expected_status": 422,
+  "expected_code": "DEST_SPEC_VIOLATION",
+  "passed": true,
+  "duration_ms": 998.3,
+  "correlation_id": "fb4bbf4d55114426b843f3142c0fde09",
+  "folder": "038_hc3-3-body-over-the-discourse-limit-422-dest-spec-violation-",
+  "job_status": null
+}

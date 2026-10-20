@@ -1,0 +1,21 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "A second question in the same week?",
+      "body": "We compared three ways to test forum posts end to end. Which one has worked for you?"
+    },
+    "destination": {
+      "connector_key": "discourse",
+      "surface": "topic",
+      "url": "http://mock-platforms:8080/discourse/hc4-ccap-4201344a",
+      "frequency_cap": "1/P7D"
+    },
+    "connection": {
+      "connector_key": "discourse"
+    },
+    "idempotency_key": "hc4-ccap2-4201344a"
+  }
+}

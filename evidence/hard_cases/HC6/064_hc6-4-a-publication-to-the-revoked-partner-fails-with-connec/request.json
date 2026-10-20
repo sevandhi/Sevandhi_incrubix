@@ -1,0 +1,14 @@
+{
+  "method": "POST",
+  "path": "/api/v1/publications",
+  "headers": {},
+  "body": {
+    "destination_id": "dest_3ab372d92eb240e4b24574ee07630d25",
+    "content": {
+      "title": "News for our partner site",
+      "body": "A short update for the partner's readers this week.",
+      "language": "en",
+      "ai_generated": false
+    }
+  }
+}

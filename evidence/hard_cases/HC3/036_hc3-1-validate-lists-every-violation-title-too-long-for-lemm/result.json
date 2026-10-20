@@ -1,0 +1,15 @@
+{
+  "index": 36,
+  "name": "HC3.1 validate lists EVERY violation (title too long for Lemmy AND image/webp on a text/link surface)",
+  "method": "POST",
+  "path": "/connector/v1/lemmy/validate",
+  "status": 200,
+  "code": null,
+  "expected_status": 200,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 669.3,
+  "correlation_id": "deb6bd2811a544d9824a2c311c7192a3",
+  "folder": "036_hc3-1-validate-lists-every-violation-title-too-long-for-lemm",
+  "job_status": null
+}

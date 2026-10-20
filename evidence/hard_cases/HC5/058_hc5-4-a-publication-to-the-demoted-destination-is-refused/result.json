@@ -1,0 +1,15 @@
+{
+  "index": 58,
+  "name": "HC5.4 a publication to the demoted destination is refused",
+  "method": "POST",
+  "path": "/api/v1/publications",
+  "status": 409,
+  "code": "DESTINATION_EXCLUDED",
+  "expected_status": 409,
+  "expected_code": "DESTINATION_EXCLUDED",
+  "passed": true,
+  "duration_ms": 1951.5,
+  "correlation_id": "7416103790ff4d079ad847adbc8d3881",
+  "folder": "058_hc5-4-a-publication-to-the-demoted-destination-is-refused",
+  "job_status": null
+}

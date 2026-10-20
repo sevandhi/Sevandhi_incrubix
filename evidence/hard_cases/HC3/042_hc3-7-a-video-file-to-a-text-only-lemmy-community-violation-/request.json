@@ -1,0 +1,21 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/lemmy/validate",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "A clip for the community",
+      "body": "Here is the clip.",
+      "media": [
+        {
+          "url": "http://mock-platforms:8080/assist/hc3/media/clip.mp4",
+          "mime": "video/mp4"
+        }
+      ]
+    },
+    "destination": {
+      "connector_key": "lemmy",
+      "url": "http://mock-platforms:8080/lemmy/hc3-vid-4201344a/c/ibx_test"
+    }
+  }
+}

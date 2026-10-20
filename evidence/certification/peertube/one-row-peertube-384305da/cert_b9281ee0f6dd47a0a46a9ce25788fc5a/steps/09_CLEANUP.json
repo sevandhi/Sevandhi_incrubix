@@ -1,0 +1,11 @@
+{
+  "n": 9,
+  "step": "CLEANUP",
+  "outcome": "ok",
+  "started_at": "2026-10-18T09:11:06.469368Z",
+  "duration_ms": 0.0,
+  "detail": {
+    "ok": true,
+    "action": "test post already removed"
+  }
+}

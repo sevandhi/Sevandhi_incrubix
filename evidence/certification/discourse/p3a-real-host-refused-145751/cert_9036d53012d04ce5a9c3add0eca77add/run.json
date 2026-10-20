@@ -1,0 +1,54 @@
+{
+  "run_id": "cert_9036d53012d04ce5a9c3add0eca77add",
+  "harness_version": "1.0.0",
+  "destination_id": "dest_ba8421133715405c8639cf6dd28a2eae",
+  "simulation": false,
+  "started_at": "2026-10-18T09:29:53.808629Z",
+  "finished_at": "2026-10-18T09:29:53.867932Z",
+  "duration_ms": 59,
+  "timeline": [
+    {
+      "state": "QUEUED",
+      "at": "2026-10-18T09:29:53.808629Z"
+    },
+    {
+      "state": "PREFLIGHT",
+      "at": "2026-10-18T09:29:53.837050Z"
+    },
+    {
+      "state": "FAILED_PRECONDITION",
+      "at": "2026-10-18T09:29:53.867589Z",
+      "note": "not certifiable here: no request was sent"
+    }
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "step": "PREFLIGHT",
+      "outcome": "failed",
+      "started_at": "2026-10-18T09:29:53.853874Z",
+      "duration_ms": 4.0,
+      "detail": {
+        "code": "DEST_NOT_OWN_INSTANCE",
+        "message": "refusing to post a test to 'forum.example.org': certification only posts to own test instances (CERT_OWN_HOSTS) or in simulation mode",
+        "host": "forum.example.org"
+      }
+    }
+  ],
+  "result": {
+    "run_id": "cert_9036d53012d04ce5a9c3add0eca77add",
+    "destination_id": "dest_ba8421133715405c8639cf6dd28a2eae",
+    "connector_key": "discourse",
+    "passed": false,
+    "state": "FAILED_PRECONDITION",
+    "failed_step": "PREFLIGHT",
+    "failure_code": "DEST_NOT_OWN_INSTANCE",
+    "failure_message": "refusing to post a test to 'forum.example.org': certification only posts to own test instances (CERT_OWN_HOSTS) or in simulation mode",
+    "level_before": "L0",
+    "level_after": "L0",
+    "excluded": false,
+    "notes": [
+      "nothing was sent; the destination keeps its level and status"
+    ]
+  }
+}

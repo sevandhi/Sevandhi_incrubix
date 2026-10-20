@@ -1,0 +1,14 @@
+{
+  "n": 8,
+  "step": "CLEANUP",
+  "outcome": "ok",
+  "started_at": "2026-10-20T15:46:30.381325Z",
+  "duration_ms": 3193.2,
+  "detail": {
+    "ok": true,
+    "action": "deleted",
+    "found_by": "marker",
+    "platform_post_id": "6acf00000000000000000002",
+    "marker": "ibx-kajmoapve2dv"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "n": 3,
+  "step": "PUBLISH",
+  "outcome": "ok",
+  "started_at": "2026-10-18T09:12:36.155660Z",
+  "duration_ms": 249.5,
+  "detail": {
+    "request": {
+      "rendition": {
+        "rendition_id": "cert-cert_39fe872e67eb4ef3b157ca72709607a2",
+        "content_id": null,
+        "surface": "video",
+        "content_type": "text",
+        "title": "IncuBrix certification test ibxcert72709607a2",
+        "body": "Automated certification test post ibxcert72709607a2 from the IncuBrix destination network. It checks publish, live URL, status and delete on our own test instance, and is deleted within 10 minutes.",
+        "body_format": "markdown",
+        "canonical_url": null,
+        "link_url": null,
+        "media": [],
+        "tags": [],
+        "mentions": [],
+        "language": "en",
+        "is_promotional": false,
+        "ai_generated": false
+      },
+      "idempotency_key": "cert-cert_39fe872e67eb4ef3b157ca72709607a2",
+      "marker": "ibx-ltowgyf6idbj"
+    },
+    "response": {
+      "platform_post_id": "1d24a48f-0211-4bcd-b16e-9e6a4054452d",
+      "live_url": "http://mock-platforms:8080/peertube/videos-peertube-2b2d7d06-example-org/videos/watch/1d24a48f-0211-4bcd-b16e-9e6a4054452d",
+      "status": "published"
+    },
+    "test_post_id": 5,
+    "expires_after_s": 300
+  }
+}

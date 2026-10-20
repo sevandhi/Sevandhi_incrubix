@@ -1,0 +1,20 @@
+{
+  "n": 7,
+  "step": "DELETE",
+  "outcome": "ok",
+  "started_at": "2026-10-20T14:57:11.584166Z",
+  "duration_ms": 21.2,
+  "detail": {
+    "method": "unpublish_to_draft",
+    "response": {
+      "deleted": false,
+      "unpublished": true,
+      "removal_mode": "unpublish_to_draft",
+      "wiped": true,
+      "warnings": [
+        "PLATFORM_NO_DELETE: Forem API v1 has no article delete; the article was unpublished, not deleted"
+      ]
+    },
+    "note": "the platform has no delete API: unpublished, not deleted"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "n": 5,
+  "step": "DELETE",
+  "outcome": "ok",
+  "started_at": "2026-10-18T03:40:12.883319Z",
+  "duration_ms": 27.0,
+  "detail": {
+    "deleted_keys": [
+      "assist/ibx-yyroogbqboge/title.txt",
+      "assist/ibx-yyroogbqboge/caption.txt",
+      "assist/ibx-yyroogbqboge/checklist.md",
+      "assist/ibx-yyroogbqboge/pack.json"
+    ],
+    "pack_marker": "ibx-yyroogbqboge"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "index": 18,
+  "name": "HC1.10 /api/v1 job with the same key and body twice -> the same job_id #1",
+  "method": "POST",
+  "path": "/api/v1/jobs",
+  "status": 202,
+  "code": null,
+  "expected_status": 202,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 5828.3,
+  "correlation_id": "20b59a01e57e49e0af30490ab31864ca",
+  "folder": "018_hc1-10-api-v1-job-with-the-same-key-and-body-twice-the-same-",
+  "job_status": "succeeded"
+}

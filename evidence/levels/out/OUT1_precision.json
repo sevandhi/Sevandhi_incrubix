@@ -1,0 +1,2006 @@
+{
+  "metric": "precision@10 (P@10), test split",
+  "label_status": "agent-drafted labels, pending human review",
+  "claim": "P@10 = 0.45 on the 10 test items (agent-drafted labels, pending human review)",
+  "test": {
+    "recommender_tuned": {
+      "p_at_10": 0.45,
+      "judged_at_10": 1.0
+    },
+    "recommender_default": {
+      "p_at_10": 0.43,
+      "judged_at_10": 1.0
+    },
+    "bm25_only": {
+      "p_at_10": 0.24,
+      "judged_at_10": 1.0
+    },
+    "relevance_only": {
+      "p_at_10": 0.02,
+      "judged_at_10": 1.0
+    },
+    "random_expected": {
+      "p_at_10": 0.0383,
+      "judged_at_10": 0.2617,
+      "how": "expected P@10 of a uniformly random order of all candidates = judged-relevant / candidates"
+    }
+  },
+  "test_by_group": {
+    "non_english": {
+      "items": [
+        "c19"
+      ],
+      "recommender_tuned": 0.2,
+      "recommender_default": 0.2,
+      "bm25_only": 0.0,
+      "relevance_only": 0.0,
+      "random_expected": 0.0114
+    },
+    "off_topic": {
+      "items": [
+        "c16",
+        "c17"
+      ],
+      "recommender_tuned": 0.05,
+      "recommender_default": 0.05,
+      "bm25_only": 0.05,
+      "relevance_only": 0.0,
+      "random_expected": 0.0029
+    },
+    "on_topic": {
+      "items": [
+        "c02",
+        "c04",
+        "c06",
+        "c08",
+        "c10",
+        "c12",
+        "c14"
+      ],
+      "recommender_tuned": 0.6,
+      "recommender_default": 0.5714,
+      "bm25_only": 0.3286,
+      "relevance_only": 0.0286,
+      "random_expected": 0.0522
+    }
+  },
+  "dev": {
+    "recommender_tuned": {
+      "p_at_10": 0.51,
+      "judged_at_10": 1.0
+    },
+    "recommender_default": {
+      "p_at_10": 0.49,
+      "judged_at_10": 1.0
+    },
+    "bm25_only": {
+      "p_at_10": 0.33,
+      "judged_at_10": 1.0
+    },
+    "relevance_only": {
+      "p_at_10": 0.09,
+      "judged_at_10": 1.0
+    },
+    "random_expected": {
+      "p_at_10": 0.0543,
+      "judged_at_10": 0.2497,
+      "how": "expected P@10 of a uniformly random order of all candidates = judged-relevant / candidates"
+    }
+  },
+  "weights": {
+    "default": {
+      "audience_fit": 1.0,
+      "relevance": 0.3,
+      "trust": 0.1,
+      "past_results": 0.1,
+      "rules_headroom": 0.2
+    },
+    "tuned": {
+      "audience_fit": 1.0,
+      "relevance": 0.5,
+      "trust": 0.1,
+      "past_results": 0.1,
+      "rules_headroom": 0.2
+    },
+    "tuned_on": "dev split only",
+    "dev_p_at_10_tuned": 0.51,
+    "dev_p_at_10_default": 0.49,
+    "grid": {
+      "audience_fit": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+      ],
+      "relevance": [
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "rules_headroom": [
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.5
+      ]
+    },
+    "grid_size": 175,
+    "grid_points_with_best_dev_score": 10,
+    "fixed": {
+      "trust": "constant here (every seed row is L0)",
+      "past_results": "constant here (no metrics for seed rows)"
+    }
+  },
+  "labels": {
+    "status": "agent-drafted labels, pending human review",
+    "rows": 895,
+    "judged": 895,
+    "unjudged_in_pool": 0,
+    "by_labeler": {
+      "agent-draft": 895,
+      "human": 0,
+      "other": 0
+    },
+    "human_reviewed_fraction": 0.0,
+    "agent_human_agreement": null,
+    "positives": 162
+  },
+  "pooling": {
+    "method": "TREC-style: union of the top 20 from recommender_default, bm25_only and relevance_only (round 1), plus the tuned recommender's top 10 (round 2+)",
+    "pool_pairs": 895,
+    "pool_pairs_by_round": {
+      "1": 895
+    },
+    "pool_per_item_mean": 44.8,
+    "tuned_top10_unjudged_pairs": 0,
+    "bias_disclosure": "Unjudged pairs count as not relevant. At depth 10 the pooled systems are judged to 100% (lowest judged@10 on test), so their P@10 is what full judgement of their top 10 gives. The random baseline was not pooled: most of its picks are unjudged and score 0, so its value is a lower bound and the gap to it is overstated. A destination no pooled system ranked in its top 20 was never judged; if it is relevant, recall is lower than the pool suggests, but P@10 of the pooled systems is unaffected. The rubric, the content items, the recommender and the draft labels were all written by the same agent; the format and rules tests in the rubric are also hard filters in the recommender, which favours it over the baselines. A human review of the labels is needed before this number is claimed."
+  },
+  "candidates": {
+    "source": "catalogue/seeds/seed_v1.csv",
+    "count": 175
+  },
+  "items": {
+    "count": 20,
+    "dev": [
+      "c01",
+      "c03",
+      "c05",
+      "c07",
+      "c09",
+      "c11",
+      "c13",
+      "c15",
+      "c18",
+      "c20"
+    ],
+    "test": [
+      "c02",
+      "c04",
+      "c06",
+      "c08",
+      "c10",
+      "c12",
+      "c14",
+      "c16",
+      "c17",
+      "c19"
+    ]
+  },
+  "per_item": [
+    {
+      "item_id": "c01",
+      "split": "dev",
+      "group": "on_topic",
+      "title": "Running a 7B model locally for subtitle generation: what we measured",
+      "language": "en",
+      "judged": 44,
+      "judged_relevant": 16,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.6,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.6,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.7,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.1,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "Ollama (!Ollama@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/Ollama",
+          "label": 1
+        },
+        {
+          "rank": 2,
+          "name": "DEV Community #llm",
+          "destination_ref": "https://dev.to/t/llm",
+          "label": 1
+        },
+        {
+          "rank": 3,
+          "name": "LocalLLaMA (!localllama@sh.itjust.works)",
+          "destination_ref": "https://sh.itjust.works/c/localllama",
+          "label": 1
+        },
+        {
+          "rank": 4,
+          "name": "Large Language Models (!llm@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/llm",
+          "label": 1
+        },
+        {
+          "rank": 5,
+          "name": "OpenAI Developer Community",
+          "destination_ref": "https://community.openai.com",
+          "label": 0
+        },
+        {
+          "rank": 6,
+          "name": "AI Generated Images (!imageai@sh.itjust.works)",
+          "destination_ref": "https://sh.itjust.works/c/imageai",
+          "label": 0
+        },
+        {
+          "rank": 7,
+          "name": "DEV Community #ai",
+          "destination_ref": "https://dev.to/t/ai",
+          "label": 1
+        },
+        {
+          "rank": 8,
+          "name": "DEV Community #chatgpt",
+          "destination_ref": "https://dev.to/t/chatgpt",
+          "label": 0
+        },
+        {
+          "rank": 9,
+          "name": "DEV Community #genai",
+          "destination_ref": "https://dev.to/t/genai",
+          "label": 1
+        },
+        {
+          "rank": 10,
+          "name": "LangChain Forum",
+          "destination_ref": "https://forum.langchain.com",
+          "label": 0
+        }
+      ],
+      "hard_filtered": 58
+    },
+    {
+      "item_id": "c02",
+      "split": "test",
+      "group": "on_topic",
+      "title": "Prompt patterns that halved our AI image generation retries",
+      "language": "en",
+      "judged": 42,
+      "judged_relevant": 9,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.7,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.7,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.4,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.2,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "Stable Diffusion (!stablediffusion@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/stablediffusion",
+          "label": 1
+        },
+        {
+          "rank": 2,
+          "name": "AI Generated Images (!imageai@sh.itjust.works)",
+          "destination_ref": "https://sh.itjust.works/c/imageai",
+          "label": 1
+        },
+        {
+          "rank": 3,
+          "name": "ComfyUI Forum",
+          "destination_ref": "https://forum.comfy.org",
+          "label": 1
+        },
+        {
+          "rank": 4,
+          "name": "AI (!artificial_intel@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/artificial_intel",
+          "label": 1
+        },
+        {
+          "rank": 5,
+          "name": "AI - Artificial intelligence (!Aii@programming.dev)",
+          "destination_ref": "https://programming.dev/c/Aii",
+          "label": 0
+        },
+        {
+          "rank": 6,
+          "name": "DEV Community #ai",
+          "destination_ref": "https://dev.to/t/ai",
+          "label": 1
+        },
+        {
+          "rank": 7,
+          "name": "Learn Machine Learning (!learnmachinelearning@sh.itjust.works)",
+          "destination_ref": "https://sh.itjust.works/c/learnmachinelearning",
+          "label": 0
+        },
+        {
+          "rank": 8,
+          "name": "DEV Community #llm",
+          "destination_ref": "https://dev.to/t/llm",
+          "label": 0
+        },
+        {
+          "rank": 9,
+          "name": "Artificial Intelligence (!ai_@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/ai_",
+          "label": 1
+        },
+        {
+          "rank": 10,
+          "name": "TWIML AI Community Slack",
+          "destination_ref": "https://twimlai.com/community",
+          "label": 1
+        }
+      ],
+      "hard_filtered": 61
+    },
+    {
+      "item_id": "c03",
+      "split": "dev",
+      "group": "on_topic",
+      "title": "Colour grading in DaVinci Resolve vs Kdenlive: a 10-minute side-by-side",
+      "language": "en",
+      "judged": 45,
+      "judged_relevant": 8,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.5,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.5,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.3,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.2,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "Show off your side projects (!sideprojects@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/sideprojects",
+          "label": 0
+        },
+        {
+          "rank": 2,
+          "name": "KDE Discuss (incl. Kdenlive)",
+          "destination_ref": "https://discuss.kde.org",
+          "label": 1
+        },
+        {
+          "rank": 3,
+          "name": "Video Editing (!videoediting@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/videoediting",
+          "label": 1
+        },
+        {
+          "rank": 4,
+          "name": "Side Project (!sideproject@indiehackers.space)",
+          "destination_ref": "https://indiehackers.space/c/sideproject",
+          "label": 0
+        },
+        {
+          "rank": 5,
+          "name": "Linux Video Editing (!linux_video_editing@lemmy.sdf.org)",
+          "destination_ref": "https://lemmy.sdf.org/c/linux_video_editing",
+          "label": 1
+        },
+        {
+          "rank": 6,
+          "name": "Videos (!videos@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/videos",
+          "label": 1
+        },
+        {
+          "rank": 7,
+          "name": "Shotcut Forum",
+          "destination_ref": "https://forum.shotcut.org",
+          "label": 0
+        },
+        {
+          "rank": 8,
+          "name": "Videos (!videos@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/videos",
+          "label": 1
+        },
+        {
+          "rank": 9,
+          "name": "Framacolibri (Framasoft/PeerTube forum)",
+          "destination_ref": "https://framacolibri.org",
+          "label": 0
+        },
+        {
+          "rank": 10,
+          "name": "DEV Community #video",
+          "destination_ref": "https://dev.to/t/video",
+          "label": 0
+        }
+      ],
+      "hard_filtered": 44
+    },
+    {
+      "item_id": "c04",
+      "split": "test",
+      "group": "on_topic",
+      "title": "Turning one long video into ten Shorts: our editing workflow",
+      "language": "en",
+      "judged": 42,
+      "judged_relevant": 4,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.3,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.3,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.3,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "Video Editing (!videoediting@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/videoediting",
+          "label": 1
+        },
+        {
+          "rank": 2,
+          "name": "Youtube (!youtube@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/youtube",
+          "label": 1
+        },
+        {
+          "rank": 3,
+          "name": "DEV Community #youtube",
+          "destination_ref": "https://dev.to/t/youtube",
+          "label": 1
+        },
+        {
+          "rank": 4,
+          "name": "Linux Video Editing (!linux_video_editing@lemmy.sdf.org)",
+          "destination_ref": "https://lemmy.sdf.org/c/linux_video_editing",
+          "label": 0
+        },
+        {
+          "rank": 5,
+          "name": "Videos (!videos@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/videos",
+          "label": 0
+        },
+        {
+          "rank": 6,
+          "name": "Videos (!videos@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/videos",
+          "label": 0
+        },
+        {
+          "rank": 7,
+          "name": "DEV Community #video",
+          "destination_ref": "https://dev.to/t/video",
+          "label": 0
+        },
+        {
+          "rank": 8,
+          "name": "Shotcut Forum",
+          "destination_ref": "https://forum.shotcut.org",
+          "label": 0
+        },
+        {
+          "rank": 9,
+          "name": "AI Generated Images (!imageai@sh.itjust.works)",
+          "destination_ref": "https://sh.itjust.works/c/imageai",
+          "label": 0
+        },
+        {
+          "rank": 10,
+          "name": "Podcasts (!podcasts@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/podcasts",
+          "label": 0
+        }
+      ],
+      "hard_filtered": 58
+    },
+    {
+      "item_id": "c05",
+      "split": "dev",
+      "group": "on_topic",
+      "title": "SEO for video: what actually moved our YouTube search traffic",
+      "language": "en",
+      "judged": 43,
+      "judged_relevant": 9,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.6,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.6,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.5,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "SEO (Search Engine Optimization) (!seo@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/seo",
+          "label": 1
+        },
+        {
+          "rank": 2,
+          "name": "Online Marketing & Digital Marketing (!onlinemarketing@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/onlinemarketing",
+          "label": 1
+        },
+        {
+          "rank": 3,
+          "name": "Youtube (!youtube@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/youtube",
+          "label": 1
+        },
+        {
+          "rank": 4,
+          "name": "DEV Community #youtube",
+          "destination_ref": "https://dev.to/t/youtube",
+          "label": 1
+        },
+        {
+          "rank": 5,
+          "name": "Videos (!videos@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/videos",
+          "label": 0
+        },
+        {
+          "rank": 6,
+          "name": "DEV Community #marketing",
+          "destination_ref": "https://dev.to/t/marketing",
+          "label": 1
+        },
+        {
+          "rank": 7,
+          "name": "Superpath Slack (content marketing)",
+          "destination_ref": "https://superpath.co",
+          "label": 1
+        },
+        {
+          "rank": 8,
+          "name": "Videos (!videos@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/videos",
+          "label": 0
+        },
+        {
+          "rank": 9,
+          "name": "DEV Community #video",
+          "destination_ref": "https://dev.to/t/video",
+          "label": 0
+        },
+        {
+          "rank": 10,
+          "name": "Linux Video Editing (!linux_video_editing@lemmy.sdf.org)",
+          "destination_ref": "https://lemmy.sdf.org/c/linux_video_editing",
+          "label": 0
+        }
+      ],
+      "hard_filtered": 58
+    },
+    {
+      "item_id": "c06",
+      "split": "test",
+      "group": "on_topic",
+      "title": "Newsletter vs social media: six months of numbers from a small creator business",
+      "language": "en",
+      "judged": 45,
+      "judged_relevant": 11,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.6,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.6,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.4,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "Social Media Marketing (!smm@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/smm",
+          "label": 1
+        },
+        {
+          "rank": 2,
+          "name": "Superpath Slack (content marketing)",
+          "destination_ref": "https://superpath.co",
+          "label": 1
+        },
+        {
+          "rank": 3,
+          "name": "DEV Community #marketing",
+          "destination_ref": "https://dev.to/t/marketing",
+          "label": 1
+        },
+        {
+          "rank": 4,
+          "name": "Online Marketing & Digital Marketing (!onlinemarketing@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/onlinemarketing",
+          "label": 1
+        },
+        {
+          "rank": 5,
+          "name": "Small Business Owners (!smallbusinessowners@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/smallbusinessowners",
+          "label": 1
+        },
+        {
+          "rank": 6,
+          "name": "Mautic Forums",
+          "destination_ref": "https://forum.mautic.org",
+          "label": 0
+        },
+        {
+          "rank": 7,
+          "name": "SEO (Search Engine Optimization) (!seo@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/seo",
+          "label": 0
+        },
+        {
+          "rank": 8,
+          "name": "Podcasts (!podcasts@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/podcasts",
+          "label": 0
+        },
+        {
+          "rank": 9,
+          "name": "DEV Community #contentcreation",
+          "destination_ref": "https://dev.to/t/contentcreation",
+          "label": 1
+        },
+        {
+          "rank": 10,
+          "name": "Videos (!videos@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/videos",
+          "label": 0
+        }
+      ],
+      "hard_filtered": 58
+    },
+    {
+      "item_id": "c07",
+      "split": "dev",
+      "group": "on_topic",
+      "title": "How we automated client onboarding with n8n and a no-code CRM",
+      "language": "en",
+      "judged": 47,
+      "judged_relevant": 4,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.4,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.3,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.1,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "n8n Community",
+          "destination_ref": "https://community.n8n.io",
+          "label": 1
+        },
+        {
+          "rank": 2,
+          "name": "DEV Community #saas",
+          "destination_ref": "https://dev.to/t/saas",
+          "label": 1
+        },
+        {
+          "rank": 3,
+          "name": "SaaS (!saas@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/saas",
+          "label": 1
+        },
+        {
+          "rank": 4,
+          "name": "Make Community",
+          "destination_ref": "https://community.make.com",
+          "label": 0
+        },
+        {
+          "rank": 5,
+          "name": "DEV Community #chatgpt",
+          "destination_ref": "https://dev.to/t/chatgpt",
+          "label": 0
+        },
+        {
+          "rank": 6,
+          "name": "Mautic Forums",
+          "destination_ref": "https://forum.mautic.org",
+          "label": 0
+        },
+        {
+          "rank": 7,
+          "name": "Glide Community",
+          "destination_ref": "https://community.glideapps.com",
+          "label": 0
+        },
+        {
+          "rank": 8,
+          "name": "Softr Community",
+          "destination_ref": "https://community.softr.io",
+          "label": 0
+        },
+        {
+          "rank": 9,
+          "name": "WeWeb Community",
+          "destination_ref": "https://community.weweb.io",
+          "label": 0
+        },
+        {
+          "rank": 10,
+          "name": "Software as a Service (!saas@programming.dev)",
+          "destination_ref": "https://programming.dev/c/saas",
+          "label": 1
+        }
+      ],
+      "hard_filtered": 58
+    },
+    {
+      "item_id": "c08",
+      "split": "test",
+      "group": "on_topic",
+      "title": "Pricing a micro-SaaS: three experiments and what they taught us",
+      "language": "en",
+      "judged": 53,
+      "judged_relevant": 10,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.8,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.7,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.3,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "SaaS (!saas@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/saas",
+          "label": 1
+        },
+        {
+          "rank": 2,
+          "name": "DEV Community #saas",
+          "destination_ref": "https://dev.to/t/saas",
+          "label": 1
+        },
+        {
+          "rank": 3,
+          "name": "startups (!startups@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/startups",
+          "label": 1
+        },
+        {
+          "rank": 4,
+          "name": "startups (!startups@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/startups",
+          "label": 1
+        },
+        {
+          "rank": 5,
+          "name": "Software as a Service (!saas@programming.dev)",
+          "destination_ref": "https://programming.dev/c/saas",
+          "label": 1
+        },
+        {
+          "rank": 6,
+          "name": "DEV Community #startup",
+          "destination_ref": "https://dev.to/t/startup",
+          "label": 1
+        },
+        {
+          "rank": 7,
+          "name": "Small Business Owners (!smallbusinessowners@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/smallbusinessowners",
+          "label": 1
+        },
+        {
+          "rank": 8,
+          "name": "Side Project (!sideproject@indiehackers.space)",
+          "destination_ref": "https://indiehackers.space/c/sideproject",
+          "label": 0
+        },
+        {
+          "rank": 9,
+          "name": "Show off your side projects (!sideprojects@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/sideprojects",
+          "label": 0
+        },
+        {
+          "rank": 10,
+          "name": "Indie Hackers",
+          "destination_ref": "https://indiehackers.com",
+          "label": 1
+        }
+      ],
+      "hard_filtered": 77
+    },
+    {
+      "item_id": "c09",
+      "split": "dev",
+      "group": "on_topic",
+      "title": "Podcast to video: repurposing audio episodes for PeerTube and YouTube",
+      "language": "en",
+      "judged": 41,
+      "judged_relevant": 19,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.9,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.9,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.6,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.3,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "Youtube (!youtube@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/youtube",
+          "label": 1
+        },
+        {
+          "rank": 2,
+          "name": "Podcasts (!podcasts@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/podcasts",
+          "label": 1
+        },
+        {
+          "rank": 3,
+          "name": "DEV Community #youtube",
+          "destination_ref": "https://dev.to/t/youtube",
+          "label": 1
+        },
+        {
+          "rank": 4,
+          "name": "Videos (!videos@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/videos",
+          "label": 1
+        },
+        {
+          "rank": 5,
+          "name": "PeerTube.wtf (PeerTube)",
+          "destination_ref": "https://peertube.wtf",
+          "label": 1
+        },
+        {
+          "rank": 6,
+          "name": "Videos (!videos@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/videos",
+          "label": 1
+        },
+        {
+          "rank": 7,
+          "name": "Spectra Video (PeerTube)",
+          "destination_ref": "https://spectra.video",
+          "label": 1
+        },
+        {
+          "rank": 8,
+          "name": "Video Editing (!videoediting@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/videoediting",
+          "label": 1
+        },
+        {
+          "rank": 9,
+          "name": "Krita Artists",
+          "destination_ref": "https://krita-artists.org",
+          "label": 0
+        },
+        {
+          "rank": 10,
+          "name": "DEV Community #video",
+          "destination_ref": "https://dev.to/t/video",
+          "label": 1
+        }
+      ],
+      "hard_filtered": 44
+    },
+    {
+      "item_id": "c10",
+      "split": "test",
+      "group": "on_topic",
+      "title": "What I learned writing 100 newsletter issues as a solo creator",
+      "language": "en",
+      "judged": 48,
+      "judged_relevant": 8,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.5,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.5,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.5,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "Writing (!writing@sh.itjust.works)",
+          "destination_ref": "https://sh.itjust.works/c/writing",
+          "label": 1
+        },
+        {
+          "rank": 2,
+          "name": "Ghost Forum",
+          "destination_ref": "https://forum.ghost.org",
+          "label": 1
+        },
+        {
+          "rank": 3,
+          "name": "Podcasts (!podcasts@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/podcasts",
+          "label": 0
+        },
+        {
+          "rank": 4,
+          "name": "DEV Community #contentcreation",
+          "destination_ref": "https://dev.to/t/contentcreation",
+          "label": 1
+        },
+        {
+          "rank": 5,
+          "name": "Videos (!videos@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/videos",
+          "label": 0
+        },
+        {
+          "rank": 6,
+          "name": "DEV Community #youtube",
+          "destination_ref": "https://dev.to/t/youtube",
+          "label": 0
+        },
+        {
+          "rank": 7,
+          "name": "Krita Artists",
+          "destination_ref": "https://krita-artists.org",
+          "label": 0
+        },
+        {
+          "rank": 8,
+          "name": "Self Promotion (!selfpromo@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/selfpromo",
+          "label": 1
+        },
+        {
+          "rank": 9,
+          "name": "Self Promotion (!selfpromotion@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/selfpromotion",
+          "label": 1
+        },
+        {
+          "rank": 10,
+          "name": "Small Business Owners (!smallbusinessowners@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/smallbusinessowners",
+          "label": 0
+        }
+      ],
+      "hard_filtered": 58
+    },
+    {
+      "item_id": "c11",
+      "split": "dev",
+      "group": "on_topic",
+      "title": "We just launched Clipwise: an AI tool that turns long videos into captioned Shorts",
+      "language": "en",
+      "judged": 45,
+      "judged_relevant": 20,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.9,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.9,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.8,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "SaaS AI Tools",
+          "destination_ref": "https://saasaitools.com",
+          "label": 1
+        },
+        {
+          "rank": 2,
+          "name": "Launch Llama newsletter",
+          "destination_ref": "https://launchllama.co",
+          "label": 1
+        },
+        {
+          "rank": 3,
+          "name": "awesome-ai-tools (GitHub list)",
+          "destination_ref": "https://github.com/mahseema/awesome-ai-tools",
+          "label": 1
+        },
+        {
+          "rank": 4,
+          "name": "startups (!startups@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/startups",
+          "label": 1
+        },
+        {
+          "rank": 5,
+          "name": "startups (!startups@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/startups",
+          "label": 1
+        },
+        {
+          "rank": 6,
+          "name": "Startup Stash",
+          "destination_ref": "https://startupstash.com",
+          "label": 1
+        },
+        {
+          "rank": 7,
+          "name": "DEV Community #startup",
+          "destination_ref": "https://dev.to/t/startup",
+          "label": 1
+        },
+        {
+          "rank": 8,
+          "name": "Videos (!videos@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/videos",
+          "label": 0
+        },
+        {
+          "rank": 9,
+          "name": "SaaS (!saas@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/saas",
+          "label": 1
+        },
+        {
+          "rank": 10,
+          "name": "DEV Community #saas",
+          "destination_ref": "https://dev.to/t/saas",
+          "label": 1
+        }
+      ],
+      "hard_filtered": 42
+    },
+    {
+      "item_id": "c12",
+      "split": "test",
+      "group": "on_topic",
+      "title": "Our first 1,000 users: what worked for a bootstrapped two-person startup",
+      "language": "en",
+      "judged": 51,
+      "judged_relevant": 11,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.7,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.7,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.3,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "startups (!startups@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/startups",
+          "label": 1
+        },
+        {
+          "rank": 2,
+          "name": "startups (!startups@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/startups",
+          "label": 1
+        },
+        {
+          "rank": 3,
+          "name": "DEV Community #startup",
+          "destination_ref": "https://dev.to/t/startup",
+          "label": 1
+        },
+        {
+          "rank": 4,
+          "name": "Indie Hackers",
+          "destination_ref": "https://indiehackers.com",
+          "label": 1
+        },
+        {
+          "rank": 5,
+          "name": "Side Project (!sideproject@indiehackers.space)",
+          "destination_ref": "https://indiehackers.space/c/sideproject",
+          "label": 0
+        },
+        {
+          "rank": 6,
+          "name": "DEV Community #entrepreneurship",
+          "destination_ref": "https://dev.to/t/entrepreneurship",
+          "label": 1
+        },
+        {
+          "rank": 7,
+          "name": "Online Marketing & Digital Marketing (!onlinemarketing@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/onlinemarketing",
+          "label": 1
+        },
+        {
+          "rank": 8,
+          "name": "DEV Community #buildinpublic",
+          "destination_ref": "https://dev.to/t/buildinpublic",
+          "label": 1
+        },
+        {
+          "rank": 9,
+          "name": "TWIML AI Community Slack",
+          "destination_ref": "https://twimlai.com/community",
+          "label": 0
+        },
+        {
+          "rank": 10,
+          "name": "DEV Community #saas",
+          "destination_ref": "https://dev.to/t/saas",
+          "label": 0
+        }
+      ],
+      "hard_filtered": 58
+    },
+    {
+      "item_id": "c13",
+      "split": "dev",
+      "group": "on_topic",
+      "title": "AI dubbing for creators: an honest look at voice cloning quality",
+      "language": "en",
+      "judged": 44,
+      "judged_relevant": 8,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.5,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.4,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.1,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.1,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "Videos (!videos@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/videos",
+          "label": 0
+        },
+        {
+          "rank": 2,
+          "name": "Videos (!videos@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/videos",
+          "label": 0
+        },
+        {
+          "rank": 3,
+          "name": "DEV Community #youtube",
+          "destination_ref": "https://dev.to/t/youtube",
+          "label": 1
+        },
+        {
+          "rank": 4,
+          "name": "Video Editing (!videoediting@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/videoediting",
+          "label": 0
+        },
+        {
+          "rank": 5,
+          "name": "Youtube (!youtube@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/youtube",
+          "label": 1
+        },
+        {
+          "rank": 6,
+          "name": "DEV Community #video",
+          "destination_ref": "https://dev.to/t/video",
+          "label": 0
+        },
+        {
+          "rank": 7,
+          "name": "AI Generated Images (!imageai@sh.itjust.works)",
+          "destination_ref": "https://sh.itjust.works/c/imageai",
+          "label": 0
+        },
+        {
+          "rank": 8,
+          "name": "Artificial Intelligence (!ai_@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/ai_",
+          "label": 1
+        },
+        {
+          "rank": 9,
+          "name": "DEV Community #contentcreation",
+          "destination_ref": "https://dev.to/t/contentcreation",
+          "label": 1
+        },
+        {
+          "rank": 10,
+          "name": "AI (!artificial_intel@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/artificial_intel",
+          "label": 1
+        }
+      ],
+      "hard_filtered": 58
+    },
+    {
+      "item_id": "c14",
+      "split": "test",
+      "group": "on_topic",
+      "title": "Launch week checklist for AI SaaS founders (free Notion template)",
+      "language": "en",
+      "judged": 46,
+      "judged_relevant": 11,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.6,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.5,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.1,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "SaaS (!saas@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/saas",
+          "label": 1
+        },
+        {
+          "rank": 2,
+          "name": "startups (!startups@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/startups",
+          "label": 1
+        },
+        {
+          "rank": 3,
+          "name": "startups (!startups@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/startups",
+          "label": 1
+        },
+        {
+          "rank": 4,
+          "name": "Launch Llama newsletter",
+          "destination_ref": "https://launchllama.co",
+          "label": 0
+        },
+        {
+          "rank": 5,
+          "name": "Launching Next",
+          "destination_ref": "https://launchingnext.com",
+          "label": 0
+        },
+        {
+          "rank": 6,
+          "name": "DEV Community #saas",
+          "destination_ref": "https://dev.to/t/saas",
+          "label": 1
+        },
+        {
+          "rank": 7,
+          "name": "DEV Community #startup",
+          "destination_ref": "https://dev.to/t/startup",
+          "label": 1
+        },
+        {
+          "rank": 8,
+          "name": "Pitchwall (formerly BetaPage)",
+          "destination_ref": "https://pitchwall.co",
+          "label": 0
+        },
+        {
+          "rank": 9,
+          "name": "StartupBase",
+          "destination_ref": "https://startupbase.io",
+          "label": 0
+        },
+        {
+          "rank": 10,
+          "name": "Software as a Service (!saas@programming.dev)",
+          "destination_ref": "https://programming.dev/c/saas",
+          "label": 1
+        }
+      ],
+      "hard_filtered": 42
+    },
+    {
+      "item_id": "c15",
+      "split": "dev",
+      "group": "off_topic",
+      "title": "Sourdough starter troubleshooting: five fixes for a sluggish starter",
+      "language": "en",
+      "judged": 42,
+      "judged_relevant": 6,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.2,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.2,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.2,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.2,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "Videos (!videos@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/videos",
+          "label": 1
+        },
+        {
+          "rank": 2,
+          "name": "Videos (!videos@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/videos",
+          "label": 1
+        },
+        {
+          "rank": 3,
+          "name": "rankett.net (PeerTube)",
+          "destination_ref": "https://rankett.net",
+          "label": 0
+        },
+        {
+          "rank": 4,
+          "name": "DEV Community #video",
+          "destination_ref": "https://dev.to/t/video",
+          "label": 0
+        },
+        {
+          "rank": 5,
+          "name": "Video Editing (!videoediting@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/videoediting",
+          "label": 0
+        },
+        {
+          "rank": 6,
+          "name": "Linux Video Editing (!linux_video_editing@lemmy.sdf.org)",
+          "destination_ref": "https://lemmy.sdf.org/c/linux_video_editing",
+          "label": 0
+        },
+        {
+          "rank": 7,
+          "name": "DEV Community #youtube",
+          "destination_ref": "https://dev.to/t/youtube",
+          "label": 0
+        },
+        {
+          "rank": 8,
+          "name": "Youtube (!youtube@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/youtube",
+          "label": 0
+        },
+        {
+          "rank": 9,
+          "name": "AI Generated Images (!imageai@sh.itjust.works)",
+          "destination_ref": "https://sh.itjust.works/c/imageai",
+          "label": 0
+        },
+        {
+          "rank": 10,
+          "name": "MakerTube (PeerTube)",
+          "destination_ref": "https://makertube.net",
+          "label": 0
+        }
+      ],
+      "hard_filtered": 44
+    },
+    {
+      "item_id": "c16",
+      "split": "test",
+      "group": "off_topic",
+      "title": "Three alpine lakes in a day: a hiking photo diary near Innsbruck",
+      "language": "en",
+      "judged": 47,
+      "judged_relevant": 1,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.1,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.1,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.1,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "discuss.pixls.us",
+          "destination_ref": "https://discuss.pixls.us",
+          "label": 1
+        },
+        {
+          "rank": 2,
+          "name": "Blender (!blender@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/blender",
+          "label": 0
+        },
+        {
+          "rank": 3,
+          "name": "OpenAI Developer Community",
+          "destination_ref": "https://community.openai.com",
+          "label": 0
+        },
+        {
+          "rank": 4,
+          "name": "DEV Community #ai",
+          "destination_ref": "https://dev.to/t/ai",
+          "label": 0
+        },
+        {
+          "rank": 5,
+          "name": "DEV Community #chatgpt",
+          "destination_ref": "https://dev.to/t/chatgpt",
+          "label": 0
+        },
+        {
+          "rank": 6,
+          "name": "DEV Community #contentcreation",
+          "destination_ref": "https://dev.to/t/contentcreation",
+          "label": 0
+        },
+        {
+          "rank": 7,
+          "name": "DEV Community #entrepreneurship",
+          "destination_ref": "https://dev.to/t/entrepreneurship",
+          "label": 0
+        },
+        {
+          "rank": 8,
+          "name": "DEV Community #genai",
+          "destination_ref": "https://dev.to/t/genai",
+          "label": 0
+        },
+        {
+          "rank": 9,
+          "name": "DEV Community #llm",
+          "destination_ref": "https://dev.to/t/llm",
+          "label": 0
+        },
+        {
+          "rank": 10,
+          "name": "DEV Community #marketing",
+          "destination_ref": "https://dev.to/t/marketing",
+          "label": 0
+        }
+      ],
+      "hard_filtered": 58
+    },
+    {
+      "item_id": "c17",
+      "split": "test",
+      "group": "off_topic",
+      "title": "Our neighbourhood football club needs volunteer coaches for the under-10s",
+      "language": "en",
+      "judged": 48,
+      "judged_relevant": 0,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "DataTalks.Club Slack",
+          "destination_ref": "https://datatalks.club/slack.html",
+          "label": 0
+        },
+        {
+          "rank": 2,
+          "name": "Ollama (!Ollama@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/Ollama",
+          "label": 0
+        },
+        {
+          "rank": 3,
+          "name": "LocalLLaMA (!localllama@sh.itjust.works)",
+          "destination_ref": "https://sh.itjust.works/c/localllama",
+          "label": 0
+        },
+        {
+          "rank": 4,
+          "name": "DEV Community #llm",
+          "destination_ref": "https://dev.to/t/llm",
+          "label": 0
+        },
+        {
+          "rank": 5,
+          "name": "DEV Community #video",
+          "destination_ref": "https://dev.to/t/video",
+          "label": 0
+        },
+        {
+          "rank": 6,
+          "name": "DEV Community #saas",
+          "destination_ref": "https://dev.to/t/saas",
+          "label": 0
+        },
+        {
+          "rank": 7,
+          "name": "DEV Community #contentcreation",
+          "destination_ref": "https://dev.to/t/contentcreation",
+          "label": 0
+        },
+        {
+          "rank": 8,
+          "name": "DEV Community #entrepreneurship",
+          "destination_ref": "https://dev.to/t/entrepreneurship",
+          "label": 0
+        },
+        {
+          "rank": 9,
+          "name": "DEV Community #startup",
+          "destination_ref": "https://dev.to/t/startup",
+          "label": 0
+        },
+        {
+          "rank": 10,
+          "name": "DEV Community #youtube",
+          "destination_ref": "https://dev.to/t/youtube",
+          "label": 0
+        }
+      ],
+      "hard_filtered": 58
+    },
+    {
+      "item_id": "c18",
+      "split": "dev",
+      "group": "non_english",
+      "title": "KI-Untertitel lokal: Whisper auf dem eigenen Rechner ausprobiert",
+      "language": "de",
+      "judged": 43,
+      "judged_relevant": 5,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.5,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.5,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "PeerTube (xy-space) (PeerTube)",
+          "destination_ref": "https://tube.xy-space.de",
+          "label": 1
+        },
+        {
+          "rank": 2,
+          "name": "Künstliche Intelligenz (!kintelligenz@feddit.org)",
+          "destination_ref": "https://feddit.org/c/kintelligenz",
+          "label": 1
+        },
+        {
+          "rank": 3,
+          "name": "CuddlyTube (PeerTube)",
+          "destination_ref": "https://cuddly.tube",
+          "label": 1
+        },
+        {
+          "rank": 4,
+          "name": "clip.place (PeerTube)",
+          "destination_ref": "https://clip.place",
+          "label": 1
+        },
+        {
+          "rank": 5,
+          "name": "MakerTube (PeerTube)",
+          "destination_ref": "https://makertube.net",
+          "label": 1
+        },
+        {
+          "rank": 6,
+          "name": "Podcasts (!podcasts@feddit.org)",
+          "destination_ref": "https://feddit.org/c/podcasts",
+          "label": 0
+        },
+        {
+          "rank": 7,
+          "name": "Videos (!videos@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/videos",
+          "label": 0
+        },
+        {
+          "rank": 8,
+          "name": "DEV Community #video",
+          "destination_ref": "https://dev.to/t/video",
+          "label": 0
+        },
+        {
+          "rank": 9,
+          "name": "AI Generated Images (!imageai@sh.itjust.works)",
+          "destination_ref": "https://sh.itjust.works/c/imageai",
+          "label": 0
+        },
+        {
+          "rank": 10,
+          "name": "DEV Community #youtube",
+          "destination_ref": "https://dev.to/t/youtube",
+          "label": 0
+        }
+      ],
+      "hard_filtered": 43
+    },
+    {
+      "item_id": "c19",
+      "split": "test",
+      "group": "non_english",
+      "title": "Cómo editar vídeos más rápido con inteligencia artificial: guía para creadores",
+      "language": "es",
+      "judged": 36,
+      "judged_relevant": 2,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.2,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.2,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "PeerTube (xy-space) (PeerTube)",
+          "destination_ref": "https://tube.xy-space.de",
+          "label": 1
+        },
+        {
+          "rank": 2,
+          "name": "Hardlimit (PeerTube)",
+          "destination_ref": "https://video.hardlimit.com",
+          "label": 1
+        },
+        {
+          "rank": 3,
+          "name": "AI - Artificial intelligence (!Aii@programming.dev)",
+          "destination_ref": "https://programming.dev/c/Aii",
+          "label": 0
+        },
+        {
+          "rank": 4,
+          "name": "DEV Community #youtube",
+          "destination_ref": "https://dev.to/t/youtube",
+          "label": 0
+        },
+        {
+          "rank": 5,
+          "name": "Artificial Intelligence (!ai_@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/ai_",
+          "label": 0
+        },
+        {
+          "rank": 6,
+          "name": "Videos (!videos@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/videos",
+          "label": 0
+        },
+        {
+          "rank": 7,
+          "name": "DEV Community #ai",
+          "destination_ref": "https://dev.to/t/ai",
+          "label": 0
+        },
+        {
+          "rank": 8,
+          "name": "DEV Community #video",
+          "destination_ref": "https://dev.to/t/video",
+          "label": 0
+        },
+        {
+          "rank": 9,
+          "name": "AI Generated Images (!imageai@sh.itjust.works)",
+          "destination_ref": "https://sh.itjust.works/c/imageai",
+          "label": 0
+        },
+        {
+          "rank": 10,
+          "name": "Podcasts (!podcasts@lemmy.ml)",
+          "destination_ref": "https://lemmy.ml/c/podcasts",
+          "label": 0
+        }
+      ],
+      "hard_filtered": 44
+    },
+    {
+      "item_id": "c20",
+      "split": "dev",
+      "group": "non_english",
+      "title": "Automatiser sa veille IA avec n8n : retour d'expérience",
+      "language": "fr",
+      "judged": 43,
+      "judged_relevant": 0,
+      "systems": {
+        "recommender_tuned": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        },
+        "recommender_default": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        },
+        "bm25_only": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        },
+        "relevance_only": {
+          "p_at_10": 0.0,
+          "judged_at_10": 1.0
+        }
+      },
+      "recommender_tuned_top10": [
+        {
+          "rank": 1,
+          "name": "Framacolibri (Framasoft/PeerTube forum)",
+          "destination_ref": "https://framacolibri.org",
+          "label": 0
+        },
+        {
+          "rank": 2,
+          "name": "n8n Community",
+          "destination_ref": "https://community.n8n.io",
+          "label": 0
+        },
+        {
+          "rank": 3,
+          "name": "AI - Artificial intelligence (!Aii@programming.dev)",
+          "destination_ref": "https://programming.dev/c/Aii",
+          "label": 0
+        },
+        {
+          "rank": 4,
+          "name": "Artificial Intelligence (!ai_@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/ai_",
+          "label": 0
+        },
+        {
+          "rank": 5,
+          "name": "DEV Community #ai",
+          "destination_ref": "https://dev.to/t/ai",
+          "label": 0
+        },
+        {
+          "rank": 6,
+          "name": "DEV Community #saas",
+          "destination_ref": "https://dev.to/t/saas",
+          "label": 0
+        },
+        {
+          "rank": 7,
+          "name": "Small Business Owners (!smallbusinessowners@lemmy.world)",
+          "destination_ref": "https://lemmy.world/c/smallbusinessowners",
+          "label": 0
+        },
+        {
+          "rank": 8,
+          "name": "OpenAI Developer Community",
+          "destination_ref": "https://community.openai.com",
+          "label": 0
+        },
+        {
+          "rank": 9,
+          "name": "Learn Machine Learning (!learnmachinelearning@sh.itjust.works)",
+          "destination_ref": "https://sh.itjust.works/c/learnmachinelearning",
+          "label": 0
+        },
+        {
+          "rank": 10,
+          "name": "DEV Community #llm",
+          "destination_ref": "https://dev.to/t/llm",
+          "label": 0
+        }
+      ],
+      "hard_filtered": 58
+    }
+  ],
+  "inputs_sha256": {
+    "labels.csv": "f1a11427aac02d8143bc8440301cc2e8ee00888f9c15d429bb78e7c566da88a9",
+    "content_items.yaml": "dde07f8df402265dcef85d080a4ff239889a7947975ebea1d04b5e32c51c8c87",
+    "catalogue": "ddf57ae060b4a4a57bfd61fe027ca6b0488c8e6c2907a79530c5aea023d48744",
+    "pool.csv": "29ec70de9985e17818798e7414a6a80113be1e346dde86ced1a47c5e5f06be2e"
+  },
+  "command": "uv run python -m app.recommender.eval",
+  "generated_at": "2026-10-20T14:56:26Z",
+  "runtime_ms": 846.9
+}

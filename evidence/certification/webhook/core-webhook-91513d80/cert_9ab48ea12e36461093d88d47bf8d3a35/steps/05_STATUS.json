@@ -1,0 +1,13 @@
+{
+  "n": 5,
+  "step": "STATUS",
+  "outcome": "ok",
+  "started_at": "2026-10-17T16:49:53.313240Z",
+  "duration_ms": 16.1,
+  "detail": {
+    "response": {
+      "status": "published",
+      "live_url": "http://mock-platforms:8080/partner/core-webhook-91513d80-example-org/p/1"
+    }
+  }
+}

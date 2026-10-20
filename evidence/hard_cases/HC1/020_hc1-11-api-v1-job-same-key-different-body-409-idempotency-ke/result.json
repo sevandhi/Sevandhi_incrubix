@@ -1,0 +1,15 @@
+{
+  "index": 20,
+  "name": "HC1.11 /api/v1 job, same key, different body -> 409 IDEMPOTENCY_KEY_REUSED",
+  "method": "POST",
+  "path": "/api/v1/jobs",
+  "status": 409,
+  "code": "IDEMPOTENCY_KEY_REUSED",
+  "expected_status": 409,
+  "expected_code": "IDEMPOTENCY_KEY_REUSED",
+  "passed": true,
+  "duration_ms": 864.1,
+  "correlation_id": "4ba4e236a9bb4802a33b86193f77e243",
+  "folder": "020_hc1-11-api-v1-job-same-key-different-body-409-idempotency-ke",
+  "job_status": null
+}

@@ -1,0 +1,20 @@
+{
+  "n": 4,
+  "step": "CONFIRM_LIVE",
+  "outcome": "ok",
+  "started_at": "2026-10-17T16:51:59.703607Z",
+  "duration_ms": 20.7,
+  "detail": {
+    "method": "http_get_live_url",
+    "live_url": "http://mock-platforms:8080/discourse/canary-8378bfbe/t/incubrix-certification-test-ibxcert13a2ecee53/1",
+    "http_status": 200,
+    "marker_found": true,
+    "attempts": [
+      {
+        "at": "2026-10-17T16:51:59.724112Z",
+        "status": 200,
+        "bytes": 357
+      }
+    ]
+  }
+}

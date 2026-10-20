@@ -1,0 +1,28 @@
+{
+ "id": "ADV3",
+ "title": "uv run python scripts/prove_adv3.py",
+ "status": "Yes",
+ "reasons": [],
+ "run_id": "20261020T145607Z",
+ "started_at": "2026-10-20T15:11:50Z",
+ "finished_at": "2026-10-20T15:11:50Z",
+ "duration_s": 0.2,
+ "api": "http://127.0.0.1:38875",
+ "mode": "n/a",
+ "command": "uv run python scripts/prove_adv3.py",
+ "evidence": [
+  "evidence/proof_runs/ADV3.log"
+ ],
+ "checks_total": 1,
+ "checks_passed": 1,
+ "checks": [
+  {
+   "label": "exit 0: uv run python scripts/prove_adv3.py",
+   "ok": true,
+   "critical": true,
+   "detail": "LLM_PROVIDER=(settings default); wrote /home/user/chumma/Sevandhi_incrubix/evidence/levels/adv/ADV3_relevance.csv",
+   "group": null
+  }
+ ],
+ "sub": {}
+}

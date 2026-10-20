@@ -1,0 +1,24 @@
+{
+  "run_id": "cert_d59cf7cd68b5453383b10d575324a5d2",
+  "simulation": true,
+  "live": {
+    "taken": true,
+    "file": "live.png",
+    "kind": "api_render",
+    "url": null,
+    "label": "API response render (not a screenshot of a web page): this destination shows no web page here",
+    "http_status": null,
+    "content_type": null,
+    "at": "2026-10-18T09:19:53.584758Z"
+  },
+  "after_delete": {
+    "taken": true,
+    "file": "after_delete.png",
+    "kind": "api_render",
+    "url": null,
+    "label": "API response render (not a screenshot of a web page): this destination shows no web page here",
+    "http_status": null,
+    "content_type": null,
+    "at": "2026-10-18T09:19:53.971344Z"
+  }
+}

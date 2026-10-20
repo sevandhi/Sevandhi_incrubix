@@ -1,0 +1,9 @@
+# Integration Standard self-check, 2026-10-20T15:19:43+00:00 against http://127.0.0.1:38875
+PASS  IS2 OpenAPI 3.1: openapi 3.1.0, 67 paths, matches openapi.yaml
+PASS  IS3 background jobs: 202 job_2043e8475d1c4c77bd0706eae985196b -> ['queued', 'succeeded'], progress 100, links ['manifest', 'report']
+PASS  IS4 idempotency: same key -> same job_id (replayed); different body -> 409; missing key -> generated + echoed
+PASS  IS5 error envelope: 404/401/422 use the envelope, input not echoed, 34 UPPER_SNAKE_CASE codes
+PASS  IS6 configuration: no hard-coded keys/paths/hosts in app/, all 84 settings in .env.example
+PASS  IS8 logs/health: /health 200, /ready 200 (database, queue, storage, connectors, routers), correlation id echoed
+PASS  IS10 batch runner: 5 cases, one folder each + summary.csv, all expectations met
+# 7/7 passed

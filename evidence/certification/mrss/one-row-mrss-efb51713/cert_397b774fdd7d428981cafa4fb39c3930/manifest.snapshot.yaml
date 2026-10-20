@@ -1,0 +1,28 @@
+key: mrss
+version: 1.0.0
+tier: feed
+auth: none
+surfaces:
+- key: item
+  content_types:
+  - text
+  - link
+  - image
+  - video
+  - video_link
+  spec:
+    title_required: true
+    title_max_chars: 300
+    body_max_chars: 20000
+    count_unit: codepoints
+    links_allowed: true
+    media_max_count: 10
+rate_limits:
+  per_connection: null
+capabilities:
+- publish
+- status
+- delete
+- metrics
+error_map: {}
+instance_param: feed_key

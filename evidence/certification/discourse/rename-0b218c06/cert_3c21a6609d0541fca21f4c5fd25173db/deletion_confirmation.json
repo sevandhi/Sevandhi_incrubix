@@ -1,0 +1,18 @@
+{
+  "run_id": "cert_3c21a6609d0541fca21f4c5fd25173db",
+  "delete_mode": null,
+  "step": {
+    "n": 9,
+    "step": "CLEANUP",
+    "outcome": "ok",
+    "started_at": "2026-10-17T16:49:55.646550Z",
+    "duration_ms": 53.8,
+    "detail": {
+      "ok": true,
+      "action": "deleted",
+      "found_by": "marker",
+      "platform_post_id": "2",
+      "marker": "ibx-ciodrbpmjpec"
+    }
+  }
+}

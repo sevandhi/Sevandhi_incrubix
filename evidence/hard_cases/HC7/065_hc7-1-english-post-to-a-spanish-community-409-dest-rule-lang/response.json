@@ -1,0 +1,52 @@
+{
+  "status": 409,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:47:10 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "idempotency-key": "gen-02da6e9e0b9b4d9982c99a3c6421447d",
+    "rndr-id": "84edf57b-a9c5-4a93",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "e304ad0e16ae48b58a877ce7eb9b449b",
+    "x-incubrix-warning": "IDEMPOTENCY_KEY_GENERATED",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d928c31edaaa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "DEST_RULE_LANGUAGE",
+      "message": "DEST_RULE_LANGUAGE: content is in 'en' (declared) but the community requires es; translate the post or choose another destination; set language_policy: any if this community accepts other languages",
+      "retryable": false,
+      "details": {
+        "retry_policy": "never",
+        "content_language": "en",
+        "language_source": "declared",
+        "destination_languages": [
+          "es"
+        ],
+        "language_policy": "must_match (implied by the community language)",
+        "failed_checks": [
+          "language"
+        ],
+        "reasons": [
+          "DEST_RULE_LANGUAGE: content is in 'en' (declared) but the community requires es; translate the post or choose another destination; set language_policy: any if this community accepts other languages"
+        ],
+        "evidence": [
+          {
+            "type": "language",
+            "value": "en",
+            "field": "language"
+          }
+        ],
+        "warnings": [],
+        "decision": "block",
+        "publication_id": "pub_da264a50ad05466ab29f526888ee96f8",
+        "state": "blocked"
+      }
+    }
+  }
+}

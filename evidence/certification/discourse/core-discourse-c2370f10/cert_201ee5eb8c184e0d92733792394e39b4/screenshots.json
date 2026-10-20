@@ -1,0 +1,24 @@
+{
+  "run_id": "cert_201ee5eb8c184e0d92733792394e39b4",
+  "simulation": true,
+  "live": {
+    "taken": true,
+    "file": "live.png",
+    "kind": "page",
+    "url": "http://mock-platforms:8080/discourse/core-discourse-c2370f10-example-org/t/incubrix-certification-test-ibxcert92394e39b4/1",
+    "label": "browser screenshot of http://mock-platforms:8080/discourse/core-discourse-c2370f10-example-org/t/incubrix-certification-test-ibxcert92394e39b4/1 (HTTP 200) - a mock-platforms page (simulation mode)",
+    "http_status": 200,
+    "content_type": "text/html",
+    "at": "2026-10-18T09:19:51.725047Z"
+  },
+  "after_delete": {
+    "taken": true,
+    "file": "after_delete.png",
+    "kind": "page",
+    "url": "http://mock-platforms:8080/discourse/core-discourse-c2370f10-example-org/t/incubrix-certification-test-ibxcert92394e39b4/1",
+    "label": "browser screenshot of http://mock-platforms:8080/discourse/core-discourse-c2370f10-example-org/t/incubrix-certification-test-ibxcert92394e39b4/1 (HTTP 404) - a mock-platforms page (simulation mode)",
+    "http_status": 404,
+    "content_type": "text/html",
+    "at": "2026-10-18T09:19:52.418517Z"
+  }
+}

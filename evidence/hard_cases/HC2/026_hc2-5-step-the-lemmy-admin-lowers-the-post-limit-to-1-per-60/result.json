@@ -1,0 +1,15 @@
+{
+  "index": 26,
+  "name": "HC2.5 step - the Lemmy admin lowers the post limit to 1 per 60 s",
+  "method": "PUT",
+  "path": "https://ibx-destination-network-demo.onrender.com/sim/lemmy/hc2-lrl-4201344a/api/v3/site",
+  "status": 401,
+  "code": "UNAUTHORIZED",
+  "expected_status": 200,
+  "expected_code": null,
+  "passed": false,
+  "duration_ms": 90.9,
+  "correlation_id": null,
+  "folder": "026_hc2-5-step-the-lemmy-admin-lowers-the-post-limit-to-1-per-60",
+  "job_status": null
+}

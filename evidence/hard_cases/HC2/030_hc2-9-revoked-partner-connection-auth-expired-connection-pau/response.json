@@ -1,0 +1,35 @@
+{
+  "status": 424,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 15:36:54 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "cf-cache-status": "DYNAMIC",
+    "rndr-id": "3c32d9d8-cb78-4a26",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "27add40cf89247b9b506b32e8db7475a",
+    "x-render-origin-server": "uvicorn",
+    "cf-ray": "a4d919ae1e6daa6a-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "CONNECTION_AUTH_EXPIRED",
+      "message": "webhook answered HTTP 401: This partner revoked IncuBrix's access.",
+      "retryable": false,
+      "details": {
+        "retry_policy": "after_reconnect",
+        "platform_status": 401,
+        "platform_message": "This partner revoked IncuBrix's access.",
+        "error_map_key": "401",
+        "connection_id": "conn_626264c25d604a6cbf2febc6888ae37e",
+        "connection_state": "paused",
+        "action": "reconnect_required",
+        "intent_state": "RETRYABLE",
+        "idempotency_key": "hc2-rev1-4201344a"
+      }
+    }
+  }
+}

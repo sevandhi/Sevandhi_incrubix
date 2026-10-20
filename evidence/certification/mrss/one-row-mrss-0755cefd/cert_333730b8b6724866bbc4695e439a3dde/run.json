@@ -1,0 +1,243 @@
+{
+  "run_id": "cert_333730b8b6724866bbc4695e439a3dde",
+  "harness_version": "1.0.0",
+  "destination_id": "dest_9ac27ac49dfe4a02b498296809b7a32b",
+  "simulation": true,
+  "started_at": "2026-10-18T09:12:37.210699Z",
+  "finished_at": "2026-10-18T09:12:37.830029Z",
+  "duration_ms": 619,
+  "timeline": [
+    {
+      "state": "QUEUED",
+      "at": "2026-10-18T09:12:37.210699Z"
+    },
+    {
+      "state": "PREFLIGHT",
+      "at": "2026-10-18T09:12:37.240553Z"
+    },
+    {
+      "state": "VALIDATE",
+      "at": "2026-10-18T09:12:37.269256Z"
+    },
+    {
+      "state": "PUBLISH",
+      "at": "2026-10-18T09:12:37.302856Z"
+    },
+    {
+      "state": "CONFIRM_LIVE",
+      "at": "2026-10-18T09:12:37.428598Z"
+    },
+    {
+      "state": "STATUS",
+      "at": "2026-10-18T09:12:37.554234Z"
+    },
+    {
+      "state": "METRICS",
+      "at": "2026-10-18T09:12:37.648157Z"
+    },
+    {
+      "state": "DELETE",
+      "at": "2026-10-18T09:12:37.697013Z"
+    },
+    {
+      "state": "CONFIRM_DELETED",
+      "at": "2026-10-18T09:12:37.767695Z"
+    },
+    {
+      "state": "PASSED",
+      "at": "2026-10-18T09:12:37.816668Z",
+      "note": "feed: publish, status and removal certified"
+    }
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "step": "PREFLIGHT",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:12:37.251331Z",
+      "duration_ms": 8.7,
+      "detail": {
+        "connector_key": "mrss",
+        "connector_version": "1.0.0",
+        "tier": "feed",
+        "capabilities": [
+          "publish",
+          "status",
+          "delete",
+          "metrics"
+        ],
+        "target": "simulation: every call goes to mock-platforms",
+        "kill_switch": "off",
+        "connection_id": null,
+        "rules_confirmed": false,
+        "auth_probe": "no refresh_auth capability: the PUBLISH step proves the credentials"
+      }
+    },
+    {
+      "n": 2,
+      "step": "VALIDATE",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:12:37.284448Z",
+      "duration_ms": 8.8,
+      "detail": {
+        "good_rendition": {
+          "title": "IncuBrix certification test ibxcert5e439a3dde",
+          "ok": true
+        },
+        "over_long_rendition": {
+          "ok": false,
+          "violations": [
+            {
+              "field": "title",
+              "rule": "title_max_chars",
+              "message": "title is 325 characters; the limit is 300",
+              "limit": 300,
+              "actual": 325
+            }
+          ]
+        }
+      }
+    },
+    {
+      "n": 3,
+      "step": "PUBLISH",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:12:37.317710Z",
+      "duration_ms": 103.2,
+      "detail": {
+        "request": {
+          "rendition": {
+            "rendition_id": "cert-cert_333730b8b6724866bbc4695e439a3dde",
+            "content_id": null,
+            "surface": "item",
+            "content_type": "text",
+            "title": "IncuBrix certification test ibxcert5e439a3dde",
+            "body": "Automated certification test post ibxcert5e439a3dde from the IncuBrix destination network. It checks publish, live URL, status and delete on our own test instance, and is deleted within 10 minutes.",
+            "body_format": "markdown",
+            "canonical_url": null,
+            "link_url": null,
+            "media": [],
+            "tags": [],
+            "mentions": [],
+            "language": "en",
+            "is_promotional": false,
+            "ai_generated": false
+          },
+          "idempotency_key": "cert-cert_333730b8b6724866bbc4695e439a3dde",
+          "marker": "ibx-5vk3e6qlr2ag"
+        },
+        "response": {
+          "platform_post_id": "ibx-5vk3e6qlr2ag",
+          "live_url": "http://127.0.0.1:19188/api/v1/feeds/e2e-mrss-0755cefd/items/ibx-5vk3e6qlr2ag",
+          "status": "published"
+        },
+        "test_post_id": 6,
+        "expires_after_s": 300
+      }
+    },
+    {
+      "n": 4,
+      "step": "CONFIRM_LIVE",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:12:37.440631Z",
+      "duration_ms": 105.1,
+      "detail": {
+        "method": "platform_api_get_status",
+        "why": "self-served feed: get_status renders the public feed and parses it with feedparser; the worker can not reach PUBLIC_BASE_URL from inside compose",
+        "live_url": "http://127.0.0.1:19188/api/v1/feeds/e2e-mrss-0755cefd/items/ibx-5vk3e6qlr2ag",
+        "status": {
+          "status": "published",
+          "live_url": "http://127.0.0.1:19188/api/v1/feeds/e2e-mrss-0755cefd/items/ibx-5vk3e6qlr2ag"
+        },
+        "live_url_attempts": [
+          {
+            "at": "2026-10-18T09:12:37.456345Z",
+            "error": "ConnectError"
+          }
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "step": "STATUS",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:12:37.573118Z",
+      "duration_ms": 68.6,
+      "detail": {
+        "response": {
+          "status": "published",
+          "live_url": "http://127.0.0.1:19188/api/v1/feeds/e2e-mrss-0755cefd/items/ibx-5vk3e6qlr2ag"
+        }
+      }
+    },
+    {
+      "n": 6,
+      "step": "METRICS",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:12:37.659577Z",
+      "duration_ms": 29.6,
+      "detail": {
+        "response": {
+          "views": null,
+          "likes": null,
+          "comments": null,
+          "shares": null,
+          "saves": null,
+          "watch_time_s": null,
+          "clicks": 0
+        },
+        "exposed": [
+          "clicks"
+        ],
+        "null_means": "the platform does not expose this metric (never a fake 0)"
+      }
+    },
+    {
+      "n": 7,
+      "step": "DELETE",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:12:37.713589Z",
+      "duration_ms": 47.6,
+      "detail": {
+        "response": {
+          "deleted": true
+        },
+        "platform_delete_mode": "deleted"
+      }
+    },
+    {
+      "n": 8,
+      "step": "CONFIRM_DELETED",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:12:37.782136Z",
+      "duration_ms": 26.1,
+      "detail": {
+        "status_after": {
+          "status": "deleted",
+          "live_url": null
+        },
+        "delete_mode": "deleted",
+        "platform_delete_mode": "deleted",
+        "method": "platform_api_get_status",
+        "live_url_after": "not used: self-served feed: get_status renders the public feed and parses it with feedparser; the worker can not reach PUBLIC_BASE_URL from inside compose"
+      }
+    }
+  ],
+  "result": {
+    "run_id": "cert_333730b8b6724866bbc4695e439a3dde",
+    "destination_id": "dest_9ac27ac49dfe4a02b498296809b7a32b",
+    "connector_key": "mrss",
+    "passed": true,
+    "state": "PASSED",
+    "level_before": "L0",
+    "level_after": "L2",
+    "level_reason": "feed: publish, status and removal certified",
+    "delete_mode": "deleted",
+    "platform_delete_mode": "deleted",
+    "platform_post_id": "ibx-5vk3e6qlr2ag",
+    "live_url": "http://127.0.0.1:19188/api/v1/feeds/e2e-mrss-0755cefd/items/ibx-5vk3e6qlr2ag",
+    "notes": [
+      "rules not confirmed: only this certification post is allowed (own instance)"
+    ]
+  }
+}

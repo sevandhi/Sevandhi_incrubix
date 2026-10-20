@@ -1,0 +1,247 @@
+{
+  "run_id": "cert_4b490a518ca84a2cae0c66c8e1b0ba4f",
+  "harness_version": "1.0.0",
+  "destination_id": "dest_d459291de125445896f1828853e7939c",
+  "simulation": false,
+  "started_at": "2026-10-18T09:15:08.438622Z",
+  "finished_at": "2026-10-18T09:15:10.635017Z",
+  "duration_ms": 2196,
+  "timeline": [
+    {
+      "state": "QUEUED",
+      "at": "2026-10-18T09:15:08.438622Z"
+    },
+    {
+      "state": "PREFLIGHT",
+      "at": "2026-10-18T09:15:08.526918Z"
+    },
+    {
+      "state": "VALIDATE",
+      "at": "2026-10-18T09:15:08.907381Z"
+    },
+    {
+      "state": "PUBLISH",
+      "at": "2026-10-18T09:15:08.929998Z"
+    },
+    {
+      "state": "CONFIRM_LIVE",
+      "at": "2026-10-18T09:15:10.158377Z"
+    },
+    {
+      "state": "STATUS",
+      "at": "2026-10-18T09:15:10.220646Z"
+    },
+    {
+      "state": "METRICS",
+      "at": "2026-10-18T09:15:10.302197Z"
+    },
+    {
+      "state": "DELETE",
+      "at": "2026-10-18T09:15:10.417951Z"
+    },
+    {
+      "state": "CONFIRM_DELETED",
+      "at": "2026-10-18T09:15:10.535703Z"
+    },
+    {
+      "state": "PASSED",
+      "at": "2026-10-18T09:15:10.609721Z",
+      "note": "native: publish, live URL, status, metrics and delete certified"
+    }
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "step": "PREFLIGHT",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:15:08.550525Z",
+      "duration_ms": 347.5,
+      "detail": {
+        "connector_key": "peertube",
+        "connector_version": "1.0.0",
+        "tier": "native",
+        "capabilities": [
+          "publish",
+          "status",
+          "delete",
+          "metrics",
+          "refresh_auth"
+        ],
+        "target": "own instance peertube.ibx.test",
+        "kill_switch": "off",
+        "connection_id": "conn_2b0fd5959a3c4f28b2a5efb0fc2e983d",
+        "rules_confirmed": false,
+        "auth_probe": {
+          "method": "refresh_auth",
+          "expires_at": "2026-10-19T09:15:07.893682Z"
+        }
+      }
+    },
+    {
+      "n": 2,
+      "step": "VALIDATE",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:15:08.915669Z",
+      "duration_ms": 7.5,
+      "detail": {
+        "good_rendition": {
+          "title": "IncuBrix certification test ibxcertc8e1b0ba4f",
+          "ok": true
+        },
+        "over_long_rendition": {
+          "ok": false,
+          "violations": [
+            {
+              "field": "title",
+              "rule": "title_max_chars",
+              "message": "title is 145 characters; the limit is 120",
+              "limit": 120,
+              "actual": 145
+            }
+          ]
+        }
+      }
+    },
+    {
+      "n": 3,
+      "step": "PUBLISH",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:15:08.941048Z",
+      "duration_ms": 1207.2,
+      "detail": {
+        "request": {
+          "rendition": {
+            "rendition_id": "cert-cert_4b490a518ca84a2cae0c66c8e1b0ba4f",
+            "content_id": null,
+            "surface": "video",
+            "content_type": "text",
+            "title": "IncuBrix certification test ibxcertc8e1b0ba4f",
+            "body": "Automated certification test post ibxcertc8e1b0ba4f from the IncuBrix destination network. It checks publish, live URL, status and delete on our own test instance, and is deleted within 10 minutes.",
+            "body_format": "markdown",
+            "canonical_url": null,
+            "link_url": null,
+            "media": [],
+            "tags": [],
+            "mentions": [],
+            "language": "en",
+            "is_promotional": false,
+            "ai_generated": false
+          },
+          "idempotency_key": "cert-cert_4b490a518ca84a2cae0c66c8e1b0ba4f",
+          "marker": "ibx-3b65ifkhvsmf"
+        },
+        "response": {
+          "platform_post_id": "9f7ff020-8546-4956-9dfa-c0040818561a",
+          "live_url": "http://peertube.ibx.test:9000/videos/watch/9f7ff020-8546-4956-9dfa-c0040818561a",
+          "status": "published"
+        },
+        "test_post_id": 7,
+        "expires_after_s": 300
+      }
+    },
+    {
+      "n": 4,
+      "step": "CONFIRM_LIVE",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:15:10.173507Z",
+      "duration_ms": 38.2,
+      "detail": {
+        "method": "http_get_live_url",
+        "live_url": "http://peertube.ibx.test:9000/videos/watch/9f7ff020-8546-4956-9dfa-c0040818561a",
+        "http_status": 200,
+        "marker_found": true,
+        "attempts": [
+          {
+            "at": "2026-10-18T09:15:10.211512Z",
+            "status": 200
+          }
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "step": "STATUS",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:15:10.230902Z",
+      "duration_ms": 63.9,
+      "detail": {
+        "response": {
+          "status": "published",
+          "live_url": "http://peertube.ibx.test:9000/videos/watch/9f7ff020-8546-4956-9dfa-c0040818561a"
+        }
+      }
+    },
+    {
+      "n": 6,
+      "step": "METRICS",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:15:10.320290Z",
+      "duration_ms": 90.2,
+      "detail": {
+        "response": {
+          "views": 0,
+          "likes": 0,
+          "comments": 0,
+          "shares": null,
+          "saves": null,
+          "watch_time_s": 0.0,
+          "clicks": null
+        },
+        "exposed": [
+          "comments",
+          "likes",
+          "views",
+          "watch_time_s"
+        ],
+        "null_means": "the platform does not expose this metric (never a fake 0)"
+      }
+    },
+    {
+      "n": 7,
+      "step": "DELETE",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:15:10.440847Z",
+      "duration_ms": 86.9,
+      "detail": {
+        "response": {
+          "deleted": true
+        },
+        "platform_delete_mode": "deleted"
+      }
+    },
+    {
+      "n": 8,
+      "step": "CONFIRM_DELETED",
+      "outcome": "ok",
+      "started_at": "2026-10-18T09:15:10.552896Z",
+      "duration_ms": 48.0,
+      "detail": {
+        "status_after": {
+          "status": "deleted",
+          "live_url": null
+        },
+        "delete_mode": "deleted",
+        "platform_delete_mode": "deleted",
+        "method": "platform_api_get_status",
+        "live_url_after": "not used: PeerTube's web page is a single-page app that answers 200 even for a deleted video (measured on v8.3.0); the API (GET /api/v1/videos/<uuid>: 200, then 404) confirms the post and its deletion"
+      }
+    }
+  ],
+  "result": {
+    "run_id": "cert_4b490a518ca84a2cae0c66c8e1b0ba4f",
+    "destination_id": "dest_d459291de125445896f1828853e7939c",
+    "connector_key": "peertube",
+    "passed": true,
+    "state": "PASSED",
+    "level_before": "L0",
+    "level_after": "L4",
+    "level_reason": "native: publish, live URL, status, metrics and delete certified",
+    "delete_mode": "deleted",
+    "platform_delete_mode": "deleted",
+    "platform_post_id": "9f7ff020-8546-4956-9dfa-c0040818561a",
+    "live_url": "http://peertube.ibx.test:9000/videos/watch/9f7ff020-8546-4956-9dfa-c0040818561a",
+    "notes": [
+      "rules not confirmed: only this certification post is allowed (own instance)"
+    ]
+  }
+}

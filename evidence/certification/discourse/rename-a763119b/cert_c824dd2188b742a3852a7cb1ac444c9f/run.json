@@ -1,0 +1,154 @@
+{
+  "run_id": "cert_c824dd2188b742a3852a7cb1ac444c9f",
+  "harness_version": "1.0.0",
+  "destination_id": "dest_4522bcd9c1764e4babfb836c526859ff",
+  "simulation": true,
+  "started_at": "2026-10-17T16:52:06.237342Z",
+  "finished_at": "2026-10-17T16:52:06.478501Z",
+  "duration_ms": 241,
+  "timeline": [
+    {
+      "state": "QUEUED",
+      "at": "2026-10-17T16:52:06.237342Z"
+    },
+    {
+      "state": "PREFLIGHT",
+      "at": "2026-10-17T16:52:06.255639Z"
+    },
+    {
+      "state": "VALIDATE",
+      "at": "2026-10-17T16:52:06.285538Z"
+    },
+    {
+      "state": "PUBLISH",
+      "at": "2026-10-17T16:52:06.314065Z"
+    },
+    {
+      "state": "FAILED",
+      "at": "2026-10-17T16:52:06.394855Z",
+      "note": "PUBLISH: PLATFORM_UNAVAILABLE"
+    },
+    {
+      "state": "CLEANUP",
+      "at": "2026-10-17T16:52:06.394913Z"
+    },
+    {
+      "state": "DEMOTED",
+      "at": "2026-10-17T16:52:06.461992Z",
+      "note": "level L0, status excluded, alert opened"
+    }
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "step": "PREFLIGHT",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:52:06.267793Z",
+      "duration_ms": 8.7,
+      "detail": {
+        "connector_key": "discourse",
+        "connector_version": "1.0.0",
+        "tier": "native",
+        "capabilities": [
+          "publish",
+          "status",
+          "delete",
+          "metrics"
+        ],
+        "target": "simulation: every call goes to mock-platforms",
+        "kill_switch": "off",
+        "connection_id": null,
+        "rules_confirmed": true,
+        "auth_probe": "no refresh_auth capability: the PUBLISH step proves the credentials"
+      }
+    },
+    {
+      "n": 2,
+      "step": "VALIDATE",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:52:06.297861Z",
+      "duration_ms": 7.0,
+      "detail": {
+        "good_rendition": {
+          "title": "IncuBrix certification test ibxcertb1ac444c9f",
+          "ok": true
+        },
+        "over_long_rendition": {
+          "ok": false,
+          "violations": [
+            {
+              "field": "title",
+              "rule": "title_max_chars",
+              "message": "title is 280 characters; the limit is 255",
+              "limit": 255,
+              "actual": 280
+            }
+          ]
+        }
+      }
+    },
+    {
+      "n": 3,
+      "step": "PUBLISH",
+      "outcome": "failed",
+      "started_at": "2026-10-17T16:52:06.322878Z",
+      "duration_ms": 59.4,
+      "detail": {
+        "code": "PLATFORM_UNAVAILABLE",
+        "message": "discourse: the platform did not confirm the publish (timeout after the request was sent); outcome unknown, safe to retry with the same idempotency_key.",
+        "error": {
+          "code": "PLATFORM_UNAVAILABLE",
+          "message": "discourse: the platform did not confirm the publish (timeout after the request was sent); outcome unknown, safe to retry with the same idempotency_key.",
+          "retryable": true,
+          "details": {
+            "retry_policy": "backoff",
+            "reason": "response_schema_mismatch",
+            "fields": [
+              "topic_id"
+            ],
+            "outcome": "unknown",
+            "intent_state": "UNKNOWN",
+            "idempotency_key": "cert-cert_c824dd2188b742a3852a7cb1ac444c9f"
+          }
+        },
+        "idempotency_key": "cert-cert_c824dd2188b742a3852a7cb1ac444c9f"
+      }
+    },
+    {
+      "n": 9,
+      "step": "CLEANUP",
+      "outcome": "ok",
+      "started_at": "2026-10-17T16:52:06.404632Z",
+      "duration_ms": 44.2,
+      "detail": {
+        "ok": true,
+        "action": "deleted",
+        "found_by": "marker",
+        "platform_post_id": "2",
+        "marker": "ibx-sf3qrrtoecoa"
+      }
+    }
+  ],
+  "result": {
+    "run_id": "cert_c824dd2188b742a3852a7cb1ac444c9f",
+    "destination_id": "dest_4522bcd9c1764e4babfb836c526859ff",
+    "connector_key": "discourse",
+    "passed": false,
+    "state": "DEMOTED",
+    "failed_step": "PUBLISH",
+    "failure_code": "PLATFORM_UNAVAILABLE",
+    "failure_message": "discourse: the platform did not confirm the publish (timeout after the request was sent); outcome unknown, safe to retry with the same idempotency_key.",
+    "level_before": "L4",
+    "level_after": "L0",
+    "excluded": true,
+    "cleanup": {
+      "ok": true,
+      "action": "deleted",
+      "found_by": "marker",
+      "platform_post_id": "2",
+      "marker": "ibx-sf3qrrtoecoa"
+    },
+    "platform_post_id": "2",
+    "notes": []
+  }
+}

@@ -1,0 +1,38 @@
+key: discourse
+version: 1.0.0
+tier: native
+auth: api_key
+surfaces:
+- key: topic
+  content_types:
+  - text
+  - link
+  - image
+  - video_link
+  spec:
+    title_required: true
+    title_min_chars: 15
+    title_max_chars: 255
+    body_required: true
+    body_min_chars: 20
+    body_max_chars: 32000
+    count_unit: codepoints
+    links_allowed: true
+rate_limits:
+  per_connection:
+    requests: 60
+    per_seconds: 60.0
+capabilities:
+- publish
+- status
+- delete
+- metrics
+error_map:
+  403:invalid_access: CONNECTION_AUTH_EXPIRED
+  '403': CONNECTION_AUTH_EXPIRED
+  '401': CONNECTION_AUTH_EXPIRED
+  400:invalid_parameters: PLATFORM_CONTENT_REJECTED
+  '400': PLATFORM_CONTENT_REJECTED
+  '422': PLATFORM_CONTENT_REJECTED
+  '429': PLATFORM_RATE_LIMIT
+instance_param: base_url

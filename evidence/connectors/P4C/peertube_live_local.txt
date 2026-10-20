@@ -1,0 +1,18 @@
+# generated: uv run pytest -v -s -m live_local tests/integration/test_peertube_live.py on stack ibx_p4c (local mode, real PeerTube v8.3.0; the worker had the PROPOSED harness diff bind-mounted), 2026-10-18T09:15:00Z
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-9.1.1, pluggy-1.6.0 -- /home/user/chumma/Sevandhi_incrubix/.venv/bin/python
+hypothesis profile 'default'
+rootdir: /home/user/chumma/Sevandhi_incrubix
+configfile: pyproject.toml
+plugins: respx-0.23.1, hypothesis-6.169.1, asyncio-1.4.0, anyio-4.15.1
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=session, asyncio_default_test_loop_scope=session
+collecting ... collected 4 items
+
+tests/integration/test_peertube_live.py::test_real_peertube_roundtrip PASSED
+tests/integration/test_peertube_live.py::test_real_peertube_wrong_password_is_auth_expired PASSED
+tests/integration/test_peertube_live.py::test_real_peertube_refuses_a_long_name PASSED
+tests/integration/test_peertube_live.py::test_real_peertube_certification_by_one_row_and_a_connection certification run: {'run_id': 'cert_4b490a518ca84a2cae0c66c8e1b0ba4f', 'state': 'PASSED', 'level_after': 'L4'}
+steps: [('PREFLIGHT', 'ok'), ('VALIDATE', 'ok'), ('PUBLISH', 'ok'), ('CONFIRM_LIVE', 'ok'), ('STATUS', 'ok'), ('METRICS', 'ok'), ('DELETE', 'ok'), ('CONFIRM_DELETED', 'ok')]
+PASSED
+
+============================== 4 passed in 10.42s ==============================

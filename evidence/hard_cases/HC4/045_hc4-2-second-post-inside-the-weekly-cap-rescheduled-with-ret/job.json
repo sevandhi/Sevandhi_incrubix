@@ -1,0 +1,12 @@
+{
+  "job_id": "job_10d7f5c55d62439f966f046be04e60c9",
+  "kind": "publication.run",
+  "status": "timeout",
+  "progress": 0,
+  "result": null,
+  "error": null,
+  "attempts": 0,
+  "created_at": "2026-10-20T15:37:46.072581+00:00",
+  "updated_at": "2026-10-20T15:37:46.072581+00:00",
+  "finished_at": null
+}

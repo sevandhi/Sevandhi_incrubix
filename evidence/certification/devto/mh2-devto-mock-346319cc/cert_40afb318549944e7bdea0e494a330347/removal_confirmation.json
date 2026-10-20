@@ -1,0 +1,32 @@
+{
+  "run_id": "cert_40afb318549944e7bdea0e494a330347",
+  "delete_mode": "unpublish_to_draft",
+  "deleted": false,
+  "step": {
+    "n": 8,
+    "step": "CONFIRM_REMOVED",
+    "outcome": "ok",
+    "started_at": "2026-10-18T19:22:56.597307Z",
+    "duration_ms": 14.8,
+    "detail": {
+      "status_after": {
+        "status": "draft",
+        "live_url": null
+      },
+      "delete_mode": "unpublish_to_draft",
+      "platform_delete_mode": null,
+      "method": "platform_api_get_status + http_get_live_url",
+      "live_url_after": {
+        "url": "http://mock-platforms:8080/forem/mh2-devto-ef33929b/ibx_admin/incubrix-certification-test-ibxcert494a330347-0001",
+        "http_status": 404,
+        "attempts": [
+          {
+            "at": "2026-10-18T19:22:56.609503Z",
+            "status": 404,
+            "bytes": 33
+          }
+        ]
+      }
+    }
+  }
+}

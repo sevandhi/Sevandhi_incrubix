@@ -1,0 +1,490 @@
+# OUT3 recertification evidence, generated 2026-10-20T07:00:55Z by scripts/p5a_out3_recert.py
+api http://127.0.0.1:58675; SIMULATION_MODE=false (local mode); alert sinks: log + HMAC webhook + GitHub-issues emulation (both receivers are our own mock-platforms /alertsink, NOT a third party)
+## schedule (GET /api/v1/recert/schedule)
+{
+  "alert_sinks": [
+    "log",
+    "webhook",
+    "github_issue"
+  ],
+  "concurrency": 2,
+  "guarantee": "an L1+ destination is re-tested once its certification is 21 days old (daily tick), before the 30-day limit",
+  "jitter_s": 5,
+  "recert_after_days": 21,
+  "tick_every_s": 86400
+}
+alertsink reset: HTTP 200
+## 1. three destinations added (one row each) and certified
+A dest_2d56b265e3db4ad28bd9d2565c3d92ec: certification cert_2b713f6c1e72423199446c0a951cf625 -> PASSED level L4
+B dest_f2c8fe431ca04791bcfffc1aa911ff9f: certification cert_86e1e7aab9a6467c8d012e6ff5c227a8 -> PASSED level L4
+C dest_cda645de6d644d709317a1e1ee4153a3: certification cert_1e7970c368b04e9dbeb3f617919361d6 -> PASSED level L4
+## 2. day +20: nothing is due yet (GET /api/v1/recert/due?now=...)
+as_of 2026-11-09T07:00:58Z cutoff 2026-10-19T07:00:58Z: would_enqueue=[]
+## 3. CLOCK JUMP +22 days: python -m app.recert tick --now <+22d> --wait 400 (inside the api container)
+as_of 2026-11-11T07:00:58Z (clock: --now (clock jump)), cutoff 2026-10-21T07:00:58Z, due 3
+  A run cert_639b354df011446f91c616199067649c trigger=scheduled -> PASSED level L4
+  B run cert_9350f00513cb4554a8fde73b47ef872d trigger=scheduled -> PASSED level L4
+  C run cert_13edca6cf5f1495ba79621ed63476ced trigger=scheduled -> PASSED level L4
+  A: rules drift check of that run
+{
+  "status": "no_source",
+  "warnings": [
+    "PLATFORM_API_FAILED: REQUEST_VALIDATION_FAILED: The URL must be a public http(s) address."
+  ],
+  "why": "no readable rules source (no sidebar/about API, no rules_url)"
+}
+  B: rules drift check of that run
+{
+  "status": "no_source",
+  "warnings": [
+    "PLATFORM_API_FAILED: INPUT_FETCH_FAILED: The URL answered HTTP 404."
+  ],
+  "why": "no readable rules source (no sidebar/about API, no rules_url)"
+}
+  C: rules drift check of that run
+{
+  "sha256": "fe8542aa6de79ef2ef542e8586ee2cf618512879b72b9e706e466b0e36b0ad96",
+  "sources": [
+    {
+      "bytes": 2006,
+      "kind": "lemmy_sidebar",
+      "url": "http://lemmy:8536/api/v3/community?name=ibx_test_2"
+    }
+  ],
+  "status": "baseline"
+}
+## 4. failures injected on our own systems
+A: toxiproxy lemmy_proxy disabled -> 200 False (an outage of the Lemmy instance as seen through the proxy)
+B: mock Discourse renames topic_id -> topicId on the next create (HTTP 201)
+C: the Lemmy admin edited the ibx_test_2 sidebar (rules) -> HTTP 200
+## 5. CLOCK JUMP +44 days: tick
+  C run cert_f735f9820a734adf80adaceb2fff8136 trigger=scheduled -> PASSED failure_code=None level L4
+  A run cert_e6ff7d5786a148ac94488f9010c7b704 trigger=scheduled -> DEMOTED failure_code=PLATFORM_UNAVAILABLE level L0
+  B run cert_089fd2112837471998dad5d63457bf4d trigger=scheduled -> DEMOTED failure_code=PLATFORM_UNAVAILABLE level L0
+demotion rows (level_history)
+[
+  {
+    "at": "2026-10-20T07:00:56.007141+00:00",
+    "destination_id": "dest_2d56b265e3db4ad28bd9d2565c3d92ec",
+    "level_after": "L4",
+    "level_before": "L0",
+    "reason": "certification cert_2b713f6c1e72423199446c0a951cf625 passed: native: publish, live URL, status, metrics and delete certified",
+    "run_id": "cert_2b713f6c1e72423199446c0a951cf625"
+  },
+  {
+    "at": "2026-10-20T07:00:56.645517+00:00",
+    "destination_id": "dest_f2c8fe431ca04791bcfffc1aa911ff9f",
+    "level_after": "L4",
+    "level_before": "L0",
+    "reason": "certification cert_86e1e7aab9a6467c8d012e6ff5c227a8 passed: native: publish, live URL, status, metrics and delete certified",
+    "run_id": "cert_86e1e7aab9a6467c8d012e6ff5c227a8"
+  },
+  {
+    "at": "2026-10-20T07:00:57.822735+00:00",
+    "destination_id": "dest_cda645de6d644d709317a1e1ee4153a3",
+    "level_after": "L4",
+    "level_before": "L0",
+    "reason": "certification cert_1e7970c368b04e9dbeb3f617919361d6 passed: native: publish, live URL, status, metrics and delete certified",
+    "run_id": "cert_1e7970c368b04e9dbeb3f617919361d6"
+  },
+  {
+    "at": "2026-10-20T07:01:13.126981+00:00",
+    "destination_id": "dest_2d56b265e3db4ad28bd9d2565c3d92ec",
+    "level_after": "L0",
+    "level_before": "L4",
+    "reason": "certification cert_e6ff7d5786a148ac94488f9010c7b704 failed at PUBLISH: PLATFORM_UNAVAILABLE: lemmy: could not connect to the platform (ConnectError).",
+    "run_id": "cert_e6ff7d5786a148ac94488f9010c7b704"
+  },
+  {
+    "at": "2026-10-20T07:01:19.160650+00:00",
+    "destination_id": "dest_f2c8fe431ca04791bcfffc1aa911ff9f",
+    "level_after": "L0",
+    "level_before": "L4",
+    "reason": "certification cert_089fd2112837471998dad5d63457bf4d failed at PUBLISH: PLATFORM_UNAVAILABLE: discourse: the platform did not confirm the publish (timeout or ser",
+    "run_id": "cert_089fd2112837471998dad5d63457bf4d"
+  }
+]
+A network health
+{
+  "excluded_reason": "certification cert_e6ff7d5786a148ac94488f9010c7b704 failed at PUBLISH: PLATFORM_UNAVAILABLE: lemmy: could not connect to the platform (ConnectError).",
+  "failure_streak": 1,
+  "last_certified_at": "2026-10-20T07:01:03.240372Z",
+  "last_run": {
+    "failure_code": "PLATFORM_UNAVAILABLE",
+    "finished_at": "2026-10-20T07:01:13.134780Z",
+    "run_id": "cert_e6ff7d5786a148ac94488f9010c7b704",
+    "state": "DEMOTED",
+    "trigger": "scheduled"
+  },
+  "name": "OUT3 A: local Lemmy via toxiproxy",
+  "open_alerts": [
+    "certification_failed"
+  ],
+  "recert_due_at": null,
+  "rules": "confirmed v1",
+  "status": "excluded",
+  "trust_level": "L0"
+}
+B network health
+{
+  "excluded_reason": "certification cert_089fd2112837471998dad5d63457bf4d failed at PUBLISH: PLATFORM_UNAVAILABLE: discourse: the platform did not confirm the publish (timeout or server error after the request was sent); outcome unknown, safe to retry with the same idempotency_key.",
+  "failure_streak": 1,
+  "last_certified_at": "2026-10-20T07:01:07.123225Z",
+  "last_run": {
+    "failure_code": "PLATFORM_UNAVAILABLE",
+    "finished_at": "2026-10-20T07:01:19.163688Z",
+    "run_id": "cert_089fd2112837471998dad5d63457bf4d",
+    "state": "DEMOTED",
+    "trigger": "scheduled"
+  },
+  "name": "OUT3 B: Discourse mock (field rename)",
+  "open_alerts": [
+    "certification_failed"
+  ],
+  "recert_due_at": null,
+  "rules": "confirmed v1",
+  "status": "excluded",
+  "trust_level": "L0"
+}
+C network health
+{
+  "excluded_reason": null,
+  "failure_streak": 0,
+  "last_certified_at": "2026-10-20T07:01:15.418598Z",
+  "last_run": {
+    "failure_code": null,
+    "finished_at": "2026-10-20T07:01:15.423579Z",
+    "run_id": "cert_f735f9820a734adf80adaceb2fff8136",
+    "state": "PASSED",
+    "trigger": "scheduled"
+  },
+  "name": "OUT3 C: local Lemmy direct (rules drift)",
+  "open_alerts": [
+    "rules_drift"
+  ],
+  "recert_due_at": "2026-11-10T07:01:15.418598Z",
+  "rules": "needs_review v1",
+  "status": "active",
+  "trust_level": "L4"
+}
+## 6. exclusion check: POST /api/v1/publications to the demoted destinations
+A: HTTP 409 DESTINATION_EXCLUDED Destination 'OUT3 A: local Lemmy via toxiproxy' is excluded: certification cert_e6ff7d5786a148ac94488f9010c7b704 failed at PUBLISH: PLATFORM
+B: HTTP 409 DESTINATION_EXCLUDED Destination 'OUT3 B: Discourse mock (field rename)' is excluded: certification cert_089fd2112837471998dad5d63457bf4d failed at PUBLISH: PLAT
+C: HTTP 409 DEST_RULES_UNCONFIRMED DEST_RULES_UNCONFIRMED: this destination has no confirmed posting rules; confirm them (or use RuleSet.conservative_default()) before posting
+not retried before RECERT_RETRY_EXCLUDED_AFTER_S
+[]
+## 7. alert payloads received by the webhook (HMAC verified here with the shared secret)
+alert.opened alert_8d8837a3ba9d486cbe24940e0fabc159:alert.opened signature_valid=True
+{
+  "alert_id": "alert_8d8837a3ba9d486cbe24940e0fabc159",
+  "created_at": "2026-10-20T07:01:13.126981Z",
+  "destination": {
+    "connector_key": "lemmy",
+    "excluded_reason": "certification cert_e6ff7d5786a148ac94488f9010c7b704 failed at PUBLISH: PLATFORM_UNAVAILABLE: lemmy: could not connect to the platform (ConnectError).",
+    "id": "dest_2d56b265e3db4ad28bd9d2565c3d92ec",
+    "last_certified_at": "2026-10-20T07:01:03.240372Z",
+    "level": "L0",
+    "name": "OUT3 A: local Lemmy via toxiproxy",
+    "status": "excluded",
+    "url": "http://toxiproxy:18536/c/ibx_test_2"
+  },
+  "details": {
+    "action": "destination demoted to L0 and excluded until it passes again",
+    "cleanup": {
+      "action": "lookup by marker failed",
+      "error": {
+        "code": "INTERNAL_ERROR",
+        "message": "ConnectError: All connection attempts failed"
+      },
+      "marker": "ibx-tugj3qtk36wg",
+      "ok": false
+    },
+    "code": "PLATFORM_UNAVAILABLE",
+    "connector_key": "lemmy",
+    "destination": "OUT3 A: local Lemmy via toxiproxy",
+    "message": "lemmy: could not connect to the platform (ConnectError).",
+    "run_id": "cert_e6ff7d5786a148ac94488f9010c7b704",
+    "step": "PUBLISH"
+  },
+  "event": "alert.opened",
+  "kind": "certification_failed",
+  "links": {
+    "api": "http://127.0.0.1:58675/api/v1/network/health?destination_id=dest_2d56b265e3db4ad28bd9d2565c3d92ec",
+    "certification": "http://127.0.0.1:58675/api/v1/certifications/cert_e6ff7d5786a148ac94488f9010c7b704",
+    "network_health": "http://127.0.0.1:58675/ui/network"
+  },
+  "run": {
+    "failure_code": "PLATFORM_UNAVAILABLE",
+    "finished_at": "2026-10-20T07:01:13.134780Z",
+    "run_id": "cert_e6ff7d5786a148ac94488f9010c7b704",
+    "state": "DEMOTED",
+    "trigger": "scheduled"
+  },
+  "sent_at": "2026-10-20T07:01:13.228231Z",
+  "service": "ibx-destination-network",
+  "status": "open",
+  "summary": "OUT3 A: local Lemmy via toxiproxy failed scheduled certification at PUBLISH (PLATFORM_UNAVAILABLE): demoted to L0 and excluded from publications and recommendations until it passes again."
+}
+alert.opened alert_9701586ba19a4256806904990f501c34:alert.opened signature_valid=True
+{
+  "alert_id": "alert_9701586ba19a4256806904990f501c34",
+  "created_at": "2026-10-20T07:01:15.041772Z",
+  "destination": {
+    "connector_key": "lemmy",
+    "excluded_reason": null,
+    "id": "dest_cda645de6d644d709317a1e1ee4153a3",
+    "last_certified_at": "2026-10-20T07:01:15.418598Z",
+    "level": "L4",
+    "name": "OUT3 C: local Lemmy direct (rules drift)",
+    "status": "active",
+    "url": "http://lemmy:8536/c/ibx_test_2"
+  },
+  "details": {
+    "action": "re-confirm the rules: POST /api/v1/destinations/dest_cda645de6d644d709317a1e1ee4153a3/rules/capture then confirm the proposal, or PUT /api/v1/destinations/dest_cda645de6d644d709317a1e1ee4153a3/rules",
+    "baseline_at": "2026-10-20T07:01:00.887230Z",
+    "baseline_sha256": "fe8542aa6de79ef2ef542e8586ee2cf618512879b72b9e706e466b0e36b0ad96",
+    "current_sha256": "e252fe891b9fb9315ee9d579bf4bee81140313f067ff11e30da73c555636fb87",
+    "destination": "OUT3 C: local Lemmy direct (rules drift)",
+    "detected_at": "2026-10-20T07:01:15.015695Z",
+    "rule_set_id": "rules_029813f8bae2439eaf241b14e115ec42",
+    "rule_set_version": 1,
+    "sources": [
+      {
+        "bytes": 2184,
+        "kind": "lemmy_sidebar",
+        "url": "http://lemmy:8536/api/v3/community?name=ibx_test_2"
+      }
+    ]
+  },
+  "event": "alert.opened",
+  "kind": "rules_drift",
+  "links": {
+    "api": "http://127.0.0.1:58675/api/v1/network/health?destination_id=dest_cda645de6d644d709317a1e1ee4153a3",
+    "network_health": "http://127.0.0.1:58675/ui/network"
+  },
+  "run": null,
+  "sent_at": "2026-10-20T07:01:15.451248Z",
+  "service": "ibx-destination-network",
+  "status": "open",
+  "summary": "The rules source of OUT3 C: local Lemmy direct (rules drift) changed since its rules were confirmed: rule set v1 needs review. Publications are refused (DEST_RULES_UNCONFIRMED) until a person re-confirms."
+}
+alert.opened alert_59319798ea5044208faec0a60f38217a:alert.opened signature_valid=True
+{
+  "alert_id": "alert_59319798ea5044208faec0a60f38217a",
+  "created_at": "2026-10-20T07:01:19.160650Z",
+  "destination": {
+    "connector_key": "discourse",
+    "excluded_reason": "certification cert_089fd2112837471998dad5d63457bf4d failed at PUBLISH: PLATFORM_UNAVAILABLE: discourse: the platform did not confirm the publish (timeout or server error after the request was sent); outcome unknown, safe to retry with the same idempotency_key.",
+    "id": "dest_f2c8fe431ca04791bcfffc1aa911ff9f",
+    "last_certified_at": "2026-10-20T07:01:07.123225Z",
+    "level": "L0",
+    "name": "OUT3 B: Discourse mock (field rename)",
+    "status": "excluded",
+    "url": "http://mock-platforms:8080/discourse/out3-forum"
+  },
+  "details": {
+    "action": "destination demoted to L0 and excluded until it passes again",
+    "cleanup": {
+      "action": "deleted",
+      "found_by": "marker",
+      "marker": "ibx-fuxyhmd3jf7x",
+      "ok": true,
+      "platform_post_id": "3"
+    },
+    "code": "PLATFORM_UNAVAILABLE",
+    "connector_key": "discourse",
+    "destination": "OUT3 B: Discourse mock (field rename)",
+    "message": "discourse: the platform did not confirm the publish (timeout or server error after the request was sent); outcome unknown, safe to retry with the same idempotency_key.",
+    "run_id": "cert_089fd2112837471998dad5d63457bf4d",
+    "step": "PUBLISH"
+  },
+  "event": "alert.opened",
+  "kind": "certification_failed",
+  "links": {
+    "api": "http://127.0.0.1:58675/api/v1/network/health?destination_id=dest_f2c8fe431ca04791bcfffc1aa911ff9f",
+    "certification": "http://127.0.0.1:58675/api/v1/certifications/cert_089fd2112837471998dad5d63457bf4d",
+    "network_health": "http://127.0.0.1:58675/ui/network"
+  },
+  "run": {
+    "failure_code": "PLATFORM_UNAVAILABLE",
+    "finished_at": "2026-10-20T07:01:19.163688Z",
+    "run_id": "cert_089fd2112837471998dad5d63457bf4d",
+    "state": "DEMOTED",
+    "trigger": "scheduled"
+  },
+  "sent_at": "2026-10-20T07:01:19.183805Z",
+  "service": "ibx-destination-network",
+  "status": "open",
+  "summary": "OUT3 B: Discourse mock (field rename) failed scheduled certification at PUBLISH (PLATFORM_UNAVAILABLE): demoted to L0 and excluded from publications and recommendations until it passes again."
+}
+open alerts (GET /api/v1/network/alerts?status=open)
+[
+  {
+    "alert_id": "alert_59319798ea5044208faec0a60f38217a",
+    "delivered_to": [
+      "log",
+      "webhook",
+      "github_issue#3"
+    ],
+    "destination_id": "dest_f2c8fe431ca04791bcfffc1aa911ff9f",
+    "kind": "certification_failed"
+  },
+  {
+    "alert_id": "alert_9701586ba19a4256806904990f501c34",
+    "delivered_to": [
+      "log",
+      "webhook",
+      "github_issue#2"
+    ],
+    "destination_id": "dest_cda645de6d644d709317a1e1ee4153a3",
+    "kind": "rules_drift"
+  },
+  {
+    "alert_id": "alert_8d8837a3ba9d486cbe24940e0fabc159",
+    "delivered_to": [
+      "log",
+      "webhook",
+      "github_issue#1"
+    ],
+    "destination_id": "dest_2d56b265e3db4ad28bd9d2565c3d92ec",
+    "kind": "certification_failed"
+  }
+]
+## 8. recovery: proxy re-enabled (B's fault was one-shot); the admin re-confirms C's rules
+A: toxiproxy lemmy_proxy enabled -> 200 True
+C: PUT /api/v1/destinations/{id}/rules (a person re-confirms) -> HTTP 200
+## 9. CLOCK JUMP +46 days: tick (demoted destinations are re-tested: trigger recert_retry)
+  C run cert_47a1c7fb08f544d89b9618d34bc87f66 trigger=scheduled -> PASSED level L4
+  A run cert_3cfb6335e8c04ea989ad9b749af078b1 trigger=recert_retry -> PASSED level L4
+  B run cert_a128a4cd4be04a93a39ce93f778ba26d trigger=recert_retry -> PASSED level L4
+python -m app.recert deliver-alerts
+{
+  "deliveries": [],
+  "rules_drift_resolved": 0
+}
+A network health after recovery
+{
+  "excluded_reason": null,
+  "failure_streak": 0,
+  "last_certified_at": "2026-10-20T07:01:26.620027Z",
+  "last_run": {
+    "failure_code": null,
+    "finished_at": "2026-10-20T07:01:26.626631Z",
+    "run_id": "cert_3cfb6335e8c04ea989ad9b749af078b1",
+    "state": "PASSED",
+    "trigger": "recert_retry"
+  },
+  "name": "OUT3 A: local Lemmy via toxiproxy",
+  "open_alerts": [],
+  "recert_due_at": "2026-11-10T07:01:26.620027Z",
+  "rules": "confirmed v1",
+  "status": "active",
+  "trust_level": "L4"
+}
+B network health after recovery
+{
+  "excluded_reason": null,
+  "failure_streak": 0,
+  "last_certified_at": "2026-10-20T07:01:32.530883Z",
+  "last_run": {
+    "failure_code": null,
+    "finished_at": "2026-10-20T07:01:32.535832Z",
+    "run_id": "cert_a128a4cd4be04a93a39ce93f778ba26d",
+    "state": "PASSED",
+    "trigger": "recert_retry"
+  },
+  "name": "OUT3 B: Discourse mock (field rename)",
+  "open_alerts": [],
+  "recert_due_at": "2026-11-10T07:01:32.530883Z",
+  "rules": "confirmed v1",
+  "status": "active",
+  "trust_level": "L4"
+}
+C network health after recovery
+{
+  "excluded_reason": null,
+  "failure_streak": 0,
+  "last_certified_at": "2026-10-20T07:01:30.664622Z",
+  "last_run": {
+    "failure_code": null,
+    "finished_at": "2026-10-20T07:01:30.669213Z",
+    "run_id": "cert_47a1c7fb08f544d89b9618d34bc87f66",
+    "state": "PASSED",
+    "trigger": "scheduled"
+  },
+  "name": "OUT3 C: local Lemmy direct (rules drift)",
+  "open_alerts": [],
+  "recert_due_at": "2026-11-10T07:01:30.664622Z",
+  "rules": "confirmed v2",
+  "status": "active",
+  "trust_level": "L4"
+}
+resolution events received by the webhook
+[
+  {
+    "event": "alert.resolved",
+    "kind": "certification_failed",
+    "signature_valid": true,
+    "summary": "OUT3 A: local Lemmy via toxiproxy passed certification again: level L4 restored and the exclusion lifted."
+  },
+  {
+    "event": "alert.resolved",
+    "kind": "rules_drift",
+    "signature_valid": true,
+    "summary": "The rules of OUT3 C: local Lemmy direct (rules drift) were re-confirmed by a person."
+  },
+  {
+    "event": "alert.resolved",
+    "kind": "certification_failed",
+    "signature_valid": true,
+    "summary": "OUT3 B: Discourse mock (field rename) passed certification again: level L4 restored and the exclusion lifted."
+  }
+]
+GitHub-issues emulation (our mock; a real repo is used only when GITHUB_TOKEN/GITHUB_REPO point at github.com)
+[
+  {
+    "authorized": true,
+    "labels": [
+      "ibx-alert",
+      "certification_failed"
+    ],
+    "number": 1,
+    "state": "closed",
+    "title": "[IncuBrix alert] certification_failed: OUT3 A: local Lemmy via toxiproxy"
+  },
+  {
+    "authorized": true,
+    "labels": [
+      "ibx-alert",
+      "rules_drift"
+    ],
+    "number": 2,
+    "state": "closed",
+    "title": "[IncuBrix alert] rules_drift: OUT3 C: local Lemmy direct (rules drift)"
+  },
+  {
+    "authorized": true,
+    "labels": [
+      "ibx-alert",
+      "certification_failed"
+    ],
+    "number": 3,
+    "state": "closed",
+    "title": "[IncuBrix alert] certification_failed: OUT3 B: Discourse mock (field rename)"
+  }
+]
+network summary (GET /api/v1/network/health)
+{
+  "by_level": {
+    "L4": 3
+  },
+  "by_status": {
+    "active": 3
+  },
+  "destinations": 3,
+  "failing": 0,
+  "open_alerts": 0,
+  "posts_measured": 0,
+  "recert_overdue": 0,
+  "rules_need_review": 0
+}

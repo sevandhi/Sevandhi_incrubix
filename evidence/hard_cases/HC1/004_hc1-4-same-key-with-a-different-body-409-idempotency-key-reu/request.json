@@ -1,0 +1,20 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "A different title sent with the same key",
+      "body": "The platform saves it, then the answer times out."
+    },
+    "destination": {
+      "connector_key": "discourse",
+      "surface": "topic",
+      "url": "http://mock-platforms:8080/discourse/hc1-to-4201344a"
+    },
+    "connection": {
+      "connector_key": "discourse"
+    },
+    "idempotency_key": "hc1-to-4201344a"
+  }
+}

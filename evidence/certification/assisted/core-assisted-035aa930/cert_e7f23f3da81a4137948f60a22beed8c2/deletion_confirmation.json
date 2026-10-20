@@ -1,0 +1,20 @@
+{
+  "run_id": "cert_e7f23f3da81a4137948f60a22beed8c2",
+  "delete_mode": "pack_revoked",
+  "step": {
+    "n": 6,
+    "step": "CONFIRM_DELETED",
+    "outcome": "ok",
+    "started_at": "2026-10-17T16:49:54.652191Z",
+    "duration_ms": 11.4,
+    "detail": {
+      "delete_mode": "pack_revoked",
+      "links_now": "404 from /api/v1/files (object gone)",
+      "keys": [
+        "assist/ibx-ukhqgx6xbsjc/title.txt",
+        "assist/ibx-ukhqgx6xbsjc/caption.txt",
+        "assist/ibx-ukhqgx6xbsjc/checklist.md"
+      ]
+    }
+  }
+}

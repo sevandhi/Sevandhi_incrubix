@@ -1,0 +1,31 @@
+{
+  "run_id": "cert_8ffa85a585f047e49e20bbdba8d5acd1",
+  "delete_mode": "soft_deleted",
+  "step": {
+    "n": 8,
+    "step": "CONFIRM_DELETED",
+    "outcome": "ok",
+    "started_at": "2026-10-17T16:50:46.900546Z",
+    "duration_ms": 51.6,
+    "detail": {
+      "status_after": {
+        "status": "deleted",
+        "live_url": null
+      },
+      "delete_mode": "soft_deleted",
+      "platform_delete_mode": "soft",
+      "method": "platform_api_get_status + http_get_live_url",
+      "live_url_after": {
+        "url": "http://mock-platforms:8080/discourse/dest-ai-disclosure-es/t/incubrix-certification-test-ibxcertdba8d5acd1/1",
+        "http_status": 404,
+        "attempts": [
+          {
+            "at": "2026-10-17T16:50:46.946640Z",
+            "status": 404,
+            "bytes": 23
+          }
+        ]
+      }
+    }
+  }
+}

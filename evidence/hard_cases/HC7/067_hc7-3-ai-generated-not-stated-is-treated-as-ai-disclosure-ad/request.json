@@ -1,0 +1,21 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "A summary of this week's release notes",
+      "body": "Here is a short summary of what changed in the release this week."
+    },
+    "destination": {
+      "connector_key": "discourse",
+      "surface": "topic",
+      "url": "http://mock-platforms:8080/discourse/hc7-unk-4201344a",
+      "disclosure_required": true
+    },
+    "connection": {
+      "connector_key": "discourse"
+    },
+    "idempotency_key": "hc7-unk-4201344a"
+  }
+}

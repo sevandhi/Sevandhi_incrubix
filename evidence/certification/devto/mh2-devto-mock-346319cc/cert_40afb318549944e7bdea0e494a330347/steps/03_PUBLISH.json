@@ -1,0 +1,37 @@
+{
+  "n": 3,
+  "step": "PUBLISH",
+  "outcome": "ok",
+  "started_at": "2026-10-18T19:22:56.471926Z",
+  "duration_ms": 18.6,
+  "detail": {
+    "request": {
+      "rendition": {
+        "rendition_id": "cert-cert_40afb318549944e7bdea0e494a330347",
+        "content_id": null,
+        "surface": "article",
+        "content_type": "text",
+        "title": "IncuBrix certification test ibxcert494a330347",
+        "body": "Automated certification test post ibxcert494a330347 from the IncuBrix destination network. It checks publish, live URL, status and removal on our own test instance, and is unpublished (taken off the public site) within 10 minutes.",
+        "body_format": "markdown",
+        "canonical_url": null,
+        "link_url": null,
+        "media": [],
+        "tags": [],
+        "mentions": [],
+        "language": "en",
+        "is_promotional": false,
+        "ai_generated": false
+      },
+      "idempotency_key": "cert-cert_40afb318549944e7bdea0e494a330347",
+      "marker": "ibx-f774hi5tsnyk"
+    },
+    "response": {
+      "platform_post_id": "1",
+      "live_url": "http://mock-platforms:8080/forem/mh2-devto-ef33929b/ibx_admin/incubrix-certification-test-ibxcert494a330347-0001",
+      "status": "published"
+    },
+    "test_post_id": 3,
+    "expires_after_s": 300
+  }
+}

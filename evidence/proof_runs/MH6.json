@@ -1,0 +1,148 @@
+{
+ "id": "MH6",
+ "title": "Safe retries: one idempotency key never creates a second post, even after a timeout",
+ "status": "Yes",
+ "reasons": [],
+ "run_id": "20261020T145607Z",
+ "started_at": "2026-10-20T14:57:43Z",
+ "finished_at": "2026-10-20T14:59:09Z",
+ "duration_s": 85.7,
+ "api": "http://127.0.0.1:38875",
+ "mode": "local",
+ "command": "scripts/prove_mh6.sh",
+ "evidence": [
+  "evidence/metrics/duplicates_under_retry.csv",
+  "evidence/must_haves/MH6_timeout_retry.log"
+ ],
+ "checks_total": 18,
+ "checks_passed": 18,
+ "checks": [
+  {
+   "label": "discourse timeout_then_retry (mock): one post, no duplicate",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": \"503 PLATFORM_UNAVAILABLE outcome=unknown\", \"retry\": \"200 after waits [] replayed=true reconciled=True\", \"same_key_other_body\": \"409 IDEMPOTENCY_KEY_REUSED\", \"posts_on_platform\": 1}",
+   "group": null
+  },
+  {
+   "label": "discourse create_then_502 (mock): one post, no duplicate",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": \"503 PLATFORM_UNAVAILABLE\", \"retry\": \"200\", \"same_key_other_body\": \"\", \"posts_on_platform\": 1}",
+   "group": null
+  },
+  {
+   "label": "discourse 8_parallel_same_key (mock): one post, no duplicate",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": \"[200, 200, 200, 200, 200, 200, 200, 200]\", \"retry\": \"distinct ids 1\", \"same_key_other_body\": \"\", \"posts_on_platform\": 1}",
+   "group": null
+  },
+  {
+   "label": "lemmy timeout_then_retry (mock): one post, no duplicate",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": \"503 PLATFORM_UNAVAILABLE outcome=unknown\", \"retry\": \"200 after waits [] replayed=true reconciled=True\", \"same_key_other_body\": \"409 IDEMPOTENCY_KEY_REUSED\", \"posts_on_platform\": 1}",
+   "group": null
+  },
+  {
+   "label": "lemmy create_then_502 (mock): one post, no duplicate",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": \"503 PLATFORM_UNAVAILABLE\", \"retry\": \"200\", \"same_key_other_body\": \"\", \"posts_on_platform\": 1}",
+   "group": null
+  },
+  {
+   "label": "lemmy 8_parallel_same_key (mock): one post, no duplicate",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": \"[200, 200, 200, 200, 200, 200, 200, 200]\", \"retry\": \"distinct ids 1\", \"same_key_other_body\": \"\", \"posts_on_platform\": 1}",
+   "group": null
+  },
+  {
+   "label": "devto timeout_then_retry (mock): one post, no duplicate",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": \"503 PLATFORM_UNAVAILABLE outcome=unknown\", \"retry\": \"200 after waits [] replayed=true reconciled=True\", \"same_key_other_body\": \"409 IDEMPOTENCY_KEY_REUSED\", \"posts_on_platform\": 1}",
+   "group": null
+  },
+  {
+   "label": "devto create_then_502 (mock): one post, no duplicate",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": \"503 PLATFORM_UNAVAILABLE\", \"retry\": \"200\", \"same_key_other_body\": \"\", \"posts_on_platform\": 1}",
+   "group": null
+  },
+  {
+   "label": "devto 8_parallel_same_key (mock): one post, no duplicate",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": \"[200, 200, 200, 200, 200, 200, 200, 200]\", \"retry\": \"distinct ids 1\", \"same_key_other_body\": \"\", \"posts_on_platform\": 1}",
+   "group": null
+  },
+  {
+   "label": "ghost timeout_then_retry (mock): one post, no duplicate",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": \"503 PLATFORM_UNAVAILABLE outcome=unknown\", \"retry\": \"200 after waits [] replayed=true reconciled=True\", \"same_key_other_body\": \"409 IDEMPOTENCY_KEY_REUSED\", \"posts_on_platform\": 1}",
+   "group": null
+  },
+  {
+   "label": "ghost create_then_502 (mock): one post, no duplicate",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": \"503 PLATFORM_UNAVAILABLE\", \"retry\": \"200\", \"same_key_other_body\": \"\", \"posts_on_platform\": 1}",
+   "group": null
+  },
+  {
+   "label": "ghost 8_parallel_same_key (mock): one post, no duplicate",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": \"[200, 200, 200, 200, 200, 200, 200, 200]\", \"retry\": \"distinct ids 1\", \"same_key_other_body\": \"\", \"posts_on_platform\": 1}",
+   "group": null
+  },
+  {
+   "label": "webhook timeout_then_retry (mock): one post, no duplicate",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": \"503 PLATFORM_UNAVAILABLE outcome=unknown\", \"retry\": \"200 after waits [] replayed=true reconciled=True\", \"same_key_other_body\": \"409 IDEMPOTENCY_KEY_REUSED\", \"posts_on_platform\": 1}",
+   "group": null
+  },
+  {
+   "label": "webhook create_then_502 (mock): one post, no duplicate",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": \"503 PLATFORM_UNAVAILABLE\", \"retry\": \"200\", \"same_key_other_body\": \"\", \"posts_on_platform\": 1}",
+   "group": null
+  },
+  {
+   "label": "webhook 8_parallel_same_key (mock): one post, no duplicate",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": \"[200, 200, 200, 200, 200, 200, 200, 200]\", \"retry\": \"distinct ids 1\", \"same_key_other_body\": \"\", \"posts_on_platform\": 1}",
+   "group": null
+  },
+  {
+   "label": "lemmy timeout_then_retry (real-local): one post, no duplicate",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": \"503 PLATFORM_UNAVAILABLE outcome=unknown\", \"retry\": \"200 after waits [5.0] replayed=None reconciled=None\", \"same_key_other_body\": \"409 IDEMPOTENCY_KEY_REUSED\", \"posts_on_platform\": 1}",
+   "group": null
+  },
+  {
+   "label": "ghost timeout_then_retry (real-local): one post, no duplicate",
+   "ok": true,
+   "critical": true,
+   "detail": "{\"first\": \"503 PLATFORM_UNAVAILABLE outcome=unknown\", \"retry\": \"200 after waits [] replayed=true reconciled=True\", \"same_key_other_body\": \"409 IDEMPOTENCY_KEY_REUSED\", \"posts_on_platform\": 1}",
+   "group": null
+  },
+  {
+   "label": "duplicate posts under all retry tests = 0",
+   "ok": true,
+   "critical": true,
+   "detail": "0",
+   "group": null
+  }
+ ],
+ "sub": {}
+}

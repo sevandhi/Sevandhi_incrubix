@@ -1,0 +1,21 @@
+{
+  "run_id": "cert_7c7d50e8df59440d9df13e1e8bb2764e",
+  "delete_mode": "purged",
+  "step": {
+    "n": 8,
+    "step": "CONFIRM_DELETED",
+    "outcome": "ok",
+    "started_at": "2026-10-17T16:49:51.864741Z",
+    "duration_ms": 33.6,
+    "detail": {
+      "status_after": {
+        "status": "deleted",
+        "live_url": null
+      },
+      "delete_mode": "purged",
+      "platform_delete_mode": "purged",
+      "method": "platform_api_get_status",
+      "live_url_after": "not used: local Lemmy with federation off serves no page at ap_id (404); the platform API confirms the post"
+    }
+  }
+}

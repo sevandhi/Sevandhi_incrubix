@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confirm posting rules</title>
+<style>
+  :root { --fg: #1d2330; --muted: #5b6475; --line: #d9dee7; --ok: #1f7a3d; --warn: #9a5b00; --bad: #a8261b; --bg: #fff; --chip: #f2f4f8; }
+  @media (prefers-color-scheme: dark) { :root { --fg: #e6e9ef; --muted: #a3acbd; --line: #384152; --ok: #6fd296; --warn: #f0b45a; --bad: #ff8a80; --bg: #141821; --chip: #1f2532; } }
+  body { font: 15px/1.5 system-ui, sans-serif; color: var(--fg); background: var(--bg); margin: 0 auto; max-width: 1100px; padding: 16px; }
+  h1 { font-size: 1.4rem; margin: 0 0 4px; } h2 { font-size: 1.1rem; margin: 24px 0 8px; }
+  .muted { color: var(--muted); } .chip { background: var(--chip); border-radius: 4px; padding: 1px 6px; font-size: .85rem; }
+  table { width: 100%; border-collapse: collapse; } th, td { text-align: left; vertical-align: top; padding: 8px; border-bottom: 1px solid var(--line); }
+  td.field { font-weight: 600; white-space: nowrap; } blockquote { margin: 0; padding-left: 8px; border-left: 3px solid var(--line); }
+  .verified { color: var(--ok); } .quote_not_found, .suspicious_quote { color: var(--bad); } .not_stated { color: var(--warn); } .stated_in_row { color: var(--warn); }
+  .warnings { border: 1px solid var(--warn); border-radius: 6px; padding: 0 12px; margin: 12px 0; }
+  input[type=text] { width: 100%; box-sizing: border-box; padding: 4px; font: inherit; background: var(--bg); color: var(--fg); border: 1px solid var(--line); }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 16px; }
+  button { font: inherit; padding: 6px 14px; cursor: pointer; } #result { white-space: pre-wrap; }
+  .table-wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+<h1>Confirm posting rules: {{ destination.name }}</h1>
+<p class="muted">{{ destination.connector_key }} · {{ destination.url }} · proposal {{ proposal.proposal_id }} (version {{ proposal.version }}) ·
+  status <span class="chip" id="status">{{ proposal.status }}</span></p>
+{% if proposal.warnings %}
+<div class="warnings" role="alert">
+<h2>Warnings ({{ proposal.warnings|length }})</h2>
+<ul>{% for w in proposal.warnings %}<li><span class="chip">{{ w.code }}</span> {{ w.message }}{% if w.get("http_status") %} <span class="muted">(HTTP {{ w.get("http_status") }})</span>{% endif %}</li>{% endfor %}</ul>
+</div>
+{% endif %}
+{% if proposal.origin == 'catalogue_row' %}
+<p>These rules were <strong>proposed</strong> by the catalogue row (rules_source <span class="chip">{{ proposal.source }}</span>).
+  This service did not read them from the community. They are not used for posting until a person confirms them here.
+  Fields the row does not state show the <strong>conservative default</strong>. Edit any value before confirming.</p>
+{% else %}
+<p>These rules were <strong>proposed</strong> by
+  {% if proposal.llm %}<span class="chip">{{ proposal.llm.provider }} / {{ proposal.llm.model }}</span>{% if proposal.llm.fallback_used %} (fallback){% endif %}{% else %}the extractor{% endif %}
+  from the community's own text. They are not used for posting until a person confirms them here.
+  A value is used only when its quote appears word for word in the page; every other field shows the
+  <strong>conservative default</strong>. Edit any value before confirming.</p>
+{% endif %}
+{% if current %}<p class="muted">Currently confirmed: version {{ current.version }} by {{ current.confirmed_by }} ({{ current.confirmed_at }}).</p>{% endif %}
+
+<h2>Fields</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Rule</th><th>Value to confirm</th><th>Check</th><th>Quote from the page</th></tr></thead>
+  <tbody>
+  {% for f in proposal.fields %}
+    <tr>
+      <td class="field">{{ f.field }}</td>
+      <td><input type="text" data-field="{{ f.field }}" data-original="{{ f.applied if f.applied is not none else '' }}"
+                 value="{{ f.applied if f.applied is not none else '' }}" aria-label="{{ f.field }}"></td>
+      <td class="{{ f.status }}">{% if f.status == 'verified' %}quote verified{% elif f.status == 'quote_not_found' %}quote NOT in page: default used (proposed: {{ f.proposed }}){% elif f.status == 'stated_in_row' %}from the catalogue row: not verified by the service{% elif f.status == 'suspicious_quote' %}quote is an instruction to AI readers: default used (proposed: {{ f.proposed }}){% else %}not stated: default used{% endif %}
+        {% if f.confidence is not none and f.status == 'verified' %}<br><span class="muted">confidence {{ '%.2f'|format(f.confidence) }}</span>{% endif %}</td>
+      <td>{% if f.quote %}<blockquote>{{ f.quote }}</blockquote>{% if f.source_url %}<span class="muted">{{ f.source_kind }}: {{ f.source_url }}</span>{% elif f.source_kind %}<span class="muted">{{ f.source_kind }}</span>{% endif %}{% else %}<span class="muted">none</span>{% endif %}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% if proposal.flags %}
+<h2>Flags</h2>
+<ul>{% for flag in proposal.flags %}<li>{{ flag }}</li>{% endfor %}</ul>
+{% endif %}
+
+<h2>Sources</h2>
+<ul>
+{% for s in proposal.sources %}<li><span class="chip">{{ s.kind }}</span> {{ s.url or 'pasted text' }} {% if s.sha256 %} · sha256 <code>{{ s.sha256[:16] }}…</code>{% endif %}{% if s.text_chars is not none %} · {{ s.text_chars }} characters{% endif %}{% if s.note %} · {{ s.note }}{% endif %}</li>{% endfor %}
+</ul>
+{% if proposal.rules_page_sha256 %}<p class="muted">Text analysed: sha256 <code>{{ proposal.rules_page_sha256 }}</code>, captured {{ proposal.captured_at }}.</p>
+{% else %}<p class="muted">Proposed {{ proposal.captured_at }}; no page text was analysed by this service.</p>{% endif %}
+
+<h2>Decision</h2>
+{% if proposal.status == 'proposed' %}
+<div class="actions">
+  <label>Your name <input type="text" id="who" style="width:14em" autocomplete="name"></label>
+  <label>API token <input type="password" id="token" style="width:14em" autocomplete="off"></label>
+</div>
+<div class="actions">
+  <label style="flex:1">Note <input type="text" id="note"></label>
+</div>
+<div class="actions">
+  <button id="confirm" type="button">Confirm rules</button>
+  <button id="reject" type="button">Reject</button>
+</div>
+{% else %}
+<p>This proposal is <strong>{{ proposal.status }}</strong>{% if proposal.decision %} by {{ proposal.decision.by }} at {{ proposal.decision.at }}{% endif %}.</p>
+{% endif %}
+<p id="result" role="status"></p>
+
+<script nonce="{{ nonce }}">
+(function () {
+  const id = {{ proposal.proposal_id|tojson }};
+  const keys = {frequency_cap: "frequency_cap", self_promo: "self_promo", link_policy: "link_policy",
+                disclosure_required: "disclosure", language: "languages", automation_allowed: "automation_allowed"};
+  const out = document.getElementById("result");
+  const token = document.getElementById("token");
+  if (!token) return;
+  try { token.value = sessionStorage.getItem("ibx_token") || ""; } catch (e) {}
+  function value(field, text) {
+    text = text.trim();
+    if (field === "disclosure_required") return {required: /^(true|yes|1)$/i.test(text)};
+    if (field === "automation_allowed") return /^(true|yes|1)$/i.test(text);
+    if (field === "language") return text ? [text] : [];
+    return text === "" ? null : text;
+  }
+  async function send(action) {
+    const who = document.getElementById("who").value.trim();
+    if (!who) { out.textContent = "Type your name first."; return; }
+    try { sessionStorage.setItem("ibx_token", token.value); } catch (e) {}
+    const body = action === "confirm"
+      ? {confirmed_by: who, overrides: {}, note: document.getElementById("note").value || null}
+      : {rejected_by: who, reason: document.getElementById("note").value || null};
+    if (action === "confirm") {
+      document.querySelectorAll("input[data-field]").forEach(function (input) {
+        if (input.value !== input.dataset.original) body.overrides[keys[input.dataset.field]] = value(input.dataset.field, input.value);
+      });
+    }
+    const response = await fetch("/api/v1/rule-proposals/" + encodeURIComponent(id) + "/" + action, {
+      method: "POST",
+      headers: {"Content-Type": "application/json", "Authorization": "Bearer " + token.value,
+                "Idempotency-Key": "ui-" + action + "-" + id + "-" + Date.now()},
+      body: JSON.stringify(body)
+    });
+    const data = await response.json().catch(function () { return {}; });
+    if (response.ok) {
+      document.getElementById("status").textContent = data.status;
+      out.textContent = action === "confirm" ? "Confirmed: these rules are now used for posting (version " + data.rules.version + ")." : "Rejected.";
+      document.querySelectorAll("button").forEach(function (b) { b.disabled = true; });
+    } else {
+      out.textContent = "Error " + response.status + ": " + ((data.error && data.error.message) || "request failed");
+    }
+  }
+  document.getElementById("confirm").addEventListener("click", function () { send("confirm"); });
+  document.getElementById("reject").addEventListener("click", function () { send("reject"); });
+})();
+</script>
+</body>
+</html>

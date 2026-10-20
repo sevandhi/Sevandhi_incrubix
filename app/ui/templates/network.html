@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Network health</title>
+<style>
+  :root { --fg: #1d2330; --muted: #5b6475; --line: #d9dee7; --ok: #1f7a3d; --warn: #9a5b00; --bad: #a8261b; --bg: #fff; --chip: #f2f4f8; }
+  @media (prefers-color-scheme: dark) { :root { --fg: #e6e9ef; --muted: #a3acbd; --line: #384152; --ok: #6fd296; --warn: #f0b45a; --bad: #ff8a80; --bg: #141821; --chip: #1f2532; } }
+  body { font: 15px/1.5 system-ui, sans-serif; color: var(--fg); background: var(--bg); margin: 0 auto; max-width: 1300px; padding: 16px; }
+  h1 { font-size: 1.4rem; margin: 0 0 4px; }
+  .muted { color: var(--muted); } .chip { background: var(--chip); border-radius: 4px; padding: 1px 6px; font-size: .85rem; white-space: nowrap; }
+  table { width: 100%; border-collapse: collapse; font-size: .9rem; } th, td { text-align: left; vertical-align: top; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+  th { position: sticky; top: 0; background: var(--bg); }
+  .ok { color: var(--ok); } .warn { color: var(--warn); } .bad { color: var(--bad); }
+  .bar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+  input { font: inherit; padding: 4px; background: var(--bg); color: var(--fg); border: 1px solid var(--line); }
+  button { font: inherit; padding: 4px 12px; cursor: pointer; }
+  .tiles { display: flex; gap: 12px; flex-wrap: wrap; margin: 12px 0; } .tile { border: 1px solid var(--line); border-radius: 6px; padding: 8px 12px; min-width: 110px; }
+  .tile b { display: block; font-size: 1.3rem; } .table-wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+<h1>Destination network health</h1>
+<p class="muted">Trust level, last certification, recertification due date, failure streak, rules version and yield for every destination.
+  Data comes from <code>GET /api/v1/network/health</code>; the token stays in this tab only.</p>
+<div class="bar">
+  <label>API token <input id="token" type="password" autocomplete="off" size="28"></label>
+  <label>Filter <input id="filter" type="text" size="20" placeholder="name or connector"></label>
+  <button id="load">Load</button> <span id="msg" class="muted"></span>
+</div>
+<div class="tiles" id="tiles"></div>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Destination</th><th>Connector</th><th>Trust</th><th>Status</th><th>Last certified</th><th>Recert due</th>
+    <th>Last run</th><th>Failure streak</th><th>Rules</th><th>Yield</th><th>Alerts</th></tr></thead>
+  <tbody id="rows"><tr><td colspan="11" class="muted">Enter the API token and press Load.</td></tr></tbody>
+</table>
+</div>
+<script nonce="{{ nonce }}">
+(function () {
+  const token = document.getElementById("token"), msg = document.getElementById("msg"), rows = document.getElementById("rows");
+  const filter = document.getElementById("filter"), tiles = document.getElementById("tiles");
+  let data = null;
+  try { token.value = sessionStorage.getItem("ibx_token") || ""; } catch (e) {}
+  function el(tag, text, cls) { const n = document.createElement(tag); if (text !== undefined && text !== null) n.textContent = String(text); if (cls) n.className = cls; return n; }
+  function day(iso) { return iso ? iso.slice(0, 16).replace("T", " ") : "never"; }
+  function render() {
+    tiles.replaceChildren(); rows.replaceChildren();
+    if (!data) return;
+    const s = data.summary;
+    [["destinations", s.destinations], ["excluded", s.by_status.excluded || 0], ["recert overdue", s.recert_overdue],
+     ["failing", s.failing], ["rules need review", s.rules_need_review], ["open alerts", s.open_alerts], ["posts measured", s.posts_measured]]
+      .forEach(([label, value]) => { const t = el("div", null, "tile"); t.append(el("b", value), el("span", label, "muted")); tiles.append(t); });
+    const q = filter.value.trim().toLowerCase();
+    data.destinations.filter(d => !q || d.name.toLowerCase().includes(q) || d.connector_key.includes(q)).forEach(d => {
+      const tr = el("tr");
+      const name = el("td"); name.append(el("div", d.name), el("div", d.url, "muted")); tr.append(name);
+      tr.append(el("td", d.connector_key));
+      tr.append(el("td", d.trust_level, d.trust_level === "L0" ? "bad" : "ok"));
+      const st = el("td", d.status, d.status === "excluded" ? "bad" : "ok"); if (d.excluded_reason) st.title = d.excluded_reason; tr.append(st);
+      tr.append(el("td", day(d.last_certified_at)));
+      tr.append(el("td", d.recert_due_at ? day(d.recert_due_at) : "-", d.recert_overdue ? "warn" : ""));
+      tr.append(el("td", d.last_run ? d.last_run.state + " (" + d.last_run.trigger + ")" + (d.last_run.failure_code ? " " + d.last_run.failure_code : "") : "-"));
+      tr.append(el("td", d.failure_streak, d.failure_streak ? "bad" : ""));
+      tr.append(el("td", d.rules.version ? "v" + d.rules.version + " " + d.rules.status : "none", d.rules.status === "needs_review" ? "warn" : ""));
+      const y = d.yield; tr.append(el("td", y.posts_measured ? y.posts_measured + " posts, " + (y.engagement_per_post ?? "-") + " eng/post" : (d.metrics_supported.length ? "no posts measured" : "no metrics API")));
+      tr.append(el("td", d.open_alerts.join(", ") || "-", d.open_alerts.length ? "bad" : ""));
+      rows.append(tr);
+    });
+  }
+  async function load() {
+    try { sessionStorage.setItem("ibx_token", token.value); } catch (e) {}
+    msg.textContent = "loading...";
+    const r = await fetch("/api/v1/network/health", { headers: { "Authorization": "Bearer " + token.value } });
+    if (!r.ok) { msg.textContent = "HTTP " + r.status; data = null; render(); return; }
+    data = await r.json(); msg.textContent = "generated " + data.generated_at + " · recertify after " + data.recert_after_days + " days"; render();
+  }
+  document.getElementById("load").addEventListener("click", load);
+  filter.addEventListener("input", render);
+})();
+</script>
+</body>
+</html>

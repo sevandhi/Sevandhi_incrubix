@@ -1,0 +1,204 @@
+{
+  "$defs": {
+    "ErrorCode": {
+      "enum": [
+        "DEST_SPEC_VIOLATION",
+        "DEST_RULE_FREQUENCY_CAP",
+        "CONNECTION_AUTH_EXPIRED",
+        "PLATFORM_RATE_LIMIT",
+        "PLATFORM_QUOTA_EXHAUSTED",
+        "PLATFORM_CONTENT_REJECTED",
+        "PLATFORM_UNAVAILABLE",
+        "CONNECTOR_DISABLED",
+        "DEST_RULE_SELF_PROMO",
+        "DEST_RULE_LINK_POLICY",
+        "DEST_RULE_DISCLOSURE",
+        "DEST_RULE_LANGUAGE",
+        "DEST_RULE_AUTOMATION_NOT_ALLOWED",
+        "DEST_RULE_BLOCKED_TERM",
+        "DEST_RULES_UNCONFIRMED",
+        "DESTINATION_EXCLUDED",
+        "METHOD_NOT_SUPPORTED",
+        "CONNECTOR_NOT_FOUND",
+        "DESTINATION_NOT_FOUND",
+        "CONNECTION_NOT_FOUND",
+        "NOT_FOUND",
+        "JOB_NOT_FOUND",
+        "IDEMPOTENCY_KEY_REUSED",
+        "IDEMPOTENCY_IN_PROGRESS",
+        "REQUEST_VALIDATION_FAILED",
+        "INPUT_FETCH_FAILED",
+        "UNAUTHORIZED",
+        "API_RATE_LIMITED",
+        "STORAGE_UNAVAILABLE",
+        "DEPENDENCY_UNAVAILABLE",
+        "SIMULATION_ONLY",
+        "INTERNAL_ERROR",
+        "HTTP_METHOD_NOT_ALLOWED",
+        "DESTINATION_NOT_CERTIFIED"
+      ],
+      "title": "ErrorCode",
+      "type": "string"
+    },
+    "RateLimit": {
+      "additionalProperties": false,
+      "properties": {
+        "per_seconds": {
+          "exclusiveMinimum": 0,
+          "title": "Per Seconds",
+          "type": "number"
+        },
+        "requests": {
+          "exclusiveMinimum": 0,
+          "title": "Requests",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "requests",
+        "per_seconds"
+      ],
+      "title": "RateLimit",
+      "type": "object"
+    },
+    "RateLimits": {
+      "additionalProperties": false,
+      "properties": {
+        "per_connection": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RateLimit"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "RateLimits",
+      "type": "object"
+    },
+    "Surface": {
+      "additionalProperties": false,
+      "properties": {
+        "content_types": {
+          "items": {
+            "enum": [
+              "text",
+              "image",
+              "video",
+              "video_link",
+              "link"
+            ],
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Content Types",
+          "type": "array"
+        },
+        "key": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Key",
+          "type": "string"
+        },
+        "spec": {
+          "additionalProperties": true,
+          "title": "Spec",
+          "type": "object"
+        }
+      },
+      "required": [
+        "key",
+        "content_types"
+      ],
+      "title": "Surface",
+      "type": "object"
+    }
+  },
+  "$id": "https://incubrix.local/schemas/connector-manifest.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "auth": {
+      "enum": [
+        "oauth2",
+        "api_key",
+        "bot_token",
+        "none"
+      ],
+      "title": "Auth",
+      "type": "string"
+    },
+    "capabilities": {
+      "items": {
+        "enum": [
+          "publish",
+          "status",
+          "delete",
+          "metrics",
+          "refresh_auth",
+          "assist"
+        ],
+        "type": "string"
+      },
+      "title": "Capabilities",
+      "type": "array"
+    },
+    "error_map": {
+      "additionalProperties": {
+        "$ref": "#/$defs/ErrorCode"
+      },
+      "title": "Error Map",
+      "type": "object"
+    },
+    "instance_param": {
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "title": "Instance Param",
+      "type": "string"
+    },
+    "key": {
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "title": "Key",
+      "type": "string"
+    },
+    "rate_limits": {
+      "$ref": "#/$defs/RateLimits"
+    },
+    "surfaces": {
+      "items": {
+        "$ref": "#/$defs/Surface"
+      },
+      "minItems": 1,
+      "title": "Surfaces",
+      "type": "array"
+    },
+    "tier": {
+      "enum": [
+        "native",
+        "protocol",
+        "bridge",
+        "feed",
+        "assisted"
+      ],
+      "title": "Tier",
+      "type": "string"
+    },
+    "version": {
+      "pattern": "^\\d+\\.\\d+\\.\\d+([-+][0-9A-Za-z.\\-]+)?$",
+      "title": "Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "key",
+    "version",
+    "tier",
+    "auth",
+    "surfaces",
+    "instance_param"
+  ],
+  "title": "IncuBrix connector manifest (Appendix A)",
+  "type": "object"
+}

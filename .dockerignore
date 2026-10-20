@@ -1,0 +1,14 @@
+.git
+.venv
+**/__pycache__
+.pytest_cache
+.ruff_cache
+.env
+.env.*
+results
+evidence
+tests
+deploy
+
+# third-party page text kept only for reproducible quote verification; never shipped in the image
+catalogue/research/pages

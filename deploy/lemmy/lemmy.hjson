@@ -1,0 +1,29 @@
+{
+  # Lemmy 0.19.20 config TEMPLATE for the local test instance (dev only).
+  # deploy/lemmy/entrypoint.sh replaces the @@...@@ placeholders from env at container start;
+  # nothing secret is stored in this file. The DB URL comes from LEMMY_DATABASE_URL.
+  # Federation is disabled at the site level by deploy/bootstrap/bootstrap.py (and asserted there),
+  # and there is no federation listener exposed outside the compose network.
+
+  # ap_id and post URLs are built from this hostname, so it must be the name the
+  # API service uses to reach Lemmy on the compose network (default "lemmy:8536").
+  hostname: "@@LEMMY_HOSTNAME@@"
+  bind: "0.0.0.0"
+  port: 8536
+  tls_enabled: false
+
+  # The first start creates the admin user and the site from this block.
+  setup: {
+    admin_username: "@@LEMMY_ADMIN_USERNAME@@"
+    admin_password: "@@LEMMY_ADMIN_PASSWORD@@"
+    admin_email: "@@LEMMY_ADMIN_EMAIL@@"
+    site_name: "IBX local Lemmy"  # max 20 chars (varchar(20))
+  }
+
+  pictrs: {
+    url: "http://lemmy-pictrs:8080/"
+    api_key: "@@PICTRS_API_KEY@@"
+    # No pict-rs in the default profile: do not fetch/store link-preview thumbnails.
+    image_mode: "None"
+  }
+}

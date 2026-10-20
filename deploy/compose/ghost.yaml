@@ -1,0 +1,40 @@
+# Local Ghost 6 test instance (MIT), development mode with SQLite.
+# No host ports. Reached by the API service as http://ghost:2368 on the internal `ibx_sandbox` network,
+# which has no route to the internet (internal: true), so nothing posted here can leave the machine.
+
+services:
+  ghost:
+    image: ghost:6-alpine@sha256:879d5214b00b325195992ee96daf539994b4ac7e040615319ddf6b64842199e3
+    environment:
+      NODE_ENV: development
+      # Post URLs are built from this; it must be how the API service reaches Ghost.
+      url: ${IBX_GHOST_URL:-http://ghost:2368}
+      database__client: sqlite3
+      database__connection__filename: /var/lib/ghost/content/data/ghost.db
+      # Allow the scripted owner login (no emailed device-verification code in a local dev instance).
+      security__staffDeviceVerification: "false"
+      # No outbound pings/update checks/gravatar etc. (never contact third parties from a test instance).
+      privacy__useTinfoil: "true"
+      logging__level: warn
+    volumes:
+      - ghost_content:/var/lib/ghost/content
+    networks: [ibx_sandbox]
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://localhost:2368/ghost/api/admin/site/ || exit 1"]
+      interval: 3s
+      timeout: 5s
+      retries: 40
+      start_period: 120s
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  ghost_content:
+
+networks:
+  ibx_sandbox:
+    internal: true

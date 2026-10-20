@@ -1,0 +1,22 @@
+# Evidence screenshot shooter. Profile `evidence` only: inert by default.
+#   SCREENSHOT_URL=http://shooter:3000 docker compose --profile evidence up -d --wait
+# Headless Chromium via Playwright (image Apache-2.0); no published port. It joins the default network
+# (mock-platforms) and the internal ibx_sandbox network (ghost, lemmy-ui), so it can open our own test
+# instances only. Add `--profile ui` and SCREENSHOT_URL_REWRITES=http://lemmy:8536=>http://lemmy-ui:1234 to
+# screenshot Lemmy posts through lemmy-ui (the Lemmy backend serves no post page with federation off).
+services:
+  shooter:
+    build: ../shooter
+    image: ${COMPOSE_PROJECT_NAME:-ibx}-shooter:dev
+    profiles: ["evidence"]
+    networks: [default, ibx_sandbox]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:3000/health', timeout=3)"]
+      interval: 3s
+      timeout: 5s
+      retries: 30
+      start_period: 10s
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options: {max-size: "10m", max-file: "3"}

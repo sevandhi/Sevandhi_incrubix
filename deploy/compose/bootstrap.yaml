@@ -1,0 +1,57 @@
+# Idempotent bootstrap for the local Lemmy and Ghost instances.
+# It bootstraps once, then stays up and re-verifies every IBX_BOOTSTRAP_RECHECK_S (default 300 s). Its healthcheck
+# is "status.json says ok", so `up --wait` returns only after a successful bootstrap and the API service can use
+# `depends_on: {bootstrap: {condition: service_healthy}}`. A single pass: `docker compose run --rm bootstrap
+# python /ibx/bootstrap/bootstrap.py --once`.
+# python:3.12-slim + standard library only (no pip at runtime). Writes credentials to the shared volume
+# `ibx_bootstrap_out` (mounted read-only by the API service at $BOOTSTRAP_OUT_DIR, default /bootstrap/out):
+#   lemmy.json, ghost.json, status.json  (and discourse.json from discourse-bootstrap under profile `full`)
+# Secret values are never printed.
+
+services:
+  bootstrap:
+    image: python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+    command: ["python", "/ibx/bootstrap/bootstrap.py"]
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUNBUFFERED: "1"
+      BOOTSTRAP_OUT_DIR: /bootstrap/out
+      IBX_BOOTSTRAP_RECHECK_S: ${IBX_BOOTSTRAP_RECHECK_S:-300}
+      # Optional: chown the output files to the API container's user and make them 0600.
+      BOOTSTRAP_OUT_UID: ${IBX_BOOTSTRAP_OUT_UID:-}
+      BOOTSTRAP_OUT_GID: ${IBX_BOOTSTRAP_OUT_GID:-}
+      IBX_LEMMY_URL: http://lemmy:8536
+      IBX_LEMMY_ADMIN_USERNAME: ${IBX_LEMMY_ADMIN_USERNAME:-ibx_admin}
+      IBX_LEMMY_ADMIN_PASSWORD: ${IBX_LEMMY_ADMIN_PASSWORD:-ibx-local-dev-only-lemmy}
+      IBX_GHOST_URL: ${IBX_GHOST_URL:-http://ghost:2368}
+      IBX_GHOST_OWNER_EMAIL: ${IBX_GHOST_OWNER_EMAIL:-owner@ghost.ibx.invalid}
+      IBX_GHOST_OWNER_PASSWORD: ${IBX_GHOST_OWNER_PASSWORD:-ibx-local-dev-only-owner-pw1}
+    volumes:
+      - ../bootstrap:/ibx/bootstrap:ro
+      - ibx_bootstrap_out:/bootstrap/out
+    networks: [ibx_sandbox]
+    depends_on:
+      lemmy:
+        condition: service_healthy
+      ghost:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "/ibx/bootstrap/bootstrap.py", "--healthcheck"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 300s
+      start_interval: 2s
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  ibx_bootstrap_out:
+
+networks:
+  ibx_sandbox:
+    internal: true

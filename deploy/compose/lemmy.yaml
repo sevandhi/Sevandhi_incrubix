@@ -1,0 +1,96 @@
+# Local Lemmy 0.19.20 test instance (AGPL-3.0 server, run unmodified as a separate container).
+# Included from the root compose.yaml; can also be used with `-f`.
+# Default profile: lemmy + lemmy-db (no host ports, internal-only `ibx_sandbox` network with no internet route). Profile `ui`: lemmy-ui + pict-rs for humans.
+# Federation is turned off by the bootstrap (site setting) and asserted; the instance never talks to real servers.
+
+x-ibx-lemmy-db-password: &lemmy_db_password ${IBX_LEMMY_DB_PASSWORD:-ibx-local-dev-only-lemmy-db}
+
+services:
+  lemmy-db:
+    image: postgres:16-alpine@sha256:721873c34ceb9f8d8fc265984940dc982404c105f19ad51be9fdc5970a6080ea
+    environment:
+      POSTGRES_USER: lemmy
+      POSTGRES_PASSWORD: *lemmy_db_password
+      POSTGRES_DB: lemmy
+    volumes:
+      - lemmy_db_data:/var/lib/postgresql/data
+    networks: [ibx_sandbox]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lemmy -d lemmy"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+      start_period: 30s
+    restart: unless-stopped
+    logging: &ibx_logging
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  lemmy:
+    image: dessalines/lemmy:0.19.20@sha256:79e9f02c286c324a779faa6b9d36bb47a2ed17caa2656c5b91101254bd1269d9
+    entrypoint: ["bash", "/ibx/entrypoint.sh"]
+    environment:
+      LEMMY_DATABASE_URL: postgres://lemmy:${IBX_LEMMY_DB_PASSWORD:-ibx-local-dev-only-lemmy-db}@lemmy-db:5432/lemmy
+      # Post URLs (ap_id) are built from this. It must be how the API service reaches Lemmy.
+      LEMMY_HOSTNAME: ${IBX_LEMMY_HOSTNAME:-lemmy:8536}
+      LEMMY_ADMIN_USERNAME: ${IBX_LEMMY_ADMIN_USERNAME:-ibx_admin}
+      LEMMY_ADMIN_PASSWORD: ${IBX_LEMMY_ADMIN_PASSWORD:-ibx-local-dev-only-lemmy}
+      LEMMY_ADMIN_EMAIL: ${IBX_LEMMY_ADMIN_EMAIL:-admin@lemmy.ibx.invalid}
+      PICTRS_API_KEY: ${IBX_PICTRS_API_KEY:-ibx-local-dev-only-pictrs}
+      RUST_LOG: warn
+    volumes:
+      - ../lemmy/lemmy.hjson:/ibx/lemmy.hjson.tmpl:ro
+      - ../lemmy/entrypoint.sh:/ibx/entrypoint.sh:ro
+    networks: [ibx_sandbox]
+    depends_on:
+      lemmy-db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS -o /dev/null http://localhost:8536/api/v3/site"]
+      interval: 3s
+      timeout: 5s
+      retries: 40
+      start_period: 120s
+    restart: unless-stopped
+    logging: *ibx_logging
+
+  # ---- profile `ui`: browse the instance as a human (server-side rendered pages) ----
+  lemmy-pictrs:
+    image: asonix/pictrs:0.5@sha256:7c1cada5566fe729c2bd3c2e2c246d3ac031d95268edeed6670a70861d905e83
+    profiles: ["ui"]
+    environment:
+      PICTRS__SERVER__API_KEY: ${IBX_PICTRS_API_KEY:-ibx-local-dev-only-pictrs}
+      PICTRS__MEDIA__VIDEO__ENABLE: "false"
+      PICTRS__REPO__TYPE: sled
+      PICTRS__STORE__TYPE: filesystem
+    volumes:
+      - lemmy_pictrs_data:/mnt
+    networks: [ibx_sandbox]
+    restart: unless-stopped
+    logging: *ibx_logging
+
+  lemmy-ui:
+    image: dessalines/lemmy-ui:0.19.20@sha256:ee4c620d8e933ab0266b8aaf0e78247455ab70a90eeb86f1548b7e2aa87c9d40
+    profiles: ["ui"]
+    environment:
+      LEMMY_UI_LEMMY_INTERNAL_HOST: lemmy:8536
+      LEMMY_UI_LEMMY_EXTERNAL_HOST: localhost:${IBX_LEMMY_UI_PORT:-8097}
+      LEMMY_UI_HTTPS: "false"
+    ports:
+      - "127.0.0.1:${IBX_LEMMY_UI_PORT:-8097}:1234"
+    networks: [ibx_sandbox, default]
+    depends_on:
+      lemmy:
+        condition: service_healthy
+    restart: unless-stopped
+    logging: *ibx_logging
+
+volumes:
+  lemmy_db_data:
+  lemmy_pictrs_data:
+
+networks:
+  ibx_sandbox:
+    internal: true

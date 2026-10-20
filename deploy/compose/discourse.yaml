@@ -1,0 +1,115 @@
+# Real Discourse (GPL-2.0 server, official image, run unmodified) for certification evidence. Profile `full` only.
+# No host ports; internal `ibx_sandbox` network (no internet route).
+# The official image is labelled "experimental" by Discourse and needs pgvector (stock postgres fails migrations).
+# The default profile uses the Discourse mock instead (measurements: mocks/platforms/routes/discourse.py).
+#   docker compose --profile full up -d --wait
+
+x-ibx-discourse-env: &discourse_env
+  DISCOURSE_HOSTNAME: discourse
+  DISCOURSE_DB_HOST: discourse-db
+  DISCOURSE_DB_USERNAME: discourse
+  DISCOURSE_DB_PASSWORD: ${IBX_DISCOURSE_DB_PASSWORD:-ibx-local-dev-only-discourse-db}
+  DISCOURSE_DB_NAME: discourse
+  DISCOURSE_REDIS_HOST: discourse-redis
+  DISCOURSE_DEVELOPER_EMAILS: ${IBX_DISCOURSE_ADMIN_EMAIL:-admin@discourse.ibx.invalid}
+  # Admin-key request budget (default 60/min) raised so certification + hidden-test bursts do not collide.
+  DISCOURSE_MAX_ADMIN_API_REQS_PER_MINUTE: ${IBX_DISCOURSE_MAX_ADMIN_API_REQS_PER_MINUTE:-600}
+  UNICORN_WORKERS: "2"
+
+x-ibx-logging: &ibx_logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+services:
+  discourse-db:
+    image: pgvector/pgvector:0.8.7-pg16-trixie@sha256:40d828eda66737aaacb934387a337babf1455ebd56e9bdd13fc08e211257c972
+    profiles: ["full"]
+    environment:
+      POSTGRES_USER: discourse
+      POSTGRES_PASSWORD: ${IBX_DISCOURSE_DB_PASSWORD:-ibx-local-dev-only-discourse-db}
+      POSTGRES_DB: discourse
+    volumes:
+      - discourse_db_data:/var/lib/postgresql/data
+    networks: [ibx_sandbox]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U discourse -d discourse"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+      start_period: 30s
+    restart: unless-stopped
+    logging: *ibx_logging
+
+  discourse-redis:
+    image: redis:7.2.5-alpine@sha256:6aaf3f5e6bc8a592fbfe2cccf19eb36d27c39d12dab4f4b01556b7449e7b1f44  # BSD-3 (last release before the 7.4 RSAL/SSPL change)
+    profiles: ["full"]
+    networks: [ibx_sandbox]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+    logging: *ibx_logging
+
+  discourse:
+    image: discourse/discourse:2026.10.0-latest@sha256:7ccb0b434186190476724a9ef2b864d0a9f01600afdff4e5621ac99dd3af8083
+    profiles: ["full"]
+    environment: *discourse_env
+    volumes:
+      - discourse_shared:/shared
+    networks: [ibx_sandbox]
+    depends_on:
+      discourse-db:
+        condition: service_healthy
+      discourse-redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS -o /dev/null http://localhost/srv/status"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+      start_period: 900s
+    restart: unless-stopped
+    logging: *ibx_logging
+
+  discourse-bootstrap:
+    image: discourse/discourse:2026.10.0-latest@sha256:7ccb0b434186190476724a9ef2b864d0a9f01600afdff4e5621ac99dd3af8083
+    profiles: ["full"]
+    entrypoint: ["bash", "/ibx/bootstrap/discourse_bootstrap.sh"]
+    environment:
+      <<: *discourse_env
+      BOOTSTRAP_OUT_DIR: /bootstrap/out
+      BOOTSTRAP_OUT_UID: ${IBX_BOOTSTRAP_OUT_UID:-}
+      BOOTSTRAP_OUT_GID: ${IBX_BOOTSTRAP_OUT_GID:-}
+      IBX_DISCOURSE_URL: http://discourse
+      IBX_DISCOURSE_ADMIN_USERNAME: ${IBX_DISCOURSE_ADMIN_USERNAME:-ibx_admin}
+      IBX_DISCOURSE_ADMIN_EMAIL: ${IBX_DISCOURSE_ADMIN_EMAIL:-admin@discourse.ibx.invalid}
+      IBX_DISCOURSE_ADMIN_PASSWORD: ${IBX_DISCOURSE_ADMIN_PASSWORD:-ibx-local-dev-only-discourse-admin}
+    volumes:
+      - ../bootstrap:/ibx/bootstrap:ro
+      - ibx_bootstrap_out:/bootstrap/out
+    networks: [ibx_sandbox]
+    depends_on:
+      discourse:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "test", "-f", "/bootstrap/out/discourse.ready"]
+      interval: 30s
+      start_interval: 3s
+      timeout: 3s
+      retries: 3
+      start_period: 300s
+    restart: on-failure:5
+    logging: *ibx_logging
+
+volumes:
+  discourse_db_data:
+  discourse_shared:
+  ibx_bootstrap_out:
+
+networks:
+  ibx_sandbox:
+    internal: true

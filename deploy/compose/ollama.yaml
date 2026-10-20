@@ -1,0 +1,41 @@
+# Optional local LLM: Ollama (MIT) under compose profile "llm". Inert by default.
+#   docker volume create ibx_ollama_models          # once (scripts/llm_ollama.sh does this)
+#   docker compose --profile llm up -d --wait
+#   scripts/llm_ollama.sh pull                      # pulls the default Apache-2.0 model into the volume
+# Then run the api/worker with LLM_PROVIDER=ollama (or auto). No host port: the api and worker reach it at
+# http://ollama:11434/v1 on the default network. The default network has an internet route only so that
+# `ollama pull` can download the model; prompts never leave the machine.
+#
+# The model volume is EXTERNAL and named `ibx_ollama_models`, so `docker compose down -v` keeps the downloaded
+# model (about 1 GB) and every compose project on this machine shares it. Remove it with
+# `docker volume rm ibx_ollama_models`.
+# Licences: Ollama MIT; qwen2.5:1.5b-instruct / qwen2.5:7b-instruct Apache-2.0. NOT qwen2.5:3b (Qwen Research
+# licence, non-commercial) and NOT qwen2.5:72b (Qwen licence).
+
+services:
+  ollama:
+    image: ollama/ollama:0.35.1
+    profiles: ["llm"]
+    environment:
+      OLLAMA_KEEP_ALIVE: 30m
+      OLLAMA_NUM_PARALLEL: "1"
+      OLLAMA_HOST: 0.0.0.0:11434
+    volumes:
+      - ollama_models:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 5s
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  ollama_models:
+    name: ibx_ollama_models
+    external: true

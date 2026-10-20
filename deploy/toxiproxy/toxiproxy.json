@@ -1,0 +1,14 @@
+[
+  {
+    "name": "lemmy_proxy",
+    "listen": "0.0.0.0:18536",
+    "upstream": "lemmy:8536",
+    "enabled": true
+  },
+  {
+    "name": "ghost_proxy",
+    "listen": "0.0.0.0:12368",
+    "upstream": "ghost:2368",
+    "enabled": true
+  }
+]

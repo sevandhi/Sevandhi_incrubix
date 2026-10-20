@@ -1,0 +1,108 @@
+# Local PeerTube test instance (AGPL-3.0 server, run UNMODIFIED as a separate container; nothing of it is
+# shipped or copied). Every service is under profile `video`, so the file is inert by default.
+#
+#   docker compose -f compose.yaml -f deploy/compose/peertube.yaml --profile video up -d --build --wait
+#
+# * No host ports. The API/worker reach it as http://peertube.ibx.test:9000 on the internal `ibx_sandbox` network,
+#   which has no route to the internet, so the instance can never federate with or post to a real server.
+# * Credentials are dev-only placeholders for this internal container (same convention as lemmy.yaml);
+#   override them with IBX_PEERTUBE_ROOT_PASSWORD / IBX_PEERTUBE_SECRET / IBX_PEERTUBE_DB_PASSWORD.
+# * The API rate limit is lowered (IBX_PEERTUBE_API_RATE_MAX per 10 s) so the real 429 can be measured.
+# * Used with `-f` (not included from compose.yaml), this file also adds `peertube` to the api/worker
+#   CERT_OWN_HOSTS / FETCH_LOCAL_HOSTS, so certification may post its test video here.
+
+x-ibx-peertube-logging: &pt_logging
+  driver: json-file
+  options: {max-size: "10m", max-file: "3"}
+
+services:
+  peertube-db:
+    profiles: [video]
+    image: postgres:16-alpine@sha256:721873c34ceb9f8d8fc265984940dc982404c105f19ad51be9fdc5970a6080ea
+    environment:
+      POSTGRES_USER: peertube
+      POSTGRES_PASSWORD: ${IBX_PEERTUBE_DB_PASSWORD:-ibx-local-dev-only-peertube-db}
+      POSTGRES_DB: peertube
+    volumes:
+      - peertube_db_data:/var/lib/postgresql/data
+    networks: [ibx_sandbox]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U peertube -d peertube"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+      start_period: 30s
+    restart: unless-stopped
+    logging: *pt_logging
+
+  peertube-redis:
+    profiles: [video]
+    image: redis:7.2.5-alpine   # BSD-3 (the last Redis line before the licence change)
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    networks: [ibx_sandbox]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+    restart: unless-stopped
+    logging: *pt_logging
+
+  peertube:
+    profiles: [video]
+    image: chocobozzz/peertube:v8.3.0-trixie   # pinned; pushed 2026-09-28 (>= 2 weeks before use)
+    environment:
+      # Video URLs are built from this, so it must be how the API service reaches PeerTube. PeerTube refuses a
+      # hostname without a TLD ("http://peertube:9000/... is not a valid following url", measured), hence the
+      # reserved .test name, served as a network alias below.
+      PEERTUBE_WEBSERVER_HOSTNAME: peertube.ibx.test
+      PEERTUBE_WEBSERVER_PORT: "9000"
+      PEERTUBE_WEBSERVER_HTTPS: "false"
+      PEERTUBE_TRUST_PROXY: '["loopback", "uniquelocal"]'
+      PEERTUBE_SECRET: ${IBX_PEERTUBE_SECRET:-ibx-local-dev-only-peertube-secret-0123456789abcdef}
+      PT_INITIAL_ROOT_PASSWORD: ${IBX_PEERTUBE_ROOT_PASSWORD:-ibx-local-dev-only-peertube}
+      PEERTUBE_ADMIN_EMAIL: admin@peertube.ibx.invalid
+      PEERTUBE_DB_HOSTNAME: peertube-db
+      PEERTUBE_DB_USERNAME: peertube
+      PEERTUBE_DB_PASSWORD: ${IBX_PEERTUBE_DB_PASSWORD:-ibx-local-dev-only-peertube-db}
+      PEERTUBE_DB_SSL: "false"
+      PEERTUBE_REDIS_HOSTNAME: peertube-redis
+      PEERTUBE_RATES_LIMIT_API_WINDOW: 10 seconds
+      PEERTUBE_RATES_LIMIT_API_MAX: ${IBX_PEERTUBE_API_RATE_MAX:-500}
+      PEERTUBE_LOG_LEVEL: warn
+    volumes:
+      - peertube_data:/data
+      - peertube_config:/config
+    networks:
+      ibx_sandbox:
+        aliases: [peertube.ibx.test]
+    depends_on:
+      peertube-db: {condition: service_healthy}
+      peertube-redis: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:9000/api/v1/ping').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+      start_period: 180s
+    restart: unless-stopped
+    logging: *pt_logging
+
+  # Only when this file is used with `-f`: let certification reach the local PeerTube.
+  api:
+    environment:
+      CERT_OWN_HOSTS: lemmy,ghost,discourse,mock-platforms,toxiproxy,localhost,127.0.0.1,peertube,peertube.ibx.test
+      FETCH_LOCAL_HOSTS: mock-platforms,lemmy,ghost,discourse,localhost,127.0.0.1,peertube,peertube.ibx.test
+  worker:
+    environment:
+      CERT_OWN_HOSTS: lemmy,ghost,discourse,mock-platforms,toxiproxy,localhost,127.0.0.1,peertube,peertube.ibx.test
+      FETCH_LOCAL_HOSTS: mock-platforms,lemmy,ghost,discourse,localhost,127.0.0.1,peertube,peertube.ibx.test
+
+volumes:
+  peertube_db_data:
+  peertube_data:
+  peertube_config:
+
+networks:
+  ibx_sandbox:
+    internal: true

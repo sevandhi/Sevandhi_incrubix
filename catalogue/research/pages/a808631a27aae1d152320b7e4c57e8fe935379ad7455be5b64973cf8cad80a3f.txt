@@ -1,0 +1,177 @@
+About
+
+Contact
+
+Newsletter
+
+Twiml icon youtube Twiml icon X/twitter Twiml icon linkedin Twiml icon Facebook Twiml icon instagram
+
+Podcast
+
+Publications
+
+Library
+
+Community
+
+Blog
+
+About
+
+Contact
+
+Newsletter
+
+Podcast
+
+Publications
+
+Library
+
+Community
+
+Blog
+
+Twiml icon youtube
+
+Twiml icon linkedin
+
+Twiml icon X/twitter
+
+Twiml icon Facebook
+
+Twiml icon instagram
+
+Community Code of Conduct
+
+TWIML Slack Community Code of Conduct
+
+Our community spends a lot of time helping each other on Slack. If you have joined the community at twimlai.com/community but not yet received an invite, visit Slack via the Web here and perform a password reset.
+
+In addition to the guidelines below, we ask that you also keep the TWIML Community values & guidelines in mind when you participate in any community activities.
+
+Our community spends a lot of time helping each other on Slack. If you have joined the community at twimlai.com/community but have not yet received an invite, visit Slack via the Web here and perform a password reset.
+
+In addition to the guidelines below, we ask that you also keep the TWIML Community values & guidelines in mind when you participate in any community activities.
+
+Every member of the TWIML Community is a person
+
+This is a safe space. No question is too “stupid”, no topic too “basic”.
+
+This community is intended for ML and AI researchers, practitioners, learners and innovators. The moderators, and everyone else in the community are donating their spare time. Our suggestions/answers may not always be correct, & you may not always get an answer. Treat us like a friendly person you don’t know who’s standing next to you offering help or suggestions.
+
+Be helpful
+
+We are a pay-it-forward community. If someone here has helped you, please give back by helping someone else!
+
+It doesn’t matter if you can’t answer a question in a brief sentence, or if you get pulled away before you can type out further replies. If a question isn’t clear, ask a clarifying question. If you remember something you read that seemed related, send a link. A lot of people who are stuck will be fine if you can’t provide the solution, they just need another place to look.
+
+Be polite
+
+All the TWIML Community members here deserve your respect, so be polite. Not “retail employee” polite……but don’t fan flamewars, get sucked into lose-lose arguments, or other internet classics.
+
+Be a model Slack citizen
+
+Be the change you want to see in the world! Remember ours runs on volunteers and collaboration. If a conversation is getting heated, try to defuse it. If a hard question is unanswered, dig in & work through it with others.
+
+Be specific with your questions
+
+Newcomers very commonly ask about asking a question in one of a few ways.
+
+“DOES ANYONE KNOW ABOUT [X TOOL OR LIBRARY]?”
+
+The answer is probably “yes,” but nobody can help you until you state what your problem is.
+
+Please be specific with your questions so all of us can help you even when you aren’t online. Share a code snippet, a link to where you’re seeing the issue, a description of what is confusing you, and specifics on what you’ve tried so far. More often than not, it also helps to paste your error logs into a snippet or text file to accompany your question/issue.
+
+“IS IT OKAY IF I ASK ABOUT [X TOOL OR LIBRARY] HERE?”
+
+Instead of asking, browse the Channels list for any that seem like obvious places to ask your question. If you don’t see any topics or Channels that fit, don’t hesitate to post it in #general. If there’s a better place for it, one of the moderators or other helpful users will suggest it, but don’t worry – off topic messages aren’t going to get you banned.
+
+Don’t ping / DM members unless it’s directly relevant
+
+It’s very tempting to try to get more attention to your question by @-mentioning one of the high profile (or recently active) members, but please don’t. They may not actually be online, they may not be able to help, and they may be in a completely different timezone – nobody likes push notifications at 3 am from an impatient stranger.
+
+Similarly, don’t DM other members without asking first. All of the same problems as @-mentioning apply, and private conversations can’t help anyone else. Your questions are likely not unique, and other people can learn from them when they’re asked in a public channel.
+
+Avoid self-promotion
+
+One of the benefits of participating in a community like ours is all of the interesting content that is shared among members. We also welcome members sharing about their projects and what they’re learning. Sometimes an external blog post makes more sense for sharing these kinds of learnings than a Slack post, and that’s fine. However, if your only contribution to the Community is sharing links to your own blog posts, newsletters or podcasts, that starts to become problematic.
+
+If the majority of your posts are helpful contributions to other members, answering questions and getting involved in topical channels and study groups, this probably doesn’t apply to you. If all your contributions are links to your own content it probably does. In that case those posts are subject to deletion and you risk losing your posting privileges.
+
+The one exception to this is in the #bulletin-board channel. Feel free to post links to your content there.
+
+Where should I share a commercial post on Slack?
+
+Occasionally you’ll want to promote a project you’ve been working on that asks for money or benefits a commercial entity. Should you share it? Absolutely! But please respect the following guidelines about posting commercial content:
+
+Jobs
+
+If you want to hire someone or want to forward a job posting, Please share the opportunity in #_jobs! Many members keep an eye out there for opportunities.
+
+Commercial Post
+
+In general, all commercial posts can be shared in the #bulletin-board channel. These include links to ticket sale pages to conferences, webinar invitations, requests for members of the TWIML Community to sign up to join an external event, or a link to purchase a course you created that’s behind a paywall.
+
+We occasionally partner with commercial organizations to bring courses, conferences and other opportunities to the TWIML Community. Such sponsorship programs help support the ongoing operations of the Community as well as the educational goals of its members. If you’re interested in learning more, reach out to Sam.
+
+What about personal projects?
+
+Got a personal project you want to share? Post it anywhere! To start, feel free to post about the project in #general. If the project happens to fit in another channel — e.g. if you created an app that helps people brush up on skills relevant to an ongoing study group — try not to crosspost the same link in too many channels, but feel to share it elsewhere.
+
+We want to celebrate all the projects members are working on — commercial or not — but for the sanity of all Slack users who don’t want to be jarred by paywalled content, please follow these guidelines.
+
+The TWIML Community is asynchronous & international
+
+We have members on every continent (except Antarctica), and many of us are working professionals. You may get help within 5 minutes if somebody who knows the answer is looking for something to do, but it’s entirely possible that you won’t get a response for an hour or day or more. If you’re asking about a less popular tool, or a specific edge case, you may even get an answer several days later.
+
+So remember to keep the community open in the background for a while after asking a question – or check back periodically.
+
+Please don’t cross post the same question in multiple channels. People in this community may not be super-chatty at any given moment, but we are reading posts across all channels. Someone will eventually see (and help) you.
+
+Thanks for joining us!
+
+Thanks to everyone who’s been following these etiquette rules already! This community is international and distributed across time zones, and it’s nice to find that even with our diverse backgrounds, experience levels, and nationalities, we have similar goals and can support each other. It’s always a delight to be working on a study group or project late at night and suddenly realize that halfway around the world, a cheerful hangout collaborator is pouring their first cup of coffee for the day.
+
+© 2026 CloudPulse Strategies
+
+All rights reserved
+
+About TWIML +
+
+About
+
+Contact
+
+Newsletter
+
+Popular Content +
+
+Podcast Episodes
+
+Podcast Series
+
+Podcast Topics
+
+Connect with Us +
+
+YouTube
+
+X
+
+LinkedIn
+
+Facebook
+
+Instagram
+
+Our Policies +
+
+Privacy Policy
+
+Terms of Service
+
+© 2026 CloudPulse Strategies
+
+All rights reserved

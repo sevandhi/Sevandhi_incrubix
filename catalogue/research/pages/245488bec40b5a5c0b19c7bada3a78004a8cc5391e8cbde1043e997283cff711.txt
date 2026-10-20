@@ -1,0 +1,46 @@
+[server title]
+Fosstodon
+
+[short description]
+Fosstodon is an invite only Mastodon instance that is open to those who are interested in technology; particularly free & open source software.
+
+If you wish to join, contact us for an invite.
+
+[description]
+Fosstodon is an English speaking Mastodon instance that is dedicated to Free & Open Source Software, or FOSS as many call it.
+
+Fosstodon is for people who are interested in open source technology and the awesome community around it. Whether that be Linux, open source software like Firefox, or Mastodon itself. If you're interested in technology, Fosstodon is a great place to start.
+
+We're not just techies on Fosstodon though! We like to think of tech as the hobby that brings us all together, but it doesn't define us. That's why we encourage all our members to post about whatever interests them, not just tech (so long as it is allowed under our CoC).
+
+[server rule 1]
+⚠️ The following rules govern the conduct of local accounts belonging to members of Fosstodon. Use other categories for remote accounts on other servers.
+
+[server rule 2]
+DO NOT disparage individuals or groups
+Based on race, ethnicity, national identity, spoken language, sex, gender identity or expression, sexuality, sexual orientation, physical or mental health status, disability, other body characteristics, age, culture, religion, personal philosophy, or political affiliation.
+
+[server rule 3]
+DO NOT use slurs
+“dog-whistles”, coded pejoratives, or otherwise publish content that is bigoted, supremacist, or hateful.
+
+[server rule 4]
+DO NOT harass
+“dog-pile”, defame, intimidate, threaten, expose private information about (“doxing”), or intentionally cause distress to other users.
+
+[server rule 5]
+DO NOT knowingly post misleading information
+ or engage in deceptive or disruptive campaigns intended to incite alarm.
+
+[server rule 6]
+DO NOT participate in engagement that is intended to antagonize, inflame, or cause confrontation.
+
+[server rule 7]
+DO NOT post adult or age-restricted content. This includes nudity and other sexualized or violent content.
+
+[server rule 8]
+DO NOT post commercial promotions, or advertise
+ through posts that are exclusively links and/or which contain excessive hashtags. This includes repetitive self-promotion for profit. We don’t want spam.
+
+[server rule 9]
+DO NOT use automated tools to post without also monitoring and/or interacting from your account.

@@ -1,0 +1,166 @@
+Lemmy.zip Legal
+
+Lemmy.zip
+
+Home » Posts
+
+Code of Conduct
+
+How users are expected to behave on Lemmy.zip. Also known as a Fair Use policy.
+
+November 3, 2023 · 8 min · 1699 words · Demigodrick
+
+Lemmy.zip Code of Conduct - Last Updated 25th January 2025 (Reviewed 10th July 2025)
+
+Introduction#
+
+The Code of Conduct applies to all users of Lemmy.zip, and aims to set out how users (Whether local users or remote users) should interact with eachother in order to create a welcoming and respectful online space. This policy also applies to users who are from other instances who interact with Lemmy.zip communities or users when on Lemmy.zip’s server(s). This policy will also be in effect on other Lemmy.zip affilliated platforms, such as Matrix.
+
+Lemmy.zip Code of Conduct#
+
+The Lemmy.zip Code of Conduct can be summarised as follows:
+
+Remember the human! (no harassment, threats, etc.)
+
+No ban evasion on Lemmy.zip or on other instances.
+
+No endorsement of hate speech
+
+No self-advertisements or spam
+
+No link-spamming
+
+Bots must be proportional
+
+No vote manipulation
+
+No content against the law in European Union territories (Finland).
+
+Any NSFW post must be tagged as NSFW.
+
+Remember the Human#
+
+All interactions on Lemmy.zip should be assumed that the entity on the other end of the interaction is a Human. Therefore we expect that you treat them in the same way that you want to be treated on Lemmy.zip - With respect.
+
+No ban evasion#
+
+This rule applies for both Lemmy.zip and for other Lemmy/Fediverse servers. If you are a Lemmy.zip user and your account is banned from a community (whether that be on Lemmy.zip or on another instance) then you MUST respect that ban. You MUST NOT create a new account on Lemmy.zip or on a different Lemmy/Fediverse server in order to evade the ban. This will result in your original and new account(s) being permanently banned from Lemmy.zip.
+
+If you are a remote user (an account that was not created on Lemmy.zip) and you have been banned from a community on Lemmy.zip, then you MUST NOT create an account on a different Lemmy/Fediverse server in order to evade the ban. This will result in us further banning your account from all of Lemmy.zip, and reporting the matter to your home instance(s).
+
+You cannot create an account on Lemmy.zip in order to evade a ban your account on a different instance has been given. This will result in use permanently banning both your Lemmy.zip account and your remote account(s) from Lemmy.zip.
+
+No endorsement of hate speech#
+
+You have a responsibility to report hate speech, which may be classed as illegal depending on the severity of the content. Agreeing with, sharing, promoting, or encouraging hate speech will result in a warning or a ban in cases of continued rule breaking.
+
+No self-advertising or spam#
+
+Any accounts created in order to only promote a product, brand or idea may be banned at the discretion of the Admins.
+
+Any accounts created in order to create spam in the network will be banned.
+
+No link-spamming#
+
+You MUST NOT create multiple posts or comments in order to spam a link. This will result in a ban.
+
+Bots must be proportional#
+
+We are happy for bots to operate on Lemmy.zip, but they must be proportional to the communities they operate in, and not create spam, duplicated posts, or fake interactions. Bots who break these rules will be banned at the discretion of the Admins. The creator(s) must also be aware of the strain some bots can place on the server, any bots found to be negatively affecting the performance of the server will result in the bot AND the operator(s) account(s) being banned.
+
+No vote manipulation#
+
+This applies to Lemmy.zip users interacting with Lemmy.zip content or other server’s content, and it also applies to users from other instances interacting with Lemmy.zip content. This can be from mass upvoting/downvoting the comments of a certain user or on a user’s own posts, or it can be a user who downvotes every post in a community or that a user makes.
+
+Downvoting content can be a good way to identify low-quality content but, for example, downvoting all new posts in a community would most likely violate this policy.
+
+Bans will be issued at the discretion of the Admins.
+
+No content against European Union Law#
+
+All users must enusre any content they create, share, or distribute complies with European Union (EU) laws and regulations. This includes, but is not limited to:
+
+Prohibited content (Content promoting hate speech, voilence, terrorism, or discrimination based on race, gender, religion, or any other characteristic)
+
+Privacy and Data Protection (Ensure all content respects individual privacy rights)
+
+Copyright and Intellectual Property (Do not upload or link to to pirated software, media, or any other unauthorised content. Do not post or distribute copyrighted materials without the appropriate permissions or licences.)
+
+Misinformation and Public Safety (Do not share false or misleading information that may harm individuals or public safety. Content promoting illegal activities within the EU is strictly prohibited.)
+Failure to comply with these guidelines may result in content removal, account suspension, or further legal action if and where necessary.
+
+NSFW content tagging#
+
+You MUST flag any and all content as NSFW. Any content not correctly tagged will be removed, and a warning will be issued. Repeat offenders will face a ban.
+
+If you’re unsure if content might be NSFW, please consider if you would want your boss, coworkers, or elderly grandmother to see it. If not, it needs to be tagged NSFW.
+
+Please also follow the rules of the community you are posting in, sometimes NSFW also acts as a “Content Warning” outside of the specific NSFW communities.
+
+Summary#
+
+The crux of it boils down to:
+
+- Remember that we are all humans
+- Don’t be overtly aggressive towards anyone
+- Try and share ideas, thoughts and criticisms in a constructive way
+- Tag any NSFW posts as such
+
+Any posts or comments that are in breach of these rules will be dealt with, and remediation will occur. Whether that be a warning, temporary ban, or permanent ban.
+
+Contact us#
+
+If you think a post, comment or message should be removed, please use the report functionality built into Lemmy. If you are unable to report the content, you can email us via [email protected] and we will take action.
+
+Lemmy Dev General Code of Conduct#
+
+The Lemmy Devs have published a General Code of Conduct. The below is a slightly modified version and is the basis for the Lemmy.zip code of conduct - we view these as guidelines to interactions on Lemmy.zip, and we may apply these in addition to the Lemmy.zip Code of Conduct above.
+
+General Code of Conduct:#
+
+We are committed to providing a friendly, safe and welcoming environment for all, regardless of level of experience, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, religion, nationality, or other similar characteristic.
+
+Please avoid using overtly sexual aliases or other usernames that might detract from a friendly, safe and welcoming environment for all.
+
+Please be kind and courteous. There’s no need to be mean or rude.
+
+Respect that people have differences of opinion.
+
+We will exclude you from interaction if you insult, demean or harass anyone. That is not welcome behavior. We interpret the term “harassment” as including the definition in the Citizen Code of Conduct; if you have any lack of clarity about what might be included in that concept, please read their definition. In particular, we don’t tolerate behavior that excludes people in socially marginalized groups.
+
+Private harassment is also unacceptable. No matter who you are, if you feel you have been or are being harassed or made uncomfortable by a community member, please contact one of the Lemmy admin team immediately.
+
+Likewise any spamming, trolling, flaming, baiting or other attention-stealing behavior is not welcome.
+
+Moderator Code of Conduct#
+
+If you moderate a community on Lemmy.zip, you have some extra responsibilities you must abide by.
+
+Community Rules#
+
+When you create a community, you have the ability to set rules above those posted above. Any rules you post must be in compliance with the above rules. You cannot apply a rule that contradicts the above Lemmy.zip rules. You will recieve a warning and be asked to fix the issue first, but repeat offenders or those who do not take action will be removed as moderators from the community and may face an account ban. The community may also be deleted at the discretion of an Admin.
+
+Reports#
+
+You have the responsibility to act upon any reports recieved that relate to the content in the community you moderate. You must consider if the content breaches any of the above rules, and if so you must take action to remove that content, and issue warnings or bans in relation to that content.
+
+Moderators should be aware that Admins also receive reports from users, and may take action prior to your involvement, or may override your decision. This is never personal, is rarely done, and is only done to protect the server acting on information that may result in a more severe form of punishment for the user.
+
+User bans#
+
+You have the ability to ban a user if they break the rules in your community. You should not ban a user for their actions in another community, rather this should be reported to the relevant moderators and admins to deal with. Bans should not be used to abuse users or stifle conversations, and where Admins believe bans are being targetted at users as a form of abuse, the moderator will be removed and banned.
+
+However, the Admins will 100% stand behind moderators when they make genuine bans and deal with day to day issues.
+
+Automated Tools#
+
+Lemmy.zip provides a range of automated tools for moderators to use to help support their communities (such as the RSS feed or autopost feature). These tools are provided with the expectation they will be used in a fair and transparent way. Misuse of these tools, i.e. using these tools in a way that is not intended, targetting users, or creating spam, will result in the community being removed from the moderator and a ban to the moderator’s account. If you’re not sure, ask an Admin first.
+
+Contact us#
+
+If you want to discuss any aspect of being a moderator, please contact us via Lemmy or email [email protected].
+
+« Prev
+Privacy Policy
+Next »
+Cookie Policy

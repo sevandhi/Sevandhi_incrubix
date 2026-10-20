@@ -1,0 +1,41 @@
+[server title]
+Mastodon.ART
+
+[short description]
+Mastodon.ART — Your friendly home on the fediverse for all things creative, all on a platform that is community-owned and ad-free. NO AI OR NFTs ALLOWED.
+
+[description]
+Mastodon.<em>ART</em> — a place for creativity of all kinds, from illustration, visual, 3D, coding, gamedev, photography, musical, written, performance art, and on! Make .ART your new fediverse home; in addition to your works-in-progress, daily random & fun banter, commentary & cited fair-use posts/art/reviews of others' art is welcome too. 20,000+ artists here welcome you to y(our) ad free & open source decentralized creative social life. Please <a href=https://mastodon.art/terms>read</a> about .ART's etiquette & other stuff before sign up. There are mobile apps on both app stores — search Mastodon. No Bots. No Hate. Be Respectful & Constructive. Mastodon.art has no ads & no targeting. Brands must be respectful by not making an account solely to advertise. Thank you.<BR>
+Mastodon.ART is self-hosted & not a company trying to profit off of your life & art with ads.
+<BR>Your support via <a href=https://liberapay.com/curator>LiberaPay</a>, <a href=https://ko-fi.com/mastoart>Ko-Fi</a> or <a href=https://patreon.com/mastodonart>Patreon</a> is appreciated.
+<br>
+
+[server rule 1]
+NO AI-generated content and NO NFT-related content are allowed *AT ALL* on this instance.
+
+[server rule 2]
+No posting other artist's work without credit AND analysis/opinion .
+
+[server rule 3]
+Respect other users' boundaries.
+
+[server rule 4]
+Tag sensitive content such as violence/blood, graphic nudity, lewd content, and other potentially upsetting or triggering topics, AND hide them under a Content Warning (CW).
+
+[server rule 5]
+No trolling, microaggressions, bullying, or harassment. See the Code of Conduct for the full list.
+
+[server rule 6]
+No unapproved bots, corporate advertising, or spam. (Shop links and commission pages ARE allowed! Please share those often!)
+
+[server rule 7]
+No racism, sexism, discrimination against gender and sexual minorities, ableism, fatmisia, xenophobia and/or violent nationalism, or the advocation of all of the above.
+
+[server rule 8]
+No content that includes sexual depictions of minors (this includes loli), content illegal in Germany and/or France, such as holocaust denial or Nazi symbolism, conduct promoting the ideology of National Socialism.
+
+[server rule 9]
+Conduct intended to stalk or harass users, impede users from using the service, degrade the performance of the service, or incite others to perform any of the aforementioned actions, is disallowed.
+
+[server rule 10]
+No flooding the public timelines (making lots of public posts in quick succession).

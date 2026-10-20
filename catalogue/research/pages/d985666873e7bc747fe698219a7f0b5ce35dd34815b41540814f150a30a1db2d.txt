@@ -1,0 +1,5 @@
+[community title]
+Side Project
+
+[community sidebar]
+A community for sharing and receiving constructive feedback on side projects.

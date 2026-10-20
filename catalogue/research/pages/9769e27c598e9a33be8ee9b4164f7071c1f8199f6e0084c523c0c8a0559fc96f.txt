@@ -1,0 +1,380 @@
+Skip to main content
+
+/
+Docs
+
+Search docs⌘KCtrl K
+
+Introduction
+
+Getting started
+
+Browser extension installation guide for daily.dev
+
+Progressive web app (PWA) for daily.dev
+
+Setting up your feed
+
+Creating a personal feed
+
+Advanced filtering
+
+Blocking and report
+
+Following and blocking users
+
+Chips (beta)
+
+Key features
+
+Feeds
+
+Following feed
+
+Search
+
+Upvotes & downvotes
+
+Discussions
+
+Polls
+
+Bookmarks
+
+Pause New Tab (DND)
+
+Companion widget
+
+Community Picks - sunset notice
+
+Happening now
+
+Your profile
+
+Activity
+
+Achievements
+
+Reputation explained
+
+Reading history
+
+Stack & tools
+
+Reading streaks
+
+Verified company badge
+
+Profile experiences
+
+Top readers
+
+DevCard
+
+Account settings
+
+Deleting your profile
+
+Notification settings and preferences
+
+Post and Squad analytics
+
+Quests
+
+Squads
+
+Creating your Squad
+
+Growing your Squad
+
+Moderating your Squad
+
+Becoming a public Squad
+
+Verified Company Squads
+
+Getting featured on the Squads directory
+
+Slack integration for Squads
+
+Plus
+
+Plus overview
+
+Presidential Briefing
+
+Advanced Custom Feeds
+
+Clickbait Shield
+
+Bookmark Folders
+
+Keyword Filters
+
+Public API
+
+Overview
+
+Setup and first query
+
+MCP server
+
+Plugin marketplace
+
+OAuth apps
+
+Terminal CLI
+
+Morning briefing
+
+Organize bookmarks
+
+Replace web search
+
+Organizations
+
+Organizations overview
+
+Creating an organization
+
+Inviting members to your organization
+
+Managing organization members
+
+Billing and seat management
+
+Managing organization settings
+
+Career Mode
+
+Career Mode overview
+
+Getting started with Career Mode
+
+Configuring job preferences
+
+Building your developer profile
+
+How job matching works
+
+Reviewing job opportunities
+
+Privacy and trust
+
+Frequently asked questions
+
+Monetization (beta)
+
+Cores
+
+Awards
+
+Boost
+
+Customization
+
+Layout options
+
+Theme options
+
+Density settings
+
+Preferences settings
+
+For content creators
+
+How to get featured on daily.dev
+
+Content guidelines for daily.dev
+
+Content moderation
+
+How to suggest a new source on daily.dev
+
+Special features for content creators on daily.dev
+
+Open the app
+
+Blog
+
+Changelog
+
+Status
+
+Contact support
+
+Esc
+Cancel
+
+AI TL;DR
+
+Verified from daily.dev docs
+
+Recommended pages
+
+No results. Try a different keyword or browse the sidebar.
+
+Loading…
+
+↑↓ to navigate↵ to openesc to close
+
+/
+Docs
+
+For content creators How to suggest a new source on daily.dev
+
+Get the app
+
+How to suggest a new source on daily.dev
+
+Last updated October 21, 2024
+
+Too busy to read?
+
+Get an AI summary
+
+Copy page
+
+Copy page Copy page as Markdown for LLMs
+
+View as Markdown
+View this page as plain text
+
+Table of Contents
+
+Introduction
+
+FAQ
+
+Introduction
+
+We're delighted you’re interested in adding valuable content to daily.dev. Our platform continuously grows with community-recommended sources. If you’ve discovered a source that could benefit daily.dev, but it’s not currently listed, we invite you to suggest it.
+
+Caution
+
+Please review our content guidelines before suggesting a new source. These guidelines are essential to our content review process, ensuring high-quality, relevant, and ethical content. Understanding and following these guidelines will improve the chances of your suggestion being accepted, helping us make daily.dev an exceptional resource.
+
+Prerequisites
+
+Familiarize yourself with our content guidelines.
+
+Register on daily.dev.
+
+Ensure your publication has a public RSS feed.
+
+Confirm the source is a well-known publication or developer blogging platform.
+
+Corporate and personal blogs are not eligible. Consider starting a Squad instead.
+
+Note
+
+Some existing sources may not fully align with our updated criteria. We are gradually migrating relevant sources to Squads to ensure alignment with current standards.
+
+How to submit your source
+
+Access your feed through the browser extension or the web app.
+
+Sign up or log in.
+
+Select Suggest new source from the top-right in the Sources section, as shown below:
+
+Enter the URL of your publication's RSS feed (preferred) or homepage.
+
+Click Check link.
+
+Select the relevant RSS feed if multiple options appear.
+
+Click Submit for review.
+
+Review process
+
+Our team manually reviews each submission to ensure compliance with our content guidelines. The review process may take up to 30 days.
+
+You’ll receive email notifications:
+
+Confirming your source request submission.
+
+Informing you of your source’s approval or rejection.
+
+If further information is needed, our team will contact you directly at support@daily.dev.
+
+FAQ
+
+What happens after approval?
+
+Once approved, new posts from your source will be automatically collected, analyzed, and potentially added to the feed. Note that historical content is not auto-populated from newly approved sources; only content published after approval will be considered. Please allow a few days for full synchronization.
+
+Is approval permanent?
+
+We continuously monitor new sources to maintain content quality. Misuse of the platform may result in the disqualification of an approved source.
+
+Can I resubmit a rejected source?
+
+Yes, but only after making significant changes. For further assistance, contact support@daily.dev.
+
+How to track the review process?
+
+Review status updates are communicated via email notifications. We appreciate your patience during this process.
+
+Frequently asked questions
+
+What is a source on daily.dev?
+
+A source is a publication, blog, or channel whose articles daily.dev indexes and surfaces in feeds. Suggesting a new source brings that publication's full archive into the platform.
+
+How do I suggest a new source?
+
+Who reviews source suggestions?
+
+Can I suggest my own blog?
+
+Share this page Copy link
+
+Previous
+Content moderation
+Next
+Special features for content creators on daily.dev
+
+Spotted something to fix? Contact us
+
+Table of Contents
+
+Introduction
+
+FAQ
+
+Link copied!
+
+For Advertisers
+
+·
+
+For Recruiters
+
+Agents
+
+·
+
+Terms
+
+·
+
+Privacy
+
+·
+
+Refunds
+
+·
+
+Creators
+
+·
+
+Guidelines
+
+·
+
+Moderation
+
+© 2026 Daily Dev Ltd.

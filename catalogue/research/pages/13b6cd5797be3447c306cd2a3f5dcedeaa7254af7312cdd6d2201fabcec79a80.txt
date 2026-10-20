@@ -1,0 +1,35 @@
+[category: Get Help]
+This category is for general questions about how to do things in Metabase.
+
+[category: Uncategorized]
+Topics that don't need a category, or don't fit into any other existing category.
+
+[category: Bug reports]
+Before you create a new post a bug, we&#39;d appreciate if you first check GitHub and this forum to see if your issue has been reported already:
+
+[category: Feature Requests]
+Missing a feature? Have an idea for something you think would be cool? Here&#39;s what to do:
+
+[category: News and Announcements]
+See what&#39;s new with Metabase.
+
+[category: Job Board]
+Posts about Jobs relating to Metabase or the Metabase Community.
+
+[category: Community Showcase]
+Built something cool in Metabase?
+
+[category: Tips and Tricks]
+Share tips and tricks about working with Metabase.
+
+[category: Feedback]
+Discussion about the main metabase website (www.metabase.com), this forum (discourse.metabase.com), organization, how they work, and how we can improve them.
+
+[category: Driver Development]
+Hello! Looking for help developing a Metabase database driver? This is the place to be.
+
+[category: Introductions]
+Use this space to say hi and introduce yourself
+
+[category: Memes and Fun]
+Sick of data requests???

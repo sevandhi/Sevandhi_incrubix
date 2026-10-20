@@ -1,0 +1,38 @@
+[category: 📣 Retool Announcements]
+Your go-to for product updates, community happenings, and important announcements from the Retool team
+
+[category: 🧑‍💻 Retool Tips & Tricks]
+Best practices shared by Retool employees
+
+[category: 🤝 Community Show & Tell]
+Best practices shared by community
+
+[category: 🤝 Discussion]
+Ask open-ended questions, brainstorm ideas, and collaborate with other builders
+
+[category: 💬 Agents]
+Troubleshoot and collaborate on Retool Agents use cases
+
+[category: 💬 App Building]
+Get help and troubleshoot any problems you run into when building apps
+
+[category: 💬 Queries and Resources]
+Ask about data sources, queries, and integrations
+
+[category: 💬 Self Hosted Retool]
+Support and discussion for self-hosted or on-prem Retool
+
+[category: 💬 Mobile]
+Share feedback, get help, and connect with other mobile builders
+
+[category: 💬 Workflows]
+Everything Retool Workflows — share feedback, tips, and questions
+
+[category: 💬 External Apps]
+Support for external apps used by customers, vendors, or partners
+
+[category: 💬 Account & User Management]
+Questions about user permissions, account settings, authentication, pricing, etc
+
+[category: 💬 Feature Requests]
+Share what you’d like to see in Retool in the future

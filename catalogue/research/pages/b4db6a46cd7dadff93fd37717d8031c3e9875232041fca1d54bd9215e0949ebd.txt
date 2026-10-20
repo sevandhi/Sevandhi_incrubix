@@ -1,0 +1,14 @@
+[category: Django]
+All about Django apps running on Fly.io. Django is a popular Python-based web framework.
+
+[category: Show & Tell]
+This is a category for sharing tips and tricks, how-tos, or projects you’ve built on Fly.io with the community.
+
+[category: Python]
+Welcome to the Python category - this is the place for all things python. Here’s a list of stuff we’d like to see here:
+
+[category: The Bike Shed]
+This category is for folks who work at Fly.io to ask for input from the community!
+
+[category: Declassified]
+We use this forum for internal work related discussions. Some of these are interesting, so we’re going to experiment with having some discussions in public.

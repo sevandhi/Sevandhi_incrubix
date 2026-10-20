@@ -1,0 +1,112 @@
+BetaList
+
+Home
+Browse
+Newsletter
+Search
+
+FAQ
+Advertise
+Support
+
+Startup Jobs
+Vision Pro apps
+
+Home
+Browse
+Newsletter
+Search
+
+FAQ
+Advertise
+Support
+
+Log in
+
+Submit Startup
+
+Submission Guidelines
+
+Before you submit your startup, it's helpful to understand what works best for our audience. We've highlighted the key guidelines that help startups get featured to help you prepare your submission effectively.
+
+The product should be relatively new
+
+Your product should be recently launched or still be unreleased.
+
+If your product has already received significant press coverage, it may be less suitable for our audience.
+
+Not available to anyone yet
+
+Private beta accessible by invitation only
+
+Recently launched
+
+Launched weeks ago or longer
+
+Already received significant press coverage
+
+App with the same functionality as a previously released app for different platform
+
+Not featured on BetaList before
+
+Each startup gets two opportunities to be featured. Once pre-launch, and once during launch. There should be at least a few weeks between those posts.
+
+Needs to be a technology startup
+
+Our audience visits BetaList to discover new technology startups. It's not the right place to promote your blog, newsletter, online store, etc.
+
+Software startups
+
+Hardware startups
+
+Old ideas with a new twist
+
+Blogs, online courses, books, newsletters
+
+Subscription e-commerce
+
+Old ideas without substantial improvements
+
+Consultancies / Agencies
+
+A distinct, decent-looking landing page
+
+Using a template doesn't inspire confidence and result in less sign ups than expected. For this reason we do not allow templates or pages with little product information.
+
+We realise not every startup has the budget to hire a world-class designer, but you should have a decent looking landing page for us to feature you as you wouldn't get much benefit from that kind of publicity otherwise.
+
+Read our guide: Designing your landing page
+
+Distinct design showcasing your (upcoming) product
+
+Heavily customised template that looks original
+
+Free or paid template
+
+Default Bootstrap style
+
+Page with only an 'explainer video'
+
+Hosted page by LaunchRock, Unbounce, KickoffLabs, or similar service
+
+Free hosting subdomains (e.g., yourapp.vercel.app, yourapp.netlify.app, yourapp.herokuapp.com)
+
+Direct link to App Store, Google Play, Kickstarter, Indiegogo, or Facebook page
+
+Visitors should be able to sign up or get access
+
+There's no point in getting featured on BetaList if our audience can't engage with your product. We recommend making it easy for visitors to sign up, download, or login to your product.
+
+Custom email signup form
+
+MailChimp or other form
+
+Download button or app store link
+
+Facebook, Google, or LinkedIn login
+
+"Follow us on X to get notified"
+
+Ready to submit?
+
+Submit your Startup

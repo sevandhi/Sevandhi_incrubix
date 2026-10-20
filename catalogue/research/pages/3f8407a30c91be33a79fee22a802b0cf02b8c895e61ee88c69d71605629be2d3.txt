@@ -1,0 +1,11 @@
+[category: W&B Help]
+This channel is not monitored by Weights &amp; Biases. If you have a technical question for W&amp;B Support, please contact support@wandb.com.
+
+[category: Show the Community!]
+Share what you’ve built on top of W&amp;B! This is the place to share your latest open source project, blog post/public W&amp;B Report, research paper, wandb code snippet, tutorial or any other project that uses W&amp;B.
+
+[category: Community Events]
+Info about all our classes, events, study groups, and more. By the community, for the community.
+
+[category: Announcements]
+Official announcements from the W&amp;B team.

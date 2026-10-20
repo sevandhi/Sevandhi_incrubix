@@ -1,0 +1,38 @@
+[category: General TouchDesigner Discussion]
+General discussion about anything TouchDesigner
+
+[category: POPs]
+Welcome to the POPs forum.
+
+[category: Beginners]
+Still a little green? Ask your beginner’s questions here
+
+[category: Techniques]
+Share helpful techniques or workflows you think others may find useful. Questions should go in General or Beginners.
+
+[category: Bugs]
+Report bugs so we can squash them!
+
+[category: Wishlist and RFEs]
+Send us your requests for enhancements (RFEs)
+
+[category: Hardware]
+Discuss graphics hardware, computer hardware, and input/output devices to use with TouchDesigner
+
+[category: TouchDesigner Documentation]
+Discuss help and learning documents. Submit your ideas for future tutorials and documents
+
+[category: Shared .tox Components]
+Imported from old forum. Now use ASSET posts to share .tox Components
+
+[category: Gallery]
+Imported from old forum. Now use BLOG or GALLERY posts to share your work.
+
+[category: User Events, Jobs & Opportunities]
+You can also post events in the community feed’s WORKSHOPS &amp; EVENTS or submit jobs and opportunities to our JOB BOARD.
+
+[category: Community Post Comments]
+When a discussion is started on a community post, a topic will be created here. The discussion that follows is also viewable in the original community post.
+
+[category: Site Feedback]
+Discussion about this site, its organization, how it works, and how we can improve it.

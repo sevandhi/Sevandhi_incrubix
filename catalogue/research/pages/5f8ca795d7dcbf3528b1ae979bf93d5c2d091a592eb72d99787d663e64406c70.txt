@@ -1,0 +1,25 @@
+[topic title]
+Welcome to Krita-artists.org! - A forum for krita users
+
+[first post]
+A central place for all the Krita enthusiasts, users, developers and artists to showcase their work, help each other and enhance Krita. This forum is operated by volunteers with permission from the Krita Foundation.
+
+Before posting, please…
+
+Understand that this is not an AI software website where you can type in a prompt. This forum is also not for AI plugin support.
+
+Please do not post or promote generative AI we do not entertain such questions on this forum. Go through our the terms and conditions.
+
+Check out our inroduction thread, although not compulsory, you can introduce yourself and get acquainted with other Krita artists.
+
+Check out our curated list of most commonly asked questions, it may have the question you are about to ask.
+
+Search before opening a new topic, as someone might have already created a similar topic.
+
+Visit the Top page to see the most actively discussed topics.
+
+Visit the Categories page to get a broad overview of the forum.
+
+Go through our Code of conduct which talks about ways to interact with this community. We also request you to read our Privacy policy and Terms of Service .
+
+We hope this forum will prove an essential part of your creative journey with Krita.

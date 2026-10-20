@@ -1,0 +1,153 @@
+[site name]
+feddit.org
+
+[site description]
+We are a German and English-speaking Lemmy community that evolved from feddit.de.
+
+[site sidebar]
+[![Matrix Raum](https://img.shields.io/matrix/feddit.org%3Amatrix.fediverse.foundation?server_fqdn=matrix.org&style=plastic&label=Unser+Matrix+Raum)](https://matrix.to/#/#feddit.org:matrix.fediverse.foundation)  
+[![Matrix Space](https://img.shields.io/matrix/feddit.org-space%3Amatrix.fediverse.foundation?server_fqdn=matrix.org&style=plastic&label=Unser+Matrix+Space)](https://matrix.to/#/#feddit.org-space:matrix.fediverse.foundation)  
+[![Static Badge](https://img.shields.io/badge/Spende-%C3%BCber_Fediverse--Foundation-blue?style=plastic)](https://fediverse.foundation/spenden/)
+
+
+Wir sind eine deutsch- und englischsprachige Lemmy Gemeinschaft und entwickelten uns aus feddit\.de heraus.
+
+Feddit.org dient als Reddit-Alternative im Fediverse.
+
+Wir sehen uns als einen selbstbestimmten Raum, außerhalb der Kontrolle kommerzieller Tech-Unternehmen.
+
+Netiquette wird vorausgesetzt. Gepflegt wird ein respektvoller Umgang - ohne Hass, Hetze, Diskriminierung.
+
+Alternative Oberflächen (von uns bereitgestellt):
+- [Photon](https://p.feddit.org/)
+- [Alexandrite](https://a.feddit.org/)
+- [Next](https://next.feddit.org/)
+- [mlmym](https://old.feddit.org/) (old)
+
+Weitere Optionen wie mobile Apps könnt ihr z.B. auf [lemmyapps.com](https://www.lemmyapps.com/) finden.
+
+[Werden euch Posts/Kommentare nicht angezeigt?](https://feddit.org/post/163939)
+
+Diese Community ist [spendenfinanziert](https://fediverse.foundation/spenden/) und wird von der [Fediverse Foundation](https://fediverse.foundation/) unterstützt.
+
+::: spoiler Serverregeln 
+
+Wir tolerieren kein diskriminierendes Verhalten und keine Inhalte, die die Unterdrückung von Mitgliedern marginalisierter Gruppen fördern oder befürworten. Diese Gruppen können durch eine der folgenden Eigenschaften gekennzeichnet sein (obwohl diese Liste natürlich unvollständig ist):
+
+- ethnische Zugehörigkeit
+- Geschlechtsidentität oder Ausdruck
+- sexuelle Identität oder Ausdruck
+- körperliche Merkmale oder Alter
+- Behinderung oder Krankheit
+- Nationalität, Wohnsitz, Staatsbürgerschaft
+- Reichtum oder Bildung
+- Religionszugehörigkeit, Agnostizismus oder Atheismus
+     
+Wir tolerieren kein bedrohliches Verhalten, Stalking und Doxxing. Wir tolerieren keine Belästigungen, einschließlich Brigading, Dogpiling oder jede andere Form des Kontakts mit einem Benutzer, der erklärt hat, dass er nicht kontaktiert werden möchte.
+
+- Sei respektvoll. Alle sind hier willkommen.
+- Kein Rassismus, Sexismus, Ableismus, Homophobie, oder anderweitige Xenophobie
+- Wir tolerieren kein Mobbing, einschließlich Beschimpfungen, absichtliches Misgendering oder Deadnaming.
+- Wir dulden keine gewalttätige nationalistische Propaganda, Nazisymbolik oder die Förderung der Ideologie des Nationalsozialismus.
+- Aktionen, die diese Instanz oder ihre Leistung beschädigen sollen, können zur sofortigen Sperrung des Kontos führen.
+- Provokationen können nach Ermessen der Moderation entfernt werden
+- Toxisches Verhalten wird nicht geduldet
+- Keine Werbung und Eigenwerbung
+- Kein Spam
+- Keine Pornografie / Adult Content
+- In Deutschland, Österreich oder Schweiz illegale Inhalte werden gelöscht und können zur sofortigen Sperrung des Accounts führen
+- Links zu archive.today, archive.fo, archive.is, archive.li, archive.md, archive.ph, archive.vn sind nicht gestattet und werden gelöscht
+- Keine Verbreitung von Desinformationen
+:::
+
+::: spoiler Attribution 
+This text was partly adapted and modified from chaos.social. It is free to be adapted and remixed under the terms of the CC-BY (Attribution 4.0 International) license.
+:::
+
+[Datenschutzerklärung](https://wiki.fediverse.foundation/books/fediverse-foundation-announcements/page/datenschutzerklarung)
+
+[TOMs](https://wiki.fediverse.foundation/books/fediverse-foundation-announcements/page/technische-und-organisatorische-massnahmen)
+
+---
+
+[![Matrix Room](https://img.shields.io/matrix/feddit.org%3Amatrix.fediverse.foundation?server_fqdn=matrix.org&style=plastic&label=Our+Matrix+Room)](https://matrix.to/#/#feddit.org:matrix.fediverse.foundation)  
+[![Matrix Space](https://img.shields.io/matrix/feddit.org-space%3Amatrix.fediverse.foundation?server_fqdn=matrix.org&style=plastic&label=Our+Matrix+Space)](https://matrix.to/#/#feddit.org-space:matrix.fediverse.foundation)
+[![Static Badge](https://img.shields.io/badge/Donate-via_Fediverse--Foundation-blue?style=plastic)](https://fediverse.foundation/en/donations/)
+
+We are a German and English-speaking Lemmy community that evolved from feddit\.de.
+
+Feddit.org serves as a Reddit alternative in the Fediverse.
+
+We see ourselves as a self-determined space, outside the control of commercial tech companies.
+
+Netiquette is expected. A respectful interaction is maintained - without hate, harassment, discrimination.
+
+Alternative UIs (provided by us):
+- [Photon](https://p.feddit.org/)
+- [Alexandrite](https://a.feddit.org/)
+- [Next](https://next.feddit.org/)
+- [mlmym](https://old.feddit.org/) (old)
+
+More options like mobile apps can be found e.g. on [lemmyapps.com](https://www.lemmyapps.com/).
+
+[Are you missing posts/comments?](https://feddit.org/post/163939)
+
+This community is [powered by donations](https://fediverse.foundation/en/donations/) and supported by the [Fediverse Foundation](https://fediverse.foundation/).
+
+::: spoiler Serverrules
+
+We do not tolerate discriminatory behavior or content that promotes or advocates the oppression of members of marginalized groups. These groups may be characterized by any of the following (though this list is of course incomplete):
+
+- ethnicity
+- gender identity or expression
+- sexual identity or expression
+- physical characteristics or age
+- disability or illness
+- nationality, residency, citizenship
+- wealth or education
+- religious affiliation, agnosticism, or atheism
+
+We do not tolerate threatening behavior, stalking, and doxxing. We do not tolerate harassment, including brigading, dogpiling, or any other form of contact with a user who has stated that they do not wish to be contacted.
+
+- Be respectful. Everyone is welcome here.
+- No racism, sexism, ableism, homophobia, or other xenophobia
+- We do not tolerate bullying, including name-calling, intentional misgendering, or deadnaming.
+ - We do not tolerate violent nationalist propaganda, Nazi symbolism or the promotion of the ideology of National Socialism. 
+- Actions intended to damage this instance or its performance can lead to immediate blocking of the account.
+- Provocations can be removed at the discretion of the moderators
+- Toxic behavior will not be tolerated
+- No advertisements and self-advertisement
+- No spam
+- No pornography / adult content
+- Content that is illegal in Germany, Austria or Switzerland will be deleted and can lead to an immediate ban of the account   
+- Links to archive.today, archive.fo, archive.is, archive.li, archive.md, archive.ph, archive.vn are not allowed and will be deleted
+- No spreading of disinformation
+:::
+
+::: spoiler Attribution 
+This text was partly adapted and modified from chaos.social. It is free to be adapted and remixed under the terms of the CC-BY (Attribution 4.0 International) license.
+:::
+
+[Data-Protection-Policy](https://wiki.fediverse.foundation/books/fediverse-foundation-announcements/page/data-protection-policy)
+
+[TOMs](https://wiki.fediverse.foundation/books/fediverse-foundation-announcements/page/technical-and-organizational-measures)
+
+[legal information]
+#### IMPRESSUM / IMPRINT
+Fediverse Foundation  
+Sillerplatz 8  
+1130 Wien  
+Österreich  
+ZVR: 1121443789  
+Email: support@fediverse.foundation  
+
+feddit.org Support: support@feddit.org
+
+#### DATENSCHUTZ / DATA PRIVACY
+Unsere Datenschutzerklärung sowie die technischen und organisatorischen Maßnahmen findet ihr hier:
+- https://wiki.fediverse.foundation/books/fediverse-foundation-announcements/page/datenschutzerklarung
+- https://wiki.fediverse.foundation/books/fediverse-foundation-announcements/page/technische-und-organisatorische-massnahmen
+
+Our data privacy policy as well as the technocal and organisational measures are listed here:
+- https://wiki.fediverse.foundation/books/fediverse-foundation-announcements/page/data-protection-policy
+- https://wiki.fediverse.foundation/books/fediverse-foundation-announcements/page/technical-and-organizational-measures

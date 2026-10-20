@@ -1,0 +1,29 @@
+[community title]
+Künstliche Intelligenz
+
+[community sidebar]
+🇩🇪 Deutsch:
+
+🌍🤖 KI & LLM: Europas digitale Souveränität
+
+Hier diskutieren wir künstliche Intelligenz und Large Language Models mit Fokus auf Europa – von Mistral, Aleph Alpha & Open-Source-Projekten bis zu Ethik, Regulierung (AI Act, DSGVO) und praktischen Anwendungen.
+
+Themen:
+✔ Europäische KI-Initiativen & Startups
+✔ Open-Source-LLMs & dezentrale Ansätze
+✔ Nachhaltige, ethische KI für Gesellschaft, Wirtschaft & Wissenschaft
+
+Mitmachen, diskutieren, Europa stärken! 🚀
+
+🇬🇧 English:
+
+🌍🤖 AI & LLM: Europe’s Digital Sovereignty
+
+This community focuses on artificial intelligence and Large Language Models in Europe – from Mistral, Aleph Alpha & open-source projects to ethics, regulation (AI Act, GDPR), and real-world applications.
+
+Topics:
+✔ European AI initiatives & startups
+✔ Open-source LLMs & decentralized approaches
+✔ Sustainable, ethical AI for society, business & science
+
+Join the discussion and help shape Europe’s AI future! 🚀

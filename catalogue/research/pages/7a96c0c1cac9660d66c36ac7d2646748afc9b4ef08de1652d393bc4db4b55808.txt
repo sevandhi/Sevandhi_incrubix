@@ -1,0 +1,5 @@
+[community title]
+Podcasts for developpers
+
+[community sidebar]
+Share your dev podcasts

@@ -1,0 +1,483 @@
+Support
+
+Linkedin
+
+Team
+
+Docs Menu
+
+Legal & Help Center
+
+Terms of Service
+
+Introduction
+
+Updates to the Terms of Service
+
+Regarding This Document
+
+User Responsibilities
+
+Reporting Users & Content
+
+Content Policy (Rules for Users)
+
+1. Attacks on people or groups
+
+1.1 Attacks on people
+
+1.2 Discrimination against minority / at-risk groups
+
+2. Respecting other users privacy (doxing)
+
+2.1 Privacy (Exceptions)
+
+2.1.1 User Data Retention
+
+3. System Disruption
+
+3.1 Meta-discussion
+
+3.2 Exceptions
+
+3.3 Reporting exploits
+
+4. Illegal content
+
+4.1 Piracy
+
+4.2 Copyright Takedown Notice Compliance
+
+5. Individual Communities
+
+5.1 Community Manipulation
+
+5.2 Community Moderation
+
+6. Violent Content
+
+6.1 War Footage
+
+6.2 Violent Content (Exceptions)
+
+7.0 Advertising
+
+8.0 Misinformation
+
+8.1 Do No Harm
+
+Legal Factuality Requirements
+
+Our Rights
+
+Bot Usage and Guidelines
+
+Our Governing Laws
+
+Contact Information & Reporting Harmful Content
+
+TL;DR
+
+Site Bylaws
+
+1. Site Administration
+
+1.1 User Ban Policy (Site Wide)
+
+1.2 Site Admin Issues (for Community Moderators)
+
+2. Community Moderation
+
+2.1 User Ban Policy (Community)
+
+2.2 Community Mod Removal
+
+2.3 Abandoned Communities
+
+2.4 Community Content Removal
+
+2.5 Content Reporting
+
+Privacy Policy
+
+1. INFORMATION WE COLLECT
+
+2. INFORMATION PROCESSED
+
+3. LEGAL BASIS FOR INFORMATION PROCESSING
+
+4. SHARING OF PERSONAL INFORMATION
+
+5. COOKIES AND OTHER TRACKING TECHNOLOGIES
+
+6. DATA RETENTION
+
+7. DATA SAFETY
+
+8. INFORMATION FROM MINORS
+
+9. PRIVACY RIGHTS
+
+10. CONTROLS FOR DO-NOT-TRACK FEATURES
+
+11. UNITED STATES RESIDENTS SPECIFIC PRIVACY RIGHTS
+
+12. OTHER REGIONS SPECIFIC PRIVACY RIGHTS
+
+13. UPDATES TO THIS NOTICE
+
+14. CONTACT
+
+Cookie Policy
+
+Cookie Policy
+
+The Use of Cookies
+
+Contact Us
+
+Vulnerability Disclosure Policy
+
+Fedihosting Foundation Vulnerability Disclosure Policy
+
+Introduction
+
+Systems in Scope
+
+Out of Scope
+
+Our Commitments
+
+Our Expectations
+
+Official Channels
+
+Safe Harbor
+
+Terms of Service
+
+Introduction
+
+Greetings, the good people of the world!
+
+This Terms of Service applies to your access to and active use of https://lemmy.world, it's API's and sub-domain services (ex alt GUIs)(we, us, our the website, Lemmy.World, or LW) as well as all other properties and services associated with Lemmy.World.
+
+Lemmy.World is intended to host and power online communities from all over the world, and to be a place reliable for your casual entertainment. As sweet as this is, it doesn’t keep us from needing to set basic rules.
+
+Read our Terms of Service carefully before using this website (“the website"). These Terms of Service ("the Terms of Service" or “the document”) govern your access to and use of the website. The website is available for your use only on the condition that you agree to the Terms of Service set forth above and below. If you do not agree with all of the Terms of Service, then do not access or use Lemmy.World. By accessing or using the website, you and the entity you are authorized to represent (“user” "you" or "your") signify your agreement to be bound by the Terms of Service.
+
+Learn more about Lemmy.World HERE.
+
+Updates to the Terms of Service
+
+To reflect and respect developments on applicable law and on the website itself, this document will be updated periodically.
+
+Regarding This Document
+
+The Terms of Service provided by us, together with any additional documents and/or terms they actively adopt through referencing, collectively constitute the legal document this page serves to provide, and is entered into by and between Lemmy.World and all its users (you).
+
+This document contains essential knowledge regarding your rights and obligations, as well as conditions, limitations and exclusions that apply to your use of and access to Lemmy.World.
+
+Lemmy.World is a content-aggregation social platform operated by our volunteer team, which runs an instance of the Lemmy software. Learn more about Lemmy HERE.
+
+User Responsibilities
+
+By agreeing to this section of the document, you accept that:
+
+You may only use Lemmy.World if you can clearly understand and actively comply with the terms laid out on this page.
+
+You were not permanently banished from the website in the past.
+
+You are responsible for your own experience on the website. While we are looking to provide an entertaining platform, we are not responsible for your individual experience.
+
+No one under 18 years of age or under the regulated minimum age defined by your local law (whichever is higher), is allowed to use or access the website.
+
+There may be designated sections of the website that may require you to be older to use them, so please read all notices and any additional terms carefully when you access Lemmy.World.
+
+Reporting Users & Content
+
+Only report content that violates the rules defined in the Terms of Service, or content that violates the rules of the community it was posted to.
+
+Personal messages may be reported if they violate any of the terms defined in this document.
+
+User profiles may be reported by sending an e-mail to [email protected].
+
+Content Policy (Rules for Users)
+
+Lemmy.World consists of a large number of communities from all around the world, leading our federated network. We aim to keep a civil environment for our users to interact with, provided posts and comments follow the rules laid out below.
+
+1. Attacks on people or groups
+
+Before using the website, remember you will be interacting with actual, real people and communities. Lemmy.World is not a place for you to attack other people or groups of people. Just because you disagree with someone doesn't give you the right to harass them. Discuss ideas and be critical of principles. Show the respect you desire to receive.
+
+We do not tolerate serious threats or calls for violence.
+
+1.1 Attacks on people
+
+Everyone has a right to browse and interact with Lemmy.World and other federated instances free of harassment and/or threats of violence. Please try and be kind to your fellow human, or at least civil. Trolling users is only funny if both parties find it funny. Trolling mods and/or site admins is ill-advised. See https://en.wikipedia.org/wiki/Sealioning https://en.wikipedia.org/wiki/Troll_(slang)#Concern_troll
+
+1.2 Discrimination against minority / at-risk groups
+
+Lemmy.World specifically forbids any sort of discrimination against queer groups on this site. Any form of racism, regardless of the user(s) that perpetrated it, is also forbidden. As already stated in Section 1, calls for violence against the aforementioned groups can result in a site-wide ban. We also reserve the right to report the offending user(s) to their local law enforcement unit responsible for hate crimes.
+
+2. Respecting other users privacy (doxing)
+
+Always be respectful of the privacy of others who access and use the website. Never harass or threaten to harass people by revealing personal information (doxing) or any type of media. Sharing sensitive information or media belonging to or depicting a person or entity (other than yourself) is only allowed on the condition that you have their explicit consent, or that it is publicly available information or media served in compliance with our content policy.
+
+2.1 Privacy (Exceptions)
+
+Information that is public domain can be shared, provided it is in good faith. For example, the email address of a government official you disagree with and wish to have a write-in email campaign. This is okay.
+
+This DOES NOT however permit you to harass them or conduct any activities that would be considered illegal, either under the laws local to the person in mention or under the laws that govern Lemmy.World. Whichever jurisdiction is stricter, we will follow. We will not help you break the law, simply put.
+
+You may also not use any services we provide to "witch-hunt" individuals, even if their information is public. Everyone, even rude and unpleasant individuals, should be allowed to be "left alone". See Right to be forgotten
+
+2.1.1 User Data Retention
+
+See https://legal.lemmy.world/privacy-policy/#6-how-long-do-we-keep-your-information for details.
+
+3. System Disruption
+
+You may not engage in any activities that may interfere with the normal use of, or access to, Lemmy.World. We reserve the right to permanently revoke access to any entities and/or individuals, that cause either service disruption or threaten the security of our site and/or users. This includes evading network-level blocking, such as WAF or IP-based blocking/bans. We also reserve the right to report all infractions of cyber-security law to relevant law enforcement entities.
+
+3.1 Meta-discussion
+
+Publicly discussing methods of evading security measures relating to Lemmy.World, on any property controlled by Lemmy.World is not allowed, and can result in up to a permanent site-wide ban for all parties involved.
+
+3.2 Exceptions
+
+Users are allowed to use any provided method to interact with Lemmy.World, as long as it is in good faith. VPN and/or Tor access is not explicitly disallowed, however, we reserve the right to restrict and/or limit types of access via anonymizing services to protect both our site and staff.
+
+3.3 Reporting exploits
+
+Please report any security exploits to [email protected], as per https://legal.lemmy.world/security/
+You may also encrypt your message by following the instructions at https://legal.lemmy.world/security.txt.
+
+4. Illegal content
+
+Do not post illegal content of any type. Do not engage in any activity that may encourage, facilitate or provide access to illegal transactions. Do not share or encourage the sharing of abusive or sexually suggestive content involving real or fictional minors. This also includes drawn, animated, generated and other content that does not depict real minors. Any violent or otherwise inappropriate behavior involving a minor will also always be strictly prohibited.
+
+4.1 Piracy
+
+Meta discussion of piracy and related topics is allowed. This includes:
+
+News about file sharing or streaming platforms
+
+Software used for streaming, downloading or sharing content
+
+Laws concerning piracy in different regions/countries
+
+Moral or ethical views on piracy
+
+Discussion about releases themselves, as long as no content listed below is included
+
+What is NOT allowed:
+
+Links to copyright infringing content, such as
+
+a copyright infringing YouTube video
+
+a torrent file or magnet link leading to copyright infringing content
+
+HTTP or FTP links to downloads copyright infringing content
+
+unlicensed streaming sites for copyrighted content
+
+Links to services actively facilitating copyright infringement
+
+This includes popular sites that can be found on the first page of most search engines.
+
+Posting obfuscated variants of the above, such as
+
+embedding links, domains or instructions in an image
+
+encoding things in Base64
+
+We reserve the right to both remove/block any offending communities and permanently ban any offending users to protect the site from any potential legal threats, as a precautionary measure.
+
+We evaluate all copyright related takedown notices we receive.
+Provided they are submitted in good faith and by the copyright holder, we will take infringing content down.
+We may err on the side of caution in these cases due to the associated legal risks if our assessment is incorrect.
+
+4.2 Copyright Takedown Notice Compliance
+
+In order for Lemmy.World to comply with any copyright related takedown requests you MUST provide ALL of the following:
+
+Full legal name of either the individual or organization
+
+E-mail where you can be reached at
+
+Registered mailing address of legal agent
+
+Phone number where you may be reached at
+
+Description of infringing material
+
+URL Linking to the material you wish to have removed
+
+Please note, while Lemmy.World may be able to remove the content hosted by our service, we are usually not able to enforce removal on any federated services, as we do not control and/or own them.
+
+Requests may be e-mailed to [email protected]
+
+Failure to provide ALL of the above REQUIRED information will result in our organization disregarding the request.
+
+5. Individual Communities
+
+Your participation in individual communities will only be acceptable on the condition that you abide by their rules. Always post compliant content that upholds the rules of the individual community and the website, and is of personal interest to you.
+
+5.1 Community Manipulation
+
+Do not engage in content manipulation such as posting spam content, vote manipulation through using several user accounts or consistently down-voting a user. Vote for the content, not for the person.
+
+You must also not vote on content posted by other accounts under your control, with the exception of bot accounts, which may receive at most one vote per submission from non-bot accounts under your control.
+
+5.2 Community Moderation
+
+Community moderators are expected to enforce our policies in communities they moderate within reason. In situations where our site policies don't seem to be reasonable or clear enough for the specific issue, moderators are welcome to raise this with our site admin team as an alternative of taking direct moderator action. Many violations of site policies can be dealt with on community level, but an escalation to our site admin team is always possible if desired by a moderator.
+
+Please see here for more information about reaching out to our site admin team.
+
+6. Violent Content
+
+No visual content depicting executions, murder, suicide, dismemberment, visible innards, excessive gore, or charred bodies. No content depicting, promoting or enabling animal abuse. No erotic or otherwise suggestive media or text content featuring depictions of rape, sexual assault, or non-consensual violence. All other violent content should be tagged NSFW.
+
+Please also consider German law, which is the most restrictive one applicable here. Specifically § 131 StGB (German, English) and § 201a StGB (German, English).
+
+6.1 War Footage
+
+Any graphic war footage taken by either private individuals or media outlets is prohibited. Exceptions may be made for photos and videos of historical significance.
+
+6.2 Violent Content (Exceptions)
+
+Depictions, imagery or otherwise ancient artwork in any form, other publicly available media entertainment content depicting gore or sexual content may be excluded and allowed, as long as they are fair use, in the public domain, or tolerated by the copyright owner, and in compliance with our Content Policy, as well as all applicable laws and their local laws. For example, films depicting war or historical reenactments.
+
+7.0 Advertising
+
+Lemmy.world is a free service, funded by donations and run by volunteers for the benefit of its users. As such, it is not intended to be used as a marketing channel for extensive commercial advertising or product promotion. Promoting or recommending products and services is generally allowed provided that the following criteria are met:
+
+It is relevant to the community where it is posted.
+
+It offers something of value to our users.
+
+It is created for community engagement rather than being a one-way message directed at users.
+
+Users or communities which primarily promote paid products or services, with little other engagement on Lemmy, may have their content removed and may be banned. This includes personal promotion such as a GoFundMe drive, OnlyFans page, or blog.
+
+8.0 Misinformation
+
+In general we hope that the users will post information that THEY believe is true and helpful, but sometimes this information can be harmful to others. This is technically already covered by our rules under Section 1, but we want to clarify this more, especially when it comes to more serious matters.
+
+We always recommend that users do their own research beyond just the first few pages of their favourite search engine, or what they read posted to online communities, even such as ours.
+
+Scientific data sources such as:
+
+JSTOR
+
+Google Scholar
+
+Paperity
+
+CORE
+
+ScienceOpen
+
+ERIC
+
+8.1 Do No Harm
+
+One of the core beliefs of modern medicine is the Hippocratic Oath, and is the logical basis of this section. All users should strive to "do no harm" concerning advice given to other users. While we acknowledge that no one person is infallible, information posted in "good faith" goes a long way. We adapt this document here with the following guidelines.
+
+Any studies posted to this site regarding the health or wellbeing should IDEALLY be at minimum peer reviewed, reproducible scientific studies.
+
+This DOES NOT mean that a single study is invalid, only that it generally provides an inadequate sample size to be useful when concerning the well being of living things.
+
+Studies conducted by individuals without peer review should not be considered safe enough regarding matters of health.
+
+It is ultimately up to the individual if they choose to follow alleged studies that do not meet these requirements. Reader beware.
+
+We DO reserve the right to remove any information posted which COULD cause imminent PHYSICAL harm to any living being
+
+This DOES INCLUDE topics such as:
+
+Conversion therapy
+
+Unhealthy diets, e.g. due to insufficient nutrients
+
+Frontal lobotomies
+
+We also reserve the right to remove any sufficiently scientifically proven MALICIOUS information posted which a user may follow, which would result in either IMMINENT PHYSICAL harm to an INDIVIDUALS PROPERTY, the PROPERTY of OTHERS or OTHER LIVING BEINGS.
+
+For example, recommending that someone microwave a battery to "recharge" it. This obviously resulting the destruction of the battery and/or microwave, including potential harm directly to the person doing this.
+
+Legal Factuality Requirements
+
+The content provided on Lemmy.World is not necessarily factually true, and hosting it does not mean agreeing, supporting or encouraging it. The content posted must at minimum comply with our Terms of Service and any other documents that are mentioned and linked to in this document. This includes any and all legally binding statutes that we are required to follow to operate as a non-profit entity.
+
+Our Rights
+
+You are solely and entirely responsible for your use of the website and your computer, internet, and data security.
+
+You waive Lemmy.World and its parent, subsidiaries, affiliates, and all their respective staff, representatives, service providers, contractors, licensors, licensees, and successors from any claims resulting from any action taken by Lemmy.World, and any of the foregoing parties relating to any investigations by either us or by law enforcement authorities.
+
+In the case of a violation of the Terms of Service, here is what may happen:
+
+Removal of the violating content, and asking you to not repeat it.
+
+Being warned for the second time, and having your account temporarily suspended.
+
+Adding temporary or permanent limitations to Lemmy.World communities, such as applying NSFW tags or restricting the posting of new content by users.
+
+Removal of all content associated with the violating party.
+
+Banishing of communities.
+
+Permanent banishing of user accounts.
+
+Bot Usage and Guidelines
+
+Bots shall not be used for any kind of advertising.
+
+The bot accounts must be marked as a bot. Both in the bio and by marking the account as a bot.
+Automations used only for scheduling posts do not require marking the account as bot if the account is otherwise used by a human.
+
+The owner of the bot and contact details must be mentioned in the bot’s bio.
+
+Bots are only allowed to post in communities where they have explicit permission from the community’s owners to do so.
+
+Bots from other instances that post in Lemmy World communities must follow the same rules.
+
+Bots shall not only post Reddit content.
+
+Bots shall not be “spammy”, as in multiple posts per minute.
+
+Breaking any of these rules will result in a ban for the Bot and, if required, its owner.
+
+Commands must use the bots mention @ as a prefix, and not a text prefix like !help.
+
+Bots must not vote on content.
+
+Our Governing Laws
+
+The website and the agreement will be governed by and construed per the laws of the following countries and/or states:
+
+The Netherlands
+
+Republic of Finland
+
+Federal Republic of Germany
+
+In the case of having to face an event not covered by the Terms of Service, the full body of this document will still keep its validity and use. In this event, the laws applicable to us, which were mentioned in the above list of countries and/or states, will be used as a primary guide in content moderation.
+
+Should any section of the Terms of Service be held invalid or unenforceable, that section shall be construed consistent with applicable law and all of the remaining sections shall remain in full force and effect.
+
+Contact Information & Reporting Harmful Content
+
+All questions, issues, concerns and requests regarding Lemmy.World and the Terms of Service may be sent to [email protected].
+
+TL;DR
+
+You should read the whole document. It should not take you more than 10 minutes or so. 😉
+
+Site Bylaws
+
+© 2025

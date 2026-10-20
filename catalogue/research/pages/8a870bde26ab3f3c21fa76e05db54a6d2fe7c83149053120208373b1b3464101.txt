@@ -1,0 +1,20 @@
+[category: Questions]
+Use this category for any questions related to three.js. Before posting here, please use the search function to check if your question has already been answered.
+
+[category: Showcase]
+Use this category to showcase any projects you have created using three.js. Showcases require moderator approval, so please be patient if your post doesn’t show up immediately, or feel free to message @moderators.
+
+[category: Resources]
+Use this category to share tutorials, models, materials, textures, shaders, and code that you have made or found useful. Anything that will help other people use three.js, in other words.
+
+[category: Discussion]
+This platform is here to facilitate discussion on various topics related to the three.js JavaScript library for authoring 3d content. This is a place for experienced and inexperienced users of the library to exchange knowledge and help to grow the capabilities of three.js and its community.
+
+[category: Jobs]
+Are you looking for a talented three.js developer? You’re in the right place!
+
+[category: Events]
+Everything related to events, meetups, competitions, challenges, discussion groups, or anything else that involves getting together with other humans, both online and offline, goes here.
+
+[category: Site Feedback]
+Feedback and discussion about this site, its organization, how it works, and how we can improve it.

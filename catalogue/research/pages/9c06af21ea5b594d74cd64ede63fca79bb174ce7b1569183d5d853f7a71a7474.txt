@@ -1,0 +1,39 @@
+[category: Software]
+Discussions about software in general, not necessarily tied to a process or workflow that would fit better in the Processing category.
+
+[category: Processing]
+Processing and managing images after they’ve been captured, using various free software from RAW processing to panorama stitching and much, much more.
+
+[category: Lounge]
+General off-topic discussions and casual conversations.  Have fun!
+
+[category: Capturing]
+All about capturing an image and what we go through to do it.
+
+[category: Hardware]
+A category to discuss gear, DIY, hacks, and more.  From a shiny new lens to an awesome DIY project, this is the place to talk about all the fun ways to approach equipment for photography!
+
+[category: Showcase]
+This is the place to exhibit your finished works.  You’ve sweated over, modified, adjusted, and tweaked until you finally reached this version of your vision.  The one you want to share with everyone to really show what you’re capable of producing!
+
+[category: Meta]
+Discussions related to the website or this forum itself.
+Particularly around any issues, enhancements, suggestions, etc…
+
+[category: Libre Arts]
+Libre Arts was previously known under the name Libre Graphics World. It’s an online magazine for creative professionals using free applications for digital painting, graphic and web design, desktop publishing, photography, and CAD.
+
+[category: Critique]
+This category is for soliciting feedback and advice from other users.
+
+[category: Travel and Trip Planning]
+A place to share the places you’ve been or ask questions about a place or region, such are where to go photograph, where to eat, lodging, etc.
+
+[category: PIXLS.US]
+This category is for corresponding posts from the main site.  Comments and replies here will appear with the posts they are assigned to and will be visible on the main website.
+
+[category: Digital Painting]
+Creating paintings and artwork using techniques that have been carried over from physical media.  This includes discussing methods for emulating physical characteristics in software.
+
+[category: Legal and Policy]
+Discussions for legal and policy topics.  Due to possibly contentious subject matter please keep the discussions civil.

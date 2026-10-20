@@ -1,0 +1,31 @@
+[community title]
+Linux Video Editing
+
+[community sidebar]
+Welcome! This community is focused on sharing video editing tips, tricks, best practices, and software
+
+Some quick rules:
+
+- No trolling/grieving/being a jerk (This is subjective, but we should all be adults here)
+
+- Don't simply state that something is better in one way or another. Back it up, ideally with sources and video
+
+- Don't make a post in an attempt to make a particular program seem superior. Most of the time it's very application specific use case that makes things faster/better
+
+- Upload a text tutorial along with a video explanation if that is possible. Some videos are great, but text can be followed simply.
+
+- Do not attempt to shame someone for using other software (see rule 1)
+
+- Do not bring up how Resolve is better in a lot of aspects. We know that, and understand that. However, in many use cases Resolve simply *will not run or compile.*
+
+With all of that being said - welcome to the Linux Video Editing community! The goal here is to help each other with tips, tricks, suggestions, and advice.
+
+In my (limited) experience, different software works better for different styles of projects. Here's my personal list of software that I use for various projects which can all be easily installed from most (all?) package managers:
+
+- Kdenlive
+
+- ShotCut
+
+- Olive
+
+Kdenlive is fantastic for quick edits, though it can do a lot more (beyond the quick edits it is clunky imo). ShotCut can do cool things like motion tractking easily. Olive is fantastic for subtitles, but I absolutely would not recommend it for anything with audio.

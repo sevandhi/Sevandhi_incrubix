@@ -1,0 +1,5 @@
+[site name]
+SDF Chatter
+
+[site description]
+A Lemmy instance hosted by the SDF.ORG

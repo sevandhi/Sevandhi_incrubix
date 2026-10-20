@@ -1,0 +1,47 @@
+[category: General questions]
+Welcome! This is a discussion platform for Matomo, the open analytics platform that helps you keep full control of your data.
+
+[category: Support & Bugs]
+Report a bug or issue while installing or using Matomo.
+
+[category: Plugins & Platform]
+Discussion about developing plugins, extensions that enhance or change the behavior of the Matomo analytics platform.
+
+[category: Premium Features]
+This category is all about Premium plugins discussions and support questions. Welcome!
+
+[category: WordPress Plugin]
+Questions and Feedback about the new Matomo for Wordpress plugin.
+
+[category: Tag Manager]
+For bugs, issue with and questions about Matomo Tag Manager.
+
+[category: Knowledge base]
+Share your tips in our community knowledge base.
+
+[category: Feature Suggestions]
+Is there a feature from another analytics service you miss? Or maybe a feature you&#39;ve always wanted? Let us know.
+
+[category: Deutschsprachiges Forum (German)]
+Willkommen im deutschsprachigen Matomo-Support-Forum.
+
+[category: Support en français (French)]
+Bienvenue sur le forum d’aide sur Matomo en français.
+
+[category: Soporte en español (Spanish)]
+Bienvenidos al foro de ayuda sobre Matomo en español.
+
+[category: Supporto in italiano (Italian)]
+Benvenuti nel forum di aiuto in italiano. In questa sezione scambiamo consigli, suggerimenti e coordiniamo la comunità nel territorio.
+
+[category: Discussion]
+For general discussion about web analytics, privacy and similar topics.
+
+[category: Site Feedback]
+Discussion about this site, its organization, how it works, and how we can improve it.
+
+[category: Localisation]
+For questions and comments about localising Matomo.
+
+[category: Matomo Looker Studio connector]
+I am delighted to announce the launch of the Looker Studio Connector for Matomo, a significant milestone in our journey towards letting you own your data and connect it to your existing tools for better reporting &amp; decision making.

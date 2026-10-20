@@ -1,0 +1,29 @@
+[category: General Discussion]
+Announcements, updates and general discussions which don’t fit into any of the other categories.
+
+[category: Help, Support & Bugs]
+Post problems, questions or bug reports for Renoise here. Please also have a look at the Renoise Online Manual and Tutorials Page.
+
+[category: Ideas & suggestions]
+Brainstorming, ideas &amp; feature suggestions for Renoise
+
+[category: Tips & Tricks]
+Share your Renoise composing tips &amp; tricks.
+
+[category: Renoise Songs]
+Announce &amp; discuss songs or albums made with Renoise
+
+[category: Renoise Tools]
+Announce and discuss Renoise Scripting Tools
+
+[category: Renoise Tool Development]
+Technical Q&amp;A for the Renoise Lua Scripting API
+
+[category: Other Trackers]
+Discuss, announce or share thoughts about other interesting trackers and related music apps here.
+
+[category: Site Feedback]
+Discussion about this forum, its organization, how it works, and how we can improve it.
+
+[category: Off-Topic]
+Discuss anything not related to Renoise - with other Renoise users.

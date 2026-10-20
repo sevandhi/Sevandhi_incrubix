@@ -1,0 +1,23 @@
+[category: Announcements]
+Important updates and news from administrators and moderators. This category is for official communications from crewAI staff that affect the entire community.
+
+[category: General]
+This category is for conversations that don’t fit anywhere else
+
+[category: CrewAI Community Support]
+This channel is dedicated to providing you a way to request troubleshooting support for your CrewAI projects from the CrewAI community.
+
+[category: Showcase]
+A place for you to showcase your crews
+
+[category: Crews]
+This category is to allow you to discuss crews and their components such as;
+
+[category: LLMs]
+This category is for discussing the various frontier &amp; open source LLMs currently available.
+
+[category: Site Feedback]
+Discussion about this site, its organization, how it works, and how we can improve it.
+
+[category: Jobs]
+This category is dedicated to job postings specifically seeking candidates with CrewAI expertise.

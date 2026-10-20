@@ -1,0 +1,17 @@
+[community title]
+Large Language Models
+
+[community sidebar]
+A place to discuss large language models.
+
+**Rules**
+
+1. Please tag [not libre software] and [never on-device] services as such (those not green in the _License_ column [here](https://en.wikipedia.org/wiki/List_of_large_language_models)).
+2. Be useful to others
+
+**Resources**
+
+github.com/ollama/ollama  
+https://github.com/danny-avila/LibreChat  
+github.com/Aider-AI/aider  
+wikipedia.org/wiki/List_of_large_language_models

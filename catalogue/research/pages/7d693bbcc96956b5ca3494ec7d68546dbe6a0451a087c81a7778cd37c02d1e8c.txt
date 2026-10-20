@@ -1,0 +1,98 @@
+[site name]
+Lemmy.ca
+
+[site description]
+A Canadian-run community, geared towards Canadians, but all are welcome!
+
+[site sidebar]
+---
+
+### Welcome 🍁
+
+---
+
+**Lemmy.ca** is run by Canadians, hosted in Canada, and geared toward Canadians. However, it is not restricted to Canadians, or Canadian culture/topics/etc. All are welcome!
+
+To learn more about what Lemmy is, or how the Fediverse works, you can visit our simple [Getting Started Guide](https://fedecan.ca/en/guide/get-started).
+
+This site is run by the non-profit [Fedecan](https://fedecan.ca/) and funded entirely by user donations. You can help support us by visiting our [donations page](https://fedecan.ca/en/donate).
+
+---
+
+#### Rules and Guidelines
+
+::: spoiler 1. No Bigotry
+Including racism, sexism, ableism, homophobia, transphobia, or xenophobia.
+:::  
+::: spoiler 2. Be Civil
+Argue in good faith, attack the argument; not the person, and promote a healthy debate. That includes implying violence, threats or wishes of violence and/or death.
+:::  
+::: spoiler 3. No Porn
+This instance is not made to host porn communities. You're free to access porn communities on other instances through your account, but be mindful of Rule 4.
+:::  
+::: spoiler 4. Use the NSFW tag
+Use your common sense: if you wouldn't want this image to show up on your work computer, tag it as such. In comments, use the `:::spoiler :::` tag for NSFW images, and put a NSFW mention beside links. Do not use NSFW images as your avatar or banner.
+:::  
+::: spoiler 5. No Ads / Spam
+This instance is not there to act as your billboard. If you want to promote your personal work, at least make the effort to be a contributing member of this community. Your account purpose shouldn't be to only advertise, make it natural.
+:::  
+::: spoiler 6. Bot account
+If you are the operator of a "bot" account, make sure to flag is as such in the [account's settings](/settings).
+:::  
+::: spoiler 7. Right to privacy
+Do NOT distribute the personal information of someone else without their consent (aka doxxing). Information that is public domain can be shared, provided it is in good faith.   
+*ex: The official email of an elected official is fair, the private phone number or the real name of a non-public person is NOT.*
+:::  
+::: spoiler 8. Report abuse
+The report function isn't labelled the *disagree* button. You might not agree with someone, but that doesn't mean what the person says is against the rules. Using it repeately in this fashion will lead to actions being taken against the reporter.
+:::  
+::: spoiler 9. Impersonation
+Don't make an account with the intent to negatively deceive or defame someone on the fediverse.  
+*ex: Parody of a famous person is okay, submitting outrageous content as appearing like another user, mod or admin isn't.*  
+:::
+
+---
+
+**Contact an Admin:**
+
+- Send us a message at [@admin@lemmy.ca](https://lemmy.ca/u/admin)
+- Send us an email at [support@lemmy.ca](mailto:support@lemmy.ca)
+
+**Guides:**
+
+You can find more guides at [fedecan.ca](https://fedecan.ca/en/guide/get-started) by opening the sidebar.
+
+- [Welcome to the Fediverse](https://fedecan.ca/en/guide/get-started)
+- [About Us (Fedecan)](https://fedecan.ca/en/guide/fedecan/)
+- [Get Started with Lemmy](https://fedecan.ca/en/guide/lemmy/for-users)
+
+**Meta Communities:**
+
+- [!main](/c/main@lemmy.ca): announcements & general discussion
+- [!lemmy_ca_support](/c/lemmy_ca_support@lemmy.ca): support requests
+- [!communityrequests](/c/communityrequests@lemmy.ca): become a mod of an existing community
+
+**Other Frontends:** 
+
+Don't like how Lemmy looks? Try one of our [alternative UIs](https://fedecan.ca/en/guide/lemmy/for-users/alternative-uis):
+
+- [old.lemmy.ca](https://old.lemmy.ca/) (Mlmym)
+- [voyager.lemmy.ca](https://voyager.lemmy.ca/) (Voyager)
+- [photon.lemmy.ca](https://photon.lemmy.ca/) (Photon)
+- [alex.lemmy.ca](https://alex.lemmy.ca/) (Alexandrite)
+- [blorp.lemmy.ca](https://blorp.lemmy.ca/) (Blorp)
+
+**Site Status:** [status.fedecan.ca](https://status.fedecan.ca/)
+
+---
+
+**Find Apps:** [lemmyapps.com](https://www.lemmyapps.com/)
+
+**Find Communities:** [lemmyverse.net](https://lemmyverse.net/communities)
+
+**Fediseer:** [![endorsement](https://fediseer.com/api/v1/badges/endorsements/lemmy.ca.svg)](https://gui.fediseer.com/instances/detail/lemmy.ca)
+
+---
+
+[legal information]
+For more information please see https://fedecan.ca/

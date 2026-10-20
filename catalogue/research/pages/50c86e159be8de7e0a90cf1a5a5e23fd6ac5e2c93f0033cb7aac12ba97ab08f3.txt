@@ -1,0 +1,42 @@
+[community title]
+Künstliche Intelligenz
+
+[community sidebar]
+Community für Austausch zum Thema **Künstliche Intelligenz**.
+
+#ai #ki #artificial-intelligence
+
+[Wikipedia](https://de.wikipedia.org/wiki/K%C3%BCnstliche_Intelligenz): *"Künstliche Intelligenz (KI), auch artifizielle Intelligenz (AI), englisch artificial intelligence, ist ein Teilgebiet der [Informatik](https://de.wikipedia.org/wiki/Informatik), das sich mit der [Automatisierung](https://de.wikipedia.org/wiki/Automatisierung) intelligenten Verhaltens und dem [maschinellen Lernen](https://de.wikipedia.org/wiki/Maschinelles_Lernen) befasst. Der Begriff ist schwierig zu definieren, da es bereits an einer genauen [Definition](https://de.wikipedia.org/wiki/Definition) von [Intelligenz](https://de.wikipedia.org/wiki/Intelligenz) mangelt. "*
+
+Anwendungen:
+- [AI Generated Images [en]](/c/imageai@sh.itjust.works) @sh.itjust.works
+- [Distributed Machine Learning [en]](/c/distributed_ml@feddit.org)
+
+Verwandte Communities:
+- [Mathematik](/c/mathematik@feddit.org)
+- [Philosophie](/c/philosophie@feddit.org)
+- [Robotik](/c/robotik@feddit.org)
+- [Technik](/c/technik@feddit.org)
+- [Technologie](/c/technologie@feddit.org)
+
+IT Communities:
+- [de_edv](/c/de_edv@feddit.org)
+- [EDV-Sicherheit](/c/edv_sicherheit@feddit.org)
+- [FOSS - Freie Software](/c/foss_de@feddit.org)
+- [Linux](/c/linux@feddit.org)
+- [Quantencomputer](/c/quantencomputer@feddit.org)
+- [Raspberry Pi](/c/raspberrypi@feddit.org)
+
+**Netiquette** wird vorausgesetzt. Gepflegt wird ein respektvoller Umgang - ohne Hass, Hetze, Diskriminierung.
+
+Bitte beachtet die [Regeln von Feddit.org](https://feddit.org/).
+
+&#x2705; Deutsch  
+&#x2705; English
+
+::: spoiler Attribution
+- Das Banner zeigt ein Symbolbild für Künstliche Intelligenz. Image by [Gerd Altmann](https://pixabay.com/users/geralt-9301/) on [Pixabay](https://pixabay.com/illustrations/artificial-intelligence-network-3706562/)
+- Das Icon zeigt ein von marv99 mit [Image Creator](https://www.bing.com/images/create) erzeugtes Logo.
+:::
+
+___

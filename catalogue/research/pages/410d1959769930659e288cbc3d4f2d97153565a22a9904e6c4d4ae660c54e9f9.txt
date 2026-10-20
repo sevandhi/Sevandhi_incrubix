@@ -1,0 +1,32 @@
+[category: Announcements]
+Official updates related to building with OpenAI, the API, and more!
+
+[category: API]
+Questions, feedback, and best practices around building with OpenAI’s API. Please read the API docs before posting.
+
+[category: ChatGPT]
+Questions, bug reports, feedback, feature requests, use cases, and troubleshooting related to ChatGPT are welcome here.
+
+[category: ChatGPT Apps SDK]
+This category is for developers building ChatGPT apps using the Apps SDK.
+
+[category: Open Models]
+Welcome to the Open Source Model category! This space is dedicated to discussions, questions, contributions, and best practices around gpt-oss.
+
+[category: Codex]
+Discussions related to ChatGPT’s coding tools and abilities, such as the Codex agent, Canvas, working with IDEs in the macOS app, or gpt-4.1.
+
+[category: Prompting]
+Learn more about prompting by sharing best practices, your favorite prompts, and more!
+
+[category: Documentation]
+A place to share feedback on documentation and tutorials about OpenAI!
+
+[category: GPT builders]
+GPTs are a new way for anyone to create a tailored version of ChatGPT to be more helpful in their daily life, at specific tasks, at work, or at home—and then share that creation with others.
+
+[category: Forum feedback]
+Feedback on how to make this community forum better for you!
+
+[category: Community]
+A place to connect with the OpenAI Developer community. Topics should be related to what is happening in the news, sharing cool projects you are working on, and conversations around AI safety.

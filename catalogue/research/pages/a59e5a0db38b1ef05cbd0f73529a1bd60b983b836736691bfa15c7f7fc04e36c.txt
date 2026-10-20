@@ -1,0 +1,41 @@
+[server title]
+Artsio.com
+
+[short description]
+Artsio is a creativity and art focused community on the fediverse.
+
+[server rule 1]
+No trolling, micro-aggressions, or harassment.
+
+[server rule 2]
+Tag sensitive content such as violence/blood, NSFW content, and other potentially upsetting or triggering topics, AND hide them under a Content Warning (CW).
+
+[server rule 3]
+The following content will be removed and will result in revocation of access to the service: sexual depictions of minors (this includes loli), content illegal in Germany and/or France, such as holocaust denial or Nazi symbolism, conduct promoting the ideology of National Socialism.
+
+[server rule 4]
+The following content will be removed and may result in account suspension: racism, sexism, discrimination against gender and sexual minorities, ableism, xenophobia and/or violent nationalism, or the advocation of all of the above.
+
+[server rule 5]
+Conduct intended to stalk or harass users, impede users from using the service, degrade the performance of the service, or incite others to perform any of the aforementioned actions, is disallowed.
+
+[server rule 6]
+No reposting other people's work without credit and analysis/opinion.
+
+[server rule 7]
+No spam and/or unapproved bots.
+
+[server rule 8]
+No racism, sexism, homophobia, transphobia, xenophobia, or casteism
+
+[server rule 9]
+Do not share false or misleading information that may lead to physical harm
+
+[server rule 10]
+No NFT content. Please post those on crypto-related instances on the fediverse.
+
+[server rule 11]
+Human art only. If your animal friends can make art then that's ok; but please no AI art.
+
+[server rule 12]
+No flooding the public timelines (making lots of public posts in quick succession).

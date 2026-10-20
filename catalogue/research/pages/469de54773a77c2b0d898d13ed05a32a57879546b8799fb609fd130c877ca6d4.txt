@@ -1,0 +1,7 @@
+[community title]
+AI Coding
+
+[community sidebar]
+A community for all AI-assisted technologies. News on Cursor, Windsurf and various LLMs (ChatGPT, Grok, Claude, DeepSeek, Gemini etc.) can be discussed here.
+
+Feel free to share your AI-supported coding workflows, usage guidance, and projects that you created through AI-assisted coding.

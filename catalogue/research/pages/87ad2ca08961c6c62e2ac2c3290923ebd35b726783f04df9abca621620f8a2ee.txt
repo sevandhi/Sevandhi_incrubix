@@ -1,0 +1,5 @@
+[community title]
+Distributed Machine Learning
+
+[community sidebar]
+Combining distributed computing and machine learning - and everything inbetween (linear algebra, federated learning, p2p file-sharing, collaborative computing, evolutionary algorithms, etc.) with the idea of democrazing AI.

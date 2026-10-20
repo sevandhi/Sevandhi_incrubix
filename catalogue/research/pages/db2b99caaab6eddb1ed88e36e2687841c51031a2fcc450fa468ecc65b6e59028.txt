@@ -1,0 +1,9 @@
+[community title]
+AI Coding
+
+[community sidebar]
+A community to discuss agentic and AI assisted coding. 
+
+All users are expected to follow the [code of conduct](https://legal.programming.dev/docs/code-of-conduct/), particularly in regards to voting:
+
+> 1.3. Vote for quality: When downvoting content in communities the downvotes should reflect the quality of the content rather than whether you personally agree with it.

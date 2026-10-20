@@ -1,0 +1,31 @@
+[instance name]
+PeerTube.wtf
+
+[short description]
+A PeerTube provider for general use, hosted in northern Europe.
+
+[description]
+Welcome to WTF's PeerTube platform. This platform uses the official [Search Index](https://instances.joinpeertube.org) to allow users to look up content from over a thousand PeerTube platforms.
+
+[terms]
+- This video platform is for sharing videos. Uploading video as **unlisted** or **private** will eventually lead to the video being deleted.
+
+- You may not upload copyrighted content, unless permission is given or is considered **fair use**.
+
+- If you wish to synchronize your entire YouTube channel, you are required to promote your PeerTube channel on your socials. This includes YouTube. Being active on PeerTube is also a requirement.
+
+Remember, PeerTube.wtf is not a backup solution for your videos. This is a video sharing platform and community.
+
+[code of conduct]
+1. No bigotry - including racism, sexism, ableism, homophobia, transphobia, or xenophobia.
+2. Be respectful. Everyone should feel welcome here.
+3. Uploading pornography or gore is forbidden.
+4. Uploading or posting content that is illegal in Denmark, is prohibited.
+5. No incitement of violence or promotion of violent ideologies.
+6. No spam.
+
+*If you see something against the rules, please report it.*
+
+[moderation information]
+- Uploading gore or pornography is **not** allowed.
+- A NSFW video, must be tagged as such. If not, it will be deleted without warning.

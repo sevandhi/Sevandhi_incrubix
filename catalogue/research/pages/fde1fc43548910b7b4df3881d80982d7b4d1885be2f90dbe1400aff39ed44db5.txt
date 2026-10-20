@@ -1,0 +1,26 @@
+[category: Info & Announcements]
+New to this forum? Get started here.
+
+[category: Get Help]
+Ask questions and get help from other Adalo users.
+
+[category: Roadmap]
+Share your feedback and ideas about Adalo!
+
+[category: App Showcase]
+Share what you’ve made in Adalo.
+
+[category: Resources & Tutorials]
+Share your Adalo tips, tricks, and tutorials.
+
+[category: Changelog]
+New features, components, and fixes shipping in Adalo.
+
+[category: General Discussion]
+Water-cooler and random chat.
+
+[category: Jobs / Freelance]
+Need someone to build your app or develop a custom component? Post paid gigs here.
+
+[category: Contests]
+Monthly and quarterly contests to earn free Pro and other cool prizes.

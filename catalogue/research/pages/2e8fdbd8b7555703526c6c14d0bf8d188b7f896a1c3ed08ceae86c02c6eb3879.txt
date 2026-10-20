@@ -1,0 +1,63 @@
+[server title]
+Infosec Exchange
+
+[short description]
+A Mastodon instance for info/cyber security-minded people.
+
+[description]
+This is a Mastodon instance open to the general public, but may contain more than the usual amount of IT security discussions.
+
+[server rule 1]
+Do unto others as you think they would want done to them.
+
+[server rule 2]
+Mark sensitive content with a content warning.
+
+[server rule 3]
+Gratuitous obscenity that serves no practical benefit to a discussion is not permitted.
+
+[server rule 4]
+Illegal content such as child pornography, unsurprisingly, is not permitted
+
+[server rule 5]
+Spam is not permitted, this includes creating spam accounts that only serve to provide profile links or advertise products and services.
+
+[server rule 6]
+Racism, sexism, homophobia, transphobia, xenophobia are not permitted.   Do not try to correct others' handling of or response to bigotry.  
+Hate speech and abusive or threatening behavior is not permitted, specifically that which directed at any gender, nationality, religion, race, age, or sexual identity.   Hate or bigotry delivered in pleasant form is still hate or bigotry.
+
+[server rule 7]
+Lack of a specific rule against a certain behavior does not indicate acceptance of that behavior.  Each of us has a limited amount of time in this world.  Don't be a jerk.
+
+[server rule 8]
+Violating one or more of these rules may result in an immediate, permanent ban without notice or warning.
+
+[server rule 9]
+You may not impersonate a person or brand without a clear indication the account is unofficial and/or a parody. Parody accounts are permitted, as are legitimate brand accounts.
+
+[server rule 10]
+No attacks against (or from) the instance.
+
+You may not do anything which may impact confidentiality, integrity or availability of Infosec.Exchange, the users of the service or their data.
+For more details see https://wiki.infosec.exchange/rules/start
+
+[server rule 11]
+No doxing (aka doxxing) or disclosing personal information without consent and as a means of harassing or causing others to harass another person.
+
+[server rule 12]
+No harassment in the form of continued engagement after a person has requested contact to stop
+
+[server rule 13]
+Automated posting:
+- accounts that post >50% using automation must be labeled as a “bot” in the user profile to help provide a visual indicator to visitors
+- automated posts must be limited to one post per hour/24 per day with post visibility set to “public”. There is no limit on “unlisted” posts.
+
+[server rule 14]
+Soliciting or inciting violence or harm against a person or segment of people is not permitted.
+
+[server rule 15]
+Do not be the reason we need to add a new rule.
+
+[server rule 16]
+LLM and AI operated accounts are not permitted. 
+Such accounts are subject to removal without notice, whether local or remote.

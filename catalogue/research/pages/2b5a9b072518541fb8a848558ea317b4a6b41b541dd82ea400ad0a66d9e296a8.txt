@@ -1,0 +1,399 @@
+Skip to content
+
+Search LeadDev.com
+
+Go
+
+Upcoming events
+
+Login
+
+Login
+
+Register
+
+Knowledge
+
+Newsletters
+
+Latest news in your inbox
+
+Panel discussions
+
+See all our upcoming events
+
+Videos
+
+From our archives
+
+Reports
+
+Unique engineering research
+
+For you
+
+Find content specific to your role
+
+Management
+
+Software quality
+
+Communication
+
+Culture
+
+Hiring
+
+Leadership
+
+Velocity
+
+Career development
+
+Metrics
+
+Technical direction
+
+AI
+
+Events
+
+London
+
+June 28–29, 2027
+
+LDX3
+
+Meetups
+
+Browse our upcoming Meetups
+
+New York
+
+September 15–16, 2026
+
+LDX3
+
+Berlin
+
+November 9–10, 2026
+
+LeadDev
+
+Management
+
+Software quality
+
+Communication
+
+Culture
+
+Hiring
+
+Leadership
+
+Velocity
+
+Career development
+
+Metrics
+
+Technical direction
+
+AI
+
+Slack Code of Conduct
+
+This policy is a living document and is subject to refinement and updates in the future. Last updated in May 2026.
+
+Our Community
+
+The LeadDev Slack community is a private space for engineering leaders. We are intentional about creating an environment where people feel:
+
+Safe to ask questions and share experiences
+
+Respected as individuals, not just job titles
+
+A sense of belonging within the community
+
+All members are expected to participate in good faith and uphold this Code of Conduct.
+
+This Code applies to all LeadDev Slack spaces, including public and private channels, direct messages, and any LeadDev-hosted online or in-person spaces where community interaction occurs.
+
+Our Values
+
+We expect all members to:
+
+Lead with respect: we value respectful behaviour above individual opinions
+
+Assume positive intent, but own impact: good intent does not negate harm
+
+Be constructive: disagreement is welcome; disrespect is not
+
+Model leadership: this is a leadership community; your behaviour sets the tone
+
+Respectful Behaviour
+
+Respectful behaviour includes, but is not limited to:
+
+Being considerate, kind, and constructive
+
+Listening with curiosity rather than defensiveness
+
+Acknowledging different lived experiences and perspectives
+
+Respecting boundaries when they are set
+
+If you’re unsure whether something is appropriate, ask other community members or an admin before posting.
+
+Harassment & Unacceptable Behaviour
+
+Harassment includes, but is not limited to:
+
+Offensive comments related to:
+
+Gender, gender identity or expression
+
+Sexual orientation
+
+Disability, mental illness, or neurotype
+
+Physical appearance or body size
+
+Race, ethnicity, nationality, or citizenship
+
+Age
+
+Religion or belief (or lack thereof)
+
+Marital, parental, caregiving, or familial status
+
+Veteran status
+
+Homophobic, biphobic, transphobic, racist, sexist, or misogynist language
+
+Deliberate misgendering or refusal to respect stated pronouns
+
+Unwelcome sexual attention or sexualised content
+
+Threats, intimidation, or encouragement of violence
+
+Sustained disruption of discussion
+
+Deliberate outing of any aspect of someone’s identity without consent
+
+Harassing photography, recording, or logging of online activity
+
+Repeated unsolicited sales, recruitment, or promotional messages
+
+Advocating for or encouraging any of the above behaviours
+
+We prioritize the safety of marginalized people over the comfort of privileged people. As such, we may choose not to act on complaints regarding:
+
+“Reverse-isms” (e.g. “reverse racism”)
+
+Reasonable boundary-setting (“Please stop”, “I’m not engaging in this”)
+
+Criticism of oppressive or harmful behaviour
+
+Direct Messages (DMs)
+
+Public messages are the default in this Slack community. Before sending a DM to someone you don’t already know, consider:
+
+Is it clear why I’m contacting them?
+
+Could this feel unsolicited, invasive, or transactional?
+
+Would this be better as a public message?
+
+Unsolicited DMs, especially those with a commercial, recruiting, or promotional intent, are treated as Code of Conduct violations and may result in your being removed from Slack.
+
+Commercial Activity & Promotion
+
+This community is not a marketing channel.
+
+Recruiting, lead generation, sales, and promotional activity are only allowed in the #community-promotion channel.
+
+Postings for open roles or job searches are only allowed in the #jobs and #jobs-outside-uk channels.
+
+Posting commercial content outside approved channels is prohibited and may result in removal from the community
+
+Using member information obtained through LeadDev for external outreach without consent is prohibited
+
+Market research and surveys must clearly state:
+
+Purpose
+
+Data usage
+
+How and when results will be shared
+
+While promotional messages are generally limited to the channels listed above, location-specific channels are an exception. These spaces may be used to share and promote events happening in that area, including those organised by our meetup teams.
+
+When in doubt, ask the community or an admin before posting.
+
+Engagement Farming
+
+This community thrives on genuine conversation. ‘Engagement farming’ (the use of manipulative or artificially engineered tactics to drive interaction) undermines the trust and quality of discussion that makes this space valuable.
+
+Examples include, but are not limited to:
+
+Starting a conversation with the intention of steering it towards a commercial, promotional, or self-serving outcome that was not disclosed upfront
+
+Posting deliberately vague, provocative, or bait-and-switch content designed to generate reaction rather than discussion
+
+Artificially inflating visibility through coordinated liking, commenting, or thread activity
+
+Creating polls or questions primarily to surface your own content, brand, or agenda
+
+A note on ambassadors: Our community ambassadors have an active, transparent role in driving conversations. Their goal is to create genuine value for members, not to engineer engagement for personal or commercial benefit. If you are an ambassador and are ever unsure whether an activity crosses this line, share your message in the private ambassador channel first, before posting in public channels.
+
+If you notice engagement farming, please report it. Posting content primarily to serve your own interests may result in the removal of your content, or from the community. Please only use the #community-promotion channel for promotional messages.
+
+Privacy, Attribution & Sharing
+
+This Slack is a private space, we operate under Chatham House Rule, meaning that you are free to use information that you have received from public channels, but the individual source of the information may not be revealed (unless this is publicly available outside of the Slack space, e.g. a link to a report or news source). Please ensure that you only share information that you are comfortable making accessible in the Slack space. We recommend that you;
+
+Do not share confidential, proprietary, or legally protected information
+
+Do not attribute quotes or ideas from public channels without permission
+
+Ensure that content from private channels is not shared externally without consent
+
+AI-generated content
+
+This community is built on authentic peer exchange between engineering leaders. Posting AI-generated content without disclosure is a form of misrepresentation that erodes the trust that makes this space valuable.
+
+We ask all members to:
+
+Disclose clearly when a message has been substantially written or generated by an AI tool
+
+Take responsibility for any AI-assisted content you share; your name is attached to it
+
+Be mindful that others may not consent to having their messages, questions, or discussions used as input to AI systems
+
+Using this Slack as a data source for AI tools, including feeding community conversations into AI agents or assistants, without the knowledge and consent of the members involved, violates this code of conduct and the Chatham House Rule, which helps keep this a safe space to speak openly.
+
+This is your space, own it
+
+This is a large, diverse community with many channels.
+
+Before posting:
+
+Read recent messages
+
+Review the channel topic and pinned items
+
+Notice the tone and purpose of the channel
+
+Posting the same message across multiple channels is considered spamming. If you are noticed spamming channels, you may be permanently removed from Slack.
+
+Resolving Issues
+
+We encourage respectful, peer-to-peer resolution when safe to do so.
+
+If you:
+
+Witness harmful behaviour, speak up if you can
+
+Are impacted and don’t feel safe engaging, report it
+
+Are called out, listen, reflect, apologize if necessary and take responsibility
+
+Reporting
+
+If you experience or witness behaviour that violates this Code of Conduct:
+
+Submit a report via this form. The form is monitored Monday – Friday, 9 am – 5 pm UK time. We will get back to you within 24 hours.
+
+If you need immediate support:
+
+Slack: Post a message in the #code-of-conduct public channel. If you’d prefer to send us a private message, DM one of the Slack Admins @ Ishaan Singh @ Scott Carey @ Hannah Tapson.
+
+Reports are handled confidentially and taken seriously.
+
+What happens after we’ve received a report?
+
+When a report is received:
+
+The report is acknowledged promptly
+
+Incident responders investigate with discretion
+
+Appropriate action is determined
+
+Follow-up occurs with the involved individuals
+
+Incidents are documented internally
+
+The broader community is informed when necessary
+
+Consequences
+
+Consequences may include:
+
+Request to stop the behaviour immediately
+
+Message deletion
+
+Temporary or permanent removal from Slack
+
+Bans from LeadDev events or spaces
+
+No refunds will be issued for bans related to Code of Conduct violations.
+
+Behaviour outside LeadDev spaces that threatens community safety may also be considered.
+
+Ambassadors
+
+Our ambassadors are members of the wider community with a keen interest in specific channel topics. They are responsible for driving conversations, welcoming new folks and encouraging healthy communication. Anyone can become an ambassador. If you’re interested in becoming an ambassador, please reach out to our Community Manager, @ Ishaan Singh
+
+Admins
+
+The administrators of the LeadDev Slack are:
+
+@ Hannah Tapson, finance and customer services executive, LeadDev
+
+@ Scott Carey, editor in chief, LeadDev
+
+@ Ishaan Singh, content & community manager, LeadDev
+
+You can contact them directly or post your questions or concerns in the #code-of-conduct channel.
+
+A living document
+
+This Code of Conduct is based on resources from Geek Feminism, XOXO, Rands Leadership Slack and community best practices. It will continue to evolve alongside the LeadDev community.
+
+If you have any questions or suggestions regarding this code of conduct, please share them in the #code-of-conduct channel.
+
+Thanks
+
+Thank you for helping make LeadDev a welcoming, inclusive leadership community. 🩷
+
+Sponsorship & advertising opportunities
+
+Contribute a talk, workshop or article
+
+Find a meetup
+
+Supported tickets
+
+Newsletter
+
+RSS feed
+
+About LeadDev
+
+Our event advisory boards
+
+Careers
+
+Code of Conduct
+
+Contact Us
+
+© 2026 LeadDev
+
+Data Promise
+
+Terms

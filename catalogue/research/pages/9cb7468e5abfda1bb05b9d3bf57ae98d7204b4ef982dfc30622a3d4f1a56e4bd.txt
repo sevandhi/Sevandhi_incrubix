@@ -1,0 +1,20 @@
+[category: Announcements]
+Official blog posts and other Godot announcements.
+
+[category: Help]
+Ask your questions here! If possible, use one of the more specific subcategories.
+
+[category: Showcase]
+Show everyone what you are working on and discover amazing projects!
+
+[category: Resources]
+Share tutorials, plugins and other resources for creating Godot games!
+
+[category: General]
+Create topics here that don’t fit into any other existing category.
+
+[category: Forum Feedback]
+Discussions about this forum, how it’s organized, how it works, and how we can improve it.
+
+[category: Archive]
+This category hosts all old posts imported from the previous Question2Answer platform.

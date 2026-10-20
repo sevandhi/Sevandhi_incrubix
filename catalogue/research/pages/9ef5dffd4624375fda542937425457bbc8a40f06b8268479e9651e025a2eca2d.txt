@@ -1,0 +1,18 @@
+[community title]
+Artificial Intelligence
+
+[community sidebar]
+Welcome to the AI Community!
+
+Let's explore AI passionately, foster innovation, and learn together. Follow these guidelines for a vibrant and respectful community:
+
+- Be kind and respectful.
+- Share high-quality contributions.
+- Stay on-topic.
+- Enhance accessibility.
+- Verify information.
+- Encourage meaningful discussions.
+
+You can access the AI Wiki at the following link: [AI Wiki](https://fmhy.net/ai)
+
+Let's create a thriving AI community together!

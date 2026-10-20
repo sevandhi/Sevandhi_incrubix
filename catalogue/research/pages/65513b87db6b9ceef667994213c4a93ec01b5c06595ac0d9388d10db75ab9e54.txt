@@ -1,0 +1,5 @@
+[topic title]
+Post Identification and Tags
+
+[first post]
+Tag your post in the Help > Lang* product subcategory to ensure the right experts are looking at your issue or question, e.g. cloud, hybrid, or self-hosted.

@@ -1,0 +1,20 @@
+[site name]
+Lemmy
+
+[site description]
+A community of privacy and FOSS enthusiasts, run by Lemmy’s developers
+
+[site sidebar]
+[What is Lemmy.ml](https://lemmy.ml/post/70280)
+
+# Rules
+1. No bigotry - including racism, sexism, ableism, homophobia, transphobia, or xenophobia. [Code of Conduct](https://join-lemmy.org/docs/en/code_of_conduct.html).
+1. Be respectful, [especially when disagreeing](https://lemmy.ml/post/1140303). Everyone should feel welcome here.
+1. No porn.
+1. No Ads / Spamming.
+
+
+Feel free to ask questions over in:
+- [!lemmy_support](https://lemmy.ml/c/lemmy_support)
+- [Matrix Chat](https://matrix.to/#/#lemmy-space:matrix.org)
+- [Mastodon @LemmyDev](https://mastodon.social/@LemmyDev)

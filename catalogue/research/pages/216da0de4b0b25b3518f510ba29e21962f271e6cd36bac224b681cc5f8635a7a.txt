@@ -1,0 +1,17 @@
+[category: GDevelop general]
+Announcements, feedbacks and other discussions about GDevelop.
+
+[category: How do I...?]
+Ask questions to get help using GDevelop and about game development in general.
+
+[category: Community]
+Open topic, resources, games announcements…
+
+[category: 🇪🇸 Foro español (Spanish Forums)]
+Bienvenidos a la nueva sección en español del foro de GDevelop!
+
+[category: 🇫🇷 Forum français (French Forums)]
+Forums for users and discussions in French.
+
+[category: 🇯🇵 GDevelop日本語フォーラム (Japanese Forum)]
+GDevelopの日本語フォーラムです。

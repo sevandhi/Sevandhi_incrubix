@@ -1,0 +1,49 @@
+[community title]
+Technology
+
+[community sidebar]
+Share interesting Technology news and links.
+
+**Rules:**
+1. No paywalled sites at all.
+2. News articles has to be recent, not older than 2 weeks (14 days).
+3. No external video links, only native(.mp4,...etc) links under 5 mins.
+4. Post only direct links.
+
+To encourage more original sources and keep this space commercial free as much as I could, the following websites are **Blacklisted**:
+- Al Jazeera;
+- NBC;
+- CNBC;
+- Substack;
+- Tom's Hardware;
+- ZDNet;
+- TechSpot;
+- Ars Technica;
+- Vox Media outlets(including Axios, due to new changes related to trackers on their website);
+- Engadget;
+- TechCrunch;
+- Gizmodo;
+- Futurism;
+- PCWorld;
+- ComputerWorld;
+- Mashable;
+- Hackaday;
+- WCCFTECH;
+- Neowin;
+- Jacobin;
+- Yahoo;
+- Freethink;
+- Big Think;
+- Newsweek.
+
+More sites will be added to the blacklist as needed.
+
+**Encouraged:**
+- Archive links in the body of the post.
+- Linking to the direct source, instead of linking to an article talking about the source.
+
+Misc:
+
+**Relevant Lemmy Communities**:
+- [Beehaw Technology discussion](!technology@beehaw.org).
+- [Hard Tech news](!Technology@lemmy.zip).

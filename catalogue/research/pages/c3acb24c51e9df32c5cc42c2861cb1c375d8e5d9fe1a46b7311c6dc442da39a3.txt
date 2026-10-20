@@ -1,0 +1,33 @@
+[topic title]
+Self-Promotion and Solicitation
+
+[first post]
+The DeepLearning.AI Forum is a valuable resource for learning and sharing knowledge about AI. To maintain a focused and helpful environment, we ask that users limit self-promotion and solicitation.
+
+Posting Frequency & Guidelines
+
+Companies: You may create one post per month in the “AI Discussions” category.
+
+If you have updates, you must update your existing thread rather than creating a new topic.
+
+Posts must be informative, on-brand, and relevant to the community.
+
+Self-Promotion of Projects: You may share your personal projects once a week.
+
+If you are posting about the same project or “topic,” you must keep all updates in the same thread. Creating new topics for the same project is not permitted.
+
+Job Postings: You may post relevant openings in “AI Discussions” using the “Careers” tag.
+
+User Reporting: Users are encouraged to report suspicious listings, which are then reviewed by human teams for removal.
+
+Not Allowed
+
+Self-Promotion in Responses: Mentors and users are not allowed to promote services or external ventures within Forum responses.
+
+Solicitation: Avoid directly soliciting users for business. Offer helpful advice first to build your reputation.
+
+Promoting Other Forums: The DeepLearning.AI Forum is our central hub; please do not invite users to other online forums.
+
+Github & Open Source Projects: * You are welcome to invite users to collaborate on Github by sharing repository links for technical discussions.
+
+You must not “lure” or transition the core conversation, troubleshooting, or educational Q&A away from the DeepLearning.AI Forum to external chat groups or private platforms.

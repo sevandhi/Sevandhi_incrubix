@@ -1,0 +1,47 @@
+[category: Help us improve Penpot]
+How is your experience with Penpot?
+What challenges are you trying to solve?
+What are your main concerns or questions about Penpot?
+
+[category: Ask the community]
+Do you need any help understanding the interface?
+Would you like help with advanced functionality?
+Would you like to start a conversation about design systems or prototyping?
+
+[category: Open Library]
+An open library of insights by Penpot Ambassadors on all things design, development, open-source and more.
+
+[category: Events and Announcements]
+What is the latest news?
+Is there any cool future penpot event?
+Is there any event the Penpot team should join?
+
+[category: Contribution]
+Would you like to share a template or libraries that you made?
+Wanna talk about penpot translations?
+Would you like to see how other people are contributing to Penpot?
+
+[category: Self-host]
+Are you having issues running Penpot locally?
+Would you like some help in making some changes to it?
+Do you have any other questions about Penpot configuration or architecture?
+
+[category: Inside Penpot]
+Reflections, achievements, and struggles shared by the team.
+
+[category: Education]
+A space to share and discover learning resources. Whether you’re creating tutorials, running workshops, or just getting started, this category is for asking questions, offering guidance, and growing design skills together.
+
+[category: #MadeWithPenpot]
+Would you like to share how  and what you #madewithpenpot?
+How Penpot was a key part of your project?
+Why did your company decide to start using Penpot?
+
+[category: FAQ]
+This category offers a collection of frequently asked questions (FAQs) about Penpot. The FAQs cover a range of topics, including the reasons behind the creation of Penpot, what sets it apart from other design tools, and practical aspects of using Penpot, such as how to download and install it. Additionally, you can find answers to other intriguing questions about Penpot, including its development roadmap and design considerations.
+
+[category: Design and Code essentials]
+Want to learn about the fundamentals of Design and Code? Would like to share your knowledge with our Community? You can share here or read more on our blog:
+
+[category: Penpot in your language]
+Do you want to talk about Penpot in your language?

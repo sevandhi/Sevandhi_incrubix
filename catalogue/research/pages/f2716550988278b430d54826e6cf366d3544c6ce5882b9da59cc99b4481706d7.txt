@@ -1,0 +1,53 @@
+[topic title]
+Bienvenue sur le forum des Framacolibris
+
+[first post]
+Comment Participer ?
+
+Déjà, vous êtes au bon endroit.
+
+Vous pouvez commencer par aller vous présenter en créant un nouveau sujet dans la catégorie « Présentation des membres ». Et pour vous aider, on vous a même créé un modèle de présentation !
+
+Autrement, le forum est construit selon les savoirs-faire que vous désirez apporter à la communauté. Tout dépend donc de si vous vous sentez…
+
+…Rédacteur, Rédactrice
+
+et que vous souhaitez participer au Framablog, à la rédaction de tutoriels, ou à nos communications presse/médias.
+
+…Graphiste,
+
+afin de nous apporter votre aide en illustrations et logos, en conception d’outils print ou en webdesign.
+
+…Codeuse, Codeur,
+
+parce que vous voulez vous frotter à l’administration de nos systèmes, au développement logiciel ou à l’édification de nos sites web.
+
+…Petite Main,
+
+sans domaine de prédilection, mais avec plein de bonne volonté et un peu de temps libre…
+
+Si vous avez des questions, vous pouvez les poser en créant un sujet dans Ask Frama. Pensez aussi à aller jeter un oeil sur les infos pratiques et les nouvelles que nous partageons avec vous
+
+Il paraîtrait même qu’il existe une catégorie secrète, un FramaBar où les personnes qui lisent, écrivent (et partagent le plus d’amour) se retrouvent en catimini pour… ..pour travailler dur.
+
+Le nom du forum (légende)
+
+Lorsque la forêt prit feu, tous les animaux s’enfuirent. Le colibri, lui alla au lac, prit une goutte d’eau dans son bec, puis retourna la jeter dans les flammes. Au bout de plusieurs de ces aller-retours, un animal l’interpella. « Mais que fais tu avec tes gouttes d’eau ? Tu n’arriveras jamais à éteindre l’incendie ainsi ! »
+
+Entre deux battements d’ailes, le colibri lui répondit « Je fais ma part. »
+
+Framacolibri n’a pas de rapport direct avec le mouvement Colibri, mais cela ne nous empêche pas d’admirer leur travail.
+
+Bienvenue dans la communauté Framasoft
+
+Bienvenue à tous les talents, savoir-faire et bonnes volontés qui veulent « faire leur part » et participer aux projets de la communauté Framasoft !
+
+Vous trouverez ici, répertoriés au fur et à mesure, tous nos besoins d’aide et de coups de mains pour maintenir, améliorer et proposer de nouveaux services.
+
+Pour se familiariser avec l’ensemble des projets de la galaxie Framasoft, vous pouvez aller sur notre site portail qui présente nos principaux outils.
+
+Vous pouvez aussi découvrir notre feuille de route d’ici 2017 en naviguant dans la liste des services pour Dégoogliser Internet.
+
+Framasoft est un réseau d’éducation populaire au Libre (logiciel, culturel, matériel…) Notre but est d’amener, initiative après initiative, plus de Libre dans la vie quotidienne du grand public. Framasoft est aussi une bande de joyeuxses drilles, qui aiment les chatons, les gnous et les manchots, mais qui ne sont pas forcément venu-e-s au libre par le développement logiciel.
+
+L’association loi 1901 est là pour assurer à la communauté de bénévoles (vous !) des outils-plus ou moins- fiables, des serveurs bien élevés, un pari fou (dégoogliser les Internets !) et tout ce qu’il faut pour que des initiatives fleurissent et apportent plus de libre à vos grand-mères, petits frères, et à la fameuse famille Dupuis-Morizeau (qui remplacent les Michus depuis leur Normandie natale).

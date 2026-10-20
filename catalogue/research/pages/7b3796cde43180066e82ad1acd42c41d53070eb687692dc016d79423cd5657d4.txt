@@ -1,0 +1,19 @@
+[instance name]
+videos.trom.tf
+
+[short description]
+A trade-free video hosting platform for science/technology/nature videos in the English language. You do not have to trade your currency, data, attention, freedom or anything else, in order to use it.
+
+[description]
+Attention: this instance is solely dedicated to science/technology/nature videos in English. Even the activism/education needs to fall into these categories. Anything else will be removed immediately. All accounts that look like spam-bots will also be automatically removed. If you want to register please provide a reasonable reason why you want to join our instance, else your registration will not be accepted. There are too many spammers/bots out there and we are overwhelmed, so we need to cut through this crap.
+
+[terms]
+Attention: this instance is solely dedicated to science/technology/nature in English. Even the activism/education needs to fall into these categories. Anything else will be removed immediately. All accounts that look like spam-bots will also be automatically removed. If you want to register please provide a reasonable reason why you want to join our instance, else your registration will not be accepted. There are too many spammers out there and we are overwhelmed, so we need to cut through this crap.
+
+[code of conduct]
+Attention: this instance is solely dedicated to science/technology/nature in English. Even the activism/education needs to fall into these categories. Anything else will be removed immediately. All accounts that look like spam-bots will also be automatically removed. If you want to register please provide a reasonable reason why you want to join our instance, else your registration will not be accepted. There are too many spammers out there and we are overwhelmed, so we need to cut through this crap.
+
+No pseudoscience, conspiracies, politics, porn, movies and such are fit for this instance.
+
+[moderation information]
+Attention: this instance is solely dedicated to science/technology/nature in English. Even the activism/education needs to fall into these categories. Anything else will be removed immediately. All accounts that look like spam-bots will also be automatically removed. If you want to register please provide a reasonable reason why you want to join our instance, else your registration will not be accepted. There are too many spammers out there and we are overwhelmed, so we need to cut through this crap.

@@ -1,0 +1,23 @@
+[topic title]
+Read this before posting a new question
+
+[first post]
+Welcome to the OpenAI Developer Community, a forum for developers, users, and community members to meet, learn, share, and help one another while using and building with OpenAI products and developer tools.
+
+Looking for ChatGPT? Please go to ChatGPT.com
+
+ChatGPT questions, bug reports, feedback, feature requests, use cases, and troubleshooting are welcome in the appropriate Community Forum category. For API and developer-platform questions, please use this category or the most relevant technical category.
+
+What to know:
+
+This forum is public and community-run. Posting here does not create a private support case, and a response or resolution from OpenAI staff is not guaranteed.
+
+Individual billing issues and account suspension, deactivation, ban, or appeal requests cannot be handled on the public forum because they require private account or payment details that cannot be safely collected or reviewed here. For billing issues, email support@openai.com. For an appeal, use the link in your notification email; if you cannot access it, submit the appeal form. You may also email support@openai.com.
+
+Before posting a new topic, please search the forum and choose the most relevant category. This prevents duplicate discussions and helps the right community members find your post.
+
+For bugs or troubleshooting questions, include reproduction steps, expected vs. actual behavior, product/model/version, platform or environment, timestamp and timezone, request ID if relevant, and sanitized logs, screenshots, or code.
+
+Do not post personal information, payment details, account credentials, API keys, access tokens, session cookies, or unredacted screenshots or logs.
+
+Your use of this forum means you agree to the Community Guidelines.

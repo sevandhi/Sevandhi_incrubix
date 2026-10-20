@@ -1,0 +1,63 @@
+[instance name]
+PeerTube (xy-space)
+
+[short description]
+PeerTube, this instance is - for the public - not bound to any topic.
+
+Last change 2023-01-30
+
+[description]
+PeerTube, this instance is - for the public - not bound to any topic. It was set up in January 2021.
+Your client IP will be recorded as "127.0.0.1". This means that your IP address will be hidden.
+
+For registration you need a valid mail address. NO TEMPORARY MAIL ADDRESSES are supported.
+
+This site does not tolerate misinformation, fake data, etc. 
+
+Please report abuse to the owner peertube@mail.xy-space.de
+
+Please note that importing content from YouTube (LLC) directly, currently is disabled.
+
+ALL videos are container encrypted.
+
+Last change 2024-10-24
+
+[terms]
+You are free to use this service any time.
+
+In case you register to the server:
+There is a mailing list that will provide relevant information to verified users. Please note, there is an automated opt-in to subscription, however, you can unsubscribe at any time, using this link https://www.xy-space.de/sympa/signoff/peertube-list
+Via the mailing list you will receive information emails only. No marketing emails will be distributed.
+In case you delete your account you will be removed from the list automatically.
+
+The list homepage address is: https://www.xy-space.de/sympa/info/peertube-list
+
+
+Please note:
+Terms and code of conduct might change at any time, this information will be made available via the mailing list.
+
+Please note II:
+Currently "yahoo.*" addresses will not receive mailing list mails since there is some issue with sending mails to this service provider. My advice, use a different mail address, in order to receive important information.
+
+Last change 2024-04-24
+
+[code of conduct]
+1. Videos for the public:
+Copyrights apply!
+No pornography (any age), glorification of violence, no discriminatory and offending material.
+Videos with explicit erotic content, and such like, possibly harmful to children, MUST be blurred!
+Hate speech is NOT allowed!
+No advertising for money trading, cryptomining, and all this sh*t allowed!
+No commercial advertising material. Excluded is material from small companies, start-ups, etc.
+Since conspiracy theories have a negative impact on society,  and, since they create discord, such content is disapproved. Content related to Covid 19, which is not clearly scientific, is not allowed. There are other instances which are fine with such content, please host your videos there.
+
+2. Videos for the private:
+No restrictions. No obligations.
+
+Last change 2024-04-11
+
+[moderation information]
+Private videos will not be scanned.
+Public videos will be scanned for improper material.
+
+Last change 2021-09-05

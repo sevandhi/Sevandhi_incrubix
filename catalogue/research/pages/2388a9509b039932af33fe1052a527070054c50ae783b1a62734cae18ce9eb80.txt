@@ -1,0 +1,27 @@
+[instance name]
+PeerTube TeDomum
+
+[short description]
+Service de vidéos PeerTube de l'association TeDomum.
+
+[description]
+Depuis 2012, TeDomum héberge des services sécurisés, respectueux de la vie privée et des libertés individuelles, sur une plateforme technique administrée et gérée par des bénévoles. Pour l'hébergement de vidéos, nous avons opté pour PeerTube, une solution libre financée en collaboratif.
+
+[terms]
+Nos conditions d'utilisation détaillées sont les suivantes : https://tedomum.fr/general/cgu/
+
+Principalement, vos vidéos sont hébergées en droit français. A ce titre, vous êtes responsable du contenu que vous publiez, et TeDomum en devient également responsable lorsque nous sommes alertés d'un contenu illégal. Nous appliquerons les actions de modération nécessaires à faire respecter le droit français.
+
+[code of conduct]
+Si votre vidéo ou son partage sont illégaux au sens du droit français (contenu illégal, contenu soumis à une licence dont vous ne disposez pas), vous ne devez pas la poster sur notre instance PeerTube.
+
+Si votre vidéo comporte des éléments dangereux - en particulier pour des enfants (pornographie, propagande, violence explicite) ou pour des personnes souffrant de traumatismes - vous devez la marquer comme « NSFW ».
+
+Le titre de votre vidéo doit indiquer tout élément permettant aux visiteurs d'identifier la nature du contenu.
+
+[moderation information]
+Nous répondons aux demandes de modération et parcourons régulièrement les dernières vidéos.
+
+Nous faisons appliquer la charte et les conditions d'utilisation en modifiant au besoin les propriétés d'une vidéo (ajout du « NSFW ») ou en mettant temporairement la vidéo hors ligne.
+
+En cas d'indisponibilité ou de récidive, nous pouvons supprimer les vidéos et bannir les comptes incriminés.

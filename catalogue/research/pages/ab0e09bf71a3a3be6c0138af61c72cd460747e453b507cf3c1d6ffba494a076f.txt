@@ -1,0 +1,23 @@
+[category: Beginner Questions]
+Ask anything about getting started with Make. Remember, no question is too simple!
+
+[category: Questions]
+Ask questions related to building, expanding, and troubleshooting your scenarios.
+
+[category: News]
+Get news from the Make side - updates, releases, and more.
+
+[category: Knowledge Hub]
+Read inspiring articles, guides, and top tips directly from our community members.
+
+[category: Community Challenges]
+Category for everything related to our Community Challenges
+
+[category: Live Sessions]
+Everything related to our Community sessions, workshops, Q&amp;As.
+
+[category: Community Archive]
+A read-only archive of historical conversations. New posts and replies are not permitted.
+
+[category: Hire a Pro]
+The official marketplace to hire Make experts or offer your professional services.

@@ -1,0 +1,5 @@
+[community title]
+Ollama - Local LLMs for everyone!
+
+[community sidebar]
+A place to discuss [Ollama](https://ollama.com/), from basic use, extensions and addons, integrations, and using  it in custom code to create agents.

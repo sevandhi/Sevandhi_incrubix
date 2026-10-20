@@ -1,0 +1,384 @@
+Skip to content
+
+Hackaday
+
+Primary Menu
+
+Home
+
+Blog
+
+Hackaday.io
+
+Contests
+
+Submit
+
+About
+
+Search for:
+
+October 19, 2026
+
+Submit A Tip
+
+We depend on the Hackaday community to help us find all the fresh hacks the Internet has to offer. Whenever you see something you think should be discussed on Hackaday we want to hear from you. This also includes projects you yourself document. Don’t be bashful, be proud of your work and show it off to inspire others.
+
+Please email tips@hackaday.com or use the contact form found below.
+
+You may want to take a moment to view our policies regarding ownership and rights.
+
+When will my tip be published?
+
+We’re sometimes asked why some of the tips that are sent in don’t make it onto our front page. Here’s some advice on getting your submission noticed:
+
+A descriptive subject line will help us get to your hack quickly
+
+Don’t send us press releases. If you’re truly excited about something it’s worth writing us an email pointing out the parts of the submission most interesting to the Hackaday crowd.
+
+If you need a place to host the pictures and details about your latest build, use our community site Hackaday.io and send in a tip when you’ve posted the details.
+
+Tip Submission Form:
+
+← Back
+
+Thank you for your response. ✨
+
+Your Name or Alias(required)
+
+Email(required)
+
+Subject(required)
+
+Link to more info(required)
+
+Comment(required)
+
+Submit
+
+Δ
+
+Search
+
+Search for:
+
+Never miss a hack
+
+Follow on facebook
+Follow on twitter
+Follow on youtube
+Follow on rss
+Contact us
+
+Subscribe
+
+If you missed it
+
+So You Want To Make Your SDR Work On Other Frequencies
+
+21 Comments
+
+What’s A Nonius?
+
+10 Comments
+
+The FPGA Chronicles: Ready To Probe
+
+11 Comments
+
+Your Computer Memory Is A Lie
+
+61 Comments
+
+Lead A Discord Exodus With A Matrix Server
+
+65 Comments
+
+More from this category
+
+Our Columns
+
+Hackaday Links: October 17, 2026
+
+19 Comments
+
+Discovering SDRs Everywhere
+
+26 Comments
+
+Hackaday Podcast Episode 391: Tuned In To ESP32 SDR, New Old Pagers, And Bugs On Mars
+
+1 Comment
+
+This Week In Security: Critical DNS Keys Rotated, Hacking Freezers Isn’t Cool, OpenAI Spies On Itself, And Advanced Hardware Wallet Hacks
+
+12 Comments
+
+2026 Hackaday Supercon: Workshops Are Open!
+
+12 Comments
+
+More from this category
+
+Search
+
+Search for:
+
+Never miss a hack
+
+Follow on facebook
+Follow on twitter
+Follow on youtube
+Follow on rss
+Contact us
+
+Subscribe
+
+If you missed it
+
+So You Want To Make Your SDR Work On Other Frequencies
+
+21 Comments
+
+What’s A Nonius?
+
+10 Comments
+
+The FPGA Chronicles: Ready To Probe
+
+11 Comments
+
+Your Computer Memory Is A Lie
+
+61 Comments
+
+Lead A Discord Exodus With A Matrix Server
+
+65 Comments
+
+More from this category
+
+Categories
+
+Categories
+Select Category
+3d Printer hacks
+Android Hacks
+Arduino Hacks
+ARM
+Art
+Artificial Intelligence
+Ask Hackaday
+ATtiny Hacks
+Battery Hacks
+Beer Hacks
+Biography
+blackberry hacks
+Business
+car hacks
+Cellphone Hacks
+chemistry hacks
+classic hacks
+clock hacks
+cnc hacks
+computer hacks
+cons
+contests
+cooking hacks
+Crowd Funding
+Curated
+Current Events
+Cyberdecks
+digital audio hacks
+digital cameras hacks
+downloads hacks
+drone hacks
+Engine Hacks
+Engineering
+Fail of the Week
+Featured
+Fiction
+firefox hacks
+FPGA
+g1 hacks
+Games
+google hacks
+gps hacks
+green hacks
+Hackaday Columns
+Hackaday links
+Hackaday Store
+Hackerspaces
+HackIt
+handhelds hacks
+hardware
+High Voltage
+History
+Holiday Hacks
+home entertainment hacks
+home hacks
+how-to
+Interest
+internet hacks
+Interviews
+iphone hacks
+ipod hacks
+Kindle hacks
+Kinect hacks
+laptops hacks
+Laser Hacks
+LED Hacks
+Lifehacks
+Linux Hacks
+lockpicking hacks
+Mac Hacks
+Machine Learning
+Major Tom
+Medical Hacks
+Microcontrollers
+Misc Hacks
+Multitouch Hacks
+Musical Hacks
+Netbook Hacks
+Network Hacks
+News
+Nintendo DS Hacks
+Nintendo Game Boy Hacks
+Nintendo Hacks
+Nintendo Wii Hacks
+Nook Hacks
+Original Art
+Palm Pre Hacks
+Parts
+PCB Hacks
+Peripherals Hacks
+Phone Hacks
+Playstation Hacks
+Podcasts
+Portable Audio Hacks
+Portable Video Hacks
+PSP Hacks
+Radio Hacks
+Rants
+Raspberry Pi
+Repair Hacks
+Retrocomputing
+Retrotechtacular
+Reverse Engineering
+Reviews
+Robots Hacks
+Roundup
+Science
+Security Hacks
+Skills
+Slider
+Software Development
+Software Hacks
+Solar Hacks
+Space
+Tablet Hacks
+Teardown
+Tech Hacks
+The Hackaday Prize
+Tool Hacks
+Toy Hacks
+Transportation Hacks
+Uncategorized
+Video Hacks
+Virtual Reality
+Weapons Hacks
+Wearable Hacks
+Weekly Roundup
+Wireless Hacks
+Xbox Hacks
+
+Our Columns
+
+Hackaday Links: October 17, 2026
+
+19 Comments
+
+Discovering SDRs Everywhere
+
+26 Comments
+
+Hackaday Podcast Episode 391: Tuned In To ESP32 SDR, New Old Pagers, And Bugs On Mars
+
+1 Comment
+
+This Week In Security: Critical DNS Keys Rotated, Hacking Freezers Isn’t Cool, OpenAI Spies On Itself, And Advanced Hardware Wallet Hacks
+
+12 Comments
+
+2026 Hackaday Supercon: Workshops Are Open!
+
+12 Comments
+
+More from this category
+
+Recent comments
+
+M on Driving On The Moon At A Blistering 11.6 MPH
+
+Joshua on 2026 Retrocomputing Challenge: Dollhouse Arcade Cabinet Runs Remote DOS Games
+
+Scott Hess on An RV On A Bike
+
+shinsukke on An Open Micro-Maniplulator Improved
+
+Aknup on Building A Microscope With A 3D View
+
+Aknup on Driving On The Moon At A Blistering 11.6 MPH
+
+Aknup on Driving On The Moon At A Blistering 11.6 MPH
+
+smellsofbikes on Driving On The Moon At A Blistering 11.6 MPH
+
+Ostracus on Off-Grid Refrigeration Using Fire And Salt
+
+Mike on Driving On The Moon At A Blistering 11.6 MPH
+
+Home
+
+Blog
+
+Hackaday.io
+
+Video
+
+Submit A Tip
+
+About
+
+Contact Us
+
+Never miss a hack
+
+Follow on facebook
+Follow on twitter
+Follow on youtube
+Follow on rss
+Contact us
+
+Subscribe to Newsletter
+
+Copyright © 2026 |
+Hackaday, Hack A Day, and the Skull and Wrenches Logo are Trademarks of Hackaday.com
+|
+Privacy Policy
+|
+Terms of Service
+|
+Digital Services Act
+| Do not sell or share my personal informationCookie Management
+Powered by WordPress VIP
+
+Loading Comments...
+
+Write a Comment...
+
+Email (Required)
+
+Name (Required)
+
+Website

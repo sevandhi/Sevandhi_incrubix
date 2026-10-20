@@ -1,0 +1,48 @@
+[server title]
+Indieweb.Social
+
+[short description]
+INDIEWEB.SOCIAL is an instance focused on the evolution of #Openweb, #Indieweb, #Fediverse, #Mastodon, #Humanetech and #Calm technologies.
+
+[description]
+Welecome to INDIEWEB.SOCIAL
+
+A Mastodon instance focused on all things #OpenWeb: including the #Indieweb movement,the #Fediverse, #Mastodon Social, #Selfsovereign #identity (#SSI), #Humanetech design and #Calm technologies and more.
+
+Discussing, Promoting, and Building
+
+This instance will be a home to others focused on this, an amplifier to key voices across the open web and open social spaces, as well as over time, a lab to implement early experiments on how such technologies can be optimized and implemented on the #Mastodon platform.
+
+We are committed to the <a href="https://joinmastodon.org/covenant">Mastodon Server Covenant.</a>
+
+[server rule 1]
+Be Respectful
+Keep conversations civil and respectful, even in disagreement.
+
+[server rule 2]
+No Inauthentic Behaviour
+Spam, unmarked bot accounts, unmarked parody accounts, impersonation, excessive self promotion, or excessive reporting.
+
+[server rule 3]
+No Hate Speech
+Pejorative or discriminatory language based on religion, ethnicity, nationality, race, colour, descent, gender or other identity factor.
+
+[server rule 4]
+No Abuse, Harassment or Violence
+Threats, degrading statements, targeted deadnaming, targeted misgendering, or the promotion of harmful behaviour, violence or violent ideologies.
+
+[server rule 5]
+No Adult Content
+Pornography, sexually explicit, graphically violent, or uncensored disturbing content.
+
+[server rule 6]
+No Illegal Content
+As set out by the UK Online Safety Act.
+
+[server rule 7]
+No Misinformation/Fake News
+Knowingly sharing false or misleading information.
+
+[server rule 8]
+No Trolling or Bullying
+Posting solely to offend, annoy, or cause argument.

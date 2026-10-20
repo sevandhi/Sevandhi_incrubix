@@ -1,0 +1,5 @@
+[community title]
+Machine Learning
+
+[community sidebar]
+For Machine Learning pros to discuss the latest in research and applied.

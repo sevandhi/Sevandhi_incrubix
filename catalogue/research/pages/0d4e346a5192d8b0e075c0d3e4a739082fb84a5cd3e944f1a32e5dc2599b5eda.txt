@@ -1,0 +1,42 @@
+[server title]
+mastodon.design
+
+[short description]
+A small instance for and by people who make things! We stand for an open, independent, sustainable, inclusive, and accessible web.
+
+[description]
+A Mastodon instance for and by people who make things!
+
+<b>Please make sure you read our <a href="/about/more">Code of Conduct</a> and you feel okay complying with it if you join the instance!</b>
+
+[server rule 1]
+Sexually explicit or violent media must be marked as sensitive or with a content warning
+This includes content that is particularly provocative even if it may not show specific body parts, as well as dead bodies, bloody injuries, and other gore. Particularly obscene content may be prohibited entirely. Profile pictures and header images may not contain sexually explicit or violent media.
+
+[server rule 2]
+No racism, sexism, homophobia, transphobia, validism, xenophobia, or casteism
+See definitions
+
+[server rule 3]
+No incitement of violence or promotion of violent ideologies
+Calling for people or groups to be assassinated, murdered, or attacked physically is strictly prohibited. Support for violent groups or events is prohibited.
+
+[server rule 4]
+No harassment, dogpiling or doxxing of other people
+Approach people with politeness and precaution. If someone asks you to stop mentioning them or expresses their wish to be removed from a conversation, stop immediately and remove them from the discussion.
+
+[server rule 5]
+No content illegal in France
+Our server is hosted in France on OVH servers, so all content must comply with French laws and jurisprudence.
+
+[server rule 6]
+Do not share intentionally false or misleading information
+False and misleading information and links from low-quality sources may not be posted, especially if they are likely to mislead or confuse others or endanger their safety.
+
+[server rule 7]
+Any reversal of systemic oppression is forbidden
+Examples: “racism against whites”, “sexism against men”, “heterophobia”, “cisphobia”, etc.
+
+[server rule 8]
+Content created by others must be attributed, and use of AI must be disclosed
+Content created by others must clearly provide a reference to the author, creator, or source. Profiles that only post AI-generated content will not be tolerated.

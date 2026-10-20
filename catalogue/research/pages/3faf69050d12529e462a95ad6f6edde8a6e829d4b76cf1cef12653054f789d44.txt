@@ -1,0 +1,31 @@
+[instance name]
+Exode 🎨
+
+[short description]
+A peertube server for art
+
+[description]
+Welcome to this PeerTube instance!
+
+[terms]
+Les vidéos doivent, bien entendu, respecter la loi française. Vous ne pouvez poster de films, séries que vous ne possédez pas. Pensez à nos serveurs, essayez d'avoir une utilisation modérée.
+
+Les vidéos pornographiques sont aussi interdites.
+Nous nous réservons le droit de vous rediriger ou vous bannir en cas de vidéos faisant la promotion de fake news, complotisme, ou discriminantes envers des minorités qu'elles soient ethniques, ou LGBTQ+, des vidéos machistes, psychophobes, ou relayant des personnes racistes ou autre sans en faire la critique.
+
+Les vidéos générées entièrement ou partiellement par IA sont totalement interdites à part dans un but critique évident ou un but évident d'accessibilité, comme le sous titrage automatique.
+
+Pour des raisons de modération, les vidéos doivent être en français, si vous souhaitez poster du contenu dans d'autres langues, veuillez contacter l'administrateur de l'instance
+
+
+
+Videos must respect French legislation. 
+You cannot post movies / series that you don't own
+Please, try to have a fair use. You can be banned if you're spamming.
+
+Porn videos are also forbidden
+We keep the  right to redirect you or ban you in case of videos with fake news, complotism, or discriminatory against minorities, LGBTQ+, relaying well known racist persons without critics
+For moderation reasons, videos must be in French, if you intend on posting on other languages, please contact the administrator
+
+
+AI partially or completely generated videos are strictly forbidden unless it is for an evident criticism purpose or an evident accessibility purpose, like subtitles

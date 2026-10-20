@@ -1,0 +1,53 @@
+Show HN
+
+Show HN is for something you've made that other people can play with.
+HN users can try it out, give you feedback, and ask questions in the
+thread.
+
+On topic: things people can run on their computers or hold in their
+hands. For hardware, you can post a video or detailed article. For
+books, a sample chapter is ok.
+
+Off topic: blog posts, sign-up pages, newsletters, lists, and other
+reading material. Those can't be tried out, so can't be Show HNs. Make
+a regular submission instead.
+
+The project should be non-trivial. Don't post quickly-generated
+one-offs; anybody can do that now. Share something that is deeply
+personal and interesting to you. Explain how and why.
+
+The project must be something you've worked on personally and which
+you're around to discuss. See these tips about how to present your work.
+
+A Show HN needn't be complicated or look slick. The community is
+comfortable with work that's at an early stage.
+
+Please make it easy for users to try your thing out, ideally without
+barriers such as signups or emails. You'll get more feedback that way.
+
+If your work isn't ready for users to try out, please don't do
+a Show HN. Once it's ready, come back and do it then. Don't post
+landing pages or fundraisers.
+
+To post, submit a story whose title begins with
+"Show HN".
+
+Every Show HN appears on shownew. Once it clears
+a small points threshold, it will appear on the show page in the top bar.
+
+New features and upgrades ("Foo 1.3.1 is out") generally aren't substantive
+enough to be Show HNs. A major overhaul is probably ok.
+
+Please don't ask friends to upvote or comment. That's not ok on HN.
+
+In Comments
+
+Be respectful. Anyone sharing work is making a contribution, however modest.
+
+Ask questions out of curiosity. Don't cross-examine.
+
+Instead of "you're doing it wrong", suggest alternatives. When someone
+is learning, help them learn more.
+
+When something isn't good, you needn't pretend that it is, but don't be
+gratuitously negative.

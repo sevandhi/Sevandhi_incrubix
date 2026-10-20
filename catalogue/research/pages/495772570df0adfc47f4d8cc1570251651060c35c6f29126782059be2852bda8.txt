@@ -1,0 +1,41 @@
+[category: Posit News & Content]
+Announcements and content from Posit!
+
+[category: Posit Professional & Hosted Products]
+Discussions about data science operations, at scale, and in complex environments.
+
+[category: tidyverse]
+Everything about the tidyverse. ggplot2, dplyr, tidyr, readr, purrr, tibble, stringr, forcats...ask away!
+
+[category: Shiny]
+Create powerful data applications with the power of reactive programming in Shiny. Now for Python as well as R!
+
+[category: Package development]
+This is the place for any questions about package development, particularly (but not exclusively) for any questions about devtools, roxygen2, testthat, and friends.
+
+[category: Machine Learning and Modeling]
+For discussions related to modeling, machine learning, and deep learning.
+
+[category: RStudio IDE]
+RStudio IDE, both desktop and server versions.
+
+[category: Positron]
+Positron is an extensible, polyglot tool for writing code and exploring data.
+
+[category: Posit Assistant]
+This category is the go-to place for all things Posit Assistant, a platform-agnostic data analysis assistant for Positron, RStudio, and beyond. Here, you can share the unique ways you&#39;re using Posit Assistant, troubleshoot challenges, and discuss best practices.
+
+[category: Posit AI: Feedback & Discussions]
+Join the conversation as we shape the future of AI in RStudio!
+
+[category: Publishing Your Results]
+Creating and serving Quarto and R Markdown documents. knitr, pkgdown, blogdown, bookdown, pagedown...
+
+[category: General]
+Topics that don&#39;t easily fit into an existing category, including general data &amp; programming questions.
+
+[category: Community Showcase]
+We love seeing what you&#39;re working on. Share it here! If you want constructive feedback, advice, or a fresh set of eyes, let us know what you need help with.
+
+[category: Conferences & Events]
+Data Science meetups, events, and conferences.

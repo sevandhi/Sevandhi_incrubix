@@ -1,0 +1,65 @@
+[category: News]
+News and announcements related to McNeel Products.
+
+[category: Rhino]
+Ask questions related to Rhino in this category.
+
+[category: Grasshopper]
+Add a new topic to this category related to Grasshopper.
+
+[category: Zoo]
+Discuss the Zoo, or configuring Rhino to use the Zoo.
+
+[category: Scripting]
+Topics related to RhinoScript and Python scripting.
+
+[category: Grasshopper Developer]
+Discussions related to developing Grasshopper components.
+
+[category: Plugins]
+Most Rhino 7 and Grasshopper plugins work in Rhino 8.
+
+[category: openNURBS]
+The openNURBS  Initiative provides CAD, CAM, CAE, and computer graphics software developers the tools to accurately transfer 3-D geometry between applications.
+
+[category: VisualARQ]
+This is the support forum for VisualARQ, a BIM software for 3D architectural modeling in Rhino.
+
+[category: Rhino Developer]
+Discussions related to customizing Rhino through VB.NET, C#, C++, RhinoScript, and Python
+
+[category: Rhino Teachers]
+Discussions related to teaching Rhino. A space to share tips, tricks, resources, and training.
+
+[category: Bongo]
+Start new conversations about Bongo in this category.
+
+[category: Rendering]
+All things rendering related. There are sub-categories for specific renderers.
+
+[category: Serengeti (Rhino BETA)]
+Serengeti, named after the largest African Savanna, is where Rhino grows.
+
+[category: Jobs & Portfolios]
+If you have a job opening or just need some help on a project, please post the details here.
+
+[category: Gallery]
+The gallery is a place for your renders, works-in-progress, completed projects, etc… any type of work you did in Rhino that you feel is worth sharing.
+
+[category: food4Rhino]
+food4Rhino is the official McNeel website for 3rd party Rhino plug-ins, Grasshopper add-ons, Materials, Environments and Textures.
+
+[category: Rhino.Inside]
+Rhino.Inside is a new technology that allows Rhino to be embedded inside another Application.  From and overview go to the https://www.rhino3d.com/inside.  This is an opensource project for developers at the Github Rhino.Inside Repo
+
+[category: iRhino 3D]
+Topics related to iRhino 3D - the 3dm viewer for iOS.
+
+[category: Site Feedback]
+Discussion about this site, its organization, how it works, and how we can improve it.
+
+[category: Meta]
+Want to talk about the relative merits of Discourse, Newsgroups, NING, Facebook, Dinner and Drinks, and other forms of conversation? Add your topic to the Meta category.
+
+[category: Tech Tips]
+A quick stop for basic tech tips.

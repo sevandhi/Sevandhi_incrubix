@@ -1,0 +1,7 @@
+[community title]
+Machine Learning
+
+[community sidebar]
+A community for posting things related to machine learning
+
+Icon base by [Lorc](https://lorcblog.blogspot.com/) under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) with modifications to add a gradient

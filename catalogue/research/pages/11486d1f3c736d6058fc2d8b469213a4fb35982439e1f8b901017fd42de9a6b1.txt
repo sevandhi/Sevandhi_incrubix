@@ -1,0 +1,38 @@
+[category: Announcements]
+Stay up to date on the most recent n8n updates and news.
+
+[category: Questions]
+For troubleshooting issues, understanding nodes, or reporting bugs—if you’re building a workflow and need help shaping it, post in Help me Build my Workflow instead.
+
+[category: Help me Build my Workflow]
+Need help creating an n8n workflow? Stuck on a tricky automation? This is the place to collaborate with other community members and build your workflows in public!
+
+[category: n8n Academy]
+Welcome to the n8n Academy category. This is the home for everything related to learning n8n through our courses on learn.n8n.io.
+
+[category: Known Issues]
+Issues that came up in the Questions category and that were identified as bugs.
+
+[category: Feature Requests (done)]
+Feature Requests that have been resolved.
+
+[category: Security Advisories]
+Updates will be posted here.
+
+[category: Feature Requests]
+Suggest or vote for features you would like to have in n8n!
+
+[category: Getting Started with n8n]
+Useful resources for those new to n8n
+
+[category: Built with n8n]
+This is a category for showing off the projects that you’ve built with n8n.
+
+[category: Tips & Tricks]
+A place to share knowledge and ask for the best techniques when using n8n to get the most out of it.
+
+[category: Jobs]
+Find open positions at n8n or related jobs.
+
+[category: Feedback]
+Discussion about n8n, your thoughts, feedback and ideas

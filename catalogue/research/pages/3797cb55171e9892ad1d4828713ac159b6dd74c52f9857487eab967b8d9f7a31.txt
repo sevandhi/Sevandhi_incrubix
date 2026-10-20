@@ -1,0 +1,23 @@
+[community title]
+LocalLLaMA
+
+[community sidebar]
+Welcome to LocalLLaMA! Here we discuss running and developing machine learning models at home. Lets explore cutting edge open source neural network technology together.
+
+Get support from the community! Ask questions, share prompts, discuss benchmarks, get hyped at the latest and greatest model releases! Enjoy talking about our awesome hobby.
+
+As ambassadors of the self-hosting machine learning community, we strive to support each other and share our enthusiasm in a positive constructive way.
+
+Rules:
+
+Rule 1 -
+No harassment or personal character attacks of community members. I.E no namecalling, no generalizing entire groups of people that make up our community, no baseless personal insults.
+
+Rule 2 -
+No comparing artificial intelligence/machine learning models to cryptocurrency. I.E no comparing the usefulness of models to that of NFTs, no comparing the resource usage required to train a model is anything close to maintaining a blockchain/ mining for crypto, no implying its just a fad/bubble that will leave people with nothing of value when it burst.
+
+Rule 3 -
+No comparing artificial intelligence/machine learning to simple text prediction algorithms. I.E statements such as "llms are basically just simple text predictions like what your phone keyboard autocorrect uses, and they're still using the same algorithms since <over 10 years ago>.
+
+Rule 4 -
+No implying that models are devoid of purpose or potential for enriching peoples lives.

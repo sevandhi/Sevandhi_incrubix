@@ -1,0 +1,8 @@
+[server title]
+PodcastIndex Social
+
+[short description]
+Intended for all stake holders of podcasting who are interested in improving the ecosystem
+
+[server rule 1]
+Not for promotion of podcasts.

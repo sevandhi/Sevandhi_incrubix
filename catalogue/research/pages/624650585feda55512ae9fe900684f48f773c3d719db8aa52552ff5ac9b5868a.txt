@@ -1,0 +1,5 @@
+[title]
+Bubble Forum
+
+[description]
+Connect with Bubble users from around the world, get answers to your questions, and learn how to build better with Bubble.

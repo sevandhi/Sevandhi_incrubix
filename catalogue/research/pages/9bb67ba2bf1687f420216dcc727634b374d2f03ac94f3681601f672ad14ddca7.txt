@@ -1,0 +1,39 @@
+[instance name]
+rankett.net
+
+[short description]
+A video-sharing platform dedicated to musicians and all creative artists
+
+[description]
+Welcome to rankett.net! All organists, musicians, and artists are welcome to share this work on this free and open-source platform.
+
+# Please be advised:
+- Peertube on Rankett re-encodes uploaded content using the Peertube default profile, using 256kb/s AAC audio. The uploaded video will be downscaled to 720p60. If the video has a smaller resolution than this, it will be retained. Note that rankett.net does not offer downscaled renderings of the same video.
+- Be mindful of the upload file-limit. Currently there is a 500 mB *per day* limit, which will hopefully not be too restrictive considering the small video resolution. While uploading a file, the maximum allowed size will be the remaining amount of this "quota" for the day (however, once the video is re-encoded, the filesize will be reduced, and this will be reflected in the quota).
+- Users are encouraged to keep copies of all videos uploaded to this platform either locally or on another website, so that they will still be available to you in the case of this service being shut down or a catastrophic error. (Note that Peertube does not store an exact copy of the file you uploaded. After re-encoding and lossy compression, the original is discarded.)
+- Note that this website federates with a few other Peertube instances, which means that videos from users on other instances get shared with ours for you to view, and vice versa. While we attempt to federate with platforms which share the same values as us, we cannot predict every action taken by their operators or the content that will be uploaded. While we have the power to and will attempt to remote-block extreme examples of content which does not align with our rules, in the meantime you are encourage to make use of the muting feature for users or domains.
+- *A note about search:* Typing a phrase in the search bar will bring you the appropriate results from this website and from all other Peertube instances that rankett.net is following. However, there are many Peertube instances on the internet. You may like to search https://search.joinpeertube.org/ which has a wider selection of videos (however, this list is unmoderated so do so at your own risk).
+
+**Did you know?** rankett.net is named after the [rankett](http://www.organstops.org/r/Rankett.html), an organ stop known for producing a loud tone with a small size. [Example (youtube video)](https://youtu.be/QoTu8XM7dtI?t=1871)
+
+[terms]
+**Please refer to the following rules**
+
+- All content on this instance must have an art or music focus. Videos that discuss politics, news, or technology in general are not allowed. Although this is intended to be lenient...for example, commentary videos about art are allowed.
+- Copyright-infringing content is not allowed. I will dutifully comply with all valid DMCA takedown requests.
+- Mirrors from other platforms are allowed. However, please do not upload other people's videos without permission.
+- Nudity, gore, and sexual content are not allowed.
+- All forms of bigotry are not allowed.
+
+[code of conduct]
+We are not a large faceless corporation, just a small instance on the web maintained by one person. You won't be one account out of millions. I hope that we can have a personal and professional atmosphere and "make this work" together.
+
+The operators of this instance will try to maintain transparency and an open dialogue.
+
+In return I ask that you respect the moderator's decision or open a dialogue in return to discuss it. Moderating action will only be taken in the case of repeated rules breaches or in egregious instances.
+
+Please note that all users are subject to their uploads being blocked (meaning restricted to private after uploading) until manual review, to ensure that this instance is protected from spam or shocking or offensive content.
+
+[moderation information]
+Peertube on rankett.net is operated by
+- [William Rehwinkel](https://nixnet.social/fiskfan1999)

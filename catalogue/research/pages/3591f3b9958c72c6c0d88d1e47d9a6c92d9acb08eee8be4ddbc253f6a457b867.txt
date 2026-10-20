@@ -1,0 +1,7 @@
+[community title]
+Marketing
+
+[community sidebar]
+For marketing industry pros to discuss and ask questions from strategy, social, and search, to data science and segmentation.
+
+And to laugh at the absurdity of it all.

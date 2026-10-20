@@ -1,0 +1,5 @@
+[community title]
+Podcasts
+
+[community sidebar]
+Eine Sammlung interessanter Podcasts

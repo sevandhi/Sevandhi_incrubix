@@ -1,0 +1,34 @@
+[instance name]
+Spectra Video
+
+[short description]
+Spectra is a PeerTube instance dedicated to supporting original content creators, and building the video community within the fediverse!
+
+[description]
+Spectra is a PeerTube instance dedicated to supporting original content creators, and building the video community within the fediverse!
+
+[terms]
+Creators on this instance are required to only upload their own content. While it's fine if they mirror their own videos from elsewhere, such as YouTube, the ultimate goal is to be intentional with your videos in this space. To be clear: videos can contain fragments of other people's content (as is popular in critical analysis videos), but we don't really want to just mirror stuff and add to the garbage pile that is PeerTube's sprawling firehose of useless content.
+
+This instance is invite-only, for the purposes of slowly building up an engaged community of people who actually want to be here, and want to be a part of this thing.
+
+The instance admin / moderation team promise to do the following:
+* Maintain healthy community stewardship that is compatible with our (very simple) Code of Conduct
+* Moderate and facilitate any issues that come up - no issues will be skipped. We will strive to always come to the most equitable and fair decision we can, when it comes to community disputes and infractions.
+* Never ever spy on our users or viewers, sell their data, or monitor personal communications.
+* Keep the spam down from garbage instances, and federate with other great instances that are putting good stuff out.
+
+[code of conduct]
+We're going to keep the CoC fairly simple and to the point:
+
+* **Hate Speech** - Hate Speech simply won't be tolerated here. While you are free to raise whatever social criticisms you want, of whatever group you want, please keep in mind that this isn't the space for punching down at minority groups. Slurs, advocacy of violence, and bad-faith arguments directed towards minority groups have no place in our community. Racism, sexism, ableism, transphobia, homophobia, terfism, and fascist ideology can also fuck right off.
+* **Misgendering / Deadnaming** - in line with our "No Transphobia" rule, Spectra will not tolerate deadnaming, misgendering, or the promotion of Conversion Therapy.
+* **Harassment** - Similar to hate speech: we don't tolerate it here. If you don't like somebody, just block or silence them and move on. Doxxing, spamming, threats, etc, will be a one-way ticket to being ejected from the instance with your content being deleted.
+* **Porn** - While our instance guidelines are perfectly accepting of crass language and the discussion of adult subject material, we really don't want to be a porn content provider. While you're more than welcome to subscribe to remote adult channels from some other instance, our catalogue is going to default to filtering out NSFW videos coming in from other instances. Please do your part and avoid uploading pornography here.
+* **Copyrighted Content (that isn't your own)** - Intellectual property sucks for many reasons, and it can be a legal minefield when it comes to dealing with Cease & Desist letters and DMCA Takedown Requests. While that might never be a major issue on a federated network like PeerTube, we would rather opt towards original content from our creators, instead of sharing pirated movies and TV shows.
+* **No Fringe Propaganda** - We aren't interested in hosting any media that promotes right-wing fringe conspiracy theories or propaganda. This includes videos about COVID, the Plandemic, The Great Replacement, LGBTQ+ grooming the population simply by existing, or any of that obnoxious crap. The proliferation of this kind of media ruins PeerTube instances, and we will block instances that feature it on site.
+
+Spectra Video reserves the right to eject any member at any time from the instance, for any reason. However, we will try to be fair, and apply all actions through the lens of our Code of Conduct.
+
+[moderation information]
+[Sean](https://social.wedistribute.org/@deadsuperhero) currently moderates the instance, but it's hard to do all on your own! If you're interested in helping, please reach out on the fediverse, and let's have a conversation about it.

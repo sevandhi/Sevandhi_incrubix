@@ -1,0 +1,11 @@
+[instance name]
+Watch MakeArmy
+
+[short description]
+MakeArmy is a Fediverse organization dedicated to creating free, open and safe spaces online for makers to share their crafts and skills.
+
+[description]
+By Makers, For Makers.
+
+[terms]
+No terms for now.

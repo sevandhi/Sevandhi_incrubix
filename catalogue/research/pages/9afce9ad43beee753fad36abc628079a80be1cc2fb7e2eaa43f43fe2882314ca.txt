@@ -1,0 +1,18 @@
+[category: Announcements]
+Updates and news about new features, content, events, and more.
+
+[category: Ask us anything]
+Find help on how to do the things you want in WeWeb, or to troubleshoot any problem you encounter.
+
+[category: Jobs & collabs]
+Find and share paid opportunities, freelance gigs, and collaborative projects built with WeWeb.
+For teams hiring or builders looking to join forces
+
+[category: Share your work]
+Welcome to WeWeb’s community
+
+[category: Tutorials]
+Step-by-step text-based tutorials with GIFs and screenshots to help you get things done in WeWeb. Each thread covers one specific task or use case.
+
+[category: Developer corner]
+This category is for people that code WeWeb custom components. As most WeWebers don’t code it’s a good way to separate things.

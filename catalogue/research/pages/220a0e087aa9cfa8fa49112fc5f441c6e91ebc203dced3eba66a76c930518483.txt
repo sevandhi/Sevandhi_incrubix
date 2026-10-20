@@ -1,0 +1,9 @@
+[community title]
+AI - Artificial intelligence
+
+[community sidebar]
+AI related news and articles.
+
+**Rules:**
+- **No Videos**.
+- **No self promotion**: Don't post links to your articles.

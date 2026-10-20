@@ -1,0 +1,69 @@
+[community title]
+Technology
+
+[community sidebar]
+News community around technology, social media platforms, information technology and governmental policy surrounding it. 
+
+### What doesn't fit here?
+
+The core of the story has to be technology focused. 
+
+- If article mentions "AI" in a sentence and then talks about business economics that doesn't make it tech news. 
+- Gaming is too many layers removed from technology. There are many dedicated communities that are a better fit for it. 
+- Transporation is too many layers removed from technology. EVs while use many cool technologies have many dedicated communities that are a better fit for it. 
+- Entertainment is too many layers removed from technology. While sometimes it can fit here, business or cultural aspects of it are a better fit for dedicated communities. 
+- Cybersecurity. While it heavily focuses on technology, most of the time it's too technical for most people who are not already invested in it. Should be posted in a dedicated communities unless it has broader connection to other tech areas.
+
+---
+
+### Post guidelines
+::: spoiler Title format
+Post title should mirror the news source title. If you don't like the title of article, look for an alternative source instead of editorializing it.
+:::
+::: spoiler URL format
+Post URL should be the original link to the article (even if paywalled) and archived copies left in the body. It allows avoiding duplicate posts when cross-posting.
+:::
+::: spoiler [Opinion] prefix
+Opinion (op-ed) articles must use [Opinion] prefix before the title. Opinion articles refer to articles that their publisher doesn't explictly endorse.
+:::
+::: spoiler Country prefix
+Country prefix can be added to the title with a separator (`|`, `:`, etc.) if the news is from a local publisher who doesn't clearly mention the country. 
+:::
+---
+
+### Rules
+::: spoiler 1. English only
+Title and associated content has to be in English.
+:::
+::: spoiler 2. Use original link
+Post URL should be the original link to the article (even if paywalled) and archived copies left in the body. It allows avoiding duplicate posts when cross-posting.
+:::
+::: spoiler 3. Respectful communication
+All communication has to be respectful of differing opinions, viewpoints, and experiences.
+:::
+::: spoiler 4. Inclusivity
+Everyone is welcome here regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
+:::
+::: spoiler 5. Ad hominem attacks
+Any kind of personal attacks are expressly forbidden. If you can't argue your position without attacking a person's character, you already lost the argument.  
+:::
+::: spoiler 6. Off-topic tangents
+Stay on topic. Keep it relevant. 
+:::
+::: spoiler 7. Instance rules may apply
+If something is not covered by community rules, but are against [lemmy.zip](https://lemmy.zip/) instance rules, they will be enforced.
+:::
+
+---
+
+##### Companion communities  
+ [!globalnews@lemmy.zip](https://lemmy.zip/c/globalnews)  
+ [!interestingshare@lemmy.zip](https://lemmy.zip/c/interestingshare)
+
+---
+
+[Icon attribution](https://icons8.com/icon/giRLH9iJ1wIL/technology) | [Banner attribution](https://pixabay.com/illustrations/abstract-technology-background-tech-5035778/)
+
+---
+
+If someone is interested in moderating this community, message @brikox@lemmy.zip.

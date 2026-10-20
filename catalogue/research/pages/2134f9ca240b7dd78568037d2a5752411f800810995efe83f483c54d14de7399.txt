@@ -1,0 +1,26 @@
+[category: Python]
+The Python Category is for discussion of Python coding issues, optimizations, or questions associated with OpenCV. Please keep discussion limited to OpenCV related topics. General discussion of Python events, topics and style should happen at the Python website. Thanks!
+
+[category: 3D Vision AI]
+This category is for discussion of 3D cameras, especially those that use AI to process data along with OpenCV such as those from Orbbec.
+
+[category: C++]
+The C++ Category is for OpenCV C++ questions. It should not contain discussion of general C++ topics.
+
+[category: Gigs and Jobs]
+Gigs and Jobs is a section to post and reply to opportunities to work and learn, and to connect members of the OpenCV community for mutual benefit. Companies should not use this space to advertise or self-promote. For example, it is ok for a company to post a job opening or gig. It is not ok for a company to list a company profile and list of services. All jobs/gigs should be OpenCV, AI, or Computer Vision related.
+
+[category: Projects]
+This category is for projects which use OpenCV. Post about your latest work, or just a cool tool you found recently. Please post only one thread per project.
+
+[category: Events]
+This category is for online or in person events within the OpenCV community. Good topics include hosting a meetup, CV conventions and conferences, and student groups. Events posted here should be relevant to OpenCV directly. Please do not post about any event more often than once per week.
+
+[category: Android/Java]
+This category’s purpose is for questions and discussions about OpenCV on the Android and/or Java. Please limit discussion to OpenCV related topics, such as build errors, customization, optimization, and performance related to Android/Java. Other topics, such as general discussion of Android or Java features, benefits, and news should NOT be posted to this forum.
+
+[category: Site Feedback]
+Discussion about this site, its organization, how it works, and how we can improve it.
+
+[category: Bin-Picking Challenge]
+This category is for discussion and questions about the Perception Challenge for Bin-Picking (2025), a competition focused on real-world solutions using robotics and AI. Visit https://bpc.opencv.org for more information.

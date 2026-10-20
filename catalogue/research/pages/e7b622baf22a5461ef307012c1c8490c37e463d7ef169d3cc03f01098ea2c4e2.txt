@@ -1,0 +1,330 @@
+Best Products
+
+Launches
+
+Launch archiveMost-loved launches by the community
+
+Launch GuideChecklists and pro tips for launching
+
+News
+
+NewsletterThe best of Product Hunt, every day
+
+StoriesTech news, interviews, and tips from makers
+
+ChangelogNew Product Hunt features and releases
+
+Forums
+
+ForumsAsk questions, find support, and connect
+
+Kitty Points LeaderboardThe highest scoring community members
+
+StreaksThe most active community members
+
+EventsMeet others online and in-person
+
+Advertise
+
+SubscribeSign in
+
+Product Hunt Launch Guide
+
+Interested in sharing something you made? DO IT!
+We've got everything you need to know about launching on Product Hunt right here.
+
+Launch interactive guide
+
+How to launch
+
+This complete guide will answer common questions, dispel myths, and share best practices for your launch. We'll also help you understand what "success" means here. Bookmark this baby and let's get started.
+
+Getting started
+
+This is where you'll learn the basics of how the platform works and how to prep - everything you should know before you launch.
+
+Launching a product
+
+Cut out the background noise - we'll tell you how to make the most of your Product Hunt launch with all those tips and tricks you need.
+
+Growing a community
+
+Understand how to use your launch to support organic community growth and meet your goals, even way past launch day.
+
+Definitions
+
+A glossary for navigating Product Hunt with confidence.
+
+Case studies
+
+Read how others have charted success with Product Hunt as a launchpad.
+
+Notion
+
+Read how Notion, a popular workspace tool, used Product Hunt to build a devoted and dynamic community.
+
+Framer
+
+Tap into how Framer, an all-in-one web design tool, found its product-market fit with help from Product Hunt.
+
+Loom
+
+Learn why Loom's team values launching on Product Hunt and what they've learned over 12 launches.
+
+Common questions
+
+Look at that. We've got quick answers to all your quick questions.
+
+Is Product Hunt free?
+
+Yes. It's 100% free to use. Learn more
+
+How does Product Hunt work?
+
+Makers in the community share what they've built by hunting (submitting) their product. Products are hunted by community members daily. Others in the community can upvote, comment, and share those products as they compete on the homepage leaderboard for top spots, including Product of the Day. Read our full guide for best practices and other details.
+
+What is Product Hunt?
+
+Product Hunt is first and foremost a global community. The Product Hunt community is made up of makers, technophiles, product people, entrepreneurs, investors, creators, early adopters, and folks who just love new ideas.
+
+On the Product Hunt platform, makers in the community share what they've built. Products are submitted, or hunted, by community members daily. Others in the community can upvote, comment, and share those products as they compete on the homepage leaderboard for top spots, including Product of the Day. Read our full guide for best practices and other details.
+
+Best day to launch on Product Hunt?
+
+The best day to launch is the day on which you're most prepared. There are pros and cons to launching on each day. Learn more.
+
+Can I create a company account on Product Hunt?
+
+No. Company accounts are prohibited. Learn more.
+
+When to launch on Product Hunt?
+
+12:01 am Pacific Time is the best time to launch for makers that are planning ahead and don't have limitations or other opportunities. Read more here.
+
+What if someone else already hunted my product?
+
+If someone else has already hunted your product, you have two options. One: Make the most of this opportunity, and launch again later when you're ready. Two: Let us know ASAP and we'll help. Learn more.
+
+Why is Product Hunt good [for makers]?
+
+Product Hunt is good for makers because it gives them an audience for the things they've made. When makers launch their products on Product Hunt, they have access to a huge, global audience of early adopters and tech enthusiasts actively looking for exciting new products. Comments and conversation also allow makers to gather feedback, and often open the door to networking, partnership, and even funding opportunities. Read our full guide for best practices and other details.
+
+Why should I use Product Hunt?
+
+One of the main reasons you should consider using Product Hunt as a maker is to get distribution. By launching your product on Product Hunt, you are gaining access to a global community of enthusiastic early adopters, tech lovers, and product people. Read through more reasons why people launch on Product Hunt.
+
+Is Product Hunt worth it?
+
+Yes, for many makers, launching on Product Hunt was worth it — i.e. putting time and effort into their launch helped them achieve their goals. Read success stories about Notion, Loom, and Framer for more.
+
+How to launch on Product Hunt?
+
+Log in, click the "Submit" button in the top right, and then click "New Product." You'll be prompted first to enter in the product's URL and will start the flow to submit your product. Read the full Product Hunt Launch Guide for best practices in preparation and launching.
+
+Do you have a launch template or checklist?
+
+Yes. The Product Hunt Launch Guide includes a list of all the items you should prepare for launch.
+
+How do I promote my launch?
+
+You can share your launch link however you wish. The only real rule here is that you cannot ask people directly to upvote your product. Instead, ask them to visit and comment. Check out the full Launch Guide for lots of promotion tips.
+
+Do I need a hunter?
+
+No. We encourage makers to hunt their own products, and there's no discernible advantage to using a third-party hunter. So take a look in the mirror — we've found your hunter! Learn more here.
+
+How often can I launch on Product Hunt?
+
+You can launch as often as you have new significant product iterations available. Learn more here.
+
+Why did I get marked as a spammer?
+
+If you got marked as a spammer and aren't sure why, please take a look at these:
+
+We have community guidelines that outline what would cause an account to be marked as a spammer.
+
+Refer to this article for information on personal vs company accounts.
+
+Links
+
+🚀Why launch on Product Hunt
+
+🔍Hunters: Do you need one?
+
+📈Setting goals
+
+✅Content checklist
+
+👀Marketing strategies
+
+Other maker resources
+
+👩‍🏫Maker learning series (videos)
+
+SubscribeSign in
+
+Top Product Categories
+
+Engineering & Development
+
+LLMs
+
+Productivity
+
+Marketing & Sales
+
+Design & Creative
+
+Social & Community
+
+Finance
+
+AI Agents
+
+Engineering & Development
+
+Vibe Coding Tools
+
+AI Coding Agents
+
+AI Code Editors
+
+LLMs
+
+AI Chatbots
+
+AI Infrastructure Tools
+
+Prompt Engineering Tools
+
+Productivity
+
+AI notetakers
+
+Note and writing apps
+
+Team collaboration software
+
+Search
+
+AI Workflow Automation
+
+Marketing & Sales
+
+Lead generation software
+
+Marketing automation platforms
+
+Design & Creative
+
+Video editing
+
+Design resources
+
+Graphic design tools
+
+AI Generative Media
+
+Social & Community
+
+Social Networking
+
+Professional networking platforms
+
+Community management
+
+Finance
+
+Accounting software
+
+Fundraising resources
+
+Investing
+
+AI Agents
+
+AI Voice Agents
+
+See All Categories >>
+
+Trending categories
+
+Top reviewed
+
+Trending products
+
+Top forum threads
+
+Trending categories
+
+Vibe Coding Tools
+
+AI Dictation Apps
+
+AI notetakers
+
+Code Review Tools
+
+No-code Platforms
+
+Figma Plugins
+
+Static site generators
+
+Top reviewed
+
+Lovable
+
+n8n
+
+Attio
+
+PostHog
+
+Vapi
+
+Granola
+
+Raycast
+
+Supabase
+
+Trending products
+
+Lovable
+
+Screen Studio
+
+bolt.new
+
+Wispr Flow
+
+Framer
+
+Replit
+
+Vapi
+
+Granola
+
+Top forum threads
+
+Cursor or Claude Code?
+
+POLL: Domain or product first?
+
+YC deadline in <2 weeks; Who's applying?
+
+We Got into YC, Got Kicked Out, and Fought Our Way Back
+
+How Wispr Flow found PMF through pivot
+
+Best Vibe Coding tool so far?
+
+Landing page roast - 48 hours only
+
+Fix your tagline with the PH CEO
+
+© 2026 Product Hunt
+
+NewsletterAppsAboutFAQTermsPrivacy & CookiesPrivacy ChoicesAdvertisellms.txtContact us: hello@producthunt.com

@@ -1,0 +1,33 @@
+[community title]
+Technology
+
+[community sidebar]
+This is a [most excellent](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3N0NmhuODNib3d3Nzg0OHU2bTFqMXAzNW42Y2JsOTVmenNsNG8ycSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l46CDHTqbmnGZyxKo/giphy.gif) place for technology news and articles.
+ 
+---
+ 
+## Our Rules
+ 
+---
+ 
+1. Follow the [lemmy.world rules.](https://mastodon.world/about) 
+2. Only tech related news or articles.
+3. Be [excellent to each other!](https://www.youtube.com/watch?v=rph_1DODXDU)
+4. Mod approved content bots can post up to 10 articles per day.
+5. Threads asking for personal tech support may be deleted.
+6. Politics threads may be removed.
+7. No memes allowed as posts, OK to post as comments.
+8. Only approved bots from the list below, this includes using AI responses and summaries. To ask if your bot can be added please contact a mod.
+9. Check for duplicates before posting, duplicates may be removed
+10. Accounts 7 days and younger will have their posts automatically removed. 
+ 
+---
+ 
+## Approved Bots
+ 
+---
+ 
+- [@L4s@lemmy.world](https://lemmy.world/u/L4s) 
+- [@autotldr@lemmings.world](https://lemmings.world/u/autotldr) 
+- [@PipedLinkBot@feddit.rocks](https://feddit.rocks/u/PipedLinkBot) 
+- [@wikibot@lemmy.world](https://lemmy.world/u/wikibot)

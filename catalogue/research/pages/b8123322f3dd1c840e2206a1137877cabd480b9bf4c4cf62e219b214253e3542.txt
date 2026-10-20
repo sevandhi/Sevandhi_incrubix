@@ -1,0 +1,10 @@
+[community title]
+Programming Videos
+
+[community sidebar]
+Videos related to programming. That means programming languages, computing, software development, etc.
+
+# Rules
+
+1. Post format `$title [$duration]`
+2. No videos about "tech" in general e.g random gadgets, solar panels, nuclear fusion, etc. Unless it specifically is about how to hack or program those things.

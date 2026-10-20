@@ -1,0 +1,42 @@
+[category: L5]
+L5 is a fun, fast, cross-platform, and lightweight implementation of the Processing API in Lua, hosted at l5lua.org.
+
+[category: Community]
+Introductions, share opportunities, events, open calls, classes, and workshops
+
+[category: Processing]
+Discussions about Processing programs and development
+
+[category: p5.js]
+Discussions about p5.js programs and development
+
+[category: Gallery]
+Share and discuss your work
+
+[category: Processing.py]
+Python language Mode for Processing
+
+[category: Processing for Android]
+Android Mode for Processing
+
+[category: Teaching]
+Discussion and ideas about teaching code
+
+[category: Site Feedback]
+Discussion about this site, its organization, how it works, and how we can improve it.
+
+[category: py5]
+A version of Processing for Python, built to work with other popular Python libraries and tools such as Jupyter, NumPy, Shapely, trimesh, Matplotlib, and Pillow.
+
+[category: Summer of Code]
+Discussion and questions about Processing and the Google Summer of Code program.
+
+[category: Español]
+Espacio para la comunidad de Processing en español.
+Conozcámonos, compartamos y conversemos.
+
+[category: Processing for Pi]
+Processing for the Raspberry Pi and ARM devices
+
+[category: p5py]
+p5py is a Python package based on the core ideas of Processing. It runs directly on Python 3 (rather than in the Processing PDE) and is installable in Python through pip install p5.

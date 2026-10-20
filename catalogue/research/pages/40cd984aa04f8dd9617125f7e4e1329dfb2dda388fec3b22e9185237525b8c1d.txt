@@ -1,0 +1,5 @@
+[community title]
+openai
+
+[community sidebar]
+Non-official OpenAI content

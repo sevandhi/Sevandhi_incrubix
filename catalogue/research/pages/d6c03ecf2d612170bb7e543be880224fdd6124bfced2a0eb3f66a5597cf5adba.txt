@@ -1,0 +1,6 @@
+[community title]
+Blender
+
+[community sidebar]
+Community to share art made in Blender.
+https://www.blender.org/

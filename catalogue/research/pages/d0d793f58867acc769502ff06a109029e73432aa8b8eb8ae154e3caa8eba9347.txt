@@ -1,0 +1,40 @@
+[server title]
+🌈 Social 📸 Photography 🌈
+
+[short description]
+🌈 An inclusive place for your photos, silliness, and convos! 🌈
+
+[description]
+A place for your photos and banter. Photog first is our motto.
+
+NB: We are a photography centric community. If you are looking for just a general presence in the fediverse, there are a LOT of other instances out there. If you're primarily a non-photographic artist, mastodon.art may be the place for you. 
+
+<a href="https://photog.social/about/more">More Information and Provided Services</a>
+
+[server rule 1]
+No harassment or white supremacy: that includes absolutely no anti-Blackness, colorism, transmisia, cisheterosexism, ableism, misogyny, fat hate, gender binarism, or other bigotries. No tone policing.
+
+[server rule 2]
+No AI-generated content nor NFT-related content are allowed *AT ALL* on this instance.
+
+[server rule 3]
+Do not share information you know to be false or misleading. This includes anti-vax nonsense, Holocaust denial, and so on.
+
+[server rule 4]
+Public photos of people are generally acceptable. Do not post photos of folks that have asked you not to. People in a photo have the right to have it taken down on request.
+This is not meant to cover "news worthy" events or "public figures" which are governed by various laws in various countries, nor lessen laws of places that require permission from people in a photo in order to publish (post) it.
+
+[server rule 5]
+Put sensitive content such as local politics, violence/blood, graphic nudity, racism, lewd content, and potentially upsetting or triggering topics under a Content Warning (CW). 
+Please think of using specific tags like lewd, kink, nudity, genitals, etc rather than simply "NSFW" because sex work is work and its also very much not specific. People directly affected by discrimination do not have to content warn their posts about such things if they don't want to.
+
+[server rule 6]
+No unapproved bots, corporate advertising, or spam.
+Shop links, self promotion, commission pages, and support links ARE very allowed! Please share those often! Mutual Aid 100% supported here!
+
+[server rule 7]
+No content that includes sexual depictions of minors (this includes loli), or content illegal in France.
+France is where our server is located.
+
+[server rule 8]
+You must be at least 18 years old to have an account here.

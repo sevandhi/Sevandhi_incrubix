@@ -1,0 +1,19 @@
+[community title]
+Videos
+
+[community sidebar]
+For sharing interesting videos from around the Web!
+
+## Rules
+
+1. Videos only (aside from meta posts flagged with [META])
+2. Follow the global Mastodon.World [**rules** ](https://mastodon.world/about) and the Lemmy.World [**TOS**](https://legal.lemmy.world/tos/) while posting and commenting.
+3. Don't be a jerk
+4. No advertising
+5. **No political videos, post those to !politicalvideos@lemmy.world instead.**
+6. Avoid clickbait titles. (Tip: Use dearrow)
+7. Link directly to the video source and not for example an embedded video in an article or tracked sharing link.
+8. Duplicate posts may be removed
+9. AI generated content must be tagged with "[AI] …" [^Discussion^](https://lemmy.world/post/36212155)
+
+Note: bans may apply to both !videos@lemmy.world and !politicalvideos@lemmy.world

@@ -1,0 +1,92 @@
+[instance name]
+Hardlimit
+
+[short description]
+Computers, hardware, software and gaming in Spanish and English
+
+[description]
+**English**
+
+Your registration request will be processed more quickly if you introduce yourself on [the forum](https://foro.hardlimit.com/en). Tell us who you are, what interests you, and why you want to register on our Peertube instance. [Sign up](https://foro.hardlimit.com/en/register) for the forum and post your introduction in the General category.
+
+
+The official support channel is [on our forum](https://foro.hardlimit.com/en/topic/63363/).
+
+Some of your videos might be chosen to be added to our forum. When that happens, @hial-9000@foro.hardlimit.com will leave a comment with a summary of the video.
+
+This is a technology issue instance.
+Please, keep it clean of political, religious and other non-technology related videos.
+If you want to upload non-technology educational videos or tech educational videos in a language different than Spanish or English, please, go to [TubEdu](https://tubedu.org)
+
+**We are a community. We are NOT a cloud storage service.**  That means there are certain rules in order for you to use our resources:
+
+**1)** Not listed/private videos are not welcome. You should try to make your videos public so anybody can enjoy them.
+
+**2)** If you want to share huge files (ie. several hours 4k videos), even if they are public, that must be high quality content.
+
+**3)** Do not use this instance to mass-import videos from YT channels that are not yours.
+
+**4)** If you are going to import a huge amount of videos from your Youtube channel, please, contact us first.
+
+**5)** This instance is intended for you to share your videos with others. Don't use it as a storage/backup service. Even though we try our best, data integrity/availability is not guaranteed over time. Always keep a local backup of your videos.
+
+Please, contact us if you have any question.
+
+------
+
+**Español**
+
+Tú petición de registro se aceptará más rápidamente si te presentas en [el foro](https://foro.hardlimit.com/es). Cuéntanos quién eres, qué te interesa y por qué se quieres registrar en nuestra instancia de Peertube. Regístrate en el foro y deja tu mensaje de presentación en la categoría General.
+
+El canal oficial de soporte [está en nuestro foro](https://foro.hardlimit.com/es/topic/63363/).
+
+Algunos de tus videos podrían ser seleccionados para aparecer en nuestros foros. Cuando eso suceda, @hial-9000@foro.hardlimit.com dejará un comentario con un resumen de tu video.
+
+Esta es una instancia enfocada en la tecnología.
+Por favor, no subas videos relacionados con política, religión o cualquier otra temática alejada del ámbito de la tecnología.
+Si quieres subir videos de carácter educativo y divulgativo que no estén relacionados con la informática ni la tecnología en general, por favor, usa [TubEdu](https://tubedu.org)
+
+**Somos una comunidad, no un servicio de almacenamiento en la nube**. Eso quiere decir que si quieres usar nuestros recursos, tienes que seguir una serie de normas:
+
+**1)** No nos gustan los videos privados o no listados. Tienes que intentar hacer público la mayor parte del contenido que subas.
+
+**2)** Si quieres subir archivos de gran tamaño (ej. videos en 4k de varias horas), incluso si son públicos, tienen que ser videos de alta calidad.
+
+**3)** No uses esta instancia para importar en masa canales de YT que no son tuyos.
+
+**4)** Ponte en contacto con nosotros antes de importar una gran cantidad de videos de tu canal de Youtube.
+
+No dudes en contactar con nosotros si tienes alguna pregunta.
+
+[terms]
+**English**
+Please, don't upload copyrighted-not-own-by-you videos. If the videos you are sharing were not created by you, we consider copyrighted content all videos without a Creative Commons nor any other permissive license.
+[About Hardlimit](https://hardlimit.com/about.php)
+
+**Español**
+Por favor, no subas videos protegidos por derechos de autor que no hayan sido creados por ti. Cualquier video que no tenga una licencia Creative Commons o similar, será considerado como protegido por derechos de autor.
+[Sobre Hardlimit](https://hardlimit.com/about.php)
+
+[code of conduct]
+**English**
+· Be kind.
+· Do not post spam.
+· Avoid political, religious and/or NSFW comments.
+· Try to use tags and set the video language in order to be searchable by other users.
+------
+**Español**
+· Sé respetuoso.
+· No publiques spam.
+· Evita comentarios de carácter político, religioso y/o que puedan resultar inapropiados.
+· Intenta usar etiquetas y elegir el idioma del video para facilitar su búsqueda por otros usuarios.
+
+[moderation information]
+**English**
+Please, DO NOT upload  ads, political, religious and/or NSFW videos.
+This is a technology issue instance so please, upload just videos related with it.
+
+For moderation purposes, the videos in this instance are just in Spanish and English.
+------
+**Español**
+Por favor, NO subas publicidad, videos de caracter político, religioso o con contenido inapropiado.
+Esta es una instancia enfocada en la tecnología, así que, por favor, sube sólo videos relacionados con la temática.

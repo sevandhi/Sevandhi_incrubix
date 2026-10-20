@@ -1,0 +1,5 @@
+[title]
+Weaviate Community Forum
+
+[description]
+Share your experience using Weaviate, ask questions and help others!

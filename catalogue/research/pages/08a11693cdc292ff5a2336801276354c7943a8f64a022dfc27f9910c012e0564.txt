@@ -1,0 +1,182 @@
+Toggle Sidebar
+
+Search
+
+Home
+
+Extend
+
+Pro
+
+Agents
+
+Resources
+
+The foreword
+
+Hashnode gql skill
+
+Theme
+
+More
+Buildful - AI coding agent that delivers frontier-level results at a fraction of the costBug0 - The AI-native e2e QA regression testingHackathonsChangelogBrand@hashnode on XHashnode on LinkedInSupport - hello+support@hashnode.comCode of ConductTermsPrivacySitemap
+
+Sign in
+
+Search Hashnode
+
+Search posts, tags, users, and pages
+
+Legal
+
+Code of Conduct
+
+Effective March 7, 2026 · Last updated June 4, 2026
+
+The short version
+
+1
+
+Be respectful
+
+Critique ideas, not people. Treat others as peers.
+
+2
+
+Be constructive
+
+Aim to help when commenting on posts, threads, and responses.
+
+3
+
+No harassment or hate speech
+
+Threats, slurs, personal attacks, and discrimination are not tolerated.
+
+4
+
+Own what you publish
+
+You are responsible for your content, including AI-assisted writing.
+
+5
+
+No spam or manipulation
+
+No engagement farming, misleading links, or bulk automated content.
+
+6
+
+Report violations
+
+Contact us at hello@hashnode.com if you see something wrong.
+
+Hashnode is a platform built by and for developers. Great technical communities thrive on mutual respect, honest discourse, and shared curiosity. This Code of Conduct sets the expectations for everyone who participates in the Hashnode community.
+
+This Code of Conduct applies to all interactions on Hashnode, including articles, comments, responses, forum threads, newsletters, user profiles, and any content shared through the platform.
+
+1. Expected behavior
+
+1.1 Be respectful
+
+Treat others as peers. Disagreement is fine. Disrespect is not. Critique ideas, not people. If you disagree with someone’s technical approach, explain why with reasoning and evidence.
+
+1.2 Be constructive
+
+When commenting on someone’s post or forum thread, aim to help. Point out what works, not only what doesn’t. If you spot a bug or error, explain it clearly.
+
+1.3 Be honest
+
+Represent your work accurately. Give credit where it’s due. If you use AI-assisted writing, review everything before publishing. You are responsible for the accuracy and originality of your content.
+
+1.4 Be inclusive
+
+Hashnode serves developers worldwide, across every experience level, background, and identity. Write and engage in ways that welcome participation from everyone.
+
+1.5 Share knowledge
+
+Hashnode exists for developers to share what they know. Technical posts, questions, tutorials, and discussions are exactly what the platform is for. Linking to documentation, repositories, articles, code samples, or other relevant references is welcome and encouraged.
+
+2. Unacceptable behavior
+
+The following will not be tolerated on Hashnode:
+
+Harassment and intimidation. Threats, slurs, personal attacks, doxxing, unwelcome sexual attention, or sustained disruption of discussions.
+
+Hate speech. Content targeting individuals or groups based on race, ethnicity, gender, sexual orientation, disability, religion, age, or national origin.
+
+Spam and manipulation. Automated or bulk posting, engagement farming, misleading links, SEO abuse, or using the platform primarily for self-promotion without contributing to the community.
+
+Impersonation. Pretending to be another person, organization, or Hashnode staff member.
+
+Intellectual property violations. Plagiarizing content, republishing others’ work without permission, or violating copyright and licensing terms.
+
+Malicious content. Distributing malware, phishing links, or exploits through posts, comments, or embedded content.
+
+Privacy violations. Sharing others’ personal information without consent, including real names, addresses, contact details, or private communications.
+
+Illegal activity. Content that promotes or facilitates activities that violate applicable laws.
+
+3. Content standards
+
+3.1 Articles and newsletters
+
+Your blog is your space. You own your content. But content published on Hashnode reaches a shared community and must meet these standards:
+
+Posts must be your original work, or clearly attributed to the original source.
+
+Technical content should be accurate to the best of your knowledge. If you are uncertain, say so.
+
+AI-generated content is permitted, but you must review and take responsibility for everything you publish.
+
+Clickbait titles and misleading content degrade trust. Avoid them.
+
+3.2 Forum threads and comments
+
+Hashnode Forums are a space for developers to discuss ideas, ask questions, and share knowledge. To keep discussions productive:
+
+Stay on topic. Respond to what was said, not who said it.
+
+Upvote content that adds value. Do not use voting to silence opinions you disagree with.
+
+One account per person. Do not use multiple accounts to manipulate discussions or votes.
+
+Search before posting. Check if your question has already been answered.
+
+3.3 Team publications
+
+Publication owners and admins are responsible for the content published under their team blog. Ensure all contributors understand and follow this Code of Conduct.
+
+4. Enforcement
+
+4.1 How to report
+
+If you encounter behavior that violates this Code of Conduct, report it to hello@hashnode.com. Include relevant links or screenshots when possible. All reports are reviewed confidentially.
+
+4.2 Actions we may take
+
+Hashnode reserves the right to remove any content and suspend or terminate any account that violates this Code of Conduct, at our sole discretion and without prior notice. This is consistent with the account termination provisions in our Terms of Use.
+
+5. Scope
+
+This Code of Conduct applies to:
+
+All content published on Hashnode, including posts, comments, forum threads, responses, and newsletters.
+
+User profiles and publication pages.
+
+Interactions through Hashnode’s API and integrations.
+
+Any conduct that affects the Hashnode community, even if it occurs outside the platform.
+
+6. Changes
+
+Hashnode may update this Code of Conduct as the platform evolves. If we make material changes, we will notify you by posting the updated Code of Conduct on the Service and updating the “Last Updated” date. Your continued use of the Service after the effective date of the revised Code of Conduct constitutes your acceptance of the changes.
+
+7. Contact us
+
+If you have any questions about this Code of Conduct, please contact us at:
+
+LinearBytes Inc.
+8 The Green, Ste 300, Dover, DE 19901
+Email: hello@hashnode.com

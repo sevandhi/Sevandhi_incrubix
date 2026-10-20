@@ -1,0 +1,251 @@
+your ad here · $149/weekyour ad here · $149/weekyour ad here · $149/weekyour ad here · $149/weekyour ad here · $149/weekyour ad here · $149/weekyour ad here · $149/weekyour ad here · $149/weekyour ad here · $149/weekyour ad here · $149/weekyour ad here · $149/weekyour ad here · $149/week
+
+Weekly email
+
+Browse tools
+
+All DevTools
+
+This Week
+
+Upcoming Tools
+
+Best DevTools On Product Hunt
+
+Categories
+
+Open Source
+
+DevOps
+
+AI
+
+CI
+
+Code
+
+NoCode
+
+Analytics
+
+QA
+
+API
+
+DB
+
+Design
+
+Helpers
+
+Hosting
+
+UI Library
+
+Marketing
+
+Emails
+
+Framework
+
+Language
+
+Crypto
+
+Web3
+
+Charts
+
+IDE
+
+Monitoring
+
+Workflow automation
+
+CMS
+
+Security
+
+Tailwind CSS
+
+Boilerplate
+
+CLI
+
+Visual editing
+
+SEO
+
+AI Agents
+
+AI Coding
+
+MCP
+
+Testing
+
+Mobile
+
+Browser Extension
+
+Auth
+
+Payments
+
+Content Writing
+
+Image
+
+Video
+
+Voice
+
+Social Media
+
+Sales
+
+Docs
+
+Other
+
+Stats
+
+Advertise
+
+Submit
+
+FAQ
+
+Frequently asked questions
+
+What is DevHunt?
+
+DevHunt is a launchpad for developer tools, built by developers. Makers list their dev tools, each week a new batch launches on the home page, and developers vote for the ones they like. It is open source and focused only on tools for developers.
+
+How do I launch my dev tool on DevHunt?
+
+Sign in, open your account and submit your tool with its name, website, description, logo and screenshots. Every tool gets a permanent page on DevHunt. Then pick a launch week: a launch costs $19, or $49 boosted.
+
+Is launching on DevHunt free?
+
+Listing a tool is free: every tool gets a permanent page with a nofollow link. Launching costs $19 once: you choose the launch week, get a spot in the newsletter, and your link becomes dofollow. For $49 the launch is boosted: on equal votes it is listed above other launches, on the site and in the weekly email, and gets its own post on X.
+
+How does voting work?
+
+Developers vote for tools launching that week. You have to sign in (GitHub or Google) to vote or comment, which keeps the votes from real people. The tools with the most votes at the end of the week are the winners.
+
+What do weekly winners get?
+
+Winners are featured in the weekly DevHunt newsletter, get a mention on DevHunt social channels and receive a winner badge they can show on their site.
+
+What kinds of tools can launch on DevHunt?
+
+Tools for developers: open-source projects, APIs and SDKs, frameworks and libraries, IDEs and editors, CLIs, testing, monitoring, DevOps, databases, auth, AI agents and MCP servers, and similar. Tools that are not for developers, NSFW tools, and services that sell fake engagement are not accepted.
+
+How is DevHunt different from Product Hunt?
+
+Product Hunt covers every kind of product and launches compete daily. DevHunt is only for developer tools, launches run for a whole week, voters are developers, and the platform itself is open source on GitHub.
+
+Do I get a backlink from DevHunt?
+
+Every tool page links to the tool's website. Links on free listings are nofollow; paid launches get a permanent dofollow link.
+
+Can I advertise on DevHunt?
+
+Yes. You can sponsor a spot on the home page or at the top of the weekly newsletter. See the Advertise page for audience numbers and prices.
+
+Who runs DevHunt?
+
+DevHunt was started by John Rush and a small group of developers. The code is public on GitHub, and contributions are welcome.
+
+More questions? Read about DevHunt, see advertising options, or ask John on X.
+
+Get the best new dev tools in your inbox every Tuesday. Unsubscribe anytime.
+
+Subscribe
+
+About
+
+FAQ
+
+Stats
+
+Best by month
+
+State of Dev Tools 2026
+
+Product Hunt alternatives
+
+Free alternatives
+
+Free APIs
+
+Free credits & perks
+
+Vibe coding tools
+
+AI coding agents
+
+Free LLM APIs
+
+AI model pricing
+
+Accelerators
+
+Where to promote
+
+GitHub Repository
+
+Blog
+
+Contact
+
+OSS Friends
+
+NextJS Starter
+
+Open Source Alternatives
+
+John Rush (CEO)
+
+Submit website to directories
+
+Directory Builder
+
+AI blog generator
+
+Popular categories
+
+AI tools
+
+AI Coding tools
+
+AI Agents tools
+
+MCP tools
+
+Open Source tools
+
+DevOps tools
+
+API tools
+
+DB tools
+
+Auth tools
+
+Hosting tools
+
+Testing tools
+
+UI Library tools
+
+Analytics tools
+
+© 2026 Dev Hunt. Member of MarsX.Dev family.
+
+Uses & Sponsored by FloatUI, Sensorpro, CountVisits, SEObotAI, Listing Bot, IndexRusher, UnicornPlatform.
+
+Built by @johnrush, @sidi_jeddou_dev, @vitalik_may, @BotanMan, @chris_byrne, see all.
+
+Status page

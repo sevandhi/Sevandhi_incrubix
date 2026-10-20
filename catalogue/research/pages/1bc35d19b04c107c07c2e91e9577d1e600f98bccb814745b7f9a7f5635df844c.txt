@@ -1,0 +1,46 @@
+[server title]
+TechHub
+
+[short description]
+A hub primarily for passionate technologists, but everyone is welcome
+
+[description]
+Mastodon instance for passionate technologists.
+
+Note: This instance is hosted in North America, Montreal to be precise, if you are on another continent you might want to try another instance.
+
+[server rule 1]
+Violent media must be marked as sensitive when posting.
+
+[server rule 2]
+No racism, sexism, homophobia, transphobia, xenophobia, or casteism.
+
+[server rule 3]
+No incitement of violence or promotion of violent ideologies.
+
+[server rule 4]
+No harassment, dogpiling or doxxing of other users.
+
+[server rule 5]
+No content illegal in Canada.
+
+[server rule 6]
+Do not share false or misleading information that may lead to physical harm.
+
+[server rule 7]
+No spam, no direct advertising selling products or services, no aggressive promotion and no unsolicited DM about a product, a job offer or requesting money.
+If you promote your website, blog, etc do it responsibly and use a description and hashtags.
+
+[server rule 8]
+No account created purely for SEO purpose
+Account that have profile advertising a business or website that are not active will be banned.
+
+[server rule 9]
+Bots must be marked as Bot in their profile and bots created after Dec 31st 2024 must post in silent mode
+
+[server rule 10]
+Sexually explicit content is not allowed
+
+[server rule 11]
+Agree to Code of Conduct (see about section)
+https://techhub.social/about

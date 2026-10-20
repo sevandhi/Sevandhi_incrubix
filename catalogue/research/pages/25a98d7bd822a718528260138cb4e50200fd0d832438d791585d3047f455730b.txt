@@ -1,0 +1,38 @@
+[category: News]
+Announcements, features, articles &amp; tips from the Ghost team
+
+[category: Using Ghost]
+A space to chat about getting started with Ghost, setting up a new publication, using the admin area and the editor.
+
+[category: Marketing & promotion]
+This category is all about getting more signups &amp; subscribers. Share your goals, experiments, achievements and questions about how to grow your audience.
+
+[category: Memberships & subscriptions]
+Discuss the business of managing a membership site: Email subscriptions, premium tiers, special offers, and customer support.
+
+[category: Share & showcase]
+Share your Ghost publications and share what you’re working on with the community.
+
+[category: Bugs]
+Report bugs in Ghost so we can fix them. Please search for duplicates before posting.
+
+[category: Ideas]
+Before submitting your feature request or idea, have a read through our product principles and roadmap, here:
+
+[category: Marketplace]
+Advertise or request commercial services for Ghost, like apps, jobs, premium themes, hosting or consulting.
+
+[category: Off-topic]
+Random chat about anything-but-Ghost
+
+[category: Developer help]
+Developer help for installing, configuring, hosting, and migrating data from other platforms to Ghost.
+
+[category: Themes]
+Discussion about creating, using, converting, or installing Ghost themes to customise your publication
+
+[category: Integrations & API]
+Using 3rd party tools, apps and plugins with Ghost.
+
+[category: Contributing to Ghost]
+Get involved with the open source project

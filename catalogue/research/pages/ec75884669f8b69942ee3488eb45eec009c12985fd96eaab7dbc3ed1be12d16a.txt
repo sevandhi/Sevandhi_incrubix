@@ -1,0 +1,34 @@
+[category: Demos and projects]
+Use this section of the forum to showcase your work!
+Whether it is a fun playground you’ve been working on, or an entire website you have created with Babylon.js, we want to see it!
+
+[category: Bugs]
+This forum is used to report bugs in the framework. If you tried doing something and it doesn’t work correctly, it is a bug. Please don’t forget:
+
+[category: Questions]
+This forum is used to ask questions about the framework’s features, and about subjects you don’t quite understand. Don’t know how to use CSG? Don’t understand what a physics body impostor is? this is the place for you.
+
+[category: Off topic]
+Hey team,
+
+[category: Feature requests]
+Please use this category to ask for new features or vote for existing ones.
+
+[category: Content creation (3dsMax, Maya, Blender, glTF)]
+All questions related to DCC tools like 3dsMax, Maya, Blender.
+Also any questions related to glTF, Babylon or any 3D formats
+
+[category: Service offers and requests]
+Use this forum to post service offers or requests.
+
+[category: Announcements]
+Babylon.js important announcements
+
+[category: Tutorials and tips]
+Use this category to share tutorials or tips
+
+[category: Completed Features]
+This category is for features that were completed!
+
+[category: Breaking Changes]
+We will use this category to present upcoming backward compatibility issues

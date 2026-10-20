@@ -1,0 +1,29 @@
+[category: Bug]
+Report a problem or bug here. The more &quot;likes&quot; that a bug receives (using the heart icon), the higher priority it receives. You can also post a bug to GitHub and/or post a link from a GitHub bug here along with a brief description (no need to repost full details). Bugs reported or mentioned here will get a higher priority than those on GitHub (a perk of patronage).
+
+[category: Help/How To]
+This is the main category to ask a question about how to do something. It is okay if you are not sure if something is not yet available or the result of a bug; we can always re-categorize a post.
+
+[category: Made with Shotcut]
+Use this category to share a video that you made using Shotcut! Simply place a link. If you link to your channel, please indicate at least one video that was made on it. If it is a YouTube video, sometimes I will add the video to a playlist on the official Shotcut channel.
+
+[category: Resources]
+Use this category to post new plugins, add-ons, filter UIs, presets, artwork, and stock media locations to share with other users. This is not the category to post your videos made with Shotcut. Use “Made with Shotcut” for that. On behalf of all users, thank you for sharing!
+
+[category: Suggestion]
+Suggest an improvement or request a feature. You can &quot;like&quot; ideas to cast your vote and increase its likelihood.
+
+[category: Uncategorized]
+Topics that don't need a category, or don't fit into any other existing category.
+
+[category: Announcement]
+Only the staff can write to this category, which is used for project news.
+
+[category: Tutorial]
+Videos and articles created by staff or senior forum users that explain features or techniques.
+
+[category: Site Feedback]
+Discussion about this site, its organization, how it works, and how we can improve it.
+
+[category: Documentation]
+The Documentation category is a wiki for more formal documentation of Shotcut’s user interface, workflow, and inner workings. New pages are created only by @shotcut to enforce organization to ensure some formality to this documentation. Members of @doc_editors or @trust_level_2 can edit, and everyone else can read and comment.

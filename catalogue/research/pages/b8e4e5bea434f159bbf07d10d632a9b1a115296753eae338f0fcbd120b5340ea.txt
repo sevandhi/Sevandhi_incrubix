@@ -1,0 +1,43 @@
+[topic title]
+Using Streamlit: how to post a question in the Streamlit forum
+
+[first post]
+We’re so glad you’ve found the Streamlit forum! Here are some guidelines to help you craft a thoughtful post that will receive helpful answers:
+
+Use the search bar to see if someone has previously posted or answered your question.
+
+Our forum is full of awesome community members like yourself who have shared their solutions for most errors and issues. There’s a good chance someone encountered a similar problem in the past and has posted on the forum.
+
+If you’ve run into an error message, try copying/pasting the message or parts of it in the search bar. If you’re having trouble installing certain dependencies, try searching for the dependency name and relevant keywords such as install, ModuleNotFoundError, etc. Another option is to search the Streamlit docs.
+
+If you’ve found relevant posts and the described solutions don’t work for you, please post your question in the same thread to provide context to readers and reduce the number of duplicate posts.
+
+In the unlikely chance that you don’t find relevant posts, ask yourself if the issue is related to Streamlit. Try posting more general Python questions on StackOverflow or a forum for Python programming questions.
+
+If you’re certain your issue is Streamlit-related, create a new post with a title that summarizes your problem. Keep your title as specific and informative as possible, and consider including links to relevant posts so the community understands how your post differs.
+
+Include a minimal, reproducible code example in your question. In other words, include just enough code (not the whole app ) to enable others to reproduce the problem. Check out StackOverflow’s guide to creating a minimal, complete, and verifiable example. Ensure that your example works by running it yourself before posting.
+
+Here are some questions your post should answer:
+
+If you’re dealing with an error, what is the full error message?
+
+What have you tried so far to solve the issue? Be specific in explaining how your past approaches have not worked.
+
+What version of Streamlit and Python are you using?
+
+What operating system are you using?
+
+Are you running the code locally? If not, where is the app deployed?
+
+Format your code! Please don’t post images or screenshots because we can’t copy the code and try it out. Select your code snippet and click the button circled below to format the text as code:
+
+Alternatively, you can format your code using Markdown syntax on the forum. You can also format copy/pasted error logs from your terminal or Cloud logs from Community Cloud. Reserve images for illustrations, diagrams, visual quirks, and concepts you cannot convey accurately via text.
+
+If you’re deploying your app on Streamlit Community Cloud, share a link to the app, a link to the GitHub repo, and the contents of your requirements file.
+
+Once you’ve posted, be ready to respond to follow-ups, engage in thoughtful dialogue, and be patient. If your post doesn’t receive any comments, please comment on that same post rather than creating a duplicate post. Duplicate posts will be deleted.
+
+No need to tag or DM the Streamlit team or moderators. We’ll always answer your questions, but the community often offers the best answers. DMing or tagging the Streamlit team discourages others from jumping in to help you.
+
+Don’t ask the community to build your app for you. Our community is a great resource to help you understand the errors you’re seeing, suggest resources that might be helpful, share helpful code snippets, and point you in the right direction as you build your app.

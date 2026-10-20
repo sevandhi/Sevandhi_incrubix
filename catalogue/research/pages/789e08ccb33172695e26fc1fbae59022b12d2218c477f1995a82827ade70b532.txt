@@ -1,0 +1,599 @@
+Sign upLog in
+
+Product
+
+Enterprise
+
+Customers
+
+Resources
+
+Pricing
+
+Log in
+
+Contact sales
+
+Start for free
+
+GlideOSGlide Classic
+
+Terms of Service
+Last Modified: July 24, 2026
+Welcome, and thank you for your interest in typeguard, Inc. d/b/a Glide ("us," "we," "Glide," or the "Company"), our website at https://www.glideapps.com/, and various related applications, tools, products and services (collectively, the "Services"). The Services and their features are provided to you subject to your compliance with all the terms, conditions, and notices contained or referenced in this agreement (the "Agreement").
+
+The Services enable you to create and share applications or to use Glide-provided applications ("Applications") that you can make available to your end users ("End Users").
+
+Acknowledgment and Acceptance of Terms
+
+You are permitted to use the Services only if you: (1) represent that you are able to form a binding contract in your jurisdiction; (2) comply with our Agreement; (3) will not copy or distribute any part of the Services in any medium without Company's prior written authorization except as permitted through the Services' functionality and under this Agreement; (4) provide accurate and complete information when creating an account; (5) acknowledge you are solely responsible for the activity that occurs while signed in to or while using the Services; and (6) acknowledge your sole responsibility for your content submissions, including discussion posts, profile information and links, pictures and other such content.
+
+The Service is available only for individuals who are at least 18 years old, or the age of majority in your jurisdiction, whichever is higher. By using the Service, you represent and warrant that you meet this age requirement. We may, in our sole discretion, refuse to offer the Service to any person or entity and change the eligibility criteria for using the Service at any time. The right to access the Service is revoked where this Agreement or use of the Service is prohibited or to the extent offering, sale, or provision of the Service conflicts with any applicable law, rule or regulation.
+
+YOUR USE OF THE SERVICES, INCLUDING BY KEEPING YOUR CONTENT OR APPLICATIONS ON THE SERVICES, CONSTITUTES YOUR AGREEMENT TO BE BOUND BY THIS AGREEMENT. IF YOU DO NOT WISH TO BE BOUND BY THIS AGREEMENT, PLEASE EXIT THE SERVICES NOW. YOUR SOLE REMEDY FOR DISSATISFACTION WITH THE SERVICES, OR ANY PRODUCTS, CONTENT, OR OTHER INFORMATION AVAILABLE ON OR THROUGH THE SERVICES, IS TO STOP USING THE SERVICES AND/OR THOSE PARTICULAR PRODUCTS. YOUR AGREEMENT WITH US REGARDING COMPLIANCE WITH THIS AGREEMENT BECOMES EFFECTIVE IMMEDIATELY UPON COMMENCEMENT OF YOUR USE OF THE SERVICES.
+
+In this Agreement, we use the terms "you" and "your" to mean any individual or entity using our Services to provide products or services to their customers. If you are agreeing to this Agreement on behalf of an organization or entity, you represent and warrant that you are authorized to agree to this Agreement on that organization's or entity's behalf and bind them to this Agreement (in which case, the references to "you" and "your" in this Agreement, except for in this sentence, refer to that organization or entity).
+
+Account Information and Security
+
+When you register, you provide us with some basic information, which may include an e-mail address, user ID, and password ("Account Information"). To use the Services, you agree to provide Glide with true, accurate, current, and complete information about yourself, and to keep your Account Information current and accurate. You agree to not allow others to access your account. You alone are responsible for anything that happens from your failure to maintain security and confidentiality, such as by sharing your Account Information with others, and we will not be liable for any loss or damage resulting from your failure to comply with these obligations. If someone is using your account, notify us immediately. You agree to immediately notify us of any unauthorized use of either your password or account or any other breach of security. Additionally, you acknowledge that internet transmissions are never completely private or secure and you understand that any message or information you send to the Services may be read or intercepted by others, even if it is encrypted.
+
+Provided Domains and Identifiers
+
+In connection with your use of the Services, Glide may make available to you, or generate on your behalf, certain identifiers, including, without limitation, subdomains, domains, project URLs, application URLs, share links, preview links, embed codes, custom routes, usernames, handles, team or workspace names, and similar identifiers, whether publicly listed or unlisted (collectively, "Provided Identifiers"). As between you and Glide, Glide owns all Provided Identifiers and licenses them to you on a limited, revocable, non-exclusive, non-transferable basis solely for use with the Services in accordance with this Agreement. You acquire no ownership in any Provided Identifier and may not sell, transfer, sublicense, or register any Provided Identifier as your own.
+
+Glide reserves the right, in its sole discretion and at any time, to modify, reassign, reclaim, suspend, retire, rename, or remove any Provided Identifier, including, without limitation, where: (a) the Provided Identifier is unused or inactive; (b) the Provided Identifier infringes or is confusingly similar to, or impersonates, a trademark, trade name, public figure, organization, or another user; (c) the Provided Identifier is used in violation of this Agreement or applicable law; (d) reclamation is necessary or appropriate for security, operational, technical, branding, or legal reasons; or (e) Glide otherwise deems reclamation appropriate. Where reasonably practicable and not inconsistent with safety, security, legal, or operational concerns, Glide will use commercially reasonable efforts to provide advance notice before reclaiming a Provided Identifier in active use, but is under no obligation to do so. The reclamation of a Provided Identifier may render Applications, share links, or integrations relying on that identifier inaccessible, and Glide will have no liability to you or any End User for any such loss of access.
+
+Applications and User Data
+
+The Services enable you and your End Users to collect, upload, store, transmit, display, modify, and otherwise process ("Process") data provided by or relating to End Users or other individuals ("User Data") within the Applications you create using the Services (including in connection with generating Generated Content). As further set forth in the User Data Rules and Restrictions, available at glideapps.com/legal/glide-os/user-data, you are not permitted to Process certain types of User Data in connection with your use of the Services. Additionally, you may be required to upgrade to Paid Services and/or implement certain features or restrictions in your Applications if you intend to Process certain types of User Data. You represent and warrant that you and your End Users will at all times comply with the User Data Rules and Restrictions. Any violation of the User Data Rules and Restrictions will be deemed a violation of this Agreement and is grounds for termination of your right to use and access the Services.
+
+You are solely responsible for complying with all applicable laws, rules, and regulations ("Laws"), including, without limitation, all applicable privacy Laws, with respect to the User Data that you Process in connection with your use of the Services or otherwise provide to Glide (or that Glide Processes on your behalf), and you represent and warrant that all such User Data was collected and provided in compliance with all applicable data protection and privacy Laws. You are responsible for providing your End Users with all legally required privacy notices and disclosures regarding the User Data you Process in connection with your Application and obtaining any legally required consents. If Glide Processes any User Data on your behalf, you agree to our standard Data Processing Addendum (glideapps.com/legal/glide-os/dpa).
+
+Authentication and App Access Controls
+
+Glide provides native authentication, sign-in, identity, and app access control features (collectively, "Access Controls") that you must use to govern who can access your Applications and the User Data they contain. The availability of specific Access Controls, including more advanced authentication options and granular permissioning, may depend on your subscription tier, as further described on our pricing page (glideapps.com/pricing).
+
+You are prohibited from designing, implementing, deploying, or otherwise relying on your own authentication, sign-in, identity verification, or access control mechanisms within your Applications in lieu of, or as a substitute for, the native Access Controls provided by Glide. This prohibition includes, without limitation, any attempt to gate access to Applications or User Data using custom actions, computed or conditional columns, visibility conditions, custom code, embedded third-party login flows, or any other workaround. Custom-built authentication and access control mechanisms are not a supported use of the Services, and Glide does not test, audit, validate, or otherwise stand behind any such implementation.
+
+YOU ACKNOWLEDGE AND AGREE THAT GLIDE WILL HAVE NO RESPONSIBILITY OR LIABILITY FOR ANY UNAUTHORIZED ACCESS, DATA EXPOSURE, DATA LEAK, OR OTHER SECURITY INCIDENT ARISING OUT OF OR RELATING TO (A) YOUR USE OF CUSTOM-BUILT, USER-IMPLEMENTED, OR THIRD-PARTY AUTHENTICATION OR ACCESS CONTROL MECHANISMS, OR (B) YOUR MISCONFIGURATION OF, OR FAILURE TO PROPERLY USE, ANY NATIVE ACCESS CONTROL FEATURE PROVIDED BY GLIDE. YOU ARE SOLELY RESPONSIBLE FOR SELECTING A SUBSCRIPTION TIER THAT INCLUDES THE ACCESS CONTROLS APPROPRIATE FOR THE USER DATA PROCESSED BY YOUR APPLICATIONS AND FOR CORRECTLY CONFIGURING THOSE ACCESS CONTROLS. ANY VIOLATION OF THIS SECTION WILL BE DEEMED A VIOLATION OF THIS AGREEMENT AND IS GROUNDS FOR TERMINATION OF YOUR RIGHT TO USE OR ACCESS THE SERVICES.
+
+Glide Content
+
+The entire content and materials contained on the Services, including, but not limited to, audio, video, images, text, user interface, scores, logos, the selection and arrangement of the Services and other intellectual property but excluding Your Content (defined below) (the "Glide Content") are owned by or licensed to Glide. You may not reproduce, republish, transmit, upload, distribute, copy or publicly display any of Glide Content without our prior written consent. We neither warrant nor represent that your use of materials displayed on the Services will not infringe rights of third parties not owned by or affiliated with the Company. We may redesign the Services in our sole discretion at any time.
+
+Your Content
+
+Glide does NOT claim ANY ownership rights in the text, files, images, photos, video, sounds, musical works, User Data, or other data, content, information, or materials that you input, whether or not temporarily, on or through the Services (collectively, "Your Content"). You may elect to provide or make available certain of Your Content to artificial intelligence features or tools made available via the Services ("Input"), and receive images, materials, files, and other content generated and returned by such artificial intelligence tools based on that Input ("Generated Content"). Input and Generated Content are considered Your Content. As between you and Glide, you retain all right, title, and interest in Your Content, including any Generated Content, and Glide retains all right, title, and interest in the Glide Content (including improvements and enhancements to the Glide Content, along with new products and features). Unless your account type grants you the ability to opt out of artificial intelligence training and you have done so, you agree that Glide has the right to use Your Content and the structure and configuration of your Applications to maintain, improve, and enhance its products and services by training artificial intelligence algorithms and models, provided, that Glide will not train its artificial intelligence algorithms and models on any of Your Content housed in Application data sources that relates to an identifiable individual. If you do not opt out of artificial intelligence training for a period of time, but later opt out of such training, you acknowledge and agree that Glide will not be required to remove or revert any training using Your Content or the and the structure and configuration of your Applications prior to the date you opt out.
+
+Glide performs technical functions necessary to offer the Services, including but not limited to reformatting Your Content and Generated Content to allow its use through the Services. Glide may also use Your Content (including Generated Content) to make improvements or modifications to the Services or any other products or services of Glide or its affiliates. You hereby grant Glide a non-exclusive, perpetual, transferable, sublicensable, fully paid, worldwide license to use, copy, prepare derivative works of or otherwise fully exploit Your Content to engage in the foregoing conduct. If you post Your Content on a public portion of the Services (such as comments or a message board), you grant Glide a non-exclusive, irrevocable, perpetual, transferable, sublicensable, fully paid, worldwide license to use, copy, prepare derivative works of (including excerpting, in whole or in part), distribute and publicly display or otherwise fully exploit that content on the Services.
+
+AI Agents and Automated Actions
+
+The Services include artificial intelligence agents and similar automated or autonomous features (collectively, "AI Agents") that, when instructed or authorized by you, can read and analyze Your Content and User Data, generate insights or recommendations, create, modify, configure, or delete Applications and their components (including data sources, columns, screens, actions, integrations, and other settings), and otherwise take actions on your behalf within the Services. You acknowledge and agree that actions taken by an AI Agent at your direction or under authorization you have granted are deemed to be actions taken by you, and you are solely responsible for all such actions and their consequences.
+
+YOU ASSUME ALL RISK AND RESPONSIBILITY ARISING FROM YOUR USE OF AI AGENTS, INCLUDING, WITHOUT LIMITATION, ANY DELETION, MODIFICATION, CORRUPTION, OR LOSS OF YOUR APPLICATIONS, YOUR CONTENT, USER DATA, CONFIGURATIONS, OR INTEGRATIONS; ANY UNINTENDED OR UNEXPECTED CHANGES TO YOUR APPLICATIONS; ANY CHARGES, FEES, OR OTHER COSTS INCURRED AS A RESULT OF AI AGENT ACTIONS; AND ANY DISCLOSURE, TRANSMISSION, OR SHARING OF DATA INITIATED OR FACILITATED BY AN AI AGENT. GLIDE WILL HAVE NO RESPONSIBILITY OR LIABILITY FOR ANY OF THE FOREGOING, AND IT IS YOUR RESPONSIBILITY TO REVIEW, SUPERVISE, AND, WHERE APPROPRIATE, MAINTAIN BACKUPS OR OTHER RECOVERY MECHANISMS FOR THE WORK PRODUCT THAT AI AGENTS ACT UPON.
+
+AI Agents are probabilistic systems. Their output, including any Generated Content or other analysis, summary, recommendation, classification, decision, may be incomplete, inaccurate, biased, outdated, misleading, or otherwise unsuitable for your purposes. Glide does not warrant the quality, accuracy, reliability, completeness, fitness for a particular purpose, or non-infringement of any output produced by AI Agents, including without limitation any data analysis, computations, predictions, or business insights. You should not rely on AI Agent output without independently reviewing and validating it.
+
+AI Agents are not qualified professionals and are not a substitute for the judgment, advice, or services of a licensed professional. Without limitation, AI Agents do not provide and must not be used for legal, medical, healthcare, mental health, financial, investment, tax, accounting, regulatory, safety-critical, or other professional advice or services, and any output that resembles such advice is provided for informational purposes only. You are solely responsible for determining whether AI Agent output is appropriate for your use case and for obtaining qualified professional advice where required. You must not use AI Agents, or output produced by AI Agents, to make decisions that materially affect an individual's legal rights, health, safety, finances, employment, housing, education, or access to essential services without appropriate human review and, where applicable, qualified professional oversight.
+
+Restrictions
+
+You represent and warrant that you will not contribute Your Content or otherwise use the Services or interact with the Services (including to generate any Generated Content) in any manner that: (i) infringes or violates the intellectual property rights or any other rights of anyone else (including Glide); (ii) violates any applicable Laws, including, without limitation, any applicable export control laws, privacy laws or any other purpose not reasonably intended by Glide, or (if applicable) our standard Data Processing Addendum (glideapps.com/legal/glide-os/dpa); (iii) is dangerous, harmful, fraudulent, deceptive, threatening, harassing, defamatory, obscene, pornographic, or otherwise objectionable; (iv) jeopardizes the security of your Glide account or anyone else's (such as allowing someone else to log in to the Services as you); (v) attempts, in any manner, to obtain the Account Information, account or other security information from any other user; (vi) violates the security of any computer network, or cracks any passwords or security encryption codes; (vii) runs Maillist, Listserv, any form of auto-responder or "spam" on the Services, or any processes that run or are activated while you are not logged into the Services, or that otherwise interferes with the proper working of the Services (including by placing an unreasonable load on the Services' infrastructure); (viii) "crawls," "scrapes," or "spiders" any page, data, or portion of or relating to the Services or Content (through use of manual or automated means); (ix) copies or stores any significant portion of the Content; or (x) decompiles, reverse engineers, or otherwise attempts to obtain the source code or underlying ideas or information of or relating to the Services. The Services may be used to reproduce materials so long as such use is limited to reproduction of non-copyrighted materials, materials in which you own the copyright, or materials you are authorized or legally permitted to reproduce. Except as and only to the extent expressly permitted in this Agreement or by applicable law, you may not copy, decompile, reverse engineer, disassemble, modify, or create derivative works of the Services or any part thereof.
+
+Glide Intellectual Property Rights
+
+As between Glide and you, Glide or its licensors own and reserve all right, title and interest in and to the Services and all hardware, software and other items used to provide the Services, other than the rights explicitly granted to you to use the Services in accordance with this Agreement. No title to or ownership of any proprietary rights related to the Services is transferred to you pursuant to this Agreement. All rights not explicitly granted to you are reserved by Glide.
+
+Usage Data
+
+In the course of providing the Services, Glide may collect, generate and derive technical, operational, and analytical data and metadata about the use, performance, configuration, and operation of the Services and the Applications you create, including, without limitation, logs, telemetry, event data, error and crash reports, performance and latency metrics, model and feature usage, credit consumption, aggregated user engagement signals, and statistical, aggregated, or de-identified data derived from any of the foregoing or from Your Content or User Data ("Usage Data"). As between you and Glide, Glide owns all right, title, and interest in and to Usage Data, including all intellectual property rights therein. Glide may use, reproduce, modify, distribute, disclose, and otherwise exploit Usage Data for any lawful business purpose, including, without limitation, to operate, secure, monitor, support, analyze, benchmark, improve, develop, and market the Services and to train and improve artificial intelligence models, in each case subject to any restrictions elsewhere in this Agreement on the use of Your Content that relates to an identifiable individual. Any disclosure of Usage Data by Glide to third parties (other than to Glide's service providers under appropriate confidentiality obligations) will be in aggregated, de-identified, or anonymized form that does not identify you, your End Users, or any individual.
+
+Feedback
+
+We always appreciate feedback and are always on the lookout for ways to improve. For feedback, comments, questions, or concerns, you can contact us at support@glideapps.com and we will return your e-mail at the soonest opportunity possible. In the event that you provide comments, suggestions, paid enhancements to the Service as part of a statement of work, or recommendations to Glide with respect to the Service (including, without limitation, with respect to modifications, enhancements, improvements and other changes to the Service), (collectively, "Feedback"), you hereby grant to Glide a world-wide, royalty free, irrevocable, perpetual license to use and otherwise incorporate any Feedback in connection with the Service.
+
+App Store
+
+The Services may include functionality (the "App Store") through which Glide makes available certain Applications that Glide has built or configured using the Services ("Glide Apps") for you to access and use in connection with the Services. Glide may, in its sole discretion and for any reason at any time, add, modify, remove, or decline to make available any Glide App through the App Store.
+
+Subject to the terms and conditions of this Agreement, for each Glide App that Glide permits you to access via the App Store, Glide hereby grants you a nonexclusive, revocable, limited, personal license to use such Glide App solely on the Services platform to build and provide Applications to your End Users via the Services. Except for the foregoing express license, (a) you shall have no other right to use or otherwise exploit any Glide App, and (y) you may not resell or otherwise relicense any Glide App (including via the App Store).
+
+Glide Apps may contain, embed, or otherwise depend on the Services, including technology, Content and intellectual property owned or licensed by Glide. Your access to or use of a Glide App does not grant you any rights in such Services, technology, Content or intellectual property (all of which are hereby reserved by Glide) except as expressly set forth herein.
+
+YOU ACKNOWLEDGE AND AGREE THAT GLIDE APPS ARE PROVIDED "AS IS" AND "AS AVAILABLE." Glide expressly disclaims any responsibility and liability for Glide Apps, including, without limitation, the functionality, content, code, configuration, development, operation, performance, security, and maintenance thereof, any warranty or condition of good and workmanlike services, any warranty or condition of quality or fitness for a particular purpose, and compliance with any law, regulation, or code. Before using any Glide App, you are solely responsible for making your own determination that the Glide App is suitable for your intended use, and for reviewing, testing, and validating the Glide App (including any code, content, and configuration contained in or generated from it). Glide does not warrant that any Glide App, or any code or other materials contained in or generated from it, is accurate, up to date, error-free, non-infringing, or fit for any particular purpose, and Glide shall have no obligation to provide any support or similar services with respect to Glide Apps or your use thereof.
+
+Accessing, copying, or using a Glide App may consume Credits. For example, copying a Glide App into your account may automatically consume build Credits, and a Glide App may include functionality that consumes your account Credits when it is used. You are solely responsible for all Credits consumed in connection with your access to, copying of, or use of any Glide App, and Glide will not be responsible for such consumption.
+
+Publicity Rights
+
+If you are using the Services on behalf of a business, organization, or other entity (and not as an individual consumer), you grant Glide a non-exclusive, worldwide, royalty-free license to use your name, logos, trademarks, trade names, and a general description of your use of the Services on Glide's website and in Glide's marketing, sales, promotional, investor, and similar materials, in each case in accordance with any usage guidelines you reasonably provide to Glide in writing. Glide will not disclose Your Content, User Data, or non-public information about your business in connection with such use without your prior consent. You may revoke this license on a prospective basis at any time by sending written notice to support@glideapps.com, provided that revocation will not require Glide to recall, modify, or remove materials already produced, distributed, or placed.
+
+Cost of Services
+
+The Services may be free or we may charge a fee for using the Services, which may be in the form of subscription or credit-based fees. If you are using a free version of the Services, we will notify you before any Services you are then using begin carrying a fee, and if you wish to continue using such Services, you must pay all applicable fees for such Services. Note that if you elect to receive text messages through the Services, data and message rates may apply. Any and all such charges, fees or costs are your sole responsibility. You should consult with your wireless carrier to determine what rates, charges, fees or costs may apply to your use of the Services.
+
+Paid Services. Certain of our Services may be subject to payments now or in the future, which may consist of credit as described in Section 16 (the "Paid Services"). Please see our Paid Services page for a description of the current Paid Services. Please note that any payment terms presented to you in the process of using or signing up for a Paid Service are deemed part of this Agreement.
+
+Billing. To the extent that we will bill you for your use of Paid Services, we use a third-party payment processor (the "Glide Account Payment Processor") to bill you through a payment account linked to your account on the Services (your "Glide Account"). The processing of such payments will be subject to the terms, conditions and privacy policies of the Glide Account Payment Processor in addition to this Agreement. Currently, we use Stripe, Inc. as our Glide Account Payment Processor. You can access Stripe's terms of service at https://stripe.com/us/checkout/legal and their privacy policy at https://stripe.com/us/privacy. We are not responsible for error by the Glide Account Payment Processor. By choosing to use Paid Services, you agree to pay us, through the Glide Account Payment Processor, all charges at the prices then in effect for any use of such Paid Services in accordance with the applicable payment terms, and you authorize us, through the Glide Account Payment Processor, to charge your chosen payment provider (your "Glide Account Payment Method"). You agree to make payment using that selected Glide Account Payment Method. We reserve the right to correct any errors or mistakes that the Glide Account Payment Processor makes even if it has already requested or received payment. For clarity, the foregoing only applies to our billing procedures with respect to your use of the Paid Services as Glide's customer. To review the billing procedures that apply to End-User Transactions (as defined herein), please refer to the Links to and Use of Other Sites and Materials section below.
+
+Payment Method. The terms of your payment will be based on your Glide Account Payment Method and may be determined by agreements between you and the financial institution, credit card issuer or other provider of your chosen Glide Account Payment Method. If we, through the Glide Account Payment Processor, do not receive payment from you, you agree to pay all amounts due on your Glide Account upon demand.
+
+Recurring Billing. Some of the Paid Services may consist of an initial period, for which there is a one-time charge, followed by recurring period charges as agreed to by you. By choosing a recurring payment plan, you acknowledge that such Services have an initial and recurring payment feature and you accept responsibility for all recurring charges prior to cancellation. Information regarding such recurring payment plans and their pricing is available at https://www.glideapps.com/pricing. WE MAY SUBMIT PERIODIC CHARGES (E.G., MONTHLY) WITHOUT FURTHER AUTHORIZATION FROM YOU, UNTIL YOU PROVIDE PRIOR NOTICE (RECEIPT OF WHICH IS CONFIRMED BY US) THAT YOU HAVE TERMINATED THIS AUTHORIZATION OR WISH TO CHANGE YOUR GLIDE ACCOUNT PAYMENT METHOD. SUCH NOTICE WILL NOT AFFECT CHARGES SUBMITTED BEFORE WE REASONABLY COULD ACT. TO TERMINATE YOUR AUTHORIZATION OR CHANGE YOUR GLIDE ACCOUNT PAYMENT METHOD, PLEASE CONTACT US AT SUPPORT@GLIDEAPPS.COM.
+
+Current Information Required. YOU MUST PROVIDE CURRENT, COMPLETE AND ACCURATE INFORMATION FOR YOUR GLIDE ACCOUNT. YOU MUST PROMPTLY UPDATE ALL INFORMATION TO KEEP YOUR GLIDE ACCOUNT CURRENT, COMPLETE AND ACCURATE (SUCH AS A CHANGE IN BILLING ADDRESS, CREDIT CARD NUMBER, OR CREDIT CARD EXPIRATION DATE), AND YOU MUST PROMPTLY NOTIFY US OR OUR GLIDE ACCOUNT PAYMENT PROCESSOR IF YOUR GLIDE ACCOUNT PAYMENT METHOD IS CANCELED (E.G., FOR LOSS OR THEFT) OR IF YOU BECOME AWARE OF A POTENTIAL BREACH OF SECURITY, SUCH AS THE UNAUTHORIZED DISCLOSURE OR USE OF YOUR ACCOUNT INFORMATION. CHANGES TO SUCH INFORMATION CAN BE MADE BY CONTACTING US AT SUPPORT@GLIDEAPPS.COM. IF YOU FAIL TO PROVIDE ANY OF THE FOREGOING INFORMATION, YOU AGREE THAT WE MAY CONTINUE CHARGING YOU FOR ANY USE OF PAID SERVICES UNDER YOUR GLIDE ACCOUNT UNLESS YOU HAVE TERMINATED YOUR PAID SERVICES AS SET FORTH ABOVE.
+
+Change in Amount Authorized. If the amount to be charged to your Glide Account varies from the amount you preauthorized (other than due to the imposition or change in the amount of state sales taxes), you have the right to receive, and we shall provide, notice of the amount to be charged and the date of the charge before the scheduled date of the transaction. Any agreement you have with your payment provider will govern your use of your Glide Account Payment Method. You agree that we may accumulate charges incurred and submit them as one or more aggregate charges during or at the end of each billing cycle.
+
+Auto-Renewal for Paid Services. Unless you opt out of auto-renewal, which can be done by contacting us at support@glideapps.com, any Paid Services you have signed up for will be automatically extended for successive renewal periods of the same duration as the subscription term originally selected, at the then-current non-promotional rate. To change or resign your Paid Services at any time, please contact us at support@glideapps.com. If you terminate a Paid Service, you may use your subscription until the end of your then-current term, and your subscription will not be renewed after your then-current term expires. However, you will not be eligible for a prorated refund of any portion of the subscription fee paid for the then-current subscription period. IF YOU DO NOT WANT TO CONTINUE TO BE CHARGED ON A RECURRING MONTHLY BASIS, YOU MUST CANCEL THE APPLICABLE PAID SERVICE BY CONTACTING US AT SUPPORT@GLIDEAPPS.COM OR TERMINATE YOUR GLIDE ACCOUNT BEFORE THE END OF THE RECURRING TERM. PAID SERVICES CANNOT BE TERMINATED BEFORE THE END OF THE PERIOD FOR WHICH YOU HAVE ALREADY PAID, AND EXCEPT AS EXPRESSLY PROVIDED IN THESE TERMS, GLIDE WILL NOT REFUND ANY FEES THAT YOU HAVE ALREADY PAID.
+
+Reaffirmation of Authorization. Your non-termination or continued use of a Paid Service reaffirms that we are authorized to charge your Glide Account Payment Method for that Paid Service. We may submit those charges for payment and you will be responsible for such charges. This does not waive our right to seek payment directly from you. Your charges may be payable in advance, in arrears, per usage, or as otherwise described when you initially selected to use the Paid Service.
+
+Free Trials and Other Promotions. Any free trial or other promotion that provides access to a Paid Service must be used within the specified time of the trial. You must stop using a Paid Service before the end of the trial period in order to avoid being charged for that Paid Service. If you cancel prior to the end of the trial period and are inadvertently charged for a Paid Service, please contact us at support@glideapps.com.
+
+Variable Pricing. Certain Paid Services may include pricing that is based on app utilization (e.g., based on the total number of End Users of your Applications). You acknowledge and agree that you are responsible for all fees associated with such Paid Services, even in cases where the utilization of your Applications exceeds your expectations. In cases of such excess utilization, (i) Glide may in its sole discretion elect to provide you with a non-refundable credit (but Glide is under no obligation to do so), and (ii) Glide will not provide refunds under any circumstances.
+
+Credits
+
+Certain Services may be metered or made available through a credit system. "Credits" are prepaid, non-refundable, non-redeemable units that you purchase, receive, or are granted to use designated Services or features (including, without limitation, AI-powered features and AI Agent operations). Credits represent only a limited license to access the Services and do not constitute money, currency, securities, deposits, stored value, gift cards, or any other financial instrument, do not earn interest, and have no cash or stored-value equivalent. Glide may, in its sole discretion, introduce, modify, retire, or change the type, denomination, pricing, allocation, consumption rate, or terms of any Credits at any time.
+
+Glide may make different categories of Credits available, which may include, without limitation, (a) "Paid Credits" purchased from Glide or included with a paid subscription, (b) "Free Credits" granted on a recurring or one-time basis as part of a free or paid plan, and (c) "Promotional Credits" granted in connection with a promotion, marketing offer, trial, referral, or other discretionary grant. Each category may be subject to different expiration, rollover, and usage rules, which Glide may publish on the Services or otherwise communicate to you. Unless otherwise stated at the time of grant or in the applicable plan description: (i) Free Credits expire at the end of the period for which they were granted (for example, daily or monthly) and do not roll over; (ii) Promotional Credits expire as stated in the applicable promotion, or, if no expiration is stated, at the end of the then-current billing cycle, may be limited to specific Services, and may not be combined with other promotions; and (iii) any rollover of unused Paid Credits is capped as described on the Services or in your plan, and rollover Credits remain available only while you maintain an active paid subscription. Where multiple categories of Credits are available, Glide may consume them in any order it determines.
+
+You may be able to purchase additional Credits through the Services and to enable auto-reload, by which your Credit balance is automatically replenished using your Glide Account Payment Method when it falls below a threshold you select. By enabling auto-reload, you authorize us, through the Glide Account Payment Processor, to charge your Glide Account Payment Method for each auto-reload transaction until you disable auto-reload.
+
+Credits are non-transferable and non-assignable and may not be redeemed for cash or any other value. Except where required by law, Credits, Credit purchases, subscription fees, and all other amounts paid to Glide are non-refundable. If your account or your right to use the Services is terminated by Glide for your breach of this Agreement, any remaining Credits (whether Paid, Free, or Promotional) will be forfeited without refund or credit. If you cancel a paid subscription, any remaining Paid Credits will remain available through the end of the then-current billing period and will expire thereafter. Glide may revoke, cancel, reduce, or adjust any Credits at any time if Glide reasonably believes they were granted in error, obtained through fraud, mistake, abuse, or chargeback, or obtained or used in violation of this Agreement. Glide relies on the records, calculations, and determinations of Glide and its designated third-party payment, metering, and infrastructure providers to measure your consumption of Credits, and such records and determinations will be final and binding on you absent manifest error.
+
+Service Dependencies and Availability
+
+The Services depend on, and are integrated with, a variety of third-party products and services, including, without limitation, cloud hosting and storage providers, payment processors, communications and messaging providers, third-party APIs and integrations, and third-party artificial intelligence, machine learning, and large-language-model providers (collectively, "Service Dependencies"). The availability, quality, accuracy, performance, latency, output, pricing, and continued existence of Service Dependencies are outside of Glide's control and may change, degrade, become unavailable, or be discontinued at any time.
+
+You acknowledge and agree that the Services, including AI features and AI Agents, may be delayed, interrupted, degraded, suspended, modified, or rendered unavailable from time to time as a result of, among other things, (a) outages, errors, or changes in any Service Dependency; (b) changes to model availability, model behavior, model versions, context limits, rate limits, terms, or pricing imposed by a third-party model or AI provider; (c) maintenance, upgrades, security incidents, or capacity constraints; (d) acts or omissions of any third party; or (e) events outside of Glide's reasonable control. Glide does not guarantee that any specific model, integration, feature, throughput, latency, or output quality will be available or continue to be available, and Glide may, in its sole discretion, substitute, modify, or remove underlying models, providers, or integrations at any time and without notice. Glide will have no liability to you or any End User for any unavailability, change, degradation, or discontinuation of any Service Dependency or of any Service that depends on a Service Dependency.
+
+Location-Based Services Consent
+
+You hereby expressly consent to our use of location-based services and expressly waive and release Glide from any and all liability, claims, causes of action or damages arising from your use of the Services or in any way relating to the use of the precise location and other location-based services.
+
+Beta and Experimental Features
+
+From time to time, Glide may make available pre-release, alpha, beta, preview, experimental, "labs," early-access, or similar features, functionality, integrations, or Services (collectively, "Beta Features"). Beta Features may be identified as such or may be offered without specific designation. Beta Features are provided for evaluation purposes only, are not part of the generally available Services, and may be incomplete, contain bugs or errors, behave unpredictably, change materially, or be modified, suspended, or discontinued (in whole or in part) at any time and without notice, with or without making the underlying functionality generally available.
+
+BETA FEATURES ARE PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT ANY REPRESENTATION, WARRANTY, INDEMNITY, SUPPORT, OR SERVICE LEVEL COMMITMENT OF ANY KIND, AND ARE EXCLUDED FROM ANY SERVICE LEVEL AGREEMENT OR OTHER PERFORMANCE COMMITMENT THAT MAY OTHERWISE APPLY TO THE SERVICES. YOUR USE OF BETA FEATURES IS AT YOUR SOLE RISK, AND YOU SHOULD NOT RELY ON BETA FEATURES FOR PRODUCTION, MISSION-CRITICAL, OR HIGH-RISK USE CASES. Glide may collect and use information about your use of Beta Features for purposes of evaluating, improving, and developing the Services.
+
+Disclaimers; Limitation of Liability
+
+THE SERVICES (INCLUDING THE GLIDE APPS) AND ALL INFORMATION, CONTENT (INCLUDING GENERATED CONTENT), MATERIALS, PRODUCTS AND OTHER SERVICES INCLUDED ON OR OTHERWISE MADE AVAILABLE TO YOU THROUGH THE SERVICES ARE PROVIDED BY AN "AS IS" AND "AS AVAILABLE" BASIS, UNLESS OTHERWISE SPECIFIED IN WRITING. GLIDE MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, AS TO THE OPERATION OF SERVICES, OR THE PRODUCTS, INFORMATION, CONTENT (INCLUDING GENERATED CONTENT), MATERIALS, OR OTHER SERVICES INCLUDED ON OR OTHERWISE MADE AVAILABLE TO YOU THROUGH THE SERVICES, UNLESS OTHERWISE SPECIFIED IN WRITING. YOU EXPRESSLY AGREE THAT YOUR USE OF THE SERVICES IS AT YOUR SOLE RISK. YOU SHOULD NOT RELY ON ANY GENERATED CONTENT WITHOUT INDEPENDENTLY CONFIRMING ITS ACCURACY, SUITABILITY OR LEGALITY. GLIDE DOES VERIFY THE ACCURACY OF ANY GENERATED CONTENT, AND GLIDE MAKES NO REPRESENTATION OR WARRANTY AS TO THE ACCURACY, COMPLETENESS, OR LEGALITY OF ANY GENERATED CONTENT. GENERATED CONTENT MAY CONTAIN MATERIAL INACCURACIES EVEN IF IT APPEARS ACCURATE BECAUSE OF ITS LEVEL OF DETAIL OR SPECIFICITY.
+
+TO THE FULLEST EXTENT PERMISSIBLE BY LAW, GLIDE DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. GLIDE DOES NOT WARRANT THAT THE SERVICES, PRODUCTS, INFORMATION, CONTENT (INCLUDING GENERATED CONTENT), MATERIALS, OR OTHER SERVICES INCLUDED ON OR OTHERWISE MADE AVAILABLE TO YOU THROUGH THE SERVICES OR ELECTRONIC COMMUNICATIONS SENT FROM GLIDE ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. TO THE FULLEST EXTENT PERMISSIBLE BY LAW, GLIDE WILL NOT BE LIABLE FOR ANY DAMAGES OF ANY KIND ARISING FROM THE USE OF THE SERVICES, OR FROM ANY PRODUCTS, INFORMATION, CONTENT (INCLUDING GENERATED CONTENT), MATERIALS, OR OTHER SERVICES INCLUDED ON OR OTHERWISE MADE AVAILABLE TO YOU THROUGH THE SERVICES, INCLUDING, BUT NOT LIMITED TO DIRECT, INDIRECT, INCIDENTAL, PUNITIVE, AND CONSEQUENTIAL DAMAGES, UNLESS OTHERWISE SPECIFIED IN WRITING.
+
+IN NO EVENT WILL GLIDE BE LIABLE TO ANY PARTY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES OF ANY TYPE WHATSOEVER RELATED TO OR ARISING FROM THE SERVICES OR ANY USE OF THE SERVICES, OR OF ANY SITE OR RESOURCE LINKED TO, REFERENCED, OR ACCESSED THROUGH THE SERVICES, OR FOR THE USE OR DOWNLOADING OF, OR ACCESS TO, ANY MATERIALS, INFORMATION, PRODUCTS, OR SERVICES, INCLUDING, WITHOUT LIMITATION, ANY LOST PROFITS, BUSINESS INTERRUPTION, LOST SAVINGS OR LOSS OF PROGRAMS OR OTHER DATA, EVEN IF GLIDE IS EXPRESSLY ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THIS EXCLUSION AND WAIVER OF LIABILITY APPLIES TO ALL CAUSES OF ACTION, WHETHER BASED ON CONTRACT, WARRANTY, TORT, STRICT LIABILITY OR ANY OTHER LEGAL THEORIES.
+
+TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE MAXIMUM AGGREGATE LIABILITY OF GLIDE ARISING OUT OF OR IN ANY WAY RELATED TO THE SERVICES OR PRODUCTS EXCEED THE AMOUNT PAID FOR SUCH PRODUCTS OR EXCEED THE GREATER OF $100 OR THE AMOUNTS PAID BY YOU TO GLIDE IN CONNECTION WITH THE SERVICES IN THE PRECEDING TWELVE (12) MONTH PERIOD. THE FOREGOING SHALL CONSTITUTE GLIDE'S SOLE LIABILITY AND OBLIGATION, REGARDLESS OF THE FORM OF ACTION, WHETHER BASED IN CONTRACT, WARRANTY, TORT, STRICT LIABILITY OR ANY OTHER LEGAL OR EQUITABLE THEORY.
+
+TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, YOU, ON BEHALF OF YOUR HEIRS, EXECUTORS, ADMINISTRATORS, LEGAL AND PERSONAL REPRESENTATIVES, HEREBY RELEASE, WAIVE, ACQUIT AND FOREVER DISCHARGE GLIDE FROM AND AGAINST, AND COVENANT NOT TO SUE, FOR ALL CLAIMS YOU HAVE OR MAY HAVE ARISING OUT OF OR IN ANY WAY RELATED TO THIS AGREEMENT, THE SERVICES, AND THE PRODUCTS. IF YOU ARE A CALIFORNIA RESIDENT, YOU HEREBY WAIVE YOUR RIGHTS UNDER CALIFORNIA CIVIL CODE 1542, WHICH STATES "A GENERAL RELEASE DOES NOT EXTEND TO CLAIMS WHICH THE CREDITOR DOES NOT KNOW OR SUSPECT TO EXIST IN HIS OR HER FAVOR AT THE TIME OF EXECUTING THE RELEASE, WHICH IF KNOWN BY HIM OR HER MUST HAVE MATERIALLY AFFECTED HIS OR HER SETTLEMENT WITH THE DEBTOR."
+
+Indemnity
+
+You agree to indemnify and hold the Glide harmless from and against any and all claims, liabilities, damages (actual and consequential), losses and expenses (including attorneys' fees) arising from or in any way related to any claims relating to (a) your use of the Services (including any actions taken by a third party using your account), and (b) your violation of this Agreement. In the event of such a claim, suit, or action ("Claim"), we will attempt to provide notice of the Claim to the contact information we have for your account (provided that failure to deliver such notice shall not eliminate or reduce your indemnification obligations hereunder).
+
+Dispute Resolution and Arbitration
+
+In the interest of resolving disputes between you and Glide in the most expedient and cost effective manner, you and Glide agree that every dispute arising in connection with this Agreement will be resolved by binding arbitration. Arbitration uses a neutral arbitrator instead of a judge or jury, may allow for more limited discovery than in court, and is subject to very limited (if any) review by courts. Arbitrators can award the same damages and relief that a court can award. This agreement to arbitrate disputes includes all claims arising out of or relating to any aspect of these Terms, whether based in contract, tort, statute, fraud, misrepresentation, or any other legal theory, and regardless of whether a claim arises during or after the termination of these Terms. YOU UNDERSTAND AND AGREE THAT, BY ENTERING INTO THESE TERMS, YOU AND GLIDE ARE EACH WAIVING THE RIGHT TO A TRIAL BY JURY OR TO PARTICIPATE IN A CLASS, COLLECTIVE, OR REPRESENTATIVE ACTION.
+
+Despite the provisions of the preceding paragraph, nothing in this Agreement will be deemed to waive, preclude, or otherwise limit the right of either party to: (a) bring an individual action in small claims court; (b) pursue an enforcement action through the applicable federal, state, or local agency if that action is available; (c) seek injunctive relief in a court of law; or (d) to file suit in a court of law to address an intellectual property infringement claim.
+
+Arbitrator
+
+Any arbitration between you and Glide will be settled under the Federal Arbitration Act, and governed by the Commercial Dispute Resolution Procedures and the Supplementary Procedures for Consumer Related Disputes (collectively, "AAA Rules") of the American Arbitration Association ("AAA"), as modified by this Agreement, and will be administered by the AAA. The AAA Rules and filing forms are available online at www.adr.org, by calling the AAA at 1-800-778-7879, or by contacting Glide at support@glideapps.com.
+
+Notice; Process
+
+A party who intends to seek arbitration must first send a written notice of the dispute to the other party by certified U.S. Mail or by Federal Express (signature required) or, only if such other party has not provided a current physical address, then by electronic mail ("Notice"). Glide's address for Notice is:
+
+typeguard, Inc.
+1 Blackfield Drive, Suite 2, #346
+Tiburon, CA 94920
+
+The Notice must: (a) describe the nature and basis of the claim or dispute; and (b) set forth the specific relief sought ("Demand"). The parties will make good faith efforts to resolve the claim directly, but if the parties do not reach an agreement to do so within 30 days after the Notice is received, you or Glide may commence an arbitration proceeding. During the arbitration, the amount of any settlement offer made by you or Glide must not be disclosed to the arbitrator until after the arbitrator makes a final decision and award, if any. If the dispute is finally resolved through arbitration in your favor, Glide will pay you the highest of the following: (i) the amount awarded by the arbitrator, if any; (ii) the last written settlement amount offered by Glide in settlement of the dispute prior to the arbitrator's award; or (iii) $1,000.
+
+Fees and Procedure
+
+The parties to the arbitration shall each pay an equal share of the costs and expenses of such arbitration, and each party shall separately pay for its respective counsel fees and expenses; provided, however, that the arbitrator may award attorneys' fees and costs to the prevailing party, except as prohibited by law. If you commence arbitration in accordance with this Agreement, Glide will reimburse you for your payment of the filing fee, unless your claim is for more than $10,000, in which case the payment of any fees will be decided by the AAA Rules. Any arbitration hearing will take place at a location to be agreed upon in San Francisco, California, but if the claim is for $10,000 or less, you may choose whether the arbitration will be conducted: (a) solely on the basis of documents submitted to the arbitrator; (b) through a non-appearance based telephone hearing; or (c) by an in-person hearing as established by the AAA Rules in the county (or parish) of your billing address. If the arbitrator finds that either the substance of your claim or the relief sought in the Demand is frivolous or brought for an improper purpose (as measured by the standards set forth in Federal Rule of Civil Procedure 11(b)), then the payment of all fees will be governed by the AAA Rules. In that case, you agree to reimburse Glide for all monies previously disbursed by it that are otherwise your obligation to pay under the AAA Rules. Regardless of the manner in which the arbitration is conducted, the arbitrator must issue a reasoned written decision sufficient to explain the essential findings and conclusions on which the decision and award, if any, are based. The arbitrator may make rulings and resolve disputes as to the payment and reimbursement of fees or expenses at any time during the proceeding and upon request from either party made within 14 days of the arbitrator's ruling on the merits.
+
+The arbitrator may grant injunctions and other relief. The arbitrator shall administer and conduct any arbitration in accordance with the law of the jurisdiction in which the dispute arose, including civil procedure rules, and the arbitrator shall apply the substantive and procedural law of the jurisdiction in which the dispute arose. To the extent that the AAA Rules conflict with local law, local law shall take preference. The decision of the arbitrator shall be final, conclusive, and binding on the parties to the arbitration. The parties agree that the prevailing party in any arbitration shall be entitled to injunctive relief in any court of competent jurisdiction to enforce the arbitration award.
+
+No Class Actions
+
+YOU AND GLIDE AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR MEMBER OF ANY CLASS, COLLECTIVE, OR REPRESENTATIVE PROCEEDING except that users may bring a proceeding as a private attorney general, if and as allowed by law. Further, unless both you and Glide agree otherwise, the arbitrator may not consolidate more than one person's claims, and may not otherwise preside over any form of a representative or class proceeding. Nothing in this Agreement infringes upon any rights a User may have under the Sarbanes-Oxley Act, including any rights prohibiting compulsory arbitration.
+
+Modifications to this Arbitration Provision
+
+If Glide makes any future change to this arbitration provision, other than a change to Glide's address for Notice, you may reject the change by sending us written notice within 30 days of the change to Glide's address for Notice, in which case your account with Glide will be immediately terminated and this arbitration provision, as in effect immediately prior to the changes you rejected will survive.
+
+Enforceability
+
+If the "No Class Actions" section is found to be unenforceable or if the entirety of this Dispute Resolution and Arbitration section is found to be unenforceable, then the entirety of this Dispute Resolution and Arbitration section will be null and void and, in that case, the parties agree that the exclusive jurisdiction and venue described in the Choice of Law section will govern any action arising out of or related to this Agreement.
+
+Right to Opt Out of Arbitration
+
+You may submit a statement notifying Glide that you wish to opt out and not be subject to arbitration under this section. Should you desire to opt out, you must notify Glide of your intention to opt out by submitting a written notice, which may be via email to support@glideapps.com, stating that you are opting out of this section. In order to be effective, your opt-out notice must be provided within thirty (30) days of your agreeing to these Terms. Should you timely opt out of this section, you may pursue available legal remedies and will not be required to arbitrate claims.
+
+Choice of Law
+
+These Terms are governed by and construed in accordance with the laws of the State of California, United States of America, without giving effect to any conflict of law principles, except as may be otherwise provided in supplemental terms applicable to your region. Any dispute or claim arising out of or in connection with this Agreement shall be adjudicated in San Francisco, California, U.S.A.
+
+Termination of Service
+
+You may terminate this Agreement at any time by contacting Glide at support@glideapps.com; please refer to the Privacy Policy, as well as the licenses herein, to understand how we treat information you provide to us after you have stopped using the Services.
+
+Glide may also terminate your privilege to use or access the Services immediately and without notice for any reason whatsoever. Upon such termination, you must immediately cease accessing or using the Services and agree not to access or make use of, or attempt to use, the Services. Furthermore, you acknowledge that Glide reserves the right to take action -- technical, legal or otherwise -- to block, nullify or deny your ability to access the Services. You understand that Glide may exercise this right in its sole discretion, and this right shall be in addition to and not in substitution for any other rights and remedies available to Glide. All provisions of this Agreement which by their nature should survive termination shall survive the termination of your access to the Services, including, without limitation, provision regarding ownership, warranty disclaimers, indemnity, and limitations of liability.
+
+Restrictions on Use
+
+You may not use the Services or contents set forth therein for any illegal purpose or in any manner inconsistent with this Agreement. You agree not to use, transfer, distribute, or dispose of any information contained in the Services in any manner that could compete with the business of Company. You may not copy, reproduce, recompile, disassemble, decompile, reverse engineer, distribute, modify, publish, display, perform, upload to, create derivative works from, frame transmit, or in any way exploit any part of the Service, you may not recirculate, redistribute or publish the analysis and presentation included in the Service without Company's prior written consent.
+
+Modification of Company's content is a violation of the copyrights and other proprietary rights of Company or its subsidiaries. Additionally, you may not monetize or offer any part of the service for sale or distribute it over any other medium including but not limited to a computer network or hyperlink framing on the internet without the prior written consent of Company. The Services and the information contained therein may not be used to construct a database of any kind. The Services and content contained therein may not be stored (in its entirety or in any part) in databases for access by you or any third party or to distribute.
+
+In the absence of a contrary agreement, you may not use any of the trademarks, trade names, service marks, copyrights, or logos of Company or its subsidiaries suppliers or affiliates in any manner which creates the impression that such items belong to or are associated with you or, except as otherwise provided herein, are used with Company's consent, and you acknowledge that you have no ownership rights in and to any of such items. You will not use the service or the information contained therein in unsolicited mailings or spam material. You will not use any trademarks, trade names, service marks, copyrights, or logos of Company or its subsidiaries in unsolicited mailings or spam material. You will not spam or send unsolicited mailings to any person or entity using the Services.
+
+No Agency
+
+No agency, partnership, joint venture, employee-employer or franchiser-franchisee relationship between you and Glide is intended or created by this Agreement. Users are not Glide's representative or agent, and may not enter into an agreement on Glide's behalf.
+
+Digital Millennium Copyright Act
+
+We comply with the provisions of the Digital Millennium Copyright Act applicable to internet service providers (17 U.S.C. §512, as amended). If you have an intellectual property rights-related complaint about material posted on the Services, you may contact our Designated Agent at the following address:
+
+typeguard, Inc.
+1 Blackfield Drive, Suite 2, #346
+Tiburon, CA 94920
+
+Any notice alleging that materials hosted by or distributed through the Services infringe intellectual property rights must include the following information:
+
+An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other right being infringed;
+
+A description of the copyright-protected work or other intellectual property right that you claim has been infringed;
+
+A description of the material that you claim is infringing and where it is located on the Service, with sufficient detail so that Glide is capable of finding and verifying its existence;
+
+Your address, telephone number, and, if available, email address;
+
+A statement by you that you have a good faith belief that the use of those materials on the Service is not authorized by the copyright owner, its agent, or the law; and
+
+A statement by you that the above information in your notice is accurate and that, under penalty of perjury, you are the copyright or intellectual property owner or authorized to act on the copyright or intellectual property owner's behalf.
+
+Glide will promptly terminate without notice the accounts of users that are determined by Glide to be "Repeat Infringers." A Repeat Infringer is a user who has been notified of infringing activity or has had user content removed from the Services at least twice.
+
+Links to and Use of Other Sites and Materials
+
+As part of using the Services, Glide may provide you with links to third party website(s) ("Third Party Sites") as well as content or items belonging to, originating from, or powered by third parties, such as various artificial intelligence functionality (the "Third Party Applications, Software or Content"). Glide has no control over, and assumes no responsibility for, Third Party Sites and Third Party Applications, Software, or Content or the promotions, materials, information, goods or services available on these Third Party Sites or Third Party Applications, Software, or Content. Such Third Party Sites and Third Party Applications, Software, or Content are not investigated, monitored or checked for accuracy, appropriateness, or completeness by Glide, and Glide is not responsible for any Third Party Sites accessed through the Services or any Third Party Applications, Software, or Content posted on, available through or installed from the Services, including the content, accuracy, offensiveness, opinions, reliability, privacy practices or other policies of or contained in the Third Party Sites or the Third Party Applications, Software or Content. Inclusion of, linking to, or permitting the use or installation of any Third Party Site or any Third Party Applications, Software, or Content does not imply approval or endorsement thereof by Glide. If you decide to leave the Services and access the Third Party Sites or to use or install any Third Party Applications, Software or, Content, you do so at your own risk and you should be aware that our terms and policies no longer govern. You should review the applicable terms and policies, including privacy and data gathering practices, of any site to which you navigate from the Services or relating to any Applications you use or install from the site.
+
+Glide uses Google Sheets' API to provide the Services to you, and you hereby agree to be bound by the Google APIs Terms of Service available at https://developers.google.com/terms/.
+
+The Services may provide functionality that allows you to charge and accept payments from your customers for products or services purchased through the Applications that you create and offer on the Services ("End-User Transactions"), which are processed by Stripe via Stripe Connect. We facilitate each End-User Transaction by collecting from your customer information necessary to enable the processing of that End-User Transaction ("End-User Payment Information") and submitting it to Stripe. You hereby authorize us to provide End-User Payment Information to Stripe to initiate and process End-User Transactions. You hereby agree to be bound by the Stripe Connected Account Agreement available at https://stripe.com/connect-account/legal and acknowledge that Stripe's privacy policy is available at https://stripe.com/privacy. We are not responsible for the relationships between you and your customers, for your products or services, or for any liability associated therewith, including but not limited to the End-User Transactions.
+
+As further described on the Services, we may charge you a transaction fee for each End-User Transaction that is made between you and your customers ("End-User Transaction Fee"). We reserve the right to change the End-User Transaction Fee amounts at any time.
+
+Privacy
+
+Glide's current privacy policy is available on the Services and at our website (glideapps.com/legal/glide-os/privacy) (the "Privacy Policy"), which is incorporated by this reference. Please review the Privacy Policy closely.
+
+Electronic Communications
+
+The communications between you and Company use electronic means, whether you use the Services or send us emails, or whether Company posts notices on the service or communicates with you via email. For contractual purposes, you (a) consent to receive communications from Company in an electronic form; and (b) agree that all terms and conditions, agreements, notices, disclosures, and other communications that Company provides to you electronically satisfy any legal requirement that such communications would satisfy if it were in writing.
+
+By creating an account on our Service, you agree to subscribe to newsletters or marketing materials and other promotional information we may send. However, you may opt out of receiving any, or all, of these marketing communications from us by following the unsubscribe link or instructions provided in any email we send. Please note that we may still send you transactional or administrative messages related to the Service even after you have opted out of receiving marketing communications.
+
+Notice
+
+Communications made through the Service's e-mail and messaging system, will not constitute legal notice to Company or any of its officers, employees, agents or representatives in any situation where notice to Company is required by contract or any law or regulation.
+
+Any such notice must be sent to:
+
+typeguard, Inc.
+1 Blackfield Drive, Suite 2, #346
+Tiburon, CA 94920
+
+Under California Civil Code Section 1789.3, California users of the Services receive the following specific consumer rights notice: The Complaint Assistance Unit of the Division of Consumer Services of the California Department of Consumer Affairs may be contacted in writing at 1020 N Street, #501, Sacramento, California 95814, or by telephone at 1-916-445-1254.
+
+Changes and Amendments to Terms
+
+This Agreement is effective as of the "Last Modified" date identified at the top of this page. We expressly reserve the right to change this Agreement from time to time without notice to you. You acknowledge and agree that it is your responsibility to review the Services and this Agreement from time to time and to familiarize yourself with any modifications. Your continued use of the Services after such modifications will constitute acknowledgement of the modified Agreement to abide and be bound by the modified Agreement. However, for any material modifications to this Agreement or in the event that such modifications materially alter your rights or obligations hereunder, such amended Agreement will automatically be effective upon the earlier of (i) your continued use of the Services with actual knowledge of such modifications, or (ii) 30 days from publication of such modified Agreement on the Services. Notwithstanding the foregoing, the resolution of any dispute that arises between you and us will be governed by the Agreement in effect at the time such dispute arose.
+
+General Terms
+
+You will be responsible for paying, withholding, filing, and reporting all taxes, duties, and other governmental assessments associated with your activity in connection with the Service, provided that the Glide may, in its sole discretion, do any of the foregoing on your behalf or for itself as it sees fit. You hereby agree that Glide is authorized to receive notices or forms, such as tax invoices, from Stripe on your behalf, and Glide will promptly make such notices and forms available to you in a commercially reasonable manner consistent with applicable law.
+
+If any part of this Agreement is held invalid or unenforceable, that portion of the Agreement will be limited or eliminated, to the minimum extent necessary, so that this Agreement shall otherwise remain in full force and effect and enforceable. The remaining portions will remain in full force and effect. Any failure on the part of Company to enforce any provision of this Agreement will not be considered a waiver of our right to enforce such provision. Our rights under this Agreement will survive any termination of this Agreement. Except as expressly set forth herein, you and Glide agree there are no third-party beneficiaries intended under these Terms.
+
+Company may assign or delegate this Agreement, in whole or in part, to any person or entity at any time with or without your consent, including, but not limited, to a subsidiary or an acquirer of assets. You may not assign or delegate any rights or obligations under this Agreement without Company's prior written consent, and any unauthorized assignment and delegation by you is void.
+
+You acknowledge that you have read this Agreement, and understand and agree to be bound by the terms and conditions herein. You further acknowledge that this Agreement represent represent the complete and exclusive statement of the agreement between us and that it supersedes and cancels any proposal or prior agreement oral or written, and any other communications between us related to the subject matter contained in this Agreement.
+
+Product
+
+Platform
+
+Bring your own agent
+
+Apps
+
+Inventory
+
+Logistics
+
+Procurement
+
+Vendor Management
+
+Warehouse Management
+
+Project Management
+
+Portals
+
+Dashboards
+
+CRM
+
+Work Orders
+
+Field Sales
+
+All Apps
+
+Solutions
+
+Business
+
+Enterprise
+
+Supply Chain
+
+Manufacturing
+
+Retail
+
+Real Estate
+
+Hospitality
+
+Professional Services
+
+Resources
+
+Templates
+
+Customer Stories
+
+Docs
+
+Help Center
+
+Community
+
+Events
+
+Glide News
+
+AI in Operations Report
+
+Company
+
+Pricing
+
+CareersHiring
+
+Blog
+
+Research
+
+Trust Center
+
+Compare Glide
+
+FAQs
+
+Integrations
+
+Changelog
+
+Glide Classic
+
+Product
+
+Platform
+
+Bring your own agent
+
+Company
+
+Pricing
+
+CareersHiring
+
+Blog
+
+Research
+
+Trust Center
+
+Compare Glide
+
+FAQs
+
+Integrations
+
+Changelog
+
+Glide Classic
+
+Apps
+
+Inventory
+
+Logistics
+
+Procurement
+
+Vendor Management
+
+Warehouse Management
+
+Project Management
+
+Portals
+
+Dashboards
+
+CRM
+
+Work Orders
+
+Field Sales
+
+All Apps
+
+Solutions
+
+Business
+
+Enterprise
+
+Supply Chain
+
+Manufacturing
+
+Retail
+
+Real Estate
+
+Hospitality
+
+Professional Services
+
+Resources
+
+Templates
+
+Customer Stories
+
+Docs
+
+Help Center
+
+Community
+
+Events
+
+Glide News
+
+AI in Operations Report
+
+Product
+
+Platform
+
+Bring your own agent
+
+Solutions
+
+Business
+
+Enterprise
+
+Supply Chain
+
+Manufacturing
+
+Retail
+
+Real Estate
+
+Hospitality
+
+Professional Services
+
+Company
+
+Pricing
+
+CareersHiring
+
+Blog
+
+Research
+
+Trust Center
+
+Compare Glide
+
+FAQs
+
+Integrations
+
+Changelog
+
+Glide Classic
+
+Apps
+
+Inventory
+
+Logistics
+
+Procurement
+
+Vendor Management
+
+Warehouse Management
+
+Project Management
+
+Portals
+
+Dashboards
+
+CRM
+
+Work Orders
+
+Field Sales
+
+All Apps
+
+Resources
+
+Templates
+
+Customer Stories
+
+Docs
+
+Help Center
+
+Community
+
+Events
+
+Glide News
+
+AI in Operations Report
+
+SOC II TYPE 2GDPRCCPA
+
+Glide turns spreadsheets into beautiful, intelligent apps.
+
+Status
+
+Terms
+
+Privacy
+
+OSS
+
+Sitemap
+
+LLMS
+
+Contact Us

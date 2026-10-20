@@ -1,0 +1,97 @@
+Echo JS 0.11.0
+
+top
+latest
+random
+submit
+
+login / register
+<~>
+
+Echo JS
+
+Echo JS is a community-driven news site entirely focused on JavaScript development, HTML5, and front-end news.
+
+Staff
+
+Admin: Fabien Allanic
+
+Admin: Michael J. Ryan
+
+Former Staff
+
+Founder: Frederic Cambus
+
+Admin: Steffen Bruchmann
+
+Twitter
+
+Follow Echo JS on Twitter, our official account is: @echojs
+
+News
+
+[2015-02-16] Echo JS has partnered with O'Reilly's Fluent Conference 2015
+
+[2014-01-08] Echo JS has partnered with O'Reilly's Fluent Conference. March 11-13, 2014 in San Francisco
+
+[2013-06-18] We are happy to sponsor the 2013 edition of the DemoJS Demoparty!
+
+[2013-02-25] Echo JS has partnered with O'Reilly's Fluent Conference: JavaScript & Beyond. May 28-30, 2013 in San Francisco
+
+[2013-02-08] Echo JS is happy to sponsor the Spring 2013 edition of the JS1K competition!
+
+Giveaways
+
+[2015-02-22] Echo JS is running a conference pass giveaway for Oreilly's Fluent Conference 2015
+
+[2014-01-08] Echo JS is running a conference pass giveaway for Oreilly's Fluent Conference 2014
+
+[2013-05-22] Win a WebStorm license (the smartest JavaScript IDE by JetBrains) with Echo JS
+
+[2013-03-25] Echo JS is running a conference pass giveaway for Oreilly's Fluent Conference "JavaScript and Beyond"!
+
+Third-party applications
+
+Desktop: EchoJS Desktop Reader by Steffen Bruchmann (works on Linux, Mac OSX and Windows)
+
+iPhone: sonarJS by Damien Klinnert (Source code: GitHub)
+
+WP8: EchoesJS by Christopher Shepherd (Source code: GitHub)
+
+General rules for posting
+
+Edit titles: only article title, no blog name, no period at the end
+
+Edit URLs: no tracking codes
+
+Respect the case: JavaScript, not javascript or javaScript or Javascript
+
+Tag articles older than one year. Example: Welcome to Echo JS! (2011)
+
+No link to summaries, only link to original content
+
+No link to newsletters, see previous rule
+
+No URL shortened links, only real links to pages
+
+No commercial content or libraries (even with free demo)
+
+JavaScript related content only
+
+English content only
+
+about | source code | rss feed | twitter
+
+Keyboard shortcuts
+
+j/k:
+
+next/previous item
+
+enter:
+
+open link
+
+a/z:
+
+up/down vote item

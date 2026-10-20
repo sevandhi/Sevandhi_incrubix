@@ -1,0 +1,45 @@
+[topic title]
+Welcome to the Ghost Community
+
+[first post]
+This is the central forum for all discussion and support for the Ghost community. This topic is a general overview of how everything works, and where to find everything you need.
+
+Making a Post
+
+The Ghost community forum is a discussion board, with a few extra pieces of functionality baked in. Here’s a quick overview of the main aspects:
+
+The forum is made up of categories, when you post a new topic, please make sure it’s in the correct category. If you need help, use the Developer help category, and so on. Most categories are organised by whatever the most recent topic of conversation is.
+
+There are three notable exceptions:
+
+Ideas / Suggestions
+
+If you have an idea, feature request, suggestion, or hunch about something which you would like to see in Ghost - you can make a post in the Ideas category. Posts in this category can be voted on by other members, so it’s easy for the Ghost core team to get a sense of what most people want.
+
+Ideas should be for things which are new features or functionality which does not yet exist in Ghost. If you’re just having a problem or have found a bug which you need some help with, then post in Developer help.
+
+News
+
+The community forum also powers all of the comments on our official blog(s), and these are created automatically in the News category. New topic creation here is automatic, and restricted – but anyone can reply to new topics once they’re started. All replies are displayed publicly on blog.ghost.org and dev.ghost.org
+
+Marketplace
+
+If you have something Ghost related to buy or sell with the rest of the community, please make sure that it happens in the Marketplace category. This category requires you to be an active user before you’re allowed to create new topics. So you can’t just sign up and start spamming stuff to sell. Also, don’t solicit members via DM with your products or services. Any reports of this will result in immediate suspension.
+
+Do not spam.
+
+How to get help as quickly as possible
+
+We understand that a lot of people join the community when they need a hand configuring, running or doing something with Ghost, and they’re in a hurry to get answers. So, here’s everything you need to know about how to get help as quickly as possible:
+
+This is a community forum - There are no full-time staff here. Ghost is an open source project run by about 3 full time maintainers who work for a non-profit foundation. This forum exists for Ghost users to help each other. So…
+
+Be nice - Given that the only people here to help you are your peers, if you show up with a bad attitude, give no context or useful information, or just generally act like a jerk – people aren’t going to be super interested in helping. If you’re polite and friendly, though, you might be surprised just how much others are willing to lend a hand.
+
+Give back - If you do get your issue solved, consider paying it forward and giving a little something back. Maybe write a post about how you solved your issue (for others to find) or help someone else with a different topic that you know the answer to. Quid pro quo, Clarice.
+
+If you’re still stuck… - We do have a premium hosting platform with a support team, which makes everything considerably easier. If you get completely stuck, Ghost(Pro) might be the best option for you.
+
+Code of Conduct
+
+All posts on the Ghost community are subject to our code of conduct, in addition to standard community guidelines. TLDR - If you behave like a dick, you’re getting kicked out. Zero tolerance.

@@ -1,0 +1,29 @@
+[category: Announcements]
+New release announcements and other important updates from the Softr team.
+
+[category: Introduce Yourself!]
+We’d love for your to introduce yourself and say hello to the community!
+
+[category: Ask the community]
+Here’s a couple of tips:
+
+[category: Feature Requests]
+Prior to posting, you might want to check our Roadmap page with planned and ongoing features and upvote.
+
+[category: Data Sources]
+Discuss Softr’s integrated data sources, share insights, address challenges, and suggest future integrations.
+
+[category: Guides & Help Docs]
+Here you can share your Softr tips, tutorials, video guides, and other similar content.
+
+[category: Built with Softr]
+Here you can share your projects built with Softr.
+
+[category: Bug Reports]
+Thanks for taking the time to share your bug report with us — we really appreciate it.
+
+[category: Events]
+Use this topic to promote and share events that showcase Softr.
+
+[category: Custom Coding]
+Share your custom code snippets and ask questions related to custom scripts, apps, CSS, HTML etc…

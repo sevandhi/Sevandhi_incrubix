@@ -1,0 +1,14 @@
+[instance name]
+TILvids
+
+[short description]
+Welcome to TILvids! Our goal is to provide you with interesting video content that will make you say, "Today I Learned!"
+
+[terms]
+No terms for now.
+
+[code of conduct]
+TILvids is a community built around learning and betterment of people. We love discussion and conversation, but it will conducted in a respectful way. Anyone who is not willing to be kind and constructive will be asked not to participate in the community conversation.
+
+[moderation information]
+TILvids is being built as a community for creators and viewers of edutainment content. We strongly support free-speech for our creators, but also want to keep a tight focus on the type of content available in our community. We will employ moderation to keep that focus, but will allow as much free-speech as possible within that focus.

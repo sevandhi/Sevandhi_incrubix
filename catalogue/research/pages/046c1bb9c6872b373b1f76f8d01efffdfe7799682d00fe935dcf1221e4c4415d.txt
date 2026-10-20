@@ -1,0 +1,336 @@
+Skip to content
+
+Navigation Menu
+
+Sign in
+Appearance settings
+
+Platform
+
+AI CODE CREATION
+
+GitHub CopilotWrite better code with AI
+
+GitHub Copilot appDirect agents from issue to merge
+
+MCP RegistryIntegrate external tools
+
+DEVELOPER WORKFLOWS
+
+ActionsAutomate any workflow
+
+CodespacesInstant dev environments
+
+IssuesPlan and track work
+
+Code ReviewManage code changes
+
+Code QualityEnforce quality at merge
+
+APPLICATION SECURITY
+
+GitHub Advanced SecurityFind and fix vulnerabilities
+
+Code securitySecure your code as you build
+
+Secret protectionStop leaks before they start
+
+EXPLORE
+
+Why GitHub
+
+Documentation
+
+Blog
+
+Changelog
+
+Marketplace
+
+View all features
+
+Solutions
+
+BY COMPANY SIZE
+
+Enterprises
+
+Small and medium teams
+
+Startups
+
+Nonprofits
+
+BY USE CASE
+
+App Modernization
+
+DevSecOps
+
+DevOps
+
+CI/CD
+
+View all use cases
+
+BY INDUSTRY
+
+Healthcare
+
+Financial services
+
+Manufacturing
+
+Government
+
+View all industries
+
+View all solutions
+
+Resources
+
+EXPLORE BY TOPIC
+
+AI
+
+Software Development
+
+DevOps
+
+Security
+
+View all topics
+
+EXPLORE BY TYPE
+
+Customer stories
+
+Events & webinars
+
+Ebooks & reports
+
+Business insights
+
+GitHub Skills
+
+SUPPORT & SERVICES
+
+Documentation
+
+Customer support
+
+Community forum
+
+Trust center
+
+Partners
+
+View all resources
+
+Open Source
+
+COMMUNITY
+
+GitHub SponsorsFund open source developers
+
+PROGRAMS
+
+Security Lab
+
+Maintainer Community
+
+GitHub Stars
+
+Archive Program
+
+REPOSITORIES
+
+Topics
+
+Trending
+
+Collections
+
+Enterprise
+
+ENTERPRISE SOLUTIONS
+
+Enterprise platformAI-powered developer platform
+
+AVAILABLE ADD-ONS
+
+GitHub Advanced SecurityEnterprise-grade security features
+
+Copilot for BusinessEnterprise-grade AI features
+
+Premium SupportEnterprise-grade 24/7 support
+
+Pricing
+
+Search/
+
+Sign in
+Sign up
+Appearance settings
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+steven2358
+
+awesome-generative-ai
+
+Repository navigation
+
+Code
+
+Issues44 (44)
+
+Pull requests949 (949)
+
+Actions
+
+Projects
+
+Security and quality
+
+Insights
+
+More items
+
+FilesExpand file tree
+
+main
+
+Breadcrumbs
+
+awesome-generative-ai
+
+/
+CONTRIBUTING.md
+
+Copy path
+
+Blame
+
+More file actions
+
+Blame
+
+More file actions
+
+Latest commit
+
+History
+History
+
+History
+
+38 lines (23 loc) · 2.75 KB
+
+main
+
+Breadcrumbs
+
+awesome-generative-ai
+
+/
+CONTRIBUTING.md
+
+Copy path
+
+Top
+
+File metadata and controls
+
+Preview
+
+Code
+
+Blame
+
+38 lines (23 loc) · 2.75 KB
+
+Raw
+
+Copy raw file
+
+Download raw file
+
+Outline
+Edit and raw actions
+
+Contribution Guidelines
+
+[Update 5 Sept. 2026: I review each contributed project by hand. Order: FIFO on the PR queue. If you want to jump the queue, get creative, surprise me, think outside of the box, make my day.]
+
+Formatting
+
+Use the following format: [ProjectName](Link) - Description.
+
+Open-source projects should include the tag #opensource at the end. If the source lives at another URL, the tag should link to it.
+
+Add new entries to the bottom of their respective category.
+
+Keep descriptions concise, clear, and straightforward, and end them with a period.
+
+New categories or improvements to the existing ones are also welcome.
+
+Ensure your text editor is set to remove trailing whitespace.
+
+Quality standards
+
+All projects should follow these quality standards:
+
+Widely used and useful to the community.
+
+Actively maintained (even if that simply means addressing open issues).
+
+Well-documented.
+
+Inclusion criteria for the Main List
+
+A project may be included in the Main List if it fulfills at least one of the following criteria:
+
+High general interest and significant followers: The project should generate considerable interest and have a substantial number of followers (at least 1,000). This demonstrates the project's popularity, wide recognition, and potential value to a large audience.
+
+Personally interesting to the maintainer: The project should be of particular interest to the maintainer of this Awesome List. This may include innovative approaches, niche applications, or projects that showcase unique capabilities in the realm of generative AI.
+
+Please make sure that your suggested project meets at least one of these criteria before submitting it for inclusion in the Main List.
+
+⚠️ If your project does not fulfill any of these criteria, it will be added to the Discoveries list. If your project fails to meet the quality standards, the pull request will be respectfully rejected.
+
+Inclusion in the Discoveries List
+
+The Discoveries list is a special showcase for the community, celebrating a wide range of fascinating Generative AI projects. It provides a platform to feature projects that may not meet the inclusion criteria for the main list but are still valuable, unique, or innovative contributions to the field.
+
+The Discoveries list is an inclusive and vibrant collection of projects that demonstrate the diversity and creativity within the Generative AI community. If you have a project, service, or resource related to Generative AI that you would like to share, feel free to submit it through a pull request.
+
+Footer
+
+© 2026 GitHub, Inc.
+
+Footer navigation
+
+Terms
+
+Privacy
+
+Security
+
+Status
+
+Community
+
+Docs
+
+Contact
+
+Manage cookies
+
+Do not share my personal information
+
+You can’t perform that action at this time.

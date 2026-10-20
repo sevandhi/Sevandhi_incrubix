@@ -1,0 +1,23 @@
+[server title]
+illo.social by Hireillo
+
+[short description]
+This instance of Mastodon is run by Darren Di Lieto and funded by Hireillo Limited. Darren set up this server specifically to give Hireillo members and friends access to the Fediverse.
+
+[server rule 1]
+No discrimination of any description, e.g. racism, transphobia
+
+[server rule 2]
+No incitement of violence or promotion of violent ideologies
+
+[server rule 3]
+Do not share intentionally false or misleading information
+
+[server rule 4]
+No harassment, dogpiling or doxxing of other people
+
+[server rule 5]
+Sexual or violent media must be marked as sensitive
+
+[server rule 6]
+No AI-generated images. We support human-made art and artists.

@@ -1,0 +1,5 @@
+[community title]
+Machine Learning | Artificial Intelligence
+
+[community sidebar]
+Welcome to Machine Learning – a versatile digital hub where Artificial Intelligence enthusiasts unite. From news flashes and coding tutorials to ML-themed humor, our community covers the gamut of machine learning topics. Regardless of whether you're an AI expert, a budding programmer, or simply curious about the field, this is your space to share, learn, and connect over all things machine learning. Let's weave algorithms and spark innovation together.

@@ -1,0 +1,35 @@
+[server title]
+mas.to
+
+[short description]
+Hello! mas.to is a fast, up-to-date and fun Mastodon server.
+
+[description]
+Hello! mas.to is a fast, friendly and well-federated server.
+
+[server rule 1]
+No discrimination, including (but not limited to) racism, sexism, homophobia or transphobia (including targeted misgendering, deadnaming, or promotion of so-called 'conversion therapy').
+
+[server rule 2]
+No explicit (NSFW) content without content warnings and/or sensitive media markers. Explicit content must not be used in user avatars or header images.
+
+[server rule 3]
+No harassment of other users on this or other servers.
+
+[server rule 4]
+No content illegal in the following countries: United Kingdom, Germany
+
+[server rule 5]
+No incitement of violence or promotion of violent ideologies.
+
+[server rule 6]
+No disinformation regarding public health issues or political/military campaigns.
+
+[server rule 7]
+No spam. This includes commercial advertising, promotion of services, and SEO.
+
+[server rule 8]
+No impersonation of other individuals, public figures or organisations, unless clearly marked as a parody.
+
+[server rule 9]
+All automated (bot) accounts must enable the bot flag in their account preferences, respect #nobot markers, and post as unlisted unless making less than one post per hour.

@@ -1,0 +1,52 @@
+[server title]
+mograph.social
+
+[short description]
+mograph.social is a space for the Motion Design community. VFX artists, 3D artists, animators, designers and coders with an interest in moving images are all welcome. NO CRYPTOART / NFTs ALLOWED.
+
+[description]
+mograph.social is a Mastodon server for the motion design community. VFX artists, 3D artists, animators, designers and illustrators with an interest in moving images are all welcome.
+
+[server rule 1]
+Be respectful of one another.
+
+[server rule 2]
+Hate speech, racism, sexism, homophobia, transphobia, ableism,  fatmisia, xenophobia and/or violent nationalism
+or the advocation of all of the above will not be tolerated and any account engaging in such acts will be suspended immediately.
+
+[server rule 3]
+Forbidden illegal content
+No content that includes sexual depictions of minors (this includes loli), content illegal in Germany and/or France, such as holocaust denial or Nazi symbolism, conduct promoting the ideology of National Socialism.
+
+[server rule 4]
+No illegal activities
+We don't allow any illegal activity in the EU (and/or any link to that).
+
+[server rule 5]
+No harassment, dogpiling or doxxing of other users.
+
+[server rule 6]
+No explicit (NSFW) content without content warnings and/or sensitive media markers.
+Explicit content must not be used in user avatars or header images.
+
+[server rule 7]
+No AI slop
+We understand that the use of AI tools is becoming unavoidable in many workflows related to producing digital images and videos, but we won't tolerate posting of low effort AI slop generated images and videos. Posts will be removed and the user will get warned.
+
+[server rule 8]
+No NFT content, DAO, web3 promotion or any kind of cryptobros content.
+There are more suitable instances available for this type of content and communities.
+
+[server rule 9]
+No registrations of famous trademarks or username squatting (impersonification of famous personalities).
+
+[server rule 10]
+No spamming and/or 4chan style memes.
+
+[server rule 11]
+No advertising
+unless it is strictly sef-promotion (see Code of Conduct for more details).
+
+[server rule 12]
+No users under 16 years of age allowed
+as per EU and EEA jurisdiction regulations (GDPR).

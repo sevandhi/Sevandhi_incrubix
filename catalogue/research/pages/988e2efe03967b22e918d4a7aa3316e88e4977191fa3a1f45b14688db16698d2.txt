@@ -1,0 +1,10 @@
+[community title]
+Blender
+
+[community sidebar]
+A community for users of the awesome, open source, free, animation, modeling, procedural generating, sculpting, texturing, compositing, and rendering software; Blender.
+
+**Rules:**
+1. Be nice
+2. Constructive Criticism only
+3. If a render is photo realistic, please provide a wireframe or clay render

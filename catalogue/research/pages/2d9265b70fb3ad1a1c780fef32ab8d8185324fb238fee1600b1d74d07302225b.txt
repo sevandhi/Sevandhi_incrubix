@@ -1,0 +1,35 @@
+[server title]
+Sigmoid Social
+
+[short description]
+A social space for people researching, working with, or just interested in AI!
+
+[description]
+A social space for people researching, working with, or just interested in AI!
+
+[server rule 1]
+No racism, sexism, homophobia, transphobia, xenophobia, or discrimination in general
+
+[server rule 2]
+No sexually explicit or violent media
+
+[server rule 3]
+No harassment, dogpiling or doxxing of other users
+
+[server rule 4]
+Do not share intentionally false or misleading information
+
+[server rule 5]
+Follow the Code of Conduct
+
+[server rule 6]
+No spam or using an account solely for advertising
+
+[server rule 7]
+Your account bio or post history should in some way indicate interest in AI
+
+[server rule 8]
+Accounts which primarily produce the content of posts via software must be clearly identified as being bots
+
+[server rule 9]
+No flooding the public timelines (making lots of public posts in quick succession)

@@ -1,0 +1,16 @@
+[community title]
+Video Game Artwork
+
+[community sidebar]
+Welcome to the Video Game Artwork community!
+
+**Rules**
+1. AI generated art is not allowed. Art featuring games that use generative-AI in any aspect of development are also not welcome.
+
+2. Fan art must have the creator's name in the title and a source link in the description. If the artist has publicly expressed they do not wish their artwork to be shared by others, please refrain from doing so. If the artist has a Lemmy account, please let them post their own artwork.
+
+3. Lewd/Suggestive NSFW content is allowed but must be flagged as such. Art depicting genitalia (whether clothed or nude) and bodily fluids are too extreme for this community.
+
+4. Spoiler images are allowed but must include **[Spoilers]** and the game's name in the title. Do not describe spoiler content in the title. Please mark images as an NSFW post to censor the image.
+
+5. Reposts will be removed. If it is unclear if the art has been posted before, post it anyway. Mods will cleanup reposts when found.

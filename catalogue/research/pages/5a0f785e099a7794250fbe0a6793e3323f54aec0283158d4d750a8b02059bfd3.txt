@@ -1,0 +1,26 @@
+[category: Announcements]
+Official updates from the Cursor team
+
+[category: Events / Meetups]
+Official Cursor meetups and events—dates, locations, and how to join!
+
+[category: Discussions]
+Talk shop with other Cursor users. Workflows, tips, model comparisons, and how you’re getting things done!
+
+[category: Support]
+Get help from Cursor staff and the community. Post bug reports or ask questions about setup, configuration, and troubleshooting.
+
+[category: Ideas]
+Wish Cursor did something differently? This is the place. Feature requests, feedback on existing functionality, and ideas for making Cursor better.
+
+[category: Account & Billing]
+For billing, subscriptions, and account issues, please email support@x.ai for help!
+
+[category: Guides]
+Share what you’ve figured out. Tutorials, workflows, and how-tos that help other Cursor users level up. Questions belong in Support.
+
+[category: Showcase]
+Show off what you’ve built either using Cursor, or built to share with other Cursor users!
+
+[category: Meta]
+Feedback and suggestions about the forum

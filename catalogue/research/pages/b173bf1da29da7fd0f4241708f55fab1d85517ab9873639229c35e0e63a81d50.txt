@@ -1,0 +1,105 @@
+About
+
+Articles
+
+Newsletter
+
+Podcast
+
+Subscribe
+
+Write
+
+Support
+
+Write
+
+The Gradient is non-profit and volunteer-run effort run by people in the AI community who enjoy the sorts of articles we have on our site and like to enable more of them to be written. Whether you are in industry, are in academia, are an independent practitioner, or are an outsider looking in, this is a platform for you to share your thoughts and knowledge with the broader community.
+
+Learn more about how you can write with The Gradient by filling out this short form.
+
+If you seem like a good fit, an editor will reach out to you soon and share more details. We have a broadly flexible work style, and an it's-done-when-it's done policy with no deadlines for articles whatsoever.
+
+What to Write With Us
+
+We primarily seek to host two types of articles:
+
+Accessible but technically informed overviews of the state of the art and its future. Some examples include The Economics of AI Today, Introduction to Artificial Life for People who Like AI, and The Promise of Hierarchical Reinforcement Learning.
+
+Critical and well-informed perspectives on artificial intelligence topics by researchers and experts in the field. Some examples include NLP's ImageNet moment has arrived, Quantifying Independently Reproducible Machine Learning, and The #BenderRule: On Naming the Languages We Study and Why It Matters.
+
+Why Write With Us
+
+We intend to foster a community of students, researchers, and practitioners working together to demystify and democratize our technological future. In particular, we aim to be a platform for those who do not already have a popular blog or large following, so that you can express yourself and be heard based on the merits of what you have to say and not your current stature. Some benefits of writing with us include:
+
+Visibility
+In the 3 years since going public in May of 2018, our site has had more than 1.5 million pageviews, with the top ten articles receiving an average of ~50 thousand pageviews. We have a significant following within the AI community, and our articles often generate significant amounts of discussion. Lastly, we have a substantial Twitter following with 18.8K followers.
+
+Editing
+We have a team of editors who have either written for us or collaborated with those who have written for us. Every article we release goes through a thorough editorial process to assist you in achieving clarity, writing quality, and correctness.
+
+Control
+You will remain the sole owner of your writing and will be able to edit or delete anything you write with us at any moment, even after we have published it. Our editors will provide suggestions on how to improve your piece as you are writing it, but will absolutely not limit your self-expression (within reasonable bounds).
+
+Donate
+
+The Gradient is currently volunteer funded. We greatly appreciate any donations, which will help us cover server costs and other expenses.
+
+Tags
+
+Art
+
+Conference
+
+Deep Learning
+
+Ethics
+
+Explainability
+
+Generative Models
+
+Graphs
+
+Healthcare
+
+History
+
+Human factors
+
+Impacts
+
+Interpretability
+
+Language
+
+LLM
+
+Machine Learning
+
+NLP
+
+Overviews
+
+Perspectives
+
+Podcast
+
+Policy
+
+Quantum ML
+
+Reinforcement Learning
+
+Science
+
+Speech Recognition
+
+Trends
+
+Vision
+
+XAI
+
+© 2026 The Gradient –
+Published with Ghost & Nubia

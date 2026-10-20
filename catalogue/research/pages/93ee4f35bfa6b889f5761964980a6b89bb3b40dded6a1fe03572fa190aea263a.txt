@@ -1,0 +1,52 @@
+[server title]
+vis.social
+
+[short description]
+vis.social is a community for creative people, especially anyone in SciArt, SciComm, data, visualization, creative coding, and related arts and research. English is the shared language.
+
+[description]
+A social space for anyone in SciArt, SciComm, data, visualization, creative coding, and related arts and research. Share your work, discuss, critique, and ask for help! Come one, come all:
+
+&rarr; creative coders<br/>
+&rarr; data scientists and visualizers<br/>
+&rarr; generative artists<br/>
+&rarr; visual researchers, curators, and critics<br/>
+&rarr; anyone else data- or visualization-adjacent
+
+If you are curious about the world and creativity, you are welcome here. <a href="/about/more">Learn more.</a>
+
+English is the common language of the instance. Other languages are welcome, but please be kind and post English translations so that we can all read your posts.
+
+[server rule 1]
+NO RACISM, SEXISM, HOMOPHOBIA, TRANSPHOBIA OR XENOPHOBIA.
+
+[server rule 2]
+TOPIC: vis.social is a topical server focused particularly on SciArt, SciComm, Data, Visualization, Creative Coding and related topics. There is no reporting of “off-topic” posts, but the central idea of the server is to gather a community around these shared interests.
+
+[server rule 3]
+CW on AI topics. Please add CW for posts about AI, especially tools like ChatGPT.
+
+[server rule 4]
+LANGUAGE: English is the common language of the instance. Other languages are welcome, but please be kind and post English translations so that we can all read your posts.
+
+[server rule 5]
+INCLUSION: We want everyone to feel welcome, safe, and respected. This is a free service. Please be welcoming and kind to everyone, especially when you have a difference of opinion. Then, be *extra* kind. :-)
+
+[server rule 6]
+HARASSMENT: If you experience or notice any harassment or other aggressive behaviors, report it—by clicking on the three dots next to the message or profile and selecting “Report @personname”) and help keeping this platform a safe space for everyone.
+
+[server rule 7]
+AI Images: Please do not use vis.social to share your creations from text-to-image tools such as MidJourney or Stable Diffusion. We welcome critical discussion of these tools, particularly about the legal and ethical issues surrounding these tools and the implications for artists and society
+
+[server rule 8]
+No NFTs: We know many people involved in computational art sell NFTs. However, on vis.social we’ve made the decision that we don’t want to be involved in NFTs. So we’d love to see your art, but we ask that you don’t post your NFTs here.
+
+[server rule 9]
+No bots or AI agents. 
+If you’d like to experiment with bots, creating a dedicated instance could be an option for you.
+
+[server rule 10]
+CWs: the moderation team may ask you to add CW's to off-topic posts that contain photos or text about food, alcohol, and other topics, in an attempt to be a more inclusive and welcoming instance. On our ToDo-list: writing about why we ask this.
+
+[server rule 11]
+Joining Vis.Social: please tell us about your interest in this instance and it's topics. Tell us a little about you, your interests. Be sure to mention Green Apple candy in your application. Yes, it's a test to see if you've read the instance rules.

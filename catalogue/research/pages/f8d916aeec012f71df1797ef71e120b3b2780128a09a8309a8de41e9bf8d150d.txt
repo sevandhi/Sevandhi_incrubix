@@ -1,0 +1,122 @@
+[instance name]
+clip.place
+
+[short description]
+clip.place ist eine Video Streaming-Plattform offiziell betrieben von adminForge.de, angetrieben von PeerTube.
+
+[description]
+### Info
+**clip.place** ist eine dezentralisierte Alternative zum zentral verwalteten YouTube. Die Instanz wird von [@adminforge](https://kanoa.de/@adminforge) bereitgestellt und besteht seit 02/2025.
+
+adminForge.de bietet kostenlose Dienste an. Unser Ziel ist es eine freie und datensparsame Alternative zu bekannten Diensten zur Verfügung zu stellen.
+
+### Tools
+Uptime: [status.adminforge.de](https://status.adminforge.de)  
+Grafana Dashboard: [stats.adminforge.de](https://stats.adminforge.de)  
+Deutschsprachiges ActivityPub Relay: [relay.kanoa.de](https://relay.kanoa.de)
+
+### Moderation
+Verwalter: [dominion](https://clip.place/a/dominion)  
+Moderator: [robin](https://clip.place/a/robin)
+
+### Unterstütze uns
+Das Betreiben einer zensurfreien PeerTube Instanz machen wir gerne, kostet aber leider auch Geld. Unterstütze unsere Arbeit mit einer [Spende](https://adminforge.de/unterstuetzen/) ❤️
+
+**no tracking | no ip logging | no advertising**  
+clip.place proudly presented by [adminForge.de](https://adminforge.de/) | [Spenden](https://adminforge.de/unterstuetzen/) | [Impressum](https://adminforge.de/impressum/) | [Datenschutzhinweis](https://adminforge.de/datenschutz/)
+
+[terms]
+Deutsch
+
+Keine Gewalt:
+- Verboten sind Videos mit realer oder inszenierter Gewalt, Grausamkeit oder Anstiftung zu Gewalt.
+- Ausnahmen: Dokumentationen mit klarem Bildungszweck (z. B. historische Aufnahmen), sofern nicht sensationsheischend.
+
+Keine pornografischen Inhalte:
+- Sexuell explizites Material, Nacktheit mit sexuellem Fokus oder erotische Darstellungen sind untersagt.
+- Ausnahmen: Künstlerische/aufklärerische Inhalte mit klarer Kennzeichnung und Altersbeschränkung.
+
+Keine Inhalte mit Kindern:
+- Jegliche Darstellung Minderjähriger in kompromittierenden, unangemessenen oder gefährdenden Kontexten ist verboten.
+- Ausnahmen: Familienvlogs oder Bildungsinhalte, sofern rechtlich einwandfrei und nicht ausbeuterisch.
+
+Keine illegalen Aktivitäten:
+- Anleitungen zu Straftaten, Hassrede, Urheberrechtsverletzungen, Drogenhandel oder andere gesetzeswidrige Inhalte sind untersagt.
+- Ausnahmen: Satire oder Berichterstattung mit erkennbar kritischem Kontext.
+
+Konsequenzen:
+- Verstöße führen zur Löschung des Inhalts und ggf. zur Sperrung des Accounts.
+- Schwere Verstöße werden an Behörden gemeldet.
+
+English
+
+No Violence:
+- Prohibited: Videos depicting real or staged violence, cruelty, or incitement to violence.
+- Exceptions: Documentaries with clear educational intent (e.g., historical footage) if not sensationalized.
+
+No Pornographic Content:
+- Sexually explicit material, nudity with sexual focus, or erotic depictions are banned.
+- Exceptions: Artistic/educational content with clear labeling and age restrictions.
+
+No Child-Related Content:
+- Any portrayal of minors in compromising, inappropriate, or exploitative contexts is forbidden.
+- Exceptions: Family vlogs or educational content if legally compliant and non-exploitative.
+
+No Illegal Activities:
+- Tutorials for crimes, hate speech, copyright violations, drug trafficking, or other unlawful content are prohibited.
+- Exceptions: Satire or news reporting with clear critical context.
+
+Consequences:
+- Violations result in content removal and potential account suspension.
+- Severe violations will be reported to authorities.
+
+[code of conduct]
+§1 Unser Angebot
+
+(1) Wir bieten als adminForge.de verschiedene Online-Dienste an. Diese dürfen grundsätzlich von jeder Person genutzt werden.
+
+(2) Die Nutzung unserer Dienste ist nur mit Zustimmung zu den folgenden Bedingungen möglich, welche für alle auf unseren Servern gespeicherten Inhalte gilt. Dies beinhaltet öffentlich zugängliche Inhalte (wie zum Beispiel Posts auf Mastodon), aber auch privat gespeicherte Daten (z. B. hochgeladene Dateien auf einen Uploaddienst).
+
+(3) Unsere Dienste werden ausschließlich durch Spenden finanziert; adminForge.de pflegt die Infrastruktur auf einer freiwilligen Basis. Wir können die Dienste nur solange anbieten, wie diese Voraussetzung erfüllt ist.
+§2 Regeln für die Nutzung
+
+(1) Das Teilen folgender Inhalte wird auf unseren Diensten ausdrücklich nicht geduldet:
+
+    Ausdruck von Hass oder Aufrufe zu Gewalt gegenüber einer Person oder Gruppe, egal aus welchem Grund.
+    Diskriminierendes Verhalten gegenüber marginalisierten Personengruppen, gekennzeichnet z. B. durch Ethnie, Geschlecht, Behinderung, Nationalität, Bildung, Alter und Religion, sowie die Befürwortung dessen.
+    Gewalttätige nationalistische Propaganda, Nazi-Symbolik oder die Förderung der Ideologie des Nationalsozialismus.
+    Jegliches Mobbing, Stalking, Doxxing (Offenlegung von persönlichen Informationen), Brigading (Aufstacheln einer Gruppe zur Verbreitung von Spam), Drohungen und Belästigung, sowie die Ermutigung anderer, diese Dinge zu tun.
+    Jegliche Beleidigungen, diskriminierende Witze, sexualisierte Kommentare und andere unerwünschte sexuelle Aufmerksamkeit.
+    Sexuell explizites oder gewalttätiges Material ohne entsprechende Kennzeichnung.
+    Ungekennzeichnete, übermäßige oder automatisierte Werbung.
+
+(2) Ein Zuwiderhandeln gegen die Regeln in §2 Abs. 1 führt in der Regel zu einer Löschung der betroffenen Inhalte sowie einer Verwarnung. Diese Verwarnung kann durch weitere Missachtung der Regeln zu einer Sperrung des Accounts führen.
+
+(3) Wir behalten uns vor, Inhalte zu löschen oder Accounts zu sperren. In diesem Fall teilen wir den Grund der Löschung bzw. Sperrung sowie mögliche Bedingungen für eine erneute Veröffentlichung bzw. Reaktivierung des Accounts mit.
+
+(4) Inhalte die in Deutschland als illegal angesehen werden können oder geltendes Recht verletzen, werden gelöscht und können zu einer Sperrung des Accounts führen.
+
+(5) Handlungen mit der Intention die Bereitstellung unserer Dienste zu beeinträchtigen, können zu einer sofortigen Sperrung des Accounts führen.
+§3 Verantwortlichkeit
+
+(1) Gemäß § 7 Abs. 1 TMG ist adminForge.de als Diensteanbieter für die auf der angebotenen Plattform veröffentlichten Inhalte verantwortlich. Wir sind gemäß §§ 8 bis 10 TMG jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden diese Inhalte umgehend entfernt, hierfür kann die Kontakt-E-Mail-Adresse genutzt werden.
+
+(2) Auf unserer Plattform erstellte Inhalte und Werke unterliegen im Regelfall dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung der jeweiligen rechteinhabenden Person, sofern dies nicht durch § 3 Abs. 3 abgedeckt ist.
+
+(3) Durch das Veröffentlichen von Inhalten werden die für die Bereitstellung der Funktionen des jeweiligen Dienstes notwendigen Nutzungsrechte an adminForge.de übertragen – dies bedeutet beispielsweise, dass auf Mastodon öffentlich geteilte Medien auch an fremde föderierte Server weitergegeben werden dürfen.
+
+(4) Personen, die unsere Dienste nutzen, sind für ihren Account und die darin gespeicherten Daten persönlich mitverantwortlich
+§4 Sperrung und Löschung von Accounts
+
+(1) Du kannst deinen Account mit allen damit verbundenen Daten jederzeit über die Nutzerverwaltung löschen oder eine Löschung beantragen. Beachte jedoch, dass beispielsweise öffentlich geteilte Inhalte noch weiterhin auf anderen Servern existieren können.
+
+(2) Wir behalten uns vor, offensichtlich über einen längeren Zeitraum inaktive Accounts zu löschen.
+
+(3) Wir behalten uns vor nach § 2 Abs. 3 – 6 Accounts zu sperren. Die Löschung der Daten kann daraufhin jederzeit durch uns durchgeführt werden oder gemäß des Datenschutz durch die betroffene Person beantragt werden.
+§5 Haftungsbeschränkung
+
+(1) Wir geben uns Mühe, unsere Dienste möglichst unterbrechungsfrei anzubieten, können dafür jedoch keine Garantie aussprechen. adminForge.de haftet soweit rechtlich möglich nicht für Schäden (insbesondere Datenverlust, Gewinnausfall oder Geschäftsunterbrechungen), die aus der Nutzung der angebotenen Dienste oder der Nichterreichbarkeit dieser entstehen. Dies gilt selbst wenn adminForge.de oder eine vertretungsberechtigte Person mündlich oder schriftlich über mögliche Schäden vorab informiert wurden.
+
+[moderation information]
+Moderation von adminForge.de durch dominion und robin.
+Beschwerden bitte über den Melden-Button oder [Kontaktformular](https://adminforge.de/kontakt/).

@@ -1,0 +1,39 @@
+[community title]
+AI Generated Images
+
+[community sidebar]
+Community for AI image generation. Any models are allowed. **Creativity is valuable!** It is recommended to post the model used for reference, but not a rule.
+
+**No explicit violence, gore, or nudity.**
+
+This is **not a NSFW community** although exceptions are sometimes made. Any NSFW posts must be marked as NSFW and may be removed at any moderator's discretion. Any suggestive imagery may be removed at any time. 
+
+Refer to https://lemmynsfw.com/ for any NSFW imagery. 
+
+**No misconduct**: Harassment, Abuse or assault, Bullying, Illegal activity, Discrimination, Racism, Trolling, Bigotry.
+
+AI Generated Videos are allowed under the same rules. Photosensitivity warning required for any flashing videos.
+
+To embed images type: 
+
+“![](*put image url in here*)”
+
+**Follow all sh.itjust.works rules.**
+
+-----------------
+
+[Community Challenge Past Entries](https://sh.itjust.works/post/17190976)
+
+:::spoiler Related communities:  
+* [!auai@programming.dev](https://programming.dev/c/auai)  
+Useful general AI discussion
+* [!aiphotography@lemmings.world](https://lemmings.world/c/aiphotography)   
+Photo-realistic AI images
+* [!stable_diffusion_art@lemmy.dbzer0.com](https://lemmy.dbzer0.com/c/stable_diffusion_art) Stable Diffusion Art
+* [!share_anime_art@lemmy.dbzer0.com](https://lemmy.dbzer0.com/c/share_anime_art) Stable Diffusion Anime Art   
+* [!botart@lemmy.dbzer0.com](https://lemmy.dbzer0.com/c/botart)  AI art generated through bots
+* [!degenerate@lemmynsfw.com](https://lemmynsfw.com/c/degenerate)   
+**NSFW** weird and surreal images
+* [!aigen@lemmynsfw.com](https://lemmynsfw.com/c/aigen)  
+**NSFW** AI generated porn
+:::

@@ -1,0 +1,111 @@
+[site name]
+Beehaw
+
+[site description]
+Aspiring to be(e) a safe, friendly and diverse place.
+
+[site sidebar]
+---
+
+We're a collective of individuals upset with the way social media has been traditionally governed. A severe lack of moderation has led to major platforms like Facebook to turn into political machinery focused on disinformation campaigns as a way to make profit off of users. Websites with ineffective moderation allow hate speech to proliferate and contribute to the erosion of minority rights and safe spaces. Our goal with Beehaw is to demonstrate and promote a healthier environment.
+
+Our philosophy: 
+* [What is Beehaw?](https://docs.beehaw.org/docs/core-principles/what-is-beehaw/)
+* [The spirit of the rules](https://docs.beehaw.org/docs/core-principles/the-spirit-of-beehaw/)
+* [Beehaw is a Community](https://docs.beehaw.org/docs/core-principles/beehaw-is-a-community/)
+and more on our [Docs Website](https://docs.beehaw.org/)
+
+Downvotes are disabled on this instance.
+
+### Be(e) nice.
+
+------
+
+As a news aggregator and a social media outlet, with a focus on being a safe and accepting space, we strive to create a positive social impact. We will, also, help to connect underprivileged and minority individuals with education and civic participation by promoting a healthier online experience.
+
+------
+
+We currently have a Mastodon account you can follow for major updates: [@beehaw](https://hachyderm.io/@beehaw) at hachyderm.io. You can also join our community [Discord](https://discord.gg/ZtZzR6TWs2) or [Matrix](https://matrix.to/#/#beehaw:matrix.org) servers. You can also view our [status page](https://status.beehaw.org/).
+
+-------
+
+Our instance is 100% user-funded - help us keep it running by donating.
+
+If you donate, you should know that 100% of the costs will go towards server time, licensing costs, and artwork. 
+
+In the future if we need to hire developers or other labor, it would be sourced through the [Open Collective Europe Foundation](https://opencollective.com/beehaw-collective), and it would be transparent to the community before any changes were made.
+
+[![Donate on Opencollective](https://opencollective.com/beehaw-collective/donate/button.png?color=blue)](https://opencollective.com/beehaw-collective/donate)
+
+---
+
+Our community icons were made by Aaron Schneider under the [CC-BY-NC-SA-4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/).  
+
+Blobbee emojis made by [olivvybee](https://github.com/olivvybee/emojis) on Github. 
+
+Our most up to date [FAQ can be found here](https://docs.beehaw.org/docs/faq/).
+
+---
+![](https://status.beehaw.org/api/v1/endpoints/beehaw_beehaw/health/badge.svg) 
+![if you can see this, it's up](https://status.beehaw.org/api/v1/endpoints/beehaw_beehaw/uptimes/24h/badge.svg)
+&nbsp;
+
+[legal information]
+# Legal Information
+
+Beehaw.org is operated (in part) by Chris Remington, and is hosted on servers operated in United States of America. All content on this server is expected to be legal in all of these jurisdictions. If you have any copyright, trademark, legal concerns, please email us directly.
+
+- DMCA Complaints: [dmca@beehaw.org](mailto:dmca@beehaw.org)
+- Trademark Complaints: [trademark@beehaw.org](mailto:trademark@beehaw.org)
+- Abuse Complaints: [abuse@beehaw.org](mailto:abuse@beehaw.org)
+
+# Privacy Policy
+
+This privacy policy describes how Beehaw (“beehaw.org”, “we”, “us”) collects, protects and uses the personally identifiable information you may provide through the beehaw.org website or its API. The policy also describes the choices available to you regarding our use of your personal information and how you can access and update this information. This policy does not apply to the practices of companies that beehaw.org does not own or control, or to individuals that beehaw.org does not employ or manage.
+
+#### What information do we collect?
+
+- Basic account information: If you register on this server, you may be asked to enter a username, an e-mail address and a password. You may also enter additional profile information such as a display name and biography, and upload a profile picture and header image. The username, display name, biography, profile picture and header image are always listed publicly.
+- Posts, following, subscriptions and other public information: When you submit a message, the date and time is stored. Messages may contain media attachments, such as pictures and videos. Posts are available publicly. Your posts are delivered to to users in a community and your followers, in some cases it means they are delivered to different servers and copies are stored there. When you delete or edit posts, this is likewise delivered to users in a community and your followers. The action of crossposting or upvoting another post is always public.
+- Direct messages: All posts are stored and processed on the server. In some cases it means they are delivered to different servers and copies are stored there. Please keep in mind that the operators of the server and any receiving server may view such messages, and that recipients may screenshot, copy or otherwise re-share them. Do not share any sensitive information over Lemmy.
+- IPs and other metadata: When you log in, we record the IP address you log in from, as well as the name of your browser application. The latest IP address used is stored for up to 12 months. We also may retain server logs which include the IP address of every request to our server.
+
+#### What do we use your information for?
+
+Any of the information we collect from you may be used in the following ways:
+
+- To provide the core functionality of Lemmy. You can only interact with other people’s content and post your own content when you are logged in. For example, you may follow various communities to view their combined posts in your own personalized home timeline.
+- To aid moderation of the community, for example comparing your IP address with other known ones to determine ban evasion or other violations.
+- The email address you provide may be used to send you information, notifications about other people interacting with your content or sending you messages, and to respond to inquiries, and/or other requests or questions.
+
+#### How do we protect your information?
+
+We implement a variety of security measures to maintain the safety of your personal information when you enter, submit, or access your personal information. Among other things, your browser session, as well as the traffic between your applications and the API, are secured with SSL, and your password is hashed using a strong one-way algorithm.
+#### What is our data retention policy?
+
+We will make a good faith effort to:
+
+- Retain server logs containing the IP address of all requests to this server, in so far as such logs are kept, no more than 90 days.
+- Retain the IP addresses associated with registered users until you delete your account.
+
+You may irreversibly delete your account at any time.
+
+#### Do we use cookies?
+
+Yes. Cookies are small files that a site or its service provider transfers to your computer’s hard drive through your Web browser (if you allow). These cookies enable the site to recognize your browser and, if you have a registered account, associate it with your registered account.
+
+We use cookies to understand and save your preferences for future visits.
+
+#### Do we disclose any information to outside parties?
+
+We do not sell, trade, or otherwise transfer to outside parties your personally identifiable information. This does not include trusted third parties who assist us in operating our site, conducting our business, or servicing you, so long as those parties agree to keep this information confidential. We may also release your information when we believe release is appropriate to comply with the law, enforce our site policies, or protect ours or others rights, property, or safety.
+
+Your public content may be downloaded by other servers in the network. Your public and followers-only posts are delivered to the servers where your followers reside, and direct messages are delivered to the servers of the recipients, in so far as those followers or recipients reside on a different server than this.
+
+When you authorize an application to use your account, depending on the scope of permissions you approve, it may access your public profile information, your following list, your followers, your lists, all your posts, and your favorites. Applications can never access your e-mail address or password.
+
+#### Site usage by children
+
+Our site, products and services are all directed to people who are at least 16 years old. If you are under the age of 16, per the requirements of the GDPR (General Data Protection Regulation) do not use this site.
+
+This document is CC-BY-SA. Originally adapted from the [Discourse privacy policy](https://github.com/discourse/discourse).

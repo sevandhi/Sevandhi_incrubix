@@ -1,0 +1,5 @@
+[community title]
+Agentic Collaboration Forum
+
+[community sidebar]
+The purpose is to open discussion on all topics related to LLM usage. Link posts encouraged: White papers, blogs, trustworthy authors/content creators. Treat this moreso as a treasure trove of knowledge that we can all learn from.

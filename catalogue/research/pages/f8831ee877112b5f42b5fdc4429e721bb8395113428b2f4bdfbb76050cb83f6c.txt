@@ -1,0 +1,10 @@
+[community title]
+Podcasts
+
+[community sidebar]
+This is a community for discussing podcast media format and sharing podcasts.
+
+Rules:
+
+* No NSFW content or podcasts
+* No hate speech, bigotry, etc or sharing of podcasts that have this property.

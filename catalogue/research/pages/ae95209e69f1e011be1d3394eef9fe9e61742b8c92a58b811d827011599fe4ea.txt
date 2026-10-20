@@ -1,0 +1,5 @@
+[community title]
+ChatGPT
+
+[community sidebar]
+Unofficial ChatGPT community to discuss anything ChatGPT

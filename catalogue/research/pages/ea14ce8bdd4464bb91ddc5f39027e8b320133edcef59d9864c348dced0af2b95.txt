@@ -1,0 +1,34 @@
+[server title]
+Socel: Social for the Animation Arts
+
+[short description]
+Socel is a place for animation professionals, freelancers, independents, students, and fans to connect and grow together. Everyone in related fields are also welcome.
+
+[description]
+Socel is a place for animation professionals, freelancers, independents, students, and fans to connect and grow together. Everyone in related fields such as comics, illustration, and video games are also very welcome. 
+
+Due to spam, admin approval will be required for sign up completion. Be sure to fill in all fields and allow up to 24 hours for approval.
+
+[server rule 1]
+Be excellent to each other
+
+[server rule 2]
+Pornography or Rule 34 content of any kind is not permitted. NSFW content (i.e. artistic nudity) must be hidden behind a content warning, the NSFW filter, or marked as unlisted/private.
+
+[server rule 3]
+Incessant posting, soapboxing, campaigning, or harassment for any cause/belief/opinion violates rule no. 1 and is not tolerated. Accounts that engage in such behaviour publicly or direct it towards other users will be terminated.
+
+[server rule 4]
+Please do not spam or advertise for third parties/sponsors. This includes and is not limited to: selling items that are not your own creation, selling toots or offering toots for sale, and acting as a dealer engaged in trade.
+
+[server rule 5]
+Please report violations of these rules to the admin.
+
+[server rule 6]
+This instance is hosted by Masto.host and abides by its terms of service. The server is located in the EU in France and obeys all applicable laws.
+
+[server rule 7]
+Using Socel to circumvent restrictions or suspensions on other fediverse servers will result in your account being immediately terminated without warning.
+
+[server rule 8]
+NFT and other blockchain-based works in any form are prohibited; even if they are your own creation. Please do not post, share, promote, offer for sale, or otherwise engage in trade, any work based on these technologies.

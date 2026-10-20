@@ -1,0 +1,26 @@
+[category: Tech Support]
+Post here if you need help with technical matters related to Krita. Our volunteers and fellow artists will be glad to help you out. (Please create a new thread in correct subcategory with your issue).
+
+[category: Artwork]
+Post your latest Krita artworks here. Request for critique from fellow Krita artists. Every artwork is unique so don’t be shy to post yours. Let the world know what you can do with Krita. This category is for artworks, where the majority of the work was done in Krita.
+
+[category: Develop]
+Your code is your artwork. Want to help Krita developers improve Krita. Post here to discuss the features and improvements. Gather feedback from fellow devs and the artists. Collecting use cases and feedback helps a lot in development.
+
+[category: Resources]
+Share and discover cool new brush packs, textures tutorials and other Krita resources here.
+
+[category: Contest, Games & Collaboration]
+Monthly art contests and other drawing challenges will be held in this category
+
+[category: General Forums]
+General off-topic discussions and casual conversations
+
+[category: Jobs]
+Post in this category if you want to hire someone for any Krita related work.
+
+[category: Site Feedback]
+Discussion about this site, its organization, how it works, and how we can improve it. Also contains other activities related to the website
+
+[category: Archives]
+This category is mainly to archive old irrelevant threads.

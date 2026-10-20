@@ -1,0 +1,59 @@
+[category: Translating App Inventor]
+App Inventor relies on the community to provide translations in a wide variety of languages. If your language is missing or incomplete, please consider signing up to be a translator!
+
+[category: MIT App Inventor Help]
+This is a place for MIT App Inventor Programmers to ask questions or report problems using MIT App Inventor.
+
+[category: Tutorials and Guides]
+Post useful tutorials and helpful guides to this category. Please tag the posts to help other community members find tutorials and guides of interest.
+
+[category: Bugs and Other Issues]
+Report potential issues with App Inventor in this category.
+
+[category: Extensions]
+Propose new extensions, get help with extensions, or share your extensions here. If you are a developer writing an extension, please see the #open-source-development:extension-development category instead.
+
+[category: App Inventor for iOS]
+Learn more about development of MIT App Inventor for iOS. App Inventor users can discuss iOS specific functionality here.
+
+[category: Open Source Development]
+This category is used for sharing development progress for those building on the MIT App Inventor open source repository at https://github.com/mit-cml/appinventor-sources. Anyone interested in extending core App Inventor or writing extensions should join this group and share their experiences.
+
+[category: User Interface and Graphics]
+This category is for asking questions or offering help on good user interface design for App Inventor apps. Share your tips and tricks with other users to provide the best user experience and visuals with the community.
+
+[category: Educators]
+A category specifically for people who teach with App Inventor and members of the Education Collaborative: to share lessons, ideas, events, curricula, and to ask questions that are education related.
+
+[category: General Discussion]
+This category is for general discussion of app development, not necessarily related to a specific part of App Inventor. It may include topics of interest to the larger app development community for discussion in the context of MIT App Inventor.
+
+[category: App Showcase]
+Showcase your finished apps and get feedback from other app inventors.
+
+[category: Artificial Intelligence]
+App Inventor provides opportunities to incorporate artificial intelligence into mobile apps using frameworks like Google’s TensorFlow.js. Share extensions, tutorials, and projects that showcase the power of mobile-enabled AI.
+
+[category: News/Announcements]
+MIT uses this category to announce new App Inventor features and releases.
+
+[category: Work for Hire]
+Freelancers and people looking for someone to help build apps should use this category to get connected.
+
+[category: Site Feedback]
+Discussion about this site, its organization, how it works, and how we can improve it.
+
+[category: Community]
+Informational posts about MIT App Inventor and the community, such as best practices, posting guidelines, and other information are placed here.
+
+[category: Appathon]
+Use this category to discuss topics related to the MIT App Inventor Appathon. MIT will also use this category to make occasional announcements. The Appathon 2023 coding period starts on July 16 AOE and ends July 30 AOE.
+
+[category: Data Storage]
+Discuss ways of storing and processing data in apps as well as making cross platform applications using components like CloudDB.
+
+[category: Frequently Asked Questions]
+Have a question? Look here first for the best answers.  Tired of retyping answers to common questions? File them in this Category by Subject.
+
+[category: MIT App Inventor Alexa]
+This category is intended for posts related to supporting the MIT App Inventor for Alexa platform at https://alexa.appinventor.mit.edu/. When asking questions, please attach your project and include any prompts you used in the testing window to evaluate your skill.

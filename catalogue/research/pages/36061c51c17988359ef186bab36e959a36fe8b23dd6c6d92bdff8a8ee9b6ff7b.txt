@@ -1,0 +1,11 @@
+[category: Feature Requests]
+Have an idea for a new Pinecone feature? This is the place to share it. Did someone else already post your feature request? Be sure to like their post to boost the visibility (and share your thoughts, too).
+
+[category: General]
+General discussions about search, models, data, use cases, and anything else related. Share your projects, tutorials, ideas, and questions with the community.
+
+[category: Support]
+Need help with Pinecone, or want to use your experience to help other Pinecone users? This is the place.
+
+[category: Announcements]
+Official announcements from the Pinecone team about the product, community, partnerships, and more.

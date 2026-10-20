@@ -1,0 +1,54 @@
+[instance name]
+MakerTube
+
+[short description]
+A home for makers, musicians, artists and DIY folks
+
+[description]
+A home for makers, musicians, artists and DIY folks
+
+[terms]
+Make sure to read https://makertube.net/about/instance/team before requesting an account.
+
+We expect users on MakerTube to adhere to the following rules:
+
+* Only content may be uploaded that was created by the user and the user is the owner of the copyright. _This also applies to covers, remixes, and samples of music that are the subject of copyright._
+* No content condoning or advocating for the oppression of members of marginalized groups, or general discrimination of groups based on characteristics like gender, race, disabilities, nationality, education, religion etc.
+* No harassment, stalking, mobbing, dead-naming, misgendering, contacting users who have made it clear they do not wish to be contacted.
+* No videos containing violence, sexually explicit content, death or abuse in whatever form.
+* Obviously: no content that is illegal in Germany, no actions intended to damage this instance (performance, reputation, security).
+* No right or alt-right bullshit, Nazi content or conspiracy narratives.
+* No automated accounts (unless approved by the moderators).
+* Content may not be used to train AI and LLMs unless there is explicit consent from the respective user.
+* Please respect common sense in terms of the usage of the platform, size and amount of videos that you upload.  This helps to keep the instance accessible for others as well.
+
+Breaking these rules can get you kicked off the instance instantly without prior warning.
+
+Please report behavior that bothers you or breaks the rules. Use the report function for specific content that undermines the rules.
+
+Clarification: Videos marked as Public can be seen by everyone. If you don’t like that please mark them as Private.
+
+*Privacy*
+
+The following user-related data is stored to ensure the operation of the system:
+
+* Username
+* Password (hashed)
+* E-Mail address
+* Video data
+* Channels
+* Watch history (enabled by default)
+* Playlists
+* Subscriptions and followers
+* Comments
+* Live chat messages (retained 14 days)
+
+The web interface uses cookies and browser local storage as needed for login sessions, preferences, and normal site behaviour (typical for PeerTube).
+
+Access logs (e.g. reverse proxy / web server / object store) include the client IP and are kept for 30 days, then removed. We use IPs to block or throttle abusive downloaders. We do not store IP addresses in the PeerTube application database for profiling.
+
+PeerTube participates in the fediverse (ActivityPub): public content and related metadata can appear on other servers and clients. Playback may use P2P; peers can see connection-related technical data. That follows from how PeerTube and federation work.
+
+**GDPR (short):** The operator named on the [team page](https://makertube.net/about/instance/team) is the controller. We process personal data to provide the service (e.g. contract) and to secure and moderate the instance (legitimate interests, where applicable). You have the rights under Articles 15–21 GDPR (e.g. access, rectification, erasure, restriction, portability, objection); you may lodge a complaint with a supervisory authority. Contact the administrator (see team page) to exercise your rights.
+
+The rules are licensed under CC-BY-SA by makertube.net

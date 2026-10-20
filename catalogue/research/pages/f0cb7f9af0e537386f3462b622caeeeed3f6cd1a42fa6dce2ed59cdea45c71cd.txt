@@ -1,0 +1,36 @@
+[server title]
+Mastodon
+
+[short description]
+A general Mastodon server for all languages.
+
+[server rule 1]
+Sexually explicit or violent media must be marked as sensitive when posting.
+
+[server rule 2]
+No spam or advertising.
+
+[server rule 3]
+No racism, sexism, homophobia, transphobia, xenophobia, or casteism.
+
+[server rule 4]
+No incitement of violence or promotion of violent ideologies.
+
+[server rule 5]
+No harassment, dogpiling or doxxing of other users.
+
+[server rule 6]
+No illegal content.
+
+[server rule 7]
+Please understand - you have no privacy on this server or anywhere on Mastodon. It's not designed to be private. Assume that anything you post here, including DMs, are publicly visible.
+
+[server rule 8]
+No fake news, disinformation or misinformation.
+
+[server rule 9]
+Content created by others must be attributed, and use of AI must be disclosed. Profiles that only post AI-generated content will not be tolerated.
+
+[server rule 10]
+No AI (LLM) Agents.
+We want to keep this platform human, not robot.

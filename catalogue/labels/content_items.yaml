@@ -1,0 +1,317 @@
+# OUT1 evaluation set: 20 content items written for this evaluation (our own text, never posted anywhere).
+# 14 on-topic items across the six audiences (AI, video, marketing, SaaS, creators, founders), 3 off-topic items,
+# 3 non-English items. The split (dev = weights may be tuned on these; test = reported once) was fixed here before
+# any label was written: each audience has one item on each side.
+# Fields follow ContentIn (app/catalogue/models.py), plus id, split, group and audiences (for reporting only; the
+# recommender never reads `group` or `audiences`).
+version: 1
+items:
+  - id: c01
+    split: dev
+    group: on_topic
+    audiences: [ai]
+    title: "Running a 7B model locally for subtitle generation: what we measured"
+    body: |
+      We replaced a hosted speech-to-text API with Whisper plus a local 7B LLM that cleans up punctuation and
+      speaker turns. On a 16-core laptop CPU, a 10-minute clip takes 4 minutes end to end. Word error rate went from
+      7.9% to 8.4%, and the cost went to zero. Quantised 4-bit weights were good enough; 3-bit started dropping names.
+      The post includes the exact Ollama model tags, prompts and the evaluation script. What local setups are you
+      using for transcription?
+    content_type: text
+    tags: [llm, local-ai, ollama, whisper, transcription]
+    language: en
+    is_promotional: false
+    ai_generated: false
+
+  - id: c02
+    split: test
+    group: on_topic
+    audiences: [ai]
+    title: "Prompt patterns that halved our AI image generation retries"
+    body: |
+      We generate thumbnails with Stable Diffusion XL and ComfyUI. Most failed images came from three prompt habits:
+      stacking styles, negative prompts that fight the positive one, and asking for readable text. Fixing those cut
+      retries from 3.1 to 1.4 per image. This write-up was drafted with an AI assistant and edited by us; the example
+      prompts, seeds and before/after grids are in the post.
+    content_type: text
+    tags: [ai, stable-diffusion, comfyui, image-generation, prompts]
+    language: en
+    is_promotional: false
+    ai_generated: true
+
+  - id: c03
+    split: dev
+    group: on_topic
+    audiences: [video]
+    title: "Colour grading in DaVinci Resolve vs Kdenlive: a 10-minute side-by-side"
+    body: |
+      A side-by-side video comparing the same three shots graded in DaVinci Resolve (free) and Kdenlive: primary
+      wheels, curves and a simple LUT workflow. Kdenlive gets surprisingly close on simple shots but its scopes are
+      slower. Project files and LUTs are linked in the description. We filmed and edited it ourselves.
+    content_type: video_link
+    link_url: "https://video.example.org/w/colour-grading-resolve-vs-kdenlive"
+    tags: [video-editing, color-grading, davinci-resolve, kdenlive, open-source]
+    language: en
+    is_promotional: false
+    ai_generated: false
+
+  - id: c04
+    split: test
+    group: on_topic
+    audiences: [video, creators]
+    title: "Turning one long video into ten Shorts: our editing workflow"
+    body: |
+      How we cut a 40-minute interview into ten vertical Shorts in about an hour: picking hooks from the transcript,
+      reframing to 9:16, burned-in captions and a consistent end card. We compare retention on YouTube Shorts for
+      clips that start with a question versus a statement. Templates for the caption style are included.
+    content_type: text
+    tags: [video, youtube, shorts, editing, creators]
+    language: en
+    is_promotional: false
+    ai_generated: false
+
+  - id: c05
+    split: dev
+    group: on_topic
+    audiences: [marketing, video]
+    title: "SEO for video: what actually moved our YouTube search traffic"
+    body: |
+      Six months of experiments on a small channel: titles written for search intent, chapters, transcripts on the
+      watch page and an embedded video on a matching blog post. Chapters and transcripts helped; keyword-stuffed tags
+      did nothing measurable. We share the before/after search impressions and the spreadsheet we used.
+    content_type: text
+    tags: [seo, marketing, youtube, video-marketing]
+    language: en
+    is_promotional: false
+    ai_generated: false
+
+  - id: c06
+    split: test
+    group: on_topic
+    audiences: [marketing, creators]
+    title: "Newsletter vs social media: six months of numbers from a small creator business"
+    body: |
+      We tracked where paying customers of a two-person creator business came from: the email newsletter, Instagram,
+      LinkedIn or search. The newsletter brought 61% of revenue from 18% of the audience. We explain the attribution
+      method, what we stopped doing on social, and the welcome sequence that converts best.
+    content_type: text
+    tags: [marketing, email-marketing, social-media, newsletter, creators]
+    language: en
+    is_promotional: false
+    ai_generated: false
+
+  - id: c07
+    split: dev
+    group: on_topic
+    audiences: [saas]
+    title: "How we automated client onboarding with n8n and a no-code CRM"
+    body: |
+      Our onboarding used to be eleven manual steps. We rebuilt it as one n8n workflow: a form submission creates the
+      CRM record, a shared folder, a kickoff calendar invite and a welcome email, with a Slack message when anything
+      fails. The workflow JSON is attached. Lessons: keep credentials in n8n's credential store and add error
+      branches early.
+    content_type: text
+    tags: [n8n, automation, no-code, saas, crm]
+    language: en
+    is_promotional: false
+    ai_generated: false
+
+  - id: c08
+    split: test
+    group: on_topic
+    audiences: [saas, founders]
+    title: "Pricing a micro-SaaS: three experiments and what they taught us"
+    body: |
+      We ran three pricing experiments on our small B2B SaaS: a free tier versus a trial, usage-based versus seats,
+      and an annual discount. Trials converted 2.3x better than the free tier for us, and seat pricing confused
+      solo users. We include the numbers, what we would do differently, and questions we still have.
+    content_type: text
+    tags: [saas, pricing, startups, micro-saas]
+    language: en
+    is_promotional: false
+    ai_generated: false
+
+  - id: c09
+    split: dev
+    group: on_topic
+    audiences: [creators, video]
+    title: "Podcast to video: repurposing audio episodes for PeerTube and YouTube"
+    body: |
+      Our audio-only podcast now also ships as a video every week: a static waveform version for the full episode
+      and three short clips with captions. We host the full episodes on our own PeerTube channel and mirror to
+      YouTube. This video walks through the ffmpeg commands, the RSS changes and what happened to listener numbers.
+    content_type: video_link
+    link_url: "https://video.example.org/w/podcast-to-video"
+    tags: [podcast, video, peertube, youtube, creators]
+    language: en
+    is_promotional: false
+    ai_generated: false
+
+  - id: c10
+    split: test
+    group: on_topic
+    audiences: [creators]
+    title: "What I learned writing 100 newsletter issues as a solo creator"
+    body: |
+      One hundred weekly issues in, here is what kept me writing: a fixed outline, a backlog of ideas, and writing
+      the subject line last. Open rates matter less than replies. I also moved the newsletter from a hosted service
+      to a self-hosted Ghost site, and I explain the trade-offs for independent writers.
+    content_type: text
+    tags: [writing, newsletter, creators, ghost, blogging]
+    language: en
+    is_promotional: false
+    ai_generated: false
+
+  - id: c11
+    split: dev
+    group: on_topic
+    audiences: [founders, ai, video]
+    title: "We just launched Clipwise: an AI tool that turns long videos into captioned Shorts"
+    body: |
+      Today we are launching Clipwise. Upload a long video and it finds the strongest moments, reframes them to
+      vertical and adds captions in 12 languages. There is a free plan with 60 minutes a month. Try it at
+      https://clipwise.example.com and tell us what breaks. We are two founders and would love feedback.
+    content_type: text
+    link_url: "https://clipwise.example.com"
+    tags: [launch, ai-tools, video, startup, saas]
+    language: en
+    is_promotional: true
+    ai_generated: false
+    owner_domains: [clipwise.example.com]
+
+  - id: c12
+    split: test
+    group: on_topic
+    audiences: [founders]
+    title: "Our first 1,000 users: what worked for a bootstrapped two-person startup"
+    body: |
+      No ads and no funding: our first 1,000 users came from answering questions in communities, one launch-day
+      spike and a comparison page that ranks in search. Cold email failed for us. We break down users by channel,
+      the time each channel cost us, and what we would try first if we started again.
+    content_type: text
+    tags: [startup, founders, bootstrapping, growth, indie-hackers]
+    language: en
+    is_promotional: false
+    ai_generated: false
+
+  - id: c13
+    split: dev
+    group: on_topic
+    audiences: [ai, creators, video]
+    title: "AI dubbing for creators: an honest look at voice cloning quality"
+    body: |
+      We dubbed the same five-minute video into Spanish, German and Hindi with three AI dubbing tools and asked native
+      speakers to rate them. Lip sync is still the weak spot; voice similarity is good in Spanish and poor in Hindi.
+      We also cover consent: only clone a voice when the speaker agreed in writing.
+    content_type: text
+    tags: [ai, dubbing, voice-cloning, creators, video]
+    language: en
+    is_promotional: false
+    ai_generated: false
+
+  - id: c14
+    split: test
+    group: on_topic
+    audiences: [founders, saas, marketing]
+    title: "Launch week checklist for AI SaaS founders (free Notion template)"
+    body: |
+      The 42-item checklist we use for every launch: a waitlist, a press kit, launch-site timing, a demo video and
+      the follow-up emails. Grab the free Notion template at https://launchkit.example.com/checklist. We built it for
+      our own launches and now give it away to other founders.
+    content_type: text
+    link_url: "https://launchkit.example.com/checklist"
+    tags: [startup, launch, saas, marketing, ai]
+    language: en
+    is_promotional: true
+    ai_generated: false
+    owner_domains: [launchkit.example.com]
+
+  - id: c15
+    split: dev
+    group: off_topic
+    audiences: []
+    title: "Sourdough starter troubleshooting: five fixes for a sluggish starter"
+    body: |
+      A short how-to video from our kitchen: why a starter stops rising, and five fixes that worked for us
+      (temperature, flour, feeding ratio, a clean jar and patience). Filmed on a phone; no music, no sponsors.
+    content_type: video_link
+    link_url: "https://video.example.org/w/sourdough-fixes"
+    tags: [baking, sourdough, cooking]
+    language: en
+    is_promotional: false
+    ai_generated: false
+
+  - id: c16
+    split: test
+    group: off_topic
+    audiences: []
+    title: "Three alpine lakes in a day: a hiking photo diary near Innsbruck"
+    body: |
+      Photos and notes from a 19 km loop past three alpine lakes. Start early: the car park fills by 8 am. The photos
+      were shot on a mirrorless camera and edited in darktable, with the processing settings at the end.
+    content_type: image
+    tags: [hiking, travel, photography, austria]
+    language: en
+    is_promotional: false
+    ai_generated: false
+
+  - id: c17
+    split: test
+    group: off_topic
+    audiences: []
+    title: "Our neighbourhood football club needs volunteer coaches for the under-10s"
+    body: |
+      The club is looking for two volunteer coaches for Saturday mornings. No experience needed; we provide the
+      training course and kit. Get in touch with the club secretary if you can help this season.
+    content_type: text
+    tags: [football, volunteering, local]
+    language: en
+    is_promotional: false
+    ai_generated: false
+
+  - id: c18
+    split: dev
+    group: non_english
+    audiences: [ai, video]
+    title: "KI-Untertitel lokal: Whisper auf dem eigenen Rechner ausprobiert"
+    body: |
+      In diesem Video zeigen wir, wie man Untertitel für eigene Videos mit Whisper komplett lokal erzeugt, ohne
+      Cloud-Dienst. Wir vergleichen drei Modellgrößen bei deutscher Sprache, messen die Laufzeit auf einem normalen
+      Laptop und zeigen, wie man die Untertitel in Kdenlive importiert. Welche Erfahrungen habt ihr mit KI-Untertiteln?
+    content_type: video_link
+    link_url: "https://video.example.org/w/ki-untertitel-lokal"
+    tags: [ki, untertitel, whisper, video]
+    language: de
+    is_promotional: false
+    ai_generated: false
+
+  - id: c19
+    split: test
+    group: non_english
+    audiences: [creators, ai, video]
+    title: "Cómo editar vídeos más rápido con inteligencia artificial: guía para creadores"
+    body: |
+      En este vídeo explicamos cómo usamos herramientas de inteligencia artificial para cortar silencios, generar
+      subtítulos y elegir miniaturas. Mostramos el flujo completo con un vídeo real de 20 minutos y cuánto tiempo
+      ahorramos. Pensado para creadores de contenido que publican cada semana.
+    content_type: video_link
+    link_url: "https://video.example.org/w/editar-videos-ia"
+    tags: [creadores, ia, edición de vídeo, youtube]
+    language: es
+    is_promotional: false
+    ai_generated: false
+
+  - id: c20
+    split: dev
+    group: non_english
+    audiences: [saas, ai]
+    title: "Automatiser sa veille IA avec n8n : retour d'expérience"
+    body: |
+      Nous avons construit un flux n8n qui collecte chaque matin les nouveautés en intelligence artificielle, les
+      résume et les envoie à l'équipe. Nous partageons le flux, les limites des résumés automatiques et le coût réel
+      (zéro, tout tourne en auto-hébergement). Comment faites-vous votre veille ?
+    content_type: text
+    tags: [n8n, automatisation, ia, veille, no-code]
+    language: fr
+    is_promotional: false
+    ai_generated: false

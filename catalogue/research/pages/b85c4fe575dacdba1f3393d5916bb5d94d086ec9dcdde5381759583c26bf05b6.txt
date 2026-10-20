@@ -1,0 +1,5 @@
+[community title]
+startups
+
+[community sidebar]
+all things related to startups & entrepreneurship.

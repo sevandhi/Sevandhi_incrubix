@@ -1,0 +1,161 @@
+# IncuBrix Long-Tail Destination Network: one-command stack (IS1).
+#   docker compose up -d --wait        # api, worker, postgres, s3 (SeaweedFS), mock-platforms
+#   docker compose down -v
+# Only the API (${IBX_API_PORT:-8088}) and mock-platforms (${IBX_MOCK_PORT:-8089}) are published on the host.
+# Settings come from .env (optional; see .env.example). The defaults below are dev-only placeholders:
+# APP_ENV=demo|prod refuses to start with them; scripts/gen_secrets.sh writes fresh ones into .env.
+#
+# Local real instances come from deploy/compose/*.yaml: Lemmy + Ghost + toxiproxy + bootstrap by
+# default, the real Discourse under `--profile full`. They sit on the internal-only `ibx_sandbox` network
+# (no internet route); api and worker join it too and read the bootstrap's credentials read-only.
+# The bootstrap chowns its output to IBX_BOOTSTRAP_OUT_UID/GID (10001 = the non-root user in our image).
+
+include:
+  - deploy/compose/lemmy.yaml
+  - deploy/compose/ghost.yaml
+  - deploy/compose/toxiproxy.yaml
+  - deploy/compose/bootstrap.yaml
+  - deploy/compose/discourse.yaml   # every service here is under profile "full": inert by default
+  - deploy/compose/shooter.yaml     # evidence screenshots, profile "evidence": inert by default
+  - deploy/compose/ollama.yaml      # local free LLM, profile "llm": inert by default
+
+name: ${COMPOSE_PROJECT_NAME:-ibx}
+
+x-ibx-env: &ibx-env
+  APP_ENV: ${APP_ENV:-dev}
+  LOG_LEVEL: ${LOG_LEVEL:-INFO}
+  DATABASE_URL: postgresql+asyncpg://ibx:${POSTGRES_PASSWORD:-ibx-dev-password}@postgres:5432/ibx
+  S3_ENDPOINT: http://s3:8333
+  S3_PUBLIC_ENDPOINT: ${S3_PUBLIC_ENDPOINT:-http://127.0.0.1:8333}
+  S3_ACCESS_KEY: ${S3_ACCESS_KEY:-ibx-dev-access}
+  S3_SECRET_KEY: ${S3_SECRET_KEY:-ibx-dev-secret}
+  S3_BUCKET: ${S3_BUCKET:-ibx}
+  API_TOKEN: ${API_TOKEN:-ibx-dev-token}
+  SIMULATION_MODE: ${SIMULATION_MODE:-false}
+  MOCK_PLATFORM_URL: http://mock-platforms:8080
+  SIM_SECRET: ${SIM_SECRET:-sim-secret}   # placeholder signing secret shared with the partner mock (simulation only)
+  BOOTSTRAP_OUT_DIR: /bootstrap/out
+  LLM_PROVIDER: ${LLM_PROVIDER:-mock}
+  LLM_MODEL: ${LLM_MODEL:-mock-heuristic-v1}
+  OLLAMA_URL: ${OLLAMA_URL:-http://ollama:11434/v1}
+  OLLAMA_MODEL: ${OLLAMA_MODEL:-qwen2.5:1.5b-instruct}   # Apache-2.0; hosted-provider keys come from .env only
+  IBX_TOXIPROXY_URL: http://toxiproxy:8474
+  IBX_LEMMY_PROXY_URL: http://toxiproxy:18536
+  IBX_GHOST_PROXY_URL: http://toxiproxy:12368
+  # signed download links (/api/v1/files/...) must open from the host through the one published API port (IS7)
+  PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://127.0.0.1:${IBX_API_PORT:-8088}}
+  # evidence screenshots (profile `evidence`): set SCREENSHOT_URL=http://shooter:3000; empty = none, recorded as such
+  SCREENSHOT_URL: ${SCREENSHOT_URL:-}
+  SCREENSHOT_URL_REWRITES: ${SCREENSHOT_URL_REWRITES:-}
+  # recertification and alert sinks; webhook / GitHub issue are off while empty
+  RECERT_AFTER_DAYS: ${RECERT_AFTER_DAYS:-21}
+  RECERT_JITTER_S: ${RECERT_JITTER_S:-600}
+  ALERT_WEBHOOK_URL: ${ALERT_WEBHOOK_URL:-}
+  ALERT_WEBHOOK_SECRET: ${ALERT_WEBHOOK_SECRET:-}
+  GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+  GITHUB_REPO: ${GITHUB_REPO:-}
+  GITHUB_API_URL: ${GITHUB_API_URL:-https://api.github.com}
+
+x-ibx-sandbox: &ibx-sandbox
+  networks: [default, ibx_sandbox]   # ibx_sandbox (internal: true) is defined by the included files
+  volumes:
+    - ibx_bootstrap_out:/bootstrap/out:ro
+
+x-ibx-app: &ibx-app
+  build: .
+  image: ${COMPOSE_PROJECT_NAME:-ibx}-app:dev   # per project, so parallel stacks never share a build
+  env_file:
+    - path: .env
+      required: false
+  restart: unless-stopped
+  logging:
+    driver: json-file
+    options: {max-size: "10m", max-file: "3"}
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ibx
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ibx-dev-password}
+      POSTGRES_DB: ibx
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ibx -d ibx"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    restart: unless-stopped
+
+  s3:
+    image: chrislusf/seaweedfs:3.97
+    # The S3 identity is written from env at start, so no credentials file lives in the repo.
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - >-
+        printf '{"identities":[{"name":"ibx","credentials":[{"accessKey":"%s","secretKey":"%s"}],"actions":["Admin","Read","Write","List","Tagging"]}]}'
+        "$$S3_ACCESS_KEY" "$$S3_SECRET_KEY" > /tmp/s3.json &&
+        exec weed server -dir=/data -s3 -s3.port=8333 -s3.config=/tmp/s3.json -volume.max=8 -master.volumeSizeLimitMB=256
+    environment:
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY:-ibx-dev-access}
+      S3_SECRET_KEY: ${S3_SECRET_KEY:-ibx-dev-secret}
+    volumes:
+      - s3_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:8333/healthz || exit 1"]
+      interval: 3s
+      timeout: 3s
+      retries: 40
+      start_period: 5s
+    restart: unless-stopped
+
+  mock-platforms:
+    <<: *ibx-app
+    command: ["uvicorn", "mocks.platforms.app:app", "--host", "0.0.0.0", "--port", "8080", "--no-access-log"]
+    environment:
+      SIM_SECRET: ${SIM_SECRET:-sim-secret}
+    ports:
+      - "${IBX_MOCK_PORT:-8089}:8080"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2)"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  api:
+    <<: [*ibx-app, *ibx-sandbox]
+    environment: *ibx-env
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--no-access-log"]
+    ports:
+      - "${IBX_API_PORT:-8088}:8000"
+    depends_on:
+      postgres: {condition: service_healthy}
+      s3: {condition: service_healthy}
+      mock-platforms: {condition: service_healthy}
+      bootstrap: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/ready', timeout=3)"]
+      interval: 3s
+      timeout: 5s
+      retries: 40
+      start_period: 5s
+
+  worker:
+    <<: [*ibx-app, *ibx-sandbox]
+    environment: *ibx-env
+    command: ["python", "-m", "app.jobs.worker"]
+    depends_on:
+      api: {condition: service_healthy}  # the api applies migrations first
+      bootstrap: {condition: service_healthy}
+    healthcheck:
+      # the worker touches WORKER_HEARTBEAT_FILE (a setting, default /tmp/ibx-worker-heartbeat) every 5 s
+      test: ["CMD", "python", "-c", "import os, sys, time; from app.config import get_settings; sys.exit(0 if time.time() - os.path.getmtime(get_settings().WORKER_HEARTBEAT_FILE) < 30 else 1)"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+      start_period: 5s
+
+volumes:
+  pg_data:
+  s3_data:

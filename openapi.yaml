@@ -1,0 +1,5900 @@
+openapi: 3.1.0
+info:
+  title: IncuBrix Long-Tail Destination Network
+  description: Connector contract (Appendix A), destination catalogue, posting rules and certification.
+  version: 0.1.0
+paths:
+  /connector/v1/{key}/validate:
+    post:
+      tags:
+      - connector contract
+      summary: Check a rendition against the destination's limits.
+      operationId: contract_validate
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Key
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Idempotency-Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ValidateRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateResult'
+        '404':
+          content:
+            application/json:
+              schema: &id001
+                $ref: '#/components/schemas/ErrorEnvelope'
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema: *id001
+          description: Conflict
+        '422':
+          content:
+            application/json:
+              schema: *id001
+          description: Unprocessable Entity
+        '424':
+          content:
+            application/json:
+              schema: *id001
+          description: Failed Dependency
+        '429':
+          content:
+            application/json:
+              schema: *id001
+          description: Too Many Requests
+        '503':
+          content:
+            application/json:
+              schema: *id001
+          description: Service Unavailable
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /connector/v1/{key}/publish:
+    post:
+      tags:
+      - connector contract
+      summary: Publish a rendition (idempotent per idempotency_key).
+      operationId: contract_publish
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Key
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Idempotency-Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PublishRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublishResult'
+        '404':
+          content:
+            application/json:
+              schema: *id001
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema: *id001
+          description: Conflict
+        '422':
+          content:
+            application/json:
+              schema: *id001
+          description: Unprocessable Entity
+        '424':
+          content:
+            application/json:
+              schema: *id001
+          description: Failed Dependency
+        '429':
+          content:
+            application/json:
+              schema: *id001
+          description: Too Many Requests
+        '503':
+          content:
+            application/json:
+              schema: *id001
+          description: Service Unavailable
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /connector/v1/{key}/get_status:
+    post:
+      tags:
+      - connector contract
+      summary: Status and live URL of a published post.
+      operationId: contract_get_status
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Key
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Idempotency-Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostRefRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusResult'
+        '404':
+          content:
+            application/json:
+              schema: *id001
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema: *id001
+          description: Conflict
+        '422':
+          content:
+            application/json:
+              schema: *id001
+          description: Unprocessable Entity
+        '424':
+          content:
+            application/json:
+              schema: *id001
+          description: Failed Dependency
+        '429':
+          content:
+            application/json:
+              schema: *id001
+          description: Too Many Requests
+        '503':
+          content:
+            application/json:
+              schema: *id001
+          description: Service Unavailable
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /connector/v1/{key}/delete:
+    post:
+      tags:
+      - connector contract
+      summary: Delete a published post.
+      operationId: contract_delete
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Key
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Idempotency-Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostRefRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteResult'
+        '404':
+          content:
+            application/json:
+              schema: *id001
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema: *id001
+          description: Conflict
+        '422':
+          content:
+            application/json:
+              schema: *id001
+          description: Unprocessable Entity
+        '424':
+          content:
+            application/json:
+              schema: *id001
+          description: Failed Dependency
+        '429':
+          content:
+            application/json:
+              schema: *id001
+          description: Too Many Requests
+        '503':
+          content:
+            application/json:
+              schema: *id001
+          description: Service Unavailable
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /connector/v1/{key}/fetch_metrics:
+    post:
+      tags:
+      - connector contract
+      summary: Normalised metrics; null = not exposed by the platform.
+      operationId: contract_fetch_metrics
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Key
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Idempotency-Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MetricsRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetricsResult'
+        '404':
+          content:
+            application/json:
+              schema: *id001
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema: *id001
+          description: Conflict
+        '422':
+          content:
+            application/json:
+              schema: *id001
+          description: Unprocessable Entity
+        '424':
+          content:
+            application/json:
+              schema: *id001
+          description: Failed Dependency
+        '429':
+          content:
+            application/json:
+              schema: *id001
+          description: Too Many Requests
+        '503':
+          content:
+            application/json:
+              schema: *id001
+          description: Service Unavailable
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /connector/v1/{key}/refresh_auth:
+    post:
+      tags:
+      - connector contract
+      summary: Refresh the connection's credentials.
+      operationId: contract_refresh_auth
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Key
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Idempotency-Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RefreshAuthRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RefreshAuthResult'
+        '404':
+          content:
+            application/json:
+              schema: *id001
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema: *id001
+          description: Conflict
+        '422':
+          content:
+            application/json:
+              schema: *id001
+          description: Unprocessable Entity
+        '424':
+          content:
+            application/json:
+              schema: *id001
+          description: Failed Dependency
+        '429':
+          content:
+            application/json:
+              schema: *id001
+          description: Too Many Requests
+        '503':
+          content:
+            application/json:
+              schema: *id001
+          description: Service Unavailable
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /connector/v1/{key}/build_assist_pack:
+    post:
+      tags:
+      - connector contract
+      summary: Files, caption and checklist for a person to post.
+      operationId: contract_build_assist_pack
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Key
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Idempotency-Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AssistPackRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssistPack'
+        '404':
+          content:
+            application/json:
+              schema: *id001
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema: *id001
+          description: Conflict
+        '422':
+          content:
+            application/json:
+              schema: *id001
+          description: Unprocessable Entity
+        '424':
+          content:
+            application/json:
+              schema: *id001
+          description: Failed Dependency
+        '429':
+          content:
+            application/json:
+              schema: *id001
+          description: Too Many Requests
+        '503':
+          content:
+            application/json:
+              schema: *id001
+          description: Service Unavailable
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /connector/v1/{key}/manifest:
+    get:
+      tags:
+      - connector contract
+      summary: The connector's manifest
+      operationId: contract_manifest
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Key
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Contract Manifest
+        '404':
+          content:
+            application/json:
+              schema: *id001
+          description: Not Found
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/connector/{key}/validate:
+    post:
+      tags:
+      - connector contract
+      summary: Check a rendition against the destination's limits. (mirror)
+      operationId: api_contract_validate
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Key
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Idempotency-Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ValidateRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateResult'
+        '404':
+          content:
+            application/json:
+              schema: *id001
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema: *id001
+          description: Conflict
+        '422':
+          content:
+            application/json:
+              schema: *id001
+          description: Unprocessable Entity
+        '424':
+          content:
+            application/json:
+              schema: *id001
+          description: Failed Dependency
+        '429':
+          content:
+            application/json:
+              schema: *id001
+          description: Too Many Requests
+        '503':
+          content:
+            application/json:
+              schema: *id001
+          description: Service Unavailable
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/connector/{key}/publish:
+    post:
+      tags:
+      - connector contract
+      summary: Publish a rendition (idempotent per idempotency_key). (mirror)
+      operationId: api_contract_publish
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Key
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Idempotency-Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PublishRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublishResult'
+        '404':
+          content:
+            application/json:
+              schema: *id001
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema: *id001
+          description: Conflict
+        '422':
+          content:
+            application/json:
+              schema: *id001
+          description: Unprocessable Entity
+        '424':
+          content:
+            application/json:
+              schema: *id001
+          description: Failed Dependency
+        '429':
+          content:
+            application/json:
+              schema: *id001
+          description: Too Many Requests
+        '503':
+          content:
+            application/json:
+              schema: *id001
+          description: Service Unavailable
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/connector/{key}/get_status:
+    post:
+      tags:
+      - connector contract
+      summary: Status and live URL of a published post. (mirror)
+      operationId: api_contract_get_status
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Key
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Idempotency-Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostRefRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusResult'
+        '404':
+          content:
+            application/json:
+              schema: *id001
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema: *id001
+          description: Conflict
+        '422':
+          content:
+            application/json:
+              schema: *id001
+          description: Unprocessable Entity
+        '424':
+          content:
+            application/json:
+              schema: *id001
+          description: Failed Dependency
+        '429':
+          content:
+            application/json:
+              schema: *id001
+          description: Too Many Requests
+        '503':
+          content:
+            application/json:
+              schema: *id001
+          description: Service Unavailable
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/connector/{key}/delete:
+    post:
+      tags:
+      - connector contract
+      summary: Delete a published post. (mirror)
+      operationId: api_contract_delete
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Key
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Idempotency-Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostRefRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteResult'
+        '404':
+          content:
+            application/json:
+              schema: *id001
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema: *id001
+          description: Conflict
+        '422':
+          content:
+            application/json:
+              schema: *id001
+          description: Unprocessable Entity
+        '424':
+          content:
+            application/json:
+              schema: *id001
+          description: Failed Dependency
+        '429':
+          content:
+            application/json:
+              schema: *id001
+          description: Too Many Requests
+        '503':
+          content:
+            application/json:
+              schema: *id001
+          description: Service Unavailable
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/connector/{key}/fetch_metrics:
+    post:
+      tags:
+      - connector contract
+      summary: Normalised metrics; null = not exposed by the platform. (mirror)
+      operationId: api_contract_fetch_metrics
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Key
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Idempotency-Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MetricsRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetricsResult'
+        '404':
+          content:
+            application/json:
+              schema: *id001
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema: *id001
+          description: Conflict
+        '422':
+          content:
+            application/json:
+              schema: *id001
+          description: Unprocessable Entity
+        '424':
+          content:
+            application/json:
+              schema: *id001
+          description: Failed Dependency
+        '429':
+          content:
+            application/json:
+              schema: *id001
+          description: Too Many Requests
+        '503':
+          content:
+            application/json:
+              schema: *id001
+          description: Service Unavailable
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/connector/{key}/refresh_auth:
+    post:
+      tags:
+      - connector contract
+      summary: Refresh the connection's credentials. (mirror)
+      operationId: api_contract_refresh_auth
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Key
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Idempotency-Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RefreshAuthRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RefreshAuthResult'
+        '404':
+          content:
+            application/json:
+              schema: *id001
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema: *id001
+          description: Conflict
+        '422':
+          content:
+            application/json:
+              schema: *id001
+          description: Unprocessable Entity
+        '424':
+          content:
+            application/json:
+              schema: *id001
+          description: Failed Dependency
+        '429':
+          content:
+            application/json:
+              schema: *id001
+          description: Too Many Requests
+        '503':
+          content:
+            application/json:
+              schema: *id001
+          description: Service Unavailable
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/connector/{key}/build_assist_pack:
+    post:
+      tags:
+      - connector contract
+      summary: Files, caption and checklist for a person to post. (mirror)
+      operationId: api_contract_build_assist_pack
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Key
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Idempotency-Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AssistPackRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssistPack'
+        '404':
+          content:
+            application/json:
+              schema: *id001
+          description: Not Found
+        '409':
+          content:
+            application/json:
+              schema: *id001
+          description: Conflict
+        '422':
+          content:
+            application/json:
+              schema: *id001
+          description: Unprocessable Entity
+        '424':
+          content:
+            application/json:
+              schema: *id001
+          description: Failed Dependency
+        '429':
+          content:
+            application/json:
+              schema: *id001
+          description: Too Many Requests
+        '503':
+          content:
+            application/json:
+              schema: *id001
+          description: Service Unavailable
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/connector/{key}/manifest:
+    get:
+      tags:
+      - connector contract
+      summary: The connector's manifest (mirror)
+      operationId: api_contract_manifest
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Key
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Api Contract Manifest
+        '404':
+          content:
+            application/json:
+              schema: *id001
+          description: Not Found
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/catalogue/imports:
+    post:
+      tags:
+      - catalogue
+      summary: Import a catalogue CSV (validate, dedupe, reachability, enrich, score)
+      operationId: create_import_api_v1_catalogue_imports_post
+      responses:
+        '202':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                dry_run:
+                  type: boolean
+                import_unreachable:
+                  type: boolean
+                relevance_llm:
+                  type: boolean
+              required:
+              - file
+          text/csv:
+            schema:
+              type: string
+              description: CSV with a header row (catalogue columns).
+          application/json:
+            schema:
+              properties:
+                csv_url:
+                  maxLength: 2000
+                  pattern: ^https?://
+                  title: Csv Url
+                  type: string
+                dry_run:
+                  default: false
+                  title: Dry Run
+                  type: boolean
+                import_unreachable:
+                  default: false
+                  title: Import Unreachable
+                  type: boolean
+                relevance_llm:
+                  default: false
+                  title: Relevance Llm
+                  type: boolean
+                callback_url:
+                  anyOf:
+                  - maxLength: 2000
+                    pattern: ^https?://
+                    type: string
+                  - type: 'null'
+                  title: Callback Url
+              required:
+              - csv_url
+              title: ImportUrlIn
+              type: object
+      security:
+      - bearerAuth: []
+      parameters:
+      - &id002
+        name: Idempotency-Key
+        in: header
+        required: false
+        description: Same key + same body → the stored response (no second job). A missing key is generated and echoed.
+        schema:
+          type: string
+          maxLength: 255
+          pattern: ^[A-Za-z0-9._:\-]{1,255}$
+    get:
+      tags:
+      - catalogue
+      summary: Recent catalogue imports
+      operationId: list_imports_api_v1_catalogue_imports_get
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          maximum: 200
+          minimum: 1
+          default: 20
+          title: Limit
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response List Imports Api V1 Catalogue Imports Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/catalogue/imports/{import_id}:
+    get:
+      tags:
+      - catalogue
+      summary: 'One catalogue import: status, progress and counts'
+      operationId: get_import_api_v1_catalogue_imports__import_id__get
+      parameters:
+      - name: import_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Import Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Get Import Api V1 Catalogue Imports  Import Id  Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/catalogue/imports/{import_id}/report:
+    get:
+      tags:
+      - catalogue
+      summary: The row-by-row import report (CSV, or JSON with ?format=json)
+      operationId: get_report_api_v1_catalogue_imports__import_id__report_get
+      parameters:
+      - name: import_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Import Id
+      - name: format
+        in: query
+        required: false
+        schema:
+          type: string
+          pattern: ^(csv|json)$
+          default: csv
+          title: Format
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+            text/csv: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/catalogue/relevance:
+    post:
+      tags:
+      - catalogue
+      summary: Relevance 1-5 with a reason (lexicon, optional LLM ±1)
+      operationId: score_relevance_api_v1_catalogue_relevance_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RelevanceIn'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                type: object
+                title: Response Score Relevance Api V1 Catalogue Relevance Post
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+      parameters:
+      - *id002
+  /api/v1/certifications:
+    post:
+      tags:
+      - certification
+      summary: Certify a destination (publish → live → status → delete)
+      operationId: start_certification_api_v1_certifications_post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CertificationIn'
+      responses:
+        '202':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+      parameters:
+      - *id002
+    get:
+      tags:
+      - certification
+      summary: Recent certification runs
+      operationId: list_certifications_api_v1_certifications_get
+      parameters:
+      - name: destination_id
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Destination Id
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          maximum: 500
+          minimum: 1
+          default: 50
+          title: Limit
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response List Certifications Api V1 Certifications Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/certifications/{run_id}:
+    get:
+      tags:
+      - certification
+      summary: A certification run with its evidence links
+      operationId: get_certification_api_v1_certifications__run_id__get
+      parameters:
+      - name: run_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Run Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Get Certification Api V1 Certifications  Run Id  Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/test-posts:
+    get:
+      tags:
+      - certification
+      summary: 'Test-post audit (MH5): created → removed, lifetime, outcome per post'
+      description: '``deleted`` counts only posts that are gone from the platform (Lemmy purge, Ghost delete,
+
+        webhook delete). ``soft_deleted`` (Discourse), ``unpublished_to_draft`` (Dev.to: no delete API),
+
+        ``pack_revoked`` (assisted: no post exists), ``not_created`` (the write-ahead row of a post that never reached the
+
+        platform), ``already_gone`` and ``unconfirmed`` are separate. ``removed`` = every row that is no longer live.'
+      operationId: test_posts_api_v1_test_posts_get
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          maximum: 10000
+          minimum: 1
+          default: 1000
+          title: Limit
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Test Posts Api V1 Test Posts Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/connections:
+    post:
+      tags:
+      - connections
+      summary: Store a connection (credentials encrypted, never returned)
+      operationId: create_connection_api_v1_connections_post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConnectionIn'
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+      parameters:
+      - *id002
+    get:
+      tags:
+      - connections
+      summary: List connections (no secrets)
+      operationId: list_connections_api_v1_connections_get
+      parameters:
+      - name: connector_key
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Connector Key
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          maximum: 500
+          minimum: 1
+          default: 100
+          title: Limit
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response List Connections Api V1 Connections Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/connections/{connection_id}:
+    get:
+      tags:
+      - connections
+      summary: One connection (no secrets)
+      operationId: get_connection_api_v1_connections__connection_id__get
+      parameters:
+      - name: connection_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Connection Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Get Connection Api V1 Connections  Connection Id  Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/connections/{connection_id}/refresh:
+    post:
+      tags:
+      - connections
+      summary: Refresh the connection's credentials via the connector
+      operationId: refresh_connection_api_v1_connections__connection_id__refresh_post
+      parameters:
+      - name: connection_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Connection Id
+      - *id002
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Refresh Connection Api V1 Connections  Connection Id  Refresh Post
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/connectors:
+    get:
+      tags:
+      - connectors
+      summary: Registered connectors with their kill-switch state
+      operationId: list_connectors_api_v1_connectors_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                type: object
+                title: Response List Connectors Api V1 Connectors Get
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/connectors/{key}/kill-switch:
+    put:
+      tags:
+      - connectors
+      summary: Turn a connector off (or on) at runtime
+      operationId: set_kill_switch_api_v1_connectors__key__kill_switch_put
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KillSwitchIn'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Set Kill Switch Api V1 Connectors  Key  Kill Switch Put
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/content:
+    post:
+      tags:
+      - content
+      summary: Store a content item
+      operationId: create_content_api_v1_content_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContentIn'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+      parameters:
+      - *id002
+  /api/v1/content/{content_id}:
+    get:
+      tags:
+      - content
+      summary: One content item
+      operationId: get_content_api_v1_content__content_id__get
+      parameters:
+      - name: content_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Content Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Get Content Api V1 Content  Content Id  Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/destinations:
+    post:
+      tags:
+      - destinations
+      summary: Add destinations from catalogue rows (JSON or CSV)
+      operationId: create_destinations_api_v1_destinations_post
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              anyOf:
+              - additionalProperties: true
+                description: One catalogue row. Only ``name``, ``url`` and ``connector_key`` are required.
+                properties:
+                  name:
+                    maxLength: 255
+                    minLength: 1
+                    title: Name
+                    type: string
+                  url:
+                    maxLength: 2000
+                    minLength: 1
+                    title: Url
+                    type: string
+                  connector_key:
+                    maxLength: 64
+                    minLength: 1
+                    title: Connector Key
+                    type: string
+                  platform_key:
+                    anyOf:
+                    - type: string
+                    - type: 'null'
+                    title: Platform Key
+                  surface:
+                    anyOf:
+                    - type: string
+                    - type: 'null'
+                    title: Surface
+                  category:
+                    anyOf:
+                    - type: string
+                    - type: 'null'
+                    title: Category
+                  audience_tags:
+                    items:
+                      type: string
+                    title: Audience Tags
+                    type: array
+                  language:
+                    anyOf:
+                    - type: string
+                    - type: 'null'
+                    title: Language
+                  geo:
+                    anyOf:
+                    - type: string
+                    - type: 'null'
+                    title: Geo
+                  est_audience:
+                    anyOf:
+                    - type: integer
+                    - type: 'null'
+                    title: Est Audience
+                  rules_url:
+                    anyOf:
+                    - type: string
+                    - type: 'null'
+                    title: Rules Url
+                  frequency_cap:
+                    anyOf:
+                    - type: string
+                    - type: 'null'
+                    title: Frequency Cap
+                  self_promo_allowed:
+                    anyOf:
+                    - type: boolean
+                    - type: string
+                    - type: 'null'
+                    title: Self Promo Allowed
+                  link_policy:
+                    anyOf:
+                    - type: string
+                    - items:
+                        type: string
+                      type: array
+                    - type: 'null'
+                    title: Link Policy
+                  disclosure_required:
+                    anyOf:
+                    - type: boolean
+                    - type: string
+                    - type: 'null'
+                    title: Disclosure Required
+                  automation_allowed:
+                    anyOf:
+                    - type: boolean
+                    - type: string
+                    - type: 'null'
+                    title: Automation Allowed
+                  relevance_score:
+                    anyOf:
+                    - maximum: 5
+                      minimum: 1
+                      type: integer
+                    - type: 'null'
+                    title: Relevance Score
+                  relevance_reason:
+                    anyOf:
+                    - maxLength: 2000
+                      type: string
+                    - type: 'null'
+                    title: Relevance Reason
+                  connection_ref:
+                    anyOf:
+                    - type: string
+                    - type: 'null'
+                    title: Connection Ref
+                  connection_id:
+                    anyOf:
+                    - type: string
+                    - type: 'null'
+                    title: Connection Id
+                  instance:
+                    additionalProperties: true
+                    title: Instance
+                    type: object
+                  spec_overrides:
+                    anyOf:
+                    - additionalProperties: true
+                      type: object
+                    - type: 'null'
+                    title: Spec Overrides
+                  rules:
+                    anyOf:
+                    - additionalProperties: true
+                      type: object
+                    - type: 'null'
+                    description: Full RuleSet (overrides the flat rule columns).
+                    title: Rules
+                  rules_status:
+                    anyOf:
+                    - maxLength: 32
+                      type: string
+                    - type: 'null'
+                    description: 'confirmed | proposed. Only rules_status=confirmed with rules_source=manual (an operator
+                      typed the rules) makes the row''s rules confirmed; anything else stores them as a proposal a person
+                      confirms at /ui/rules/{id}. Unmarked rows: proposed in /api/v1/catalogue/imports, confirmed (manual)
+                      in POST /api/v1/destinations.'
+                    title: Rules Status
+                  rules_source:
+                    anyOf:
+                    - maxLength: 32
+                      type: string
+                    - type: 'null'
+                    description: 'Where the row''s rules come from: manual | agent_research | page | api_sidebar | ...'
+                    title: Rules Source
+                  rules_quotes:
+                    anyOf:
+                    - additionalProperties: true
+                      type: object
+                    - type: 'null'
+                    description: 'Optional {field: quote} shown beside the row''s rules on the confirm page (not verified
+                      by the service).'
+                    title: Rules Quotes
+                required:
+                - name
+                - url
+                - connector_key
+                title: DestinationIn
+                type: object
+              - type: object
+                properties:
+                  rows:
+                    type: array
+                    items:
+                      additionalProperties: true
+                      description: One catalogue row. Only ``name``, ``url`` and ``connector_key`` are required.
+                      properties:
+                        name:
+                          maxLength: 255
+                          minLength: 1
+                          title: Name
+                          type: string
+                        url:
+                          maxLength: 2000
+                          minLength: 1
+                          title: Url
+                          type: string
+                        connector_key:
+                          maxLength: 64
+                          minLength: 1
+                          title: Connector Key
+                          type: string
+                        platform_key:
+                          anyOf:
+                          - type: string
+                          - type: 'null'
+                          title: Platform Key
+                        surface:
+                          anyOf:
+                          - type: string
+                          - type: 'null'
+                          title: Surface
+                        category:
+                          anyOf:
+                          - type: string
+                          - type: 'null'
+                          title: Category
+                        audience_tags:
+                          items:
+                            type: string
+                          title: Audience Tags
+                          type: array
+                        language:
+                          anyOf:
+                          - type: string
+                          - type: 'null'
+                          title: Language
+                        geo:
+                          anyOf:
+                          - type: string
+                          - type: 'null'
+                          title: Geo
+                        est_audience:
+                          anyOf:
+                          - type: integer
+                          - type: 'null'
+                          title: Est Audience
+                        rules_url:
+                          anyOf:
+                          - type: string
+                          - type: 'null'
+                          title: Rules Url
+                        frequency_cap:
+                          anyOf:
+                          - type: string
+                          - type: 'null'
+                          title: Frequency Cap
+                        self_promo_allowed:
+                          anyOf:
+                          - type: boolean
+                          - type: string
+                          - type: 'null'
+                          title: Self Promo Allowed
+                        link_policy:
+                          anyOf:
+                          - type: string
+                          - items:
+                              type: string
+                            type: array
+                          - type: 'null'
+                          title: Link Policy
+                        disclosure_required:
+                          anyOf:
+                          - type: boolean
+                          - type: string
+                          - type: 'null'
+                          title: Disclosure Required
+                        automation_allowed:
+                          anyOf:
+                          - type: boolean
+                          - type: string
+                          - type: 'null'
+                          title: Automation Allowed
+                        relevance_score:
+                          anyOf:
+                          - maximum: 5
+                            minimum: 1
+                            type: integer
+                          - type: 'null'
+                          title: Relevance Score
+                        relevance_reason:
+                          anyOf:
+                          - maxLength: 2000
+                            type: string
+                          - type: 'null'
+                          title: Relevance Reason
+                        connection_ref:
+                          anyOf:
+                          - type: string
+                          - type: 'null'
+                          title: Connection Ref
+                        connection_id:
+                          anyOf:
+                          - type: string
+                          - type: 'null'
+                          title: Connection Id
+                        instance:
+                          additionalProperties: true
+                          title: Instance
+                          type: object
+                        spec_overrides:
+                          anyOf:
+                          - additionalProperties: true
+                            type: object
+                          - type: 'null'
+                          title: Spec Overrides
+                        rules:
+                          anyOf:
+                          - additionalProperties: true
+                            type: object
+                          - type: 'null'
+                          description: Full RuleSet (overrides the flat rule columns).
+                          title: Rules
+                        rules_status:
+                          anyOf:
+                          - maxLength: 32
+                            type: string
+                          - type: 'null'
+                          description: 'confirmed | proposed. Only rules_status=confirmed with rules_source=manual (an operator
+                            typed the rules) makes the row''s rules confirmed; anything else stores them as a proposal a person
+                            confirms at /ui/rules/{id}. Unmarked rows: proposed in /api/v1/catalogue/imports, confirmed (manual)
+                            in POST /api/v1/destinations.'
+                          title: Rules Status
+                        rules_source:
+                          anyOf:
+                          - maxLength: 32
+                            type: string
+                          - type: 'null'
+                          description: 'Where the row''s rules come from: manual | agent_research | page | api_sidebar | ...'
+                          title: Rules Source
+                        rules_quotes:
+                          anyOf:
+                          - additionalProperties: true
+                            type: object
+                          - type: 'null'
+                          description: 'Optional {field: quote} shown beside the row''s rules on the confirm page (not verified
+                            by the service).'
+                          title: Rules Quotes
+                      required:
+                      - name
+                      - url
+                      - connector_key
+                      title: DestinationIn
+                      type: object
+                    maxItems: 200
+                required:
+                - rows
+          text/csv:
+            schema:
+              type: string
+              description: CSV with a header row (catalogue columns).
+      security:
+      - bearerAuth: []
+      parameters:
+      - *id002
+    get:
+      tags:
+      - destinations
+      summary: List destinations
+      operationId: list_destinations_api_v1_destinations_get
+      parameters:
+      - name: connector_key
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Connector Key
+      - name: level
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+            pattern: ^L[0-4]$
+          - type: 'null'
+          title: Level
+      - name: status
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+            pattern: ^(active|excluded)$
+          - type: 'null'
+          title: Status
+      - name: q
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+            maxLength: 200
+          - type: 'null'
+          title: Q
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          maximum: 500
+          minimum: 1
+          default: 50
+          title: Limit
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: integer
+          minimum: 0
+          default: 0
+          title: Offset
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response List Destinations Api V1 Destinations Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/destinations/{destination_id}:
+    get:
+      tags:
+      - destinations
+      summary: One destination with its confirmed rules and last certification
+      operationId: get_destination_api_v1_destinations__destination_id__get
+      parameters:
+      - name: destination_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Destination Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Get Destination Api V1 Destinations  Destination Id  Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+    patch:
+      tags:
+      - destinations
+      summary: Update a destination
+      operationId: patch_destination_api_v1_destinations__destination_id__patch
+      parameters:
+      - name: destination_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Destination Id
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DestinationPatch'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Patch Destination Api V1 Destinations  Destination Id  Patch
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/destinations/{destination_id}/rules:
+    put:
+      tags:
+      - destinations
+      summary: Confirm the destination's posting rules (human-confirmed)
+      operationId: put_rules_api_v1_destinations__destination_id__rules_put
+      parameters:
+      - name: destination_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Destination Id
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RulesIn'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Put Rules Api V1 Destinations  Destination Id  Rules Put
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/feeds/{feed_key}/mrss.xml:
+    get:
+      tags:
+      - feeds
+      summary: A self-served Media RSS feed
+      operationId: feed_api_v1_feeds__feed_key__mrss_xml_get
+      parameters:
+      - name: feed_key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Feed Key
+      responses:
+        '200':
+          description: RSS 2.0 + Media RSS document
+          content:
+            application/rss+xml: {}
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema: *id001
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/feeds/{feed_key}/items/{guid}:
+    get:
+      tags:
+      - feeds
+      summary: One feed item (its live URL)
+      operationId: feed_item_api_v1_feeds__feed_key__items__guid__get
+      parameters:
+      - name: feed_key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Feed Key
+      - name: guid
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Guid
+      responses:
+        '200':
+          description: RSS 2.0 + Media RSS document
+          content:
+            application/rss+xml: {}
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema: *id001
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/r/{publication_id}:
+    get:
+      tags:
+      - feeds
+      summary: Click-through redirect of a feed item (counts the click)
+      operationId: click_api_v1_r__publication_id__get
+      parameters:
+      - name: publication_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Publication Id
+      responses:
+        '302':
+          description: to the item's link
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema: *id001
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/files/{key}:
+    get:
+      tags:
+      - files
+      summary: Download a stored file with a signed link
+      operationId: download_api_v1_files__key__get
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Key
+      - name: exp
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Exp
+      - name: sig
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Sig
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+            application/octet-stream: {}
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema: *id001
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema: *id001
+        '410':
+          description: Gone
+          content:
+            application/json:
+              schema: *id001
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+  /health:
+    get:
+      tags:
+      - health
+      summary: 'Liveness: the process is up'
+      operationId: health_health_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                type: object
+                title: Response Health Health Get
+  /ready:
+    get:
+      tags:
+      - health
+      summary: 'Readiness: database, queue, storage, registry'
+      operationId: ready_ready_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                type: object
+                title: Response Ready Ready Get
+        '503':
+          description: A dependency is not ready (DEPENDENCY_UNAVAILABLE)
+          content:
+            application/json:
+              schema: *id001
+  /api/v1/errors:
+    get:
+      tags:
+      - errors
+      summary: Error-code catalogue
+      operationId: error_catalogue_api_v1_errors_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                type: object
+                title: Response Error Catalogue Api V1 Errors Get
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/jobs:
+    post:
+      tags:
+      - jobs
+      summary: Start a background job (public kinds)
+      operationId: create_job_api_v1_jobs_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobIn'
+        required: true
+      responses:
+        '202':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobAccepted'
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+      parameters:
+      - *id002
+  /api/v1/jobs/{job_id}:
+    get:
+      tags:
+      - jobs
+      summary: Job status, progress, result links and error
+      operationId: get_job_api_v1_jobs__job_id__get
+      parameters:
+      - name: job_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Job Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Get Job Api V1 Jobs  Job Id  Get
+                $ref: '#/components/schemas/JobView'
+        '404':
+          content:
+            application/json:
+              schema: *id001
+          description: Not Found
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/media:
+    post:
+      tags:
+      - media
+      summary: Upload a media file (multipart 'file') or fetch one from {url}
+      operationId: upload_media_api_v1_media_post
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              properties:
+                file:
+                  type: string
+                  format: binary
+                alt:
+                  type: string
+              type: object
+              required:
+              - file
+          application/json:
+            schema:
+              properties:
+                url:
+                  type: string
+                  maxLength: 2000
+                  pattern: ^https?://
+                  title: Url
+                alt:
+                  anyOf:
+                  - type: string
+                    maxLength: 1000
+                  - type: 'null'
+                  title: Alt
+              type: object
+              required:
+              - url
+              title: MediaUrlIn
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+      parameters:
+      - *id002
+  /api/v1/metrics/fetch:
+    post:
+      tags:
+      - metrics
+      summary: Fetch one post's metrics now, normalised and stored
+      operationId: fetch_metrics_api_v1_metrics_fetch_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MetricsFetchIn'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                type: object
+                title: Response Fetch Metrics Api V1 Metrics Fetch Post
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+      parameters:
+      - *id002
+  /api/v1/metrics/poll:
+    post:
+      tags:
+      - metrics
+      summary: Snapshot every recent publication (background job)
+      operationId: poll_metrics_api_v1_metrics_poll_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MetricsPollIn'
+        required: true
+      responses:
+        '202':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+      parameters:
+      - *id002
+  /api/v1/metrics:
+    get:
+      tags:
+      - metrics
+      summary: Stored metrics snapshots, newest first
+      operationId: list_metrics_api_v1_metrics_get
+      parameters:
+      - name: publication_id
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Publication Id
+      - name: destination_id
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Destination Id
+      - name: connector_key
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Connector Key
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          maximum: 1000
+          minimum: 1
+          default: 100
+          title: Limit
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response List Metrics Api V1 Metrics Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/metrics/mapping:
+    get:
+      tags:
+      - metrics
+      summary: Platform field → normalised metric, per connector
+      operationId: metrics_mapping_api_v1_metrics_mapping_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                type: object
+                title: Response Metrics Mapping Api V1 Metrics Mapping Get
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/network/health:
+    get:
+      tags:
+      - network
+      summary: Trust, certification, failure streak, rules and yield per destination
+      operationId: get_network_health_api_v1_network_health_get
+      parameters:
+      - name: destination_id
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Destination Id
+      - name: status
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+            pattern: ^(active|excluded)$
+          - type: 'null'
+          title: Status
+      - name: connector_key
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Connector Key
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          maximum: 5000
+          minimum: 1
+          default: 500
+          title: Limit
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Get Network Health Api V1 Network Health Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/network/alerts:
+    get:
+      tags:
+      - network
+      summary: Alerts (certification failures, rules drift, ...) with their deliveries
+      operationId: get_alerts_api_v1_network_alerts_get
+      parameters:
+      - name: status
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+            pattern: ^(open|resolved)$
+          - type: 'null'
+          title: Status
+      - name: kind
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Kind
+      - name: destination_id
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Destination Id
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          maximum: 1000
+          minimum: 1
+          default: 100
+          title: Limit
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Get Alerts Api V1 Network Alerts Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/publications:
+    post:
+      tags:
+      - publications
+      summary: Publish content to a destination (rules first)
+      operationId: create_publication_api_v1_publications_post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PublicationIn'
+      responses:
+        '202':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '409':
+          description: A posting rule blocks this post (the rule's code)
+          content:
+            application/json:
+              schema: *id001
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+      parameters:
+      - *id002
+    get:
+      tags:
+      - publications
+      summary: List publications
+      operationId: list_publications_api_v1_publications_get
+      parameters:
+      - name: destination_id
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Destination Id
+      - name: state
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: State
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          maximum: 500
+          minimum: 1
+          default: 50
+          title: Limit
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response List Publications Api V1 Publications Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/publications/{publication_id}:
+    get:
+      tags:
+      - publications
+      summary: A publication's state, reason and result
+      operationId: get_publication_api_v1_publications__publication_id__get
+      parameters:
+      - name: publication_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Publication Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Get Publication Api V1 Publications  Publication Id  Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/publications/{publication_id}/delete:
+    post:
+      tags:
+      - publications
+      summary: Delete a published post
+      operationId: delete_publication_api_v1_publications__publication_id__delete_post
+      parameters:
+      - name: publication_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Publication Id
+      - *id002
+      responses:
+        '202':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/assist-tasks/{publication_id}/complete:
+    post:
+      tags:
+      - publications
+      summary: 'Report what happened to an assisted post: posted, rejected/removed by the community, or abandoned'
+      description: '``posted`` → published; ``rejected_by_community`` → failed (PLATFORM_CONTENT_REJECTED, the reason as the
+
+        platform''s message); ``removed_by_community`` (after posting) → removed_by_platform; ``abandoned`` → abandoned,
+
+        which frees the frequency-cap slot. The pack''s files are deleted once the task ends.'
+      operationId: complete_assist_task_api_v1_assist_tasks__publication_id__complete_post
+      parameters:
+      - name: publication_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Publication Id
+      - *id002
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AssistCompleteIn'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Complete Assist Task Api V1 Assist Tasks  Publication Id  Complete Post
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/recert/tick:
+    post:
+      tags:
+      - recertification
+      summary: Queue recertification runs for every due destination
+      operationId: recert_tick_api_v1_recert_tick_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecertTickIn'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                type: object
+                title: Response Recert Tick Api V1 Recert Tick Post
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+      parameters:
+      - *id002
+  /api/v1/recert/due:
+    get:
+      tags:
+      - recertification
+      summary: Destinations a tick would re-test (read-only)
+      operationId: recert_due_api_v1_recert_due_get
+      parameters:
+      - name: now
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Now
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Recert Due Api V1 Recert Due Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/recert/self-heal:
+    post:
+      tags:
+      - recertification
+      summary: Queue self-heal recertifications for open breakers / schema drift
+      operationId: recert_self_heal_api_v1_recert_self_heal_post
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                type: object
+                title: Response Recert Self Heal Api V1 Recert Self Heal Post
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+      parameters:
+      - *id002
+  /api/v1/recert/schedule:
+    get:
+      tags:
+      - recertification
+      summary: Recertification settings and the next periodic runs
+      operationId: recert_schedule_api_v1_recert_schedule_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                type: object
+                title: Response Recert Schedule Api V1 Recert Schedule Get
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/recommendations:
+    post:
+      tags:
+      - recommendations
+      summary: Rank destinations for one content item, with a reason for each
+      operationId: create_recommendation_api_v1_recommendations_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecommendationIn'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                type: object
+                title: Response Create Recommendation Api V1 Recommendations Post
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+      parameters:
+      - *id002
+  /api/v1/destinations/{destination_id}/rules/capture:
+    post:
+      tags:
+      - rules
+      summary: Capture a destination's posting rules (proposal for a person to confirm)
+      operationId: capture_rules_api_v1_destinations__destination_id__rules_capture_post
+      parameters:
+      - name: destination_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Destination Id
+      - *id002
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RulesCaptureIn'
+      responses:
+        '202':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/destinations/{destination_id}/rule-proposals:
+    get:
+      tags:
+      - rules
+      summary: A destination's rule proposals
+      operationId: list_proposals_api_v1_destinations__destination_id__rule_proposals_get
+      parameters:
+      - name: destination_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Destination Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response List Proposals Api V1 Destinations  Destination Id  Rule Proposals Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/rule-proposals/{proposal_id}:
+    get:
+      tags:
+      - rules
+      summary: One rule proposal with its quotes
+      operationId: get_proposal_api_v1_rule_proposals__proposal_id__get
+      parameters:
+      - name: proposal_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Proposal Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Get Proposal Api V1 Rule Proposals  Proposal Id  Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/rule-proposals/{proposal_id}/confirm:
+    post:
+      tags:
+      - rules
+      summary: Confirm a rule proposal (a person)
+      operationId: confirm_proposal_api_v1_rule_proposals__proposal_id__confirm_post
+      parameters:
+      - name: proposal_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Proposal Id
+      - *id002
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConfirmIn'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Confirm Proposal Api V1 Rule Proposals  Proposal Id  Confirm Post
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/rule-proposals/{proposal_id}/reject:
+    post:
+      tags:
+      - rules
+      summary: Reject a rule proposal (a person)
+      operationId: reject_proposal_api_v1_rule_proposals__proposal_id__reject_post
+      parameters:
+      - name: proposal_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Proposal Id
+      - *id002
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RejectIn'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Reject Proposal Api V1 Rule Proposals  Proposal Id  Reject Post
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/sim/faults:
+    get:
+      tags:
+      - simulation
+      summary: List queued faults
+      operationId: list_faults_api_v1_sim_faults_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                type: object
+                title: Response List Faults Api V1 Sim Faults Get
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+    post:
+      tags:
+      - simulation
+      summary: Queue a fault on mock-platforms
+      operationId: add_fault_api_v1_sim_faults_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FaultIn'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                type: object
+                title: Response Add Fault Api V1 Sim Faults Post
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+      parameters:
+      - *id002
+  /api/v1/sim/counts:
+    get:
+      tags:
+      - simulation
+      summary: Requests received by mock-platforms, per platform/tenant/route
+      operationId: counts_api_v1_sim_counts_get
+      parameters:
+      - name: platform
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Platform
+      - name: tenant
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Tenant
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Counts Api V1 Sim Counts Get
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+  /api/v1/sim/reset:
+    post:
+      tags:
+      - simulation
+      summary: 'Demo only: reset + re-seed + re-certify the demo destinations (simulation mode)'
+      operationId: reset_demo_api_v1_sim_reset_post
+      responses:
+        '202':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobAccepted'
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+      parameters:
+      - *id002
+  /api/v1/tailorings:
+    post:
+      tags:
+      - tailoring
+      summary: Tailor one content item for several destinations
+      operationId: create_tailoring_api_v1_tailorings_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TailoringIn'
+        required: true
+      responses:
+        '202':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+          headers:
+            Idempotent-Replayed:
+              description: true when this is the stored response of an earlier request
+              schema:
+                type: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema: *id001
+        '401':
+          description: Missing or invalid bearer token (UNAUTHORIZED)
+          content:
+            application/json:
+              schema: *id001
+        '429':
+          description: This service's rate limit was hit (API_RATE_LIMITED); see Retry-After
+          content:
+            application/json:
+              schema: *id001
+        '500':
+          description: Unexpected error (INTERNAL_ERROR), with details.correlation_id
+          content:
+            application/json:
+              schema: *id001
+        '409':
+          description: IDEMPOTENCY_KEY_REUSED or IDEMPOTENCY_IN_PROGRESS
+          content:
+            application/json:
+              schema: *id001
+      security:
+      - bearerAuth: []
+      parameters:
+      - *id002
+components:
+  schemas:
+    AssistCompleteIn:
+      properties:
+        outcome:
+          type: string
+          enum:
+          - posted
+          - rejected_by_community
+          - removed_by_community
+          - abandoned
+          title: Outcome
+          default: posted
+        reason:
+          anyOf:
+          - type: string
+            maxLength: 2000
+          - type: 'null'
+          title: Reason
+        live_url:
+          anyOf:
+          - type: string
+            maxLength: 2000
+          - type: 'null'
+          title: Live Url
+        platform_post_id:
+          anyOf:
+          - type: string
+            maxLength: 255
+          - type: 'null'
+          title: Platform Post Id
+        completed_by:
+          type: string
+          maxLength: 255
+          title: Completed By
+          default: human
+        note:
+          anyOf:
+          - type: string
+            maxLength: 2000
+          - type: 'null'
+          title: Note
+      additionalProperties: false
+      type: object
+      title: AssistCompleteIn
+      description: 'What the person reports after handling an assist pack. For an assisted destination this
+
+        report is the only "platform" signal, so a community''s refusal or removal is recorded here.'
+    AssistFile:
+      properties:
+        name:
+          type: string
+          title: Name
+        url:
+          type: string
+          title: Url
+        mime:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Mime
+      additionalProperties: false
+      type: object
+      required:
+      - name
+      - url
+      title: AssistFile
+    AssistPack:
+      properties:
+        files:
+          items:
+            $ref: '#/components/schemas/AssistFile'
+          type: array
+          title: Files
+        caption:
+          type: string
+          title: Caption
+        deep_link:
+          type: string
+          title: Deep Link
+        checklist:
+          items:
+            type: string
+          type: array
+          title: Checklist
+      additionalProperties: false
+      type: object
+      required:
+      - files
+      - caption
+      - deep_link
+      - checklist
+      title: AssistPack
+    AssistPackRequest:
+      properties:
+        rendition:
+          $ref: '#/components/schemas/Rendition'
+        destination:
+          $ref: '#/components/schemas/Destination'
+      additionalProperties: true
+      type: object
+      required:
+      - rendition
+      - destination
+      title: AssistPackRequest
+    CertificationIn:
+      properties:
+        destination_id:
+          type: string
+          title: Destination Id
+        trigger:
+          type: string
+          enum:
+          - manual
+          - scheduled
+          - self_heal
+          title: Trigger
+          default: manual
+        callback_url:
+          anyOf:
+          - type: string
+            maxLength: 2000
+            pattern: ^https?://
+          - type: 'null'
+          title: Callback Url
+      additionalProperties: false
+      type: object
+      required:
+      - destination_id
+      title: CertificationIn
+    ConfirmIn:
+      properties:
+        confirmed_by:
+          type: string
+          maxLength: 255
+          minLength: 1
+          title: Confirmed By
+          description: The person who checked the rules.
+        overrides:
+          additionalProperties: true
+          type: object
+          title: Overrides
+          description: Rule keys the person corrected (any RuleSet spelling).
+        note:
+          anyOf:
+          - type: string
+            maxLength: 2000
+          - type: 'null'
+          title: Note
+      additionalProperties: false
+      type: object
+      required:
+      - confirmed_by
+      title: ConfirmIn
+    Connection:
+      properties:
+        connection_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Connection Id
+        connector_key:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Connector Key
+        auth_type:
+          anyOf:
+          - type: string
+            enum:
+            - oauth2
+            - api_key
+            - bot_token
+            - none
+          - type: 'null'
+          title: Auth Type
+        credentials:
+          additionalProperties:
+            type: string
+            format: password
+            writeOnly: true
+          type: object
+          title: Credentials
+        expires_at:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Expires At
+      additionalProperties: true
+      type: object
+      title: Connection
+      description: Credentials for one account on one platform. Secrets never leave as plain text.
+    ConnectionIn:
+      properties:
+        connector_key:
+          type: string
+          maxLength: 64
+          minLength: 1
+          title: Connector Key
+        auth_type:
+          type: string
+          enum:
+          - oauth2
+          - api_key
+          - bot_token
+          - none
+          title: Auth Type
+          default: api_key
+        credentials:
+          additionalProperties:
+            type: string
+          type: object
+          title: Credentials
+          description: Encrypted at rest; never returned.
+        expires_at:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Expires At
+        account_handle:
+          anyOf:
+          - type: string
+            maxLength: 255
+          - type: 'null'
+          title: Account Handle
+        ref:
+          anyOf:
+          - type: string
+            maxLength: 128
+          - type: 'null'
+          title: Ref
+          description: A name catalogue rows can use as connection_ref.
+        instance:
+          additionalProperties: true
+          type: object
+          title: Instance
+          description: Optional instance values, e.g. base_url.
+      additionalProperties: false
+      type: object
+      required:
+      - connector_key
+      title: ConnectionIn
+    ContentIn:
+      properties:
+        title:
+          anyOf:
+          - type: string
+            maxLength: 1000
+          - type: 'null'
+          title: Title
+        body:
+          type: string
+          maxLength: 200000
+          title: Body
+          default: ''
+        content_type:
+          type: string
+          enum:
+          - text
+          - image
+          - video
+          - video_link
+          - link
+          title: Content Type
+          default: text
+        body_format:
+          type: string
+          enum:
+          - markdown
+          - html
+          - plain
+          title: Body Format
+          default: markdown
+        canonical_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Canonical Url
+        link_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Link Url
+        media:
+          items:
+            $ref: '#/components/schemas/MediaRef'
+          type: array
+          title: Media
+        tags:
+          items:
+            type: string
+          type: array
+          title: Tags
+        mentions:
+          items:
+            type: string
+          type: array
+          title: Mentions
+        language:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Language
+        is_promotional:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Is Promotional
+        ai_generated:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Ai Generated
+        owner_domains:
+          items:
+            type: string
+          type: array
+          title: Owner Domains
+      additionalProperties: false
+      type: object
+      title: ContentIn
+    DeleteResult:
+      properties:
+        deleted:
+          type: boolean
+          title: Deleted
+      additionalProperties: false
+      type: object
+      required:
+      - deleted
+      title: DeleteResult
+    Destination:
+      properties:
+        destination_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Destination Id
+        connector_key:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Connector Key
+        platform_key:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Platform Key
+        surface:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Surface
+        name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Name
+        url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Url
+        instance:
+          additionalProperties: true
+          type: object
+          title: Instance
+        language:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Language
+        spec_overrides:
+          anyOf:
+          - additionalProperties: true
+            type: object
+          - type: 'null'
+          title: Spec Overrides
+        rules:
+          anyOf:
+          - additionalProperties: true
+            type: object
+          - type: 'null'
+          title: Rules
+      additionalProperties: true
+      type: object
+      title: Destination
+      description: One place that reaches one audience. ``instance`` holds the connector's instance_param.
+    DestinationPatch:
+      properties:
+        name:
+          anyOf:
+          - type: string
+            maxLength: 255
+            minLength: 1
+          - type: 'null'
+          title: Name
+        category:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Category
+        audience_tags:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          title: Audience Tags
+        language:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Language
+        geo:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Geo
+        est_audience:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Est Audience
+        rules_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Rules Url
+        relevance_score:
+          anyOf:
+          - type: integer
+            maximum: 5.0
+            minimum: 1.0
+          - type: 'null'
+          title: Relevance Score
+        relevance_reason:
+          anyOf:
+          - type: string
+            maxLength: 2000
+          - type: 'null'
+          title: Relevance Reason
+        connection_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Connection Id
+        connection_ref:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Connection Ref
+        spec_overrides:
+          anyOf:
+          - additionalProperties: true
+            type: object
+          - type: 'null'
+          title: Spec Overrides
+        instance:
+          anyOf:
+          - additionalProperties: true
+            type: object
+          - type: 'null'
+          title: Instance
+          description: Extra instance fields (the instance_param itself can not change).
+        status:
+          anyOf:
+          - type: string
+            enum:
+            - active
+            - excluded
+          - type: 'null'
+          title: Status
+        excluded_reason:
+          anyOf:
+          - type: string
+            maxLength: 2000
+          - type: 'null'
+          title: Excluded Reason
+      additionalProperties: false
+      type: object
+      title: DestinationPatch
+    ErrorBody:
+      properties:
+        code:
+          $ref: '#/components/schemas/ErrorCode'
+        message:
+          type: string
+          title: Message
+        retryable:
+          type: boolean
+          title: Retryable
+        details:
+          additionalProperties: true
+          type: object
+          title: Details
+      type: object
+      required:
+      - code
+      - message
+      - retryable
+      - details
+      title: ErrorBody
+    ErrorCode:
+      type: string
+      enum:
+      - DEST_SPEC_VIOLATION
+      - DEST_RULE_FREQUENCY_CAP
+      - CONNECTION_AUTH_EXPIRED
+      - PLATFORM_RATE_LIMIT
+      - PLATFORM_QUOTA_EXHAUSTED
+      - PLATFORM_CONTENT_REJECTED
+      - PLATFORM_UNAVAILABLE
+      - CONNECTOR_DISABLED
+      - DEST_RULE_SELF_PROMO
+      - DEST_RULE_LINK_POLICY
+      - DEST_RULE_DISCLOSURE
+      - DEST_RULE_LANGUAGE
+      - DEST_RULE_AUTOMATION_NOT_ALLOWED
+      - DEST_RULE_BLOCKED_TERM
+      - DEST_RULES_UNCONFIRMED
+      - DESTINATION_EXCLUDED
+      - METHOD_NOT_SUPPORTED
+      - CONNECTOR_NOT_FOUND
+      - DESTINATION_NOT_FOUND
+      - CONNECTION_NOT_FOUND
+      - NOT_FOUND
+      - JOB_NOT_FOUND
+      - IDEMPOTENCY_KEY_REUSED
+      - IDEMPOTENCY_IN_PROGRESS
+      - REQUEST_VALIDATION_FAILED
+      - INPUT_FETCH_FAILED
+      - UNAUTHORIZED
+      - API_RATE_LIMITED
+      - STORAGE_UNAVAILABLE
+      - DEPENDENCY_UNAVAILABLE
+      - SIMULATION_ONLY
+      - INTERNAL_ERROR
+      - HTTP_METHOD_NOT_ALLOWED
+      - DESTINATION_NOT_CERTIFIED
+      title: ErrorCode
+    ErrorEnvelope:
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorBody'
+      type: object
+      required:
+      - error
+      title: ErrorEnvelope
+      description: The error shape of every endpoint (documented in OpenAPI).
+    FaultIn:
+      properties:
+        tenant:
+          type: string
+          title: Tenant
+          default: '*'
+        method:
+          type: string
+          title: Method
+          default: '*'
+        fault:
+          type: string
+          title: Fault
+          description: timeout_after_create[:s] | 429:<s> | 401 | 422 | 500 | <status>:<token> | rename_field:a->b
+        count:
+          type: integer
+          minimum: -1.0
+          title: Count
+          default: 1
+        platform:
+          type: string
+          title: Platform
+          default: '*'
+        path:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Path
+      type: object
+      required:
+      - fault
+      title: FaultIn
+    JobAccepted:
+      properties:
+        job_id:
+          type: string
+          title: Job Id
+        status:
+          type: string
+          title: Status
+        status_url:
+          type: string
+          title: Status Url
+      type: object
+      required:
+      - job_id
+      - status
+      - status_url
+      title: JobAccepted
+    JobIn:
+      properties:
+        kind:
+          type: string
+          title: Kind
+          description: A public job kind, e.g. 'selfcheck'.
+        payload:
+          additionalProperties: true
+          type: object
+          title: Payload
+        callback_url:
+          anyOf:
+          - type: string
+            maxLength: 2000
+            pattern: ^https?://
+          - type: 'null'
+          title: Callback Url
+      type: object
+      required:
+      - kind
+      title: JobIn
+    JobView:
+      properties:
+        job_id:
+          type: string
+          title: Job Id
+        kind:
+          type: string
+          title: Kind
+        status:
+          type: string
+          title: Status
+          description: queued | running | succeeded | failed
+        progress:
+          type: integer
+          maximum: 100.0
+          minimum: 0.0
+          title: Progress
+        result:
+          anyOf:
+          - additionalProperties: true
+            type: object
+          - type: 'null'
+          title: Result
+        error:
+          anyOf:
+          - additionalProperties: true
+            type: object
+          - type: 'null'
+          title: Error
+        attempts:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Attempts
+      type: object
+      required:
+      - job_id
+      - kind
+      - status
+      - progress
+      title: JobView
+      description: '``GET /api/v1/jobs/{job_id}`` (IS3). ``result.links`` are signed download links.'
+    KillSwitchIn:
+      properties:
+        disabled:
+          type: boolean
+          title: Disabled
+        reason:
+          anyOf:
+          - type: string
+            maxLength: 500
+          - type: 'null'
+          title: Reason
+      type: object
+      required:
+      - disabled
+      title: KillSwitchIn
+    Media:
+      properties:
+        url:
+          type: string
+          title: Url
+        mime:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Mime
+        bytes:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Bytes
+        duration_s:
+          anyOf:
+          - type: number
+          - type: 'null'
+          title: Duration S
+        width:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Width
+        height:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Height
+        alt:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Alt
+      additionalProperties: true
+      type: object
+      required:
+      - url
+      title: Media
+    MediaRef:
+      properties:
+        url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Url
+        media_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Media Id
+        mime:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Mime
+        bytes:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Bytes
+        duration_s:
+          anyOf:
+          - type: number
+          - type: 'null'
+          title: Duration S
+        width:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Width
+        height:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Height
+        alt:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Alt
+      additionalProperties: true
+      type: object
+      title: MediaRef
+    MetricsFetchIn:
+      properties:
+        publication_id:
+          anyOf:
+          - type: string
+            maxLength: 64
+          - type: 'null'
+          title: Publication Id
+          description: A published publication.
+        destination_id:
+          anyOf:
+          - type: string
+            maxLength: 64
+          - type: 'null'
+          title: Destination Id
+          description: 'With platform_post_id: any post on it.'
+        platform_post_id:
+          anyOf:
+          - type: string
+            maxLength: 255
+          - type: 'null'
+          title: Platform Post Id
+        since:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Since
+          description: Passed to fetch_metrics; most platforms only have lifetime totals.
+      additionalProperties: false
+      type: object
+      title: MetricsFetchIn
+    MetricsPollIn:
+      properties:
+        destination_id:
+          anyOf:
+          - type: string
+            maxLength: 64
+          - type: 'null'
+          title: Destination Id
+        limit:
+          anyOf:
+          - type: integer
+            maximum: 1000.0
+            minimum: 1.0
+          - type: 'null'
+          title: Limit
+        callback_url:
+          anyOf:
+          - type: string
+            maxLength: 2000
+            pattern: ^https?://
+          - type: 'null'
+          title: Callback Url
+      additionalProperties: false
+      type: object
+      title: MetricsPollIn
+    MetricsRequest:
+      properties:
+        platform_post_id:
+          type: string
+          title: Platform Post Id
+        connection:
+          $ref: '#/components/schemas/Connection'
+        destination:
+          anyOf:
+          - $ref: '#/components/schemas/Destination'
+          - type: 'null'
+        since:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Since
+      additionalProperties: true
+      type: object
+      required:
+      - platform_post_id
+      - connection
+      title: MetricsRequest
+    MetricsResult:
+      properties:
+        views:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Views
+        likes:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Likes
+        comments:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Comments
+        shares:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Shares
+        saves:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Saves
+        watch_time_s:
+          anyOf:
+          - type: number
+          - type: 'null'
+          title: Watch Time S
+        clicks:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Clicks
+      additionalProperties: false
+      type: object
+      title: MetricsResult
+      description: Normalised metrics. ``None`` means the platform does not expose that metric (never a fake 0).
+    PostRefRequest:
+      properties:
+        platform_post_id:
+          type: string
+          title: Platform Post Id
+        connection:
+          $ref: '#/components/schemas/Connection'
+        destination:
+          anyOf:
+          - $ref: '#/components/schemas/Destination'
+          - type: 'null'
+      additionalProperties: true
+      type: object
+      required:
+      - platform_post_id
+      - connection
+      title: PostRefRequest
+    PublicationIn:
+      properties:
+        destination_id:
+          type: string
+          title: Destination Id
+        content_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Content Id
+        content:
+          anyOf:
+          - $ref: '#/components/schemas/ContentIn'
+          - type: 'null'
+          description: Inline content (instead of content_id).
+        tailor:
+          type: boolean
+          title: Tailor
+          description: Fit the content to the destination and record a diff.
+          default: true
+        scheduled_for:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Scheduled For
+          description: Publish at this time (rules evaluated for it).
+        callback_url:
+          anyOf:
+          - type: string
+            maxLength: 2000
+            pattern: ^https?://
+          - type: 'null'
+          title: Callback Url
+      additionalProperties: false
+      type: object
+      required:
+      - destination_id
+      title: PublicationIn
+    PublishRequest:
+      properties:
+        rendition:
+          $ref: '#/components/schemas/Rendition'
+        destination:
+          $ref: '#/components/schemas/Destination'
+        connection:
+          $ref: '#/components/schemas/Connection'
+        idempotency_key:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Idempotency Key
+      additionalProperties: true
+      type: object
+      required:
+      - rendition
+      - destination
+      - connection
+      title: PublishRequest
+    PublishResult:
+      properties:
+        platform_post_id:
+          type: string
+          title: Platform Post Id
+        live_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Live Url
+        status:
+          type: string
+          enum:
+          - published
+          - draft
+          - pending
+          - scheduled
+          - awaiting_human
+          - deleted
+          - removed_by_platform
+          - unknown
+          title: Status
+      additionalProperties: false
+      type: object
+      required:
+      - platform_post_id
+      - live_url
+      - status
+      title: PublishResult
+    RecertTickIn:
+      properties:
+        now:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Now
+          description: 'Judge staleness as of this instant (clock jump); default: now.'
+        dry_run:
+          type: boolean
+          title: Dry Run
+          description: Only list what would be queued.
+          default: false
+      additionalProperties: false
+      type: object
+      title: RecertTickIn
+    RecommendationIn:
+      properties:
+        content_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Content Id
+        content:
+          anyOf:
+          - $ref: '#/components/schemas/ContentIn'
+          - type: 'null'
+          description: Inline content (not stored).
+        k:
+          type: integer
+          maximum: 100.0
+          minimum: 1.0
+          title: K
+          default: 10
+        automated_only:
+          type: boolean
+          title: Automated Only
+          description: Exclude destinations reachable only through assisted posting.
+          default: false
+        publishable_only:
+          type: boolean
+          title: Publishable Only
+          description: Exclude uncertified (L0) or unconfirmed-rules destinations.
+          default: false
+        phrase_with_llm:
+          type: boolean
+          title: Phrase With Llm
+          description: Rewrite reasons through the free LLM chain (never re-ranks).
+          default: false
+        weights:
+          anyOf:
+          - additionalProperties:
+              type: number
+            type: object
+          - type: 'null'
+          title: Weights
+          description: Optional override of audience_fit, relevance, trust, past_results, rules_headroom.
+      additionalProperties: false
+      type: object
+      title: RecommendationIn
+    RefreshAuthRequest:
+      properties:
+        connection:
+          $ref: '#/components/schemas/Connection'
+        destination:
+          anyOf:
+          - $ref: '#/components/schemas/Destination'
+          - type: 'null'
+      additionalProperties: true
+      type: object
+      required:
+      - connection
+      title: RefreshAuthRequest
+    RefreshAuthResult:
+      properties:
+        expires_at:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Expires At
+      additionalProperties: false
+      type: object
+      required:
+      - expires_at
+      title: RefreshAuthResult
+    RejectIn:
+      properties:
+        rejected_by:
+          type: string
+          maxLength: 255
+          minLength: 1
+          title: Rejected By
+        reason:
+          anyOf:
+          - type: string
+            maxLength: 2000
+          - type: 'null'
+          title: Reason
+      additionalProperties: false
+      type: object
+      required:
+      - rejected_by
+      title: RejectIn
+    RelevanceIn:
+      properties:
+        rows:
+          items:
+            $ref: '#/components/schemas/RelevanceRowIn'
+          type: array
+          maxItems: 500
+          title: Rows
+          description: Score these rows (nothing is stored).
+        destination_ids:
+          items:
+            type: string
+          type: array
+          maxItems: 500
+          title: Destination Ids
+          description: Score these destinations and store relevance_score/relevance_reason.
+        llm:
+          type: boolean
+          title: Llm
+          description: Also run the optional LLM ±1 pass (free providers; lexicon-only fallback).
+          default: false
+        overwrite:
+          type: boolean
+          title: Overwrite
+          description: Replace a score that is already stored.
+          default: false
+      type: object
+      title: RelevanceIn
+    RelevanceRowIn:
+      properties:
+        name:
+          type: string
+          maxLength: 255
+          minLength: 1
+          title: Name
+        category:
+          anyOf:
+          - type: string
+            maxLength: 128
+          - type: 'null'
+          title: Category
+        audience_tags:
+          items:
+            type: string
+          type: array
+          maxItems: 50
+          title: Audience Tags
+        description:
+          anyOf:
+          - type: string
+            maxLength: 2000
+          - type: 'null'
+          title: Description
+        url:
+          anyOf:
+          - type: string
+            maxLength: 2000
+          - type: 'null'
+          title: Url
+      type: object
+      required:
+      - name
+      title: RelevanceRowIn
+    Rendition:
+      properties:
+        rendition_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Rendition Id
+        content_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Content Id
+        surface:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Surface
+        content_type:
+          type: string
+          enum:
+          - text
+          - image
+          - video
+          - video_link
+          - link
+          title: Content Type
+          default: text
+        title:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Title
+        body:
+          type: string
+          title: Body
+          default: ''
+        body_format:
+          type: string
+          enum:
+          - markdown
+          - html
+          - plain
+          title: Body Format
+          default: markdown
+        canonical_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Canonical Url
+        link_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Link Url
+        media:
+          items:
+            $ref: '#/components/schemas/Media'
+          type: array
+          title: Media
+        tags:
+          items:
+            type: string
+          type: array
+          title: Tags
+        mentions:
+          items:
+            type: string
+          type: array
+          title: Mentions
+        language:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Language
+        is_promotional:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Is Promotional
+        ai_generated:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Ai Generated
+      additionalProperties: true
+      type: object
+      title: Rendition
+      description: One piece of content already rendered for one surface.
+    RulesCaptureIn:
+      properties:
+        rules_url:
+          anyOf:
+          - type: string
+            maxLength: 2000
+            pattern: ^https?://
+          - type: 'null'
+          title: Rules Url
+          description: Rules page to read instead of the destination's rules_url.
+        text:
+          anyOf:
+          - type: string
+            maxLength: 100000
+          - type: 'null'
+          title: Text
+          description: Rules text pasted by a person (e.g. when robots.txt forbids reading).
+        use_platform_api:
+          type: boolean
+          title: Use Platform Api
+          description: Read the Lemmy sidebar / Discourse about.json first.
+          default: true
+        requested_by:
+          anyOf:
+          - type: string
+            maxLength: 255
+          - type: 'null'
+          title: Requested By
+        callback_url:
+          anyOf:
+          - type: string
+            maxLength: 2000
+            pattern: ^https?://
+          - type: 'null'
+          title: Callback Url
+      additionalProperties: false
+      type: object
+      title: RulesCaptureIn
+    RulesIn:
+      properties:
+        rules:
+          additionalProperties: true
+          type: object
+          title: Rules
+        confirmed_by:
+          type: string
+          maxLength: 255
+          minLength: 1
+          title: Confirmed By
+        source:
+          type: string
+          enum:
+          - manual
+          - llm
+          - default_conservative
+          - api_sidebar
+          - page
+          title: Source
+          default: manual
+        evidence:
+          items:
+            additionalProperties: true
+            type: object
+          type: array
+          title: Evidence
+      additionalProperties: false
+      type: object
+      required:
+      - rules
+      - confirmed_by
+      title: RulesIn
+      description: Human-confirmed rules for one destination (any RuleSet spelling).
+    StatusResult:
+      properties:
+        status:
+          type: string
+          enum:
+          - published
+          - draft
+          - pending
+          - scheduled
+          - awaiting_human
+          - deleted
+          - removed_by_platform
+          - unknown
+          title: Status
+        live_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Live Url
+      additionalProperties: false
+      type: object
+      required:
+      - status
+      - live_url
+      title: StatusResult
+    TailoringIn:
+      properties:
+        content_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Content Id
+        content:
+          anyOf:
+          - $ref: '#/components/schemas/ContentIn'
+          - type: 'null'
+          description: Inline content (stored as a content item).
+        destination_ids:
+          items:
+            type: string
+          type: array
+          maxItems: 100
+          minItems: 1
+          title: Destination Ids
+        callback_url:
+          anyOf:
+          - type: string
+            maxLength: 2000
+            pattern: ^https?://
+          - type: 'null'
+          title: Callback Url
+      additionalProperties: false
+      type: object
+      required:
+      - destination_ids
+      title: TailoringIn
+    ValidateRequest:
+      properties:
+        rendition:
+          $ref: '#/components/schemas/Rendition'
+        destination:
+          $ref: '#/components/schemas/Destination'
+        connection:
+          anyOf:
+          - $ref: '#/components/schemas/Connection'
+          - type: 'null'
+      additionalProperties: true
+      type: object
+      required:
+      - rendition
+      - destination
+      title: ValidateRequest
+    ValidateResult:
+      properties:
+        ok:
+          type: boolean
+          title: Ok
+        violations:
+          items:
+            $ref: '#/components/schemas/Violation'
+          type: array
+          title: Violations
+      additionalProperties: false
+      type: object
+      required:
+      - ok
+      title: ValidateResult
+    Violation:
+      properties:
+        field:
+          type: string
+          title: Field
+        rule:
+          type: string
+          title: Rule
+        message:
+          type: string
+          title: Message
+        limit:
+          anyOf:
+          - {}
+          - type: 'null'
+          title: Limit
+        actual:
+          anyOf:
+          - {}
+          - type: 'null'
+          title: Actual
+      additionalProperties: false
+      type: object
+      required:
+      - field
+      - rule
+      - message
+      title: Violation
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

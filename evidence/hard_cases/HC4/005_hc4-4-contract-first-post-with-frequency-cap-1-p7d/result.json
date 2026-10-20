@@ -1,0 +1,15 @@
+{
+  "index": 5,
+  "name": "HC4.4 contract - first post with frequency_cap 1/P7D",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 200,
+  "code": null,
+  "expected_status": 200,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 4346.4,
+  "correlation_id": "f8e9b387f401464c90cf384a93d5c46b",
+  "folder": "005_hc4-4-contract-first-post-with-frequency-cap-1-p7d",
+  "job_status": null
+}

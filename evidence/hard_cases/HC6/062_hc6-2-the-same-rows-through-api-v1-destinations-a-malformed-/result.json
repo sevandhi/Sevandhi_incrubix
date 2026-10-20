@@ -8,8 +8,8 @@
   "expected_status": 201,
   "expected_code": null,
   "passed": true,
-  "duration_ms": 2718.6,
-  "correlation_id": "b1985e3c14af4633abe9c3e3c269915c",
+  "duration_ms": 3277.0,
+  "correlation_id": "a517bd6b2f13416a9c74727dfe8d316e",
   "folder": "062_hc6-2-the-same-rows-through-api-v1-destinations-a-malformed-",
   "job_status": null
 }

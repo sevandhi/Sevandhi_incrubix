@@ -8,8 +8,8 @@
   "expected_status": 409,
   "expected_code": "DESTINATION_EXCLUDED",
   "passed": true,
-  "duration_ms": 1951.5,
-  "correlation_id": "7416103790ff4d079ad847adbc8d3881",
+  "duration_ms": 1981.6,
+  "correlation_id": "c626e3d11d024dd7a35d4bd3618d3f00",
   "folder": "058_hc5-4-a-publication-to-the-demoted-destination-is-refused",
   "job_status": null
 }

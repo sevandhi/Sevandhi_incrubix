@@ -1,0 +1,20 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "Which forum testing method worked for you?",
+      "body": "Same title again, a different body this time around."
+    },
+    "destination": {
+      "connector_key": "discourse",
+      "surface": "topic",
+      "url": "http://mock-platforms:8080/discourse/hc2-dup-e5f4438c"
+    },
+    "connection": {
+      "connector_key": "discourse"
+    },
+    "idempotency_key": "hc2-dup2-e5f4438c"
+  }
+}

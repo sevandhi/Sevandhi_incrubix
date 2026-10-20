@@ -8,8 +8,8 @@
   "expected_status": 409,
   "expected_code": "IDEMPOTENCY_KEY_REUSED",
   "passed": true,
-  "duration_ms": 864.1,
-  "correlation_id": "4ba4e236a9bb4802a33b86193f77e243",
+  "duration_ms": 718.6,
+  "correlation_id": "c5cf31f263a84d3f9a6e0da65ca033ec",
   "folder": "020_hc1-11-api-v1-job-same-key-different-body-409-idempotency-ke",
   "job_status": null
 }

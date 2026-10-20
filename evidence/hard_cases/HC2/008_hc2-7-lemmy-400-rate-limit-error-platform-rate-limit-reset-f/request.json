@@ -1,0 +1,19 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/lemmy/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "Second post meets the Lemmy limit",
+      "body": "Lemmy answers 400 rate_limit_error with no header."
+    },
+    "destination": {
+      "connector_key": "lemmy",
+      "url": "http://mock-platforms:8080/lemmy/hc2-lrl-e5f4438c/c/ibx_test"
+    },
+    "connection": {
+      "connector_key": "lemmy"
+    },
+    "idempotency_key": "hc2-lrl2-e5f4438c"
+  }
+}

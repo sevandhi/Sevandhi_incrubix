@@ -8,8 +8,8 @@
   "expected_status": 409,
   "expected_code": "DEST_RULE_SELF_PROMO",
   "passed": true,
-  "duration_ms": 1459.5,
-  "correlation_id": "2449a33d25774a168ef97b2e0dd003ef",
+  "duration_ms": 1176.4,
+  "correlation_id": "8ef0f77b2768495480a1a0369aa28b96",
   "folder": "053_hc4-9-assisted-pack-for-a-promotional-post-to-a-no-promotion",
   "job_status": null
 }

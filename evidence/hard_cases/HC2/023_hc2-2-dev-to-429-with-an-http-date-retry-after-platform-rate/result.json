@@ -8,8 +8,8 @@
   "expected_status": 429,
   "expected_code": "PLATFORM_RATE_LIMIT",
   "passed": true,
-  "duration_ms": 3811.2,
-  "correlation_id": "b3b33198d9f54c78b616a7d6593e80b0",
+  "duration_ms": 4250.8,
+  "correlation_id": "dfdee3a1e47b4622978005b60c971354",
   "folder": "023_hc2-2-dev-to-429-with-an-http-date-retry-after-platform-rate",
   "job_status": null
 }

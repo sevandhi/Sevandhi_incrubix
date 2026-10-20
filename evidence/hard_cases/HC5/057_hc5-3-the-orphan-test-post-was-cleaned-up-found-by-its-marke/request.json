@@ -1,6 +1,8 @@
 {
   "method": "GET",
-  "path": "https://ibx-destination-network-demo.onrender.com/sim/_counts?platform=ghost&tenant=hc5-drift-4201344a",
-  "headers": {},
+  "path": "https://ibx-destination-network-demo.onrender.com/sim/_counts?platform=ghost&tenant=hc5-drift-db12f8f7",
+  "headers": {
+    "X-IncuBrix-Demo-Token": "***"
+  },
   "body": null
 }

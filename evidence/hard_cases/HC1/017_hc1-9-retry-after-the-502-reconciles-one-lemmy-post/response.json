@@ -1,25 +1,25 @@
 {
   "status": 200,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:36:18 GMT",
+    "date": "Tue, 20 Oct 2026 16:28:30 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
-    "cf-cache-status": "DYNAMIC",
-    "idempotency-key": "hc1-502-4201344a",
+    "idempotency-key": "hc1-502-db12f8f7",
     "idempotent-replayed": "true",
-    "rndr-id": "4df3b12c-fe6e-42a7",
+    "rndr-id": "49c37ab5-1898-4a2a",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
-    "x-correlation-id": "0ec38f1f4402472b99fd0aeda295a789",
+    "x-correlation-id": "c08cae0ccaa445c1a8a5c67d230fb9b8",
     "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
     "content-encoding": "gzip",
-    "cf-ray": "a4d918d14a01aa6a-MAA",
+    "cf-ray": "a4d965443f227e69-MAA",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
-    "platform_post_id": "1~ie8a9647129",
-    "live_url": "http://mock-platforms:8080/lemmy/hc1-502-4201344a/post/1",
+    "platform_post_id": "1~i3ae8d8b306",
+    "live_url": "http://mock-platforms:8080/lemmy/hc1-502-db12f8f7/post/1",
     "status": "published"
   }
 }

@@ -1,0 +1,36 @@
+{
+  "status": 409,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 16:53:39 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "4e4fd1b5-ba2b-4e19",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "e8a06eb67282400da4269ea3d6f5d914",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d98a273ccc17ab-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "DEST_RULE_DISCLOSURE",
+      "message": "DEST_RULE_DISCLOSURE: this destination requires an AI-content disclosure, the post has none, and automatic insertion is turned off; add: \"Disclosure: this post was created with the help of AI.\"",
+      "retryable": false,
+      "details": {
+        "retry_policy": "never",
+        "failed_checks": [
+          "disclosure"
+        ],
+        "reasons": [
+          "DEST_RULE_DISCLOSURE: this destination requires an AI-content disclosure, the post has none, and automatic insertion is turned off; add: \"Disclosure: this post was created with the help of AI.\""
+        ],
+        "evidence": [],
+        "warnings": [],
+        "decision": "block"
+      }
+    }
+  }
+}

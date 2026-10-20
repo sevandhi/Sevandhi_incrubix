@@ -1,17 +1,17 @@
 {
   "status": 424,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:36:54 GMT",
+    "date": "Tue, 20 Oct 2026 16:29:05 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
-    "cf-cache-status": "DYNAMIC",
-    "rndr-id": "3c32d9d8-cb78-4a26",
+    "rndr-id": "9b9e116c-3563-45ef",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
-    "x-correlation-id": "27add40cf89247b9b506b32e8db7475a",
+    "x-correlation-id": "47847b7d2e2a4b23a955a9198dd3b19a",
     "x-render-origin-server": "uvicorn",
-    "cf-ray": "a4d919ae1e6daa6a-MAA",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d966226d307e69-MAA",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
@@ -24,11 +24,11 @@
         "platform_status": 401,
         "platform_message": "This partner revoked IncuBrix's access.",
         "error_map_key": "401",
-        "connection_id": "conn_626264c25d604a6cbf2febc6888ae37e",
+        "connection_id": "conn_a0c117606c874ed2b05828aef9f68ce0",
         "connection_state": "paused",
         "action": "reconnect_required",
         "intent_state": "RETRYABLE",
-        "idempotency_key": "hc2-rev1-4201344a"
+        "idempotency_key": "hc2-rev1-db12f8f7"
       }
     }
   }

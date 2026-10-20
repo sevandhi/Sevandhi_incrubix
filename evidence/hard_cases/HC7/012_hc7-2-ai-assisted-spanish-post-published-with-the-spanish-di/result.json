@@ -1,0 +1,15 @@
+{
+  "index": 12,
+  "name": "HC7.2 AI-assisted Spanish post -> published with the Spanish disclosure line on the page",
+  "method": "POST",
+  "path": "/api/v1/publications",
+  "status": 202,
+  "code": null,
+  "expected_status": 202,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 13955.9,
+  "correlation_id": "0dbc52da71d24a40806ea2b2248d47c7",
+  "folder": "012_hc7-2-ai-assisted-spanish-post-published-with-the-spanish-di",
+  "job_status": "succeeded"
+}

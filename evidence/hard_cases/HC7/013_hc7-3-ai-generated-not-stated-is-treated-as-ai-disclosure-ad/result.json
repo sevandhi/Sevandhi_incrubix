@@ -1,0 +1,15 @@
+{
+  "index": 13,
+  "name": "HC7.3 ai_generated not stated is treated as AI -> disclosure added",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 200,
+  "code": null,
+  "expected_status": 200,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 4997.9,
+  "correlation_id": "7a4d9a09a8c34b82b81026f7201fcda8",
+  "folder": "013_hc7-3-ai-generated-not-stated-is-treated-as-ai-disclosure-ad",
+  "job_status": null
+}

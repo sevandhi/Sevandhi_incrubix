@@ -1,0 +1,14 @@
+{
+  "method": "POST",
+  "path": "/api/v1/publications",
+  "headers": {},
+  "body": {
+    "destination_id": "dest_24cf24fcb3044904a41d80ce503b793f",
+    "content": {
+      "title": "How do you test posts to many communities?",
+      "body": "We compared three ways to test forum posts end to end. Which one has worked for you?",
+      "language": "en",
+      "ai_generated": false
+    }
+  }
+}

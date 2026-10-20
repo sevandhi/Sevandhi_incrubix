@@ -1,0 +1,101 @@
+{
+  "status": 202,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 16:44:51 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "idempotency-key": "gen-418b616562424c3982ce2285c84d0104",
+    "location": "/api/v1/jobs/job_e9628da5fe8e4a72ad230d4c74f16762",
+    "rndr-id": "71cbcc15-f980-4c07",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "83d3a6e7286347c9b6c6224dbbfd0dfe",
+    "x-incubrix-warning": "IDEMPOTENCY_KEY_GENERATED",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d97d43e917560f-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "job_id": "job_e9628da5fe8e4a72ad230d4c74f16762",
+    "status": "queued",
+    "status_url": "/api/v1/jobs/job_e9628da5fe8e4a72ad230d4c74f16762",
+    "publication_id": "pub_7ae544a80f8448ca9eca3ffb42b045bb",
+    "publication_url": "/api/v1/publications/pub_7ae544a80f8448ca9eca3ffb42b045bb",
+    "publication": {
+      "publication_id": "pub_7ae544a80f8448ca9eca3ffb42b045bb",
+      "destination_id": "dest_018d6d82755d42499075a5e9c370bada",
+      "content_id": "content_4eb9e5484d4b4fb6a2997f34fa1df1de",
+      "state": "rescheduled",
+      "reason": "DEST_RULE_FREQUENCY_CAP: cap of 1 post(s) per P7D reached (1 in the window, oldest 2026-10-20T16:44:45.475232Z); next slot 2026-10-27T16:44:45.475232Z",
+      "reasons": [
+        "DEST_RULE_FREQUENCY_CAP: cap of 1 post(s) per P7D reached (1 in the window, oldest 2026-10-20T16:44:45.475232Z); next slot 2026-10-27T16:44:45.475232Z"
+      ],
+      "code": "DEST_RULE_FREQUENCY_CAP",
+      "outcome": null,
+      "retry_at": "2026-10-27T16:44:45.475232Z",
+      "scheduled_for": "2026-10-27T16:44:45.475232Z",
+      "platform_post_id": null,
+      "live_url": null,
+      "attempts": 0,
+      "rule_decision": {
+        "code": "DEST_RULE_FREQUENCY_CAP",
+        "fixes": [],
+        "action": "reschedule",
+        "reasons": [
+          "DEST_RULE_FREQUENCY_CAP: cap of 1 post(s) per P7D reached (1 in the window, oldest 2026-10-20T16:44:45.475232Z); next slot 2026-10-27T16:44:45.475232Z"
+        ],
+        "evidence": [
+          {
+            "type": "post_in_window",
+            "field": "history",
+            "value": "2026-10-20T16:44:45.475232Z"
+          }
+        ],
+        "retry_at": "2026-10-27T16:44:45.475232Z",
+        "warnings": [],
+        "failed_checks": [
+          "frequency_cap"
+        ]
+      },
+      "tailoring": null,
+      "assist_pack": null,
+      "removal": null,
+      "job_ids": [
+        "job_e9628da5fe8e4a72ad230d4c74f16762"
+      ],
+      "error": {
+        "error": {
+          "code": "DEST_RULE_FREQUENCY_CAP",
+          "details": {
+            "cap": 1,
+            "window": "P7D",
+            "reasons": [
+              "DEST_RULE_FREQUENCY_CAP: cap of 1 post(s) per P7D reached (1 in the window, oldest 2026-10-20T16:44:45.475232Z); next slot 2026-10-27T16:44:45.475232Z"
+            ],
+            "evidence": [
+              {
+                "type": "post_in_window",
+                "field": "history",
+                "value": "2026-10-20T16:44:45.475232Z"
+              }
+            ],
+            "retry_at": "2026-10-27T16:44:45.475232Z",
+            "warnings": [],
+            "retry_policy": "later",
+            "failed_checks": [
+              "frequency_cap"
+            ],
+            "count_in_window": 1
+          },
+          "message": "DEST_RULE_FREQUENCY_CAP: cap of 1 post(s) per P7D reached (1 in the window, oldest 2026-10-20T16:44:45.475232Z); next slot 2026-10-27T16:44:45.475232Z",
+          "retryable": true
+        }
+      },
+      "published_at": null,
+      "created_at": "2026-10-20T16:44:48.921958Z",
+      "updated_at": "2026-10-20T16:44:48.921958Z"
+    }
+  }
+}

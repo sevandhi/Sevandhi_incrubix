@@ -1,0 +1,15 @@
+{
+  "index": 1,
+  "name": "HC4.1 first post of the week is published",
+  "method": "POST",
+  "path": "/api/v1/publications",
+  "status": 202,
+  "code": null,
+  "expected_status": 202,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 14065.8,
+  "correlation_id": "df78beb505584fb29b02ae106e03b16c",
+  "folder": "001_hc4-1-first-post-of-the-week-is-published",
+  "job_status": "succeeded"
+}

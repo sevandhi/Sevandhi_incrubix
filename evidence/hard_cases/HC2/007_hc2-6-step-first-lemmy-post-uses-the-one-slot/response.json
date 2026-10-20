@@ -1,0 +1,24 @@
+{
+  "status": 200,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 16:22:31 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "idempotency-key": "hc2-lrl1-e5f4438c",
+    "rndr-id": "0d221d27-dbbe-4a51",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "8c612a9bcba5449c97c4eca548d4725d",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "content-encoding": "gzip",
+    "cf-ray": "a4d95c85ae6f0758-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "platform_post_id": "1~id35988ccca",
+    "live_url": "http://mock-platforms:8080/lemmy/hc2-lrl-e5f4438c/post/1",
+    "status": "published"
+  }
+}

@@ -8,8 +8,8 @@
   "expected_status": 409,
   "expected_code": "DEST_RULE_LANGUAGE",
   "passed": true,
-  "duration_ms": 3050.4,
-  "correlation_id": "9ff776c7a6d94e9b9d5144752c627e98",
+  "duration_ms": 3122.9,
+  "correlation_id": "c99dc57cff474b15ba79eeb958f24b6d",
   "folder": "069_hc7-5-german-community-language-must-match-and-english-conte",
   "job_status": null
 }

@@ -10,12 +10,12 @@
     "destination": {
       "connector_key": "discourse",
       "surface": "topic",
-      "url": "http://mock-platforms:8080/discourse/hc4-ccap-4201344a",
+      "url": "http://mock-platforms:8080/discourse/hc4-ccap-db12f8f7",
       "frequency_cap": "1/P7D"
     },
     "connection": {
       "connector_key": "discourse"
     },
-    "idempotency_key": "hc4-ccap1-4201344a"
+    "idempotency_key": "hc4-ccap1-db12f8f7"
   }
 }

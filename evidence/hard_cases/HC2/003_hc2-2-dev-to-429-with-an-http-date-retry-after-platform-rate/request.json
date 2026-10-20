@@ -1,0 +1,19 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/devto/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "Second article meets the platform limit",
+      "body": "This one is refused by the platform with a 429."
+    },
+    "destination": {
+      "connector_key": "devto",
+      "url": "http://mock-platforms:8080/forem/hc2-rl-e5f4438c"
+    },
+    "connection": {
+      "connector_key": "devto"
+    },
+    "idempotency_key": "hc2-rl2-e5f4438c"
+  }
+}

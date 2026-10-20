@@ -182,7 +182,12 @@ class Rehearsal:
             checks.append((f"{path} == {value!r} (got {got if got is not MISSING else 'missing'!r})", got == value))
         for path, sub in (grade.get("contains") or {}).items():
             got = get(body, path)
-            hay = text if path == "" else (json.dumps(got, ensure_ascii=False) if not isinstance(got, str) else got)
+            if path == "":
+                hay = text
+            elif got is MISSING:
+                hay = ""  # the field is absent: the check fails cleanly instead of crashing the grader
+            else:
+                hay = json.dumps(got, ensure_ascii=False) if not isinstance(got, str) else got
             checks.append((f"{path or 'body'} contains {sub!r}", got is not MISSING and str(sub).lower() in hay.lower()))
         for path in grade.get("present") or []:
             got = get(body, path)

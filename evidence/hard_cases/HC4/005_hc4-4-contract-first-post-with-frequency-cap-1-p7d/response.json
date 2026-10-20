@@ -1,0 +1,24 @@
+{
+  "status": 200,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 16:53:02 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "idempotency-key": "hc4-ccap1-2f131250",
+    "rndr-id": "f07040b3-01ab-4ea8",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "f8e9b387f401464c90cf384a93d5c46b",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "content-encoding": "gzip",
+    "cf-ray": "a4d98935e9ae17ab-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "platform_post_id": "1~id28ededc39",
+    "live_url": "http://mock-platforms:8080/discourse/hc4-ccap-2f131250/t/how-do-you-test-posts-to-long-tail-communities/1",
+    "status": "published"
+  }
+}

@@ -1,30 +1,30 @@
 {
   "status": 409,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:46:43 GMT",
+    "date": "Tue, 20 Oct 2026 16:38:47 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
-    "cf-cache-status": "DYNAMIC",
-    "idempotency-key": "gen-22917626c071485b8faf1e5c74df9377",
-    "rndr-id": "c4b4433e-4a7c-4e5f",
+    "idempotency-key": "gen-ebaae8b3c53142b7beb013881508335d",
+    "rndr-id": "2cc101c6-7c2f-4085",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
-    "x-correlation-id": "7416103790ff4d079ad847adbc8d3881",
+    "x-correlation-id": "c626e3d11d024dd7a35d4bd3618d3f00",
     "x-incubrix-warning": "IDEMPOTENCY_KEY_GENERATED",
     "x-render-origin-server": "uvicorn",
-    "cf-ray": "a4d928208db1aa6a-MAA",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d974650f2347d6-BOM",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
     "error": {
       "code": "DESTINATION_EXCLUDED",
-      "message": "Destination 'HC5 Ghost drift 4201344a' is excluded: certification cert_9621584af12a4ca9a6398ec35e284821 failed at PUBLISH: PLATFORM_UNAVAILABLE: response_schema_mismatch: the platform's answer no longer has the expected field(s) posts.0.url; the platform may have renamed a field in its API.",
+      "message": "Destination 'HC5 Ghost drift db12f8f7' is excluded: certification cert_9a2b3a738ef746609e5e7fb1fc045f0c failed at PUBLISH: PLATFORM_UNAVAILABLE: response_schema_mismatch: the platform's answer no longer has the expected field(s) posts.0.url; the platform may have renamed a field in its API.",
       "retryable": false,
       "details": {
         "retry_policy": "never",
-        "destination_id": "dest_66c5a26b33ed4d118be55fa21b1f6e40",
-        "publication_id": "pub_8cb54eb5d00a46d5be4afbbb0664d31f",
+        "destination_id": "dest_bf4e6c0cd3514fdc86359a4b87cc763d",
+        "publication_id": "pub_98182f9c439b4b10a18eedb83164110c",
         "state": "blocked"
       }
     }

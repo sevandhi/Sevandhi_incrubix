@@ -1,0 +1,21 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "How do you test posts to long-tail communities?",
+      "body": "We compared three ways to test forum posts end to end. Which one has worked for you?"
+    },
+    "destination": {
+      "connector_key": "discourse",
+      "surface": "topic",
+      "url": "http://mock-platforms:8080/discourse/hc4-ccap-2f131250",
+      "frequency_cap": "1/P7D"
+    },
+    "connection": {
+      "connector_key": "discourse"
+    },
+    "idempotency_key": "hc4-ccap1-2f131250"
+  }
+}

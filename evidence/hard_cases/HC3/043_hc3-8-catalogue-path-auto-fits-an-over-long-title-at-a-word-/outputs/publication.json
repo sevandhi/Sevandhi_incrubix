@@ -1,16 +1,16 @@
 {
-  "publication_id": "pub_68212daf22bb4cd4978a3ceacf959786",
-  "destination_id": "dest_f48c4d2f246940ab80b0ccaa3f924e12",
-  "content_id": "content_6f1e588282064d629dce918ce77c67f0",
+  "publication_id": "pub_77c2e876270445ba83add18fb85571dd",
+  "destination_id": "dest_9d3ba735748643858cd81f416f80110e",
+  "content_id": "content_685327c67f604ff2b1820ed93e12e772",
   "state": "published",
   "reason": null,
   "reasons": [],
   "code": null,
   "outcome": null,
   "retry_at": null,
-  "scheduled_for": "2026-10-20T15:37:21.209310Z",
-  "platform_post_id": "2",
-  "live_url": "http://mock-platforms:8080/discourse/hc3-strict-4201344a/t/how-do-you-test-posts-to-many-long-tail/2",
+  "scheduled_for": "2026-10-20T16:29:30.894815Z",
+  "platform_post_id": "2~ie53e2cc19c",
+  "live_url": "http://mock-platforms:8080/discourse/hc3-strict-db12f8f7/t/how-do-you-test-posts-to-many-long-tail/2",
   "attempts": 1,
   "rule_decision": {
     "code": null,
@@ -38,10 +38,10 @@
   "assist_pack": null,
   "removal": null,
   "job_ids": [
-    "job_3648513037504a158db602650557f374"
+    "job_5729b66113cb4f0780e12b3379fe47de"
   ],
   "error": null,
-  "published_at": "2026-10-20T15:37:26.900957Z",
-  "created_at": "2026-10-20T15:37:17.083186Z",
-  "updated_at": "2026-10-20T15:37:27.216251Z"
+  "published_at": "2026-10-20T16:29:36.906628Z",
+  "created_at": "2026-10-20T16:29:27.022422Z",
+  "updated_at": "2026-10-20T16:29:37.150497Z"
 }

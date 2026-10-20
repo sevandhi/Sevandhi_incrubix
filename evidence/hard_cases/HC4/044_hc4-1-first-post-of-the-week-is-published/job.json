@@ -1,12 +1,12 @@
 {
-  "job_id": "job_ae7d55df0e48433f9bfd85f85c1fb1cf",
+  "job_id": "job_e9e7a3450b674765961135a952101b3a",
   "kind": "publication.run",
   "status": "succeeded",
   "progress": 100,
   "result": {
     "links": {
-      "manifest": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_ae7d55df0e48433f9bfd85f85c1fb1cf/manifest.json?exp=1792514265&sig=***",
-      "publication": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_ae7d55df0e48433f9bfd85f85c1fb1cf/publication.json?exp=1792514265&sig=***"
+      "manifest": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_e9e7a3450b674765961135a952101b3a/manifest.json?exp=1792517391&sig=***",
+      "publication": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_e9e7a3450b674765961135a952101b3a/publication.json?exp=1792517391&sig=***"
     },
     "publication": {
       "code": null,
@@ -14,24 +14,24 @@
       "state": "published",
       "reason": null,
       "job_ids": [
-        "job_ae7d55df0e48433f9bfd85f85c1fb1cf"
+        "job_e9e7a3450b674765961135a952101b3a"
       ],
       "outcome": null,
       "reasons": [],
       "removal": null,
       "attempts": 1,
-      "live_url": "http://mock-platforms:8080/discourse/hc4-cap-4201344a/t/how-do-you-test-posts-to-long-tail-communities/2",
+      "live_url": "http://mock-platforms:8080/discourse/hc4-cap-db12f8f7/t/how-do-you-test-posts-to-long-tail-communities/2",
       "retry_at": null,
       "tailoring": {
         "diff": [],
         "profile": "forum",
         "warnings": []
       },
-      "content_id": "content_797cbefc9cc14caea8595a632b74071e",
-      "created_at": "2026-10-20T15:37:31.863064Z",
-      "updated_at": "2026-10-20T15:37:42.194907Z",
+      "content_id": "content_b4275cbfe00a42d3bd3253dbf23263f2",
+      "created_at": "2026-10-20T16:29:40.380904Z",
+      "updated_at": "2026-10-20T16:29:49.701936Z",
       "assist_pack": null,
-      "published_at": "2026-10-20T15:37:41.886661Z",
+      "published_at": "2026-10-20T16:29:49.386644Z",
       "rule_decision": {
         "code": null,
         "fixes": [],
@@ -42,15 +42,15 @@
         "warnings": [],
         "failed_checks": []
       },
-      "scheduled_for": "2026-10-20T15:37:35.734351Z",
-      "destination_id": "dest_21be725d0f0744e08cf6899113ba5987",
-      "publication_id": "pub_05ab059b704a4d269364dd8cfc19bc9c",
-      "platform_post_id": "2~i4de066d314"
+      "scheduled_for": "2026-10-20T16:29:43.679713Z",
+      "destination_id": "dest_a4996bd4d6f54226945e60d6b0e54c32",
+      "publication_id": "pub_448e939bac5c4a9bbfdfc887fff200d7",
+      "platform_post_id": "2~i3713b550f9"
     }
   },
   "error": null,
   "attempts": 1,
-  "created_at": "2026-10-20T15:37:31.863064+00:00",
-  "updated_at": "2026-10-20T15:37:43.675624+00:00",
-  "finished_at": "2026-10-20T15:37:43.214490+00:00"
+  "created_at": "2026-10-20T16:29:40.380904+00:00",
+  "updated_at": "2026-10-20T16:29:51.212852+00:00",
+  "finished_at": "2026-10-20T16:29:50.746260+00:00"
 }

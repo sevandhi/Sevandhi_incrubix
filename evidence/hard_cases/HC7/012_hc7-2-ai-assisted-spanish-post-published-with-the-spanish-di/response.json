@@ -1,0 +1,78 @@
+{
+  "status": 202,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 16:53:19 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "idempotency-key": "gen-40838c1e84ca40d582df39c54fce6154",
+    "location": "/api/v1/jobs/job_54e0fb7d7ab24e1780a143110ae1ceda",
+    "rndr-id": "f173917d-c6e8-41b7",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "0dbc52da71d24a40806ea2b2248d47c7",
+    "x-incubrix-warning": "IDEMPOTENCY_KEY_GENERATED",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d989b0b93517ab-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "job_id": "job_54e0fb7d7ab24e1780a143110ae1ceda",
+    "status": "queued",
+    "status_url": "/api/v1/jobs/job_54e0fb7d7ab24e1780a143110ae1ceda",
+    "publication_id": "pub_04a966c3083f49dca539c135e0b87e42",
+    "publication_url": "/api/v1/publications/pub_04a966c3083f49dca539c135e0b87e42",
+    "publication": {
+      "publication_id": "pub_04a966c3083f49dca539c135e0b87e42",
+      "destination_id": "dest_24cf24fcb3044904a41d80ce503b793f",
+      "content_id": "content_345416cb83834459b6493956eb6ee10c",
+      "state": "pending",
+      "reason": null,
+      "reasons": [
+        "AI-content disclosure required; add it at the bottom"
+      ],
+      "code": null,
+      "outcome": null,
+      "retry_at": null,
+      "scheduled_for": "2026-10-20T16:53:18.096803Z",
+      "platform_post_id": null,
+      "live_url": null,
+      "attempts": 0,
+      "rule_decision": {
+        "code": null,
+        "fixes": [
+          {
+            "kind": "insert_disclosure",
+            "lang": "es",
+            "text": "Aviso: esta publicación se creó con ayuda de inteligencia artificial (IA).",
+            "field": "body",
+            "placement": "bottom"
+          }
+        ],
+        "action": "allow_with_changes",
+        "reasons": [
+          "AI-content disclosure required; add it at the bottom"
+        ],
+        "evidence": [],
+        "retry_at": null,
+        "warnings": [
+          "AI_DISCLOSURE_REQUIRED: 'es' disclosure will be added at the bottom"
+        ],
+        "failed_checks": [
+          "disclosure"
+        ]
+      },
+      "tailoring": null,
+      "assist_pack": null,
+      "removal": null,
+      "job_ids": [
+        "job_54e0fb7d7ab24e1780a143110ae1ceda"
+      ],
+      "error": null,
+      "published_at": null,
+      "created_at": "2026-10-20T16:53:17.850970Z",
+      "updated_at": "2026-10-20T16:53:17.850970Z"
+    }
+  }
+}

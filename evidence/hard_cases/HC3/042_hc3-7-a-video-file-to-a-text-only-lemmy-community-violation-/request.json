@@ -15,7 +15,7 @@
     },
     "destination": {
       "connector_key": "lemmy",
-      "url": "http://mock-platforms:8080/lemmy/hc3-vid-4201344a/c/ibx_test"
+      "url": "http://mock-platforms:8080/lemmy/hc3-vid-db12f8f7/c/ibx_test"
     }
   }
 }

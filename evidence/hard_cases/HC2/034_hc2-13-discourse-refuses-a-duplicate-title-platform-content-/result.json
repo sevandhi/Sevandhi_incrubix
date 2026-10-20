@@ -8,8 +8,8 @@
   "expected_status": 422,
   "expected_code": "PLATFORM_CONTENT_REJECTED",
   "passed": true,
-  "duration_ms": 4154.1,
-  "correlation_id": "5de5260cc68b4be3b28860096f212b55",
+  "duration_ms": 3574.5,
+  "correlation_id": "d460fd7bd51c49bfbc786678bc2c9e32",
   "folder": "034_hc2-13-discourse-refuses-a-duplicate-title-platform-content-",
   "job_status": null
 }

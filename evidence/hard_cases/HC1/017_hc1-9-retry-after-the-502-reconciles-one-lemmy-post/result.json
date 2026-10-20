@@ -8,8 +8,8 @@
   "expected_status": 200,
   "expected_code": null,
   "passed": true,
-  "duration_ms": 4197.4,
-  "correlation_id": "0ec38f1f4402472b99fd0aeda295a789",
+  "duration_ms": 4484.3,
+  "correlation_id": "c08cae0ccaa445c1a8a5c67d230fb9b8",
   "folder": "017_hc1-9-retry-after-the-502-reconciles-one-lemmy-post",
   "job_status": null
 }

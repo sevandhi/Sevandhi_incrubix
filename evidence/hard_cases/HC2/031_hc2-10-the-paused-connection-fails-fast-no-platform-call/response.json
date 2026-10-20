@@ -1,27 +1,27 @@
 {
   "status": 424,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:36:55 GMT",
+    "date": "Tue, 20 Oct 2026 16:29:06 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
-    "cf-cache-status": "DYNAMIC",
-    "rndr-id": "db77ae83-6b5d-4ad4",
+    "rndr-id": "8122750a-ba58-4f8a",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
-    "x-correlation-id": "38ddc2a781d4437588cc74d576d0c3aa",
+    "x-correlation-id": "62f6726b4045408ab1ded3b9dd92fdb0",
     "x-render-origin-server": "uvicorn",
-    "cf-ray": "a4d919cafe1caa6a-MAA",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d9663eafe77e69-MAA",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
     "error": {
       "code": "CONNECTION_AUTH_EXPIRED",
-      "message": "Connection conn_626264c25d604a6cbf2febc6888ae37e is paused_auth; the owner must reconnect before posting.",
+      "message": "Connection conn_a0c117606c874ed2b05828aef9f68ce0 is paused_auth; the owner must reconnect before posting.",
       "retryable": false,
       "details": {
         "retry_policy": "after_reconnect",
-        "connection_id": "conn_626264c25d604a6cbf2febc6888ae37e",
+        "connection_id": "conn_a0c117606c874ed2b05828aef9f68ce0",
         "connection_state": "paused_auth",
         "action": "reconnect_required"
       }

@@ -8,8 +8,8 @@
   "expected_status": 429,
   "expected_code": "PLATFORM_RATE_LIMIT",
   "passed": true,
-  "duration_ms": 3805.0,
-  "correlation_id": "2d9fbce8b8a4472bad6dccef511df61e",
+  "duration_ms": 3955.1,
+  "correlation_id": "ea1ba22fbcbd4a949f345e26d967c0ae",
   "folder": "025_hc2-4-discourse-429-with-retry-after-120-s-retry-after-s-120",
   "job_status": null
 }

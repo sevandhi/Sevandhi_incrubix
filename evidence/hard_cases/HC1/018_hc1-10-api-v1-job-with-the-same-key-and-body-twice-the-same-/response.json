@@ -1,24 +1,24 @@
 {
   "status": 202,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:36:19 GMT",
+    "date": "Tue, 20 Oct 2026 16:28:31 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
-    "idempotency-key": "hc1-job-4201344a",
-    "location": "/api/v1/jobs/job_d36086370c1a4c7cb962572be9fb99fd",
-    "rndr-id": "58576e29-a5d6-48cc",
+    "idempotency-key": "hc1-job-db12f8f7",
+    "location": "/api/v1/jobs/job_395feb4495b341408dd90372db921803",
+    "rndr-id": "748b3280-4c2d-4c56",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
-    "x-correlation-id": "20b59a01e57e49e0af30490ab31864ca",
+    "x-correlation-id": "53a0583f1bc547ffa1cdd54d1c0595a7",
     "x-render-origin-server": "uvicorn",
     "cf-cache-status": "DYNAMIC",
-    "cf-ray": "a4d918eba8b4aa6a-MAA",
+    "cf-ray": "a4d9656068847e69-MAA",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
-    "job_id": "job_d36086370c1a4c7cb962572be9fb99fd",
+    "job_id": "job_395feb4495b341408dd90372db921803",
     "status": "queued",
-    "status_url": "/api/v1/jobs/job_d36086370c1a4c7cb962572be9fb99fd"
+    "status_url": "/api/v1/jobs/job_395feb4495b341408dd90372db921803"
   }
 }

@@ -1,24 +1,24 @@
 {
   "status": 200,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:46:00 GMT",
+    "date": "Tue, 20 Oct 2026 16:38:05 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
-    "idempotency-key": "hc4-ccap1-4201344a",
-    "rndr-id": "149a7329-796d-487e",
+    "idempotency-key": "hc4-ccap1-db12f8f7",
+    "rndr-id": "4f793c46-3897-4caf",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
-    "x-correlation-id": "c0c9bac9570e4f72a109461881552071",
+    "x-correlation-id": "c2745c386d3140b7a67af890d0bf3fd5",
     "x-render-origin-server": "uvicorn",
     "cf-cache-status": "DYNAMIC",
     "content-encoding": "gzip",
-    "cf-ray": "a4d927043d36aa6a-MAA",
+    "cf-ray": "a4d9734ace047e69-MAA",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
-    "platform_post_id": "1~if77b07317e",
-    "live_url": "http://mock-platforms:8080/discourse/hc4-ccap-4201344a/t/how-do-you-test-posts-to-long-tail-communities/1",
+    "platform_post_id": "1~i05a00ae8fb",
+    "live_url": "http://mock-platforms:8080/discourse/hc4-ccap-db12f8f7/t/how-do-you-test-posts-to-long-tail-communities/1",
     "status": "published"
   }
 }

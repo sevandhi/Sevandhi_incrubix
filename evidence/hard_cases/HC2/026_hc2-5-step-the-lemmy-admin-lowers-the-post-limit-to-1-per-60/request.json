@@ -1,8 +1,9 @@
 {
   "method": "PUT",
-  "path": "https://ibx-destination-network-demo.onrender.com/sim/lemmy/hc2-lrl-4201344a/api/v3/site",
+  "path": "https://ibx-destination-network-demo.onrender.com/sim/lemmy/hc2-lrl-db12f8f7/api/v3/site",
   "headers": {
-    "Authorization": "***"
+    "Authorization": "***",
+    "X-IncuBrix-Demo-Token": "***"
   },
   "body": {
     "rate_limit_post": 1,

@@ -9,11 +9,11 @@
     },
     "destination": {
       "connector_key": "devto",
-      "url": "http://mock-platforms:8080/forem/hc3-cjk-4201344a"
+      "url": "http://mock-platforms:8080/forem/hc3-cjk-db12f8f7"
     },
     "connection": {
       "connector_key": "devto"
     },
-    "idempotency_key": "hc3-cjk-4201344a"
+    "idempotency_key": "hc3-cjk-db12f8f7"
   }
 }

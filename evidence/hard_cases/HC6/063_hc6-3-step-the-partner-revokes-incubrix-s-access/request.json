@@ -1,6 +1,8 @@
 {
   "method": "POST",
-  "path": "https://ibx-destination-network-demo.onrender.com/sim/partner/hc6-rev-4201344a/_partner/revoke",
-  "headers": {},
+  "path": "https://ibx-destination-network-demo.onrender.com/sim/partner/hc6-rev-db12f8f7/_partner/revoke",
+  "headers": {
+    "X-IncuBrix-Demo-Token": "***"
+  },
   "body": null
 }

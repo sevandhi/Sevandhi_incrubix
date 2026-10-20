@@ -1,18 +1,18 @@
 {
   "status": 429,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:36:35 GMT",
+    "date": "Tue, 20 Oct 2026 16:28:47 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
     "retry-after": "116",
-    "rndr-id": "964af599-5865-4235",
+    "rndr-id": "cc22be91-d574-4951",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
-    "x-correlation-id": "b3b33198d9f54c78b616a7d6593e80b0",
+    "x-correlation-id": "dfdee3a1e47b4622978005b60c971354",
     "x-render-origin-server": "uvicorn",
     "cf-cache-status": "DYNAMIC",
-    "cf-ray": "a4d9193d5d1aaa6a-MAA",
+    "cf-ray": "a4d965b38dc27e69-MAA",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
@@ -25,11 +25,11 @@
         "platform_status": 429,
         "platform_message": "Rate limit reached, try again in 116 seconds",
         "error_map_key": "429",
-        "retry_at": "2026-10-20T15:38:30.170056Z",
+        "retry_at": "2026-10-20T16:30:42.340001Z",
         "retry_after_s": 116,
         "reset_source": "Retry-After",
         "intent_state": "RETRYABLE",
-        "idempotency_key": "hc2-rl2-4201344a"
+        "idempotency_key": "hc2-rl2-db12f8f7"
       }
     }
   }

@@ -8,8 +8,8 @@
   "expected_status": 422,
   "expected_code": "PLATFORM_CONTENT_REJECTED",
   "passed": true,
-  "duration_ms": 3709.4,
-  "correlation_id": "5f0550fe2c9842959412ac9bd5ce253d",
+  "duration_ms": 3659.7,
+  "correlation_id": "969a6699a977423982e7190d12827038",
   "folder": "035_hc2-14-ghost-refuses-an-over-long-title-platform-content-rej",
   "job_status": null
 }

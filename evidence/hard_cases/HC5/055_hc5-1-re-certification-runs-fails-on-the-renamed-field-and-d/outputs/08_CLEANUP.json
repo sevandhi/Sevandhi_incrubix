@@ -2,13 +2,13 @@
   "n": 8,
   "step": "CLEANUP",
   "outcome": "ok",
-  "started_at": "2026-10-20T15:46:30.381325Z",
-  "duration_ms": 3193.2,
+  "started_at": "2026-10-20T16:38:32.365666Z",
+  "duration_ms": 3336.2,
   "detail": {
     "ok": true,
     "action": "deleted",
     "found_by": "marker",
     "platform_post_id": "6acf00000000000000000002",
-    "marker": "ibx-kajmoapve2dv"
+    "marker": "ibx-uj5vf2rrusgw"
   }
 }

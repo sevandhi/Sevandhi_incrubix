@@ -1,0 +1,15 @@
+{
+  "index": 15,
+  "name": "HC7.5 German community (language must match) and English content -> 409 DEST_RULE_LANGUAGE",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 409,
+  "code": "DEST_RULE_LANGUAGE",
+  "expected_status": 409,
+  "expected_code": "DEST_RULE_LANGUAGE",
+  "passed": true,
+  "duration_ms": 3053.3,
+  "correlation_id": "9e1e84b9f92e454c889c73e3d6662158",
+  "folder": "015_hc7-5-german-community-language-must-match-and-english-conte",
+  "job_status": null
+}

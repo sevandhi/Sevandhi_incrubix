@@ -16,7 +16,7 @@
     },
     "destination": {
       "connector_key": "devto",
-      "url": "http://mock-platforms:8080/forem/hc3-tags-4201344a"
+      "url": "http://mock-platforms:8080/forem/hc3-tags-db12f8f7"
     }
   }
 }

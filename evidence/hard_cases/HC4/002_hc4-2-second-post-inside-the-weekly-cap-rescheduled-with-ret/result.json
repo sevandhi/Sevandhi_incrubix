@@ -1,0 +1,15 @@
+{
+  "index": 2,
+  "name": "HC4.2 second post inside the weekly cap -> rescheduled with retry_at and a reason",
+  "method": "POST",
+  "path": "/api/v1/publications",
+  "status": 202,
+  "code": null,
+  "expected_status": 202,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 243897.7,
+  "correlation_id": "83d3a6e7286347c9b6c6224dbbfd0dfe",
+  "folder": "002_hc4-2-second-post-inside-the-weekly-cap-rescheduled-with-ret",
+  "job_status": "timeout"
+}

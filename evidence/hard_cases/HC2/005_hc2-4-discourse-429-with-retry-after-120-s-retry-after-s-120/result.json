@@ -1,0 +1,15 @@
+{
+  "index": 5,
+  "name": "HC2.4 Discourse 429 with Retry-After 120 s -> retry_after_s 120",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 429,
+  "code": "PLATFORM_RATE_LIMIT",
+  "expected_status": 429,
+  "expected_code": "PLATFORM_RATE_LIMIT",
+  "passed": true,
+  "duration_ms": 3963.9,
+  "correlation_id": "878b0fb9d9424d209c105fbf1fd25b97",
+  "folder": "005_hc2-4-discourse-429-with-retry-after-120-s-retry-after-s-120",
+  "job_status": null
+}

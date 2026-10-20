@@ -8,8 +8,8 @@
   "expected_status": 200,
   "expected_code": null,
   "passed": true,
-  "duration_ms": 4134.7,
-  "correlation_id": "fd93cd10075749909dbe4ade023bf80a",
+  "duration_ms": 4574.7,
+  "correlation_id": "ca5e8dd104bc4a349a6c3b3f9c36ba87",
   "folder": "002_hc1-2-retry-with-the-same-key-finds-the-post-no-second-creat",
   "job_status": null
 }

@@ -1,19 +1,19 @@
 {
   "status": 409,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:47:10 GMT",
+    "date": "Tue, 20 Oct 2026 16:39:16 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
-    "idempotency-key": "gen-02da6e9e0b9b4d9982c99a3c6421447d",
-    "rndr-id": "84edf57b-a9c5-4a93",
+    "idempotency-key": "gen-5b2d9b3ed0604452834454be0f26d5ed",
+    "rndr-id": "3787b169-8834-4e07",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
-    "x-correlation-id": "e304ad0e16ae48b58a877ce7eb9b449b",
+    "x-correlation-id": "31103832ed1948f688eae50f16c86452",
     "x-incubrix-warning": "IDEMPOTENCY_KEY_GENERATED",
     "x-render-origin-server": "uvicorn",
     "cf-cache-status": "DYNAMIC",
-    "cf-ray": "a4d928c31edaaa6a-MAA",
+    "cf-ray": "a4d9751c6bd747d6-BOM",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
@@ -44,7 +44,7 @@
         ],
         "warnings": [],
         "decision": "block",
-        "publication_id": "pub_da264a50ad05466ab29f526888ee96f8",
+        "publication_id": "pub_ac9fe1f765c24ffe82412b058a7e041c",
         "state": "blocked"
       }
     }

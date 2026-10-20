@@ -1,0 +1,30 @@
+{
+  "status": 424,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 16:22:41 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "588edcf1-7f5a-4d96",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "49fb2c9136eb41ff8db57a1eca8a2424",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d95cd90eb90758-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "CONNECTION_AUTH_EXPIRED",
+      "message": "Connection conn_44686eb08df14591a901b228c688b154 is paused_auth; the owner must reconnect before posting.",
+      "retryable": false,
+      "details": {
+        "retry_policy": "after_reconnect",
+        "connection_id": "conn_44686eb08df14591a901b228c688b154",
+        "connection_state": "paused_auth",
+        "action": "reconnect_required"
+      }
+    }
+  }
+}

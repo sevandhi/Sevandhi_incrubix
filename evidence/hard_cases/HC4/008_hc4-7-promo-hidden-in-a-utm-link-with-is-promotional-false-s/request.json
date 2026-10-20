@@ -1,0 +1,22 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "Some notes from this week",
+      "body": "Notes are here: https://mycourse.example.com/notes?utm_source=forum&utm_campaign=launch",
+      "is_promotional": false
+    },
+    "destination": {
+      "connector_key": "discourse",
+      "surface": "topic",
+      "url": "http://mock-platforms:8080/discourse/hc4-utm-2f131250",
+      "self_promo_allowed": false
+    },
+    "connection": {
+      "connector_key": "discourse"
+    },
+    "idempotency_key": "hc4-utm-2f131250"
+  }
+}

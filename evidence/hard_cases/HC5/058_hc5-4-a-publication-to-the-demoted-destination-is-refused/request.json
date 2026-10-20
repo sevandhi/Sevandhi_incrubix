@@ -3,7 +3,7 @@
   "path": "/api/v1/publications",
   "headers": {},
   "body": {
-    "destination_id": "dest_66c5a26b33ed4d118be55fa21b1f6e40",
+    "destination_id": "dest_bf4e6c0cd3514fdc86359a4b87cc763d",
     "content": {
       "title": "A post to a demoted blog",
       "body": "This must not be published until the blog is certified again.",

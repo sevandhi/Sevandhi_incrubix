@@ -1,42 +1,42 @@
 {
   "status": 201,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:46:54 GMT",
+    "date": "Tue, 20 Oct 2026 16:39:00 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
-    "idempotency-key": "gen-614c2b12d39942da8cf87138da9830f1",
-    "rndr-id": "39ae7d76-ce23-40e7",
+    "idempotency-key": "gen-8c9e1a6c85684a8f840d5983ed76ffee",
+    "rndr-id": "d22b2c46-7ce8-4d76",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
-    "x-correlation-id": "b1985e3c14af4633abe9c3e3c269915c",
+    "x-correlation-id": "a517bd6b2f13416a9c74727dfe8d316e",
     "x-incubrix-warning": "IDEMPOTENCY_KEY_GENERATED",
     "x-render-origin-server": "uvicorn",
     "cf-cache-status": "DYNAMIC",
-    "cf-ray": "a4d928659f33aa6a-MAA",
+    "cf-ray": "a4d974ad8f0647d6-BOM",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
     "summary": {
       "created": 1,
       "duplicate": 1,
-      "invalid": 0,
-      "error": 1
+      "invalid": 1,
+      "error": 0
     },
     "results": [
       {
         "row": 1,
         "status": "created",
-        "destination_id": "dest_f86f6e3e892d4d9e9eaddcd886fcca64",
+        "destination_id": "dest_0eb37d13b66749d78ad39e9923dcdad9",
         "warnings": [
           "RULES_UNCONFIRMED: the row states no posting rules; publications are blocked until PUT /api/v1/destinations/{id}/rules confirms them (certification still works on own instances)"
         ],
         "destination": {
-          "destination_id": "dest_f86f6e3e892d4d9e9eaddcd886fcca64",
-          "destination_key": "discourse|mock-platforms:8080/discourse/hc6-rows-4201344a|topic",
+          "destination_id": "dest_0eb37d13b66749d78ad39e9923dcdad9",
+          "destination_key": "discourse|mock-platforms:8080/discourse/hc6-rows-db12f8f7|topic",
           "name": "Row A",
-          "url": "http://mock-platforms:8080/discourse/hc6-rows-4201344a",
-          "normalized_url": "https://mock-platforms:8080/discourse/hc6-rows-4201344a",
+          "url": "http://mock-platforms:8080/discourse/hc6-rows-db12f8f7",
+          "normalized_url": "https://mock-platforms:8080/discourse/hc6-rows-db12f8f7",
           "platform_key": "discourse",
           "surface": "topic",
           "connector_key": "discourse",
@@ -56,14 +56,14 @@
           "level": "L0",
           "last_certified_at": null,
           "instance": {
-            "base_url": "http://mock-platforms:8080/discourse/hc6-rows-4201344a"
+            "base_url": "http://mock-platforms:8080/discourse/hc6-rows-db12f8f7"
           },
           "connection_id": null,
           "connection_ref": null,
           "spec_overrides": null,
           "status": "active",
           "excluded_reason": null,
-          "created_at": "2026-10-20T15:46:52.700888+00:00",
+          "created_at": "2026-10-20T16:38:57.254109+00:00",
           "rules": null,
           "rules_status": "none",
           "rules_proposal_id": null,
@@ -73,16 +73,16 @@
       {
         "row": 2,
         "status": "duplicate",
-        "destination_id": "dest_f86f6e3e892d4d9e9eaddcd886fcca64",
+        "destination_id": "dest_0eb37d13b66749d78ad39e9923dcdad9",
         "warnings": [
           "DUPLICATE: a destination with this connector, instance and surface already exists"
         ],
         "destination": {
-          "destination_id": "dest_f86f6e3e892d4d9e9eaddcd886fcca64",
-          "destination_key": "discourse|mock-platforms:8080/discourse/hc6-rows-4201344a|topic",
+          "destination_id": "dest_0eb37d13b66749d78ad39e9923dcdad9",
+          "destination_key": "discourse|mock-platforms:8080/discourse/hc6-rows-db12f8f7|topic",
           "name": "Row A",
-          "url": "http://mock-platforms:8080/discourse/hc6-rows-4201344a",
-          "normalized_url": "https://mock-platforms:8080/discourse/hc6-rows-4201344a",
+          "url": "http://mock-platforms:8080/discourse/hc6-rows-db12f8f7",
+          "normalized_url": "https://mock-platforms:8080/discourse/hc6-rows-db12f8f7",
           "platform_key": "discourse",
           "surface": "topic",
           "connector_key": "discourse",
@@ -102,14 +102,14 @@
           "level": "L0",
           "last_certified_at": null,
           "instance": {
-            "base_url": "http://mock-platforms:8080/discourse/hc6-rows-4201344a"
+            "base_url": "http://mock-platforms:8080/discourse/hc6-rows-db12f8f7"
           },
           "connection_id": null,
           "connection_ref": null,
           "spec_overrides": null,
           "status": "active",
           "excluded_reason": null,
-          "created_at": "2026-10-20T15:46:52.700888+00:00",
+          "created_at": "2026-10-20T16:38:57.254109+00:00",
           "rules": null,
           "rules_status": "none",
           "rules_proposal_id": null,
@@ -118,7 +118,7 @@
       },
       {
         "row": 3,
-        "status": "error",
+        "status": "invalid",
         "code": "REQUEST_VALIDATION_FAILED",
         "message": "The url is not valid: the URL contains spaces."
       }

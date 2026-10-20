@@ -8,8 +8,8 @@
   "expected_status": 200,
   "expected_code": null,
   "passed": true,
-  "duration_ms": 524.9,
-  "correlation_id": "52d43e3135324dcd9fdae8bd1509ac69",
+  "duration_ms": 522.0,
+  "correlation_id": "081355e0621440d79386312bfbfbdc3f",
   "folder": "039_hc3-4-a-cjk-title-is-counted-in-characters-not-bytes-102-cha",
   "job_status": null
 }

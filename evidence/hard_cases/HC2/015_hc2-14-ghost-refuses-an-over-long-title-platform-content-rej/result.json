@@ -1,0 +1,15 @@
+{
+  "index": 15,
+  "name": "HC2.14 Ghost refuses an over-long title -> PLATFORM_CONTENT_REJECTED naming the field",
+  "method": "POST",
+  "path": "/connector/v1/ghost/publish",
+  "status": 422,
+  "code": "PLATFORM_CONTENT_REJECTED",
+  "expected_status": 422,
+  "expected_code": "PLATFORM_CONTENT_REJECTED",
+  "passed": true,
+  "duration_ms": 3758.5,
+  "correlation_id": "17f5595641a64ac9a1a216eeae5e66e9",
+  "folder": "015_hc2-14-ghost-refuses-an-over-long-title-platform-content-rej",
+  "job_status": null
+}

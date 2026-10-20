@@ -1,0 +1,36 @@
+{
+  "status": 429,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 16:22:36 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "retry-after": "60",
+    "rndr-id": "cd14c0ca-dc38-4d07",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "64cbd94f6f514483bc2f44bd3ea14274",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d95ca1afe90758-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "PLATFORM_RATE_LIMIT",
+      "message": "lemmy answered HTTP 400: rate_limit_error (rate limited; next attempt after 2026-10-20T16:23:34.939225Z)",
+      "retryable": true,
+      "details": {
+        "retry_policy": "backoff",
+        "platform_status": 400,
+        "platform_message": "rate_limit_error",
+        "error_map_key": "400:rate_limit_error",
+        "retry_at": "2026-10-20T16:23:34.939225Z",
+        "retry_after_s": 60,
+        "reset_source": "lemmy_site_config",
+        "intent_state": "RETRYABLE",
+        "idempotency_key": "hc2-lrl2-e5f4438c"
+      }
+    }
+  }
+}

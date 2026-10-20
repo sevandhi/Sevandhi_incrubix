@@ -1,24 +1,24 @@
 {
   "status": 200,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:36:08 GMT",
+    "date": "Tue, 20 Oct 2026 16:28:20 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
-    "cf-cache-status": "DYNAMIC",
-    "idempotency-key": "hc1-hdr-4201344a",
-    "rndr-id": "5160a5f7-75aa-4ae4",
+    "idempotency-key": "hc1-hdr-db12f8f7",
+    "rndr-id": "866d1564-58fa-49c3",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
-    "x-correlation-id": "b96b91e581a84e49ad9f107c206ea753",
+    "x-correlation-id": "f2303036c04e45bab8c014ab66a7c280",
     "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
     "content-encoding": "gzip",
-    "cf-ray": "a4d918971a3daa6a-MAA",
+    "cf-ray": "a4d9650c2bba7e69-MAA",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
-    "platform_post_id": "1~i632bd7169b",
-    "live_url": "http://mock-platforms:8080/discourse/hc1-hdr-4201344a/t/the-key-travels-in-the-http-header-only/1",
+    "platform_post_id": "1~idd3f388c08",
+    "live_url": "http://mock-platforms:8080/discourse/hc1-hdr-db12f8f7/t/the-key-travels-in-the-http-header-only/1",
     "status": "published"
   }
 }

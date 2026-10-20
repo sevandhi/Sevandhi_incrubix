@@ -1,39 +1,39 @@
 {
   "status": 202,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:46:58 GMT",
+    "date": "Tue, 20 Oct 2026 16:39:03 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
-    "idempotency-key": "gen-58654d7c3627412b81350f42c9ac65e4",
-    "location": "/api/v1/jobs/job_2c760e9df8f2448e96980024f6873920",
-    "rndr-id": "34f297f0-14ba-4a09",
+    "idempotency-key": "gen-efd2223cd7114927b2e4f2b9e0e7adea",
+    "location": "/api/v1/jobs/job_3b853733d2a34d77a3a376a02850fd0f",
+    "rndr-id": "8b670a7f-f0d5-472e",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
-    "x-correlation-id": "8dbd41224c5d470784d1a7ba11d10c3b",
+    "x-correlation-id": "35dea0253bb8414c961c8cc363d985fe",
     "x-incubrix-warning": "IDEMPOTENCY_KEY_GENERATED",
     "x-render-origin-server": "uvicorn",
     "cf-cache-status": "DYNAMIC",
-    "cf-ray": "a4d928773cbcaa6a-MAA",
+    "cf-ray": "a4d974c36a9547d6-BOM",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
-    "job_id": "job_2c760e9df8f2448e96980024f6873920",
+    "job_id": "job_3b853733d2a34d77a3a376a02850fd0f",
     "status": "queued",
-    "status_url": "/api/v1/jobs/job_2c760e9df8f2448e96980024f6873920",
-    "publication_id": "pub_62542187793f442097f18e29ba204da9",
-    "publication_url": "/api/v1/publications/pub_62542187793f442097f18e29ba204da9",
+    "status_url": "/api/v1/jobs/job_3b853733d2a34d77a3a376a02850fd0f",
+    "publication_id": "pub_3136f88ad9504b80b55edc22b1ab4c2a",
+    "publication_url": "/api/v1/publications/pub_3136f88ad9504b80b55edc22b1ab4c2a",
     "publication": {
-      "publication_id": "pub_62542187793f442097f18e29ba204da9",
-      "destination_id": "dest_3ab372d92eb240e4b24574ee07630d25",
-      "content_id": "content_75bf3c129641467d80d5c348c28e1d96",
+      "publication_id": "pub_3136f88ad9504b80b55edc22b1ab4c2a",
+      "destination_id": "dest_eccdf21f66dc47f5a8fe1bfdddd878cc",
+      "content_id": "content_df35f8330c7f43bc9256abf191759913",
       "state": "pending",
       "reason": null,
       "reasons": [],
       "code": null,
       "outcome": null,
       "retry_at": null,
-      "scheduled_for": "2026-10-20T15:46:55.907771Z",
+      "scheduled_for": "2026-10-20T16:39:00.987164Z",
       "platform_post_id": null,
       "live_url": null,
       "attempts": 0,
@@ -51,12 +51,12 @@
       "assist_pack": null,
       "removal": null,
       "job_ids": [
-        "job_2c760e9df8f2448e96980024f6873920"
+        "job_3b853733d2a34d77a3a376a02850fd0f"
       ],
       "error": null,
       "published_at": null,
-      "created_at": "2026-10-20T15:46:55.522678Z",
-      "updated_at": "2026-10-20T15:46:55.522678Z"
+      "created_at": "2026-10-20T16:39:00.673801Z",
+      "updated_at": "2026-10-20T16:39:00.673801Z"
     }
   }
 }

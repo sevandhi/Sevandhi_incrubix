@@ -1,0 +1,15 @@
+{
+  "index": 11,
+  "name": "HC7.1 English post to a Spanish community -> 409 DEST_RULE_LANGUAGE with the reason",
+  "method": "POST",
+  "path": "/api/v1/publications",
+  "status": 409,
+  "code": "DEST_RULE_LANGUAGE",
+  "expected_status": 409,
+  "expected_code": "DEST_RULE_LANGUAGE",
+  "passed": true,
+  "duration_ms": 2604.5,
+  "correlation_id": "289cf6afec404401845891609744e292",
+  "folder": "011_hc7-1-english-post-to-a-spanish-community-409-dest-rule-lang",
+  "job_status": null
+}

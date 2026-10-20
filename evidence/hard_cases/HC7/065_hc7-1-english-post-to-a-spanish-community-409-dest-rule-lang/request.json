@@ -3,7 +3,7 @@
   "path": "/api/v1/publications",
   "headers": {},
   "body": {
-    "destination_id": "dest_c549bdf83930486db623b9a033c09d93",
+    "destination_id": "dest_ffbebea64c9f4ce89c9952a34ca4fd52",
     "content": {
       "title": "How do you test posts to many communities?",
       "body": "We compared three ways to test forum posts end to end. Which one has worked for you?",

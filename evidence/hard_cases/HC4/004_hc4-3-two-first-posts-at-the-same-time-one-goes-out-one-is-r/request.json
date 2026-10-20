@@ -1,0 +1,14 @@
+{
+  "method": "POST",
+  "path": "/api/v1/publications",
+  "headers": {},
+  "body": {
+    "destination_id": "dest_37e237bbef154687b77119e43f0f89d3",
+    "content": {
+      "title": "A concurrent question for the forum?",
+      "body": "We compared three ways to test forum posts end to end. Which one has worked for you?",
+      "language": "en",
+      "ai_generated": false
+    }
+  }
+}

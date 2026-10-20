@@ -6,12 +6,12 @@
     "rows": [
       {
         "name": "Row A",
-        "url": "http://mock-platforms:8080/discourse/hc6-rows-4201344a",
+        "url": "http://mock-platforms:8080/discourse/hc6-rows-db12f8f7",
         "connector_key": "discourse"
       },
       {
         "name": "Row A www",
-        "url": "http://mock-platforms:8080/discourse/hc6-rows-4201344a/",
+        "url": "http://mock-platforms:8080/discourse/hc6-rows-db12f8f7/",
         "connector_key": "discourse"
       },
       {

@@ -1,16 +1,16 @@
 {
-  "publication_id": "pub_fcce548abe354f3bb9e8355dc30caa26",
-  "destination_id": "dest_42f4fbb9c6fb4d87a0041d7c17046c9e",
-  "content_id": "content_b2ef382618e04003a163d5652391928e",
+  "publication_id": "pub_36bf7557e78c4f0cb151bc3f79d7d224",
+  "destination_id": "dest_bf70528391be43429540d0316109356f",
+  "content_id": "content_4b66785966e24fa9900df434ba5963b9",
   "state": "published",
   "reason": null,
   "reasons": [],
   "code": null,
   "outcome": null,
   "retry_at": null,
-  "scheduled_for": "2026-10-20T15:41:54.046996Z",
-  "platform_post_id": "2~i6d827d8cef",
-  "live_url": "http://mock-platforms:8080/discourse/hc4-cap2-4201344a/t/a-concurrent-question-for-the-forum/2",
+  "scheduled_for": "2026-10-20T16:33:59.870429Z",
+  "platform_post_id": "2~i2d18ca8ef4",
+  "live_url": "http://mock-platforms:8080/discourse/hc4-cap2-db12f8f7/t/a-concurrent-question-for-the-forum/2",
   "attempts": 1,
   "rule_decision": {
     "code": null,
@@ -30,10 +30,10 @@
   "assist_pack": null,
   "removal": null,
   "job_ids": [
-    "job_30158b7285444620b63b6ce9c2378d34"
+    "job_1d1cd2771a20403b9b05bae3f187e6b5"
   ],
   "error": null,
-  "published_at": "2026-10-20T15:42:00.138143Z",
-  "created_at": "2026-10-20T15:41:50.178967Z",
-  "updated_at": "2026-10-20T15:42:00.378482Z"
+  "published_at": "2026-10-20T16:34:06.037691Z",
+  "created_at": "2026-10-20T16:33:55.681832Z",
+  "updated_at": "2026-10-20T16:34:06.280452Z"
 }

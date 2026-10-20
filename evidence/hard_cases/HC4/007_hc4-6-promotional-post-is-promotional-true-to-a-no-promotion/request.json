@@ -1,0 +1,18 @@
+{
+  "method": "POST",
+  "path": "/api/v1/publications",
+  "headers": {},
+  "body": {
+    "destination_id": "dest_467c6c4169eb4da19ed3f6b672f4b5f8",
+    "content": {
+      "title": "Our tool launched today",
+      "body": "Sign up now with code LAUNCH20: https://mytool.example.com/?utm_source=forum",
+      "language": "en",
+      "ai_generated": false,
+      "is_promotional": true,
+      "owner_domains": [
+        "mytool.example.com"
+      ]
+    }
+  }
+}

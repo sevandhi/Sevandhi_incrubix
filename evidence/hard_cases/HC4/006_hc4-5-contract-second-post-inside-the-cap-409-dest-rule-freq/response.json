@@ -1,0 +1,47 @@
+{
+  "status": 409,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 16:53:05 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "cf-cache-status": "DYNAMIC",
+    "retry-after": "604797",
+    "rndr-id": "86be8cb6-2ee9-4cb2",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "f63c1456d88743bba5932e6e2bbe8cda",
+    "x-render-origin-server": "uvicorn",
+    "cf-ray": "a4d98951391817ab-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "DEST_RULE_FREQUENCY_CAP",
+      "message": "DEST_RULE_FREQUENCY_CAP: cap of 1 post(s) per P7D reached (1 in the window, oldest 2026-10-20T16:53:02.086431Z); next slot 2026-10-27T16:53:02.086431Z",
+      "retryable": true,
+      "details": {
+        "retry_policy": "later",
+        "cap": 1,
+        "window": "P7D",
+        "count_in_window": 1,
+        "retry_at": "2026-10-27T16:53:02.086431Z",
+        "failed_checks": [
+          "frequency_cap"
+        ],
+        "reasons": [
+          "DEST_RULE_FREQUENCY_CAP: cap of 1 post(s) per P7D reached (1 in the window, oldest 2026-10-20T16:53:02.086431Z); next slot 2026-10-27T16:53:02.086431Z"
+        ],
+        "evidence": [
+          {
+            "type": "post_in_window",
+            "value": "2026-10-20T16:53:02.086431Z",
+            "field": "history"
+          }
+        ],
+        "warnings": [],
+        "decision": "reschedule"
+      }
+    }
+  }
+}

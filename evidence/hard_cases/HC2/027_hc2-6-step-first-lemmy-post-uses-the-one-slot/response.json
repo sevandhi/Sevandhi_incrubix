@@ -1,24 +1,24 @@
 {
   "status": 200,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:36:45 GMT",
+    "date": "Tue, 20 Oct 2026 16:28:57 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
-    "idempotency-key": "hc2-lrl1-4201344a",
-    "rndr-id": "5bcff274-35ed-4129",
+    "idempotency-key": "hc2-lrl1-db12f8f7",
+    "rndr-id": "8edc79fa-9ca6-4b35",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
-    "x-correlation-id": "2e0e692963004dc4b331ca5201c1de4d",
+    "x-correlation-id": "9e8f0ddf4d3b4b7193555ff7b3c2158e",
     "x-render-origin-server": "uvicorn",
     "cf-cache-status": "DYNAMIC",
     "content-encoding": "gzip",
-    "cf-ray": "a4d919778c23aa6a-MAA",
+    "cf-ray": "a4d965f06f1d7e69-MAA",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
-    "platform_post_id": "1~i9c6530d340",
-    "live_url": "http://mock-platforms:8080/lemmy/hc2-lrl-4201344a/post/1",
+    "platform_post_id": "1~ie8c77afbca",
+    "live_url": "http://mock-platforms:8080/lemmy/hc2-lrl-db12f8f7/post/1",
     "status": "published"
   }
 }

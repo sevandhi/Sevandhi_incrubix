@@ -8,8 +8,8 @@
   "expected_status": 422,
   "expected_code": "DEST_SPEC_VIOLATION",
   "passed": true,
-  "duration_ms": 1008.2,
-  "correlation_id": "c050693687fa4e3287e8f87e44c7377f",
+  "duration_ms": 945.2,
+  "correlation_id": "e41c629bdeba4e5cb931b17370b72f8a",
   "folder": "037_hc3-2-publish-without-tailoring-422-dest-spec-violation-the-",
   "job_status": null
 }

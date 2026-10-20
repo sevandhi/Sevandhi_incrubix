@@ -1,0 +1,44 @@
+{
+  "status": 409,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 16:53:10 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "13c0f439-6bcf-4723",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "2c0c1f93b1a048afbc67b7874ac3905d",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d989733d2f17ab-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "DEST_RULE_SELF_PROMO",
+      "message": "DEST_RULE_SELF_PROMO: this destination bans self-promotion and the post is promotional (utm 'utm_source in https://mycourse.example.com/notes?utm_source=forum&utm_campaign=launch' in body)",
+      "retryable": false,
+      "details": {
+        "retry_policy": "never",
+        "rule": "self_promo=disallowed",
+        "suggestion": "remove own links, tracking/affiliate parameters and calls to action, or post a discussion-first version",
+        "failed_checks": [
+          "self_promo"
+        ],
+        "reasons": [
+          "DEST_RULE_SELF_PROMO: this destination bans self-promotion and the post is promotional (utm 'utm_source in https://mycourse.example.com/notes?utm_source=forum&utm_campaign=launch' in body)"
+        ],
+        "evidence": [
+          {
+            "type": "utm",
+            "value": "utm_source in https://mycourse.example.com/notes?utm_source=forum&utm_campaign=launch",
+            "field": "body"
+          }
+        ],
+        "warnings": [],
+        "decision": "block"
+      }
+    }
+  }
+}

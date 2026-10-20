@@ -1,25 +1,25 @@
 {
   "status": 200,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:36:04 GMT",
+    "date": "Tue, 20 Oct 2026 16:28:16 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
-    "idempotency-key": "hc1-par-4201344a",
+    "idempotency-key": "hc1-par-db12f8f7",
     "idempotent-replayed": "true",
-    "rndr-id": "8fb3c903-7668-47f9",
+    "rndr-id": "033d3297-11f4-4d94",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
-    "x-correlation-id": "f2827fe82efb40d0be08339dc661ac84",
+    "x-correlation-id": "75c5483420c34e1a88f7738fb5736e1b",
     "x-render-origin-server": "uvicorn",
     "cf-cache-status": "DYNAMIC",
     "content-encoding": "gzip",
-    "cf-ray": "a4d9185dd87d99d8-MAA",
+    "cf-ray": "a4d964d14a637ebb-MAA",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
-    "platform_post_id": "1~ic7b7b26e2a",
-    "live_url": "http://mock-platforms:8080/discourse/hc1-par-4201344a/t/eight-parallel-requests-and-one-forum-topic/1",
+    "platform_post_id": "1~ibb8d110698",
+    "live_url": "http://mock-platforms:8080/discourse/hc1-par-db12f8f7/t/eight-parallel-requests-and-one-forum-topic/1",
     "status": "published"
   }
 }

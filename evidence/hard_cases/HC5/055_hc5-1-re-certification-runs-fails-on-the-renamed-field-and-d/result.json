@@ -8,8 +8,8 @@
   "expected_status": 202,
   "expected_code": null,
   "passed": true,
-  "duration_ms": 25698.9,
-  "correlation_id": "0dfccd04b76f4bd5903e79d8686696d3",
+  "duration_ms": 27072.6,
+  "correlation_id": "c060f856c1614e1baff97115a25c3433",
   "folder": "055_hc5-1-re-certification-runs-fails-on-the-renamed-field-and-d",
   "job_status": "succeeded"
 }

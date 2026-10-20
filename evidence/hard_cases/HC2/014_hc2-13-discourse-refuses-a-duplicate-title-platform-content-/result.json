@@ -1,0 +1,15 @@
+{
+  "index": 14,
+  "name": "HC2.13 Discourse refuses a duplicate title -> PLATFORM_CONTENT_REJECTED with its message",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 422,
+  "code": "PLATFORM_CONTENT_REJECTED",
+  "expected_status": 422,
+  "expected_code": "PLATFORM_CONTENT_REJECTED",
+  "passed": true,
+  "duration_ms": 3899.0,
+  "correlation_id": "678325a40897421b846ecd054da87dbe",
+  "folder": "014_hc2-13-discourse-refuses-a-duplicate-title-platform-content-",
+  "job_status": null
+}

@@ -8,8 +8,8 @@
   "expected_status": 202,
   "expected_code": null,
   "passed": true,
-  "duration_ms": 14767.6,
-  "correlation_id": "c4e931471cbc4c2daf6c5714df0b3c50",
+  "duration_ms": 13354.0,
+  "correlation_id": "07fcab58de3a44898c46f67550216319",
   "folder": "043_hc3-8-catalogue-path-auto-fits-an-over-long-title-at-a-word-",
   "job_status": "succeeded"
 }

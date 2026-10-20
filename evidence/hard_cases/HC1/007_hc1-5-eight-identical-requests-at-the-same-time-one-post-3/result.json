@@ -8,8 +8,8 @@
   "expected_status": 200,
   "expected_code": null,
   "passed": true,
-  "duration_ms": 7606.3,
-  "correlation_id": "18a75a9b57af4f4f965325968c8a5600",
+  "duration_ms": 9501.9,
+  "correlation_id": "3eb70ad1eef54ec38ef0a9c715a721b9",
   "folder": "007_hc1-5-eight-identical-requests-at-the-same-time-one-post-3",
   "job_status": null
 }

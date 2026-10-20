@@ -2,14 +2,14 @@
   "index": 61,
   "name": "HC6.1 the messy CSV import finished with a row-by-row report whose counts add up",
   "method": "GET",
-  "path": "/api/v1/jobs/job_b84aff6201b34e9ba2b361d82f7f234d",
+  "path": "/api/v1/jobs/job_e887ae70bc70424fb01260cad51c9735",
   "status": 200,
   "code": null,
   "expected_status": 200,
   "expected_code": null,
   "passed": true,
-  "duration_ms": 515.8,
-  "correlation_id": "3edd21688a8a47b58193098151b03c96",
+  "duration_ms": 509.5,
+  "correlation_id": "8d4cc183d38f4325860a2846e22ebeff",
   "folder": "061_hc6-1-the-messy-csv-import-finished-with-a-row-by-row-report",
   "job_status": null
 }

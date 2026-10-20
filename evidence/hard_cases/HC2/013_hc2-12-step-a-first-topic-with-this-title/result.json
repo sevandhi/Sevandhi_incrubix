@@ -1,0 +1,15 @@
+{
+  "index": 13,
+  "name": "HC2.12 step - a first topic with this title",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 200,
+  "code": null,
+  "expected_status": 200,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 4676.4,
+  "correlation_id": "42cc0466430847c8bc88390d77678782",
+  "folder": "013_hc2-12-step-a-first-topic-with-this-title",
+  "job_status": null
+}

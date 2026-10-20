@@ -1,63 +1,62 @@
 {
   "status": 200,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:46:52 GMT",
+    "date": "Tue, 20 Oct 2026 16:38:56 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
-    "cf-cache-status": "DYNAMIC",
-    "rndr-id": "ce480b08-7b5b-4311",
+    "rndr-id": "e681e031-c42f-4c98",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
-    "x-correlation-id": "3edd21688a8a47b58193098151b03c96",
+    "x-correlation-id": "8d4cc183d38f4325860a2846e22ebeff",
     "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
     "content-encoding": "gzip",
-    "cf-ray": "a4d928625d58aa6a-MAA",
+    "cf-ray": "a4d974aa6c9b47d6-BOM",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
-    "job_id": "job_b84aff6201b34e9ba2b361d82f7f234d",
+    "job_id": "job_e887ae70bc70424fb01260cad51c9735",
     "kind": "catalogue.import",
     "status": "succeeded",
     "progress": 100,
     "result": {
       "links": {
-        "report": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_b84aff6201b34e9ba2b361d82f7f234d/report.csv?exp=1792514812&sig=***",
-        "summary": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_b84aff6201b34e9ba2b361d82f7f234d/summary.json?exp=1792514812&sig=***",
-        "manifest": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_b84aff6201b34e9ba2b361d82f7f234d/manifest.json?exp=1792514812&sig=***"
+        "report": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_e887ae70bc70424fb01260cad51c9735/report.csv?exp=1792517936&sig=***",
+        "summary": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_e887ae70bc70424fb01260cad51c9735/summary.json?exp=1792517936&sig=***",
+        "manifest": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_e887ae70bc70424fb01260cad51c9735/manifest.json?exp=1792517936&sig=***"
       },
       "summary": {
-        "ok": 3,
+        "ok": 4,
         "rows": 8,
         "codes": {
           "ROW_INVALID": 1,
           "URL_INVALID": 1,
-          "DUPLICATE_IN_FILE": 2,
-          "ROBOTS_UNREACHABLE": 1
+          "DUPLICATE_IN_FILE": 2
         },
         "invalid": 2,
         "warning": 0,
-        "imported": 3,
+        "imported": 4,
         "duplicate": 2,
-        "unreachable": 1,
+        "unreachable": 0,
         "would_import": null
       },
       "timings": {
-        "total_s": 8.153,
-        "insert_s": 2.141,
-        "network_s": 5.012,
+        "total_s": 6.585,
+        "insert_s": 2.621,
+        "network_s": 3.037,
         "validate_s": 0.001,
-        "dedupe_relevance_s": 0.504
+        "dedupe_relevance_s": 0.509
       },
-      "import_id": "import_3b7d1ce9bb71407ba564b903b741bdc2",
-      "report_url": "/api/v1/catalogue/imports/import_3b7d1ce9bb71407ba564b903b741bdc2/report",
-      "network_requests": 7,
+      "import_id": "import_186e762564a84288ad8cb852b1a390e7",
+      "report_url": "/api/v1/catalogue/imports/import_186e762564a84288ad8cb852b1a390e7/report",
+      "network_requests": 8,
       "language_detector": "lingua"
     },
     "error": null,
     "attempts": 1,
-    "created_at": "2026-10-20T15:34:41.623543+00:00",
-    "updated_at": "2026-10-20T15:34:55.225265+00:00",
-    "finished_at": "2026-10-20T15:34:54.657637+00:00"
+    "created_at": "2026-10-20T16:26:54.227029+00:00",
+    "updated_at": "2026-10-20T16:27:06.468596+00:00",
+    "finished_at": "2026-10-20T16:27:05.766644+00:00"
   }
 }

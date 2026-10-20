@@ -10,7 +10,7 @@
     },
     "destination": {
       "connector_key": "assisted",
-      "url": "http://mock-platforms:8080/assist/hc4-ap-4201344a/submit",
+      "url": "http://mock-platforms:8080/assist/hc4-ap-db12f8f7/submit",
       "rules": {
         "self_promo_allowed": false,
         "automation_allowed": false

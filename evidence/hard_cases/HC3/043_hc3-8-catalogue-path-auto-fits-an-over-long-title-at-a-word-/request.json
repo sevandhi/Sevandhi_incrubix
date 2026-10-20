@@ -3,7 +3,7 @@
   "path": "/api/v1/publications",
   "headers": {},
   "body": {
-    "destination_id": "dest_f48c4d2f246940ab80b0ccaa3f924e12",
+    "destination_id": "dest_9d3ba735748643858cd81f416f80110e",
     "content": {
       "title": "How do you test posts to many long-tail communities without spamming any of them?",
       "body": "We compared three ways to test forum posts end to end. Which one has worked for you?",

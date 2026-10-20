@@ -8,8 +8,8 @@
   "expected_status": 202,
   "expected_code": null,
   "passed": true,
-  "duration_ms": 2006.2,
-  "correlation_id": "7414e03b047b4a1e8ead17c853578325",
+  "duration_ms": 2074.9,
+  "correlation_id": "118d2b8dbd9b42c2a74bc21d8906acdd",
   "folder": "019_hc1-10-api-v1-job-with-the-same-key-and-body-twice-the-same-",
   "job_status": "succeeded"
 }

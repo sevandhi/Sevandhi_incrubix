@@ -1,0 +1,32 @@
+{
+  "status": 422,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 16:22:54 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "b6394074-cc79-4a13",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "678325a40897421b846ecd054da87dbe",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d95d14baaa0758-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "PLATFORM_CONTENT_REJECTED",
+      "message": "discourse answered HTTP 422: This title has already been used by <a href='http://mock-platforms:8080/discourse/hc2-dup-e5f4438c/t/which-forum-testing-method-worked-for-you/1'>another topic</a>.",
+      "retryable": false,
+      "details": {
+        "retry_policy": "never",
+        "platform_status": 422,
+        "platform_message": "This title has already been used by <a href='http://mock-platforms:8080/discourse/hc2-dup-e5f4438c/t/which-forum-testing-method-worked-for-you/1'>another topic</a>.",
+        "error_map_key": "422",
+        "intent_state": "FAILED",
+        "idempotency_key": "hc2-dup2-e5f4438c"
+      }
+    }
+  }
+}

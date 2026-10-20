@@ -8,8 +8,8 @@
   "expected_status": 409,
   "expected_code": "DEST_RULE_FREQUENCY_CAP",
   "passed": true,
-  "duration_ms": 2979.6,
-  "correlation_id": "5ef92819da9a46f782b1646df1ec0bd4",
+  "duration_ms": 3276.0,
+  "correlation_id": "97ce9f851b07407fb45d12b92254605a",
   "folder": "049_hc4-5-contract-second-post-inside-the-cap-409-dest-rule-freq",
   "job_status": null
 }

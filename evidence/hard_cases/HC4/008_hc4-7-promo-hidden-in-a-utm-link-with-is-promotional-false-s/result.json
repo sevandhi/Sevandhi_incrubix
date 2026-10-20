@@ -1,0 +1,15 @@
+{
+  "index": 8,
+  "name": "HC4.7 promo hidden in a UTM link with is_promotional false -> still 409 DEST_RULE_SELF_PROMO",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 409,
+  "code": "DEST_RULE_SELF_PROMO",
+  "expected_status": 409,
+  "expected_code": "DEST_RULE_SELF_PROMO",
+  "passed": true,
+  "duration_ms": 3124.2,
+  "correlation_id": "2c0c1f93b1a048afbc67b7874ac3905d",
+  "folder": "008_hc4-7-promo-hidden-in-a-utm-link-with-is-promotional-false-s",
+  "job_status": null
+}

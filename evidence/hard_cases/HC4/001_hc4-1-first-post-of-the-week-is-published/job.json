@@ -1,0 +1,56 @@
+{
+  "job_id": "job_19ef20535ae44223bd97724bbac4e545",
+  "kind": "publication.run",
+  "status": "succeeded",
+  "progress": 100,
+  "result": {
+    "links": {
+      "manifest": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_19ef20535ae44223bd97724bbac4e545/manifest.json?exp=1792518287&sig=***",
+      "publication": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_19ef20535ae44223bd97724bbac4e545/publication.json?exp=1792518287&sig=***"
+    },
+    "publication": {
+      "code": null,
+      "error": null,
+      "state": "published",
+      "reason": null,
+      "job_ids": [
+        "job_19ef20535ae44223bd97724bbac4e545"
+      ],
+      "outcome": null,
+      "reasons": [],
+      "removal": null,
+      "attempts": 1,
+      "live_url": "http://mock-platforms:8080/discourse/hc4-cap-2f131250/t/how-do-you-test-posts-to-long-tail-communities/2",
+      "retry_at": null,
+      "tailoring": {
+        "diff": [],
+        "profile": "forum",
+        "warnings": []
+      },
+      "content_id": "content_d79314612d6147398f18f95a71559188",
+      "created_at": "2026-10-20T16:44:34.880392Z",
+      "updated_at": "2026-10-20T16:44:45.721103Z",
+      "assist_pack": null,
+      "published_at": "2026-10-20T16:44:45.475232Z",
+      "rule_decision": {
+        "code": null,
+        "fixes": [],
+        "action": "allow",
+        "reasons": [],
+        "evidence": [],
+        "retry_at": null,
+        "warnings": [],
+        "failed_checks": []
+      },
+      "scheduled_for": "2026-10-20T16:44:39.010051Z",
+      "destination_id": "dest_018d6d82755d42499075a5e9c370bada",
+      "publication_id": "pub_80bacd929b574104badcc9dbea348e12",
+      "platform_post_id": "2~i003ab6ae8d"
+    }
+  },
+  "error": null,
+  "attempts": 1,
+  "created_at": "2026-10-20T16:44:34.880392+00:00",
+  "updated_at": "2026-10-20T16:44:47.313377+00:00",
+  "finished_at": "2026-10-20T16:44:46.819178+00:00"
+}

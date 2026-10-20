@@ -1,17 +1,17 @@
 {
   "status": 503,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:36:14 GMT",
+    "date": "Tue, 20 Oct 2026 16:28:25 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
-    "rndr-id": "17ef8935-6d70-496e",
+    "rndr-id": "7dd982f5-b8c1-47a9",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
-    "x-correlation-id": "3c206faffabc4090817e65cbced89d15",
+    "x-correlation-id": "4acc93ee9e2e4e9db04d9745ccb5db16",
     "x-render-origin-server": "uvicorn",
     "cf-cache-status": "DYNAMIC",
-    "cf-ray": "a4d918b78c0aaa6a-MAA",
+    "cf-ray": "a4d96529ce5a7e69-MAA",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
@@ -25,7 +25,7 @@
         "platform_message": "simulated error",
         "outcome": "unknown",
         "intent_state": "UNKNOWN",
-        "idempotency_key": "hc1-502-4201344a"
+        "idempotency_key": "hc1-502-db12f8f7"
       }
     }
   }

@@ -8,8 +8,8 @@
   "expected_status": 202,
   "expected_code": null,
   "passed": true,
-  "duration_ms": 14096.7,
-  "correlation_id": "007268a98f2441e580d93af088adee2f",
+  "duration_ms": 15071.3,
+  "correlation_id": "33dbf95388c645109a4c8b67823ade4f",
   "folder": "046_hc4-3-two-first-posts-at-the-same-time-one-goes-out-one-is-r",
   "job_status": "succeeded"
 }

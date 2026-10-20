@@ -1,0 +1,80 @@
+{
+  "job_id": "job_54e0fb7d7ab24e1780a143110ae1ceda",
+  "kind": "publication.run",
+  "status": "succeeded",
+  "progress": 100,
+  "result": {
+    "links": {
+      "manifest": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_54e0fb7d7ab24e1780a143110ae1ceda/manifest.json?exp=1792518810&sig=***",
+      "publication": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_54e0fb7d7ab24e1780a143110ae1ceda/publication.json?exp=1792518810&sig=***"
+    },
+    "publication": {
+      "code": null,
+      "error": null,
+      "state": "published",
+      "reason": null,
+      "job_ids": [
+        "job_54e0fb7d7ab24e1780a143110ae1ceda"
+      ],
+      "outcome": null,
+      "reasons": [
+        "AI-content disclosure required; add it at the bottom"
+      ],
+      "removal": null,
+      "attempts": 1,
+      "live_url": "http://mock-platforms:8080/discourse/hc7-es-2f131250/t/c-mo-prob-is-las-publicaciones-en-comunidades/2",
+      "retry_at": null,
+      "tailoring": {
+        "diff": [
+          {
+            "after": "Comparamos tres formas de probar publicaciones en foros de principio a fin. ¿Cuál os ha funcionado mejor a vosotros?\n\nAviso: esta publicación se creó con ayuda de inteligencia artificial (IA).",
+            "field": "body",
+            "before": "Comparamos tres formas de probar publicaciones en foros de principio a fin. ¿Cuál os ha funcionado mejor a vosotros?"
+          }
+        ],
+        "profile": "forum",
+        "warnings": [
+          "AI_DISCLOSURE_APPENDED: 'es' disclosure added at the bottom"
+        ]
+      },
+      "content_id": "content_345416cb83834459b6493956eb6ee10c",
+      "created_at": "2026-10-20T16:53:17.850970Z",
+      "updated_at": "2026-10-20T16:53:27.488328Z",
+      "assist_pack": null,
+      "published_at": "2026-10-20T16:53:27.247894Z",
+      "rule_decision": {
+        "code": null,
+        "fixes": [
+          {
+            "kind": "insert_disclosure",
+            "lang": "es",
+            "text": "Aviso: esta publicación se creó con ayuda de inteligencia artificial (IA).",
+            "field": "body",
+            "placement": "bottom"
+          }
+        ],
+        "action": "allow_with_changes",
+        "reasons": [
+          "AI-content disclosure required; add it at the bottom"
+        ],
+        "evidence": [],
+        "retry_at": null,
+        "warnings": [
+          "AI_DISCLOSURE_REQUIRED: 'es' disclosure will be added at the bottom"
+        ],
+        "failed_checks": [
+          "disclosure"
+        ]
+      },
+      "scheduled_for": "2026-10-20T16:53:20.966756Z",
+      "destination_id": "dest_24cf24fcb3044904a41d80ce503b793f",
+      "publication_id": "pub_04a966c3083f49dca539c135e0b87e42",
+      "platform_post_id": "2~ibd8e80574b"
+    }
+  },
+  "error": null,
+  "attempts": 1,
+  "created_at": "2026-10-20T16:53:17.850970+00:00",
+  "updated_at": "2026-10-20T16:53:29.163315+00:00",
+  "finished_at": "2026-10-20T16:53:28.660603+00:00"
+}

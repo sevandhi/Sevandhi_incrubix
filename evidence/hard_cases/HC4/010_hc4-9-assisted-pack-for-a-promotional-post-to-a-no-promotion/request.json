@@ -1,0 +1,20 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/assisted/build_assist_pack",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "Our new course is live this week",
+      "body": "Buy my course today with code SAVE50 at https://mycourse.example.com/?utm_source=forum",
+      "is_promotional": true
+    },
+    "destination": {
+      "connector_key": "assisted",
+      "url": "http://mock-platforms:8080/assist/hc4-ap-2f131250/submit",
+      "rules": {
+        "self_promo_allowed": false,
+        "automation_allowed": false
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "publication_id": "pub_04a966c3083f49dca539c135e0b87e42",
+  "destination_id": "dest_24cf24fcb3044904a41d80ce503b793f",
+  "content_id": "content_345416cb83834459b6493956eb6ee10c",
+  "state": "published",
+  "reason": null,
+  "reasons": [
+    "AI-content disclosure required; add it at the bottom"
+  ],
+  "code": null,
+  "outcome": null,
+  "retry_at": null,
+  "scheduled_for": "2026-10-20T16:53:20.966756Z",
+  "platform_post_id": "2~ibd8e80574b",
+  "live_url": "http://mock-platforms:8080/discourse/hc7-es-2f131250/t/c-mo-prob-is-las-publicaciones-en-comunidades/2",
+  "attempts": 1,
+  "rule_decision": {
+    "code": null,
+    "fixes": [
+      {
+        "kind": "insert_disclosure",
+        "lang": "es",
+        "text": "Aviso: esta publicaci\u00f3n se cre\u00f3 con ayuda de inteligencia artificial (IA).",
+        "field": "body",
+        "placement": "bottom"
+      }
+    ],
+    "action": "allow_with_changes",
+    "reasons": [
+      "AI-content disclosure required; add it at the bottom"
+    ],
+    "evidence": [],
+    "retry_at": null,
+    "warnings": [
+      "AI_DISCLOSURE_REQUIRED: 'es' disclosure will be added at the bottom"
+    ],
+    "failed_checks": [
+      "disclosure"
+    ]
+  },
+  "tailoring": {
+    "diff": [
+      {
+        "after": "Comparamos tres formas de probar publicaciones en foros de principio a fin. \u00bfCu\u00e1l os ha funcionado mejor a vosotros?\n\nAviso: esta publicaci\u00f3n se cre\u00f3 con ayuda de inteligencia artificial (IA).",
+        "field": "body",
+        "before": "Comparamos tres formas de probar publicaciones en foros de principio a fin. \u00bfCu\u00e1l os ha funcionado mejor a vosotros?"
+      }
+    ],
+    "profile": "forum",
+    "warnings": [
+      "AI_DISCLOSURE_APPENDED: 'es' disclosure added at the bottom"
+    ]
+  },
+  "assist_pack": null,
+  "removal": null,
+  "job_ids": [
+    "job_54e0fb7d7ab24e1780a143110ae1ceda"
+  ],
+  "error": null,
+  "published_at": "2026-10-20T16:53:27.247894Z",
+  "created_at": "2026-10-20T16:53:17.850970Z",
+  "updated_at": "2026-10-20T16:53:27.488328Z"
+}

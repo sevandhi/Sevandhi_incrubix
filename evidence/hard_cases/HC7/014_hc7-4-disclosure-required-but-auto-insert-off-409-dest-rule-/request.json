@@ -1,0 +1,28 @@
+{
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "headers": {},
+  "body": {
+    "rendition": {
+      "title": "A summary of this week's release notes",
+      "body": "Here is a short summary of what changed in the release this week.",
+      "ai_generated": true
+    },
+    "destination": {
+      "connector_key": "discourse",
+      "surface": "topic",
+      "url": "http://mock-platforms:8080/discourse/hc7-noauto-2f131250",
+      "rules": {
+        "disclosure": {
+          "required": true,
+          "auto_insert": false
+        },
+        "automation_allowed": true
+      }
+    },
+    "connection": {
+      "connector_key": "discourse"
+    },
+    "idempotency_key": "hc7-noauto-2f131250"
+  }
+}

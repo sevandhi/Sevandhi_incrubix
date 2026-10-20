@@ -1,0 +1,15 @@
+{
+  "index": 7,
+  "name": "HC4.6 promotional post (is_promotional true) to a no-promotion destination -> 409 with the reason",
+  "method": "POST",
+  "path": "/api/v1/publications",
+  "status": 409,
+  "code": "DEST_RULE_SELF_PROMO",
+  "expected_status": 409,
+  "expected_code": "DEST_RULE_SELF_PROMO",
+  "passed": true,
+  "duration_ms": 2159.4,
+  "correlation_id": "d5b32280c72443458d9d3ea34c318b46",
+  "folder": "007_hc4-6-promotional-post-is-promotional-true-to-a-no-promotion",
+  "job_status": null
+}

@@ -8,8 +8,8 @@
   "expected_status": 200,
   "expected_code": null,
   "passed": true,
-  "duration_ms": 1224.1,
-  "correlation_id": "120b85d143ed43b98d01f1615b7eeaa5",
+  "duration_ms": 944.5,
+  "correlation_id": "2f94b6e51e0245a5bdc5eb6a14520374",
   "folder": "014_hc1-6-is4-idempotency-key-header-on-a-contract-publish-no-ke",
   "job_status": null
 }

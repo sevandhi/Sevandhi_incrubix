@@ -8,8 +8,8 @@
   "expected_status": 409,
   "expected_code": "DEST_RULE_LANGUAGE",
   "passed": true,
-  "duration_ms": 2879.1,
-  "correlation_id": "e304ad0e16ae48b58a877ce7eb9b449b",
+  "duration_ms": 1829.9,
+  "correlation_id": "31103832ed1948f688eae50f16c86452",
   "folder": "065_hc7-1-english-post-to-a-spanish-community-409-dest-rule-lang",
   "job_status": null
 }

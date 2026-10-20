@@ -15,11 +15,11 @@
     },
     "destination": {
       "connector_key": "lemmy",
-      "url": "http://mock-platforms:8080/lemmy/hc3-pub-4201344a/c/ibx_test"
+      "url": "http://mock-platforms:8080/lemmy/hc3-pub-db12f8f7/c/ibx_test"
     },
     "connection": {
       "connector_key": "lemmy"
     },
-    "idempotency_key": "hc3-pub-4201344a"
+    "idempotency_key": "hc3-pub-db12f8f7"
   }
 }

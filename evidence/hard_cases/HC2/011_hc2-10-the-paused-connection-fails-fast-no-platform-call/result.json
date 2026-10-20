@@ -1,0 +1,15 @@
+{
+  "index": 11,
+  "name": "HC2.10 the paused connection fails fast (no platform call)",
+  "method": "POST",
+  "path": "/connector/v1/webhook/publish",
+  "status": 424,
+  "code": "CONNECTION_AUTH_EXPIRED",
+  "expected_status": 424,
+  "expected_code": "CONNECTION_AUTH_EXPIRED",
+  "passed": true,
+  "duration_ms": 967.8,
+  "correlation_id": "49fb2c9136eb41ff8db57a1eca8a2424",
+  "folder": "011_hc2-10-the-paused-connection-fails-fast-no-platform-call",
+  "job_status": null
+}

@@ -1,0 +1,68 @@
+{
+  "status": 409,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 16:53:07 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "cf-cache-status": "DYNAMIC",
+    "idempotency-key": "gen-7b344f20feab448f8e44f600466d9c8a",
+    "rndr-id": "a64a7dea-c22d-427c",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "d5b32280c72443458d9d3ea34c318b46",
+    "x-incubrix-warning": "IDEMPOTENCY_KEY_GENERATED",
+    "x-render-origin-server": "uvicorn",
+    "cf-ray": "a4d98965aa6317ab-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "DEST_RULE_SELF_PROMO",
+      "message": "DEST_RULE_SELF_PROMO: this destination bans self-promotion and the post is promotional (flag 'is_promotional=true' in is_promotional; own_link 'https://mytool.example.com/?utm_source=forum' in body; utm 'utm_source in https://mytool.example.com/?utm_source=forum' in body; cta 'sign up' in body; cta 'code LAUNCH20' in body)",
+      "retryable": false,
+      "details": {
+        "retry_policy": "never",
+        "rule": "self_promo=disallowed",
+        "suggestion": "remove own links, tracking/affiliate parameters and calls to action, or post a discussion-first version",
+        "failed_checks": [
+          "self_promo"
+        ],
+        "reasons": [
+          "DEST_RULE_SELF_PROMO: this destination bans self-promotion and the post is promotional (flag 'is_promotional=true' in is_promotional; own_link 'https://mytool.example.com/?utm_source=forum' in body; utm 'utm_source in https://mytool.example.com/?utm_source=forum' in body; cta 'sign up' in body; cta 'code LAUNCH20' in body)"
+        ],
+        "evidence": [
+          {
+            "type": "flag",
+            "value": "is_promotional=true",
+            "field": "is_promotional"
+          },
+          {
+            "type": "own_link",
+            "value": "https://mytool.example.com/?utm_source=forum",
+            "field": "body"
+          },
+          {
+            "type": "utm",
+            "value": "utm_source in https://mytool.example.com/?utm_source=forum",
+            "field": "body"
+          },
+          {
+            "type": "cta",
+            "value": "sign up",
+            "field": "body"
+          },
+          {
+            "type": "cta",
+            "value": "code LAUNCH20",
+            "field": "body"
+          }
+        ],
+        "warnings": [],
+        "decision": "block",
+        "publication_id": "pub_254df9e7c7f04519958fff8f17056061",
+        "state": "blocked"
+      }
+    }
+  }
+}

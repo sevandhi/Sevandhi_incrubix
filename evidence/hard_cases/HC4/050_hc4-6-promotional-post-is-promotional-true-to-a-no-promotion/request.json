@@ -3,7 +3,7 @@
   "path": "/api/v1/publications",
   "headers": {},
   "body": {
-    "destination_id": "dest_3c579aac84324c0c9acaacbe7744c367",
+    "destination_id": "dest_82a2a120de8749f99c34cdce66a748af",
     "content": {
       "title": "Our tool launched today",
       "body": "Sign up now with code LAUNCH20: https://mytool.example.com/?utm_source=forum",

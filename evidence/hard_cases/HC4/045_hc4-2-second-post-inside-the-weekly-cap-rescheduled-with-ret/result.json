@@ -8,8 +8,8 @@
   "expected_status": 202,
   "expected_code": null,
   "passed": true,
-  "duration_ms": 244097.1,
-  "correlation_id": "5754ababb2814fe48c9489be7cce06db",
+  "duration_ms": 242717.6,
+  "correlation_id": "eda9f18b91b74230802ac5d17c0e8179",
   "folder": "045_hc4-2-second-post-inside-the-weekly-cap-rescheduled-with-ret",
   "job_status": "timeout"
 }

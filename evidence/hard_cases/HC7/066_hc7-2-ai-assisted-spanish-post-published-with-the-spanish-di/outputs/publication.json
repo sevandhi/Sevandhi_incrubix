@@ -1,7 +1,7 @@
 {
-  "publication_id": "pub_81d220366d1a4423a3fbad7b2c312f10",
-  "destination_id": "dest_c549bdf83930486db623b9a033c09d93",
-  "content_id": "content_c4e7211d57e14185a03856de2198072e",
+  "publication_id": "pub_6b6e135c6067415a82f0a8a3bc5add30",
+  "destination_id": "dest_753ff05de6a74d34b845223952892064",
+  "content_id": "content_b88e698c2a764a7b880802643722deca",
   "state": "published",
   "reason": null,
   "reasons": [
@@ -10,9 +10,9 @@
   "code": null,
   "outcome": null,
   "retry_at": null,
-  "scheduled_for": "2026-10-20T15:47:13.711635Z",
-  "platform_post_id": "2~i9c84bc71c8",
-  "live_url": "http://mock-platforms:8080/discourse/hc7-es-4201344a/t/c-mo-prob-is-las-publicaciones-en-comunidades/2",
+  "scheduled_for": "2026-10-20T16:21:02.251127Z",
+  "platform_post_id": "2~if7e87feabc",
+  "live_url": "http://mock-platforms:8080/discourse/hc7-es-4e54f52f/t/c-mo-prob-is-las-publicaciones-en-comunidades/2",
   "attempts": 1,
   "rule_decision": {
     "code": null,
@@ -54,10 +54,10 @@
   "assist_pack": null,
   "removal": null,
   "job_ids": [
-    "job_d0f8a0430fb54e6e86bdf8a3dd175d5c"
+    "job_97e11d1f7fe34af39551a086389db32f"
   ],
   "error": null,
-  "published_at": "2026-10-20T15:47:18.995000Z",
-  "created_at": "2026-10-20T15:47:10.539786Z",
-  "updated_at": "2026-10-20T15:47:19.239680Z"
+  "published_at": "2026-10-20T16:21:08.841732Z",
+  "created_at": "2026-10-20T16:20:57.979065Z",
+  "updated_at": "2026-10-20T16:21:09.083154Z"
 }

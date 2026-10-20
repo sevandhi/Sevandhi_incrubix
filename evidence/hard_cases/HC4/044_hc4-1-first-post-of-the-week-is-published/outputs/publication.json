@@ -1,16 +1,16 @@
 {
-  "publication_id": "pub_05ab059b704a4d269364dd8cfc19bc9c",
-  "destination_id": "dest_21be725d0f0744e08cf6899113ba5987",
-  "content_id": "content_797cbefc9cc14caea8595a632b74071e",
+  "publication_id": "pub_448e939bac5c4a9bbfdfc887fff200d7",
+  "destination_id": "dest_a4996bd4d6f54226945e60d6b0e54c32",
+  "content_id": "content_b4275cbfe00a42d3bd3253dbf23263f2",
   "state": "published",
   "reason": null,
   "reasons": [],
   "code": null,
   "outcome": null,
   "retry_at": null,
-  "scheduled_for": "2026-10-20T15:37:35.734351Z",
-  "platform_post_id": "2~i4de066d314",
-  "live_url": "http://mock-platforms:8080/discourse/hc4-cap-4201344a/t/how-do-you-test-posts-to-long-tail-communities/2",
+  "scheduled_for": "2026-10-20T16:29:43.679713Z",
+  "platform_post_id": "2~i3713b550f9",
+  "live_url": "http://mock-platforms:8080/discourse/hc4-cap-db12f8f7/t/how-do-you-test-posts-to-long-tail-communities/2",
   "attempts": 1,
   "rule_decision": {
     "code": null,
@@ -30,10 +30,10 @@
   "assist_pack": null,
   "removal": null,
   "job_ids": [
-    "job_ae7d55df0e48433f9bfd85f85c1fb1cf"
+    "job_e9e7a3450b674765961135a952101b3a"
   ],
   "error": null,
-  "published_at": "2026-10-20T15:37:41.886661Z",
-  "created_at": "2026-10-20T15:37:31.863064Z",
-  "updated_at": "2026-10-20T15:37:42.194907Z"
+  "published_at": "2026-10-20T16:29:49.386644Z",
+  "created_at": "2026-10-20T16:29:40.380904Z",
+  "updated_at": "2026-10-20T16:29:49.701936Z"
 }

@@ -1,25 +1,25 @@
 {
   "status": 200,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:46:41 GMT",
+    "date": "Tue, 20 Oct 2026 16:38:45 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
-    "cf-cache-status": "DYNAMIC",
-    "rndr-id": "ffcc718f-cf88-4bde",
+    "rndr-id": "5b8ce9aa-3263-48b1",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
     "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
     "content-encoding": "gzip",
-    "cf-ray": "a4d9281ffbf7aa6a-MAA",
+    "cf-ray": "a4d974640e1047d6-BOM",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
     "counts": {
       "ghost": {
-        "hc5-drift-4201344a": {
+        "hc5-drift-db12f8f7": {
           "POST /ghost/api/admin/posts": 2,
-          "GET /incubrix-certification-test-ibxcert5748884821-ibx-pa47ss22aa6u": 2,
+          "GET /incubrix-certification-test-ibxcert9430d65c59-ibx-go6c7yn2mi4s": 2,
           "GET /ghost/api/admin/posts/{id}": 2,
           "DELETE /ghost/api/admin/posts/{id}": 2,
           "GET /ghost/api/admin/posts": 1

@@ -10,12 +10,12 @@
     "destination": {
       "connector_key": "discourse",
       "surface": "topic",
-      "url": "http://mock-platforms:8080/discourse/hc4-cta-4201344a",
+      "url": "http://mock-platforms:8080/discourse/hc4-cta-db12f8f7",
       "self_promo_allowed": false
     },
     "connection": {
       "connector_key": "discourse"
     },
-    "idempotency_key": "hc4-cta-4201344a"
+    "idempotency_key": "hc4-cta-db12f8f7"
   }
 }

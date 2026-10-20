@@ -1,0 +1,33 @@
+{
+  "status": 422,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 16:22:57 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "7af6c71c-ea76-4992",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "17f5595641a64ac9a1a216eeae5e66e9",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d95d2d2d6a0758-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "PLATFORM_CONTENT_REJECTED",
+      "message": "ghost answered HTTP 422: Validation error, cannot save post. (Value in [posts.title] exceeds maximum length of 255 characters. posts.title)",
+      "retryable": false,
+      "details": {
+        "retry_policy": "never",
+        "platform_status": 422,
+        "platform_message": "Validation error, cannot save post. Value in [posts.title] exceeds maximum length of 255 characters. posts.title",
+        "error_map_key": "422",
+        "platform_context": "Value in [posts.title] exceeds maximum length of 255 characters. posts.title",
+        "intent_state": "FAILED",
+        "idempotency_key": "hc2-glong-e5f4438c"
+      }
+    }
+  }
+}

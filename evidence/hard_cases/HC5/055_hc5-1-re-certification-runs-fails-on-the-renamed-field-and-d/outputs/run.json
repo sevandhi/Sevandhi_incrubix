@@ -1,40 +1,40 @@
 {
-  "run_id": "cert_9621584af12a4ca9a6398ec35e284821",
+  "run_id": "cert_9a2b3a738ef746609e5e7fb1fc045f0c",
   "harness_version": "1.0.0",
-  "destination_id": "dest_66c5a26b33ed4d118be55fa21b1f6e40",
+  "destination_id": "dest_bf4e6c0cd3514fdc86359a4b87cc763d",
   "simulation": true,
-  "started_at": "2026-10-20T15:46:17.727114Z",
-  "finished_at": "2026-10-20T15:46:34.720512Z",
-  "duration_ms": 16993,
+  "started_at": "2026-10-20T16:38:19.799621Z",
+  "finished_at": "2026-10-20T16:38:36.854482Z",
+  "duration_ms": 17054,
   "timeline": [
     {
       "state": "QUEUED",
-      "at": "2026-10-20T15:46:17.727114Z"
+      "at": "2026-10-20T16:38:19.799621Z"
     },
     {
       "state": "PREFLIGHT",
-      "at": "2026-10-20T15:46:19.139633Z"
+      "at": "2026-10-20T16:38:21.194492Z"
     },
     {
       "state": "VALIDATE",
-      "at": "2026-10-20T15:46:21.383069Z"
+      "at": "2026-10-20T16:38:23.626560Z"
     },
     {
       "state": "PUBLISH",
-      "at": "2026-10-20T15:46:23.565829Z"
+      "at": "2026-10-20T16:38:25.818470Z"
     },
     {
       "state": "FAILED",
-      "at": "2026-10-20T15:46:29.964262Z",
+      "at": "2026-10-20T16:38:31.878765Z",
       "note": "PUBLISH: PLATFORM_UNAVAILABLE"
     },
     {
       "state": "CLEANUP",
-      "at": "2026-10-20T15:46:29.964281Z"
+      "at": "2026-10-20T16:38:31.878787Z"
     },
     {
       "state": "DEMOTED",
-      "at": "2026-10-20T15:46:33.812057Z",
+      "at": "2026-10-20T16:38:35.956939Z",
       "note": "level L0, status excluded, alert opened"
     }
   ],
@@ -43,8 +43,8 @@
       "n": 1,
       "step": "PREFLIGHT",
       "outcome": "ok",
-      "started_at": "2026-10-20T15:46:20.174162Z",
-      "duration_ms": 968.9,
+      "started_at": "2026-10-20T16:38:22.175364Z",
+      "duration_ms": 908.0,
       "detail": {
         "connector_key": "ghost",
         "connector_version": "1.0.0",
@@ -66,11 +66,11 @@
       "n": 2,
       "step": "VALIDATE",
       "outcome": "ok",
-      "started_at": "2026-10-20T15:46:22.365800Z",
-      "duration_ms": 971.6,
+      "started_at": "2026-10-20T16:38:24.691368Z",
+      "duration_ms": 906.3,
       "detail": {
         "good_rendition": {
-          "title": "IncuBrix certification test ibxcertc35e284821",
+          "title": "IncuBrix certification test ibxcertb1fc045f0c",
           "ok": true
         },
         "over_long_rendition": {
@@ -91,8 +91,8 @@
       "n": 3,
       "step": "PUBLISH",
       "outcome": "failed",
-      "started_at": "2026-10-20T15:46:24.469080Z",
-      "duration_ms": 5262.0,
+      "started_at": "2026-10-20T16:38:26.722716Z",
+      "duration_ms": 4854.3,
       "detail": {
         "code": "PLATFORM_UNAVAILABLE",
         "message": "ghost: response_schema_mismatch - the platform's answer to the publish no longer has the expected field(s) (posts.0.url); the platform may have renamed a field. The post may have been created: outcome unknown, safe to retry with the same idempotency_key.",
@@ -108,30 +108,30 @@
             ],
             "outcome": "unknown",
             "intent_state": "UNKNOWN",
-            "idempotency_key": "cert-cert_9621584af12a4ca9a6398ec35e284821"
+            "idempotency_key": "cert-cert_9a2b3a738ef746609e5e7fb1fc045f0c"
           }
         },
-        "idempotency_key": "cert-cert_9621584af12a4ca9a6398ec35e284821"
+        "idempotency_key": "cert-cert_9a2b3a738ef746609e5e7fb1fc045f0c"
       }
     },
     {
       "n": 8,
       "step": "CLEANUP",
       "outcome": "ok",
-      "started_at": "2026-10-20T15:46:30.381325Z",
-      "duration_ms": 3193.2,
+      "started_at": "2026-10-20T16:38:32.365666Z",
+      "duration_ms": 3336.2,
       "detail": {
         "ok": true,
         "action": "deleted",
         "found_by": "marker",
         "platform_post_id": "6acf00000000000000000002",
-        "marker": "ibx-kajmoapve2dv"
+        "marker": "ibx-uj5vf2rrusgw"
       }
     }
   ],
   "result": {
-    "run_id": "cert_9621584af12a4ca9a6398ec35e284821",
-    "destination_id": "dest_66c5a26b33ed4d118be55fa21b1f6e40",
+    "run_id": "cert_9a2b3a738ef746609e5e7fb1fc045f0c",
+    "destination_id": "dest_bf4e6c0cd3514fdc86359a4b87cc763d",
     "connector_key": "ghost",
     "passed": false,
     "state": "DEMOTED",
@@ -150,7 +150,7 @@
       "action": "deleted",
       "found_by": "marker",
       "platform_post_id": "6acf00000000000000000002",
-      "marker": "ibx-kajmoapve2dv"
+      "marker": "ibx-uj5vf2rrusgw"
     },
     "platform_post_id": "6acf00000000000000000002",
     "notes": []

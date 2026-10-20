@@ -8,8 +8,8 @@
   "expected_status": 200,
   "expected_code": null,
   "passed": true,
-  "duration_ms": 914.6,
-  "correlation_id": "415047b9ad5c41d4a617300175d716d9",
+  "duration_ms": 930.4,
+  "correlation_id": "740258d12a194ab0ab6a016c074e57f1",
   "folder": "003_hc1-3-a-further-replay-returns-the-same-post-id",
   "job_status": null
 }

@@ -8,8 +8,8 @@
   "expected_status": 503,
   "expected_code": "PLATFORM_UNAVAILABLE",
   "passed": true,
-  "duration_ms": 4423.6,
-  "correlation_id": "721e22a1aa124681b5d4a6dde408ed94",
+  "duration_ms": 4809.9,
+  "correlation_id": "c4539a16a5a1488abe39406e9c16f1dd",
   "folder": "059_hc5-5-contract-discourse-renames-id-to-post-id-in-the-create",
   "job_status": null
 }

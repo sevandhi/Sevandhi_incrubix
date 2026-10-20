@@ -1,0 +1,12 @@
+{
+  "method": "POST",
+  "path": "https://ibx-destination-network-demo.onrender.com/sim/forem/hc2-rl-e5f4438c/_mock/rate_limit",
+  "headers": {
+    "X-IncuBrix-Demo-Token": "***"
+  },
+  "body": {
+    "limit": 1,
+    "window_s": 120,
+    "retry_after": "http-date"
+  }
+}

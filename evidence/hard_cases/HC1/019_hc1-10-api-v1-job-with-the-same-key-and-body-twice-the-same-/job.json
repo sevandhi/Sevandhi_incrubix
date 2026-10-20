@@ -1,5 +1,5 @@
 {
-  "job_id": "job_d36086370c1a4c7cb962572be9fb99fd",
+  "job_id": "job_395feb4495b341408dd90372db921803",
   "kind": "selfcheck",
   "status": "succeeded",
   "progress": 100,
@@ -7,14 +7,14 @@
     "ok": true,
     "echo": null,
     "links": {
-      "report": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_d36086370c1a4c7cb962572be9fb99fd/report.json?exp=1792514185&sig=***",
-      "manifest": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_d36086370c1a4c7cb962572be9fb99fd/manifest.json?exp=1792514185&sig=***"
+      "report": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_395feb4495b341408dd90372db921803/report.json?exp=1792517317&sig=***",
+      "manifest": "https://ibx-destination-network-demo.onrender.com/api/v1/files/jobs/job_395feb4495b341408dd90372db921803/manifest.json?exp=1792517317&sig=***"
     },
     "steps": 3
   },
   "error": null,
   "attempts": 1,
-  "created_at": "2026-10-20T15:36:18.785235+00:00",
-  "updated_at": "2026-10-20T15:36:22.290057+00:00",
-  "finished_at": "2026-10-20T15:36:21.806189+00:00"
+  "created_at": "2026-10-20T16:28:30.437111+00:00",
+  "updated_at": "2026-10-20T16:28:34.379395+00:00",
+  "finished_at": "2026-10-20T16:28:33.880486+00:00"
 }

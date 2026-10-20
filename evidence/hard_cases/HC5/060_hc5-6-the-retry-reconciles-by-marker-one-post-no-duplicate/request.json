@@ -10,11 +10,11 @@
     "destination": {
       "connector_key": "discourse",
       "surface": "topic",
-      "url": "http://mock-platforms:8080/discourse/hc5-ren-4201344a"
+      "url": "http://mock-platforms:8080/discourse/hc5-ren-db12f8f7"
     },
     "connection": {
       "connector_key": "discourse"
     },
-    "idempotency_key": "hc5-ren-4201344a"
+    "idempotency_key": "hc5-ren-db12f8f7"
   }
 }

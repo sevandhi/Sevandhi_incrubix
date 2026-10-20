@@ -1,0 +1,15 @@
+{
+  "index": 3,
+  "name": "HC2.2 Dev.to 429 with an HTTP-date Retry-After -> PLATFORM_RATE_LIMIT with the reset time",
+  "method": "POST",
+  "path": "/connector/v1/devto/publish",
+  "status": 429,
+  "code": "PLATFORM_RATE_LIMIT",
+  "expected_status": 429,
+  "expected_code": "PLATFORM_RATE_LIMIT",
+  "passed": true,
+  "duration_ms": 4262.1,
+  "correlation_id": "4a16f53fd77d413090794d44d3b594c2",
+  "folder": "003_hc2-2-dev-to-429-with-an-http-date-retry-after-platform-rate",
+  "job_status": null
+}

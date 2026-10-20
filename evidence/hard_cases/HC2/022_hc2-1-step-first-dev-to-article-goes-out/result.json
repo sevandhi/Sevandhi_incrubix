@@ -8,8 +8,8 @@
   "expected_status": 200,
   "expected_code": null,
   "passed": true,
-  "duration_ms": 4259.0,
-  "correlation_id": "d8c08cd67fc74f9483593f45accf1231",
+  "duration_ms": 4504.5,
+  "correlation_id": "fd0eb87f84994925a45a4f7eb566f1d4",
   "folder": "022_hc2-1-step-first-dev-to-article-goes-out",
   "job_status": null
 }

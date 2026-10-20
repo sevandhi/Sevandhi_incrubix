@@ -1,26 +1,26 @@
 {
   "status": 200,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:46:41 GMT",
+    "date": "Tue, 20 Oct 2026 16:38:44 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
-    "cf-cache-status": "DYNAMIC",
-    "rndr-id": "bb664d61-6c37-4a01",
+    "rndr-id": "ec4f4734-556f-432e",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
-    "x-correlation-id": "0a5fd16f3f154cf0928cc5f7b62ee6df",
+    "x-correlation-id": "f52e40cb44e54d4ba297f14d403489a6",
     "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
     "content-encoding": "gzip",
-    "cf-ray": "a4d92818fe6eaa6a-MAA",
+    "cf-ray": "a4d9745d3fb447d6-BOM",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
-    "destination_id": "dest_66c5a26b33ed4d118be55fa21b1f6e40",
-    "destination_key": "ghost|mock-platforms:8080/ghost/hc5-drift-4201344a|article",
-    "name": "HC5 Ghost drift 4201344a",
-    "url": "http://mock-platforms:8080/ghost/hc5-drift-4201344a",
-    "normalized_url": "https://mock-platforms:8080/ghost/hc5-drift-4201344a",
+    "destination_id": "dest_bf4e6c0cd3514fdc86359a4b87cc763d",
+    "destination_key": "ghost|mock-platforms:8080/ghost/hc5-drift-db12f8f7|article",
+    "name": "HC5 Ghost drift db12f8f7",
+    "url": "http://mock-platforms:8080/ghost/hc5-drift-db12f8f7",
+    "normalized_url": "https://mock-platforms:8080/ghost/hc5-drift-db12f8f7",
     "platform_key": "ghost",
     "surface": "article",
     "connector_key": "ghost",
@@ -38,18 +38,18 @@
     "relevance_score": null,
     "relevance_reason": null,
     "level": "L0",
-    "last_certified_at": "2026-10-20T15:33:56.627703+00:00",
+    "last_certified_at": "2026-10-20T16:26:09.716753+00:00",
     "instance": {
-      "base_url": "http://mock-platforms:8080/ghost/hc5-drift-4201344a"
+      "base_url": "http://mock-platforms:8080/ghost/hc5-drift-db12f8f7"
     },
     "connection_id": null,
     "connection_ref": null,
     "spec_overrides": null,
     "status": "excluded",
-    "excluded_reason": "certification cert_9621584af12a4ca9a6398ec35e284821 failed at PUBLISH: PLATFORM_UNAVAILABLE: response_schema_mismatch: the platform's answer no longer has the expected field(s) posts.0.url; the platform may have renamed a field in its API",
-    "created_at": "2026-10-20T15:33:26.714226+00:00",
+    "excluded_reason": "certification cert_9a2b3a738ef746609e5e7fb1fc045f0c failed at PUBLISH: PLATFORM_UNAVAILABLE: response_schema_mismatch: the platform's answer no longer has the expected field(s) posts.0.url; the platform may have renamed a field in its API",
+    "created_at": "2026-10-20T16:25:40.288399+00:00",
     "rules": {
-      "rules_id": "rules_eef4210e3789408d920e5c8c4709a72a",
+      "rules_id": "rules_045a3e58147948a1b6a25bebe844a516",
       "version": 1,
       "status": "confirmed",
       "source": "manual",
@@ -59,12 +59,12 @@
         "self_promo_allowed": "true"
       },
       "confirmed_by": "catalogue_row",
-      "confirmed_at": "2026-10-20T15:33:27.175173+00:00"
+      "confirmed_at": "2026-10-20T16:25:40.536038+00:00"
     },
     "rules_status": "confirmed",
     "rules_proposal_id": null,
     "last_certification": {
-      "run_id": "cert_9621584af12a4ca9a6398ec35e284821",
+      "run_id": "cert_9a2b3a738ef746609e5e7fb1fc045f0c",
       "state": "DEMOTED",
       "failure_code": "PLATFORM_UNAVAILABLE"
     }

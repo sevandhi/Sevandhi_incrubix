@@ -11,7 +11,7 @@
     "destination": {
       "connector_key": "discourse",
       "surface": "topic",
-      "url": "http://mock-platforms:8080/discourse/hc7-noauto-4201344a",
+      "url": "http://mock-platforms:8080/discourse/hc7-noauto-db12f8f7",
       "rules": {
         "disclosure": {
           "required": true,
@@ -23,6 +23,6 @@
     "connection": {
       "connector_key": "discourse"
     },
-    "idempotency_key": "hc7-noauto-4201344a"
+    "idempotency_key": "hc7-noauto-db12f8f7"
   }
 }

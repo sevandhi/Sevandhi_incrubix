@@ -1,0 +1,15 @@
+{
+  "index": 2,
+  "name": "HC2.1 step - first Dev.to article goes out",
+  "method": "POST",
+  "path": "/connector/v1/devto/publish",
+  "status": 200,
+  "code": null,
+  "expected_status": 200,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 4205.0,
+  "correlation_id": "6e36474bc61d48eda90b81827224858f",
+  "folder": "002_hc2-1-step-first-dev-to-article-goes-out",
+  "job_status": null
+}

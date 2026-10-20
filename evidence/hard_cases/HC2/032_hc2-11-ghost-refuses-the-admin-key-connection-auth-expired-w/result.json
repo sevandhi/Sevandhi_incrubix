@@ -8,8 +8,8 @@
   "expected_status": 424,
   "expected_code": "CONNECTION_AUTH_EXPIRED",
   "passed": true,
-  "duration_ms": 4083.9,
-  "correlation_id": "b0004ef5910e4b00a3edb1be310f793f",
+  "duration_ms": 3858.6,
+  "correlation_id": "f588670d6453442ebc361dbb74b7e59d",
   "folder": "032_hc2-11-ghost-refuses-the-admin-key-connection-auth-expired-w",
   "job_status": null
 }

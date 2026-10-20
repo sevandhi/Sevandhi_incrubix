@@ -1,0 +1,15 @@
+{
+  "index": 4,
+  "name": "HC2.3 the next call backs off without calling the platform",
+  "method": "POST",
+  "path": "/connector/v1/devto/publish",
+  "status": 429,
+  "code": "PLATFORM_RATE_LIMIT",
+  "expected_status": 429,
+  "expected_code": "PLATFORM_RATE_LIMIT",
+  "passed": true,
+  "duration_ms": 1563.4,
+  "correlation_id": "183712dbf41c4075aa1ff1183f35aae4",
+  "folder": "004_hc2-3-the-next-call-backs-off-without-calling-the-platform",
+  "job_status": null
+}

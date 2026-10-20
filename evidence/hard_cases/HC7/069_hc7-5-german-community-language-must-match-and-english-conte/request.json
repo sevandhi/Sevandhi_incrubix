@@ -10,7 +10,7 @@
     "destination": {
       "connector_key": "discourse",
       "surface": "topic",
-      "url": "http://mock-platforms:8080/discourse/hc7-de-4201344a",
+      "url": "http://mock-platforms:8080/discourse/hc7-de-db12f8f7",
       "language": "de",
       "rules": {
         "language_policy": "must_match",
@@ -20,6 +20,6 @@
     "connection": {
       "connector_key": "discourse"
     },
-    "idempotency_key": "hc7-de-4201344a"
+    "idempotency_key": "hc7-de-db12f8f7"
   }
 }

@@ -1,0 +1,15 @@
+{
+  "index": 7,
+  "name": "HC2.6 step - first Lemmy post uses the one slot",
+  "method": "POST",
+  "path": "/connector/v1/lemmy/publish",
+  "status": 200,
+  "code": null,
+  "expected_status": 200,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 4490.8,
+  "correlation_id": "8c612a9bcba5449c97c4eca548d4725d",
+  "folder": "007_hc2-6-step-first-lemmy-post-uses-the-one-slot",
+  "job_status": null
+}

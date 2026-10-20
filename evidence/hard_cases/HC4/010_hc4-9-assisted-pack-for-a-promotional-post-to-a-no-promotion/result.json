@@ -1,0 +1,15 @@
+{
+  "index": 10,
+  "name": "HC4.9 assisted pack for a promotional post to a no-promotion community -> 409 (no ready-to-post spam)",
+  "method": "POST",
+  "path": "/connector/v1/assisted/build_assist_pack",
+  "status": 409,
+  "code": "DEST_RULE_SELF_PROMO",
+  "expected_status": 409,
+  "expected_code": "DEST_RULE_SELF_PROMO",
+  "passed": true,
+  "duration_ms": 1221.8,
+  "correlation_id": "e0ae53800df24c118b35d2923fe3f729",
+  "folder": "010_hc4-9-assisted-pack-for-a-promotional-post-to-a-no-promotion",
+  "job_status": null
+}

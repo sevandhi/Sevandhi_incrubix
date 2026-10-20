@@ -1,0 +1,15 @@
+{
+  "index": 14,
+  "name": "HC7.4 disclosure required but auto-insert off -> 409 DEST_RULE_DISCLOSURE",
+  "method": "POST",
+  "path": "/connector/v1/discourse/publish",
+  "status": 409,
+  "code": "DEST_RULE_DISCLOSURE",
+  "expected_status": 409,
+  "expected_code": "DEST_RULE_DISCLOSURE",
+  "passed": true,
+  "duration_ms": 3435.6,
+  "correlation_id": "e8a06eb67282400da4269ea3d6f5d914",
+  "folder": "014_hc7-4-disclosure-required-but-auto-insert-off-409-dest-rule-",
+  "job_status": null
+}

@@ -3,7 +3,7 @@
   "path": "/api/v1/publications",
   "headers": {},
   "body": {
-    "destination_id": "dest_42f4fbb9c6fb4d87a0041d7c17046c9e",
+    "destination_id": "dest_bf70528391be43429540d0316109356f",
     "content": {
       "title": "A concurrent question for the forum?",
       "body": "We compared three ways to test forum posts end to end. Which one has worked for you?",

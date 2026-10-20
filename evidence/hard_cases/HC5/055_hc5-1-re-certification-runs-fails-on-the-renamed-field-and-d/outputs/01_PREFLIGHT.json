@@ -2,8 +2,8 @@
   "n": 1,
   "step": "PREFLIGHT",
   "outcome": "ok",
-  "started_at": "2026-10-20T15:46:20.174162Z",
-  "duration_ms": 968.9,
+  "started_at": "2026-10-20T16:38:22.175364Z",
+  "duration_ms": 908.0,
   "detail": {
     "connector_key": "ghost",
     "connector_version": "1.0.0",

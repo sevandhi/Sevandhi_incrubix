@@ -8,8 +8,8 @@
   "expected_status": 202,
   "expected_code": null,
   "passed": true,
-  "duration_ms": 12132.7,
-  "correlation_id": "8dbd41224c5d470784d1a7ba11d10c3b",
+  "duration_ms": 14241.7,
+  "correlation_id": "35dea0253bb8414c961c8cc363d985fe",
   "folder": "064_hc6-4-a-publication-to-the-revoked-partner-fails-with-connec",
   "job_status": "failed"
 }

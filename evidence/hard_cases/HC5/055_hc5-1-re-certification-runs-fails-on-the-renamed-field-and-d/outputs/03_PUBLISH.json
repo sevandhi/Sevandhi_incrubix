@@ -2,8 +2,8 @@
   "n": 3,
   "step": "PUBLISH",
   "outcome": "failed",
-  "started_at": "2026-10-20T15:46:24.469080Z",
-  "duration_ms": 5262.0,
+  "started_at": "2026-10-20T16:38:26.722716Z",
+  "duration_ms": 4854.3,
   "detail": {
     "code": "PLATFORM_UNAVAILABLE",
     "message": "ghost: response_schema_mismatch - the platform's answer to the publish no longer has the expected field(s) (posts.0.url); the platform may have renamed a field. The post may have been created: outcome unknown, safe to retry with the same idempotency_key.",
@@ -19,9 +19,9 @@
         ],
         "outcome": "unknown",
         "intent_state": "UNKNOWN",
-        "idempotency_key": "cert-cert_9621584af12a4ca9a6398ec35e284821"
+        "idempotency_key": "cert-cert_9a2b3a738ef746609e5e7fb1fc045f0c"
       }
     },
-    "idempotency_key": "cert-cert_9621584af12a4ca9a6398ec35e284821"
+    "idempotency_key": "cert-cert_9a2b3a738ef746609e5e7fb1fc045f0c"
   }
 }

@@ -2,7 +2,7 @@
   "method": "POST",
   "path": "/connector/v1/discourse/publish",
   "headers": {
-    "Idempotency-Key": "hc1-hdr-4201344a"
+    "Idempotency-Key": "hc1-hdr-db12f8f7"
   },
   "body": {
     "rendition": {
@@ -12,7 +12,7 @@
     "destination": {
       "connector_key": "discourse",
       "surface": "topic",
-      "url": "http://mock-platforms:8080/discourse/hc1-hdr-4201344a"
+      "url": "http://mock-platforms:8080/discourse/hc1-hdr-db12f8f7"
     },
     "connection": {
       "connector_key": "discourse"

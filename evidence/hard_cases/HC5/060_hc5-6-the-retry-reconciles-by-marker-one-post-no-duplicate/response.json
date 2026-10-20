@@ -1,25 +1,25 @@
 {
   "status": 200,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:46:51 GMT",
+    "date": "Tue, 20 Oct 2026 16:38:56 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
-    "cf-cache-status": "DYNAMIC",
-    "idempotency-key": "hc5-ren-4201344a",
+    "idempotency-key": "hc5-ren-db12f8f7",
     "idempotent-replayed": "true",
-    "rndr-id": "be5e8780-47c4-4463",
+    "rndr-id": "1689b6fc-a480-45bb",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
-    "x-correlation-id": "62b1f494167f4b2f9e016b37aff862fc",
+    "x-correlation-id": "bd410be5ab084252a747b549f82b1201",
     "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
     "content-encoding": "gzip",
-    "cf-ray": "a4d928486d3daa6a-MAA",
+    "cf-ray": "a4d9748f8ba747d6-BOM",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
-    "platform_post_id": "1~i27bf37a073",
-    "live_url": "http://mock-platforms:8080/discourse/hc5-ren-4201344a/t/a-post-whose-answer-has-a-renamed-field/1",
+    "platform_post_id": "1~ib07beef41f",
+    "live_url": "http://mock-platforms:8080/discourse/hc5-ren-db12f8f7/t/a-post-whose-answer-has-a-renamed-field/1",
     "status": "published"
   }
 }

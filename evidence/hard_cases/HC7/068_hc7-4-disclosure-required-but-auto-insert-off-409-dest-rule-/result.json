@@ -8,8 +8,8 @@
   "expected_status": 409,
   "expected_code": "DEST_RULE_DISCLOSURE",
   "passed": true,
-  "duration_ms": 2811.6,
-  "correlation_id": "9bfa584763b64569b07987002d3f0464",
+  "duration_ms": 3593.4,
+  "correlation_id": "caa8cee553d242eab38f5267183b4c80",
   "folder": "068_hc7-4-disclosure-required-but-auto-insert-off-409-dest-rule-",
   "job_status": null
 }

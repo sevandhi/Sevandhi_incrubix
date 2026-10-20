@@ -1,24 +1,24 @@
 {
   "status": 200,
   "headers": {
-    "date": "Tue, 20 Oct 2026 15:36:31 GMT",
+    "date": "Tue, 20 Oct 2026 16:28:43 GMT",
     "content-type": "application/json",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
-    "cf-cache-status": "DYNAMIC",
-    "idempotency-key": "hc2-rl1-4201344a",
-    "rndr-id": "d058efc1-5541-4535",
+    "idempotency-key": "hc2-rl1-db12f8f7",
+    "rndr-id": "f37bef66-e1ea-406a",
     "server": "cloudflare",
     "vary": "Accept-Encoding",
-    "x-correlation-id": "d8c08cd67fc74f9483593f45accf1231",
+    "x-correlation-id": "fd0eb87f84994925a45a4f7eb566f1d4",
     "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
     "content-encoding": "gzip",
-    "cf-ray": "a4d919229de9aa6a-MAA",
+    "cf-ray": "a4d965976b6f7e69-MAA",
     "alt-svc": "h3=\":443\"; ma=86400"
   },
   "body": {
-    "platform_post_id": "1~i2aaf777545",
-    "live_url": "http://mock-platforms:8080/forem/hc2-rl-4201344a/ibx_admin/first-article-inside-the-platform-window-0001",
+    "platform_post_id": "1~i10bd65e8e0",
+    "live_url": "http://mock-platforms:8080/forem/hc2-rl-db12f8f7/ibx_admin/first-article-inside-the-platform-window-0001",
     "status": "published"
   }
 }

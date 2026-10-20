@@ -1,0 +1,8 @@
+{
+  "method": "POST",
+  "path": "https://ibx-destination-network-demo.onrender.com/sim/partner/hc2-rev-e5f4438c/_partner/revoke",
+  "headers": {
+    "X-IncuBrix-Demo-Token": "***"
+  },
+  "body": null
+}

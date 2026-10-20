@@ -1,0 +1,15 @@
+{
+  "index": 8,
+  "name": "HC2.7 Lemmy 400 rate_limit_error -> PLATFORM_RATE_LIMIT, reset from the site config",
+  "method": "POST",
+  "path": "/connector/v1/lemmy/publish",
+  "status": 429,
+  "code": "PLATFORM_RATE_LIMIT",
+  "expected_status": 429,
+  "expected_code": "PLATFORM_RATE_LIMIT",
+  "passed": true,
+  "duration_ms": 4196.4,
+  "correlation_id": "64cbd94f6f514483bc2f44bd3ea14274",
+  "folder": "008_hc2-7-lemmy-400-rate-limit-error-platform-rate-limit-reset-f",
+  "job_status": null
+}

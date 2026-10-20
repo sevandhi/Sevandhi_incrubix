@@ -8,8 +8,8 @@
   "expected_status": 200,
   "expected_code": null,
   "passed": true,
-  "duration_ms": 4422.5,
-  "correlation_id": "fc81f2cd9e2b4c98908b6da879f0f1f2",
+  "duration_ms": 3777.1,
+  "correlation_id": "b297d86dcfac4a9eaf9926c064c2d393",
   "folder": "033_hc2-12-step-a-first-topic-with-this-title",
   "job_status": null
 }

@@ -1,0 +1,15 @@
+{
+  "index": 4,
+  "name": "HC4.3 two first posts at the same time -> one goes out, one is rescheduled #2",
+  "method": "POST",
+  "path": "/api/v1/publications",
+  "status": 202,
+  "code": null,
+  "expected_status": 202,
+  "expected_code": null,
+  "passed": true,
+  "duration_ms": 245508.2,
+  "correlation_id": "da3a4501866a43ed8a51d27e4494c8e6",
+  "folder": "004_hc4-3-two-first-posts-at-the-same-time-one-goes-out-one-is-r",
+  "job_status": "timeout"
+}

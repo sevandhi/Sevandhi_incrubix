@@ -8,8 +8,8 @@
   "expected_status": 503,
   "expected_code": "PLATFORM_UNAVAILABLE",
   "passed": true,
-  "duration_ms": 4118.3,
-  "correlation_id": "3c206faffabc4090817e65cbced89d15",
+  "duration_ms": 4234.5,
+  "correlation_id": "4acc93ee9e2e4e9db04d9745ccb5db16",
   "folder": "016_hc1-8-lemmy-commits-then-a-proxy-answers-502-503-outcome-unk",
   "job_status": null
 }

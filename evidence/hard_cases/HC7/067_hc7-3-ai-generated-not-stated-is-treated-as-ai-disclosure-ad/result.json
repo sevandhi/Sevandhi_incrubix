@@ -8,8 +8,8 @@
   "expected_status": 200,
   "expected_code": null,
   "passed": true,
-  "duration_ms": 4641.2,
-  "correlation_id": "fc22169d80f74f59b0949fd7404500bb",
+  "duration_ms": 4928.9,
+  "correlation_id": "ef4cb75492004fd99ca6e77e3fd91a0c",
   "folder": "067_hc7-3-ai-generated-not-stated-is-treated-as-ai-disclosure-ad",
   "job_status": null
 }

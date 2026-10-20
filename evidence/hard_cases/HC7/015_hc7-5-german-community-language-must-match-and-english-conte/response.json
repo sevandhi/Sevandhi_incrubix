@@ -1,0 +1,48 @@
+{
+  "status": 409,
+  "headers": {
+    "date": "Tue, 20 Oct 2026 16:53:42 GMT",
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "rndr-id": "90b18242-0086-4427",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "x-correlation-id": "9e1e84b9f92e454c889c73e3d6662158",
+    "x-render-origin-server": "uvicorn",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a4d98a3c9e6c17ab-MAA",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "body": {
+    "error": {
+      "code": "DEST_RULE_LANGUAGE",
+      "message": "DEST_RULE_LANGUAGE: content is in 'en' (detected) but the community requires de; translate the post or choose another destination",
+      "retryable": false,
+      "details": {
+        "retry_policy": "never",
+        "content_language": "en",
+        "language_source": "detected",
+        "destination_languages": [
+          "de"
+        ],
+        "language_policy": "must_match",
+        "failed_checks": [
+          "language"
+        ],
+        "reasons": [
+          "DEST_RULE_LANGUAGE: content is in 'en' (detected) but the community requires de; translate the post or choose another destination"
+        ],
+        "evidence": [
+          {
+            "type": "language",
+            "value": "en",
+            "field": "language"
+          }
+        ],
+        "warnings": [],
+        "decision": "block"
+      }
+    }
+  }
+}

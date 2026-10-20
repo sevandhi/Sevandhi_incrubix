@@ -8,8 +8,8 @@
   "expected_status": 409,
   "expected_code": "DEST_RULE_SELF_PROMO",
   "passed": true,
-  "duration_ms": 3045.6,
-  "correlation_id": "5fbb52c4e4394275b0d3c9b2599d19a2",
+  "duration_ms": 3683.9,
+  "correlation_id": "95fa67c678444a64b5e94e29470d364e",
   "folder": "051_hc4-7-promo-hidden-in-a-utm-link-with-is-promotional-false-s",
   "job_status": null
 }

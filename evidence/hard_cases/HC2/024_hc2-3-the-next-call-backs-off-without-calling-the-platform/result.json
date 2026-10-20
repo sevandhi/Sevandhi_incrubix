@@ -8,8 +8,8 @@
   "expected_status": 429,
   "expected_code": "PLATFORM_RATE_LIMIT",
   "passed": true,
-  "duration_ms": 1620.5,
-  "correlation_id": "81e142ba5c1847d9bc507176d5f1ce44",
+  "duration_ms": 1408.2,
+  "correlation_id": "ec365fc41e48464cb2448d2873b159c5",
   "folder": "024_hc2-3-the-next-call-backs-off-without-calling-the-platform",
   "job_status": null
 }
